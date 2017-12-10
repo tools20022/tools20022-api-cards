@@ -1,0 +1,443 @@
+/* Tools20022 - API for ISO 20022
+* Copyright (C) 2017 Tools20022.com - László Bukodi 
+* 
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+* 
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+* 
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package com.tools20022.repository.msg;
+
+import com.tools20022.metamodel.MMMessageAttribute;
+import com.tools20022.metamodel.MMMessageComponent;
+import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.choice.DiscountOrChargeType1Choice;
+import com.tools20022.repository.datatype.CurrencyAndAmount;
+import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.Adjustment;
+import com.tools20022.repository.entity.LineItem;
+import com.tools20022.repository.GeneratedRepository;
+import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+/**
+ * Pricing component, such as a service, promotion, allowance or charge, for
+ * this line item.
+ * <p>
+ * <strong>Constant fields:</strong>
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMMessageElementContainer#getMessageElement
+ * messageElement} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge2#mmChargeIndicator
+ * LineItemAllowanceCharge2.mmChargeIndicator}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge2#mmActualAmount
+ * LineItemAllowanceCharge2.mmActualAmount}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge2#mmBasisQuantity
+ * LineItemAllowanceCharge2.mmBasisQuantity}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge2#mmCalculationPercent
+ * LineItemAllowanceCharge2.mmCalculationPercent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge2#mmSequenceNumber
+ * LineItemAllowanceCharge2.mmSequenceNumber}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge2#mmReason
+ * LineItemAllowanceCharge2.mmReason}</li>
+ * </ul>
+ * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMMessageComponentType#getTrace
+ * trace} = {@linkplain com.tools20022.repository.entity.Adjustment Adjustment}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
+ * dataDictionary} =
+ * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
+ * GeneratedRepository.mmdataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+ * registrationStatus} =
+ * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
+ * "LineItemAllowanceCharge2"</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+ * definition} =
+ * "Pricing component, such as a service, promotion, allowance or charge, for this line item."
+ * </li>
+ * </ul>
+ */
+@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlType(name = "LineItemAllowanceCharge2", propOrder = {"chargeIndicator", "actualAmount", "basisQuantity", "calculationPercent", "sequenceNumber", "reason"})
+public class LineItemAllowanceCharge2 {
+
+	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	protected YesNoIndicator chargeIndicator;
+	/**
+	 * Indication of whether or not this allowance charge is a charge.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMMessageAttribute#getSimpleType
+	 * simpleType} =
+	 * {@linkplain com.tools20022.repository.datatype.YesNoIndicator
+	 * YesNoIndicator}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
+	 * businessElementTrace} =
+	 * {@linkplain com.tools20022.repository.entity.Adjustment#mmChargeIndicator
+	 * Adjustment.mmChargeIndicator}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
+	 * componentContext} =
+	 * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge2
+	 * LineItemAllowanceCharge2}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
+	 * xmlTag} = "ChrgInd"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "ChargeIndicator"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Indication of whether or not this allowance charge is a charge."</li>
+	 * </ul>
+	 */
+	public static final MMMessageAttribute mmChargeIndicator = new MMMessageAttribute() {
+		{
+			businessElementTrace_lazy = () -> Adjustment.mmChargeIndicator;
+			componentContext_lazy = () -> LineItemAllowanceCharge2.mmObject();
+			isDerived = false;
+			xmlTag = "ChrgInd";
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "ChargeIndicator";
+			definition = "Indication of whether or not this allowance charge is a charge.";
+			maxOccurs = 1;
+			minOccurs = 0;
+			simpleType_lazy = () -> YesNoIndicator.mmObject();
+		}
+	};
+	protected List<CurrencyAndAmount> actualAmount;
+	/**
+	 * Actual monetary value of this allowance charge.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMMessageAttribute#getSimpleType
+	 * simpleType} =
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
+	 * businessElementTrace} =
+	 * {@linkplain com.tools20022.repository.entity.Adjustment#mmAmount
+	 * Adjustment.mmAmount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
+	 * componentContext} =
+	 * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge2
+	 * LineItemAllowanceCharge2}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
+	 * xmlTag} = "ActlAmt"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "ActualAmount"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Actual monetary value of this allowance charge."</li>
+	 * </ul>
+	 */
+	public static final MMMessageAttribute mmActualAmount = new MMMessageAttribute() {
+		{
+			businessElementTrace_lazy = () -> Adjustment.mmAmount;
+			componentContext_lazy = () -> LineItemAllowanceCharge2.mmObject();
+			isDerived = false;
+			xmlTag = "ActlAmt";
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "ActualAmount";
+			definition = "Actual monetary value of this allowance charge.";
+			minOccurs = 0;
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
+		}
+	};
+	protected Quantity10 basisQuantity;
+	/**
+	 * Quantity on which this allowance charge is based.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMMessageAttribute#getComplexType
+	 * complexType} = {@linkplain com.tools20022.repository.msg.Quantity10
+	 * Quantity10}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
+	 * businessElementTrace} =
+	 * {@linkplain com.tools20022.repository.entity.LineItem#mmBilledQuantity
+	 * LineItem.mmBilledQuantity}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
+	 * componentContext} =
+	 * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge2
+	 * LineItemAllowanceCharge2}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
+	 * xmlTag} = "BsisQty"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "BasisQuantity"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Quantity on which this allowance charge is based."</li>
+	 * </ul>
+	 */
+	public static final MMMessageAttribute mmBasisQuantity = new MMMessageAttribute() {
+		{
+			businessElementTrace_lazy = () -> LineItem.mmBilledQuantity;
+			componentContext_lazy = () -> LineItemAllowanceCharge2.mmObject();
+			isDerived = false;
+			xmlTag = "BsisQty";
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "BasisQuantity";
+			definition = "Quantity on which this allowance charge is based.";
+			maxOccurs = 1;
+			minOccurs = 0;
+			complexType_lazy = () -> com.tools20022.repository.msg.Quantity10.mmObject();
+		}
+	};
+	protected PercentageRate calculationPercent;
+	/**
+	 * Percentage applied to calculate this allowance charge.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMMessageAttribute#getSimpleType
+	 * simpleType} =
+	 * {@linkplain com.tools20022.repository.datatype.PercentageRate
+	 * PercentageRate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
+	 * businessElementTrace} =
+	 * {@linkplain com.tools20022.repository.entity.Adjustment#mmChargeRate
+	 * Adjustment.mmChargeRate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
+	 * componentContext} =
+	 * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge2
+	 * LineItemAllowanceCharge2}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
+	 * xmlTag} = "ClctnPct"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "CalculationPercent"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Percentage applied to calculate this allowance charge."</li>
+	 * </ul>
+	 */
+	public static final MMMessageAttribute mmCalculationPercent = new MMMessageAttribute() {
+		{
+			businessElementTrace_lazy = () -> Adjustment.mmChargeRate;
+			componentContext_lazy = () -> LineItemAllowanceCharge2.mmObject();
+			isDerived = false;
+			xmlTag = "ClctnPct";
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "CalculationPercent";
+			definition = "Percentage applied to calculate this allowance charge.";
+			maxOccurs = 1;
+			minOccurs = 0;
+			simpleType_lazy = () -> PercentageRate.mmObject();
+		}
+	};
+	protected Number sequenceNumber;
+	/**
+	 * Specifies the order in which the allowance or charge is applied.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMMessageAttribute#getSimpleType
+	 * simpleType} = {@linkplain com.tools20022.repository.datatype.Number
+	 * Number}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
+	 * componentContext} =
+	 * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge2
+	 * LineItemAllowanceCharge2}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
+	 * xmlTag} = "SeqNb"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "SequenceNumber"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Specifies the order in which the allowance or charge is applied."</li>
+	 * </ul>
+	 */
+	public static final MMMessageAttribute mmSequenceNumber = new MMMessageAttribute() {
+		{
+			componentContext_lazy = () -> LineItemAllowanceCharge2.mmObject();
+			isDerived = false;
+			xmlTag = "SeqNb";
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "SequenceNumber";
+			definition = "Specifies the order in which the allowance or charge is applied.";
+			maxOccurs = 1;
+			minOccurs = 0;
+			simpleType_lazy = () -> Number.mmObject();
+		}
+	};
+	protected DiscountOrChargeType1Choice reason;
+	/**
+	 * Reason, expressed as text, for this allowance charge.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMMessageAttribute#getComplexType
+	 * complexType} =
+	 * {@linkplain com.tools20022.repository.choice.DiscountOrChargeType1Choice
+	 * DiscountOrChargeType1Choice}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getBusinessElementTrace
+	 * businessElementTrace} =
+	 * {@linkplain com.tools20022.repository.entity.Adjustment#mmReason
+	 * Adjustment.mmReason}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMMessageElement#getComponentContext
+	 * componentContext} =
+	 * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge2
+	 * LineItemAllowanceCharge2}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMMessageConstruct#getXmlTag
+	 * xmlTag} = "Rsn"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "Reason"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Reason, expressed as text, for this allowance charge."</li>
+	 * </ul>
+	 */
+	public static final MMMessageAttribute mmReason = new MMMessageAttribute() {
+		{
+			businessElementTrace_lazy = () -> Adjustment.mmReason;
+			componentContext_lazy = () -> LineItemAllowanceCharge2.mmObject();
+			isDerived = false;
+			xmlTag = "Rsn";
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "Reason";
+			definition = "Reason, expressed as text, for this allowance charge.";
+			maxOccurs = 1;
+			minOccurs = 0;
+			complexType_lazy = () -> DiscountOrChargeType1Choice.mmObject();
+		}
+	};
+
+	final static public MMMessageComponent mmObject() {
+		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
+			{
+				messageElement_lazy = () -> Arrays.asList(LineItemAllowanceCharge2.mmChargeIndicator, LineItemAllowanceCharge2.mmActualAmount, LineItemAllowanceCharge2.mmBasisQuantity, LineItemAllowanceCharge2.mmCalculationPercent,
+						LineItemAllowanceCharge2.mmSequenceNumber, LineItemAllowanceCharge2.mmReason);
+				trace_lazy = () -> Adjustment.mmObject();
+				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
+				name = "LineItemAllowanceCharge2";
+				definition = "Pricing component, such as a service, promotion, allowance or charge, for this line item.";
+			}
+		});
+		return mmObject_lazy.get();
+	}
+
+	@XmlElement(name = "ChrgInd")
+	public YesNoIndicator getChargeIndicator() {
+		return chargeIndicator;
+	}
+
+	public void setChargeIndicator(YesNoIndicator chargeIndicator) {
+		this.chargeIndicator = chargeIndicator;
+	}
+
+	@XmlElement(name = "ActlAmt")
+	public List<CurrencyAndAmount> getActualAmount() {
+		return actualAmount;
+	}
+
+	public void setActualAmount(List<CurrencyAndAmount> actualAmount) {
+		this.actualAmount = actualAmount;
+	}
+
+	@XmlElement(name = "BsisQty")
+	public Quantity10 getBasisQuantity() {
+		return basisQuantity;
+	}
+
+	public void setBasisQuantity(com.tools20022.repository.msg.Quantity10 basisQuantity) {
+		this.basisQuantity = basisQuantity;
+	}
+
+	@XmlElement(name = "ClctnPct")
+	public PercentageRate getCalculationPercent() {
+		return calculationPercent;
+	}
+
+	public void setCalculationPercent(PercentageRate calculationPercent) {
+		this.calculationPercent = calculationPercent;
+	}
+
+	@XmlElement(name = "SeqNb")
+	public Number getSequenceNumber() {
+		return sequenceNumber;
+	}
+
+	public void setSequenceNumber(Number sequenceNumber) {
+		this.sequenceNumber = sequenceNumber;
+	}
+
+	@XmlElement(name = "Rsn")
+	public DiscountOrChargeType1Choice getReason() {
+		return reason;
+	}
+
+	public void setReason(DiscountOrChargeType1Choice reason) {
+		this.reason = reason;
+	}
+}
