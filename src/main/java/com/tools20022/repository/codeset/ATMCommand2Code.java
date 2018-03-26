@@ -37,41 +37,41 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMCommand2Code#ATMBalance
- * ATMCommand2Code.mmATMBalance}</li>
+ * ATMCommand2Code.ATMBalance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommand2Code#ATMStatusUpdate
- * ATMCommand2Code.mmATMStatusUpdate}</li>
+ * ATMCommand2Code.ATMStatusUpdate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommand2Code#ConfigurationUpdate
- * ATMCommand2Code.mmConfigurationUpdate}</li>
+ * ATMCommand2Code.ConfigurationUpdate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommand2Code#CountersInquiry
- * ATMCommand2Code.mmCountersInquiry}</li>
+ * ATMCommand2Code.CountersInquiry}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMCommand2Code#Disconnect
- * ATMCommand2Code.mmDisconnect}</li>
+ * ATMCommand2Code.Disconnect}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommand2Code#KeyActivation
- * ATMCommand2Code.mmKeyActivation}</li>
+ * ATMCommand2Code.KeyActivation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommand2Code#KeyDeactivation
- * ATMCommand2Code.mmKeyDeactivation}</li>
+ * ATMCommand2Code.KeyDeactivation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommand2Code#KeyDownload
- * ATMCommand2Code.mmKeyDownload}</li>
+ * ATMCommand2Code.KeyDownload}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMCommand2Code#KeyRemove
- * ATMCommand2Code.mmKeyRemove}</li>
+ * ATMCommand2Code.KeyRemove}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommand2Code#SecurityDeviceConfigurationUpdate
- * ATMCommand2Code.mmSecurityDeviceConfigurationUpdate}</li>
+ * ATMCommand2Code.SecurityDeviceConfigurationUpdate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommand2Code#SecurityDeviceSchemeUpdate
- * ATMCommand2Code.mmSecurityDeviceSchemeUpdate}</li>
+ * ATMCommand2Code.SecurityDeviceSchemeUpdate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommand2Code#SecurityDeviceStatusUpdate
- * ATMCommand2Code.mmSecurityDeviceStatusUpdate}</li>
+ * ATMCommand2Code.SecurityDeviceStatusUpdate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommand2Code#SendMessage
- * ATMCommand2Code.mmSendMessage}</li>
+ * ATMCommand2Code.SendMessage}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -79,8 +79,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -415,7 +415,7 @@ public class ATMCommand2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMCommand2Code";
 				definition = "Type of command performed by the ATM.";

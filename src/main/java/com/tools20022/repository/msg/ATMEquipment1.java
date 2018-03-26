@@ -23,9 +23,9 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.ATMConfigurationParameter1;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -65,8 +65,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,15 +83,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ATMEquipment1", propOrder = {"manufacturer", "model", "serialNumber", "applicationProvider", "applicationName", "applicationVersion", "approvalNumber", "configurationParameter"})
 public class ATMEquipment1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Manfctr")
 	protected Max35Text manufacturer;
 	/**
-	 * ATM Manufacturer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -123,9 +124,9 @@ public class ATMEquipment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmManufacturer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMEquipment1, Optional<Max35Text>> mmManufacturer = new MMMessageAttribute<ATMEquipment1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> ATMEquipment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMEquipment1.mmObject();
 			isDerived = false;
 			xmlTag = "Manfctr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -136,11 +137,22 @@ public class ATMEquipment1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(ATMEquipment1 obj) {
+			return obj.getManufacturer();
+		}
+
+		@Override
+		public void setValue(ATMEquipment1 obj, Optional<Max35Text> value) {
+			obj.setManufacturer(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Mdl")
 	protected Max35Text model;
 	/**
-	 * Model of ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -171,9 +183,9 @@ public class ATMEquipment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModel = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMEquipment1, Optional<Max35Text>> mmModel = new MMMessageAttribute<ATMEquipment1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> ATMEquipment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMEquipment1.mmObject();
 			isDerived = false;
 			xmlTag = "Mdl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -184,11 +196,22 @@ public class ATMEquipment1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(ATMEquipment1 obj) {
+			return obj.getModel();
+		}
+
+		@Override
+		public void setValue(ATMEquipment1 obj, Optional<Max35Text> value) {
+			obj.setModel(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SrlNb")
 	protected Max35Text serialNumber;
 	/**
-	 * Serial number of the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -220,9 +243,9 @@ public class ATMEquipment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSerialNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMEquipment1, Optional<Max35Text>> mmSerialNumber = new MMMessageAttribute<ATMEquipment1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> ATMEquipment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMEquipment1.mmObject();
 			isDerived = false;
 			xmlTag = "SrlNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -233,11 +256,22 @@ public class ATMEquipment1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(ATMEquipment1 obj) {
+			return obj.getSerialNumber();
+		}
+
+		@Override
+		public void setValue(ATMEquipment1 obj, Optional<Max35Text> value) {
+			obj.setSerialNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ApplPrvdr")
 	protected Max35Text applicationProvider;
 	/**
-	 * Provider of the ATM application software.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -269,9 +303,9 @@ public class ATMEquipment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmApplicationProvider = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMEquipment1, Optional<Max35Text>> mmApplicationProvider = new MMMessageAttribute<ATMEquipment1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> ATMEquipment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMEquipment1.mmObject();
 			isDerived = false;
 			xmlTag = "ApplPrvdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -282,11 +316,22 @@ public class ATMEquipment1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(ATMEquipment1 obj) {
+			return obj.getApplicationProvider();
+		}
+
+		@Override
+		public void setValue(ATMEquipment1 obj, Optional<Max35Text> value) {
+			obj.setApplicationProvider(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ApplNm")
 	protected Max35Text applicationName;
 	/**
-	 * Name of the software product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -310,9 +355,9 @@ public class ATMEquipment1 {
 	 * definition} = "Name of the software product."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmApplicationName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMEquipment1, Optional<Max35Text>> mmApplicationName = new MMMessageAttribute<ATMEquipment1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> ATMEquipment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMEquipment1.mmObject();
 			isDerived = false;
 			xmlTag = "ApplNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -322,11 +367,22 @@ public class ATMEquipment1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(ATMEquipment1 obj) {
+			return obj.getApplicationName();
+		}
+
+		@Override
+		public void setValue(ATMEquipment1 obj, Optional<Max35Text> value) {
+			obj.setApplicationName(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ApplVrsn")
 	protected Max35Text applicationVersion;
 	/**
-	 * Current version of the software that might include the release number.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -359,9 +415,9 @@ public class ATMEquipment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmApplicationVersion = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMEquipment1, Optional<Max35Text>> mmApplicationVersion = new MMMessageAttribute<ATMEquipment1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> ATMEquipment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMEquipment1.mmObject();
 			isDerived = false;
 			xmlTag = "ApplVrsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -372,11 +428,22 @@ public class ATMEquipment1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(ATMEquipment1 obj) {
+			return obj.getApplicationVersion();
+		}
+
+		@Override
+		public void setValue(ATMEquipment1 obj, Optional<Max35Text> value) {
+			obj.setApplicationVersion(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ApprvlNb")
 	protected Max35Text approvalNumber;
 	/**
-	 * Unique assessment number for the component.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -408,9 +475,9 @@ public class ATMEquipment1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmApprovalNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMEquipment1, Optional<Max35Text>> mmApprovalNumber = new MMMessageAttribute<ATMEquipment1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> ATMEquipment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMEquipment1.mmObject();
 			isDerived = false;
 			xmlTag = "ApprvlNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -421,11 +488,22 @@ public class ATMEquipment1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(ATMEquipment1 obj) {
+			return obj.getApprovalNumber();
+		}
+
+		@Override
+		public void setValue(ATMEquipment1 obj, Optional<Max35Text> value) {
+			obj.setApprovalNumber(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.msg.ATMConfigurationParameter1> configurationParameter;
+	@XmlElement(name = "CfgtnParam")
+	protected List<ATMConfigurationParameter1> configurationParameter;
 	/**
-	 * Configuration parameter version.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -449,9 +527,9 @@ public class ATMEquipment1 {
 	 * definition} = "Configuration parameter version."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmConfigurationParameter = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMEquipment1, List<ATMConfigurationParameter1>> mmConfigurationParameter = new MMMessageAssociationEnd<ATMEquipment1, List<ATMConfigurationParameter1>>() {
 		{
-			componentContext_lazy = () -> ATMEquipment1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMEquipment1.mmObject();
 			isDerived = false;
 			xmlTag = "CfgtnParam";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -459,16 +537,27 @@ public class ATMEquipment1 {
 			definition = "Configuration parameter version.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMConfigurationParameter1.mmObject();
+			type_lazy = () -> ATMConfigurationParameter1.mmObject();
+		}
+
+		@Override
+		public List<ATMConfigurationParameter1> getValue(ATMEquipment1 obj) {
+			return obj.getConfigurationParameter();
+		}
+
+		@Override
+		public void setValue(ATMEquipment1 obj, List<ATMConfigurationParameter1> value) {
+			obj.setConfigurationParameter(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ATMEquipment1.mmManufacturer, ATMEquipment1.mmModel, ATMEquipment1.mmSerialNumber, ATMEquipment1.mmApplicationProvider, ATMEquipment1.mmApplicationName,
-						ATMEquipment1.mmApplicationVersion, ATMEquipment1.mmApprovalNumber, ATMEquipment1.mmConfigurationParameter);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ATMEquipment1.mmManufacturer, com.tools20022.repository.msg.ATMEquipment1.mmModel, com.tools20022.repository.msg.ATMEquipment1.mmSerialNumber,
+						com.tools20022.repository.msg.ATMEquipment1.mmApplicationProvider, com.tools20022.repository.msg.ATMEquipment1.mmApplicationName, com.tools20022.repository.msg.ATMEquipment1.mmApplicationVersion,
+						com.tools20022.repository.msg.ATMEquipment1.mmApprovalNumber, com.tools20022.repository.msg.ATMEquipment1.mmConfigurationParameter);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMEquipment1";
 				definition = "ATM terminal equipment.";
@@ -478,75 +567,75 @@ public class ATMEquipment1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Manfctr")
-	public Max35Text getManufacturer() {
-		return manufacturer;
+	public Optional<Max35Text> getManufacturer() {
+		return manufacturer == null ? Optional.empty() : Optional.of(manufacturer);
 	}
 
-	public void setManufacturer(Max35Text manufacturer) {
+	public ATMEquipment1 setManufacturer(Max35Text manufacturer) {
 		this.manufacturer = manufacturer;
+		return this;
 	}
 
-	@XmlElement(name = "Mdl")
-	public Max35Text getModel() {
-		return model;
+	public Optional<Max35Text> getModel() {
+		return model == null ? Optional.empty() : Optional.of(model);
 	}
 
-	public void setModel(Max35Text model) {
+	public ATMEquipment1 setModel(Max35Text model) {
 		this.model = model;
+		return this;
 	}
 
-	@XmlElement(name = "SrlNb")
-	public Max35Text getSerialNumber() {
-		return serialNumber;
+	public Optional<Max35Text> getSerialNumber() {
+		return serialNumber == null ? Optional.empty() : Optional.of(serialNumber);
 	}
 
-	public void setSerialNumber(Max35Text serialNumber) {
+	public ATMEquipment1 setSerialNumber(Max35Text serialNumber) {
 		this.serialNumber = serialNumber;
+		return this;
 	}
 
-	@XmlElement(name = "ApplPrvdr")
-	public Max35Text getApplicationProvider() {
-		return applicationProvider;
+	public Optional<Max35Text> getApplicationProvider() {
+		return applicationProvider == null ? Optional.empty() : Optional.of(applicationProvider);
 	}
 
-	public void setApplicationProvider(Max35Text applicationProvider) {
+	public ATMEquipment1 setApplicationProvider(Max35Text applicationProvider) {
 		this.applicationProvider = applicationProvider;
+		return this;
 	}
 
-	@XmlElement(name = "ApplNm")
-	public Max35Text getApplicationName() {
-		return applicationName;
+	public Optional<Max35Text> getApplicationName() {
+		return applicationName == null ? Optional.empty() : Optional.of(applicationName);
 	}
 
-	public void setApplicationName(Max35Text applicationName) {
+	public ATMEquipment1 setApplicationName(Max35Text applicationName) {
 		this.applicationName = applicationName;
+		return this;
 	}
 
-	@XmlElement(name = "ApplVrsn")
-	public Max35Text getApplicationVersion() {
-		return applicationVersion;
+	public Optional<Max35Text> getApplicationVersion() {
+		return applicationVersion == null ? Optional.empty() : Optional.of(applicationVersion);
 	}
 
-	public void setApplicationVersion(Max35Text applicationVersion) {
+	public ATMEquipment1 setApplicationVersion(Max35Text applicationVersion) {
 		this.applicationVersion = applicationVersion;
+		return this;
 	}
 
-	@XmlElement(name = "ApprvlNb")
-	public Max35Text getApprovalNumber() {
-		return approvalNumber;
+	public Optional<Max35Text> getApprovalNumber() {
+		return approvalNumber == null ? Optional.empty() : Optional.of(approvalNumber);
 	}
 
-	public void setApprovalNumber(Max35Text approvalNumber) {
+	public ATMEquipment1 setApprovalNumber(Max35Text approvalNumber) {
 		this.approvalNumber = approvalNumber;
+		return this;
 	}
 
-	@XmlElement(name = "CfgtnParam")
 	public List<ATMConfigurationParameter1> getConfigurationParameter() {
-		return configurationParameter;
+		return configurationParameter == null ? configurationParameter = new ArrayList<>() : configurationParameter;
 	}
 
-	public void setConfigurationParameter(List<com.tools20022.repository.msg.ATMConfigurationParameter1> configurationParameter) {
-		this.configurationParameter = configurationParameter;
+	public ATMEquipment1 setConfigurationParameter(List<ATMConfigurationParameter1> configurationParameter) {
+		this.configurationParameter = Objects.requireNonNull(configurationParameter);
+		return this;
 	}
 }

@@ -19,11 +19,13 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.DepositTypeCode;
+import com.tools20022.repository.entity.Interest;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * An arrangement in which a lender gives money or property to a borrower, and
@@ -56,8 +58,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,8 +77,8 @@ public class Deposit {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected DepositTypeCode depositType;
 	/**
-	 * Specifies whether the deposit is fixed term or call/notice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -100,7 +102,7 @@ public class Deposit {
 	 * "Specifies whether the deposit is fixed term or call/notice."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDepositType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Deposit, DepositTypeCode> mmDepositType = new MMBusinessAttribute<Deposit, DepositTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Deposit.mmObject();
@@ -112,19 +114,20 @@ public class Deposit {
 			simpleType_lazy = () -> DepositTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Deposit.class.getMethod("getDepositType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DepositTypeCode getValue(Deposit obj) {
+			return obj.getDepositType();
+		}
+
+		@Override
+		public void setValue(Deposit obj, DepositTypeCode value) {
+			obj.setDepositType(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Interest> interest;
+	protected List<Interest> interest;
 	/**
-	 * Interest amount linked to a deposit. It is derived from the relationship
-	 * between AssetHolding and Interest.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,7 +158,7 @@ public class Deposit {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Deposit, List<Interest>> mmInterest = new MMBusinessAssociationEnd<Deposit, List<Interest>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Deposit.mmObject();
@@ -163,20 +166,30 @@ public class Deposit {
 			name = "Interest";
 			definition = "Interest amount linked to a deposit. It is derived from the relationship between AssetHolding and Interest.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Interest.mmDeposit;
+			opposite_lazy = () -> Interest.mmDeposit;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
+			type_lazy = () -> Interest.mmObject();
+		}
+
+		@Override
+		public List<Interest> getValue(Deposit obj) {
+			return obj.getInterest();
+		}
+
+		@Override
+		public void setValue(Deposit obj, List<Interest> value) {
+			obj.setInterest(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Deposit";
 				definition = "An arrangement in which a lender gives money or property to a borrower, and the borrower agrees to return the property or repay the money, usually along with interest, at some future point(s) in time.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Interest.mmDeposit);
+				associationDomain_lazy = () -> Arrays.asList(Interest.mmDeposit);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Deposit.mmDepositType, com.tools20022.repository.entity.Deposit.mmInterest);
 			}
 
@@ -192,15 +205,17 @@ public class Deposit {
 		return depositType;
 	}
 
-	public void setDepositType(DepositTypeCode depositType) {
-		this.depositType = depositType;
+	public Deposit setDepositType(DepositTypeCode depositType) {
+		this.depositType = Objects.requireNonNull(depositType);
+		return this;
 	}
 
 	public List<Interest> getInterest() {
-		return interest;
+		return interest == null ? interest = new ArrayList<>() : interest;
 	}
 
-	public void setInterest(List<com.tools20022.repository.entity.Interest> interest) {
-		this.interest = interest;
+	public Deposit setInterest(List<Interest> interest) {
+		this.interest = Objects.requireNonNull(interest);
+		return this;
 	}
 }

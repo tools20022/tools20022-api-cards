@@ -37,19 +37,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmount7Code#Fees
- * TypeOfAmount7Code.mmFees}</li>
+ * TypeOfAmount7Code.Fees}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount7Code#IssuerFees
- * TypeOfAmount7Code.mmIssuerFees}</li>
+ * TypeOfAmount7Code.IssuerFees}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount7Code#InterchangeFees
- * TypeOfAmount7Code.mmInterchangeFees}</li>
+ * TypeOfAmount7Code.InterchangeFees}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount7Code#ProcessingFees
- * TypeOfAmount7Code.mmProcessingFees}</li>
+ * TypeOfAmount7Code.ProcessingFees}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount7Code#InternationalServiceAssessmentFees
- * TypeOfAmount7Code.mmInternationalServiceAssessmentFees}</li>
+ * TypeOfAmount7Code.InternationalServiceAssessmentFees}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -58,8 +58,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,7 +67,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "TypeOfAmount7Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Type or class of amount. "</li>
+ * definition} = "Type or class of amount."</li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -202,10 +202,10 @@ public class TypeOfAmount7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeOfAmount7Code";
-				definition = "Type or class of amount. ";
+				definition = "Type or class of amount.";
 				trace_lazy = () -> TypeOfAmountCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TypeOfAmount7Code.Fees, com.tools20022.repository.codeset.TypeOfAmount7Code.IssuerFees, com.tools20022.repository.codeset.TypeOfAmount7Code.InterchangeFees,
 						com.tools20022.repository.codeset.TypeOfAmount7Code.ProcessingFees, com.tools20022.repository.codeset.TypeOfAmount7Code.InternationalServiceAssessmentFees);

@@ -29,6 +29,8 @@ import com.tools20022.repository.entity.OrganisationName;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -65,8 +67,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -81,15 +83,16 @@ import javax.xml.bind.annotation.XmlType;
  * GenericIdentification53}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "GenericIdentification73", propOrder = {"identification", "type", "issuer", "country", "shortName"})
 public class GenericIdentification73 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected Max35Text identification;
 	/**
-	 * Identification of the entity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -124,10 +127,10 @@ public class GenericIdentification73 {
 	 * GenericIdentification53.mmIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericIdentification73, Max35Text> mmIdentification = new MMMessageAttribute<GenericIdentification73, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> GenericIdentification73.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GenericIdentification73.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -138,11 +141,22 @@ public class GenericIdentification73 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(GenericIdentification73 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(GenericIdentification73 obj, Max35Text value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "Tp")
 	protected PartyType9Code type;
 	/**
-	 * Type of identified entity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -178,10 +192,10 @@ public class GenericIdentification73 {
 	 * GenericIdentification53.mmType}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericIdentification73, Optional<PartyType9Code>> mmType = new MMMessageAttribute<GenericIdentification73, Optional<PartyType9Code>>() {
 		{
 			businessComponentTrace_lazy = () -> GenericIdentification.mmObject();
-			componentContext_lazy = () -> GenericIdentification73.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GenericIdentification73.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -192,12 +206,22 @@ public class GenericIdentification73 {
 			minOccurs = 0;
 			simpleType_lazy = () -> PartyType9Code.mmObject();
 		}
+
+		@Override
+		public Optional<PartyType9Code> getValue(GenericIdentification73 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(GenericIdentification73 obj, Optional<PartyType9Code> value) {
+			obj.setType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Issr")
 	protected PartyType9Code issuer;
 	/**
-	 * Entity assigning the identification , for example merchant, acceptor,
-	 * acquirer or card issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -226,7 +250,7 @@ public class GenericIdentification73 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Entity assigning the identification , for example merchant, acceptor, acquirer or card issuer."
+	 * "Entity assigning the identification, for example merchant, acceptor, acquirer or card issuer."
 	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
@@ -235,25 +259,36 @@ public class GenericIdentification73 {
 	 * GenericIdentification53.mmIssuer}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericIdentification73, Optional<PartyType9Code>> mmIssuer = new MMMessageAttribute<GenericIdentification73, Optional<PartyType9Code>>() {
 		{
 			businessComponentTrace_lazy = () -> IdentificationIssuerRole.mmObject();
-			componentContext_lazy = () -> GenericIdentification73.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GenericIdentification73.mmObject();
 			isDerived = false;
 			xmlTag = "Issr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Issuer";
-			definition = "Entity assigning the identification , for example merchant, acceptor, acquirer or card issuer.";
+			definition = "Entity assigning the identification, for example merchant, acceptor, acquirer or card issuer.";
 			previousVersion_lazy = () -> GenericIdentification53.mmIssuer;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> PartyType9Code.mmObject();
 		}
+
+		@Override
+		public Optional<PartyType9Code> getValue(GenericIdentification73 obj) {
+			return obj.getIssuer();
+		}
+
+		@Override
+		public void setValue(GenericIdentification73 obj, Optional<PartyType9Code> value) {
+			obj.setIssuer(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Ctry")
 	protected Min2Max3AlphaText country;
 	/**
-	 * Country of the entity (ISO 3166-1 alpha-2 or alpha-3).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -284,9 +319,9 @@ public class GenericIdentification73 {
 	 * GenericIdentification53.mmCountry}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCountry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericIdentification73, Optional<Min2Max3AlphaText>> mmCountry = new MMMessageAttribute<GenericIdentification73, Optional<Min2Max3AlphaText>>() {
 		{
-			componentContext_lazy = () -> GenericIdentification73.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GenericIdentification73.mmObject();
 			isDerived = false;
 			xmlTag = "Ctry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -297,11 +332,22 @@ public class GenericIdentification73 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Min2Max3AlphaText.mmObject();
 		}
+
+		@Override
+		public Optional<Min2Max3AlphaText> getValue(GenericIdentification73 obj) {
+			return obj.getCountry();
+		}
+
+		@Override
+		public void setValue(GenericIdentification73 obj, Optional<Min2Max3AlphaText> value) {
+			obj.setCountry(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ShrtNm")
 	protected Max35Text shortName;
 	/**
-	 * Name of the entity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -336,10 +382,10 @@ public class GenericIdentification73 {
 	 * GenericIdentification53.mmShortName}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmShortName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<GenericIdentification73, Optional<Max35Text>> mmShortName = new MMMessageAttribute<GenericIdentification73, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> OrganisationName.mmShortName;
-			componentContext_lazy = () -> GenericIdentification73.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.GenericIdentification73.mmObject();
 			isDerived = false;
 			xmlTag = "ShrtNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -350,14 +396,25 @@ public class GenericIdentification73 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(GenericIdentification73 obj) {
+			return obj.getShortName();
+		}
+
+		@Override
+		public void setValue(GenericIdentification73 obj, Optional<Max35Text> value) {
+			obj.setShortName(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(GenericIdentification73.mmIdentification, GenericIdentification73.mmType, GenericIdentification73.mmIssuer, GenericIdentification73.mmCountry, GenericIdentification73.mmShortName);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.GenericIdentification73.mmIdentification, com.tools20022.repository.msg.GenericIdentification73.mmType,
+						com.tools20022.repository.msg.GenericIdentification73.mmIssuer, com.tools20022.repository.msg.GenericIdentification73.mmCountry, com.tools20022.repository.msg.GenericIdentification73.mmShortName);
 				trace_lazy = () -> GenericIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GenericIdentification73";
 				definition = "Identification of an entity.";
@@ -367,48 +424,48 @@ public class GenericIdentification73 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public GenericIdentification73 setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "Tp")
-	public PartyType9Code getType() {
-		return type;
+	public Optional<PartyType9Code> getType() {
+		return type == null ? Optional.empty() : Optional.of(type);
 	}
 
-	public void setType(PartyType9Code type) {
+	public GenericIdentification73 setType(PartyType9Code type) {
 		this.type = type;
+		return this;
 	}
 
-	@XmlElement(name = "Issr")
-	public PartyType9Code getIssuer() {
-		return issuer;
+	public Optional<PartyType9Code> getIssuer() {
+		return issuer == null ? Optional.empty() : Optional.of(issuer);
 	}
 
-	public void setIssuer(PartyType9Code issuer) {
+	public GenericIdentification73 setIssuer(PartyType9Code issuer) {
 		this.issuer = issuer;
+		return this;
 	}
 
-	@XmlElement(name = "Ctry")
-	public Min2Max3AlphaText getCountry() {
-		return country;
+	public Optional<Min2Max3AlphaText> getCountry() {
+		return country == null ? Optional.empty() : Optional.of(country);
 	}
 
-	public void setCountry(Min2Max3AlphaText country) {
+	public GenericIdentification73 setCountry(Min2Max3AlphaText country) {
 		this.country = country;
+		return this;
 	}
 
-	@XmlElement(name = "ShrtNm")
-	public Max35Text getShortName() {
-		return shortName;
+	public Optional<Max35Text> getShortName() {
+		return shortName == null ? Optional.empty() : Optional.of(shortName);
 	}
 
-	public void setShortName(Max35Text shortName) {
+	public GenericIdentification73 setShortName(Max35Text shortName) {
 		this.shortName = shortName;
+		return this;
 	}
 }

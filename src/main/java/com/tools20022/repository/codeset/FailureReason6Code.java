@@ -38,15 +38,15 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason6Code#Compromised
- * FailureReason6Code.mmCompromised}</li>
+ * FailureReason6Code.Compromised}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FailureReason6Code#Expired
- * FailureReason6Code.mmExpired}</li>
+ * FailureReason6Code.Expired}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason6Code#InvalidKCV
- * FailureReason6Code.mmInvalidKCV}</li>
+ * FailureReason6Code.InvalidKCV}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason6Code#KeyLoadError
- * FailureReason6Code.mmKeyLoadError}</li>
+ * FailureReason6Code.KeyLoadError}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -55,8 +55,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -175,7 +175,7 @@ public class FailureReason6Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FailureReason6Code";
 				definition = "Reason for which the key has been stopped.";

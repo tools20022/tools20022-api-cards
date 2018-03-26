@@ -19,10 +19,12 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
+import com.tools20022.repository.entity.BankOperation;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Threshold related to a bank account operation.
@@ -59,8 +61,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,8 +78,8 @@ public class OperationThreshold {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected BankOperation bankOperation;
 	/**
-	 * Bank operation for which a threshold is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -108,7 +110,7 @@ public class OperationThreshold {
 	 * definition} = "Bank operation for which a threshold is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBankOperation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<OperationThreshold, Optional<BankOperation>> mmBankOperation = new MMBusinessAssociationEnd<OperationThreshold, Optional<BankOperation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.OperationThreshold.mmObject();
@@ -117,15 +119,25 @@ public class OperationThreshold {
 			definition = "Bank operation for which a threshold is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.BankOperation.mmOperationThreshold;
+			opposite_lazy = () -> BankOperation.mmOperationThreshold;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.BankOperation.mmObject();
+			type_lazy = () -> BankOperation.mmObject();
+		}
+
+		@Override
+		public Optional<BankOperation> getValue(OperationThreshold obj) {
+			return obj.getBankOperation();
+		}
+
+		@Override
+		public void setValue(OperationThreshold obj, Optional<BankOperation> value) {
+			obj.setBankOperation(value.orElse(null));
 		}
 	};
 	protected CurrencyAndAmount mininumAmountPerTransaction;
 	/**
-	 * Lower limit for the operation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -149,7 +161,7 @@ public class OperationThreshold {
 	 * definition} = "Lower limit for the operation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMininumAmountPerTransaction = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<OperationThreshold, CurrencyAndAmount> mmMininumAmountPerTransaction = new MMBusinessAttribute<OperationThreshold, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.OperationThreshold.mmObject();
@@ -161,19 +173,20 @@ public class OperationThreshold {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return OperationThreshold.class.getMethod("getMininumAmountPerTransaction", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(OperationThreshold obj) {
+			return obj.getMininumAmountPerTransaction();
+		}
+
+		@Override
+		public void setValue(OperationThreshold obj, CurrencyAndAmount value) {
+			obj.setMininumAmountPerTransaction(value);
 		}
 	};
 	protected CurrencyAndAmount maximumAmount;
 	/**
-	 * Maximum amount allowed over a specific period of time and/or amount which
-	 * is the upper limit for an operation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -199,7 +212,7 @@ public class OperationThreshold {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMaximumAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<OperationThreshold, CurrencyAndAmount> mmMaximumAmount = new MMBusinessAttribute<OperationThreshold, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.OperationThreshold.mmObject();
@@ -211,23 +224,25 @@ public class OperationThreshold {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return OperationThreshold.class.getMethod("getMaximumAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(OperationThreshold obj) {
+			return obj.getMaximumAmount();
+		}
+
+		@Override
+		public void setValue(OperationThreshold obj, CurrencyAndAmount value) {
+			obj.setMaximumAmount(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OperationThreshold";
 				definition = "Threshold related to a bank account operation.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.BankOperation.mmOperationThreshold);
+				associationDomain_lazy = () -> Arrays.asList(BankOperation.mmOperationThreshold);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.OperationThreshold.mmBankOperation, com.tools20022.repository.entity.OperationThreshold.mmMininumAmountPerTransaction,
 						com.tools20022.repository.entity.OperationThreshold.mmMaximumAmount);
 			}
@@ -240,27 +255,30 @@ public class OperationThreshold {
 		return mmObject_lazy.get();
 	}
 
-	public BankOperation getBankOperation() {
-		return bankOperation;
+	public Optional<BankOperation> getBankOperation() {
+		return bankOperation == null ? Optional.empty() : Optional.of(bankOperation);
 	}
 
-	public void setBankOperation(com.tools20022.repository.entity.BankOperation bankOperation) {
+	public OperationThreshold setBankOperation(BankOperation bankOperation) {
 		this.bankOperation = bankOperation;
+		return this;
 	}
 
 	public CurrencyAndAmount getMininumAmountPerTransaction() {
 		return mininumAmountPerTransaction;
 	}
 
-	public void setMininumAmountPerTransaction(CurrencyAndAmount mininumAmountPerTransaction) {
-		this.mininumAmountPerTransaction = mininumAmountPerTransaction;
+	public OperationThreshold setMininumAmountPerTransaction(CurrencyAndAmount mininumAmountPerTransaction) {
+		this.mininumAmountPerTransaction = Objects.requireNonNull(mininumAmountPerTransaction);
+		return this;
 	}
 
 	public CurrencyAndAmount getMaximumAmount() {
 		return maximumAmount;
 	}
 
-	public void setMaximumAmount(CurrencyAndAmount maximumAmount) {
-		this.maximumAmount = maximumAmount;
+	public OperationThreshold setMaximumAmount(CurrencyAndAmount maximumAmount) {
+		this.maximumAmount = Objects.requireNonNull(maximumAmount);
+		return this;
 	}
 }

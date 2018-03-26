@@ -37,34 +37,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionType5Code#Busy
- * ActionType5Code.mmBusy}</li>
+ * ActionType5Code.Busy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType5Code#CaptureCard
- * ActionType5Code.mmCaptureCard}</li>
+ * ActionType5Code.CaptureCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType5Code#DisplayMessage
- * ActionType5Code.mmDisplayMessage}</li>
+ * ActionType5Code.DisplayMessage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType5Code#ForbidOverride
- * ActionType5Code.mmForbidOverride}</li>
+ * ActionType5Code.ForbidOverride}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType5Code#IdentificationRequired
- * ActionType5Code.mmIdentificationRequired}</li>
+ * ActionType5Code.IdentificationRequired}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionType5Code#PINLastTry
- * ActionType5Code.mmPINLastTry}</li>
+ * ActionType5Code.PINLastTry}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionType5Code#PINRetry
- * ActionType5Code.mmPINRetry}</li>
+ * ActionType5Code.PINRetry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType5Code#PrintMessage
- * ActionType5Code.mmPrintMessage}</li>
+ * ActionType5Code.PrintMessage}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionType5Code#Referral
- * ActionType5Code.mmReferral}</li>
+ * ActionType5Code.Referral}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType5Code#RequestData
- * ActionType5Code.mmRequestData}</li>
+ * ActionType5Code.RequestData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType5Code#UpdateTrack
- * ActionType5Code.mmUpdateTrack}</li>
+ * ActionType5Code.UpdateTrack}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -72,8 +72,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -360,7 +360,7 @@ public class ActionType5Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ActionType5Code";
 				definition = "Type of action to be performed.";

@@ -24,9 +24,9 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.TerminalManagementLatestVersion;
 import com.tools20022.repository.msg.AcceptorRejection3;
 import com.tools20022.repository.msg.Header28;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -71,15 +71,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TerminalManagementRejectionV04", propOrder = {"header", "reject"})
 public class TerminalManagementRejectionV04 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header28 header;
 	/**
-	 * Rejection message management information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -99,7 +100,7 @@ public class TerminalManagementRejectionV04 {
 	 * definition} = "Rejection message management information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<TerminalManagementRejectionV04, Header28> mmHeader = new MMMessageBuildingBlock<TerminalManagementRejectionV04, Header28>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -110,18 +111,21 @@ public class TerminalManagementRejectionV04 {
 			complexType_lazy = () -> Header28.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TerminalManagementRejectionV04.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header28 getValue(TerminalManagementRejectionV04 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(TerminalManagementRejectionV04 obj, Header28 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "Rjct", required = true)
 	protected AcceptorRejection3 reject;
 	/**
-	 * Information related to the reject.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -142,7 +146,7 @@ public class TerminalManagementRejectionV04 {
 	 * definition} = "Information related to the reject."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReject = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<TerminalManagementRejectionV04, AcceptorRejection3> mmReject = new MMMessageBuildingBlock<TerminalManagementRejectionV04, AcceptorRejection3>() {
 		{
 			xmlTag = "Rjct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -153,12 +157,14 @@ public class TerminalManagementRejectionV04 {
 			complexType_lazy = () -> AcceptorRejection3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TerminalManagementRejectionV04.class.getMethod("getReject", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AcceptorRejection3 getValue(TerminalManagementRejectionV04 obj) {
+			return obj.getReject();
+		}
+
+		@Override
+		public void setValue(TerminalManagementRejectionV04 obj, AcceptorRejection3 value) {
+			obj.setReject(value);
 		}
 	};
 
@@ -190,25 +196,25 @@ public class TerminalManagementRejectionV04 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header28 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header28 header) {
-		this.header = header;
+	public TerminalManagementRejectionV04 setHeader(Header28 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "Rjct", required = true)
 	public AcceptorRejection3 getReject() {
 		return reject;
 	}
 
-	public void setReject(AcceptorRejection3 reject) {
-		this.reject = reject;
+	public TerminalManagementRejectionV04 setReject(AcceptorRejection3 reject) {
+		this.reject = Objects.requireNonNull(reject);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:catm.004.04.04")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:catm.004.001.04")
 	static public class Document {
 		@XmlElement(name = "TermnlMgmtRjctn", required = true)
 		public TerminalManagementRejectionV04 messageBody;

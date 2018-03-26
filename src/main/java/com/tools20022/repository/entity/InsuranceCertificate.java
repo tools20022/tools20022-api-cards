@@ -24,12 +24,10 @@ import com.tools20022.repository.codeset.InsuranceCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Max350Text;
-import com.tools20022.repository.entity.Document;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Formal document used to record a fact and used as proof of the fact that
@@ -98,8 +96,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -117,8 +115,8 @@ public class InsuranceCertificate extends Document {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ISODate effectiveDate;
 	/**
-	 * Date upon which cover under an insurance policy becomes effective.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -142,7 +140,7 @@ public class InsuranceCertificate extends Document {
 	 * "Date upon which cover under an insurance policy becomes effective."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEffectiveDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InsuranceCertificate, ISODate> mmEffectiveDate = new MMBusinessAttribute<InsuranceCertificate, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
@@ -154,18 +152,20 @@ public class InsuranceCertificate extends Document {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InsuranceCertificate.class.getMethod("getEffectiveDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(InsuranceCertificate obj) {
+			return obj.getEffectiveDate();
+		}
+
+		@Override
+		public void setValue(InsuranceCertificate obj, ISODate value) {
+			obj.setEffectiveDate(value);
 		}
 	};
 	protected CurrencyAndAmount insuredAmount;
 	/**
-	 * Value of the goods as insured under the insurance policy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -190,7 +190,7 @@ public class InsuranceCertificate extends Document {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInsuredAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InsuranceCertificate, CurrencyAndAmount> mmInsuredAmount = new MMBusinessAttribute<InsuranceCertificate, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
@@ -202,19 +202,20 @@ public class InsuranceCertificate extends Document {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InsuranceCertificate.class.getMethod("getInsuredAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(InsuranceCertificate obj) {
+			return obj.getInsuredAmount();
+		}
+
+		@Override
+		public void setValue(InsuranceCertificate obj, CurrencyAndAmount value) {
+			obj.setInsuredAmount(value);
 		}
 	};
 	protected Max350Text insuranceConditions;
 	/**
-	 * Description of the conditions and exclusion clauses under which insurance
-	 * is granted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -239,7 +240,7 @@ public class InsuranceCertificate extends Document {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInsuranceConditions = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InsuranceCertificate, Max350Text> mmInsuranceConditions = new MMBusinessAttribute<InsuranceCertificate, Max350Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
@@ -251,19 +252,20 @@ public class InsuranceCertificate extends Document {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InsuranceCertificate.class.getMethod("getInsuranceConditions", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max350Text getValue(InsuranceCertificate obj) {
+			return obj.getInsuranceConditions();
+		}
+
+		@Override
+		public void setValue(InsuranceCertificate obj, Max350Text value) {
+			obj.setInsuranceConditions(value);
 		}
 	};
 	protected InsuranceClausesCode insuranceClauses;
 	/**
-	 * Standard insurance clauses defined by the Institute of London
-	 * Underwriters (or the American Institute of marine Underwriters).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -289,7 +291,7 @@ public class InsuranceCertificate extends Document {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInsuranceClauses = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InsuranceCertificate, InsuranceClausesCode> mmInsuranceClauses = new MMBusinessAttribute<InsuranceCertificate, InsuranceClausesCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
@@ -301,18 +303,20 @@ public class InsuranceCertificate extends Document {
 			simpleType_lazy = () -> InsuranceClausesCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InsuranceCertificate.class.getMethod("getInsuranceClauses", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public InsuranceClausesCode getValue(InsuranceCertificate obj) {
+			return obj.getInsuranceClauses();
+		}
+
+		@Override
+		public void setValue(InsuranceCertificate obj, InsuranceClausesCode value) {
+			obj.setInsuranceClauses(value);
 		}
 	};
 	protected Location claimsPayableAt;
 	/**
-	 * Place where claims under the insurance policy will be paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -343,7 +347,7 @@ public class InsuranceCertificate extends Document {
 	 * "Place where claims under the insurance policy will be paid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmClaimsPayableAt = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InsuranceCertificate, Location> mmClaimsPayableAt = new MMBusinessAssociationEnd<InsuranceCertificate, Location>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
@@ -352,15 +356,25 @@ public class InsuranceCertificate extends Document {
 			definition = "Place where claims under the insurance policy will be paid.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Location.mmInsuranceCertificate;
+			opposite_lazy = () -> Location.mmInsuranceCertificate;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
+			type_lazy = () -> Location.mmObject();
+		}
+
+		@Override
+		public Location getValue(InsuranceCertificate obj) {
+			return obj.getClaimsPayableAt();
+		}
+
+		@Override
+		public void setValue(InsuranceCertificate obj, Location value) {
+			obj.setClaimsPayableAt(value);
 		}
 	};
 	protected CurrencyCode claimsPayableIn;
 	/**
-	 * Currency in which claims, if valid, will be paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -383,7 +397,7 @@ public class InsuranceCertificate extends Document {
 	 * definition} = "Currency in which claims, if valid, will be paid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmClaimsPayableIn = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InsuranceCertificate, CurrencyCode> mmClaimsPayableIn = new MMBusinessAttribute<InsuranceCertificate, CurrencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
@@ -395,18 +409,20 @@ public class InsuranceCertificate extends Document {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InsuranceCertificate.class.getMethod("getClaimsPayableIn", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(InsuranceCertificate obj) {
+			return obj.getClaimsPayableIn();
+		}
+
+		@Override
+		public void setValue(InsuranceCertificate obj, CurrencyCode value) {
+			obj.setClaimsPayableIn(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.InsurancePartyRole> insurancePartyRole;
 	/**
-	 * Role played by a party in the context of insurance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -437,7 +453,7 @@ public class InsuranceCertificate extends Document {
 	 * definition} = "Role played by a party in the context of insurance."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInsurancePartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InsuranceCertificate, List<InsurancePartyRole>> mmInsurancePartyRole = new MMBusinessAssociationEnd<InsuranceCertificate, List<InsurancePartyRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
@@ -449,11 +465,21 @@ public class InsuranceCertificate extends Document {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InsurancePartyRole.mmObject();
 		}
+
+		@Override
+		public List<InsurancePartyRole> getValue(InsuranceCertificate obj) {
+			return obj.getInsurancePartyRole();
+		}
+
+		@Override
+		public void setValue(InsuranceCertificate obj, List<InsurancePartyRole> value) {
+			obj.setInsurancePartyRole(value);
+		}
 	};
 	protected ProductDelivery productDelivery;
 	/**
-	 * Delivery parameters of a trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -484,7 +510,7 @@ public class InsuranceCertificate extends Document {
 	 * definition} = "Delivery parameters of a trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmProductDelivery = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InsuranceCertificate, Optional<ProductDelivery>> mmProductDelivery = new MMBusinessAssociationEnd<InsuranceCertificate, Optional<ProductDelivery>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
@@ -497,11 +523,21 @@ public class InsuranceCertificate extends Document {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 		}
+
+		@Override
+		public Optional<ProductDelivery> getValue(InsuranceCertificate obj) {
+			return obj.getProductDelivery();
+		}
+
+		@Override
+		public void setValue(InsuranceCertificate obj, Optional<ProductDelivery> value) {
+			obj.setProductDelivery(value.orElse(null));
+		}
 	};
 	protected InsuranceCode insuranceType;
 	/**
-	 * Specifies the type of insurance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -525,7 +561,7 @@ public class InsuranceCertificate extends Document {
 	 * definition} = "Specifies the type of insurance."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInsuranceType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InsuranceCertificate, InsuranceCode> mmInsuranceType = new MMBusinessAttribute<InsuranceCertificate, InsuranceCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
@@ -537,18 +573,20 @@ public class InsuranceCertificate extends Document {
 			simpleType_lazy = () -> InsuranceCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InsuranceCertificate.class.getMethod("getInsuranceType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public InsuranceCode getValue(InsuranceCertificate obj) {
+			return obj.getInsuranceType();
+		}
+
+		@Override
+		public void setValue(InsuranceCertificate obj, InsuranceCode value) {
+			obj.setInsuranceType(value);
 		}
 	};
 	protected InvestmentPlan relatedInvestmentPlan;
 	/**
-	 * Investment plan covered by an insurance contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -579,7 +617,7 @@ public class InsuranceCertificate extends Document {
 	 * definition} = "Investment plan covered by an insurance contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedInvestmentPlan = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InsuranceCertificate, InvestmentPlan> mmRelatedInvestmentPlan = new MMBusinessAssociationEnd<InsuranceCertificate, InvestmentPlan>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
@@ -588,21 +626,31 @@ public class InsuranceCertificate extends Document {
 			definition = "Investment plan covered by an insurance contract.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmInsurance;
+			opposite_lazy = () -> InvestmentPlan.mmInsurance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
+			type_lazy = () -> InvestmentPlan.mmObject();
+		}
+
+		@Override
+		public InvestmentPlan getValue(InsuranceCertificate obj) {
+			return obj.getRelatedInvestmentPlan();
+		}
+
+		@Override
+		public void setValue(InsuranceCertificate obj, InvestmentPlan value) {
+			obj.setRelatedInvestmentPlan(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InsuranceCertificate";
 				definition = "Formal document used to record a fact and used as proof of the fact that goods have been insured under an insurance policy.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Location.mmInsuranceCertificate, com.tools20022.repository.entity.InvestmentPlan.mmInsurance,
-						com.tools20022.repository.entity.ProductDelivery.mmInsuranceCertificate, com.tools20022.repository.entity.InsurancePartyRole.mmInsuranceCertificate);
+				associationDomain_lazy = () -> Arrays.asList(Location.mmInsuranceCertificate, InvestmentPlan.mmInsurance, com.tools20022.repository.entity.ProductDelivery.mmInsuranceCertificate,
+						com.tools20022.repository.entity.InsurancePartyRole.mmInsuranceCertificate);
 				superType_lazy = () -> Document.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InsuranceCertificate.mmEffectiveDate, com.tools20022.repository.entity.InsuranceCertificate.mmInsuredAmount,
 						com.tools20022.repository.entity.InsuranceCertificate.mmInsuranceConditions, com.tools20022.repository.entity.InsuranceCertificate.mmInsuranceClauses,
@@ -623,79 +671,89 @@ public class InsuranceCertificate extends Document {
 		return effectiveDate;
 	}
 
-	public void setEffectiveDate(ISODate effectiveDate) {
-		this.effectiveDate = effectiveDate;
+	public InsuranceCertificate setEffectiveDate(ISODate effectiveDate) {
+		this.effectiveDate = Objects.requireNonNull(effectiveDate);
+		return this;
 	}
 
 	public CurrencyAndAmount getInsuredAmount() {
 		return insuredAmount;
 	}
 
-	public void setInsuredAmount(CurrencyAndAmount insuredAmount) {
-		this.insuredAmount = insuredAmount;
+	public InsuranceCertificate setInsuredAmount(CurrencyAndAmount insuredAmount) {
+		this.insuredAmount = Objects.requireNonNull(insuredAmount);
+		return this;
 	}
 
 	public Max350Text getInsuranceConditions() {
 		return insuranceConditions;
 	}
 
-	public void setInsuranceConditions(Max350Text insuranceConditions) {
-		this.insuranceConditions = insuranceConditions;
+	public InsuranceCertificate setInsuranceConditions(Max350Text insuranceConditions) {
+		this.insuranceConditions = Objects.requireNonNull(insuranceConditions);
+		return this;
 	}
 
 	public InsuranceClausesCode getInsuranceClauses() {
 		return insuranceClauses;
 	}
 
-	public void setInsuranceClauses(InsuranceClausesCode insuranceClauses) {
-		this.insuranceClauses = insuranceClauses;
+	public InsuranceCertificate setInsuranceClauses(InsuranceClausesCode insuranceClauses) {
+		this.insuranceClauses = Objects.requireNonNull(insuranceClauses);
+		return this;
 	}
 
 	public Location getClaimsPayableAt() {
 		return claimsPayableAt;
 	}
 
-	public void setClaimsPayableAt(com.tools20022.repository.entity.Location claimsPayableAt) {
-		this.claimsPayableAt = claimsPayableAt;
+	public InsuranceCertificate setClaimsPayableAt(Location claimsPayableAt) {
+		this.claimsPayableAt = Objects.requireNonNull(claimsPayableAt);
+		return this;
 	}
 
 	public CurrencyCode getClaimsPayableIn() {
 		return claimsPayableIn;
 	}
 
-	public void setClaimsPayableIn(CurrencyCode claimsPayableIn) {
-		this.claimsPayableIn = claimsPayableIn;
+	public InsuranceCertificate setClaimsPayableIn(CurrencyCode claimsPayableIn) {
+		this.claimsPayableIn = Objects.requireNonNull(claimsPayableIn);
+		return this;
 	}
 
 	public List<InsurancePartyRole> getInsurancePartyRole() {
-		return insurancePartyRole;
+		return insurancePartyRole == null ? insurancePartyRole = new ArrayList<>() : insurancePartyRole;
 	}
 
-	public void setInsurancePartyRole(List<com.tools20022.repository.entity.InsurancePartyRole> insurancePartyRole) {
-		this.insurancePartyRole = insurancePartyRole;
+	public InsuranceCertificate setInsurancePartyRole(List<com.tools20022.repository.entity.InsurancePartyRole> insurancePartyRole) {
+		this.insurancePartyRole = Objects.requireNonNull(insurancePartyRole);
+		return this;
 	}
 
-	public ProductDelivery getProductDelivery() {
-		return productDelivery;
+	public Optional<ProductDelivery> getProductDelivery() {
+		return productDelivery == null ? Optional.empty() : Optional.of(productDelivery);
 	}
 
-	public void setProductDelivery(com.tools20022.repository.entity.ProductDelivery productDelivery) {
+	public InsuranceCertificate setProductDelivery(com.tools20022.repository.entity.ProductDelivery productDelivery) {
 		this.productDelivery = productDelivery;
+		return this;
 	}
 
 	public InsuranceCode getInsuranceType() {
 		return insuranceType;
 	}
 
-	public void setInsuranceType(InsuranceCode insuranceType) {
-		this.insuranceType = insuranceType;
+	public InsuranceCertificate setInsuranceType(InsuranceCode insuranceType) {
+		this.insuranceType = Objects.requireNonNull(insuranceType);
+		return this;
 	}
 
 	public InvestmentPlan getRelatedInvestmentPlan() {
 		return relatedInvestmentPlan;
 	}
 
-	public void setRelatedInvestmentPlan(com.tools20022.repository.entity.InvestmentPlan relatedInvestmentPlan) {
-		this.relatedInvestmentPlan = relatedInvestmentPlan;
+	public InsuranceCertificate setRelatedInvestmentPlan(InvestmentPlan relatedInvestmentPlan) {
+		this.relatedInvestmentPlan = Objects.requireNonNull(relatedInvestmentPlan);
+		return this;
 	}
 }

@@ -19,11 +19,13 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CaseStatusCode;
+import com.tools20022.repository.entity.InvestigationCase;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Status of an investigation case.
@@ -59,8 +61,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,8 +78,8 @@ public class InvestigationCaseStatus extends Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CaseStatusCode caseStatus;
 	/**
-	 * Status of the case.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -101,7 +103,7 @@ public class InvestigationCaseStatus extends Status {
 	 * definition} = "Status of the case."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCaseStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvestigationCaseStatus, CaseStatusCode> mmCaseStatus = new MMBusinessAttribute<InvestigationCaseStatus, CaseStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCaseStatus.mmObject();
@@ -113,18 +115,20 @@ public class InvestigationCaseStatus extends Status {
 			simpleType_lazy = () -> CaseStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvestigationCaseStatus.class.getMethod("getCaseStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CaseStatusCode getValue(InvestigationCaseStatus obj) {
+			return obj.getCaseStatus();
+		}
+
+		@Override
+		public void setValue(InvestigationCaseStatus obj, CaseStatusCode value) {
+			obj.setCaseStatus(value);
 		}
 	};
 	protected InvestigationCase investigationCase;
 	/**
-	 * Case for which a status is reported.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,7 +159,7 @@ public class InvestigationCaseStatus extends Status {
 	 * definition} = "Case for which a status is reported."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestigationCase = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestigationCaseStatus, Optional<InvestigationCase>> mmInvestigationCase = new MMBusinessAssociationEnd<InvestigationCaseStatus, Optional<InvestigationCase>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationCaseStatus.mmObject();
@@ -168,12 +172,22 @@ public class InvestigationCaseStatus extends Status {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 		}
+
+		@Override
+		public Optional<InvestigationCase> getValue(InvestigationCaseStatus obj) {
+			return obj.getInvestigationCase();
+		}
+
+		@Override
+		public void setValue(InvestigationCaseStatus obj, Optional<InvestigationCase> value) {
+			obj.setInvestigationCase(value.orElse(null));
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestigationCaseStatus";
 				definition = "Status of an investigation case.";
@@ -194,15 +208,17 @@ public class InvestigationCaseStatus extends Status {
 		return caseStatus;
 	}
 
-	public void setCaseStatus(CaseStatusCode caseStatus) {
-		this.caseStatus = caseStatus;
+	public InvestigationCaseStatus setCaseStatus(CaseStatusCode caseStatus) {
+		this.caseStatus = Objects.requireNonNull(caseStatus);
+		return this;
 	}
 
-	public InvestigationCase getInvestigationCase() {
-		return investigationCase;
+	public Optional<InvestigationCase> getInvestigationCase() {
+		return investigationCase == null ? Optional.empty() : Optional.of(investigationCase);
 	}
 
-	public void setInvestigationCase(com.tools20022.repository.entity.InvestigationCase investigationCase) {
+	public InvestigationCaseStatus setInvestigationCase(com.tools20022.repository.entity.InvestigationCase investigationCase) {
 		this.investigationCase = investigationCase;
+		return this;
 	}
 }

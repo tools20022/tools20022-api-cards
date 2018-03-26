@@ -22,8 +22,12 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.catp.ATMWithdrawalCompletionAcknowledgementV02;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ATMContext9;
+import com.tools20022.repository.msg.ATMTransaction18;
+import com.tools20022.repository.msg.AutomatedTellerMachine3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -63,8 +67,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,19 +77,20 @@ import javax.xml.bind.annotation.XmlType;
  * "ATMWithdrawalCompletionAcknowledgement2"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Information related to the acknowledgement  of an ATM withdrawal from the ATM manager."
+ * "Information related to the acknowledgement of an ATM withdrawal from the ATM manager."
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "ATMWithdrawalCompletionAcknowledgement2", propOrder = {"ATM", "context", "transaction"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "ATMWithdrawalCompletionAcknowledgement2", propOrder = {"aTM", "context", "transaction"})
 public class ATMWithdrawalCompletionAcknowledgement2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ATM", required = true)
 	protected AutomatedTellerMachine3 aTM;
 	/**
-	 * ATM information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -110,9 +115,9 @@ public class ATMWithdrawalCompletionAcknowledgement2 {
 	 * definition} = "ATM information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmATM = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMWithdrawalCompletionAcknowledgement2, AutomatedTellerMachine3> mmATM = new MMMessageAssociationEnd<ATMWithdrawalCompletionAcknowledgement2, AutomatedTellerMachine3>() {
 		{
-			componentContext_lazy = () -> ATMWithdrawalCompletionAcknowledgement2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMWithdrawalCompletionAcknowledgement2.mmObject();
 			isDerived = false;
 			xmlTag = "ATM";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,13 +126,24 @@ public class ATMWithdrawalCompletionAcknowledgement2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AutomatedTellerMachine3.mmObject();
+			type_lazy = () -> AutomatedTellerMachine3.mmObject();
+		}
+
+		@Override
+		public AutomatedTellerMachine3 getValue(ATMWithdrawalCompletionAcknowledgement2 obj) {
+			return obj.getATM();
+		}
+
+		@Override
+		public void setValue(ATMWithdrawalCompletionAcknowledgement2 obj, AutomatedTellerMachine3 value) {
+			obj.setATM(value);
 		}
 	};
+	@XmlElement(name = "Cntxt", required = true)
 	protected ATMContext9 context;
 	/**
-	 * Context in which the transaction is performed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -151,9 +167,9 @@ public class ATMWithdrawalCompletionAcknowledgement2 {
 	 * definition} = "Context in which the transaction is performed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmContext = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMWithdrawalCompletionAcknowledgement2, ATMContext9> mmContext = new MMMessageAssociationEnd<ATMWithdrawalCompletionAcknowledgement2, ATMContext9>() {
 		{
-			componentContext_lazy = () -> ATMWithdrawalCompletionAcknowledgement2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMWithdrawalCompletionAcknowledgement2.mmObject();
 			isDerived = false;
 			xmlTag = "Cntxt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -162,13 +178,24 @@ public class ATMWithdrawalCompletionAcknowledgement2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMContext9.mmObject();
+			type_lazy = () -> ATMContext9.mmObject();
+		}
+
+		@Override
+		public ATMContext9 getValue(ATMWithdrawalCompletionAcknowledgement2 obj) {
+			return obj.getContext();
+		}
+
+		@Override
+		public void setValue(ATMWithdrawalCompletionAcknowledgement2 obj, ATMContext9 value) {
+			obj.setContext(value);
 		}
 	};
+	@XmlElement(name = "Tx", required = true)
 	protected ATMTransaction18 transaction;
 	/**
-	 * Acknowledgement of the withdrawal completion advice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -192,9 +219,9 @@ public class ATMWithdrawalCompletionAcknowledgement2 {
 	 * definition} = "Acknowledgement of the withdrawal completion advice."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransaction = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMWithdrawalCompletionAcknowledgement2, ATMTransaction18> mmTransaction = new MMMessageAssociationEnd<ATMWithdrawalCompletionAcknowledgement2, ATMTransaction18>() {
 		{
-			componentContext_lazy = () -> ATMWithdrawalCompletionAcknowledgement2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMWithdrawalCompletionAcknowledgement2.mmObject();
 			isDerived = false;
 			xmlTag = "Tx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -203,48 +230,59 @@ public class ATMWithdrawalCompletionAcknowledgement2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMTransaction18.mmObject();
+			type_lazy = () -> ATMTransaction18.mmObject();
+		}
+
+		@Override
+		public ATMTransaction18 getValue(ATMWithdrawalCompletionAcknowledgement2 obj) {
+			return obj.getTransaction();
+		}
+
+		@Override
+		public void setValue(ATMWithdrawalCompletionAcknowledgement2 obj, ATMTransaction18 value) {
+			obj.setTransaction(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ATMWithdrawalCompletionAcknowledgement2.mmATM, ATMWithdrawalCompletionAcknowledgement2.mmContext, ATMWithdrawalCompletionAcknowledgement2.mmTransaction);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ATMWithdrawalCompletionAcknowledgement2.mmATM, com.tools20022.repository.msg.ATMWithdrawalCompletionAcknowledgement2.mmContext,
+						com.tools20022.repository.msg.ATMWithdrawalCompletionAcknowledgement2.mmTransaction);
 				messageBuildingBlock_lazy = () -> Arrays.asList(ATMWithdrawalCompletionAcknowledgementV02.mmATMWithdrawalCompletionAcknowledgement);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMWithdrawalCompletionAcknowledgement2";
-				definition = "Information related to the acknowledgement  of an ATM withdrawal from the ATM manager.";
+				definition = "Information related to the acknowledgement of an ATM withdrawal from the ATM manager.";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ATM", required = true)
 	public AutomatedTellerMachine3 getATM() {
 		return aTM;
 	}
 
-	public void setATM(com.tools20022.repository.msg.AutomatedTellerMachine3 aTM) {
-		this.aTM = aTM;
+	public ATMWithdrawalCompletionAcknowledgement2 setATM(AutomatedTellerMachine3 aTM) {
+		this.aTM = Objects.requireNonNull(aTM);
+		return this;
 	}
 
-	@XmlElement(name = "Cntxt", required = true)
 	public ATMContext9 getContext() {
 		return context;
 	}
 
-	public void setContext(com.tools20022.repository.msg.ATMContext9 context) {
-		this.context = context;
+	public ATMWithdrawalCompletionAcknowledgement2 setContext(ATMContext9 context) {
+		this.context = Objects.requireNonNull(context);
+		return this;
 	}
 
-	@XmlElement(name = "Tx", required = true)
 	public ATMTransaction18 getTransaction() {
 		return transaction;
 	}
 
-	public void setTransaction(com.tools20022.repository.msg.ATMTransaction18 transaction) {
-		this.transaction = transaction;
+	public ATMWithdrawalCompletionAcknowledgement2 setTransaction(ATMTransaction18 transaction) {
+		this.transaction = Objects.requireNonNull(transaction);
+		return this;
 	}
 }

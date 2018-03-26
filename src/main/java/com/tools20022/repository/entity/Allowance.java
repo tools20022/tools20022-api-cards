@@ -24,9 +24,9 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.entity.Adjustment;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.LineItemMonetarySummation1;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Amount of money deducted from a price or an amount due.
@@ -53,8 +53,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,8 +70,8 @@ public class Allowance extends Adjustment {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyAndAmount totalAllowance;
 	/**
-	 * Algebraical sum of allowances related to the invoice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -102,7 +102,7 @@ public class Allowance extends Adjustment {
 	 * definition} = "Algebraical sum of allowances related to the invoice."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTotalAllowance = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Allowance, CurrencyAndAmount> mmTotalAllowance = new MMBusinessAttribute<Allowance, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(LineItemMonetarySummation1.mmAllowanceTotalAmount);
 			isDerived = false;
@@ -115,18 +115,20 @@ public class Allowance extends Adjustment {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Allowance.class.getMethod("getTotalAllowance", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Allowance obj) {
+			return obj.getTotalAllowance();
+		}
+
+		@Override
+		public void setValue(Allowance obj, CurrencyAndAmount value) {
+			obj.setTotalAllowance(value);
 		}
 	};
 	protected CurrencyAndAmount netPriceAllowance;
 	/**
-	 * Allowance applied to the net price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -149,7 +151,7 @@ public class Allowance extends Adjustment {
 	 * definition} = "Allowance applied to the net price."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNetPriceAllowance = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Allowance, CurrencyAndAmount> mmNetPriceAllowance = new MMBusinessAttribute<Allowance, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Allowance.mmObject();
@@ -161,19 +163,21 @@ public class Allowance extends Adjustment {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Allowance.class.getMethod("getNetPriceAllowance", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Allowance obj) {
+			return obj.getNetPriceAllowance();
+		}
+
+		@Override
+		public void setValue(Allowance obj, CurrencyAndAmount value) {
+			obj.setNetPriceAllowance(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Allowance";
 				definition = "Amount of money deducted from a price or an amount due.";
@@ -193,15 +197,17 @@ public class Allowance extends Adjustment {
 		return totalAllowance;
 	}
 
-	public void setTotalAllowance(CurrencyAndAmount totalAllowance) {
-		this.totalAllowance = totalAllowance;
+	public Allowance setTotalAllowance(CurrencyAndAmount totalAllowance) {
+		this.totalAllowance = Objects.requireNonNull(totalAllowance);
+		return this;
 	}
 
 	public CurrencyAndAmount getNetPriceAllowance() {
 		return netPriceAllowance;
 	}
 
-	public void setNetPriceAllowance(CurrencyAndAmount netPriceAllowance) {
-		this.netPriceAllowance = netPriceAllowance;
+	public Allowance setNetPriceAllowance(CurrencyAndAmount netPriceAllowance) {
+		this.netPriceAllowance = Objects.requireNonNull(netPriceAllowance);
+		return this;
 	}
 }

@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.OtherSemanticMarkup;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -37,21 +38,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ContentTypeCode#PlainData
- * ContentTypeCode.mmPlainData}</li>
+ * ContentTypeCode.PlainData}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ContentTypeCode#SignedData
- * ContentTypeCode.mmSignedData}</li>
+ * ContentTypeCode.SignedData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ContentTypeCode#EnvelopedData
- * ContentTypeCode.mmEnvelopedData}</li>
+ * ContentTypeCode.EnvelopedData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ContentTypeCode#DigestedData
- * ContentTypeCode.mmDigestedData}</li>
+ * ContentTypeCode.DigestedData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ContentTypeCode#EncryptedData
- * ContentTypeCode.mmEncryptedData}</li>
+ * ContentTypeCode.EncryptedData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ContentTypeCode#AuthenticatedData
- * ContentTypeCode.mmAuthenticatedData}</li>
+ * ContentTypeCode.AuthenticatedData}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -64,8 +65,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -99,6 +100,9 @@ public class ContentTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DATA"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=Synonym, context=ASN.1, value=id-data</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -113,6 +117,7 @@ public class ContentTypeCode extends MMCode {
 	 */
 	public static final ContentTypeCode PlainData = new ContentTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "Synonym", new String[]{"context", "ASN.1"}, new String[]{"value", "id-data"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlainData";
 			definition = "Generic, non cryptographic, or unqualified data content - (ASN.1 Object Identifier: id-data).";
@@ -131,6 +136,9 @@ public class ContentTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SIGN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=Synonym, context=ASN.1, value=id-signedData</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -144,6 +152,7 @@ public class ContentTypeCode extends MMCode {
 	 */
 	public static final ContentTypeCode SignedData = new ContentTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "Synonym", new String[]{"context", "ASN.1"}, new String[]{"value", "id-signedData"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SignedData";
 			definition = "Digital signature - (ASN.1 Object Identifier: id-signedData).";
@@ -163,6 +172,9 @@ public class ContentTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "EVLP"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=Synonym, context=ASN.1, value=id-envelopedData</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -177,6 +189,7 @@ public class ContentTypeCode extends MMCode {
 	 */
 	public static final ContentTypeCode EnvelopedData = new ContentTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "Synonym", new String[]{"context", "ASN.1"}, new String[]{"value", "id-envelopedData"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EnvelopedData";
 			definition = "Encrypted data, with encryption key - (ASN.1 Object Identifier: id-envelopedData).";
@@ -195,6 +208,9 @@ public class ContentTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DGST"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=Synonym, context=ASN.1, value=id-digestedData</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -208,6 +224,7 @@ public class ContentTypeCode extends MMCode {
 	 */
 	public static final ContentTypeCode DigestedData = new ContentTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "Synonym", new String[]{"context", "ASN.1"}, new String[]{"value", "id-digestedData"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DigestedData";
 			definition = "Message digest - (ASN.1 Object Identifier: id-digestedData).";
@@ -226,6 +243,9 @@ public class ContentTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "ECRP"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=Synonym, context=ASN.1, value=id-encryptedData</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -239,6 +259,7 @@ public class ContentTypeCode extends MMCode {
 	 */
 	public static final ContentTypeCode EncryptedData = new ContentTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "Synonym", new String[]{"context", "ASN.1"}, new String[]{"value", "id-encryptedData"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EncryptedData";
 			definition = "Encrypted data - (ASN.1 Object Identifier: id-encryptedData).";
@@ -258,6 +279,9 @@ public class ContentTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "AUTH"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=Synonym, context=ASN.1, value=id-ct-authData</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -272,6 +296,7 @@ public class ContentTypeCode extends MMCode {
 	 */
 	public static final ContentTypeCode AuthenticatedData = new ContentTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "Synonym", new String[]{"context", "ASN.1"}, new String[]{"value", "id-ct-authData"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AuthenticatedData";
 			definition = "MAC (Message Authentication Code), with encryption key - (ASN.1 Object Identifier: id-ct-authData).";
@@ -287,7 +312,7 @@ public class ContentTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DATA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ContentTypeCode";

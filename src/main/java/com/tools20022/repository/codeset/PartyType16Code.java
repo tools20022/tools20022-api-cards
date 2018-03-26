@@ -37,26 +37,26 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType16Code#Acquirer
- * PartyType16Code.mmAcquirer}</li>
+ * PartyType16Code.Acquirer}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType16Code#CardIssuer
- * PartyType16Code.mmCardIssuer}</li>
+ * PartyType16Code.CardIssuer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType16Code#DelegateIssuer
- * PartyType16Code.mmDelegateIssuer}</li>
+ * PartyType16Code.DelegateIssuer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType16Code#IntermediaryAgent
- * PartyType16Code.mmIntermediaryAgent}</li>
+ * PartyType16Code.IntermediaryAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType16Code#OriginatingTerminal
- * PartyType16Code.mmOriginatingTerminal}</li>
+ * PartyType16Code.OriginatingTerminal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType16Code#AccountFromBank
- * PartyType16Code.mmAccountFromBank}</li>
+ * PartyType16Code.AccountFromBank}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType16Code#AccountToBank
- * PartyType16Code.mmAccountToBank}</li>
+ * PartyType16Code.AccountToBank}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType16Code#ATMManager
- * PartyType16Code.mmATMManager}</li>
+ * PartyType16Code.ATMManager}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -64,8 +64,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -282,7 +282,7 @@ public class PartyType16Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyType16Code";
 				definition = "Identifies the entity which initially sets the authorisation response value.";

@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountChoiceMethodCode#AccountSelected
- * AccountChoiceMethodCode.mmAccountSelected}</li>
+ * AccountChoiceMethodCode.AccountSelected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountChoiceMethodCode#Entered
- * AccountChoiceMethodCode.mmEntered}</li>
+ * AccountChoiceMethodCode.Entered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountChoiceMethodCode#ImplicitAccount
- * AccountChoiceMethodCode.mmImplicitAccount}</li>
+ * AccountChoiceMethodCode.ImplicitAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountChoiceMethodCode#ImplicitType
- * AccountChoiceMethodCode.mmImplicitType}</li>
+ * AccountChoiceMethodCode.ImplicitType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountChoiceMethodCode#TypeSelected
- * AccountChoiceMethodCode.mmTypeSelected}</li>
+ * AccountChoiceMethodCode.TypeSelected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountChoiceMethodCode#NoSelection
- * AccountChoiceMethodCode.mmNoSelection}</li>
+ * AccountChoiceMethodCode.NoSelection}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -66,8 +66,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -275,7 +275,7 @@ public class AccountChoiceMethodCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountChoiceMethodCode";
 				definition = "Method used by the cardholder and the terminal for the choice of the account.";

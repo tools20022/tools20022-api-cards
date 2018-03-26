@@ -30,7 +30,7 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
- * Specifies the type of usage of the account
+ * Specifies the type of usage of the account.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -38,23 +38,23 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#Investor
- * AccountUsageTypeCode.mmInvestor}</li>
+ * AccountUsageTypeCode.Investor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#SettlementParticipant
- * AccountUsageTypeCode.mmSettlementParticipant}</li>
+ * AccountUsageTypeCode.SettlementParticipant}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#TradingParticipant
- * AccountUsageTypeCode.mmTradingParticipant}</li>
+ * AccountUsageTypeCode.TradingParticipant}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountUsageTypeCode#IssuingParticipant
- * AccountUsageTypeCode.mmIssuingParticipant}</li>
+ * AccountUsageTypeCode.IssuingParticipant}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -68,7 +68,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "AccountUsageTypeCode"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Specifies the type of usage of the account"</li>
+ * definition} = "Specifies the type of usage of the account."</li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -203,11 +203,11 @@ public class AccountUsageTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("INVE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountUsageTypeCode";
-				definition = "Specifies the type of usage of the account";
+				definition = "Specifies the type of usage of the account.";
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AccountUsageTypeCode.Investor, com.tools20022.repository.codeset.AccountUsageTypeCode.SettlementParticipant,
 						com.tools20022.repository.codeset.AccountUsageTypeCode.TradingParticipant, com.tools20022.repository.codeset.AccountUsageTypeCode.IssuingParticipant);
 			}

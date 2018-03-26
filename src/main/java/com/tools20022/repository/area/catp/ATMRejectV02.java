@@ -24,9 +24,9 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.ATMCardTransactionLatestVersion;
 import com.tools20022.repository.msg.ATMReject2;
 import com.tools20022.repository.msg.Header33;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -66,16 +66,16 @@ import javax.xml.bind.annotation.*;
  * "The ATMReject message is sent by any entity to reject a received message."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "ATMRejectV02", propOrder = {"header", "ATMReject"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "ATMRejectV02", propOrder = {"header", "aTMReject"})
 public class ATMRejectV02 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header33 header;
 	/**
-	 * Information related to the protocol management on a segment of the path
-	 * from the ATM to the acquirer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -97,7 +97,7 @@ public class ATMRejectV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMRejectV02, Header33> mmHeader = new MMMessageBuildingBlock<ATMRejectV02, Header33>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -108,19 +108,21 @@ public class ATMRejectV02 {
 			complexType_lazy = () -> Header33.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMRejectV02.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header33 getValue(ATMRejectV02 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(ATMRejectV02 obj, Header33 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "ATMRjct", required = true)
 	protected ATMReject2 aTMReject;
 	/**
-	 * Information related to the reject of a message from an ATM or an ATM
-	 * manager.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -142,7 +144,7 @@ public class ATMRejectV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmATMReject = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMRejectV02, ATMReject2> mmATMReject = new MMMessageBuildingBlock<ATMRejectV02, ATMReject2>() {
 		{
 			xmlTag = "ATMRjct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -153,12 +155,14 @@ public class ATMRejectV02 {
 			complexType_lazy = () -> ATMReject2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMRejectV02.class.getMethod("getATMReject", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ATMReject2 getValue(ATMRejectV02 obj) {
+			return obj.getATMReject();
+		}
+
+		@Override
+		public void setValue(ATMRejectV02 obj, ATMReject2 value) {
+			obj.setATMReject(value);
 		}
 	};
 
@@ -190,25 +194,25 @@ public class ATMRejectV02 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header33 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header33 header) {
-		this.header = header;
+	public ATMRejectV02 setHeader(Header33 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "ATMRjct", required = true)
 	public ATMReject2 getATMReject() {
 		return aTMReject;
 	}
 
-	public void setATMReject(ATMReject2 aTMReject) {
-		this.aTMReject = aTMReject;
+	public ATMRejectV02 setATMReject(ATMReject2 aTMReject) {
+		this.aTMReject = Objects.requireNonNull(aTMReject);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:catp.005.02.02")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:catp.005.001.02")
 	static public class Document {
 		@XmlElement(name = "ATMRjct", required = true)
 		public ATMRejectV02 messageBody;

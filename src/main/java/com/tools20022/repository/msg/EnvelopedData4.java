@@ -24,9 +24,9 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.Recipient4Choice;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.EncryptedContent3;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +53,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,15 +65,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Encrypted data with encryption key."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "EnvelopedData4", propOrder = {"version", "recipient", "encryptedContent"})
 public class EnvelopedData4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Vrsn")
 	protected Number version;
 	/**
-	 * Version of the data structure.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -97,9 +98,9 @@ public class EnvelopedData4 {
 	 * definition} = "Version of the data structure."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVersion = new MMMessageAttribute() {
+	public static final MMMessageAttribute<EnvelopedData4, Optional<Number>> mmVersion = new MMMessageAttribute<EnvelopedData4, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> EnvelopedData4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.EnvelopedData4.mmObject();
 			isDerived = false;
 			xmlTag = "Vrsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -109,12 +110,22 @@ public class EnvelopedData4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(EnvelopedData4 obj) {
+			return obj.getVersion();
+		}
+
+		@Override
+		public void setValue(EnvelopedData4 obj, Optional<Number> value) {
+			obj.setVersion(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Rcpt", required = true)
 	protected List<Recipient4Choice> recipient;
 	/**
-	 * Session key or identification of the protection key used by the
-	 * recipient.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -139,9 +150,9 @@ public class EnvelopedData4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRecipient = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<EnvelopedData4, List<Recipient4Choice>> mmRecipient = new MMMessageAssociationEnd<EnvelopedData4, List<Recipient4Choice>>() {
 		{
-			componentContext_lazy = () -> EnvelopedData4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.EnvelopedData4.mmObject();
 			isDerived = false;
 			xmlTag = "Rcpt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -151,11 +162,22 @@ public class EnvelopedData4 {
 			isComposite = true;
 			type_lazy = () -> Recipient4Choice.mmObject();
 		}
+
+		@Override
+		public List<Recipient4Choice> getValue(EnvelopedData4 obj) {
+			return obj.getRecipient();
+		}
+
+		@Override
+		public void setValue(EnvelopedData4 obj, List<Recipient4Choice> value) {
+			obj.setRecipient(value);
+		}
 	};
+	@XmlElement(name = "NcrptdCntt")
 	protected EncryptedContent3 encryptedContent;
 	/**
-	 * Data protection by encryption (digital envelope), with an encryption key.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -180,9 +202,9 @@ public class EnvelopedData4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEncryptedContent = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<EnvelopedData4, Optional<EncryptedContent3>> mmEncryptedContent = new MMMessageAssociationEnd<EnvelopedData4, Optional<EncryptedContent3>>() {
 		{
-			componentContext_lazy = () -> EnvelopedData4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.EnvelopedData4.mmObject();
 			isDerived = false;
 			xmlTag = "NcrptdCntt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -191,15 +213,25 @@ public class EnvelopedData4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.EncryptedContent3.mmObject();
+			type_lazy = () -> EncryptedContent3.mmObject();
+		}
+
+		@Override
+		public Optional<EncryptedContent3> getValue(EnvelopedData4 obj) {
+			return obj.getEncryptedContent();
+		}
+
+		@Override
+		public void setValue(EnvelopedData4 obj, Optional<EncryptedContent3> value) {
+			obj.setEncryptedContent(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(EnvelopedData4.mmVersion, EnvelopedData4.mmRecipient, EnvelopedData4.mmEncryptedContent);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.EnvelopedData4.mmVersion, com.tools20022.repository.msg.EnvelopedData4.mmRecipient, com.tools20022.repository.msg.EnvelopedData4.mmEncryptedContent);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EnvelopedData4";
 				definition = "Encrypted data with encryption key.";
@@ -208,30 +240,30 @@ public class EnvelopedData4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Vrsn")
-	public Number getVersion() {
-		return version;
+	public Optional<Number> getVersion() {
+		return version == null ? Optional.empty() : Optional.of(version);
 	}
 
-	public void setVersion(Number version) {
+	public EnvelopedData4 setVersion(Number version) {
 		this.version = version;
+		return this;
 	}
 
-	@XmlElement(name = "Rcpt", required = true)
 	public List<Recipient4Choice> getRecipient() {
-		return recipient;
+		return recipient == null ? recipient = new ArrayList<>() : recipient;
 	}
 
-	public void setRecipient(List<Recipient4Choice> recipient) {
-		this.recipient = recipient;
+	public EnvelopedData4 setRecipient(List<Recipient4Choice> recipient) {
+		this.recipient = Objects.requireNonNull(recipient);
+		return this;
 	}
 
-	@XmlElement(name = "NcrptdCntt")
-	public EncryptedContent3 getEncryptedContent() {
-		return encryptedContent;
+	public Optional<EncryptedContent3> getEncryptedContent() {
+		return encryptedContent == null ? Optional.empty() : Optional.of(encryptedContent);
 	}
 
-	public void setEncryptedContent(com.tools20022.repository.msg.EncryptedContent3 encryptedContent) {
+	public EnvelopedData4 setEncryptedContent(EncryptedContent3 encryptedContent) {
 		this.encryptedContent = encryptedContent;
+		return this;
 	}
 }

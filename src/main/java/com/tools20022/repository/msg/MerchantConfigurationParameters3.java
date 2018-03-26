@@ -26,8 +26,11 @@ import com.tools20022.repository.datatype.Max10000Binary;
 import com.tools20022.repository.datatype.Max256Text;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.NetworkParameters6;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -62,8 +65,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,15 +77,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Acceptor parameters dedicated to the merchant."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MerchantConfigurationParameters3", propOrder = {"actionType", "merchantIdentification", "version", "proxy", "otherParameters"})
 public class MerchantConfigurationParameters3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ActnTp", required = true)
 	protected TerminalManagementAction3Code actionType;
 	/**
-	 * Type of action for the configuration parameters.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -108,9 +112,9 @@ public class MerchantConfigurationParameters3 {
 	 * definition} = "Type of action for the configuration parameters."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmActionType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MerchantConfigurationParameters3, TerminalManagementAction3Code> mmActionType = new MMMessageAttribute<MerchantConfigurationParameters3, TerminalManagementAction3Code>() {
 		{
-			componentContext_lazy = () -> MerchantConfigurationParameters3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MerchantConfigurationParameters3.mmObject();
 			isDerived = false;
 			xmlTag = "ActnTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,12 +124,22 @@ public class MerchantConfigurationParameters3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> TerminalManagementAction3Code.mmObject();
 		}
+
+		@Override
+		public TerminalManagementAction3Code getValue(MerchantConfigurationParameters3 obj) {
+			return obj.getActionType();
+		}
+
+		@Override
+		public void setValue(MerchantConfigurationParameters3 obj, TerminalManagementAction3Code value) {
+			obj.setActionType(value);
+		}
 	};
+	@XmlElement(name = "MrchntId")
 	protected Max35Text merchantIdentification;
 	/**
-	 * Identification of the merchant for the MTM, if the POI manages several
-	 * merchants.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,9 +166,9 @@ public class MerchantConfigurationParameters3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMerchantIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MerchantConfigurationParameters3, Optional<Max35Text>> mmMerchantIdentification = new MMMessageAttribute<MerchantConfigurationParameters3, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> MerchantConfigurationParameters3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MerchantConfigurationParameters3.mmObject();
 			isDerived = false;
 			xmlTag = "MrchntId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -164,11 +178,22 @@ public class MerchantConfigurationParameters3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(MerchantConfigurationParameters3 obj) {
+			return obj.getMerchantIdentification();
+		}
+
+		@Override
+		public void setValue(MerchantConfigurationParameters3 obj, Optional<Max35Text> value) {
+			obj.setMerchantIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Vrsn")
 	protected Max256Text version;
 	/**
-	 * Version of the merchant parameters.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -193,9 +218,9 @@ public class MerchantConfigurationParameters3 {
 	 * definition} = "Version of the merchant parameters."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVersion = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MerchantConfigurationParameters3, Optional<Max256Text>> mmVersion = new MMMessageAttribute<MerchantConfigurationParameters3, Optional<Max256Text>>() {
 		{
-			componentContext_lazy = () -> MerchantConfigurationParameters3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MerchantConfigurationParameters3.mmObject();
 			isDerived = false;
 			xmlTag = "Vrsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -205,11 +230,22 @@ public class MerchantConfigurationParameters3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max256Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max256Text> getValue(MerchantConfigurationParameters3 obj) {
+			return obj.getVersion();
+		}
+
+		@Override
+		public void setValue(MerchantConfigurationParameters3 obj, Optional<Max256Text> value) {
+			obj.setVersion(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Prxy")
 	protected NetworkParameters6 proxy;
 	/**
-	 * Local proxy configuration.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -233,9 +269,9 @@ public class MerchantConfigurationParameters3 {
 	 * definition} = "Local proxy configuration."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProxy = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MerchantConfigurationParameters3, Optional<NetworkParameters6>> mmProxy = new MMMessageAssociationEnd<MerchantConfigurationParameters3, Optional<NetworkParameters6>>() {
 		{
-			componentContext_lazy = () -> MerchantConfigurationParameters3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MerchantConfigurationParameters3.mmObject();
 			isDerived = false;
 			xmlTag = "Prxy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -244,13 +280,24 @@ public class MerchantConfigurationParameters3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.NetworkParameters6.mmObject();
+			type_lazy = () -> NetworkParameters6.mmObject();
+		}
+
+		@Override
+		public Optional<NetworkParameters6> getValue(MerchantConfigurationParameters3 obj) {
+			return obj.getProxy();
+		}
+
+		@Override
+		public void setValue(MerchantConfigurationParameters3 obj, Optional<NetworkParameters6> value) {
+			obj.setProxy(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "OthrParams")
 	protected Max10000Binary otherParameters;
 	/**
-	 * Other merchant parameters.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -276,9 +323,9 @@ public class MerchantConfigurationParameters3 {
 	 * definition} = "Other merchant parameters."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOtherParameters = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MerchantConfigurationParameters3, Optional<Max10000Binary>> mmOtherParameters = new MMMessageAttribute<MerchantConfigurationParameters3, Optional<Max10000Binary>>() {
 		{
-			componentContext_lazy = () -> MerchantConfigurationParameters3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MerchantConfigurationParameters3.mmObject();
 			isDerived = false;
 			xmlTag = "OthrParams";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -288,14 +335,25 @@ public class MerchantConfigurationParameters3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max10000Binary.mmObject();
 		}
+
+		@Override
+		public Optional<Max10000Binary> getValue(MerchantConfigurationParameters3 obj) {
+			return obj.getOtherParameters();
+		}
+
+		@Override
+		public void setValue(MerchantConfigurationParameters3 obj, Optional<Max10000Binary> value) {
+			obj.setOtherParameters(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MerchantConfigurationParameters3.mmActionType, MerchantConfigurationParameters3.mmMerchantIdentification, MerchantConfigurationParameters3.mmVersion,
-						MerchantConfigurationParameters3.mmProxy, MerchantConfigurationParameters3.mmOtherParameters);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MerchantConfigurationParameters3.mmActionType, com.tools20022.repository.msg.MerchantConfigurationParameters3.mmMerchantIdentification,
+						com.tools20022.repository.msg.MerchantConfigurationParameters3.mmVersion, com.tools20022.repository.msg.MerchantConfigurationParameters3.mmProxy,
+						com.tools20022.repository.msg.MerchantConfigurationParameters3.mmOtherParameters);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MerchantConfigurationParameters3";
 				definition = "Acceptor parameters dedicated to the merchant.";
@@ -304,48 +362,48 @@ public class MerchantConfigurationParameters3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ActnTp", required = true)
 	public TerminalManagementAction3Code getActionType() {
 		return actionType;
 	}
 
-	public void setActionType(TerminalManagementAction3Code actionType) {
-		this.actionType = actionType;
+	public MerchantConfigurationParameters3 setActionType(TerminalManagementAction3Code actionType) {
+		this.actionType = Objects.requireNonNull(actionType);
+		return this;
 	}
 
-	@XmlElement(name = "MrchntId")
-	public Max35Text getMerchantIdentification() {
-		return merchantIdentification;
+	public Optional<Max35Text> getMerchantIdentification() {
+		return merchantIdentification == null ? Optional.empty() : Optional.of(merchantIdentification);
 	}
 
-	public void setMerchantIdentification(Max35Text merchantIdentification) {
+	public MerchantConfigurationParameters3 setMerchantIdentification(Max35Text merchantIdentification) {
 		this.merchantIdentification = merchantIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "Vrsn")
-	public Max256Text getVersion() {
-		return version;
+	public Optional<Max256Text> getVersion() {
+		return version == null ? Optional.empty() : Optional.of(version);
 	}
 
-	public void setVersion(Max256Text version) {
+	public MerchantConfigurationParameters3 setVersion(Max256Text version) {
 		this.version = version;
+		return this;
 	}
 
-	@XmlElement(name = "Prxy")
-	public NetworkParameters6 getProxy() {
-		return proxy;
+	public Optional<NetworkParameters6> getProxy() {
+		return proxy == null ? Optional.empty() : Optional.of(proxy);
 	}
 
-	public void setProxy(com.tools20022.repository.msg.NetworkParameters6 proxy) {
+	public MerchantConfigurationParameters3 setProxy(NetworkParameters6 proxy) {
 		this.proxy = proxy;
+		return this;
 	}
 
-	@XmlElement(name = "OthrParams")
-	public Max10000Binary getOtherParameters() {
-		return otherParameters;
+	public Optional<Max10000Binary> getOtherParameters() {
+		return otherParameters == null ? Optional.empty() : Optional.of(otherParameters);
 	}
 
-	public void setOtherParameters(Max10000Binary otherParameters) {
+	public MerchantConfigurationParameters3 setOtherParameters(Max10000Binary otherParameters) {
 		this.otherParameters = otherParameters;
+		return this;
 	}
 }

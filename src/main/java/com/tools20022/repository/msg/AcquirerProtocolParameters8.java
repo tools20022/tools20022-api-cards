@@ -25,8 +25,12 @@ import com.tools20022.repository.codeset.CancellationProcess1Code;
 import com.tools20022.repository.codeset.FinancialCapture1Code;
 import com.tools20022.repository.entity.AcceptorConfiguration;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ExchangeConfiguration6;
+import com.tools20022.repository.msg.ExchangeConfiguration7;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,8 +65,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,15 +77,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Acceptor parameters dedicated to the acquirer protocol."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AcquirerProtocolParameters8", propOrder = {"financialCapture", "batchTransfer", "completionExchange", "cancellationExchange"})
 public class AcquirerProtocolParameters8 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FinCaptr", required = true)
 	protected FinancialCapture1Code financialCapture;
 	/**
-	 * Mode for the financial capture of the transaction by the acquirer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,10 +118,10 @@ public class AcquirerProtocolParameters8 {
 	 * "Mode for the financial capture of the transaction by the acquirer."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFinancialCapture = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AcquirerProtocolParameters8, FinancialCapture1Code> mmFinancialCapture = new MMMessageAttribute<AcquirerProtocolParameters8, FinancialCapture1Code>() {
 		{
 			businessElementTrace_lazy = () -> AcceptorConfiguration.mmFinancialCapture;
-			componentContext_lazy = () -> AcquirerProtocolParameters8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcquirerProtocolParameters8.mmObject();
 			isDerived = false;
 			xmlTag = "FinCaptr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -126,11 +131,22 @@ public class AcquirerProtocolParameters8 {
 			minOccurs = 1;
 			simpleType_lazy = () -> FinancialCapture1Code.mmObject();
 		}
+
+		@Override
+		public FinancialCapture1Code getValue(AcquirerProtocolParameters8 obj) {
+			return obj.getFinancialCapture();
+		}
+
+		@Override
+		public void setValue(AcquirerProtocolParameters8 obj, FinancialCapture1Code value) {
+			obj.setFinancialCapture(value);
+		}
 	};
+	@XmlElement(name = "BtchTrf")
 	protected ExchangeConfiguration6 batchTransfer;
 	/**
-	 * Configuration of the batch transfers.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -159,10 +175,10 @@ public class AcquirerProtocolParameters8 {
 	 * definition} = "Configuration of the batch transfers."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmBatchTransfer = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AcquirerProtocolParameters8, Optional<ExchangeConfiguration6>> mmBatchTransfer = new MMMessageAssociationEnd<AcquirerProtocolParameters8, Optional<ExchangeConfiguration6>>() {
 		{
 			businessElementTrace_lazy = () -> AcceptorConfiguration.mmBatchTransferContent;
-			componentContext_lazy = () -> AcquirerProtocolParameters8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcquirerProtocolParameters8.mmObject();
 			isDerived = false;
 			xmlTag = "BtchTrf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,13 +187,24 @@ public class AcquirerProtocolParameters8 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ExchangeConfiguration6.mmObject();
+			type_lazy = () -> ExchangeConfiguration6.mmObject();
+		}
+
+		@Override
+		public Optional<ExchangeConfiguration6> getValue(AcquirerProtocolParameters8 obj) {
+			return obj.getBatchTransfer();
+		}
+
+		@Override
+		public void setValue(AcquirerProtocolParameters8 obj, Optional<ExchangeConfiguration6> value) {
+			obj.setBatchTransfer(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "CmpltnXchg")
 	protected ExchangeConfiguration7 completionExchange;
 	/**
-	 * Configuration parameters of completion exchanges.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -201,9 +228,9 @@ public class AcquirerProtocolParameters8 {
 	 * definition} = "Configuration parameters of completion exchanges."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCompletionExchange = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AcquirerProtocolParameters8, Optional<ExchangeConfiguration7>> mmCompletionExchange = new MMMessageAssociationEnd<AcquirerProtocolParameters8, Optional<ExchangeConfiguration7>>() {
 		{
-			componentContext_lazy = () -> AcquirerProtocolParameters8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcquirerProtocolParameters8.mmObject();
 			isDerived = false;
 			xmlTag = "CmpltnXchg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -212,13 +239,24 @@ public class AcquirerProtocolParameters8 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ExchangeConfiguration7.mmObject();
+			type_lazy = () -> ExchangeConfiguration7.mmObject();
+		}
+
+		@Override
+		public Optional<ExchangeConfiguration7> getValue(AcquirerProtocolParameters8 obj) {
+			return obj.getCompletionExchange();
+		}
+
+		@Override
+		public void setValue(AcquirerProtocolParameters8 obj, Optional<ExchangeConfiguration7> value) {
+			obj.setCompletionExchange(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "CxlXchg")
 	protected CancellationProcess1Code cancellationExchange;
 	/**
-	 * Configuration of the cancellation exchanges.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -244,9 +282,9 @@ public class AcquirerProtocolParameters8 {
 	 * definition} = "Configuration of the cancellation exchanges."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCancellationExchange = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AcquirerProtocolParameters8, Optional<CancellationProcess1Code>> mmCancellationExchange = new MMMessageAttribute<AcquirerProtocolParameters8, Optional<CancellationProcess1Code>>() {
 		{
-			componentContext_lazy = () -> AcquirerProtocolParameters8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcquirerProtocolParameters8.mmObject();
 			isDerived = false;
 			xmlTag = "CxlXchg";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -256,15 +294,25 @@ public class AcquirerProtocolParameters8 {
 			minOccurs = 0;
 			simpleType_lazy = () -> CancellationProcess1Code.mmObject();
 		}
+
+		@Override
+		public Optional<CancellationProcess1Code> getValue(AcquirerProtocolParameters8 obj) {
+			return obj.getCancellationExchange();
+		}
+
+		@Override
+		public void setValue(AcquirerProtocolParameters8 obj, Optional<CancellationProcess1Code> value) {
+			obj.setCancellationExchange(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AcquirerProtocolParameters8.mmFinancialCapture, AcquirerProtocolParameters8.mmBatchTransfer, AcquirerProtocolParameters8.mmCompletionExchange,
-						AcquirerProtocolParameters8.mmCancellationExchange);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AcquirerProtocolParameters8.mmFinancialCapture, com.tools20022.repository.msg.AcquirerProtocolParameters8.mmBatchTransfer,
+						com.tools20022.repository.msg.AcquirerProtocolParameters8.mmCompletionExchange, com.tools20022.repository.msg.AcquirerProtocolParameters8.mmCancellationExchange);
 				trace_lazy = () -> AcceptorConfiguration.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AcquirerProtocolParameters8";
 				definition = "Acceptor parameters dedicated to the acquirer protocol.";
@@ -273,39 +321,39 @@ public class AcquirerProtocolParameters8 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FinCaptr", required = true)
 	public FinancialCapture1Code getFinancialCapture() {
 		return financialCapture;
 	}
 
-	public void setFinancialCapture(FinancialCapture1Code financialCapture) {
-		this.financialCapture = financialCapture;
+	public AcquirerProtocolParameters8 setFinancialCapture(FinancialCapture1Code financialCapture) {
+		this.financialCapture = Objects.requireNonNull(financialCapture);
+		return this;
 	}
 
-	@XmlElement(name = "BtchTrf")
-	public ExchangeConfiguration6 getBatchTransfer() {
-		return batchTransfer;
+	public Optional<ExchangeConfiguration6> getBatchTransfer() {
+		return batchTransfer == null ? Optional.empty() : Optional.of(batchTransfer);
 	}
 
-	public void setBatchTransfer(com.tools20022.repository.msg.ExchangeConfiguration6 batchTransfer) {
+	public AcquirerProtocolParameters8 setBatchTransfer(ExchangeConfiguration6 batchTransfer) {
 		this.batchTransfer = batchTransfer;
+		return this;
 	}
 
-	@XmlElement(name = "CmpltnXchg")
-	public ExchangeConfiguration7 getCompletionExchange() {
-		return completionExchange;
+	public Optional<ExchangeConfiguration7> getCompletionExchange() {
+		return completionExchange == null ? Optional.empty() : Optional.of(completionExchange);
 	}
 
-	public void setCompletionExchange(com.tools20022.repository.msg.ExchangeConfiguration7 completionExchange) {
+	public AcquirerProtocolParameters8 setCompletionExchange(ExchangeConfiguration7 completionExchange) {
 		this.completionExchange = completionExchange;
+		return this;
 	}
 
-	@XmlElement(name = "CxlXchg")
-	public CancellationProcess1Code getCancellationExchange() {
-		return cancellationExchange;
+	public Optional<CancellationProcess1Code> getCancellationExchange() {
+		return cancellationExchange == null ? Optional.empty() : Optional.of(cancellationExchange);
 	}
 
-	public void setCancellationExchange(CancellationProcess1Code cancellationExchange) {
+	public AcquirerProtocolParameters8 setCancellationExchange(CancellationProcess1Code cancellationExchange) {
 		this.cancellationExchange = cancellationExchange;
+		return this;
 	}
 }

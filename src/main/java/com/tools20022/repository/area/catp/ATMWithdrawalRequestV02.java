@@ -26,9 +26,10 @@ import com.tools20022.repository.msg.ATMWithdrawalRequest2;
 import com.tools20022.repository.msg.ContentInformationType10;
 import com.tools20022.repository.msg.ContentInformationType15;
 import com.tools20022.repository.msg.Header31;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -78,16 +79,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "ATMWithdrawalRequestV02", propOrder = {"header", "protectedATMWithdrawalRequest", "ATMWithdrawalRequest", "securityTrailer"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "ATMWithdrawalRequestV02", propOrder = {"header", "protectedATMWithdrawalRequest", "aTMWithdrawalRequest", "securityTrailer"})
 public class ATMWithdrawalRequestV02 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header31 header;
 	/**
-	 * Information related to the protocol management on a segment of the path
-	 * from the ATM to the acquirer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,7 +110,7 @@ public class ATMWithdrawalRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMWithdrawalRequestV02, Header31> mmHeader = new MMMessageBuildingBlock<ATMWithdrawalRequestV02, Header31>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,18 +121,21 @@ public class ATMWithdrawalRequestV02 {
 			complexType_lazy = () -> Header31.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMWithdrawalRequestV02.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header31 getValue(ATMWithdrawalRequestV02 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(ATMWithdrawalRequestV02 obj, Header31 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "PrtctdATMWdrwlReq")
 	protected ContentInformationType10 protectedATMWithdrawalRequest;
 	/**
-	 * Encrypted body of the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,7 +156,7 @@ public class ATMWithdrawalRequestV02 {
 	 * definition} = "Encrypted body of the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmProtectedATMWithdrawalRequest = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMWithdrawalRequestV02, Optional<ContentInformationType10>> mmProtectedATMWithdrawalRequest = new MMMessageBuildingBlock<ATMWithdrawalRequestV02, Optional<ContentInformationType10>>() {
 		{
 			xmlTag = "PrtctdATMWdrwlReq";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,19 +167,21 @@ public class ATMWithdrawalRequestV02 {
 			complexType_lazy = () -> ContentInformationType10.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMWithdrawalRequestV02.class.getMethod("getProtectedATMWithdrawalRequest", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType10> getValue(ATMWithdrawalRequestV02 obj) {
+			return obj.getProtectedATMWithdrawalRequest();
+		}
+
+		@Override
+		public void setValue(ATMWithdrawalRequestV02 obj, Optional<ContentInformationType10> value) {
+			obj.setProtectedATMWithdrawalRequest(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "ATMWdrwlReq")
 	protected ATMWithdrawalRequest2 aTMWithdrawalRequest;
 	/**
-	 * Information related to the request of a withdrawal transaction from an
-	 * ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -198,7 +204,7 @@ public class ATMWithdrawalRequestV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmATMWithdrawalRequest = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMWithdrawalRequestV02, Optional<ATMWithdrawalRequest2>> mmATMWithdrawalRequest = new MMMessageBuildingBlock<ATMWithdrawalRequestV02, Optional<ATMWithdrawalRequest2>>() {
 		{
 			xmlTag = "ATMWdrwlReq";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -209,18 +215,21 @@ public class ATMWithdrawalRequestV02 {
 			complexType_lazy = () -> ATMWithdrawalRequest2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMWithdrawalRequestV02.class.getMethod("getATMWithdrawalRequest", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ATMWithdrawalRequest2> getValue(ATMWithdrawalRequestV02 obj) {
+			return obj.getATMWithdrawalRequest();
+		}
+
+		@Override
+		public void setValue(ATMWithdrawalRequestV02 obj, Optional<ATMWithdrawalRequest2> value) {
+			obj.setATMWithdrawalRequest(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SctyTrlr")
 	protected ContentInformationType15 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -241,7 +250,7 @@ public class ATMWithdrawalRequestV02 {
 	 * definition} = "Trailer of the message containing a MAC."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMWithdrawalRequestV02, Optional<ContentInformationType15>> mmSecurityTrailer = new MMMessageBuildingBlock<ATMWithdrawalRequestV02, Optional<ContentInformationType15>>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -252,12 +261,14 @@ public class ATMWithdrawalRequestV02 {
 			complexType_lazy = () -> ContentInformationType15.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMWithdrawalRequestV02.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType15> getValue(ATMWithdrawalRequestV02 obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(ATMWithdrawalRequestV02 obj, Optional<ContentInformationType15> value) {
+			obj.setSecurityTrailer(value.orElse(null));
 		}
 	};
 
@@ -290,43 +301,43 @@ public class ATMWithdrawalRequestV02 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header31 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header31 header) {
-		this.header = header;
+	public ATMWithdrawalRequestV02 setHeader(Header31 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "PrtctdATMWdrwlReq")
-	public ContentInformationType10 getProtectedATMWithdrawalRequest() {
-		return protectedATMWithdrawalRequest;
+	public Optional<ContentInformationType10> getProtectedATMWithdrawalRequest() {
+		return protectedATMWithdrawalRequest == null ? Optional.empty() : Optional.of(protectedATMWithdrawalRequest);
 	}
 
-	public void setProtectedATMWithdrawalRequest(ContentInformationType10 protectedATMWithdrawalRequest) {
+	public ATMWithdrawalRequestV02 setProtectedATMWithdrawalRequest(ContentInformationType10 protectedATMWithdrawalRequest) {
 		this.protectedATMWithdrawalRequest = protectedATMWithdrawalRequest;
+		return this;
 	}
 
-	@XmlElement(name = "ATMWdrwlReq")
-	public ATMWithdrawalRequest2 getATMWithdrawalRequest() {
-		return aTMWithdrawalRequest;
+	public Optional<ATMWithdrawalRequest2> getATMWithdrawalRequest() {
+		return aTMWithdrawalRequest == null ? Optional.empty() : Optional.of(aTMWithdrawalRequest);
 	}
 
-	public void setATMWithdrawalRequest(ATMWithdrawalRequest2 aTMWithdrawalRequest) {
+	public ATMWithdrawalRequestV02 setATMWithdrawalRequest(ATMWithdrawalRequest2 aTMWithdrawalRequest) {
 		this.aTMWithdrawalRequest = aTMWithdrawalRequest;
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr")
-	public ContentInformationType15 getSecurityTrailer() {
-		return securityTrailer;
+	public Optional<ContentInformationType15> getSecurityTrailer() {
+		return securityTrailer == null ? Optional.empty() : Optional.of(securityTrailer);
 	}
 
-	public void setSecurityTrailer(ContentInformationType15 securityTrailer) {
+	public ATMWithdrawalRequestV02 setSecurityTrailer(ContentInformationType15 securityTrailer) {
 		this.securityTrailer = securityTrailer;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:catp.001.02.02")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:catp.001.001.02")
 	static public class Document {
 		@XmlElement(name = "ATMWdrwlReq", required = true)
 		public ATMWithdrawalRequestV02 messageBody;

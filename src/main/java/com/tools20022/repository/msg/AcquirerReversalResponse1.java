@@ -22,8 +22,11 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.cain.AcquirerReversalResponse;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CardTransaction8;
+import com.tools20022.repository.msg.CardTransactionEnvironment4;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +61,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,15 +73,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Information related to the response of a reversal."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AcquirerReversalResponse1", propOrder = {"environment", "transaction"})
 public class AcquirerReversalResponse1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Envt", required = true)
 	protected CardTransactionEnvironment4 environment;
 	/**
-	 * Environment of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -103,9 +107,9 @@ public class AcquirerReversalResponse1 {
 	 * definition} = "Environment of the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEnvironment = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AcquirerReversalResponse1, CardTransactionEnvironment4> mmEnvironment = new MMMessageAssociationEnd<AcquirerReversalResponse1, CardTransactionEnvironment4>() {
 		{
-			componentContext_lazy = () -> AcquirerReversalResponse1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcquirerReversalResponse1.mmObject();
 			isDerived = false;
 			xmlTag = "Envt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,13 +118,24 @@ public class AcquirerReversalResponse1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CardTransactionEnvironment4.mmObject();
+			type_lazy = () -> CardTransactionEnvironment4.mmObject();
+		}
+
+		@Override
+		public CardTransactionEnvironment4 getValue(AcquirerReversalResponse1 obj) {
+			return obj.getEnvironment();
+		}
+
+		@Override
+		public void setValue(AcquirerReversalResponse1 obj, CardTransactionEnvironment4 value) {
+			obj.setEnvironment(value);
 		}
 	};
+	@XmlElement(name = "Tx", required = true)
 	protected CardTransaction8 transaction;
 	/**
-	 * Reversal card transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -144,9 +159,9 @@ public class AcquirerReversalResponse1 {
 	 * definition} = "Reversal card transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransaction = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AcquirerReversalResponse1, CardTransaction8> mmTransaction = new MMMessageAssociationEnd<AcquirerReversalResponse1, CardTransaction8>() {
 		{
-			componentContext_lazy = () -> AcquirerReversalResponse1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcquirerReversalResponse1.mmObject();
 			isDerived = false;
 			xmlTag = "Tx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -155,16 +170,26 @@ public class AcquirerReversalResponse1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CardTransaction8.mmObject();
+			type_lazy = () -> CardTransaction8.mmObject();
+		}
+
+		@Override
+		public CardTransaction8 getValue(AcquirerReversalResponse1 obj) {
+			return obj.getTransaction();
+		}
+
+		@Override
+		public void setValue(AcquirerReversalResponse1 obj, CardTransaction8 value) {
+			obj.setTransaction(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AcquirerReversalResponse1.mmEnvironment, AcquirerReversalResponse1.mmTransaction);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AcquirerReversalResponse1.mmEnvironment, com.tools20022.repository.msg.AcquirerReversalResponse1.mmTransaction);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AcquirerReversalResponse.mmReversalResponse);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AcquirerReversalResponse1";
 				definition = "Information related to the response of a reversal.";
@@ -173,21 +198,21 @@ public class AcquirerReversalResponse1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Envt", required = true)
 	public CardTransactionEnvironment4 getEnvironment() {
 		return environment;
 	}
 
-	public void setEnvironment(com.tools20022.repository.msg.CardTransactionEnvironment4 environment) {
-		this.environment = environment;
+	public AcquirerReversalResponse1 setEnvironment(CardTransactionEnvironment4 environment) {
+		this.environment = Objects.requireNonNull(environment);
+		return this;
 	}
 
-	@XmlElement(name = "Tx", required = true)
 	public CardTransaction8 getTransaction() {
 		return transaction;
 	}
 
-	public void setTransaction(com.tools20022.repository.msg.CardTransaction8 transaction) {
-		this.transaction = transaction;
+	public AcquirerReversalResponse1 setTransaction(CardTransaction8 transaction) {
+		this.transaction = Objects.requireNonNull(transaction);
+		return this;
 	}
 }

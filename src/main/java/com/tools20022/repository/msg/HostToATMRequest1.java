@@ -24,8 +24,12 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.caam.HostToATMRequestV01;
 import com.tools20022.repository.codeset.MessageFunction8Code;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ATMCommandIdentification1;
+import com.tools20022.repository.msg.ATMEnvironment9;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -63,8 +67,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,15 +80,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Information related to the request to an ATM to contact the ATM manager."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "HostToATMRequest1", propOrder = {"environment", "commandIdentification", "expectedMessageFunction"})
 public class HostToATMRequest1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Envt", required = true)
 	protected ATMEnvironment9 environment;
 	/**
-	 * Environment of the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -108,9 +113,9 @@ public class HostToATMRequest1 {
 	 * definition} = "Environment of the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEnvironment = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<HostToATMRequest1, ATMEnvironment9> mmEnvironment = new MMMessageAssociationEnd<HostToATMRequest1, ATMEnvironment9>() {
 		{
-			componentContext_lazy = () -> HostToATMRequest1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.HostToATMRequest1.mmObject();
 			isDerived = false;
 			xmlTag = "Envt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,13 +124,24 @@ public class HostToATMRequest1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMEnvironment9.mmObject();
+			type_lazy = () -> ATMEnvironment9.mmObject();
+		}
+
+		@Override
+		public ATMEnvironment9 getValue(HostToATMRequest1 obj) {
+			return obj.getEnvironment();
+		}
+
+		@Override
+		public void setValue(HostToATMRequest1 obj, ATMEnvironment9 value) {
+			obj.setEnvironment(value);
 		}
 	};
+	@XmlElement(name = "CmdId")
 	protected ATMCommandIdentification1 commandIdentification;
 	/**
-	 * Identification of the entity issuing the command.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -150,9 +166,9 @@ public class HostToATMRequest1 {
 	 * definition} = "Identification of the entity issuing the command."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCommandIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<HostToATMRequest1, Optional<ATMCommandIdentification1>> mmCommandIdentification = new MMMessageAssociationEnd<HostToATMRequest1, Optional<ATMCommandIdentification1>>() {
 		{
-			componentContext_lazy = () -> HostToATMRequest1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.HostToATMRequest1.mmObject();
 			isDerived = false;
 			xmlTag = "CmdId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -161,13 +177,24 @@ public class HostToATMRequest1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMCommandIdentification1.mmObject();
+			type_lazy = () -> ATMCommandIdentification1.mmObject();
+		}
+
+		@Override
+		public Optional<ATMCommandIdentification1> getValue(HostToATMRequest1 obj) {
+			return obj.getCommandIdentification();
+		}
+
+		@Override
+		public void setValue(HostToATMRequest1 obj, Optional<ATMCommandIdentification1> value) {
+			obj.setCommandIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "XpctdMsgFctn", required = true)
 	protected MessageFunction8Code expectedMessageFunction;
 	/**
-	 * Message that have to be sent by the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -193,9 +220,9 @@ public class HostToATMRequest1 {
 	 * definition} = "Message that have to be sent by the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExpectedMessageFunction = new MMMessageAttribute() {
+	public static final MMMessageAttribute<HostToATMRequest1, MessageFunction8Code> mmExpectedMessageFunction = new MMMessageAttribute<HostToATMRequest1, MessageFunction8Code>() {
 		{
-			componentContext_lazy = () -> HostToATMRequest1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.HostToATMRequest1.mmObject();
 			isDerived = false;
 			xmlTag = "XpctdMsgFctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -205,14 +232,25 @@ public class HostToATMRequest1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> MessageFunction8Code.mmObject();
 		}
+
+		@Override
+		public MessageFunction8Code getValue(HostToATMRequest1 obj) {
+			return obj.getExpectedMessageFunction();
+		}
+
+		@Override
+		public void setValue(HostToATMRequest1 obj, MessageFunction8Code value) {
+			obj.setExpectedMessageFunction(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(HostToATMRequest1.mmEnvironment, HostToATMRequest1.mmCommandIdentification, HostToATMRequest1.mmExpectedMessageFunction);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.HostToATMRequest1.mmEnvironment, com.tools20022.repository.msg.HostToATMRequest1.mmCommandIdentification,
+						com.tools20022.repository.msg.HostToATMRequest1.mmExpectedMessageFunction);
 				messageBuildingBlock_lazy = () -> Arrays.asList(HostToATMRequestV01.mmHostToATMRequest);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "HostToATMRequest1";
 				definition = "Information related to the request to an ATM to contact the ATM manager.";
@@ -221,30 +259,30 @@ public class HostToATMRequest1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Envt", required = true)
 	public ATMEnvironment9 getEnvironment() {
 		return environment;
 	}
 
-	public void setEnvironment(com.tools20022.repository.msg.ATMEnvironment9 environment) {
-		this.environment = environment;
+	public HostToATMRequest1 setEnvironment(ATMEnvironment9 environment) {
+		this.environment = Objects.requireNonNull(environment);
+		return this;
 	}
 
-	@XmlElement(name = "CmdId")
-	public ATMCommandIdentification1 getCommandIdentification() {
-		return commandIdentification;
+	public Optional<ATMCommandIdentification1> getCommandIdentification() {
+		return commandIdentification == null ? Optional.empty() : Optional.of(commandIdentification);
 	}
 
-	public void setCommandIdentification(com.tools20022.repository.msg.ATMCommandIdentification1 commandIdentification) {
+	public HostToATMRequest1 setCommandIdentification(ATMCommandIdentification1 commandIdentification) {
 		this.commandIdentification = commandIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "XpctdMsgFctn", required = true)
 	public MessageFunction8Code getExpectedMessageFunction() {
 		return expectedMessageFunction;
 	}
 
-	public void setExpectedMessageFunction(MessageFunction8Code expectedMessageFunction) {
-		this.expectedMessageFunction = expectedMessageFunction;
+	public HostToATMRequest1 setExpectedMessageFunction(MessageFunction8Code expectedMessageFunction) {
+		this.expectedMessageFunction = Objects.requireNonNull(expectedMessageFunction);
+		return this;
 	}
 }

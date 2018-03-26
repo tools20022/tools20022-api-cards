@@ -22,12 +22,14 @@ import com.tools20022.repository.codeset.FinancingStatusReasonCode;
 import com.tools20022.repository.codeset.RequestStatusCode;
 import com.tools20022.repository.codeset.TechnicalValidationStatusCode;
 import com.tools20022.repository.datatype.Max105Text;
+import com.tools20022.repository.entity.InvoiceFinancingAgreement;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Status of an invoice financing transaction and of the instructions related to
@@ -83,8 +85,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -102,8 +104,8 @@ public class InvoiceFinancingStatus extends Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected FinancingStatusReasonCode validationStatusReason;
 	/**
-	 * The reason for the validation status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -127,7 +129,7 @@ public class InvoiceFinancingStatus extends Status {
 	 * definition} = "The reason for the validation status."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValidationStatusReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvoiceFinancingStatus, FinancingStatusReasonCode> mmValidationStatusReason = new MMBusinessAttribute<InvoiceFinancingStatus, FinancingStatusReasonCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
@@ -139,19 +141,20 @@ public class InvoiceFinancingStatus extends Status {
 			simpleType_lazy = () -> FinancingStatusReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvoiceFinancingStatus.class.getMethod("getValidationStatusReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FinancingStatusReasonCode getValue(InvoiceFinancingStatus obj) {
+			return obj.getValidationStatusReason();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingStatus obj, FinancingStatusReasonCode value) {
+			obj.setValidationStatusReason(value);
 		}
 	};
 	protected TechnicalValidationStatusCode validationStatus;
 	/**
-	 * The result of the technical validation (e.g. Accepted, Reception error)
-	 * executed on the request message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -177,7 +180,7 @@ public class InvoiceFinancingStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValidationStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvoiceFinancingStatus, TechnicalValidationStatusCode> mmValidationStatus = new MMBusinessAttribute<InvoiceFinancingStatus, TechnicalValidationStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
@@ -189,18 +192,20 @@ public class InvoiceFinancingStatus extends Status {
 			simpleType_lazy = () -> TechnicalValidationStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvoiceFinancingStatus.class.getMethod("getValidationStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TechnicalValidationStatusCode getValue(InvoiceFinancingStatus obj) {
+			return obj.getValidationStatus();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingStatus obj, TechnicalValidationStatusCode value) {
+			obj.setValidationStatus(value);
 		}
 	};
 	protected TechnicalValidationStatusCode cancellationStatus;
 	/**
-	 * Information on the business status of the cancellation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -224,7 +229,7 @@ public class InvoiceFinancingStatus extends Status {
 	 * definition} = "Information on the business status of the cancellation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCancellationStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvoiceFinancingStatus, TechnicalValidationStatusCode> mmCancellationStatus = new MMBusinessAttribute<InvoiceFinancingStatus, TechnicalValidationStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
@@ -236,18 +241,20 @@ public class InvoiceFinancingStatus extends Status {
 			simpleType_lazy = () -> TechnicalValidationStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvoiceFinancingStatus.class.getMethod("getCancellationStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TechnicalValidationStatusCode getValue(InvoiceFinancingStatus obj) {
+			return obj.getCancellationStatus();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingStatus obj, TechnicalValidationStatusCode value) {
+			obj.setCancellationStatus(value);
 		}
 	};
 	protected FinancingStatusReasonCode cancellationStatusReason;
 	/**
-	 * The reason for the cancellation status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -271,7 +278,7 @@ public class InvoiceFinancingStatus extends Status {
 	 * definition} = "The reason for the cancellation status."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCancellationStatusReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvoiceFinancingStatus, FinancingStatusReasonCode> mmCancellationStatusReason = new MMBusinessAttribute<InvoiceFinancingStatus, FinancingStatusReasonCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
@@ -283,19 +290,20 @@ public class InvoiceFinancingStatus extends Status {
 			simpleType_lazy = () -> FinancingStatusReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvoiceFinancingStatus.class.getMethod("getCancellationStatusReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FinancingStatusReasonCode getValue(InvoiceFinancingStatus obj) {
+			return obj.getCancellationStatusReason();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingStatus obj, FinancingStatusReasonCode value) {
+			obj.setCancellationStatusReason(value);
 		}
 	};
 	protected RequestStatusCode financingTransactionStatus;
 	/**
-	 * Specifies the status of the financing request (e.g. financed. not
-	 * financed).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -321,7 +329,7 @@ public class InvoiceFinancingStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFinancingTransactionStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvoiceFinancingStatus, RequestStatusCode> mmFinancingTransactionStatus = new MMBusinessAttribute<InvoiceFinancingStatus, RequestStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
@@ -333,19 +341,20 @@ public class InvoiceFinancingStatus extends Status {
 			simpleType_lazy = () -> RequestStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvoiceFinancingStatus.class.getMethod("getFinancingTransactionStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public RequestStatusCode getValue(InvoiceFinancingStatus obj) {
+			return obj.getFinancingTransactionStatus();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingStatus obj, RequestStatusCode value) {
+			obj.setFinancingTransactionStatus(value);
 		}
 	};
 	protected Max105Text cancellationRequestReason;
 	/**
-	 * Further details on the cancellation request information, in an uncoded
-	 * form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -370,7 +379,7 @@ public class InvoiceFinancingStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCancellationRequestReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvoiceFinancingStatus, Max105Text> mmCancellationRequestReason = new MMBusinessAttribute<InvoiceFinancingStatus, Max105Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
@@ -382,18 +391,20 @@ public class InvoiceFinancingStatus extends Status {
 			simpleType_lazy = () -> Max105Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvoiceFinancingStatus.class.getMethod("getCancellationRequestReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max105Text getValue(InvoiceFinancingStatus obj) {
+			return obj.getCancellationRequestReason();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingStatus obj, Max105Text value) {
+			obj.setCancellationRequestReason(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.InvoiceFinancingAgreement> invoiceFinancingTransaction;
+	protected List<InvoiceFinancingAgreement> invoiceFinancingTransaction;
 	/**
-	 * Specifies the transaction for which a status is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -426,7 +437,7 @@ public class InvoiceFinancingStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvoiceFinancingTransaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvoiceFinancingStatus, List<InvoiceFinancingAgreement>> mmInvoiceFinancingTransaction = new MMBusinessAssociationEnd<InvoiceFinancingStatus, List<InvoiceFinancingAgreement>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
@@ -434,16 +445,25 @@ public class InvoiceFinancingStatus extends Status {
 			name = "InvoiceFinancingTransaction";
 			definition = "Specifies the transaction for which a status is provided.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmInvoiceFinancingStatus;
+			opposite_lazy = () -> InvoiceFinancingAgreement.mmInvoiceFinancingStatus;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
+			type_lazy = () -> InvoiceFinancingAgreement.mmObject();
+		}
+
+		@Override
+		public List<InvoiceFinancingAgreement> getValue(InvoiceFinancingStatus obj) {
+			return obj.getInvoiceFinancingTransaction();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingStatus obj, List<InvoiceFinancingAgreement> value) {
+			obj.setInvoiceFinancingTransaction(value);
 		}
 	};
 	protected FinancingStatusReasonCode financingStatusReason;
 	/**
-	 * &lt;p&gt;Indicates the reasons that have determined the result of the
-	 * single request.&lt;/p&gt;
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -469,7 +489,7 @@ public class InvoiceFinancingStatus extends Status {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFinancingStatusReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvoiceFinancingStatus, FinancingStatusReasonCode> mmFinancingStatusReason = new MMBusinessAttribute<InvoiceFinancingStatus, FinancingStatusReasonCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
@@ -481,23 +501,25 @@ public class InvoiceFinancingStatus extends Status {
 			simpleType_lazy = () -> FinancingStatusReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvoiceFinancingStatus.class.getMethod("getFinancingStatusReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FinancingStatusReasonCode getValue(InvoiceFinancingStatus obj) {
+			return obj.getFinancingStatusReason();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingStatus obj, FinancingStatusReasonCode value) {
+			obj.setFinancingStatusReason(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvoiceFinancingStatus";
 				definition = "Status of an invoice financing transaction and of the instructions related to the invoice financing.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvoiceFinancingAgreement.mmInvoiceFinancingStatus);
+				associationDomain_lazy = () -> Arrays.asList(InvoiceFinancingAgreement.mmInvoiceFinancingStatus);
 				superType_lazy = () -> Status.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvoiceFinancingStatus.mmValidationStatusReason, com.tools20022.repository.entity.InvoiceFinancingStatus.mmValidationStatus,
 						com.tools20022.repository.entity.InvoiceFinancingStatus.mmCancellationStatus, com.tools20022.repository.entity.InvoiceFinancingStatus.mmCancellationStatusReason,
@@ -517,63 +539,71 @@ public class InvoiceFinancingStatus extends Status {
 		return validationStatusReason;
 	}
 
-	public void setValidationStatusReason(FinancingStatusReasonCode validationStatusReason) {
-		this.validationStatusReason = validationStatusReason;
+	public InvoiceFinancingStatus setValidationStatusReason(FinancingStatusReasonCode validationStatusReason) {
+		this.validationStatusReason = Objects.requireNonNull(validationStatusReason);
+		return this;
 	}
 
 	public TechnicalValidationStatusCode getValidationStatus() {
 		return validationStatus;
 	}
 
-	public void setValidationStatus(TechnicalValidationStatusCode validationStatus) {
-		this.validationStatus = validationStatus;
+	public InvoiceFinancingStatus setValidationStatus(TechnicalValidationStatusCode validationStatus) {
+		this.validationStatus = Objects.requireNonNull(validationStatus);
+		return this;
 	}
 
 	public TechnicalValidationStatusCode getCancellationStatus() {
 		return cancellationStatus;
 	}
 
-	public void setCancellationStatus(TechnicalValidationStatusCode cancellationStatus) {
-		this.cancellationStatus = cancellationStatus;
+	public InvoiceFinancingStatus setCancellationStatus(TechnicalValidationStatusCode cancellationStatus) {
+		this.cancellationStatus = Objects.requireNonNull(cancellationStatus);
+		return this;
 	}
 
 	public FinancingStatusReasonCode getCancellationStatusReason() {
 		return cancellationStatusReason;
 	}
 
-	public void setCancellationStatusReason(FinancingStatusReasonCode cancellationStatusReason) {
-		this.cancellationStatusReason = cancellationStatusReason;
+	public InvoiceFinancingStatus setCancellationStatusReason(FinancingStatusReasonCode cancellationStatusReason) {
+		this.cancellationStatusReason = Objects.requireNonNull(cancellationStatusReason);
+		return this;
 	}
 
 	public RequestStatusCode getFinancingTransactionStatus() {
 		return financingTransactionStatus;
 	}
 
-	public void setFinancingTransactionStatus(RequestStatusCode financingTransactionStatus) {
-		this.financingTransactionStatus = financingTransactionStatus;
+	public InvoiceFinancingStatus setFinancingTransactionStatus(RequestStatusCode financingTransactionStatus) {
+		this.financingTransactionStatus = Objects.requireNonNull(financingTransactionStatus);
+		return this;
 	}
 
 	public Max105Text getCancellationRequestReason() {
 		return cancellationRequestReason;
 	}
 
-	public void setCancellationRequestReason(Max105Text cancellationRequestReason) {
-		this.cancellationRequestReason = cancellationRequestReason;
+	public InvoiceFinancingStatus setCancellationRequestReason(Max105Text cancellationRequestReason) {
+		this.cancellationRequestReason = Objects.requireNonNull(cancellationRequestReason);
+		return this;
 	}
 
 	public List<InvoiceFinancingAgreement> getInvoiceFinancingTransaction() {
-		return invoiceFinancingTransaction;
+		return invoiceFinancingTransaction == null ? invoiceFinancingTransaction = new ArrayList<>() : invoiceFinancingTransaction;
 	}
 
-	public void setInvoiceFinancingTransaction(List<com.tools20022.repository.entity.InvoiceFinancingAgreement> invoiceFinancingTransaction) {
-		this.invoiceFinancingTransaction = invoiceFinancingTransaction;
+	public InvoiceFinancingStatus setInvoiceFinancingTransaction(List<InvoiceFinancingAgreement> invoiceFinancingTransaction) {
+		this.invoiceFinancingTransaction = Objects.requireNonNull(invoiceFinancingTransaction);
+		return this;
 	}
 
 	public FinancingStatusReasonCode getFinancingStatusReason() {
 		return financingStatusReason;
 	}
 
-	public void setFinancingStatusReason(FinancingStatusReasonCode financingStatusReason) {
-		this.financingStatusReason = financingStatusReason;
+	public InvoiceFinancingStatus setFinancingStatusReason(FinancingStatusReasonCode financingStatusReason) {
+		this.financingStatusReason = Objects.requireNonNull(financingStatusReason);
+		return this;
 	}
 }

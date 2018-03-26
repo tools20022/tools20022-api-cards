@@ -25,9 +25,9 @@ import com.tools20022.repository.codeset.CryptographicKeyType4Code;
 import com.tools20022.repository.datatype.Max140Binary;
 import com.tools20022.repository.datatype.Max5000Binary;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.KEKIdentifier4;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,15 +76,16 @@ import javax.xml.bind.annotation.XmlType;
  * ATMConfigurationParameter1}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ATMConfigurationParameter2", propOrder = {"keyCategory", "hostChallenge", "certificate", "keyProperties"})
 public class ATMConfigurationParameter2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "KeyCtgy")
 	protected CryptographicKeyType4Code keyCategory;
 	/**
-	 * Category of the cryptographic key.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,9 +111,9 @@ public class ATMConfigurationParameter2 {
 	 * definition} = "Category of the cryptographic key."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmKeyCategory = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMConfigurationParameter2, Optional<CryptographicKeyType4Code>> mmKeyCategory = new MMMessageAttribute<ATMConfigurationParameter2, Optional<CryptographicKeyType4Code>>() {
 		{
-			componentContext_lazy = () -> ATMConfigurationParameter2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMConfigurationParameter2.mmObject();
 			isDerived = false;
 			xmlTag = "KeyCtgy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -122,11 +123,22 @@ public class ATMConfigurationParameter2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> CryptographicKeyType4Code.mmObject();
 		}
+
+		@Override
+		public Optional<CryptographicKeyType4Code> getValue(ATMConfigurationParameter2 obj) {
+			return obj.getKeyCategory();
+		}
+
+		@Override
+		public void setValue(ATMConfigurationParameter2 obj, Optional<CryptographicKeyType4Code> value) {
+			obj.setKeyCategory(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "HstChllng")
 	protected Max140Binary hostChallenge;
 	/**
-	 * Random value from the host provided during a previous exchange.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,9 +165,9 @@ public class ATMConfigurationParameter2 {
 	 * "Random value from the host provided during a previous exchange."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmHostChallenge = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMConfigurationParameter2, Optional<Max140Binary>> mmHostChallenge = new MMMessageAttribute<ATMConfigurationParameter2, Optional<Max140Binary>>() {
 		{
-			componentContext_lazy = () -> ATMConfigurationParameter2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMConfigurationParameter2.mmObject();
 			isDerived = false;
 			xmlTag = "HstChllng";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,12 +177,22 @@ public class ATMConfigurationParameter2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Binary.mmObject();
 		}
+
+		@Override
+		public Optional<Max140Binary> getValue(ATMConfigurationParameter2 obj) {
+			return obj.getHostChallenge();
+		}
+
+		@Override
+		public void setValue(ATMConfigurationParameter2 obj, Optional<Max140Binary> value) {
+			obj.setHostChallenge(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Cert")
 	protected List<Max5000Binary> certificate;
 	/**
-	 * Ordered certificate chain of the asymmetric key encryption key, starting
-	 * with the host certificate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -198,9 +220,9 @@ public class ATMConfigurationParameter2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCertificate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMConfigurationParameter2, List<Max5000Binary>> mmCertificate = new MMMessageAttribute<ATMConfigurationParameter2, List<Max5000Binary>>() {
 		{
-			componentContext_lazy = () -> ATMConfigurationParameter2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMConfigurationParameter2.mmObject();
 			isDerived = false;
 			xmlTag = "Cert";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -209,11 +231,22 @@ public class ATMConfigurationParameter2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max5000Binary.mmObject();
 		}
+
+		@Override
+		public List<Max5000Binary> getValue(ATMConfigurationParameter2 obj) {
+			return obj.getCertificate();
+		}
+
+		@Override
+		public void setValue(ATMConfigurationParameter2 obj, List<Max5000Binary> value) {
+			obj.setCertificate(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.KEKIdentifier4> keyProperties;
+	@XmlElement(name = "KeyProps")
+	protected List<KEKIdentifier4> keyProperties;
 	/**
-	 * Cryptographic key involved in the security command.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -237,9 +270,9 @@ public class ATMConfigurationParameter2 {
 	 * definition} = "Cryptographic key involved in the security command."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmKeyProperties = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMConfigurationParameter2, List<KEKIdentifier4>> mmKeyProperties = new MMMessageAssociationEnd<ATMConfigurationParameter2, List<KEKIdentifier4>>() {
 		{
-			componentContext_lazy = () -> ATMConfigurationParameter2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMConfigurationParameter2.mmObject();
 			isDerived = false;
 			xmlTag = "KeyProps";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -247,15 +280,26 @@ public class ATMConfigurationParameter2 {
 			definition = "Cryptographic key involved in the security command.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.KEKIdentifier4.mmObject();
+			type_lazy = () -> KEKIdentifier4.mmObject();
+		}
+
+		@Override
+		public List<KEKIdentifier4> getValue(ATMConfigurationParameter2 obj) {
+			return obj.getKeyProperties();
+		}
+
+		@Override
+		public void setValue(ATMConfigurationParameter2 obj, List<KEKIdentifier4> value) {
+			obj.setKeyProperties(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ATMConfigurationParameter2.mmKeyCategory, ATMConfigurationParameter2.mmHostChallenge, ATMConfigurationParameter2.mmCertificate, ATMConfigurationParameter2.mmKeyProperties);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ATMConfigurationParameter2.mmKeyCategory, com.tools20022.repository.msg.ATMConfigurationParameter2.mmHostChallenge,
+						com.tools20022.repository.msg.ATMConfigurationParameter2.mmCertificate, com.tools20022.repository.msg.ATMConfigurationParameter2.mmKeyProperties);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMConfigurationParameter2";
 				definition = "Parameters to be used by the various cryptographic key commands.";
@@ -265,39 +309,39 @@ public class ATMConfigurationParameter2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "KeyCtgy")
-	public CryptographicKeyType4Code getKeyCategory() {
-		return keyCategory;
+	public Optional<CryptographicKeyType4Code> getKeyCategory() {
+		return keyCategory == null ? Optional.empty() : Optional.of(keyCategory);
 	}
 
-	public void setKeyCategory(CryptographicKeyType4Code keyCategory) {
+	public ATMConfigurationParameter2 setKeyCategory(CryptographicKeyType4Code keyCategory) {
 		this.keyCategory = keyCategory;
+		return this;
 	}
 
-	@XmlElement(name = "HstChllng")
-	public Max140Binary getHostChallenge() {
-		return hostChallenge;
+	public Optional<Max140Binary> getHostChallenge() {
+		return hostChallenge == null ? Optional.empty() : Optional.of(hostChallenge);
 	}
 
-	public void setHostChallenge(Max140Binary hostChallenge) {
+	public ATMConfigurationParameter2 setHostChallenge(Max140Binary hostChallenge) {
 		this.hostChallenge = hostChallenge;
+		return this;
 	}
 
-	@XmlElement(name = "Cert")
 	public List<Max5000Binary> getCertificate() {
-		return certificate;
+		return certificate == null ? certificate = new ArrayList<>() : certificate;
 	}
 
-	public void setCertificate(List<Max5000Binary> certificate) {
-		this.certificate = certificate;
+	public ATMConfigurationParameter2 setCertificate(List<Max5000Binary> certificate) {
+		this.certificate = Objects.requireNonNull(certificate);
+		return this;
 	}
 
-	@XmlElement(name = "KeyProps")
 	public List<KEKIdentifier4> getKeyProperties() {
-		return keyProperties;
+		return keyProperties == null ? keyProperties = new ArrayList<>() : keyProperties;
 	}
 
-	public void setKeyProperties(List<com.tools20022.repository.msg.KEKIdentifier4> keyProperties) {
-		this.keyProperties = keyProperties;
+	public ATMConfigurationParameter2 setKeyProperties(List<KEKIdentifier4> keyProperties) {
+		this.keyProperties = Objects.requireNonNull(keyProperties);
+		return this;
 	}
 }

@@ -23,9 +23,12 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.caaa.AcceptorCompletionAdviceV06;
 import com.tools20022.repository.entity.CardPayment;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.CardPaymentContext21;
+import com.tools20022.repository.msg.CardPaymentEnvironment60;
+import com.tools20022.repository.msg.CardPaymentTransaction69;
+import com.tools20022.repository.msg.SupplementaryData1;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -70,8 +73,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,15 +87,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AcceptorCompletionAdvice6", propOrder = {"environment", "context", "transaction", "supplementaryData"})
 public class AcceptorCompletionAdvice6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Envt", required = true)
 	protected CardPaymentEnvironment60 environment;
 	/**
-	 * Environment of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -121,10 +125,10 @@ public class AcceptorCompletionAdvice6 {
 	 * definition} = "Environment of the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEnvironment = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AcceptorCompletionAdvice6, CardPaymentEnvironment60> mmEnvironment = new MMMessageAssociationEnd<AcceptorCompletionAdvice6, CardPaymentEnvironment60>() {
 		{
 			businessComponentTrace_lazy = () -> CardPayment.mmObject();
-			componentContext_lazy = () -> AcceptorCompletionAdvice6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcceptorCompletionAdvice6.mmObject();
 			isDerived = false;
 			xmlTag = "Envt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -133,13 +137,24 @@ public class AcceptorCompletionAdvice6 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CardPaymentEnvironment60.mmObject();
+			type_lazy = () -> CardPaymentEnvironment60.mmObject();
+		}
+
+		@Override
+		public CardPaymentEnvironment60 getValue(AcceptorCompletionAdvice6 obj) {
+			return obj.getEnvironment();
+		}
+
+		@Override
+		public void setValue(AcceptorCompletionAdvice6 obj, CardPaymentEnvironment60 value) {
+			obj.setEnvironment(value);
 		}
 	};
+	@XmlElement(name = "Cntxt")
 	protected CardPaymentContext21 context;
 	/**
-	 * Context in which the transaction is performed (payment and sale).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -169,10 +184,10 @@ public class AcceptorCompletionAdvice6 {
 	 * "Context in which the transaction is performed (payment and sale)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmContext = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AcceptorCompletionAdvice6, Optional<CardPaymentContext21>> mmContext = new MMMessageAssociationEnd<AcceptorCompletionAdvice6, Optional<CardPaymentContext21>>() {
 		{
 			businessElementTrace_lazy = () -> CardPayment.mmCardPaymentAcquiring;
-			componentContext_lazy = () -> AcceptorCompletionAdvice6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcceptorCompletionAdvice6.mmObject();
 			isDerived = false;
 			xmlTag = "Cntxt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -181,13 +196,24 @@ public class AcceptorCompletionAdvice6 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CardPaymentContext21.mmObject();
+			type_lazy = () -> CardPaymentContext21.mmObject();
+		}
+
+		@Override
+		public Optional<CardPaymentContext21> getValue(AcceptorCompletionAdvice6 obj) {
+			return obj.getContext();
+		}
+
+		@Override
+		public void setValue(AcceptorCompletionAdvice6 obj, Optional<CardPaymentContext21> value) {
+			obj.setContext(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "Tx", required = true)
 	protected CardPaymentTransaction69 transaction;
 	/**
-	 * Card payment transaction between an acceptor and an acquirer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -217,10 +243,10 @@ public class AcceptorCompletionAdvice6 {
 	 * "Card payment transaction between an acceptor and an acquirer."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransaction = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AcceptorCompletionAdvice6, CardPaymentTransaction69> mmTransaction = new MMMessageAssociationEnd<AcceptorCompletionAdvice6, CardPaymentTransaction69>() {
 		{
 			businessComponentTrace_lazy = () -> CardPayment.mmObject();
-			componentContext_lazy = () -> AcceptorCompletionAdvice6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcceptorCompletionAdvice6.mmObject();
 			isDerived = false;
 			xmlTag = "Tx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -229,13 +255,24 @@ public class AcceptorCompletionAdvice6 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CardPaymentTransaction69.mmObject();
+			type_lazy = () -> CardPaymentTransaction69.mmObject();
+		}
+
+		@Override
+		public CardPaymentTransaction69 getValue(AcceptorCompletionAdvice6 obj) {
+			return obj.getTransaction();
+		}
+
+		@Override
+		public void setValue(AcceptorCompletionAdvice6 obj, CardPaymentTransaction69 value) {
+			obj.setTransaction(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData;
+	@XmlElement(name = "SplmtryData")
+	protected List<SupplementaryData1> supplementaryData;
 	/**
-	 * Additional information incorporated as an extension to the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -260,9 +297,9 @@ public class AcceptorCompletionAdvice6 {
 	 * "Additional information incorporated as an extension to the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSupplementaryData = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AcceptorCompletionAdvice6, List<SupplementaryData1>> mmSupplementaryData = new MMMessageAssociationEnd<AcceptorCompletionAdvice6, List<SupplementaryData1>>() {
 		{
-			componentContext_lazy = () -> AcceptorCompletionAdvice6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcceptorCompletionAdvice6.mmObject();
 			isDerived = false;
 			xmlTag = "SplmtryData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -270,17 +307,28 @@ public class AcceptorCompletionAdvice6 {
 			definition = "Additional information incorporated as an extension to the message.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.SupplementaryData1.mmObject();
+			type_lazy = () -> SupplementaryData1.mmObject();
+		}
+
+		@Override
+		public List<SupplementaryData1> getValue(AcceptorCompletionAdvice6 obj) {
+			return obj.getSupplementaryData();
+		}
+
+		@Override
+		public void setValue(AcceptorCompletionAdvice6 obj, List<SupplementaryData1> value) {
+			obj.setSupplementaryData(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AcceptorCompletionAdvice6.mmEnvironment, AcceptorCompletionAdvice6.mmContext, AcceptorCompletionAdvice6.mmTransaction, AcceptorCompletionAdvice6.mmSupplementaryData);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AcceptorCompletionAdvice6.mmEnvironment, com.tools20022.repository.msg.AcceptorCompletionAdvice6.mmContext,
+						com.tools20022.repository.msg.AcceptorCompletionAdvice6.mmTransaction, com.tools20022.repository.msg.AcceptorCompletionAdvice6.mmSupplementaryData);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AcceptorCompletionAdviceV06.mmCompletionAdvice);
 				trace_lazy = () -> CardPayment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AcceptorCompletionAdvice6";
 				definition = "Notification to the acquirer of the completion of the card payment at the acceptor.";
@@ -289,39 +337,39 @@ public class AcceptorCompletionAdvice6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Envt", required = true)
 	public CardPaymentEnvironment60 getEnvironment() {
 		return environment;
 	}
 
-	public void setEnvironment(com.tools20022.repository.msg.CardPaymentEnvironment60 environment) {
-		this.environment = environment;
+	public AcceptorCompletionAdvice6 setEnvironment(CardPaymentEnvironment60 environment) {
+		this.environment = Objects.requireNonNull(environment);
+		return this;
 	}
 
-	@XmlElement(name = "Cntxt")
-	public CardPaymentContext21 getContext() {
-		return context;
+	public Optional<CardPaymentContext21> getContext() {
+		return context == null ? Optional.empty() : Optional.of(context);
 	}
 
-	public void setContext(com.tools20022.repository.msg.CardPaymentContext21 context) {
+	public AcceptorCompletionAdvice6 setContext(CardPaymentContext21 context) {
 		this.context = context;
+		return this;
 	}
 
-	@XmlElement(name = "Tx", required = true)
 	public CardPaymentTransaction69 getTransaction() {
 		return transaction;
 	}
 
-	public void setTransaction(com.tools20022.repository.msg.CardPaymentTransaction69 transaction) {
-		this.transaction = transaction;
+	public AcceptorCompletionAdvice6 setTransaction(CardPaymentTransaction69 transaction) {
+		this.transaction = Objects.requireNonNull(transaction);
+		return this;
 	}
 
-	@XmlElement(name = "SplmtryData")
 	public List<SupplementaryData1> getSupplementaryData() {
-		return supplementaryData;
+		return supplementaryData == null ? supplementaryData = new ArrayList<>() : supplementaryData;
 	}
 
-	public void setSupplementaryData(List<com.tools20022.repository.msg.SupplementaryData1> supplementaryData) {
-		this.supplementaryData = supplementaryData;
+	public AcceptorCompletionAdvice6 setSupplementaryData(List<SupplementaryData1> supplementaryData) {
+		this.supplementaryData = Objects.requireNonNull(supplementaryData);
+		return this;
 	}
 }

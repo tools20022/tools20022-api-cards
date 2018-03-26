@@ -30,8 +30,13 @@ import com.tools20022.repository.entity.CardPayment;
 import com.tools20022.repository.entity.CardPaymentAcquiring;
 import com.tools20022.repository.entity.CardPaymentValidation;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AuthorisationResult8;
+import com.tools20022.repository.msg.CardTransactionDetail4;
+import com.tools20022.repository.msg.TransactionIdentifier2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -84,8 +89,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -100,17 +105,17 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.msg.CardTransaction4 CardTransaction4}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CardTransaction6", propOrder = {"transactionType", "reconciliation", "acceptorTransactionDateTime", "initiatorTransactionIdentification", "transactionLifeCycleIdentification", "transactionLifeCycleSequenceNumber",
 		"transactionLifeCycleSequenceCounter", "cardIssuerReferenceData", "transactionDetails", "authorisationResult"})
 public class CardTransaction6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TxTp", required = true)
 	protected CardPaymentServiceType7Code transactionType;
 	/**
-	 * Type of transaction being undertaken for the main service. <br>
-	 * It correspond partially to the ISO 8583, field number 3.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,10 +153,10 @@ public class CardTransaction6 {
 	 * CardTransaction4.mmTransactionType}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CardTransaction6, CardPaymentServiceType7Code> mmTransactionType = new MMMessageAttribute<CardTransaction6, CardPaymentServiceType7Code>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmCardPaymentService;
-			componentContext_lazy = () -> CardTransaction6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardTransaction6.mmObject();
 			isDerived = false;
 			xmlTag = "TxTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -162,12 +167,22 @@ public class CardTransaction6 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CardPaymentServiceType7Code.mmObject();
 		}
+
+		@Override
+		public CardPaymentServiceType7Code getValue(CardTransaction6 obj) {
+			return obj.getTransactionType();
+		}
+
+		@Override
+		public void setValue(CardTransaction6 obj, CardPaymentServiceType7Code value) {
+			obj.setTransactionType(value);
+		}
 	};
+	@XmlElement(name = "Rcncltn")
 	protected TransactionIdentifier2 reconciliation;
 	/**
-	 * Identification of the reconciliation period between the acquirer and the
-	 * issuer or their respective agents.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -203,10 +218,10 @@ public class CardTransaction6 {
 	 * CardTransaction4.mmReconciliation}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReconciliation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CardTransaction6, Optional<TransactionIdentifier2>> mmReconciliation = new MMMessageAssociationEnd<CardTransaction6, Optional<TransactionIdentifier2>>() {
 		{
 			businessComponentTrace_lazy = () -> CardPaymentAcquiring.mmObject();
-			componentContext_lazy = () -> CardTransaction6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardTransaction6.mmObject();
 			isDerived = false;
 			xmlTag = "Rcncltn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -216,16 +231,24 @@ public class CardTransaction6 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TransactionIdentifier2.mmObject();
+			type_lazy = () -> TransactionIdentifier2.mmObject();
+		}
+
+		@Override
+		public Optional<TransactionIdentifier2> getValue(CardTransaction6 obj) {
+			return obj.getReconciliation();
+		}
+
+		@Override
+		public void setValue(CardTransaction6 obj, Optional<TransactionIdentifier2> value) {
+			obj.setReconciliation(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "AccptrTxDtTm", required = true)
 	protected ISODateTime acceptorTransactionDateTime;
 	/**
-	 * Date and time of the transaction transported unchanged by the acquirer
-	 * from the card acceptor to the issuer. Corresponds to the CAPE data
-	 * element TransactionIdentification/ TransactionDateTime.<br>
-	 * It correspond to the ISO 8583, field number 12.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -262,10 +285,10 @@ public class CardTransaction6 {
 	 * CardTransaction4.mmAcceptorTransactionDateTime}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAcceptorTransactionDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CardTransaction6, ISODateTime> mmAcceptorTransactionDateTime = new MMMessageAttribute<CardTransaction6, ISODateTime>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmTransactionDateTime;
-			componentContext_lazy = () -> CardTransaction6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardTransaction6.mmObject();
 			isDerived = false;
 			xmlTag = "AccptrTxDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -276,14 +299,22 @@ public class CardTransaction6 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public ISODateTime getValue(CardTransaction6 obj) {
+			return obj.getAcceptorTransactionDateTime();
+		}
+
+		@Override
+		public void setValue(CardTransaction6 obj, ISODateTime value) {
+			obj.setAcceptorTransactionDateTime(value);
+		}
 	};
+	@XmlElement(name = "InitrTxId", required = true)
 	protected Max35Text initiatorTransactionIdentification;
 	/**
-	 * Number generated by the transaction Initiator to assist in identifying a
-	 * transaction uniquely. This value remains unchanged for all messages
-	 * within a message pair exchange, for instance an initiation/response. It
-	 * corresponds to the ISO 8583 field number 11.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -320,10 +351,10 @@ public class CardTransaction6 {
 	 * CardTransaction4.mmInitiatorTransactionIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInitiatorTransactionIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CardTransaction6, Max35Text> mmInitiatorTransactionIdentification = new MMMessageAttribute<CardTransaction6, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmInitiatorTransactionIdentifier;
-			componentContext_lazy = () -> CardTransaction6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardTransaction6.mmObject();
 			isDerived = false;
 			xmlTag = "InitrTxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -334,15 +365,22 @@ public class CardTransaction6 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(CardTransaction6 obj) {
+			return obj.getInitiatorTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(CardTransaction6 obj, Max35Text value) {
+			obj.setInitiatorTransactionIdentification(value);
+		}
 	};
+	@XmlElement(name = "TxLifeCyclId")
 	protected Max35Text transactionLifeCycleIdentification;
 	/**
-	 * Unique identification to match transactions throughout their life cycle
-	 * (for example, authorisation to financial presentment, financial
-	 * presentment to chargeback). It shall contain the same value in all
-	 * messages throughout a transaction’s life cycle. It corresponds partially
-	 * to ISO 8583:2003 field number 21.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -365,7 +403,7 @@ public class CardTransaction6 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Unique identification to match transactions throughout their life cycle (for example, authorisation to financial presentment, financial presentment to chargeback). It shall contain the same value in all messages throughout a transaction’s life cycle. It corresponds partially to ISO 8583:2003 field number 21."
+	 * "Unique identification to match transactions throughout their life cycle (for example, authorisation to financial presentment, financial presentment to chargeback). It shall contain the same value in all messages throughout a transaction’s life cycle. It corresponds partially to ISO 8583: 2003 field number 21."
 	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
@@ -374,26 +412,35 @@ public class CardTransaction6 {
 	 * CardTransaction4.mmTransactionLifeCycleIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionLifeCycleIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CardTransaction6, Optional<Max35Text>> mmTransactionLifeCycleIdentification = new MMMessageAttribute<CardTransaction6, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> CardTransaction6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardTransaction6.mmObject();
 			isDerived = false;
 			xmlTag = "TxLifeCyclId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransactionLifeCycleIdentification";
-			definition = "Unique identification to match transactions throughout their life cycle (for example, authorisation to financial presentment, financial presentment to chargeback). It shall contain the same value in all messages throughout a transaction’s life cycle. It corresponds partially to ISO 8583:2003 field number 21.";
+			definition = "Unique identification to match transactions throughout their life cycle (for example, authorisation to financial presentment, financial presentment to chargeback). It shall contain the same value in all messages throughout a transaction’s life cycle. It corresponds partially to ISO 8583: 2003 field number 21.";
 			previousVersion_lazy = () -> CardTransaction4.mmTransactionLifeCycleIdentification;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(CardTransaction6 obj) {
+			return obj.getTransactionLifeCycleIdentification();
+		}
+
+		@Override
+		public void setValue(CardTransaction6 obj, Optional<Max35Text> value) {
+			obj.setTransactionLifeCycleIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TxLifeCyclSeqNb")
 	protected Number transactionLifeCycleSequenceNumber;
 	/**
-	 * Life cycle transaction sequence number when multiple authorisations are
-	 * performed for the same presentment.<br>
-	 * It corresponds partially to ISO 8583:2003, field number 21.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -416,7 +463,7 @@ public class CardTransaction6 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Life cycle transaction sequence number when multiple authorisations are performed for the same presentment.\r\nIt corresponds partially to ISO 8583:2003, field number 21."
+	 * "Life cycle transaction sequence number when multiple authorisations are performed for the same presentment.\r\nIt corresponds partially to ISO 8583: 2003, field number 21."
 	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
@@ -425,25 +472,35 @@ public class CardTransaction6 {
 	 * CardTransaction4.mmTransactionLifeCycleSequenceNumber}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionLifeCycleSequenceNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CardTransaction6, Optional<Number>> mmTransactionLifeCycleSequenceNumber = new MMMessageAttribute<CardTransaction6, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> CardTransaction6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardTransaction6.mmObject();
 			isDerived = false;
 			xmlTag = "TxLifeCyclSeqNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransactionLifeCycleSequenceNumber";
-			definition = "Life cycle transaction sequence number when multiple authorisations are performed for the same presentment.\r\nIt corresponds partially to ISO 8583:2003, field number 21.";
+			definition = "Life cycle transaction sequence number when multiple authorisations are performed for the same presentment.\r\nIt corresponds partially to ISO 8583: 2003, field number 21.";
 			previousVersion_lazy = () -> CardTransaction4.mmTransactionLifeCycleSequenceNumber;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(CardTransaction6 obj) {
+			return obj.getTransactionLifeCycleSequenceNumber();
+		}
+
+		@Override
+		public void setValue(CardTransaction6 obj, Optional<Number> value) {
+			obj.setTransactionLifeCycleSequenceNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TxLifeCyclSeqCntr")
 	protected Number transactionLifeCycleSequenceCounter;
 	/**
-	 * Total number of transactions under the same life cycle transaction
-	 * sequence number.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -475,9 +532,9 @@ public class CardTransaction6 {
 	 * CardTransaction4.mmTransactionLifeCycleSequenceCounter}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionLifeCycleSequenceCounter = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CardTransaction6, Optional<Number>> mmTransactionLifeCycleSequenceCounter = new MMMessageAttribute<CardTransaction6, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> CardTransaction6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardTransaction6.mmObject();
 			isDerived = false;
 			xmlTag = "TxLifeCyclSeqCntr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -488,14 +545,22 @@ public class CardTransaction6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(CardTransaction6 obj) {
+			return obj.getTransactionLifeCycleSequenceCounter();
+		}
+
+		@Override
+		public void setValue(CardTransaction6 obj, Optional<Number> value) {
+			obj.setTransactionLifeCycleSequenceCounter(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CardIssrRefData")
 	protected Max140Text cardIssuerReferenceData;
 	/**
-	 * Data supplied by a card issuer in response messages or in issuer
-	 * generated messages, that the acquirer may be required to be provided in
-	 * subsequent messages. It corresponds to ISO 8583:93 and 2003 field number
-	 * 95.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -518,27 +583,38 @@ public class CardTransaction6 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Data supplied by a card issuer in response messages or in issuer generated messages, that the acquirer may be required to be provided in subsequent messages. It corresponds to ISO 8583:93 and 2003 field number 95."
+	 * "Data supplied by a card issuer in response messages or in issuer generated messages, that the acquirer may be required to be provided in subsequent messages. It corresponds to ISO 8583: 93 and 2003 field number 95."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCardIssuerReferenceData = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CardTransaction6, Optional<Max140Text>> mmCardIssuerReferenceData = new MMMessageAttribute<CardTransaction6, Optional<Max140Text>>() {
 		{
-			componentContext_lazy = () -> CardTransaction6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardTransaction6.mmObject();
 			isDerived = false;
 			xmlTag = "CardIssrRefData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CardIssuerReferenceData";
-			definition = "Data supplied by a card issuer in response messages or in issuer generated messages, that the acquirer may be required to be provided in subsequent messages. It corresponds to ISO 8583:93 and 2003 field number 95.";
+			definition = "Data supplied by a card issuer in response messages or in issuer generated messages, that the acquirer may be required to be provided in subsequent messages. It corresponds to ISO 8583: 93 and 2003 field number 95.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max140Text> getValue(CardTransaction6 obj) {
+			return obj.getCardIssuerReferenceData();
+		}
+
+		@Override
+		public void setValue(CardTransaction6 obj, Optional<Max140Text> value) {
+			obj.setCardIssuerReferenceData(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TxDtls", required = true)
 	protected CardTransactionDetail4 transactionDetails;
 	/**
-	 * Details of the card transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -571,10 +647,10 @@ public class CardTransaction6 {
 	 * CardTransaction4.mmTransactionDetails}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransactionDetails = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CardTransaction6, CardTransactionDetail4> mmTransactionDetails = new MMMessageAssociationEnd<CardTransaction6, CardTransactionDetail4>() {
 		{
 			businessComponentTrace_lazy = () -> CardPayment.mmObject();
-			componentContext_lazy = () -> CardTransaction6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardTransaction6.mmObject();
 			isDerived = false;
 			xmlTag = "TxDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -584,13 +660,24 @@ public class CardTransaction6 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CardTransactionDetail4.mmObject();
+			type_lazy = () -> CardTransactionDetail4.mmObject();
+		}
+
+		@Override
+		public CardTransactionDetail4 getValue(CardTransaction6 obj) {
+			return obj.getTransactionDetails();
+		}
+
+		@Override
+		public void setValue(CardTransaction6 obj, CardTransactionDetail4 value) {
+			obj.setTransactionDetails(value);
 		}
 	};
+	@XmlElement(name = "AuthstnRslt")
 	protected AuthorisationResult8 authorisationResult;
 	/**
-	 * Outcome of the authorisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -624,10 +711,10 @@ public class CardTransaction6 {
 	 * CardTransaction4.mmAuthorisationResult}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAuthorisationResult = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CardTransaction6, Optional<AuthorisationResult8>> mmAuthorisationResult = new MMMessageAssociationEnd<CardTransaction6, Optional<AuthorisationResult8>>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentValidation.mmResponse;
-			componentContext_lazy = () -> CardTransaction6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardTransaction6.mmObject();
 			isDerived = false;
 			xmlTag = "AuthstnRslt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -637,18 +724,30 @@ public class CardTransaction6 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AuthorisationResult8.mmObject();
+			type_lazy = () -> AuthorisationResult8.mmObject();
+		}
+
+		@Override
+		public Optional<AuthorisationResult8> getValue(CardTransaction6 obj) {
+			return obj.getAuthorisationResult();
+		}
+
+		@Override
+		public void setValue(CardTransaction6 obj, Optional<AuthorisationResult8> value) {
+			obj.setAuthorisationResult(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CardTransaction6.mmTransactionType, CardTransaction6.mmReconciliation, CardTransaction6.mmAcceptorTransactionDateTime, CardTransaction6.mmInitiatorTransactionIdentification,
-						CardTransaction6.mmTransactionLifeCycleIdentification, CardTransaction6.mmTransactionLifeCycleSequenceNumber, CardTransaction6.mmTransactionLifeCycleSequenceCounter, CardTransaction6.mmCardIssuerReferenceData,
-						CardTransaction6.mmTransactionDetails, CardTransaction6.mmAuthorisationResult);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CardTransaction6.mmTransactionType, com.tools20022.repository.msg.CardTransaction6.mmReconciliation,
+						com.tools20022.repository.msg.CardTransaction6.mmAcceptorTransactionDateTime, com.tools20022.repository.msg.CardTransaction6.mmInitiatorTransactionIdentification,
+						com.tools20022.repository.msg.CardTransaction6.mmTransactionLifeCycleIdentification, com.tools20022.repository.msg.CardTransaction6.mmTransactionLifeCycleSequenceNumber,
+						com.tools20022.repository.msg.CardTransaction6.mmTransactionLifeCycleSequenceCounter, com.tools20022.repository.msg.CardTransaction6.mmCardIssuerReferenceData,
+						com.tools20022.repository.msg.CardTransaction6.mmTransactionDetails, com.tools20022.repository.msg.CardTransaction6.mmAuthorisationResult);
 				trace_lazy = () -> CardPayment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardTransaction6";
 				definition = "Card transaction for which the financial authorisation has been requested.";
@@ -658,93 +757,93 @@ public class CardTransaction6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TxTp", required = true)
 	public CardPaymentServiceType7Code getTransactionType() {
 		return transactionType;
 	}
 
-	public void setTransactionType(CardPaymentServiceType7Code transactionType) {
-		this.transactionType = transactionType;
+	public CardTransaction6 setTransactionType(CardPaymentServiceType7Code transactionType) {
+		this.transactionType = Objects.requireNonNull(transactionType);
+		return this;
 	}
 
-	@XmlElement(name = "Rcncltn")
-	public TransactionIdentifier2 getReconciliation() {
-		return reconciliation;
+	public Optional<TransactionIdentifier2> getReconciliation() {
+		return reconciliation == null ? Optional.empty() : Optional.of(reconciliation);
 	}
 
-	public void setReconciliation(com.tools20022.repository.msg.TransactionIdentifier2 reconciliation) {
+	public CardTransaction6 setReconciliation(TransactionIdentifier2 reconciliation) {
 		this.reconciliation = reconciliation;
+		return this;
 	}
 
-	@XmlElement(name = "AccptrTxDtTm", required = true)
 	public ISODateTime getAcceptorTransactionDateTime() {
 		return acceptorTransactionDateTime;
 	}
 
-	public void setAcceptorTransactionDateTime(ISODateTime acceptorTransactionDateTime) {
-		this.acceptorTransactionDateTime = acceptorTransactionDateTime;
+	public CardTransaction6 setAcceptorTransactionDateTime(ISODateTime acceptorTransactionDateTime) {
+		this.acceptorTransactionDateTime = Objects.requireNonNull(acceptorTransactionDateTime);
+		return this;
 	}
 
-	@XmlElement(name = "InitrTxId", required = true)
 	public Max35Text getInitiatorTransactionIdentification() {
 		return initiatorTransactionIdentification;
 	}
 
-	public void setInitiatorTransactionIdentification(Max35Text initiatorTransactionIdentification) {
-		this.initiatorTransactionIdentification = initiatorTransactionIdentification;
+	public CardTransaction6 setInitiatorTransactionIdentification(Max35Text initiatorTransactionIdentification) {
+		this.initiatorTransactionIdentification = Objects.requireNonNull(initiatorTransactionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "TxLifeCyclId")
-	public Max35Text getTransactionLifeCycleIdentification() {
-		return transactionLifeCycleIdentification;
+	public Optional<Max35Text> getTransactionLifeCycleIdentification() {
+		return transactionLifeCycleIdentification == null ? Optional.empty() : Optional.of(transactionLifeCycleIdentification);
 	}
 
-	public void setTransactionLifeCycleIdentification(Max35Text transactionLifeCycleIdentification) {
+	public CardTransaction6 setTransactionLifeCycleIdentification(Max35Text transactionLifeCycleIdentification) {
 		this.transactionLifeCycleIdentification = transactionLifeCycleIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "TxLifeCyclSeqNb")
-	public Number getTransactionLifeCycleSequenceNumber() {
-		return transactionLifeCycleSequenceNumber;
+	public Optional<Number> getTransactionLifeCycleSequenceNumber() {
+		return transactionLifeCycleSequenceNumber == null ? Optional.empty() : Optional.of(transactionLifeCycleSequenceNumber);
 	}
 
-	public void setTransactionLifeCycleSequenceNumber(Number transactionLifeCycleSequenceNumber) {
+	public CardTransaction6 setTransactionLifeCycleSequenceNumber(Number transactionLifeCycleSequenceNumber) {
 		this.transactionLifeCycleSequenceNumber = transactionLifeCycleSequenceNumber;
+		return this;
 	}
 
-	@XmlElement(name = "TxLifeCyclSeqCntr")
-	public Number getTransactionLifeCycleSequenceCounter() {
-		return transactionLifeCycleSequenceCounter;
+	public Optional<Number> getTransactionLifeCycleSequenceCounter() {
+		return transactionLifeCycleSequenceCounter == null ? Optional.empty() : Optional.of(transactionLifeCycleSequenceCounter);
 	}
 
-	public void setTransactionLifeCycleSequenceCounter(Number transactionLifeCycleSequenceCounter) {
+	public CardTransaction6 setTransactionLifeCycleSequenceCounter(Number transactionLifeCycleSequenceCounter) {
 		this.transactionLifeCycleSequenceCounter = transactionLifeCycleSequenceCounter;
+		return this;
 	}
 
-	@XmlElement(name = "CardIssrRefData")
-	public Max140Text getCardIssuerReferenceData() {
-		return cardIssuerReferenceData;
+	public Optional<Max140Text> getCardIssuerReferenceData() {
+		return cardIssuerReferenceData == null ? Optional.empty() : Optional.of(cardIssuerReferenceData);
 	}
 
-	public void setCardIssuerReferenceData(Max140Text cardIssuerReferenceData) {
+	public CardTransaction6 setCardIssuerReferenceData(Max140Text cardIssuerReferenceData) {
 		this.cardIssuerReferenceData = cardIssuerReferenceData;
+		return this;
 	}
 
-	@XmlElement(name = "TxDtls", required = true)
 	public CardTransactionDetail4 getTransactionDetails() {
 		return transactionDetails;
 	}
 
-	public void setTransactionDetails(com.tools20022.repository.msg.CardTransactionDetail4 transactionDetails) {
-		this.transactionDetails = transactionDetails;
+	public CardTransaction6 setTransactionDetails(CardTransactionDetail4 transactionDetails) {
+		this.transactionDetails = Objects.requireNonNull(transactionDetails);
+		return this;
 	}
 
-	@XmlElement(name = "AuthstnRslt")
-	public AuthorisationResult8 getAuthorisationResult() {
-		return authorisationResult;
+	public Optional<AuthorisationResult8> getAuthorisationResult() {
+		return authorisationResult == null ? Optional.empty() : Optional.of(authorisationResult);
 	}
 
-	public void setAuthorisationResult(com.tools20022.repository.msg.AuthorisationResult8 authorisationResult) {
+	public CardTransaction6 setAuthorisationResult(AuthorisationResult8 authorisationResult) {
 		this.authorisationResult = authorisationResult;
+		return this;
 	}
 }

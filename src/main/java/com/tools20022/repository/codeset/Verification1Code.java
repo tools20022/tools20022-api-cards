@@ -37,21 +37,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.Verification1Code#Failed
- * Verification1Code.mmFailed}</li>
+ * Verification1Code.Failed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Verification1Code#Missing
- * Verification1Code.mmMissing}</li>
+ * Verification1Code.Missing}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Verification1Code#NotPerformed
- * Verification1Code.mmNotPerformed}</li>
+ * Verification1Code.NotPerformed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Verification1Code#PartialMatch
- * Verification1Code.mmPartialMatch}</li>
+ * Verification1Code.PartialMatch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Verification1Code#Successful
- * Verification1Code.mmSuccessful}</li>
+ * Verification1Code.Successful}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Verification1Code#TechnicalError
- * Verification1Code.mmTechnicalError}</li>
+ * Verification1Code.TechnicalError}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -60,8 +60,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -228,7 +228,7 @@ public class Verification1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Verification1Code";
 				definition = "Result of the verification.";

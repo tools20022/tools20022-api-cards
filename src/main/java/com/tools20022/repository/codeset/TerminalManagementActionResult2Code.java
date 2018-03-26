@@ -38,31 +38,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult2Code#ConnectionError
- * TerminalManagementActionResult2Code.mmConnectionError}</li>
+ * TerminalManagementActionResult2Code.ConnectionError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult2Code#FormatError
- * TerminalManagementActionResult2Code.mmFormatError}</li>
+ * TerminalManagementActionResult2Code.FormatError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult2Code#Hardware
- * TerminalManagementActionResult2Code.mmHardware}</li>
+ * TerminalManagementActionResult2Code.Hardware}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult2Code#NotSupported
- * TerminalManagementActionResult2Code.mmNotSupported}</li>
+ * TerminalManagementActionResult2Code.NotSupported}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult2Code#Security
- * TerminalManagementActionResult2Code.mmSecurity}</li>
+ * TerminalManagementActionResult2Code.Security}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult2Code#Success
- * TerminalManagementActionResult2Code.mmSuccess}</li>
+ * TerminalManagementActionResult2Code.Success}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult2Code#SyntaxError
- * TerminalManagementActionResult2Code.mmSyntaxError}</li>
+ * TerminalManagementActionResult2Code.SyntaxError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult2Code#Timeout
- * TerminalManagementActionResult2Code.mmTimeout}</li>
+ * TerminalManagementActionResult2Code.Timeout}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult2Code#UnknownKeyReference
- * TerminalManagementActionResult2Code.mmUnknownKeyReference}</li>
+ * TerminalManagementActionResult2Code.UnknownKeyReference}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -71,8 +71,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -311,7 +311,7 @@ public class TerminalManagementActionResult2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TerminalManagementActionResult2Code";
 				definition = "Final result of the processed command at the ATM.";

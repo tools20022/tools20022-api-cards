@@ -22,15 +22,18 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.caam.ATMDiagnosticRequestV02;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ATMEnvironment9;
+import com.tools20022.repository.msg.ATMStatus1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 /**
- * Information related to the request of a diagnostic from an ATM..
+ * Information related to the request of a diagnostic from an ATM.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -58,8 +61,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,18 +71,19 @@ import javax.xml.bind.annotation.XmlType;
  * "ATMDiagnosticRequest2"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Information related to the request of a diagnostic from an ATM.."</li>
+ * "Information related to the request of a diagnostic from an ATM."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "ATMDiagnosticRequest2", propOrder = {"environment", "ATMGlobalStatus"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "ATMDiagnosticRequest2", propOrder = {"environment", "aTMGlobalStatus"})
 public class ATMDiagnosticRequest2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Envt", required = true)
 	protected ATMEnvironment9 environment;
 	/**
-	 * Environment of the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -103,9 +107,9 @@ public class ATMDiagnosticRequest2 {
 	 * definition} = "Environment of the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEnvironment = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMDiagnosticRequest2, ATMEnvironment9> mmEnvironment = new MMMessageAssociationEnd<ATMDiagnosticRequest2, ATMEnvironment9>() {
 		{
-			componentContext_lazy = () -> ATMDiagnosticRequest2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMDiagnosticRequest2.mmObject();
 			isDerived = false;
 			xmlTag = "Envt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,13 +118,24 @@ public class ATMDiagnosticRequest2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMEnvironment9.mmObject();
+			type_lazy = () -> ATMEnvironment9.mmObject();
+		}
+
+		@Override
+		public ATMEnvironment9 getValue(ATMDiagnosticRequest2 obj) {
+			return obj.getEnvironment();
+		}
+
+		@Override
+		public void setValue(ATMDiagnosticRequest2 obj, ATMEnvironment9 value) {
+			obj.setEnvironment(value);
 		}
 	};
+	@XmlElement(name = "ATMGblSts", required = true)
 	protected ATMStatus1 aTMGlobalStatus;
 	/**
-	 * Global status of the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -143,9 +158,9 @@ public class ATMDiagnosticRequest2 {
 	 * definition} = "Global status of the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmATMGlobalStatus = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMDiagnosticRequest2, ATMStatus1> mmATMGlobalStatus = new MMMessageAssociationEnd<ATMDiagnosticRequest2, ATMStatus1>() {
 		{
-			componentContext_lazy = () -> ATMDiagnosticRequest2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMDiagnosticRequest2.mmObject();
 			isDerived = false;
 			xmlTag = "ATMGblSts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -154,39 +169,49 @@ public class ATMDiagnosticRequest2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMStatus1.mmObject();
+			type_lazy = () -> ATMStatus1.mmObject();
+		}
+
+		@Override
+		public ATMStatus1 getValue(ATMDiagnosticRequest2 obj) {
+			return obj.getATMGlobalStatus();
+		}
+
+		@Override
+		public void setValue(ATMDiagnosticRequest2 obj, ATMStatus1 value) {
+			obj.setATMGlobalStatus(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ATMDiagnosticRequest2.mmEnvironment, ATMDiagnosticRequest2.mmATMGlobalStatus);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ATMDiagnosticRequest2.mmEnvironment, com.tools20022.repository.msg.ATMDiagnosticRequest2.mmATMGlobalStatus);
 				messageBuildingBlock_lazy = () -> Arrays.asList(ATMDiagnosticRequestV02.mmATMDiagnosticRequest);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMDiagnosticRequest2";
-				definition = "Information related to the request of a diagnostic from an ATM..";
+				definition = "Information related to the request of a diagnostic from an ATM.";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Envt", required = true)
 	public ATMEnvironment9 getEnvironment() {
 		return environment;
 	}
 
-	public void setEnvironment(com.tools20022.repository.msg.ATMEnvironment9 environment) {
-		this.environment = environment;
+	public ATMDiagnosticRequest2 setEnvironment(ATMEnvironment9 environment) {
+		this.environment = Objects.requireNonNull(environment);
+		return this;
 	}
 
-	@XmlElement(name = "ATMGblSts", required = true)
 	public ATMStatus1 getATMGlobalStatus() {
 		return aTMGlobalStatus;
 	}
 
-	public void setATMGlobalStatus(com.tools20022.repository.msg.ATMStatus1 aTMGlobalStatus) {
-		this.aTMGlobalStatus = aTMGlobalStatus;
+	public ATMDiagnosticRequest2 setATMGlobalStatus(ATMStatus1 aTMGlobalStatus) {
+		this.aTMGlobalStatus = Objects.requireNonNull(aTMGlobalStatus);
+		return this;
 	}
 }

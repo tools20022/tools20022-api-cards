@@ -28,9 +28,10 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Product;
 import com.tools20022.repository.entity.ProductIdentification;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.CountryCodeAndName1;
+import com.tools20022.repository.msg.ProductCharacteristics3;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +72,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,15 +86,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TradeProduct2", propOrder = {"identification", "name", "description", "countryOfOrigin", "productCharacteristics", "productCategory", "globalSerialIdentifier"})
 public class TradeProduct2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id")
 	protected List<ProductIdentifier2Choice> identification;
 	/**
-	 * Identification of the product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -123,10 +125,10 @@ public class TradeProduct2 {
 	 * definition} = "Identification of the product."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TradeProduct2, List<ProductIdentifier2Choice>> mmIdentification = new MMMessageAttribute<TradeProduct2, List<ProductIdentifier2Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Product.mmProductIdentification;
-			componentContext_lazy = () -> TradeProduct2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TradeProduct2.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -135,11 +137,22 @@ public class TradeProduct2 {
 			minOccurs = 0;
 			complexType_lazy = () -> ProductIdentifier2Choice.mmObject();
 		}
+
+		@Override
+		public List<ProductIdentifier2Choice> getValue(TradeProduct2 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(TradeProduct2 obj, List<ProductIdentifier2Choice> value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "Nm")
 	protected Max35Text name;
 	/**
-	 * Name of a product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -168,10 +181,10 @@ public class TradeProduct2 {
 	 * definition} = "Name of a product."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TradeProduct2, Optional<Max35Text>> mmName = new MMMessageAttribute<TradeProduct2, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> Product.mmName;
-			componentContext_lazy = () -> TradeProduct2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TradeProduct2.mmObject();
 			isDerived = false;
 			xmlTag = "Nm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -181,11 +194,22 @@ public class TradeProduct2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(TradeProduct2 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(TradeProduct2 obj, Optional<Max35Text> value) {
+			obj.setName(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Desc")
 	protected Max140Text description;
 	/**
-	 * Information about the goods and/or services of a trade transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -215,10 +239,10 @@ public class TradeProduct2 {
 	 * "Information about the goods and/or services of a trade transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDescription = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TradeProduct2, Optional<Max140Text>> mmDescription = new MMMessageAttribute<TradeProduct2, Optional<Max140Text>>() {
 		{
 			businessElementTrace_lazy = () -> Product.mmDescription;
-			componentContext_lazy = () -> TradeProduct2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TradeProduct2.mmObject();
 			isDerived = false;
 			xmlTag = "Desc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -228,11 +252,22 @@ public class TradeProduct2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max140Text> getValue(TradeProduct2 obj) {
+			return obj.getDescription();
+		}
+
+		@Override
+		public void setValue(TradeProduct2 obj, Optional<Max140Text> value) {
+			obj.setDescription(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.msg.CountryCodeAndName1> countryOfOrigin;
+	@XmlElement(name = "CtryOfOrgn")
+	protected List<CountryCodeAndName1> countryOfOrigin;
 	/**
-	 * Country of origin of the product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -262,23 +297,34 @@ public class TradeProduct2 {
 	 * definition} = "Country of origin of the product."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCountryOfOrigin = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TradeProduct2, List<CountryCodeAndName1>> mmCountryOfOrigin = new MMMessageAttribute<TradeProduct2, List<CountryCodeAndName1>>() {
 		{
 			businessElementTrace_lazy = () -> Product.mmOrigin;
-			componentContext_lazy = () -> TradeProduct2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TradeProduct2.mmObject();
 			isDerived = false;
 			xmlTag = "CtryOfOrgn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CountryOfOrigin";
 			definition = "Country of origin of the product.";
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.CountryCodeAndName1.mmObject();
+			complexType_lazy = () -> CountryCodeAndName1.mmObject();
+		}
+
+		@Override
+		public List<CountryCodeAndName1> getValue(TradeProduct2 obj) {
+			return obj.getCountryOfOrigin();
+		}
+
+		@Override
+		public void setValue(TradeProduct2 obj, List<CountryCodeAndName1> value) {
+			obj.setCountryOfOrigin(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.ProductCharacteristics3> productCharacteristics;
+	@XmlElement(name = "PdctChrtcs")
+	protected List<ProductCharacteristics3> productCharacteristics;
 	/**
-	 * Identifies the characteristic of a product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -307,10 +353,10 @@ public class TradeProduct2 {
 	 * definition} = "Identifies the characteristic of a product."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProductCharacteristics = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TradeProduct2, List<ProductCharacteristics3>> mmProductCharacteristics = new MMMessageAssociationEnd<TradeProduct2, List<ProductCharacteristics3>>() {
 		{
 			businessElementTrace_lazy = () -> Product.mmCharacteristics;
-			componentContext_lazy = () -> TradeProduct2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TradeProduct2.mmObject();
 			isDerived = false;
 			xmlTag = "PdctChrtcs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -318,13 +364,24 @@ public class TradeProduct2 {
 			definition = "Identifies the characteristic of a product.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ProductCharacteristics3.mmObject();
+			type_lazy = () -> ProductCharacteristics3.mmObject();
+		}
+
+		@Override
+		public List<ProductCharacteristics3> getValue(TradeProduct2 obj) {
+			return obj.getProductCharacteristics();
+		}
+
+		@Override
+		public void setValue(TradeProduct2 obj, List<ProductCharacteristics3> value) {
+			obj.setProductCharacteristics(value);
 		}
 	};
+	@XmlElement(name = "PdctCtgy")
 	protected List<ProductCategory1Choice> productCategory;
 	/**
-	 * Category of the product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -354,10 +411,10 @@ public class TradeProduct2 {
 	 * definition} = "Category of the product."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProductCategory = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TradeProduct2, List<ProductCategory1Choice>> mmProductCategory = new MMMessageAttribute<TradeProduct2, List<ProductCategory1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Product.mmProductCategory;
-			componentContext_lazy = () -> TradeProduct2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TradeProduct2.mmObject();
 			isDerived = false;
 			xmlTag = "PdctCtgy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -366,11 +423,22 @@ public class TradeProduct2 {
 			minOccurs = 0;
 			complexType_lazy = () -> ProductCategory1Choice.mmObject();
 		}
+
+		@Override
+		public List<ProductCategory1Choice> getValue(TradeProduct2 obj) {
+			return obj.getProductCategory();
+		}
+
+		@Override
+		public void setValue(TradeProduct2 obj, List<ProductCategory1Choice> value) {
+			obj.setProductCategory(value);
+		}
 	};
+	@XmlElement(name = "GblSrlIdr")
 	protected List<Max35Text> globalSerialIdentifier;
 	/**
-	 * Unique global serial identifier for this product instance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -400,10 +468,10 @@ public class TradeProduct2 {
 	 * "Unique global serial identifier for this product instance."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmGlobalSerialIdentifier = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TradeProduct2, List<Max35Text>> mmGlobalSerialIdentifier = new MMMessageAttribute<TradeProduct2, List<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> ProductIdentification.mmIdentifier;
-			componentContext_lazy = () -> TradeProduct2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TradeProduct2.mmObject();
 			isDerived = false;
 			xmlTag = "GblSrlIdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -412,15 +480,26 @@ public class TradeProduct2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public List<Max35Text> getValue(TradeProduct2 obj) {
+			return obj.getGlobalSerialIdentifier();
+		}
+
+		@Override
+		public void setValue(TradeProduct2 obj, List<Max35Text> value) {
+			obj.setGlobalSerialIdentifier(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TradeProduct2.mmIdentification, TradeProduct2.mmName, TradeProduct2.mmDescription, TradeProduct2.mmCountryOfOrigin, TradeProduct2.mmProductCharacteristics,
-						TradeProduct2.mmProductCategory, TradeProduct2.mmGlobalSerialIdentifier);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TradeProduct2.mmIdentification, com.tools20022.repository.msg.TradeProduct2.mmName, com.tools20022.repository.msg.TradeProduct2.mmDescription,
+						com.tools20022.repository.msg.TradeProduct2.mmCountryOfOrigin, com.tools20022.repository.msg.TradeProduct2.mmProductCharacteristics, com.tools20022.repository.msg.TradeProduct2.mmProductCategory,
+						com.tools20022.repository.msg.TradeProduct2.mmGlobalSerialIdentifier);
 				trace_lazy = () -> Product.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TradeProduct2";
 				definition = "Tangible output or service produced by human or mechanical effort, or by a natural process for purposes of specifying a product.";
@@ -429,66 +508,66 @@ public class TradeProduct2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id")
 	public List<ProductIdentifier2Choice> getIdentification() {
-		return identification;
+		return identification == null ? identification = new ArrayList<>() : identification;
 	}
 
-	public void setIdentification(List<ProductIdentifier2Choice> identification) {
-		this.identification = identification;
+	public TradeProduct2 setIdentification(List<ProductIdentifier2Choice> identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "Nm")
-	public Max35Text getName() {
-		return name;
+	public Optional<Max35Text> getName() {
+		return name == null ? Optional.empty() : Optional.of(name);
 	}
 
-	public void setName(Max35Text name) {
+	public TradeProduct2 setName(Max35Text name) {
 		this.name = name;
+		return this;
 	}
 
-	@XmlElement(name = "Desc")
-	public Max140Text getDescription() {
-		return description;
+	public Optional<Max140Text> getDescription() {
+		return description == null ? Optional.empty() : Optional.of(description);
 	}
 
-	public void setDescription(Max140Text description) {
+	public TradeProduct2 setDescription(Max140Text description) {
 		this.description = description;
+		return this;
 	}
 
-	@XmlElement(name = "CtryOfOrgn")
 	public List<CountryCodeAndName1> getCountryOfOrigin() {
-		return countryOfOrigin;
+		return countryOfOrigin == null ? countryOfOrigin = new ArrayList<>() : countryOfOrigin;
 	}
 
-	public void setCountryOfOrigin(List<com.tools20022.repository.msg.CountryCodeAndName1> countryOfOrigin) {
-		this.countryOfOrigin = countryOfOrigin;
+	public TradeProduct2 setCountryOfOrigin(List<CountryCodeAndName1> countryOfOrigin) {
+		this.countryOfOrigin = Objects.requireNonNull(countryOfOrigin);
+		return this;
 	}
 
-	@XmlElement(name = "PdctChrtcs")
 	public List<ProductCharacteristics3> getProductCharacteristics() {
-		return productCharacteristics;
+		return productCharacteristics == null ? productCharacteristics = new ArrayList<>() : productCharacteristics;
 	}
 
-	public void setProductCharacteristics(List<com.tools20022.repository.msg.ProductCharacteristics3> productCharacteristics) {
-		this.productCharacteristics = productCharacteristics;
+	public TradeProduct2 setProductCharacteristics(List<ProductCharacteristics3> productCharacteristics) {
+		this.productCharacteristics = Objects.requireNonNull(productCharacteristics);
+		return this;
 	}
 
-	@XmlElement(name = "PdctCtgy")
 	public List<ProductCategory1Choice> getProductCategory() {
-		return productCategory;
+		return productCategory == null ? productCategory = new ArrayList<>() : productCategory;
 	}
 
-	public void setProductCategory(List<ProductCategory1Choice> productCategory) {
-		this.productCategory = productCategory;
+	public TradeProduct2 setProductCategory(List<ProductCategory1Choice> productCategory) {
+		this.productCategory = Objects.requireNonNull(productCategory);
+		return this;
 	}
 
-	@XmlElement(name = "GblSrlIdr")
 	public List<Max35Text> getGlobalSerialIdentifier() {
-		return globalSerialIdentifier;
+		return globalSerialIdentifier == null ? globalSerialIdentifier = new ArrayList<>() : globalSerialIdentifier;
 	}
 
-	public void setGlobalSerialIdentifier(List<Max35Text> globalSerialIdentifier) {
-		this.globalSerialIdentifier = globalSerialIdentifier;
+	public TradeProduct2 setGlobalSerialIdentifier(List<Max35Text> globalSerialIdentifier) {
+		this.globalSerialIdentifier = Objects.requireNonNull(globalSerialIdentifier);
+		return this;
 	}
 }

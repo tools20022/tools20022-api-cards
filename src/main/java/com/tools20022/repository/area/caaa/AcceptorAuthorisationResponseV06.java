@@ -21,13 +21,14 @@ import com.tools20022.metamodel.MMMessageBuildingBlock;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.AcceptortoAcquirerCardTransactionLatestVersion;
+import com.tools20022.repository.area.AcceptortoAcquirerCardTransactionPreviousVersion;
 import com.tools20022.repository.msg.AcceptorAuthorisationResponse6;
 import com.tools20022.repository.msg.ContentInformationType15;
 import com.tools20022.repository.msg.Header30;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -58,8 +59,8 @@ import javax.xml.bind.annotation.*;
  * xmlTag} = "AccptrAuthstnRspn"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageDefinition#getBusinessArea
  * businessArea} =
- * {@linkplain com.tools20022.repository.area.AcceptortoAcquirerCardTransactionLatestVersion
- * AcceptortoAcquirerCardTransactionLatestVersion}</li>
+ * {@linkplain com.tools20022.repository.area.AcceptortoAcquirerCardTransactionPreviousVersion
+ * AcceptortoAcquirerCardTransactionPreviousVersion}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code caaa.002.001.06}</li>
@@ -75,15 +76,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AcceptorAuthorisationResponseV06", propOrder = {"header", "authorisationResponse", "securityTrailer"})
 public class AcceptorAuthorisationResponseV06 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header30 header;
 	/**
-	 * Authorisation response message management information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,7 +105,7 @@ public class AcceptorAuthorisationResponseV06 {
 	 * definition} = "Authorisation response message management information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorAuthorisationResponseV06, Header30> mmHeader = new MMMessageBuildingBlock<AcceptorAuthorisationResponseV06, Header30>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,18 +116,21 @@ public class AcceptorAuthorisationResponseV06 {
 			complexType_lazy = () -> Header30.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorAuthorisationResponseV06.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header30 getValue(AcceptorAuthorisationResponseV06 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(AcceptorAuthorisationResponseV06 obj, Header30 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "AuthstnRspn", required = true)
 	protected AcceptorAuthorisationResponse6 authorisationResponse;
 	/**
-	 * Information related to the response of the authorisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -147,7 +152,7 @@ public class AcceptorAuthorisationResponseV06 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAuthorisationResponse = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorAuthorisationResponseV06, AcceptorAuthorisationResponse6> mmAuthorisationResponse = new MMMessageBuildingBlock<AcceptorAuthorisationResponseV06, AcceptorAuthorisationResponse6>() {
 		{
 			xmlTag = "AuthstnRspn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -158,18 +163,21 @@ public class AcceptorAuthorisationResponseV06 {
 			complexType_lazy = () -> AcceptorAuthorisationResponse6.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorAuthorisationResponseV06.class.getMethod("getAuthorisationResponse", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AcceptorAuthorisationResponse6 getValue(AcceptorAuthorisationResponseV06 obj) {
+			return obj.getAuthorisationResponse();
+		}
+
+		@Override
+		public void setValue(AcceptorAuthorisationResponseV06 obj, AcceptorAuthorisationResponse6 value) {
+			obj.setAuthorisationResponse(value);
 		}
 	};
+	@XmlElement(name = "SctyTrlr")
 	protected ContentInformationType15 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -190,7 +198,7 @@ public class AcceptorAuthorisationResponseV06 {
 	 * definition} = "Trailer of the message containing a MAC."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorAuthorisationResponseV06, Optional<ContentInformationType15>> mmSecurityTrailer = new MMMessageBuildingBlock<AcceptorAuthorisationResponseV06, Optional<ContentInformationType15>>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -201,12 +209,14 @@ public class AcceptorAuthorisationResponseV06 {
 			complexType_lazy = () -> ContentInformationType15.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorAuthorisationResponseV06.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType15> getValue(AcceptorAuthorisationResponseV06 obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(AcceptorAuthorisationResponseV06 obj, Optional<ContentInformationType15> value) {
+			obj.setSecurityTrailer(value.orElse(null));
 		}
 	};
 
@@ -218,7 +228,7 @@ public class AcceptorAuthorisationResponseV06 {
 				definition = "The AcceptorAuthorisationResponse message is sent by the acquirer (or its agent) to an acceptor (or its agent), to return the result of the validation made by issuer about the payment transaction.";
 				rootElement = "Document";
 				xmlTag = "AccptrAuthstnRspn";
-				businessArea_lazy = () -> AcceptortoAcquirerCardTransactionLatestVersion.mmObject();
+				businessArea_lazy = () -> AcceptortoAcquirerCardTransactionPreviousVersion.mmObject();
 				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.caaa.AcceptorAuthorisationResponseV06.mmHeader, com.tools20022.repository.area.caaa.AcceptorAuthorisationResponseV06.mmAuthorisationResponse,
 						com.tools20022.repository.area.caaa.AcceptorAuthorisationResponseV06.mmSecurityTrailer);
 				messageDefinitionIdentifier_lazy = () -> new MMMessageDefinitionIdentifier() {
@@ -239,34 +249,34 @@ public class AcceptorAuthorisationResponseV06 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header30 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header30 header) {
-		this.header = header;
+	public AcceptorAuthorisationResponseV06 setHeader(Header30 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "AuthstnRspn", required = true)
 	public AcceptorAuthorisationResponse6 getAuthorisationResponse() {
 		return authorisationResponse;
 	}
 
-	public void setAuthorisationResponse(AcceptorAuthorisationResponse6 authorisationResponse) {
-		this.authorisationResponse = authorisationResponse;
+	public AcceptorAuthorisationResponseV06 setAuthorisationResponse(AcceptorAuthorisationResponse6 authorisationResponse) {
+		this.authorisationResponse = Objects.requireNonNull(authorisationResponse);
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr")
-	public ContentInformationType15 getSecurityTrailer() {
-		return securityTrailer;
+	public Optional<ContentInformationType15> getSecurityTrailer() {
+		return securityTrailer == null ? Optional.empty() : Optional.of(securityTrailer);
 	}
 
-	public void setSecurityTrailer(ContentInformationType15 securityTrailer) {
+	public AcceptorAuthorisationResponseV06 setSecurityTrailer(ContentInformationType15 securityTrailer) {
 		this.securityTrailer = securityTrailer;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:caaa.002.06.06")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:caaa.002.001.06")
 	static public class Document {
 		@XmlElement(name = "AccptrAuthstnRspn", required = true)
 		public AcceptorAuthorisationResponseV06 messageBody;

@@ -21,11 +21,14 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Document;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Role played by a party in the context of a document.
@@ -64,8 +67,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -81,8 +84,8 @@ public class DocumentPartyRole extends Role {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.Document> document;
 	/**
-	 * Identifies the document for which a party plays a role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -112,7 +115,7 @@ public class DocumentPartyRole extends Role {
 	 * definition} = "Identifies the document for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDocument = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DocumentPartyRole, List<Document>> mmDocument = new MMBusinessAssociationEnd<DocumentPartyRole, List<Document>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DocumentPartyRole.mmObject();
@@ -124,12 +127,22 @@ public class DocumentPartyRole extends Role {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 		}
+
+		@Override
+		public List<Document> getValue(DocumentPartyRole obj) {
+			return obj.getDocument();
+		}
+
+		@Override
+		public void setValue(DocumentPartyRole obj, List<Document> value) {
+			obj.setDocument(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DocumentPartyRole";
 				definition = "Role played by a party in the context of a document.";
@@ -148,10 +161,11 @@ public class DocumentPartyRole extends Role {
 	}
 
 	public List<Document> getDocument() {
-		return document;
+		return document == null ? document = new ArrayList<>() : document;
 	}
 
-	public void setDocument(List<com.tools20022.repository.entity.Document> document) {
-		this.document = document;
+	public DocumentPartyRole setDocument(List<com.tools20022.repository.entity.Document> document) {
+		this.document = Objects.requireNonNull(document);
+		return this;
 	}
 }

@@ -37,16 +37,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMStatusCode#InService
- * ATMStatusCode.mmInService}</li>
+ * ATMStatusCode.InService}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMStatusCode#OutOfService
- * ATMStatusCode.mmOutOfService}</li>
+ * ATMStatusCode.OutOfService}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMStatusCode#InOperation
- * ATMStatusCode.mmInOperation}</li>
+ * ATMStatusCode.InOperation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMStatusCode#Stopped
- * ATMStatusCode.mmStopped}</li>
+ * ATMStatusCode.Stopped}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMStatusCode#WaitingActivation
- * ATMStatusCode.mmWaitingActivation}</li>
+ * ATMStatusCode.WaitingActivation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -63,8 +63,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -238,7 +238,7 @@ public class ATMStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMStatusCode";
 				definition = "Required status of the ATM, parameters of the status update command.";

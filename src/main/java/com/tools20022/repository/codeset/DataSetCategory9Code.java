@@ -38,49 +38,49 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory9Code#AcquirerParameters
- * DataSetCategory9Code.mmAcquirerParameters}</li>
+ * DataSetCategory9Code.AcquirerParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory9Code#ApplicationParameters
- * DataSetCategory9Code.mmApplicationParameters}</li>
+ * DataSetCategory9Code.ApplicationParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory9Code#BatchCapture
- * DataSetCategory9Code.mmBatchCapture}</li>
+ * DataSetCategory9Code.BatchCapture}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory9Code#CaptureResponse
- * DataSetCategory9Code.mmCaptureResponse}</li>
+ * DataSetCategory9Code.CaptureResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory9Code#DelegationData
- * DataSetCategory9Code.mmDelegationData}</li>
+ * DataSetCategory9Code.DelegationData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory9Code#ManagementPlan
- * DataSetCategory9Code.mmManagementPlan}</li>
+ * DataSetCategory9Code.ManagementPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory9Code#MerchantParameters
- * DataSetCategory9Code.mmMerchantParameters}</li>
+ * DataSetCategory9Code.MerchantParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory9Code#SecurityParameters
- * DataSetCategory9Code.mmSecurityParameters}</li>
+ * DataSetCategory9Code.SecurityParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory9Code#SoftwareModule
- * DataSetCategory9Code.mmSoftwareModule}</li>
+ * DataSetCategory9Code.SoftwareModule}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory9Code#StatusReport
- * DataSetCategory9Code.mmStatusReport}</li>
+ * DataSetCategory9Code.StatusReport}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory9Code#TerminalParameters
- * DataSetCategory9Code.mmTerminalParameters}</li>
+ * DataSetCategory9Code.TerminalParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory9Code#VendorParameters
- * DataSetCategory9Code.mmVendorParameters}</li>
+ * DataSetCategory9Code.VendorParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory9Code#Parameters
- * DataSetCategory9Code.mmParameters}</li>
+ * DataSetCategory9Code.Parameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory9Code#TMSProtocolParameters
- * DataSetCategory9Code.mmTMSProtocolParameters}</li>
+ * DataSetCategory9Code.TMSProtocolParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory9Code#CertificateParameters
- * DataSetCategory9Code.mmCertificateParameters}</li>
+ * DataSetCategory9Code.CertificateParameters}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -89,8 +89,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -480,7 +480,7 @@ public class DataSetCategory9Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AQPR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DataSetCategory9Code";

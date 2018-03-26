@@ -20,11 +20,11 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.datatype.PlusOrMinusIndicator;
+import com.tools20022.repository.entity.AssetHolding;
+import com.tools20022.repository.entity.InformationPartyRole;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Basic valuation details of an asset's market value.
@@ -64,8 +64,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -81,8 +81,8 @@ public class HaircutValuation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected AssetHolding assetHolding;
 	/**
-	 * Asset holding for which a haircut is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,7 +113,7 @@ public class HaircutValuation {
 	 * definition} = "Asset holding for which a haircut is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAssetHolding = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<HaircutValuation, Optional<AssetHolding>> mmAssetHolding = new MMBusinessAssociationEnd<HaircutValuation, Optional<AssetHolding>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.HaircutValuation.mmObject();
@@ -122,15 +122,25 @@ public class HaircutValuation {
 			definition = "Asset holding for which a haircut is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmHaircut;
+			opposite_lazy = () -> AssetHolding.mmHaircut;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
+			type_lazy = () -> AssetHolding.mmObject();
+		}
+
+		@Override
+		public Optional<AssetHolding> getValue(HaircutValuation obj) {
+			return obj.getAssetHolding();
+		}
+
+		@Override
+		public void setValue(HaircutValuation obj, Optional<AssetHolding> value) {
+			obj.setAssetHolding(value.orElse(null));
 		}
 	};
 	protected PercentageRate haircut;
 	/**
-	 * Haircut or valuation factor on the security expressed as a percentage.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,7 +165,7 @@ public class HaircutValuation {
 	 * "Haircut or valuation factor on the security expressed as a percentage."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmHaircut = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<HaircutValuation, PercentageRate> mmHaircut = new MMBusinessAttribute<HaircutValuation, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.HaircutValuation.mmObject();
@@ -167,20 +177,20 @@ public class HaircutValuation {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return HaircutValuation.class.getMethod("getHaircut", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(HaircutValuation obj) {
+			return obj.getHaircut();
+		}
+
+		@Override
+		public void setValue(HaircutValuation obj, PercentageRate value) {
+			obj.setHaircut(value);
 		}
 	};
 	protected PlusOrMinusIndicator sign;
 	/**
-	 * One of the following PlusOrMinusIndicator values must be used:<br>
-	 * MeaningWhenTrue: Plus (the haircut is added)<br>
-	 * MeaningWhenFalse: Minus (the haircut is deducted)
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -206,7 +216,7 @@ public class HaircutValuation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSign = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<HaircutValuation, PlusOrMinusIndicator> mmSign = new MMBusinessAttribute<HaircutValuation, PlusOrMinusIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.HaircutValuation.mmObject();
@@ -218,18 +228,20 @@ public class HaircutValuation {
 			simpleType_lazy = () -> PlusOrMinusIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return HaircutValuation.class.getMethod("getSign", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PlusOrMinusIndicator getValue(HaircutValuation obj) {
+			return obj.getSign();
+		}
+
+		@Override
+		public void setValue(HaircutValuation obj, PlusOrMinusIndicator value) {
+			obj.setSign(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.InformationPartyRole> partyRole;
+	protected List<InformationPartyRole> partyRole;
 	/**
-	 * Specifies the role of a party in the haircut valuation process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -262,7 +274,7 @@ public class HaircutValuation {
 	 * "Specifies the role of a party in the haircut valuation process."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<HaircutValuation, List<InformationPartyRole>> mmPartyRole = new MMBusinessAssociationEnd<HaircutValuation, List<InformationPartyRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.HaircutValuation.mmObject();
@@ -270,20 +282,30 @@ public class HaircutValuation {
 			name = "PartyRole";
 			definition = "Specifies the role of a party in the haircut valuation process.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InformationPartyRole.mmHaircutValuation;
+			opposite_lazy = () -> InformationPartyRole.mmHaircutValuation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InformationPartyRole.mmObject();
+			type_lazy = () -> InformationPartyRole.mmObject();
+		}
+
+		@Override
+		public List<InformationPartyRole> getValue(HaircutValuation obj) {
+			return obj.getPartyRole();
+		}
+
+		@Override
+		public void setValue(HaircutValuation obj, List<InformationPartyRole> value) {
+			obj.setPartyRole(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "HaircutValuation";
 				definition = "Basic valuation details of an asset's market value.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InformationPartyRole.mmHaircutValuation, com.tools20022.repository.entity.AssetHolding.mmHaircut);
+				associationDomain_lazy = () -> Arrays.asList(InformationPartyRole.mmHaircutValuation, AssetHolding.mmHaircut);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.HaircutValuation.mmAssetHolding, com.tools20022.repository.entity.HaircutValuation.mmHaircut, com.tools20022.repository.entity.HaircutValuation.mmSign,
 						com.tools20022.repository.entity.HaircutValuation.mmPartyRole);
 			}
@@ -296,35 +318,39 @@ public class HaircutValuation {
 		return mmObject_lazy.get();
 	}
 
-	public AssetHolding getAssetHolding() {
-		return assetHolding;
+	public Optional<AssetHolding> getAssetHolding() {
+		return assetHolding == null ? Optional.empty() : Optional.of(assetHolding);
 	}
 
-	public void setAssetHolding(com.tools20022.repository.entity.AssetHolding assetHolding) {
+	public HaircutValuation setAssetHolding(AssetHolding assetHolding) {
 		this.assetHolding = assetHolding;
+		return this;
 	}
 
 	public PercentageRate getHaircut() {
 		return haircut;
 	}
 
-	public void setHaircut(PercentageRate haircut) {
-		this.haircut = haircut;
+	public HaircutValuation setHaircut(PercentageRate haircut) {
+		this.haircut = Objects.requireNonNull(haircut);
+		return this;
 	}
 
 	public PlusOrMinusIndicator getSign() {
 		return sign;
 	}
 
-	public void setSign(PlusOrMinusIndicator sign) {
-		this.sign = sign;
+	public HaircutValuation setSign(PlusOrMinusIndicator sign) {
+		this.sign = Objects.requireNonNull(sign);
+		return this;
 	}
 
 	public List<InformationPartyRole> getPartyRole() {
-		return partyRole;
+		return partyRole == null ? partyRole = new ArrayList<>() : partyRole;
 	}
 
-	public void setPartyRole(List<com.tools20022.repository.entity.InformationPartyRole> partyRole) {
-		this.partyRole = partyRole;
+	public HaircutValuation setPartyRole(List<InformationPartyRole> partyRole) {
+		this.partyRole = Objects.requireNonNull(partyRole);
+		return this;
 	}
 }

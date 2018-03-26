@@ -22,8 +22,12 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.catp.ATMWithdrawalResponseV02;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ATMContext9;
+import com.tools20022.repository.msg.ATMEnvironment12;
+import com.tools20022.repository.msg.ATMTransaction14;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,8 +65,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,15 +79,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ATMWithdrawalResponse2", propOrder = {"environment", "context", "transaction"})
 public class ATMWithdrawalResponse2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Envt", required = true)
 	protected ATMEnvironment12 environment;
 	/**
-	 * Environment of the withdrawal transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -107,9 +112,9 @@ public class ATMWithdrawalResponse2 {
 	 * definition} = "Environment of the withdrawal transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEnvironment = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMWithdrawalResponse2, ATMEnvironment12> mmEnvironment = new MMMessageAssociationEnd<ATMWithdrawalResponse2, ATMEnvironment12>() {
 		{
-			componentContext_lazy = () -> ATMWithdrawalResponse2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMWithdrawalResponse2.mmObject();
 			isDerived = false;
 			xmlTag = "Envt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,13 +123,24 @@ public class ATMWithdrawalResponse2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMEnvironment12.mmObject();
+			type_lazy = () -> ATMEnvironment12.mmObject();
+		}
+
+		@Override
+		public ATMEnvironment12 getValue(ATMWithdrawalResponse2 obj) {
+			return obj.getEnvironment();
+		}
+
+		@Override
+		public void setValue(ATMWithdrawalResponse2 obj, ATMEnvironment12 value) {
+			obj.setEnvironment(value);
 		}
 	};
+	@XmlElement(name = "Cntxt", required = true)
 	protected ATMContext9 context;
 	/**
-	 * Context in which the transaction is performed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -148,9 +164,9 @@ public class ATMWithdrawalResponse2 {
 	 * definition} = "Context in which the transaction is performed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmContext = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMWithdrawalResponse2, ATMContext9> mmContext = new MMMessageAssociationEnd<ATMWithdrawalResponse2, ATMContext9>() {
 		{
-			componentContext_lazy = () -> ATMWithdrawalResponse2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMWithdrawalResponse2.mmObject();
 			isDerived = false;
 			xmlTag = "Cntxt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -159,13 +175,24 @@ public class ATMWithdrawalResponse2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMContext9.mmObject();
+			type_lazy = () -> ATMContext9.mmObject();
+		}
+
+		@Override
+		public ATMContext9 getValue(ATMWithdrawalResponse2 obj) {
+			return obj.getContext();
+		}
+
+		@Override
+		public void setValue(ATMWithdrawalResponse2 obj, ATMContext9 value) {
+			obj.setContext(value);
 		}
 	};
+	@XmlElement(name = "Tx", required = true)
 	protected ATMTransaction14 transaction;
 	/**
-	 * Response to the withdrawal transaction request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -189,9 +216,9 @@ public class ATMWithdrawalResponse2 {
 	 * definition} = "Response to the withdrawal transaction request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransaction = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMWithdrawalResponse2, ATMTransaction14> mmTransaction = new MMMessageAssociationEnd<ATMWithdrawalResponse2, ATMTransaction14>() {
 		{
-			componentContext_lazy = () -> ATMWithdrawalResponse2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMWithdrawalResponse2.mmObject();
 			isDerived = false;
 			xmlTag = "Tx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -200,16 +227,27 @@ public class ATMWithdrawalResponse2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMTransaction14.mmObject();
+			type_lazy = () -> ATMTransaction14.mmObject();
+		}
+
+		@Override
+		public ATMTransaction14 getValue(ATMWithdrawalResponse2 obj) {
+			return obj.getTransaction();
+		}
+
+		@Override
+		public void setValue(ATMWithdrawalResponse2 obj, ATMTransaction14 value) {
+			obj.setTransaction(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ATMWithdrawalResponse2.mmEnvironment, ATMWithdrawalResponse2.mmContext, ATMWithdrawalResponse2.mmTransaction);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ATMWithdrawalResponse2.mmEnvironment, com.tools20022.repository.msg.ATMWithdrawalResponse2.mmContext,
+						com.tools20022.repository.msg.ATMWithdrawalResponse2.mmTransaction);
 				messageBuildingBlock_lazy = () -> Arrays.asList(ATMWithdrawalResponseV02.mmATMWithdrawalResponse);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMWithdrawalResponse2";
 				definition = "Information related to the response of an ATM withdrawal from an ATM manager.";
@@ -218,30 +256,30 @@ public class ATMWithdrawalResponse2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Envt", required = true)
 	public ATMEnvironment12 getEnvironment() {
 		return environment;
 	}
 
-	public void setEnvironment(com.tools20022.repository.msg.ATMEnvironment12 environment) {
-		this.environment = environment;
+	public ATMWithdrawalResponse2 setEnvironment(ATMEnvironment12 environment) {
+		this.environment = Objects.requireNonNull(environment);
+		return this;
 	}
 
-	@XmlElement(name = "Cntxt", required = true)
 	public ATMContext9 getContext() {
 		return context;
 	}
 
-	public void setContext(com.tools20022.repository.msg.ATMContext9 context) {
-		this.context = context;
+	public ATMWithdrawalResponse2 setContext(ATMContext9 context) {
+		this.context = Objects.requireNonNull(context);
+		return this;
 	}
 
-	@XmlElement(name = "Tx", required = true)
 	public ATMTransaction14 getTransaction() {
 		return transaction;
 	}
 
-	public void setTransaction(com.tools20022.repository.msg.ATMTransaction14 transaction) {
-		this.transaction = transaction;
+	public ATMWithdrawalResponse2 setTransaction(ATMTransaction14 transaction) {
+		this.transaction = Objects.requireNonNull(transaction);
+		return this;
 	}
 }

@@ -20,11 +20,15 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.RegulatoryReportingTypeCode;
 import com.tools20022.repository.datatype.*;
+import com.tools20022.repository.entity.FinancialTransaction;
+import com.tools20022.repository.entity.RegulatoryAuthorityRole;
+import com.tools20022.repository.entity.ReportingPartyRole;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Information needed due to regulatory and statutory requirements.
@@ -87,8 +91,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -105,10 +109,8 @@ public class RegulatoryReport {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected RegulatoryReportingTypeCode debitCreditReportingIndicator;
 	/**
-	 * Identifies whether the regulatory reporting information applies to the
-	 * debit side, to the credit side or to both debit and credit sides of the
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -134,7 +136,7 @@ public class RegulatoryReport {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDebitCreditReportingIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RegulatoryReport, RegulatoryReportingTypeCode> mmDebitCreditReportingIndicator = new MMBusinessAttribute<RegulatoryReport, RegulatoryReportingTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmObject();
@@ -146,18 +148,20 @@ public class RegulatoryReport {
 			simpleType_lazy = () -> RegulatoryReportingTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RegulatoryReport.class.getMethod("getDebitCreditReportingIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public RegulatoryReportingTypeCode getValue(RegulatoryReport obj) {
+			return obj.getDebitCreditReportingIndicator();
+		}
+
+		@Override
+		public void setValue(RegulatoryReport obj, RegulatoryReportingTypeCode value) {
+			obj.setDebitCreditReportingIndicator(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.RegulatoryAuthorityRole> authority;
+	protected List<RegulatoryAuthorityRole> authority;
 	/**
-	 * Entity requiring the regulatory reporting information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -189,7 +193,7 @@ public class RegulatoryReport {
 	 * definition} = "Entity requiring the regulatory reporting information."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAuthority = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegulatoryReport, List<RegulatoryAuthorityRole>> mmAuthority = new MMBusinessAssociationEnd<RegulatoryReport, List<RegulatoryAuthorityRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmObject();
@@ -197,16 +201,25 @@ public class RegulatoryReport {
 			name = "Authority";
 			definition = "Entity requiring the regulatory reporting information.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RegulatoryAuthorityRole.mmRegulatoryReport;
+			opposite_lazy = () -> RegulatoryAuthorityRole.mmRegulatoryReport;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RegulatoryAuthorityRole.mmObject();
+			type_lazy = () -> RegulatoryAuthorityRole.mmObject();
+		}
+
+		@Override
+		public List<RegulatoryAuthorityRole> getValue(RegulatoryReport obj) {
+			return obj.getAuthority();
+		}
+
+		@Override
+		public void setValue(RegulatoryReport obj, List<RegulatoryAuthorityRole> value) {
+			obj.setAuthority(value);
 		}
 	};
 	protected Max10Text code;
 	/**
-	 * Specifies the nature, purpose, and reason for the transaction to be
-	 * reported for regulatory and statutory requirements in a coded form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -231,7 +244,7 @@ public class RegulatoryReport {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCode = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RegulatoryReport, Max10Text> mmCode = new MMBusinessAttribute<RegulatoryReport, Max10Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmObject();
@@ -243,18 +256,20 @@ public class RegulatoryReport {
 			simpleType_lazy = () -> Max10Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RegulatoryReport.class.getMethod("getCode", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max10Text getValue(RegulatoryReport obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(RegulatoryReport obj, Max10Text value) {
+			obj.setCode(value);
 		}
 	};
 	protected CurrencyAndAmount amount;
 	/**
-	 * Amount of money to be reported for regulatory and statutory requirements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -280,7 +295,7 @@ public class RegulatoryReport {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RegulatoryReport, CurrencyAndAmount> mmAmount = new MMBusinessAttribute<RegulatoryReport, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmObject();
@@ -292,19 +307,20 @@ public class RegulatoryReport {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RegulatoryReport.class.getMethod("getAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(RegulatoryReport obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(RegulatoryReport obj, CurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	protected Max35Text description;
 	/**
-	 * Additional details that may be necessary to cater for specific domestic
-	 * regulatory requirements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -329,7 +345,7 @@ public class RegulatoryReport {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDescription = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RegulatoryReport, Max35Text> mmDescription = new MMBusinessAttribute<RegulatoryReport, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmObject();
@@ -341,19 +357,20 @@ public class RegulatoryReport {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RegulatoryReport.class.getMethod("getDescription", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(RegulatoryReport obj) {
+			return obj.getDescription();
+		}
+
+		@Override
+		public void setValue(RegulatoryReport obj, Max35Text value) {
+			obj.setDescription(value);
 		}
 	};
 	protected Max35Text type;
 	/**
-	 * Specifies the type of the information supplied in the regulatory
-	 * reporting details.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -378,7 +395,7 @@ public class RegulatoryReport {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RegulatoryReport, Max35Text> mmType = new MMBusinessAttribute<RegulatoryReport, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmObject();
@@ -390,24 +407,26 @@ public class RegulatoryReport {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RegulatoryReport.class.getMethod("getType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(RegulatoryReport obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(RegulatoryReport obj, Max35Text value) {
+			obj.setType(value);
 		}
 	};
-	protected ISODate date;
+	protected ISODateTime date;
 	/**
-	 * Date related to the specified type of regulatory reporting details.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
-	 * simpleType} = {@linkplain com.tools20022.repository.datatype.ISODate
-	 * ISODate}</li>
+	 * simpleType} = {@linkplain com.tools20022.repository.datatype.ISODateTime
+	 * ISODateTime}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
@@ -425,7 +444,7 @@ public class RegulatoryReport {
 	 * "Date related to the specified type of regulatory reporting details."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RegulatoryReport, ISODateTime> mmDate = new MMBusinessAttribute<RegulatoryReport, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmObject();
@@ -434,21 +453,23 @@ public class RegulatoryReport {
 			definition = "Date related to the specified type of regulatory reporting details.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ISODate.mmObject();
+			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RegulatoryReport.class.getMethod("getDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(RegulatoryReport obj) {
+			return obj.getDate();
+		}
+
+		@Override
+		public void setValue(RegulatoryReport obj, ISODateTime value) {
+			obj.setDate(value);
 		}
 	};
 	protected FinancialTransaction reportedTransaction;
 	/**
-	 * Trade for which a regulatory report is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -480,7 +501,7 @@ public class RegulatoryReport {
 	 * definition} = "Trade for which a regulatory report is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmReportedTransaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegulatoryReport, FinancialTransaction> mmReportedTransaction = new MMBusinessAssociationEnd<RegulatoryReport, FinancialTransaction>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmObject();
@@ -489,15 +510,25 @@ public class RegulatoryReport {
 			definition = "Trade for which a regulatory report is provided.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmRegulatoryReport;
+			opposite_lazy = () -> FinancialTransaction.mmRegulatoryReport;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
+			type_lazy = () -> FinancialTransaction.mmObject();
+		}
+
+		@Override
+		public FinancialTransaction getValue(RegulatoryReport obj) {
+			return obj.getReportedTransaction();
+		}
+
+		@Override
+		public void setValue(RegulatoryReport obj, FinancialTransaction value) {
+			obj.setReportedTransaction(value);
 		}
 	};
 	protected Max35Text underlyingProduct;
 	/**
-	 * Specifies the underlying product type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -520,7 +551,7 @@ public class RegulatoryReport {
 	 * definition} = "Specifies the underlying product type."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmUnderlyingProduct = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RegulatoryReport, Max35Text> mmUnderlyingProduct = new MMBusinessAttribute<RegulatoryReport, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmObject();
@@ -532,21 +563,20 @@ public class RegulatoryReport {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RegulatoryReport.class.getMethod("getUnderlyingProduct", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(RegulatoryReport obj) {
+			return obj.getUnderlyingProduct();
+		}
+
+		@Override
+		public void setValue(RegulatoryReport obj, Max35Text value) {
+			obj.setUnderlyingProduct(value);
 		}
 	};
 	protected YesNoIndicator nonStandardFlag;
 	/**
-	 * Specifies whether the reportable transaction has one or more additional
-	 * terms or provisions, other than those listed in the required real-time
-	 * data fields, that materially affects the price of the reportable
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -572,7 +602,7 @@ public class RegulatoryReport {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNonStandardFlag = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<RegulatoryReport, YesNoIndicator> mmNonStandardFlag = new MMBusinessAttribute<RegulatoryReport, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmObject();
@@ -584,18 +614,20 @@ public class RegulatoryReport {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return RegulatoryReport.class.getMethod("getNonStandardFlag", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(RegulatoryReport obj) {
+			return obj.getNonStandardFlag();
+		}
+
+		@Override
+		public void setValue(RegulatoryReport obj, YesNoIndicator value) {
+			obj.setNonStandardFlag(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.ReportingPartyRole> reportingPartyRole;
+	protected List<ReportingPartyRole> reportingPartyRole;
 	/**
-	 * Party responsible for providing regulatory reports.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -626,7 +658,7 @@ public class RegulatoryReport {
 	 * definition} = "Party responsible for providing regulatory reports."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmReportingPartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegulatoryReport, List<ReportingPartyRole>> mmReportingPartyRole = new MMBusinessAssociationEnd<RegulatoryReport, List<ReportingPartyRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmObject();
@@ -634,21 +666,30 @@ public class RegulatoryReport {
 			name = "ReportingPartyRole";
 			definition = "Party responsible for providing regulatory reports.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ReportingPartyRole.mmRegulatoryReport;
+			opposite_lazy = () -> ReportingPartyRole.mmRegulatoryReport;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ReportingPartyRole.mmObject();
+			type_lazy = () -> ReportingPartyRole.mmObject();
+		}
+
+		@Override
+		public List<ReportingPartyRole> getValue(RegulatoryReport obj) {
+			return obj.getReportingPartyRole();
+		}
+
+		@Override
+		public void setValue(RegulatoryReport obj, List<ReportingPartyRole> value) {
+			obj.setReportingPartyRole(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegulatoryReport";
 				definition = "Information needed due to regulatory and statutory requirements.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RegulatoryAuthorityRole.mmRegulatoryReport, com.tools20022.repository.entity.ReportingPartyRole.mmRegulatoryReport,
-						com.tools20022.repository.entity.FinancialTransaction.mmRegulatoryReport);
+				associationDomain_lazy = () -> Arrays.asList(RegulatoryAuthorityRole.mmRegulatoryReport, ReportingPartyRole.mmRegulatoryReport, FinancialTransaction.mmRegulatoryReport);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RegulatoryReport.mmDebitCreditReportingIndicator, com.tools20022.repository.entity.RegulatoryReport.mmAuthority,
 						com.tools20022.repository.entity.RegulatoryReport.mmCode, com.tools20022.repository.entity.RegulatoryReport.mmAmount, com.tools20022.repository.entity.RegulatoryReport.mmDescription,
 						com.tools20022.repository.entity.RegulatoryReport.mmType, com.tools20022.repository.entity.RegulatoryReport.mmDate, com.tools20022.repository.entity.RegulatoryReport.mmReportedTransaction,
@@ -667,87 +708,98 @@ public class RegulatoryReport {
 		return debitCreditReportingIndicator;
 	}
 
-	public void setDebitCreditReportingIndicator(RegulatoryReportingTypeCode debitCreditReportingIndicator) {
-		this.debitCreditReportingIndicator = debitCreditReportingIndicator;
+	public RegulatoryReport setDebitCreditReportingIndicator(RegulatoryReportingTypeCode debitCreditReportingIndicator) {
+		this.debitCreditReportingIndicator = Objects.requireNonNull(debitCreditReportingIndicator);
+		return this;
 	}
 
 	public List<RegulatoryAuthorityRole> getAuthority() {
-		return authority;
+		return authority == null ? authority = new ArrayList<>() : authority;
 	}
 
-	public void setAuthority(List<com.tools20022.repository.entity.RegulatoryAuthorityRole> authority) {
-		this.authority = authority;
+	public RegulatoryReport setAuthority(List<RegulatoryAuthorityRole> authority) {
+		this.authority = Objects.requireNonNull(authority);
+		return this;
 	}
 
 	public Max10Text getCode() {
 		return code;
 	}
 
-	public void setCode(Max10Text code) {
-		this.code = code;
+	public RegulatoryReport setCode(Max10Text code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
 	public CurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(CurrencyAndAmount amount) {
-		this.amount = amount;
+	public RegulatoryReport setAmount(CurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
 	public Max35Text getDescription() {
 		return description;
 	}
 
-	public void setDescription(Max35Text description) {
-		this.description = description;
+	public RegulatoryReport setDescription(Max35Text description) {
+		this.description = Objects.requireNonNull(description);
+		return this;
 	}
 
 	public Max35Text getType() {
 		return type;
 	}
 
-	public void setType(Max35Text type) {
-		this.type = type;
+	public RegulatoryReport setType(Max35Text type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	public ISODate getDate() {
+	public ISODateTime getDate() {
 		return date;
 	}
 
-	public void setDate(ISODate date) {
-		this.date = date;
+	public RegulatoryReport setDate(ISODateTime date) {
+		this.date = Objects.requireNonNull(date);
+		return this;
 	}
 
 	public FinancialTransaction getReportedTransaction() {
 		return reportedTransaction;
 	}
 
-	public void setReportedTransaction(com.tools20022.repository.entity.FinancialTransaction reportedTransaction) {
-		this.reportedTransaction = reportedTransaction;
+	public RegulatoryReport setReportedTransaction(FinancialTransaction reportedTransaction) {
+		this.reportedTransaction = Objects.requireNonNull(reportedTransaction);
+		return this;
 	}
 
 	public Max35Text getUnderlyingProduct() {
 		return underlyingProduct;
 	}
 
-	public void setUnderlyingProduct(Max35Text underlyingProduct) {
-		this.underlyingProduct = underlyingProduct;
+	public RegulatoryReport setUnderlyingProduct(Max35Text underlyingProduct) {
+		this.underlyingProduct = Objects.requireNonNull(underlyingProduct);
+		return this;
 	}
 
 	public YesNoIndicator getNonStandardFlag() {
 		return nonStandardFlag;
 	}
 
-	public void setNonStandardFlag(YesNoIndicator nonStandardFlag) {
-		this.nonStandardFlag = nonStandardFlag;
+	public RegulatoryReport setNonStandardFlag(YesNoIndicator nonStandardFlag) {
+		this.nonStandardFlag = Objects.requireNonNull(nonStandardFlag);
+		return this;
 	}
 
 	public List<ReportingPartyRole> getReportingPartyRole() {
-		return reportingPartyRole;
+		return reportingPartyRole == null ? reportingPartyRole = new ArrayList<>() : reportingPartyRole;
 	}
 
-	public void setReportingPartyRole(List<com.tools20022.repository.entity.ReportingPartyRole> reportingPartyRole) {
-		this.reportingPartyRole = reportingPartyRole;
+	public RegulatoryReport setReportingPartyRole(List<ReportingPartyRole> reportingPartyRole) {
+		this.reportingPartyRole = Objects.requireNonNull(reportingPartyRole);
+		return this;
 	}
 }

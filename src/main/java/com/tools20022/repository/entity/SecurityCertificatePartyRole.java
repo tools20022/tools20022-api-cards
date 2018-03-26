@@ -22,10 +22,13 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Role;
+import com.tools20022.repository.entity.SecurityCertificate;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Role played by a party in the context of a security certificate
@@ -59,8 +62,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,8 +80,8 @@ public class SecurityCertificatePartyRole extends Role {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.SecurityCertificate> securityCertificate;
 	/**
-	 * Identifies the security certificate for which a party plays a role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,7 +113,7 @@ public class SecurityCertificatePartyRole extends Role {
 	 * "Identifies the security certificate for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecurityCertificate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecurityCertificatePartyRole, List<SecurityCertificate>> mmSecurityCertificate = new MMBusinessAssociationEnd<SecurityCertificatePartyRole, List<SecurityCertificate>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecurityCertificatePartyRole.mmObject();
@@ -122,12 +125,22 @@ public class SecurityCertificatePartyRole extends Role {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.mmObject();
 		}
+
+		@Override
+		public List<SecurityCertificate> getValue(SecurityCertificatePartyRole obj) {
+			return obj.getSecurityCertificate();
+		}
+
+		@Override
+		public void setValue(SecurityCertificatePartyRole obj, List<SecurityCertificate> value) {
+			obj.setSecurityCertificate(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecurityCertificatePartyRole";
 				definition = "Role played by a party in the context of a security certificate";
@@ -145,10 +158,11 @@ public class SecurityCertificatePartyRole extends Role {
 	}
 
 	public List<SecurityCertificate> getSecurityCertificate() {
-		return securityCertificate;
+		return securityCertificate == null ? securityCertificate = new ArrayList<>() : securityCertificate;
 	}
 
-	public void setSecurityCertificate(List<com.tools20022.repository.entity.SecurityCertificate> securityCertificate) {
-		this.securityCertificate = securityCertificate;
+	public SecurityCertificatePartyRole setSecurityCertificate(List<com.tools20022.repository.entity.SecurityCertificate> securityCertificate) {
+		this.securityCertificate = Objects.requireNonNull(securityCertificate);
+		return this;
 	}
 }

@@ -17,13 +17,17 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.RatingValueIdentifier;
+import com.tools20022.repository.entity.Scheme;
+import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Assessment of securities credit and investment risk.
@@ -60,8 +64,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,8 +81,8 @@ public class Rating {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Security security;
 	/**
-	 * Security for which a rating is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,7 +111,7 @@ public class Rating {
 	 * definition} = "Security for which a rating is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Rating, Optional<Security>> mmSecurity = new MMBusinessAssociationEnd<Rating, Optional<Security>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Rating.mmObject();
@@ -116,15 +120,25 @@ public class Rating {
 			definition = "Security for which a rating is provided.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmRating;
+			opposite_lazy = () -> Security.mmRating;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+			type_lazy = () -> Security.mmObject();
+		}
+
+		@Override
+		public Optional<Security> getValue(Rating obj) {
+			return obj.getSecurity();
+		}
+
+		@Override
+		public void setValue(Rating obj, Optional<Security> value) {
+			obj.setSecurity(value.orElse(null));
 		}
 	};
 	protected Scheme ratingScheme;
 	/**
-	 * Information regarding the entity that assigns the rating.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,7 +167,7 @@ public class Rating {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRatingScheme = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Rating, Scheme> mmRatingScheme = new MMBusinessAssociationEnd<Rating, Scheme>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Rating.mmObject();
@@ -162,15 +176,25 @@ public class Rating {
 			definition = "Information regarding the entity that assigns the rating.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Scheme.mmRating;
+			opposite_lazy = () -> Scheme.mmRating;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
+			type_lazy = () -> Scheme.mmObject();
+		}
+
+		@Override
+		public Scheme getValue(Rating obj) {
+			return obj.getRatingScheme();
+		}
+
+		@Override
+		public void setValue(Rating obj, Scheme value) {
+			obj.setRatingScheme(value);
 		}
 	};
 	protected ISODateTime valueDate;
 	/**
-	 * Date/time as from which the rating is valid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -192,7 +216,7 @@ public class Rating {
 	 * definition} = "Date/time as from which the rating is valid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValueDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Rating, ISODateTime> mmValueDate = new MMBusinessAttribute<Rating, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Rating.mmObject();
@@ -204,19 +228,20 @@ public class Rating {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Rating.class.getMethod("getValueDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Rating obj) {
+			return obj.getValueDate();
+		}
+
+		@Override
+		public void setValue(Rating obj, ISODateTime value) {
+			obj.setValueDate(value);
 		}
 	};
 	protected RatingValueIdentifier value;
 	/**
-	 * Specifies the rating, which has been assigned to a security by a rating
-	 * agency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -228,6 +253,9 @@ public class Rating {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Rating
 	 * Rating}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :70a::RATS</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -241,10 +269,11 @@ public class Rating {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Rating, RatingValueIdentifier> mmValue = new MMBusinessAttribute<Rating, RatingValueIdentifier>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Rating.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":70a::RATS"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Value";
 			definition = "Specifies the rating, which has been assigned to a security by a rating agency.";
@@ -253,23 +282,25 @@ public class Rating {
 			simpleType_lazy = () -> RatingValueIdentifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Rating.class.getMethod("getValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public RatingValueIdentifier getValue(Rating obj) {
+			return obj.getValue();
+		}
+
+		@Override
+		public void setValue(Rating obj, RatingValueIdentifier value) {
+			obj.setValue(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Rating";
 				definition = "Assessment of securities credit and investment risk.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmRating, com.tools20022.repository.entity.Scheme.mmRating);
+				associationDomain_lazy = () -> Arrays.asList(Security.mmRating, Scheme.mmRating);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Rating.mmSecurity, com.tools20022.repository.entity.Rating.mmRatingScheme, com.tools20022.repository.entity.Rating.mmValueDate,
 						com.tools20022.repository.entity.Rating.mmValue);
 			}
@@ -282,35 +313,39 @@ public class Rating {
 		return mmObject_lazy.get();
 	}
 
-	public Security getSecurity() {
-		return security;
+	public Optional<Security> getSecurity() {
+		return security == null ? Optional.empty() : Optional.of(security);
 	}
 
-	public void setSecurity(com.tools20022.repository.entity.Security security) {
+	public Rating setSecurity(Security security) {
 		this.security = security;
+		return this;
 	}
 
 	public Scheme getRatingScheme() {
 		return ratingScheme;
 	}
 
-	public void setRatingScheme(com.tools20022.repository.entity.Scheme ratingScheme) {
-		this.ratingScheme = ratingScheme;
+	public Rating setRatingScheme(Scheme ratingScheme) {
+		this.ratingScheme = Objects.requireNonNull(ratingScheme);
+		return this;
 	}
 
 	public ISODateTime getValueDate() {
 		return valueDate;
 	}
 
-	public void setValueDate(ISODateTime valueDate) {
-		this.valueDate = valueDate;
+	public Rating setValueDate(ISODateTime valueDate) {
+		this.valueDate = Objects.requireNonNull(valueDate);
+		return this;
 	}
 
 	public RatingValueIdentifier getValue() {
 		return value;
 	}
 
-	public void setValue(RatingValueIdentifier value) {
-		this.value = value;
+	public Rating setValue(RatingValueIdentifier value) {
+		this.value = Objects.requireNonNull(value);
+		return this;
 	}
 }

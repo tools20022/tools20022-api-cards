@@ -37,30 +37,30 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMNoteTypeCode#All
- * ATMNoteTypeCode.mmAll}</li>
+ * ATMNoteTypeCode.All}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMNoteTypeCode#Counterfeit
- * ATMNoteTypeCode.mmCounterfeit}</li>
+ * ATMNoteTypeCode.Counterfeit}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMNoteTypeCode#Individual
- * ATMNoteTypeCode.mmIndividual}</li>
+ * ATMNoteTypeCode.Individual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMNoteTypeCode#SuspectedCounterfeit
- * ATMNoteTypeCode.mmSuspectedCounterfeit}</li>
+ * ATMNoteTypeCode.SuspectedCounterfeit}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMNoteTypeCode#Unfit
- * ATMNoteTypeCode.mmUnfit}</li>
+ * ATMNoteTypeCode.Unfit}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMNoteTypeCode#Fit
- * ATMNoteTypeCode.mmFit}</li>
+ * ATMNoteTypeCode.Fit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMNoteTypeCode#FitAndUnfit
- * ATMNoteTypeCode.mmFitAndUnfit}</li>
+ * ATMNoteTypeCode.FitAndUnfit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMNoteTypeCode#Neutralised
- * ATMNoteTypeCode.mmNeutralised}</li>
+ * ATMNoteTypeCode.Neutralised}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMNoteTypeCode#Suspect
- * ATMNoteTypeCode.mmSuspect}</li>
+ * ATMNoteTypeCode.Suspect}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMNoteTypeCode#Unrecognised
- * ATMNoteTypeCode.mmUnrecognised}</li>
+ * ATMNoteTypeCode.Unrecognised}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -73,8 +73,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -399,7 +399,7 @@ public class ATMNoteTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMNoteTypeCode";
 				definition = "Type of items the cash-in cassette.";

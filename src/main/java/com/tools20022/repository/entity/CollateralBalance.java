@@ -18,12 +18,13 @@
 package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
-import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
+import com.tools20022.repository.datatype.CurrencyAndAmount;
+import com.tools20022.repository.entity.Collateral;
+import com.tools20022.repository.entity.CollateralInterestAdministration;
+import com.tools20022.repository.entity.ExposureCalculation;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Specifies the different values taken into account to calculate the current
@@ -88,12 +89,12 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
- * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+ * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "CollateralBalance"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
@@ -105,10 +106,10 @@ import java.util.List;
 public class CollateralBalance {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.Collateral> collateralDescription;
+	protected List<Collateral> collateralDescription;
 	/**
-	 * Describes the collateral included in the collateral balance,
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -140,7 +141,7 @@ public class CollateralBalance {
 	 * "Describes the collateral included in the collateral balance,"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCollateralDescription = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CollateralBalance, List<Collateral>> mmCollateralDescription = new MMBusinessAssociationEnd<CollateralBalance, List<Collateral>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
@@ -148,22 +149,32 @@ public class CollateralBalance {
 			name = "CollateralDescription";
 			definition = "Describes the collateral included in the collateral balance,";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Collateral.mmCollateralBalance;
+			opposite_lazy = () -> Collateral.mmCollateralBalance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
+			type_lazy = () -> Collateral.mmObject();
+		}
+
+		@Override
+		public List<Collateral> getValue(CollateralBalance obj) {
+			return obj.getCollateralDescription();
+		}
+
+		@Override
+		public void setValue(CollateralBalance obj, List<Collateral> value) {
+			obj.setCollateralDescription(value);
 		}
 	};
-	protected ActiveCurrencyAndAmount heldAmount;
+	protected CurrencyAndAmount heldAmount;
 	/**
-	 * Specifies the collateral currently held.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.datatype.ActiveCurrencyAndAmount
-	 * ActiveCurrencyAndAmount}</li>
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
@@ -172,7 +183,7 @@ public class CollateralBalance {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "HeldAmount"</li>
 	 * <li>
@@ -180,38 +191,39 @@ public class CollateralBalance {
 	 * definition} = "Specifies the collateral currently held."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmHeldAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CollateralBalance, CurrencyAndAmount> mmHeldAmount = new MMBusinessAttribute<CollateralBalance, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "HeldAmount";
 			definition = "Specifies the collateral currently held.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralBalance.class.getMethod("getHeldAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CollateralBalance obj) {
+			return obj.getHeldAmount();
+		}
+
+		@Override
+		public void setValue(CollateralBalance obj, CurrencyAndAmount value) {
+			obj.setHeldAmount(value);
 		}
 	};
-	protected ActiveCurrencyAndAmount priorAgreed;
+	protected CurrencyAndAmount priorAgreed;
 	/**
-	 * Specifies the collateral which has been agreed but is not yet
-	 * transferred.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.datatype.ActiveCurrencyAndAmount
-	 * ActiveCurrencyAndAmount}</li>
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
@@ -220,7 +232,7 @@ public class CollateralBalance {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "PriorAgreed"</li>
 	 * <li>
@@ -230,30 +242,32 @@ public class CollateralBalance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPriorAgreed = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CollateralBalance, CurrencyAndAmount> mmPriorAgreed = new MMBusinessAttribute<CollateralBalance, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PriorAgreed";
 			definition = "Specifies the collateral which has been agreed but is not yet transferred.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralBalance.class.getMethod("getPriorAgreed", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CollateralBalance obj) {
+			return obj.getPriorAgreed();
+		}
+
+		@Override
+		public void setValue(CollateralBalance obj, CurrencyAndAmount value) {
+			obj.setPriorAgreed(value);
 		}
 	};
 	protected ExposureCalculation variationMarginRelatedRiskCalculation;
 	/**
-	 * Risk coverage for which a current variation margin is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -285,7 +299,7 @@ public class CollateralBalance {
 	 * "Risk coverage for which a current variation margin is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmVariationMarginRelatedRiskCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CollateralBalance, Optional<ExposureCalculation>> mmVariationMarginRelatedRiskCalculation = new MMBusinessAssociationEnd<CollateralBalance, Optional<ExposureCalculation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
@@ -294,22 +308,32 @@ public class CollateralBalance {
 			definition = "Risk coverage for which a current variation margin is provided.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmCurrentVariationMargin;
+			opposite_lazy = () -> ExposureCalculation.mmCurrentVariationMargin;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
+			type_lazy = () -> ExposureCalculation.mmObject();
+		}
+
+		@Override
+		public Optional<ExposureCalculation> getValue(CollateralBalance obj) {
+			return obj.getVariationMarginRelatedRiskCalculation();
+		}
+
+		@Override
+		public void setValue(CollateralBalance obj, Optional<ExposureCalculation> value) {
+			obj.setVariationMarginRelatedRiskCalculation(value.orElse(null));
 		}
 	};
-	protected ActiveCurrencyAndAmount inTransit;
+	protected CurrencyAndAmount inTransit;
 	/**
-	 * Specifies the collateral which is being transferred.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.datatype.ActiveCurrencyAndAmount
-	 * ActiveCurrencyAndAmount}</li>
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
@@ -318,7 +342,7 @@ public class CollateralBalance {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "InTransit"</li>
 	 * <li>
@@ -326,30 +350,32 @@ public class CollateralBalance {
 	 * definition} = "Specifies the collateral which is being transferred."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInTransit = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CollateralBalance, CurrencyAndAmount> mmInTransit = new MMBusinessAttribute<CollateralBalance, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "InTransit";
 			definition = "Specifies the collateral which is being transferred.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CollateralBalance.class.getMethod("getInTransit", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CollateralBalance obj) {
+			return obj.getInTransit();
+		}
+
+		@Override
+		public void setValue(CollateralBalance obj, CurrencyAndAmount value) {
+			obj.setInTransit(value);
 		}
 	};
 	protected ExposureCalculation segregatedIndependentAmountRelatedRiskCalculation;
 	/**
-	 * Risk coverage for which a collateral balance is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -381,7 +407,7 @@ public class CollateralBalance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSegregatedIndependentAmountRelatedRiskCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CollateralBalance, Optional<ExposureCalculation>> mmSegregatedIndependentAmountRelatedRiskCalculation = new MMBusinessAssociationEnd<CollateralBalance, Optional<ExposureCalculation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
@@ -390,15 +416,25 @@ public class CollateralBalance {
 			definition = "Risk coverage for which a collateral balance is provided.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmCurrentSegregatedIndependentAmount;
+			opposite_lazy = () -> ExposureCalculation.mmCurrentSegregatedIndependentAmount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
+			type_lazy = () -> ExposureCalculation.mmObject();
+		}
+
+		@Override
+		public Optional<ExposureCalculation> getValue(CollateralBalance obj) {
+			return obj.getSegregatedIndependentAmountRelatedRiskCalculation();
+		}
+
+		@Override
+		public void setValue(CollateralBalance obj, Optional<ExposureCalculation> value) {
+			obj.setSegregatedIndependentAmountRelatedRiskCalculation(value.orElse(null));
 		}
 	};
 	protected CollateralInterestAdministration relatedCollateralInterestManagement;
 	/**
-	 * Collateral interest management for which an opening balance is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -432,7 +468,7 @@ public class CollateralBalance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedCollateralInterestManagement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CollateralBalance, CollateralInterestAdministration> mmRelatedCollateralInterestManagement = new MMBusinessAssociationEnd<CollateralBalance, CollateralInterestAdministration>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
@@ -441,15 +477,25 @@ public class CollateralBalance {
 			definition = "Collateral interest management for which an opening balance is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralInterestAdministration.mmOpeningCollateralBalance;
+			opposite_lazy = () -> CollateralInterestAdministration.mmOpeningCollateralBalance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CollateralInterestAdministration.mmObject();
+			type_lazy = () -> CollateralInterestAdministration.mmObject();
+		}
+
+		@Override
+		public CollateralInterestAdministration getValue(CollateralBalance obj) {
+			return obj.getRelatedCollateralInterestManagement();
+		}
+
+		@Override
+		public void setValue(CollateralBalance obj, CollateralInterestAdministration value) {
+			obj.setRelatedCollateralInterestManagement(value);
 		}
 	};
 	protected CollateralInterestAdministration collateralInterestManagement;
 	/**
-	 * Collateral interest management for which a closing balance is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -483,7 +529,7 @@ public class CollateralBalance {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCollateralInterestManagement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CollateralBalance, CollateralInterestAdministration> mmCollateralInterestManagement = new MMBusinessAssociationEnd<CollateralBalance, CollateralInterestAdministration>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CollateralBalance.mmObject();
@@ -492,22 +538,31 @@ public class CollateralBalance {
 			definition = "Collateral interest management for which a closing balance is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralInterestAdministration.mmClosingCollateralBalance;
+			opposite_lazy = () -> CollateralInterestAdministration.mmClosingCollateralBalance;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CollateralInterestAdministration.mmObject();
+			type_lazy = () -> CollateralInterestAdministration.mmObject();
+		}
+
+		@Override
+		public CollateralInterestAdministration getValue(CollateralBalance obj) {
+			return obj.getCollateralInterestManagement();
+		}
+
+		@Override
+		public void setValue(CollateralBalance obj, CollateralInterestAdministration value) {
+			obj.setCollateralInterestManagement(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
-				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CollateralBalance";
 				definition = "Specifies the different values taken into account to calculate the current collateral.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Collateral.mmCollateralBalance, com.tools20022.repository.entity.ExposureCalculation.mmCurrentVariationMargin,
-						com.tools20022.repository.entity.ExposureCalculation.mmCurrentSegregatedIndependentAmount, com.tools20022.repository.entity.CollateralInterestAdministration.mmClosingCollateralBalance,
-						com.tools20022.repository.entity.CollateralInterestAdministration.mmOpeningCollateralBalance);
+				associationDomain_lazy = () -> Arrays.asList(Collateral.mmCollateralBalance, ExposureCalculation.mmCurrentVariationMargin, ExposureCalculation.mmCurrentSegregatedIndependentAmount,
+						CollateralInterestAdministration.mmClosingCollateralBalance, CollateralInterestAdministration.mmOpeningCollateralBalance);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CollateralBalance.mmCollateralDescription, com.tools20022.repository.entity.CollateralBalance.mmHeldAmount,
 						com.tools20022.repository.entity.CollateralBalance.mmPriorAgreed, com.tools20022.repository.entity.CollateralBalance.mmVariationMarginRelatedRiskCalculation,
 						com.tools20022.repository.entity.CollateralBalance.mmInTransit, com.tools20022.repository.entity.CollateralBalance.mmSegregatedIndependentAmountRelatedRiskCalculation,
@@ -523,66 +578,74 @@ public class CollateralBalance {
 	}
 
 	public List<Collateral> getCollateralDescription() {
-		return collateralDescription;
+		return collateralDescription == null ? collateralDescription = new ArrayList<>() : collateralDescription;
 	}
 
-	public void setCollateralDescription(List<com.tools20022.repository.entity.Collateral> collateralDescription) {
-		this.collateralDescription = collateralDescription;
+	public CollateralBalance setCollateralDescription(List<Collateral> collateralDescription) {
+		this.collateralDescription = Objects.requireNonNull(collateralDescription);
+		return this;
 	}
 
-	public ActiveCurrencyAndAmount getHeldAmount() {
+	public CurrencyAndAmount getHeldAmount() {
 		return heldAmount;
 	}
 
-	public void setHeldAmount(ActiveCurrencyAndAmount heldAmount) {
-		this.heldAmount = heldAmount;
+	public CollateralBalance setHeldAmount(CurrencyAndAmount heldAmount) {
+		this.heldAmount = Objects.requireNonNull(heldAmount);
+		return this;
 	}
 
-	public ActiveCurrencyAndAmount getPriorAgreed() {
+	public CurrencyAndAmount getPriorAgreed() {
 		return priorAgreed;
 	}
 
-	public void setPriorAgreed(ActiveCurrencyAndAmount priorAgreed) {
-		this.priorAgreed = priorAgreed;
+	public CollateralBalance setPriorAgreed(CurrencyAndAmount priorAgreed) {
+		this.priorAgreed = Objects.requireNonNull(priorAgreed);
+		return this;
 	}
 
-	public ExposureCalculation getVariationMarginRelatedRiskCalculation() {
-		return variationMarginRelatedRiskCalculation;
+	public Optional<ExposureCalculation> getVariationMarginRelatedRiskCalculation() {
+		return variationMarginRelatedRiskCalculation == null ? Optional.empty() : Optional.of(variationMarginRelatedRiskCalculation);
 	}
 
-	public void setVariationMarginRelatedRiskCalculation(com.tools20022.repository.entity.ExposureCalculation variationMarginRelatedRiskCalculation) {
+	public CollateralBalance setVariationMarginRelatedRiskCalculation(ExposureCalculation variationMarginRelatedRiskCalculation) {
 		this.variationMarginRelatedRiskCalculation = variationMarginRelatedRiskCalculation;
+		return this;
 	}
 
-	public ActiveCurrencyAndAmount getInTransit() {
+	public CurrencyAndAmount getInTransit() {
 		return inTransit;
 	}
 
-	public void setInTransit(ActiveCurrencyAndAmount inTransit) {
-		this.inTransit = inTransit;
+	public CollateralBalance setInTransit(CurrencyAndAmount inTransit) {
+		this.inTransit = Objects.requireNonNull(inTransit);
+		return this;
 	}
 
-	public ExposureCalculation getSegregatedIndependentAmountRelatedRiskCalculation() {
-		return segregatedIndependentAmountRelatedRiskCalculation;
+	public Optional<ExposureCalculation> getSegregatedIndependentAmountRelatedRiskCalculation() {
+		return segregatedIndependentAmountRelatedRiskCalculation == null ? Optional.empty() : Optional.of(segregatedIndependentAmountRelatedRiskCalculation);
 	}
 
-	public void setSegregatedIndependentAmountRelatedRiskCalculation(com.tools20022.repository.entity.ExposureCalculation segregatedIndependentAmountRelatedRiskCalculation) {
+	public CollateralBalance setSegregatedIndependentAmountRelatedRiskCalculation(ExposureCalculation segregatedIndependentAmountRelatedRiskCalculation) {
 		this.segregatedIndependentAmountRelatedRiskCalculation = segregatedIndependentAmountRelatedRiskCalculation;
+		return this;
 	}
 
 	public CollateralInterestAdministration getRelatedCollateralInterestManagement() {
 		return relatedCollateralInterestManagement;
 	}
 
-	public void setRelatedCollateralInterestManagement(com.tools20022.repository.entity.CollateralInterestAdministration relatedCollateralInterestManagement) {
-		this.relatedCollateralInterestManagement = relatedCollateralInterestManagement;
+	public CollateralBalance setRelatedCollateralInterestManagement(CollateralInterestAdministration relatedCollateralInterestManagement) {
+		this.relatedCollateralInterestManagement = Objects.requireNonNull(relatedCollateralInterestManagement);
+		return this;
 	}
 
 	public CollateralInterestAdministration getCollateralInterestManagement() {
 		return collateralInterestManagement;
 	}
 
-	public void setCollateralInterestManagement(com.tools20022.repository.entity.CollateralInterestAdministration collateralInterestManagement) {
-		this.collateralInterestManagement = collateralInterestManagement;
+	public CollateralBalance setCollateralInterestManagement(CollateralInterestAdministration collateralInterestManagement) {
+		this.collateralInterestManagement = Objects.requireNonNull(collateralInterestManagement);
+		return this;
 	}
 }

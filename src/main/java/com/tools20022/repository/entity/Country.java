@@ -20,12 +20,14 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CountryCode;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Nation with its own government.
@@ -123,8 +125,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -138,10 +140,10 @@ import java.util.List;
 public class Country {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.InvestmentFund> domiciledFunds;
+	protected List<InvestmentFund> domiciledFunds;
 	/**
-	 * Investment funds which are domiciled in a specific country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -172,7 +174,7 @@ public class Country {
 	 * "Investment funds which are domiciled in a specific country."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDomiciledFunds = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Country, List<InvestmentFund>> mmDomiciledFunds = new MMBusinessAssociationEnd<Country, List<InvestmentFund>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
@@ -180,15 +182,25 @@ public class Country {
 			name = "DomiciledFunds";
 			definition = "Investment funds which are domiciled in a specific country.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmDomicileCountry;
+			opposite_lazy = () -> InvestmentFund.mmDomicileCountry;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
+			type_lazy = () -> InvestmentFund.mmObject();
+		}
+
+		@Override
+		public List<InvestmentFund> getValue(Country obj) {
+			return obj.getDomiciledFunds();
+		}
+
+		@Override
+		public void setValue(Country obj, List<InvestmentFund> value) {
+			obj.setDomiciledFunds(value);
 		}
 	};
 	protected CountryCode code;
 	/**
-	 * Identifies a nation with its own government (ISO 3166).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -237,7 +249,7 @@ public class Country {
 	 * definition} = "Identifies a nation with its own government (ISO 3166)."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCode = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Country, CountryCode> mmCode = new MMBusinessAttribute<Country, CountryCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress1.mmCountry, PostalAddress6.mmCountry, DateAndPlaceOfBirth.mmCountryOfBirth, PartyIdentification42.mmCountryOfResidence, Organisation9.mmCountryCode,
 					CountryCodeAndName1.mmCode, PostalAddress17.mmCountry, PostalAddress18.mmCountry, PartyIdentification112.mmCountryOfResidence);
@@ -251,18 +263,20 @@ public class Country {
 			simpleType_lazy = () -> CountryCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Country.class.getMethod("getCode", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CountryCode getValue(Country obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(Country obj, CountryCode value) {
+			obj.setCode(value);
 		}
 	};
 	protected Person citizen;
 	/**
-	 * Specifies a person which is a citizen of a country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -291,7 +305,7 @@ public class Country {
 	 * definition} = "Specifies a person which is a citizen of a country."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCitizen = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Country, Person> mmCitizen = new MMBusinessAssociationEnd<Country, Person>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
@@ -300,15 +314,25 @@ public class Country {
 			definition = "Specifies a person which is a citizen of a country.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Person.mmNationality;
+			opposite_lazy = () -> Person.mmNationality;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
+			type_lazy = () -> Person.mmObject();
+		}
+
+		@Override
+		public Person getValue(Country obj) {
+			return obj.getCitizen();
+		}
+
+		@Override
+		public void setValue(Country obj, Person value) {
+			obj.setCitizen(value);
 		}
 	};
 	protected Tax tax;
 	/**
-	 * Tax parameters applicable in a country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -336,7 +360,7 @@ public class Country {
 	 * definition} = "Tax parameters applicable in a country."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTax = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Country, Tax> mmTax = new MMBusinessAssociationEnd<Country, Tax>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
@@ -345,15 +369,25 @@ public class Country {
 			definition = "Tax parameters applicable in a country.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Tax.mmCountry;
+			opposite_lazy = () -> Tax.mmCountry;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Tax.mmObject();
+			type_lazy = () -> Tax.mmObject();
+		}
+
+		@Override
+		public Tax getValue(Country obj) {
+			return obj.getTax();
+		}
+
+		@Override
+		public void setValue(Country obj, Tax value) {
+			obj.setTax(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SafekeepingPlace> countryForSafekeepingPlace;
+	protected List<SafekeepingPlace> countryForSafekeepingPlace;
 	/**
-	 * Specifies the safekeeping places located in a specific country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -384,7 +418,7 @@ public class Country {
 	 * "Specifies the safekeeping places located in a specific country."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCountryForSafekeepingPlace = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Country, List<SafekeepingPlace>> mmCountryForSafekeepingPlace = new MMBusinessAssociationEnd<Country, List<SafekeepingPlace>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
@@ -392,16 +426,25 @@ public class Country {
 			name = "CountryForSafekeepingPlace";
 			definition = "Specifies the safekeeping places located in a specific country.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmCountry;
+			opposite_lazy = () -> SafekeepingPlace.mmCountry;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
+			type_lazy = () -> SafekeepingPlace.mmObject();
+		}
+
+		@Override
+		public List<SafekeepingPlace> getValue(Country obj) {
+			return obj.getCountryForSafekeepingPlace();
+		}
+
+		@Override
+		public void setValue(Country obj, List<SafekeepingPlace> value) {
+			obj.setCountryForSafekeepingPlace(value);
 		}
 	};
 	protected BeneficialOwner countryForBeneficialOwner;
 	/**
-	 * Specifies the beneficial owner which has certified that it is not
-	 * domiciled in the country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -433,7 +476,7 @@ public class Country {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCountryForBeneficialOwner = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Country, BeneficialOwner> mmCountryForBeneficialOwner = new MMBusinessAssociationEnd<Country, BeneficialOwner>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
@@ -442,15 +485,25 @@ public class Country {
 			definition = "Specifies the beneficial owner which has certified that it is not domiciled in the country.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmNonDomicileCountry;
+			opposite_lazy = () -> BeneficialOwner.mmNonDomicileCountry;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.BeneficialOwner.mmObject();
+			type_lazy = () -> BeneficialOwner.mmObject();
+		}
+
+		@Override
+		public BeneficialOwner getValue(Country obj) {
+			return obj.getCountryForBeneficialOwner();
+		}
+
+		@Override
+		public void setValue(Country obj, BeneficialOwner value) {
+			obj.setCountryForBeneficialOwner(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Product> producedProducts;
+	protected List<Product> producedProducts;
 	/**
-	 * Specifies the product for which an origin is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -479,7 +532,7 @@ public class Country {
 	 * definition} = "Specifies the product for which an origin is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmProducedProducts = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Country, List<Product>> mmProducedProducts = new MMBusinessAssociationEnd<Country, List<Product>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
@@ -487,15 +540,25 @@ public class Country {
 			name = "ProducedProducts";
 			definition = "Specifies the product for which an origin is specified.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Product.mmOrigin;
+			opposite_lazy = () -> Product.mmOrigin;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Product.mmObject();
+			type_lazy = () -> Product.mmObject();
+		}
+
+		@Override
+		public List<Product> getValue(Country obj) {
+			return obj.getProducedProducts();
+		}
+
+		@Override
+		public void setValue(Country obj, List<Product> value) {
+			obj.setProducedProducts(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.RegulatoryAuthorityRole> nationalRegulatoryAuthority;
+	protected List<RegulatoryAuthorityRole> nationalRegulatoryAuthority;
 	/**
-	 * Regulatory authority of the country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -526,7 +589,7 @@ public class Country {
 	 * definition} = "Regulatory authority of the country."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNationalRegulatoryAuthority = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Country, List<RegulatoryAuthorityRole>> mmNationalRegulatoryAuthority = new MMBusinessAssociationEnd<Country, List<RegulatoryAuthorityRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
@@ -534,15 +597,25 @@ public class Country {
 			name = "NationalRegulatoryAuthority";
 			definition = "Regulatory authority of the country.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.RegulatoryAuthorityRole.mmCountry;
+			opposite_lazy = () -> RegulatoryAuthorityRole.mmCountry;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RegulatoryAuthorityRole.mmObject();
+			type_lazy = () -> RegulatoryAuthorityRole.mmObject();
+		}
+
+		@Override
+		public List<RegulatoryAuthorityRole> getValue(Country obj) {
+			return obj.getNationalRegulatoryAuthority();
+		}
+
+		@Override
+		public void setValue(Country obj, List<RegulatoryAuthorityRole> value) {
+			obj.setNationalRegulatoryAuthority(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.CardPaymentAcquiring> relatedCardPayment;
+	protected List<CardPaymentAcquiring> relatedCardPayment;
 	/**
-	 * Card payment which took place in the specified country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -573,7 +646,7 @@ public class Country {
 	 * definition} = "Card payment which took place in the specified country."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedCardPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Country, List<CardPaymentAcquiring>> mmRelatedCardPayment = new MMBusinessAssociationEnd<Country, List<CardPaymentAcquiring>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
@@ -581,16 +654,25 @@ public class Country {
 			name = "RelatedCardPayment";
 			definition = "Card payment which took place in the specified country.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmCountry;
+			opposite_lazy = () -> CardPaymentAcquiring.mmCountry;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
+			type_lazy = () -> CardPaymentAcquiring.mmObject();
+		}
+
+		@Override
+		public List<CardPaymentAcquiring> getValue(Country obj) {
+			return obj.getRelatedCardPayment();
+		}
+
+		@Override
+		public void setValue(Country obj, List<CardPaymentAcquiring> value) {
+			obj.setRelatedCardPayment(value);
 		}
 	};
 	protected Max35Text name;
 	/**
-	 * Name by which a country is known. It is normally the name attached to the
-	 * ISO country code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -621,7 +703,7 @@ public class Country {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Country, Max35Text> mmName = new MMBusinessAttribute<Country, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CountryCodeAndName1.mmName);
 			isDerived = false;
@@ -634,18 +716,20 @@ public class Country {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Country.class.getMethod("getName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Country obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(Country obj, Max35Text value) {
+			obj.setName(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.PostalAddress> postalAddressSpecification;
+	protected List<PostalAddress> postalAddressSpecification;
 	/**
-	 * Specifies the representation of a postal address per country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -676,7 +760,7 @@ public class Country {
 	 * "Specifies the representation of a postal address per country."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPostalAddressSpecification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Country, List<PostalAddress>> mmPostalAddressSpecification = new MMBusinessAssociationEnd<Country, List<PostalAddress>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
@@ -684,16 +768,25 @@ public class Country {
 			name = "PostalAddressSpecification";
 			definition = "Specifies the representation of a postal address per country.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmCountry;
+			opposite_lazy = () -> PostalAddress.mmCountry;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
+			type_lazy = () -> PostalAddress.mmObject();
+		}
+
+		@Override
+		public List<PostalAddress> getValue(Country obj) {
+			return obj.getPostalAddressSpecification();
+		}
+
+		@Override
+		public void setValue(Country obj, List<PostalAddress> value) {
+			obj.setPostalAddressSpecification(value);
 		}
 	};
 	protected InvestmentFundClassProcessingCharacteristics countryRelatedInvestmentFundProcessing;
 	/**
-	 * Specifies the other parameters of the investment fund class which apply
-	 * in that country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -726,7 +819,7 @@ public class Country {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCountryRelatedInvestmentFundProcessing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Country, InvestmentFundClassProcessingCharacteristics> mmCountryRelatedInvestmentFundProcessing = new MMBusinessAssociationEnd<Country, InvestmentFundClassProcessingCharacteristics>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
@@ -735,15 +828,25 @@ public class Country {
 			definition = "Specifies the other parameters of the investment fund class which apply in that country.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmCountry;
+			opposite_lazy = () -> InvestmentFundClassProcessingCharacteristics.mmCountry;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmObject();
+			type_lazy = () -> InvestmentFundClassProcessingCharacteristics.mmObject();
+		}
+
+		@Override
+		public InvestmentFundClassProcessingCharacteristics getValue(Country obj) {
+			return obj.getCountryRelatedInvestmentFundProcessing();
+		}
+
+		@Override
+		public void setValue(Country obj, InvestmentFundClassProcessingCharacteristics value) {
+			obj.setCountryRelatedInvestmentFundProcessing(value);
 		}
 	};
 	protected Market market;
 	/**
-	 * Market for which a country is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -772,7 +875,7 @@ public class Country {
 	 * definition} = "Market for which a country is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMarket = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Country, Market> mmMarket = new MMBusinessAssociationEnd<Country, Market>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
@@ -781,15 +884,25 @@ public class Country {
 			definition = "Market for which a country is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Market.mmCountry;
+			opposite_lazy = () -> Market.mmCountry;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Market.mmObject();
+			type_lazy = () -> Market.mmObject();
+		}
+
+		@Override
+		public Market getValue(Country obj) {
+			return obj.getMarket();
+		}
+
+		@Override
+		public void setValue(Country obj, Market value) {
+			obj.setMarket(value);
 		}
 	};
 	protected PaymentCard relatedPaymentCard;
 	/**
-	 * Payment card for which a country code is attached.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -819,7 +932,7 @@ public class Country {
 	 * definition} = "Payment card for which a country code is attached."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedPaymentCard = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Country, PaymentCard> mmRelatedPaymentCard = new MMBusinessAssociationEnd<Country, PaymentCard>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
@@ -828,23 +941,31 @@ public class Country {
 			definition = "Payment card for which a country code is attached.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmCardCountryCode;
+			opposite_lazy = () -> PaymentCard.mmCardCountryCode;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentCard.mmObject();
+			type_lazy = () -> PaymentCard.mmObject();
+		}
+
+		@Override
+		public PaymentCard getValue(Country obj) {
+			return obj.getRelatedPaymentCard();
+		}
+
+		@Override
+		public void setValue(Country obj, PaymentCard value) {
+			obj.setRelatedPaymentCard(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Country";
 				definition = "Nation with its own government.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFund.mmDomicileCountry, com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics.mmCountry,
-						com.tools20022.repository.entity.PostalAddress.mmCountry, com.tools20022.repository.entity.Product.mmOrigin, com.tools20022.repository.entity.Tax.mmCountry, com.tools20022.repository.entity.Person.mmNationality,
-						com.tools20022.repository.entity.PaymentCard.mmCardCountryCode, com.tools20022.repository.entity.SafekeepingPlace.mmCountry, com.tools20022.repository.entity.BeneficialOwner.mmNonDomicileCountry,
-						com.tools20022.repository.entity.CardPaymentAcquiring.mmCountry, com.tools20022.repository.entity.RegulatoryAuthorityRole.mmCountry, com.tools20022.repository.entity.Market.mmCountry);
+				associationDomain_lazy = () -> Arrays.asList(InvestmentFund.mmDomicileCountry, InvestmentFundClassProcessingCharacteristics.mmCountry, PostalAddress.mmCountry, Product.mmOrigin, Tax.mmCountry, Person.mmNationality,
+						PaymentCard.mmCardCountryCode, SafekeepingPlace.mmCountry, BeneficialOwner.mmNonDomicileCountry, CardPaymentAcquiring.mmCountry, RegulatoryAuthorityRole.mmCountry, Market.mmCountry);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Country.mmDomiciledFunds, com.tools20022.repository.entity.Country.mmCode, com.tools20022.repository.entity.Country.mmCitizen,
 						com.tools20022.repository.entity.Country.mmTax, com.tools20022.repository.entity.Country.mmCountryForSafekeepingPlace, com.tools20022.repository.entity.Country.mmCountryForBeneficialOwner,
 						com.tools20022.repository.entity.Country.mmProducedProducts, com.tools20022.repository.entity.Country.mmNationalRegulatoryAuthority, com.tools20022.repository.entity.Country.mmRelatedCardPayment,
@@ -862,114 +983,128 @@ public class Country {
 	}
 
 	public List<InvestmentFund> getDomiciledFunds() {
-		return domiciledFunds;
+		return domiciledFunds == null ? domiciledFunds = new ArrayList<>() : domiciledFunds;
 	}
 
-	public void setDomiciledFunds(List<com.tools20022.repository.entity.InvestmentFund> domiciledFunds) {
-		this.domiciledFunds = domiciledFunds;
+	public Country setDomiciledFunds(List<InvestmentFund> domiciledFunds) {
+		this.domiciledFunds = Objects.requireNonNull(domiciledFunds);
+		return this;
 	}
 
 	public CountryCode getCode() {
 		return code;
 	}
 
-	public void setCode(CountryCode code) {
-		this.code = code;
+	public Country setCode(CountryCode code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
 	public Person getCitizen() {
 		return citizen;
 	}
 
-	public void setCitizen(com.tools20022.repository.entity.Person citizen) {
-		this.citizen = citizen;
+	public Country setCitizen(Person citizen) {
+		this.citizen = Objects.requireNonNull(citizen);
+		return this;
 	}
 
 	public Tax getTax() {
 		return tax;
 	}
 
-	public void setTax(com.tools20022.repository.entity.Tax tax) {
-		this.tax = tax;
+	public Country setTax(Tax tax) {
+		this.tax = Objects.requireNonNull(tax);
+		return this;
 	}
 
 	public List<SafekeepingPlace> getCountryForSafekeepingPlace() {
-		return countryForSafekeepingPlace;
+		return countryForSafekeepingPlace == null ? countryForSafekeepingPlace = new ArrayList<>() : countryForSafekeepingPlace;
 	}
 
-	public void setCountryForSafekeepingPlace(List<com.tools20022.repository.entity.SafekeepingPlace> countryForSafekeepingPlace) {
-		this.countryForSafekeepingPlace = countryForSafekeepingPlace;
+	public Country setCountryForSafekeepingPlace(List<SafekeepingPlace> countryForSafekeepingPlace) {
+		this.countryForSafekeepingPlace = Objects.requireNonNull(countryForSafekeepingPlace);
+		return this;
 	}
 
 	public BeneficialOwner getCountryForBeneficialOwner() {
 		return countryForBeneficialOwner;
 	}
 
-	public void setCountryForBeneficialOwner(com.tools20022.repository.entity.BeneficialOwner countryForBeneficialOwner) {
-		this.countryForBeneficialOwner = countryForBeneficialOwner;
+	public Country setCountryForBeneficialOwner(BeneficialOwner countryForBeneficialOwner) {
+		this.countryForBeneficialOwner = Objects.requireNonNull(countryForBeneficialOwner);
+		return this;
 	}
 
 	public List<Product> getProducedProducts() {
-		return producedProducts;
+		return producedProducts == null ? producedProducts = new ArrayList<>() : producedProducts;
 	}
 
-	public void setProducedProducts(List<com.tools20022.repository.entity.Product> producedProducts) {
-		this.producedProducts = producedProducts;
+	public Country setProducedProducts(List<Product> producedProducts) {
+		this.producedProducts = Objects.requireNonNull(producedProducts);
+		return this;
 	}
 
 	public List<RegulatoryAuthorityRole> getNationalRegulatoryAuthority() {
-		return nationalRegulatoryAuthority;
+		return nationalRegulatoryAuthority == null ? nationalRegulatoryAuthority = new ArrayList<>() : nationalRegulatoryAuthority;
 	}
 
-	public void setNationalRegulatoryAuthority(List<com.tools20022.repository.entity.RegulatoryAuthorityRole> nationalRegulatoryAuthority) {
-		this.nationalRegulatoryAuthority = nationalRegulatoryAuthority;
+	public Country setNationalRegulatoryAuthority(List<RegulatoryAuthorityRole> nationalRegulatoryAuthority) {
+		this.nationalRegulatoryAuthority = Objects.requireNonNull(nationalRegulatoryAuthority);
+		return this;
 	}
 
 	public List<CardPaymentAcquiring> getRelatedCardPayment() {
-		return relatedCardPayment;
+		return relatedCardPayment == null ? relatedCardPayment = new ArrayList<>() : relatedCardPayment;
 	}
 
-	public void setRelatedCardPayment(List<com.tools20022.repository.entity.CardPaymentAcquiring> relatedCardPayment) {
-		this.relatedCardPayment = relatedCardPayment;
+	public Country setRelatedCardPayment(List<CardPaymentAcquiring> relatedCardPayment) {
+		this.relatedCardPayment = Objects.requireNonNull(relatedCardPayment);
+		return this;
 	}
 
 	public Max35Text getName() {
 		return name;
 	}
 
-	public void setName(Max35Text name) {
-		this.name = name;
+	public Country setName(Max35Text name) {
+		this.name = Objects.requireNonNull(name);
+		return this;
 	}
 
 	public List<PostalAddress> getPostalAddressSpecification() {
-		return postalAddressSpecification;
+		return postalAddressSpecification == null ? postalAddressSpecification = new ArrayList<>() : postalAddressSpecification;
 	}
 
-	public void setPostalAddressSpecification(List<com.tools20022.repository.entity.PostalAddress> postalAddressSpecification) {
-		this.postalAddressSpecification = postalAddressSpecification;
+	public Country setPostalAddressSpecification(List<PostalAddress> postalAddressSpecification) {
+		this.postalAddressSpecification = Objects.requireNonNull(postalAddressSpecification);
+		return this;
 	}
 
 	public InvestmentFundClassProcessingCharacteristics getCountryRelatedInvestmentFundProcessing() {
 		return countryRelatedInvestmentFundProcessing;
 	}
 
-	public void setCountryRelatedInvestmentFundProcessing(com.tools20022.repository.entity.InvestmentFundClassProcessingCharacteristics countryRelatedInvestmentFundProcessing) {
-		this.countryRelatedInvestmentFundProcessing = countryRelatedInvestmentFundProcessing;
+	public Country setCountryRelatedInvestmentFundProcessing(InvestmentFundClassProcessingCharacteristics countryRelatedInvestmentFundProcessing) {
+		this.countryRelatedInvestmentFundProcessing = Objects.requireNonNull(countryRelatedInvestmentFundProcessing);
+		return this;
 	}
 
 	public Market getMarket() {
 		return market;
 	}
 
-	public void setMarket(com.tools20022.repository.entity.Market market) {
-		this.market = market;
+	public Country setMarket(Market market) {
+		this.market = Objects.requireNonNull(market);
+		return this;
 	}
 
 	public PaymentCard getRelatedPaymentCard() {
 		return relatedPaymentCard;
 	}
 
-	public void setRelatedPaymentCard(com.tools20022.repository.entity.PaymentCard relatedPaymentCard) {
-		this.relatedPaymentCard = relatedPaymentCard;
+	public Country setRelatedPaymentCard(PaymentCard relatedPaymentCard) {
+		this.relatedPaymentCard = Objects.requireNonNull(relatedPaymentCard);
+		return this;
 	}
 }

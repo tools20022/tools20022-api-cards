@@ -38,21 +38,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType3Code#OriginatingPOI
- * PartyType3Code.mmOriginatingPOI}</li>
+ * PartyType3Code.OriginatingPOI}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType3Code#Merchant
- * PartyType3Code.mmMerchant}</li>
+ * PartyType3Code.Merchant}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType3Code#Acceptor
- * PartyType3Code.mmAcceptor}</li>
+ * PartyType3Code.Acceptor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType3Code#IntermediaryAgent
- * PartyType3Code.mmIntermediaryAgent}</li>
+ * PartyType3Code.IntermediaryAgent}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType3Code#Acquirer
- * PartyType3Code.mmAcquirer}</li>
+ * PartyType3Code.Acquirer}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType3Code#CardIssuer
- * PartyType3Code.mmCardIssuer}</li>
+ * PartyType3Code.CardIssuer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType3Code#DelegateIssuer
- * PartyType3Code.mmDelegateIssuer}</li>
+ * PartyType3Code.DelegateIssuer}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -60,8 +60,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -109,7 +109,7 @@ public class PartyType3Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.PartyType14Code#OriginatingPOI
-	 * PartyType14Code.mmOriginatingPOI}</li>
+	 * PartyType14Code.OriginatingPOI}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -142,7 +142,7 @@ public class PartyType3Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.PartyType14Code#Merchant
-	 * PartyType14Code.mmMerchant}</li>
+	 * PartyType14Code.Merchant}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -175,7 +175,7 @@ public class PartyType3Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.PartyType14Code#Acceptor
-	 * PartyType14Code.mmAcceptor}</li>
+	 * PartyType14Code.Acceptor}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -208,7 +208,7 @@ public class PartyType3Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.PartyType14Code#IntermediaryAgent
-	 * PartyType14Code.mmIntermediaryAgent}</li>
+	 * PartyType14Code.IntermediaryAgent}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -241,7 +241,7 @@ public class PartyType3Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.PartyType14Code#Acquirer
-	 * PartyType14Code.mmAcquirer}</li>
+	 * PartyType14Code.Acquirer}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -274,7 +274,7 @@ public class PartyType3Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.PartyType14Code#CardIssuer
-	 * PartyType14Code.mmCardIssuer}</li>
+	 * PartyType14Code.CardIssuer}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -307,7 +307,7 @@ public class PartyType3Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.PartyType14Code#DelegateIssuer
-	 * PartyType14Code.mmDelegateIssuer}</li>
+	 * PartyType14Code.DelegateIssuer}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -329,7 +329,7 @@ public class PartyType3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("OPOI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyType3Code";

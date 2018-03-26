@@ -37,100 +37,100 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#Piece
- * UnitOfMeasure6Code.mmPiece}</li>
+ * UnitOfMeasure6Code.Piece}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#Ton
- * UnitOfMeasure6Code.mmTon}</li>
+ * UnitOfMeasure6Code.Ton}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#Foot
- * UnitOfMeasure6Code.mmFoot}</li>
+ * UnitOfMeasure6Code.Foot}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#GBGallon
- * UnitOfMeasure6Code.mmGBGallon}</li>
+ * UnitOfMeasure6Code.GBGallon}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#USGallon
- * UnitOfMeasure6Code.mmUSGallon}</li>
+ * UnitOfMeasure6Code.USGallon}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#Gram
- * UnitOfMeasure6Code.mmGram}</li>
+ * UnitOfMeasure6Code.Gram}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#Inch
- * UnitOfMeasure6Code.mmInch}</li>
+ * UnitOfMeasure6Code.Inch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#Kilogram
- * UnitOfMeasure6Code.mmKilogram}</li>
+ * UnitOfMeasure6Code.Kilogram}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#Pound
- * UnitOfMeasure6Code.mmPound}</li>
+ * UnitOfMeasure6Code.Pound}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#Metre
- * UnitOfMeasure6Code.mmMetre}</li>
+ * UnitOfMeasure6Code.Metre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#Centimetre
- * UnitOfMeasure6Code.mmCentimetre}</li>
+ * UnitOfMeasure6Code.Centimetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#Millimetre
- * UnitOfMeasure6Code.mmMillimetre}</li>
+ * UnitOfMeasure6Code.Millimetre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#Litre
- * UnitOfMeasure6Code.mmLitre}</li>
+ * UnitOfMeasure6Code.Litre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#Centilitre
- * UnitOfMeasure6Code.mmCentilitre}</li>
+ * UnitOfMeasure6Code.Centilitre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#MilliLitre
- * UnitOfMeasure6Code.mmMilliLitre}</li>
+ * UnitOfMeasure6Code.MilliLitre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#GBOunce
- * UnitOfMeasure6Code.mmGBOunce}</li>
+ * UnitOfMeasure6Code.GBOunce}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#USOunce
- * UnitOfMeasure6Code.mmUSOunce}</li>
+ * UnitOfMeasure6Code.USOunce}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#GBQuart
- * UnitOfMeasure6Code.mmGBQuart}</li>
+ * UnitOfMeasure6Code.GBQuart}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#USQuart
- * UnitOfMeasure6Code.mmUSQuart}</li>
+ * UnitOfMeasure6Code.USQuart}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#GBPint
- * UnitOfMeasure6Code.mmGBPint}</li>
+ * UnitOfMeasure6Code.GBPint}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#USPint
- * UnitOfMeasure6Code.mmUSPint}</li>
+ * UnitOfMeasure6Code.USPint}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#Mile
- * UnitOfMeasure6Code.mmMile}</li>
+ * UnitOfMeasure6Code.Mile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#Kilometre
- * UnitOfMeasure6Code.mmKilometre}</li>
+ * UnitOfMeasure6Code.Kilometre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#Yard
- * UnitOfMeasure6Code.mmYard}</li>
+ * UnitOfMeasure6Code.Yard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#SquareKilometre
- * UnitOfMeasure6Code.mmSquareKilometre}</li>
+ * UnitOfMeasure6Code.SquareKilometre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#Hectare
- * UnitOfMeasure6Code.mmHectare}</li>
+ * UnitOfMeasure6Code.Hectare}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#Are
- * UnitOfMeasure6Code.mmAre}</li>
+ * UnitOfMeasure6Code.Are}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#SquareMetre
- * UnitOfMeasure6Code.mmSquareMetre}</li>
+ * UnitOfMeasure6Code.SquareMetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#SquareCentimetre
- * UnitOfMeasure6Code.mmSquareCentimetre}</li>
+ * UnitOfMeasure6Code.SquareCentimetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#SquareMillimetre
- * UnitOfMeasure6Code.mmSquareMillimetre}</li>
+ * UnitOfMeasure6Code.SquareMillimetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#SquareMile
- * UnitOfMeasure6Code.mmSquareMile}</li>
+ * UnitOfMeasure6Code.SquareMile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#SquareYard
- * UnitOfMeasure6Code.mmSquareYard}</li>
+ * UnitOfMeasure6Code.SquareYard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#SquareFoot
- * UnitOfMeasure6Code.mmSquareFoot}</li>
+ * UnitOfMeasure6Code.SquareFoot}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#SquareInch
- * UnitOfMeasure6Code.mmSquareInch}</li>
+ * UnitOfMeasure6Code.SquareInch}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#Acre
- * UnitOfMeasure6Code.mmAcre}</li>
+ * UnitOfMeasure6Code.Acre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#KilowattHours
- * UnitOfMeasure6Code.mmKilowattHours}</li>
+ * UnitOfMeasure6Code.KilowattHours}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#DieselGallonEquivalent
- * UnitOfMeasure6Code.mmDieselGallonEquivalent}</li>
+ * UnitOfMeasure6Code.DieselGallonEquivalent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code#GasolineGallonEquivalent
- * UnitOfMeasure6Code.mmGasolineGallonEquivalent}</li>
+ * UnitOfMeasure6Code.GasolineGallonEquivalent}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -139,8 +139,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -1081,7 +1081,7 @@ public class UnitOfMeasure6Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("PIEC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnitOfMeasure6Code";

@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -62,15 +63,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Additional information about a request."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AdditionalInformation6", propOrder = {"informationType", "informationValue"})
 public class AdditionalInformation6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "InfTp", required = true)
 	protected ExternalInformationType1Code informationType;
 	/**
-	 * Specifies the type of additional information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -96,9 +98,9 @@ public class AdditionalInformation6 {
 	 * definition} = "Specifies the type of additional information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInformationType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AdditionalInformation6, ExternalInformationType1Code> mmInformationType = new MMMessageAttribute<AdditionalInformation6, ExternalInformationType1Code>() {
 		{
-			componentContext_lazy = () -> AdditionalInformation6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AdditionalInformation6.mmObject();
 			isDerived = false;
 			xmlTag = "InfTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -108,11 +110,22 @@ public class AdditionalInformation6 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalInformationType1Code.mmObject();
 		}
+
+		@Override
+		public ExternalInformationType1Code getValue(AdditionalInformation6 obj) {
+			return obj.getInformationType();
+		}
+
+		@Override
+		public void setValue(AdditionalInformation6 obj, ExternalInformationType1Code value) {
+			obj.setInformationType(value);
+		}
 	};
+	@XmlElement(name = "InfVal", required = true)
 	protected Max350Text informationValue;
 	/**
-	 * Contents of the additional information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -137,9 +150,9 @@ public class AdditionalInformation6 {
 	 * definition} = "Contents of the additional information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInformationValue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AdditionalInformation6, Max350Text> mmInformationValue = new MMMessageAttribute<AdditionalInformation6, Max350Text>() {
 		{
-			componentContext_lazy = () -> AdditionalInformation6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AdditionalInformation6.mmObject();
 			isDerived = false;
 			xmlTag = "InfVal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -149,13 +162,23 @@ public class AdditionalInformation6 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Max350Text getValue(AdditionalInformation6 obj) {
+			return obj.getInformationValue();
+		}
+
+		@Override
+		public void setValue(AdditionalInformation6 obj, Max350Text value) {
+			obj.setInformationValue(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AdditionalInformation6.mmInformationType, AdditionalInformation6.mmInformationValue);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AdditionalInformation6.mmInformationType, com.tools20022.repository.msg.AdditionalInformation6.mmInformationValue);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AdditionalInformation6";
 				definition = "Additional information about a request.";
@@ -164,21 +187,21 @@ public class AdditionalInformation6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "InfTp", required = true)
 	public ExternalInformationType1Code getInformationType() {
 		return informationType;
 	}
 
-	public void setInformationType(ExternalInformationType1Code informationType) {
-		this.informationType = informationType;
+	public AdditionalInformation6 setInformationType(ExternalInformationType1Code informationType) {
+		this.informationType = Objects.requireNonNull(informationType);
+		return this;
 	}
 
-	@XmlElement(name = "InfVal", required = true)
 	public Max350Text getInformationValue() {
 		return informationValue;
 	}
 
-	public void setInformationValue(Max350Text informationValue) {
-		this.informationValue = informationValue;
+	public AdditionalInformation6 setInformationValue(Max350Text informationValue) {
+		this.informationValue = Objects.requireNonNull(informationValue);
+		return this;
 	}
 }

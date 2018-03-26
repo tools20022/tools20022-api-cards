@@ -23,9 +23,13 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.CardPayment;
 import com.tools20022.repository.entity.CardPaymentAcquiring;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Action8;
+import com.tools20022.repository.msg.AuthorisationResult12;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,15 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Cancellation response from the acquirer."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CardPaymentTransaction68", propOrder = {"authorisationResult", "action"})
 public class CardPaymentTransaction68 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AuthstnRslt", required = true)
 	protected AuthorisationResult12 authorisationResult;
 	/**
-	 * Outcome of the authorisation, and actions to perform.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -103,10 +108,10 @@ public class CardPaymentTransaction68 {
 	 * definition} = "Outcome of the authorisation, and actions to perform."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAuthorisationResult = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CardPaymentTransaction68, AuthorisationResult12> mmAuthorisationResult = new MMMessageAssociationEnd<CardPaymentTransaction68, AuthorisationResult12>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmValidation;
-			componentContext_lazy = () -> CardPaymentTransaction68.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardPaymentTransaction68.mmObject();
 			isDerived = false;
 			xmlTag = "AuthstnRslt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -115,13 +120,24 @@ public class CardPaymentTransaction68 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AuthorisationResult12.mmObject();
+			type_lazy = () -> AuthorisationResult12.mmObject();
+		}
+
+		@Override
+		public AuthorisationResult12 getValue(CardPaymentTransaction68 obj) {
+			return obj.getAuthorisationResult();
+		}
+
+		@Override
+		public void setValue(CardPaymentTransaction68 obj, AuthorisationResult12 value) {
+			obj.setAuthorisationResult(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.Action8> action;
+	@XmlElement(name = "Actn")
+	protected List<Action8> action;
 	/**
-	 * Set of actions to be performed by the POI (Point Of Interaction) system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -146,9 +162,9 @@ public class CardPaymentTransaction68 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAction = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CardPaymentTransaction68, List<Action8>> mmAction = new MMMessageAssociationEnd<CardPaymentTransaction68, List<Action8>>() {
 		{
-			componentContext_lazy = () -> CardPaymentTransaction68.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardPaymentTransaction68.mmObject();
 			isDerived = false;
 			xmlTag = "Actn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -156,16 +172,26 @@ public class CardPaymentTransaction68 {
 			definition = "Set of actions to be performed by the POI (Point Of Interaction) system.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Action8.mmObject();
+			type_lazy = () -> Action8.mmObject();
+		}
+
+		@Override
+		public List<Action8> getValue(CardPaymentTransaction68 obj) {
+			return obj.getAction();
+		}
+
+		@Override
+		public void setValue(CardPaymentTransaction68 obj, List<Action8> value) {
+			obj.setAction(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CardPaymentTransaction68.mmAuthorisationResult, CardPaymentTransaction68.mmAction);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CardPaymentTransaction68.mmAuthorisationResult, com.tools20022.repository.msg.CardPaymentTransaction68.mmAction);
 				trace_lazy = () -> CardPayment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPaymentTransaction68";
 				definition = "Cancellation response from the acquirer.";
@@ -174,21 +200,21 @@ public class CardPaymentTransaction68 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AuthstnRslt", required = true)
 	public AuthorisationResult12 getAuthorisationResult() {
 		return authorisationResult;
 	}
 
-	public void setAuthorisationResult(com.tools20022.repository.msg.AuthorisationResult12 authorisationResult) {
-		this.authorisationResult = authorisationResult;
+	public CardPaymentTransaction68 setAuthorisationResult(AuthorisationResult12 authorisationResult) {
+		this.authorisationResult = Objects.requireNonNull(authorisationResult);
+		return this;
 	}
 
-	@XmlElement(name = "Actn")
 	public List<Action8> getAction() {
-		return action;
+		return action == null ? action = new ArrayList<>() : action;
 	}
 
-	public void setAction(List<com.tools20022.repository.msg.Action8> action) {
-		this.action = action;
+	public CardPaymentTransaction68 setAction(List<Action8> action) {
+		this.action = Objects.requireNonNull(action);
+		return this;
 	}
 }

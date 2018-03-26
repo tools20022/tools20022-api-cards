@@ -21,11 +21,15 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.CashAccountContract;
+import com.tools20022.repository.entity.CashAccountService;
 import com.tools20022.repository.entity.Mandate;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Authorisation given to a mandate holder to perform some operation on an
@@ -65,8 +69,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,10 +86,10 @@ import java.util.List;
 public class CashAccountMandate extends Mandate {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.CashAccountService> services;
+	protected List<CashAccountService> services;
 	/**
-	 * Services that the holder of an account mandate can exercise.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -117,7 +121,7 @@ public class CashAccountMandate extends Mandate {
 	 * "Services that the holder of an account mandate can exercise."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmServices = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CashAccountMandate, List<CashAccountService>> mmServices = new MMBusinessAssociationEnd<CashAccountMandate, List<CashAccountService>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountMandate.mmObject();
@@ -125,15 +129,25 @@ public class CashAccountMandate extends Mandate {
 			name = "Services";
 			definition = "Services that the holder of an account mandate can exercise.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashAccountService.mmCashAccountMandate;
+			opposite_lazy = () -> CashAccountService.mmCashAccountMandate;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashAccountService.mmObject();
+			type_lazy = () -> CashAccountService.mmObject();
+		}
+
+		@Override
+		public List<CashAccountService> getValue(CashAccountMandate obj) {
+			return obj.getServices();
+		}
+
+		@Override
+		public void setValue(CashAccountMandate obj, List<CashAccountService> value) {
+			obj.setServices(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.CashAccountContract> cashAccountContract;
 	/**
-	 * Contract to which a mandate applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -164,7 +178,7 @@ public class CashAccountMandate extends Mandate {
 	 * definition} = "Contract to which a mandate applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashAccountContract = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CashAccountMandate, List<CashAccountContract>> mmCashAccountContract = new MMBusinessAssociationEnd<CashAccountMandate, List<CashAccountContract>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashAccountMandate.mmObject();
@@ -176,16 +190,26 @@ public class CashAccountMandate extends Mandate {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashAccountContract.mmObject();
 		}
+
+		@Override
+		public List<CashAccountContract> getValue(CashAccountMandate obj) {
+			return obj.getCashAccountContract();
+		}
+
+		@Override
+		public void setValue(CashAccountMandate obj, List<CashAccountContract> value) {
+			obj.setCashAccountContract(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashAccountMandate";
 				definition = "Authorisation given to a mandate holder to perform some operation on an account.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccountContract.mmCashAccountMandate, com.tools20022.repository.entity.CashAccountService.mmCashAccountMandate);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccountContract.mmCashAccountMandate, CashAccountService.mmCashAccountMandate);
 				superType_lazy = () -> Mandate.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccountMandate.mmServices, com.tools20022.repository.entity.CashAccountMandate.mmCashAccountContract);
 			}
@@ -199,18 +223,20 @@ public class CashAccountMandate extends Mandate {
 	}
 
 	public List<CashAccountService> getServices() {
-		return services;
+		return services == null ? services = new ArrayList<>() : services;
 	}
 
-	public void setServices(List<com.tools20022.repository.entity.CashAccountService> services) {
-		this.services = services;
+	public CashAccountMandate setServices(List<CashAccountService> services) {
+		this.services = Objects.requireNonNull(services);
+		return this;
 	}
 
 	public List<CashAccountContract> getCashAccountContract() {
-		return cashAccountContract;
+		return cashAccountContract == null ? cashAccountContract = new ArrayList<>() : cashAccountContract;
 	}
 
-	public void setCashAccountContract(List<com.tools20022.repository.entity.CashAccountContract> cashAccountContract) {
-		this.cashAccountContract = cashAccountContract;
+	public CashAccountMandate setCashAccountContract(List<com.tools20022.repository.entity.CashAccountContract> cashAccountContract) {
+		this.cashAccountContract = Objects.requireNonNull(cashAccountContract);
+		return this;
 	}
 }

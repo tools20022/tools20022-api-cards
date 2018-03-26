@@ -26,6 +26,7 @@ import com.tools20022.repository.msg.KEKIdentifier2;
 import com.tools20022.repository.msg.KeyTransport4;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,15 +73,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "Recipient4Choice", propOrder = {"keyTransport", "KEK", "keyIdentifier"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "Recipient4Choice", propOrder = {"keyTransport", "kEK", "keyIdentifier"})
 public class Recipient4Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "KeyTrnsprt", required = true)
 	protected KeyTransport4 keyTransport;
 	/**
-	 * Encryption key using previously distributed asymmetric public key.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -105,9 +107,9 @@ public class Recipient4Choice {
 	 * "Encryption key using previously distributed asymmetric public key."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmKeyTransport = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Recipient4Choice, KeyTransport4> mmKeyTransport = new MMMessageAssociationEnd<Recipient4Choice, KeyTransport4>() {
 		{
-			componentContext_lazy = () -> Recipient4Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Recipient4Choice.mmObject();
 			isDerived = false;
 			xmlTag = "KeyTrnsprt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,11 +120,22 @@ public class Recipient4Choice {
 			isComposite = true;
 			type_lazy = () -> KeyTransport4.mmObject();
 		}
+
+		@Override
+		public KeyTransport4 getValue(Recipient4Choice obj) {
+			return obj.getKeyTransport();
+		}
+
+		@Override
+		public void setValue(Recipient4Choice obj, KeyTransport4 value) {
+			obj.setKeyTransport(value);
+		}
 	};
+	@XmlElement(name = "KEK", required = true)
 	protected KEK4 kEK;
 	/**
-	 * Key encryption key using previously distributed symmetric key.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -146,9 +159,9 @@ public class Recipient4Choice {
 	 * "Key encryption key using previously distributed symmetric key."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmKEK = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Recipient4Choice, KEK4> mmKEK = new MMMessageAssociationEnd<Recipient4Choice, KEK4>() {
 		{
-			componentContext_lazy = () -> Recipient4Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Recipient4Choice.mmObject();
 			isDerived = false;
 			xmlTag = "KEK";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -159,12 +172,22 @@ public class Recipient4Choice {
 			isComposite = true;
 			type_lazy = () -> KEK4.mmObject();
 		}
+
+		@Override
+		public KEK4 getValue(Recipient4Choice obj) {
+			return obj.getKEK();
+		}
+
+		@Override
+		public void setValue(Recipient4Choice obj, KEK4 value) {
+			obj.setKEK(value);
+		}
 	};
+	@XmlElement(name = "KeyIdr", required = true)
 	protected KEKIdentifier2 keyIdentifier;
 	/**
-	 * Identification of a protection key without a session key, shared and
-	 * previously exchanged between the initiator and the recipient.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -198,9 +221,9 @@ public class Recipient4Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmKeyIdentifier = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Recipient4Choice, KEKIdentifier2> mmKeyIdentifier = new MMMessageAssociationEnd<Recipient4Choice, KEKIdentifier2>() {
 		{
-			componentContext_lazy = () -> Recipient4Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.Recipient4Choice.mmObject();
 			isDerived = false;
 			xmlTag = "KeyIdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -212,13 +235,24 @@ public class Recipient4Choice {
 			isComposite = true;
 			type_lazy = () -> KEKIdentifier2.mmObject();
 		}
+
+		@Override
+		public KEKIdentifier2 getValue(Recipient4Choice obj) {
+			return obj.getKeyIdentifier();
+		}
+
+		@Override
+		public void setValue(Recipient4Choice obj, KEKIdentifier2 value) {
+			obj.setKeyIdentifier(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Recipient4Choice.mmKeyTransport, Recipient4Choice.mmKEK, Recipient4Choice.mmKeyIdentifier);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.Recipient4Choice.mmKeyTransport, com.tools20022.repository.choice.Recipient4Choice.mmKEK,
+						com.tools20022.repository.choice.Recipient4Choice.mmKeyIdentifier);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Recipient4Choice";
 				definition = "Transport key or key encryption key (KEK) for the recipient.";
@@ -228,30 +262,30 @@ public class Recipient4Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "KeyTrnsprt", required = true)
 	public KeyTransport4 getKeyTransport() {
 		return keyTransport;
 	}
 
-	public void setKeyTransport(KeyTransport4 keyTransport) {
-		this.keyTransport = keyTransport;
+	public Recipient4Choice setKeyTransport(KeyTransport4 keyTransport) {
+		this.keyTransport = Objects.requireNonNull(keyTransport);
+		return this;
 	}
 
-	@XmlElement(name = "KEK", required = true)
 	public KEK4 getKEK() {
 		return kEK;
 	}
 
-	public void setKEK(KEK4 kEK) {
-		this.kEK = kEK;
+	public Recipient4Choice setKEK(KEK4 kEK) {
+		this.kEK = Objects.requireNonNull(kEK);
+		return this;
 	}
 
-	@XmlElement(name = "KeyIdr", required = true)
 	public KEKIdentifier2 getKeyIdentifier() {
 		return keyIdentifier;
 	}
 
-	public void setKeyIdentifier(KEKIdentifier2 keyIdentifier) {
-		this.keyIdentifier = keyIdentifier;
+	public Recipient4Choice setKeyIdentifier(KEKIdentifier2 keyIdentifier) {
+		this.keyIdentifier = Objects.requireNonNull(keyIdentifier);
+		return this;
 	}
 }

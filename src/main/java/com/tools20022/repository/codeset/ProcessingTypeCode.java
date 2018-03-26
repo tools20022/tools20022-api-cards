@@ -38,38 +38,38 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProcessingTypeCode#Rejection
- * ProcessingTypeCode.mmRejection}</li>
+ * ProcessingTypeCode.Rejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProcessingTypeCode#CSDValidationHold
- * ProcessingTypeCode.mmCSDValidationHold}</li>
+ * ProcessingTypeCode.CSDValidationHold}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProcessingTypeCode#Reservation
- * ProcessingTypeCode.mmReservation}</li>
+ * ProcessingTypeCode.Reservation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProcessingTypeCode#Blocking
- * ProcessingTypeCode.mmBlocking}</li>
+ * ProcessingTypeCode.Blocking}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProcessingTypeCode#Earmarking
- * ProcessingTypeCode.mmEarmarking}</li>
+ * ProcessingTypeCode.Earmarking}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProcessingTypeCode#EarmarkingForAutoCollateralisation
- * ProcessingTypeCode.mmEarmarkingForAutoCollateralisation}</li>
+ * ProcessingTypeCode.EarmarkingForAutoCollateralisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProcessingTypeCode#Deliverable
- * ProcessingTypeCode.mmDeliverable}</li>
+ * ProcessingTypeCode.Deliverable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProcessingTypeCode#Collateralised
- * ProcessingTypeCode.mmCollateralised}</li>
+ * ProcessingTypeCode.Collateralised}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProcessingTypeCode#CoSDBlocking
- * ProcessingTypeCode.mmCoSDBlocking}</li>
+ * ProcessingTypeCode.CoSDBlocking}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -194,7 +194,7 @@ public class ProcessingTypeCode extends MMCode {
 	/**
 	 * Restriction is the blocking of a party, securities account, security or
 	 * cash account from settlement, blocking of securities position or cash
-	 * balance for a specific purpose
+	 * balance for a specific purpose.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -212,7 +212,7 @@ public class ProcessingTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Restriction is the blocking of a party, securities account, security or cash account from settlement, blocking of securities position or cash balance for a specific purpose"
+	 * "Restriction is the blocking of a party, securities account, security or cash account from settlement, blocking of securities position or cash balance for a specific purpose."
 	 * </li>
 	 * </ul>
 	 */
@@ -220,7 +220,7 @@ public class ProcessingTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Blocking";
-			definition = "Restriction is the blocking of a party, securities account, security or cash account from settlement, blocking of securities position or cash balance for a specific purpose";
+			definition = "Restriction is the blocking of a party, securities account, security or cash account from settlement, blocking of securities position or cash balance for a specific purpose.";
 			owner_lazy = () -> com.tools20022.repository.codeset.ProcessingTypeCode.mmObject();
 			codeName = "BLCK";
 		}
@@ -390,7 +390,7 @@ public class ProcessingTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("RJCT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProcessingTypeCode";

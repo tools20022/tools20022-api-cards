@@ -26,8 +26,12 @@ import com.tools20022.repository.datatype.Max5000Binary;
 import com.tools20022.repository.datatype.TrueFalseIndicator;
 import com.tools20022.repository.entity.Authentication;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ContentInformationType10;
+import com.tools20022.repository.msg.OnLinePIN5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -65,8 +69,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,16 +86,16 @@ import javax.xml.bind.annotation.XmlType;
  * CardholderAuthentication7}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CardholderAuthentication8", propOrder = {"authenticationMethod", "tokenRequested", "authenticationValue", "protectedAuthenticationValue", "cardholderOnLinePIN"})
 public class CardholderAuthentication8 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AuthntcnMtd", required = true)
 	protected AuthenticationMethod7Code authenticationMethod;
 	/**
-	 * Method and data intended to be used for this transaction to authenticate
-	 * the customer or its card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -129,10 +133,10 @@ public class CardholderAuthentication8 {
 	 * CardholderAuthentication7.mmAuthenticationMethod}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAuthenticationMethod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CardholderAuthentication8, AuthenticationMethod7Code> mmAuthenticationMethod = new MMMessageAttribute<CardholderAuthentication8, AuthenticationMethod7Code>() {
 		{
 			businessElementTrace_lazy = () -> Authentication.mmAuthenticationMethod;
-			componentContext_lazy = () -> CardholderAuthentication8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardholderAuthentication8.mmObject();
 			isDerived = false;
 			xmlTag = "AuthntcnMtd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -143,12 +147,22 @@ public class CardholderAuthentication8 {
 			minOccurs = 1;
 			simpleType_lazy = () -> AuthenticationMethod7Code.mmObject();
 		}
+
+		@Override
+		public AuthenticationMethod7Code getValue(CardholderAuthentication8 obj) {
+			return obj.getAuthenticationMethod();
+		}
+
+		@Override
+		public void setValue(CardholderAuthentication8 obj, AuthenticationMethod7Code value) {
+			obj.setAuthenticationMethod(value);
+		}
 	};
+	@XmlElement(name = "TknReqd")
 	protected TrueFalseIndicator tokenRequested;
 	/**
-	 * True if an authentication token is requested to the host. This token will
-	 * be provided to the ATM for further authentication.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -176,9 +190,9 @@ public class CardholderAuthentication8 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTokenRequested = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CardholderAuthentication8, Optional<TrueFalseIndicator>> mmTokenRequested = new MMMessageAttribute<CardholderAuthentication8, Optional<TrueFalseIndicator>>() {
 		{
-			componentContext_lazy = () -> CardholderAuthentication8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardholderAuthentication8.mmObject();
 			isDerived = false;
 			xmlTag = "TknReqd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -188,11 +202,22 @@ public class CardholderAuthentication8 {
 			minOccurs = 0;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<TrueFalseIndicator> getValue(CardholderAuthentication8 obj) {
+			return obj.getTokenRequested();
+		}
+
+		@Override
+		public void setValue(CardholderAuthentication8 obj, Optional<TrueFalseIndicator> value) {
+			obj.setTokenRequested(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AuthntcnVal")
 	protected Max5000Binary authenticationValue;
 	/**
-	 * Value or token to be used for customer or card authentication.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -229,10 +254,10 @@ public class CardholderAuthentication8 {
 	 * CardholderAuthentication7.mmAuthenticationValue}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAuthenticationValue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CardholderAuthentication8, Optional<Max5000Binary>> mmAuthenticationValue = new MMMessageAttribute<CardholderAuthentication8, Optional<Max5000Binary>>() {
 		{
 			businessElementTrace_lazy = () -> Authentication.mmAuthenticationValue;
-			componentContext_lazy = () -> CardholderAuthentication8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardholderAuthentication8.mmObject();
 			isDerived = false;
 			xmlTag = "AuthntcnVal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -243,11 +268,22 @@ public class CardholderAuthentication8 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max5000Binary.mmObject();
 		}
+
+		@Override
+		public Optional<Max5000Binary> getValue(CardholderAuthentication8 obj) {
+			return obj.getAuthenticationValue();
+		}
+
+		@Override
+		public void setValue(CardholderAuthentication8 obj, Optional<Max5000Binary> value) {
+			obj.setAuthenticationValue(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PrtctdAuthntcnVal")
 	protected ContentInformationType10 protectedAuthenticationValue;
 	/**
-	 * Protection of the authentication value.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -277,9 +313,9 @@ public class CardholderAuthentication8 {
 	 * CardholderAuthentication7.mmProtectedAuthenticationValue}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProtectedAuthenticationValue = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CardholderAuthentication8, Optional<ContentInformationType10>> mmProtectedAuthenticationValue = new MMMessageAssociationEnd<CardholderAuthentication8, Optional<ContentInformationType10>>() {
 		{
-			componentContext_lazy = () -> CardholderAuthentication8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardholderAuthentication8.mmObject();
 			isDerived = false;
 			xmlTag = "PrtctdAuthntcnVal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -289,13 +325,24 @@ public class CardholderAuthentication8 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ContentInformationType10.mmObject();
+			type_lazy = () -> ContentInformationType10.mmObject();
+		}
+
+		@Override
+		public Optional<ContentInformationType10> getValue(CardholderAuthentication8 obj) {
+			return obj.getProtectedAuthenticationValue();
+		}
+
+		@Override
+		public void setValue(CardholderAuthentication8 obj, Optional<ContentInformationType10> value) {
+			obj.setProtectedAuthenticationValue(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "CrdhldrOnLinePIN")
 	protected OnLinePIN5 cardholderOnLinePIN;
 	/**
-	 * Encrypted personal identification number (PIN) and related information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -330,10 +377,10 @@ public class CardholderAuthentication8 {
 	 * CardholderAuthentication7.mmCardholderOnLinePIN}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCardholderOnLinePIN = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CardholderAuthentication8, Optional<OnLinePIN5>> mmCardholderOnLinePIN = new MMMessageAssociationEnd<CardholderAuthentication8, Optional<OnLinePIN5>>() {
 		{
 			businessComponentTrace_lazy = () -> Authentication.mmObject();
-			componentContext_lazy = () -> CardholderAuthentication8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardholderAuthentication8.mmObject();
 			isDerived = false;
 			xmlTag = "CrdhldrOnLinePIN";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -343,17 +390,28 @@ public class CardholderAuthentication8 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.OnLinePIN5.mmObject();
+			type_lazy = () -> OnLinePIN5.mmObject();
+		}
+
+		@Override
+		public Optional<OnLinePIN5> getValue(CardholderAuthentication8 obj) {
+			return obj.getCardholderOnLinePIN();
+		}
+
+		@Override
+		public void setValue(CardholderAuthentication8 obj, Optional<OnLinePIN5> value) {
+			obj.setCardholderOnLinePIN(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CardholderAuthentication8.mmAuthenticationMethod, CardholderAuthentication8.mmTokenRequested, CardholderAuthentication8.mmAuthenticationValue,
-						CardholderAuthentication8.mmProtectedAuthenticationValue, CardholderAuthentication8.mmCardholderOnLinePIN);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CardholderAuthentication8.mmAuthenticationMethod, com.tools20022.repository.msg.CardholderAuthentication8.mmTokenRequested,
+						com.tools20022.repository.msg.CardholderAuthentication8.mmAuthenticationValue, com.tools20022.repository.msg.CardholderAuthentication8.mmProtectedAuthenticationValue,
+						com.tools20022.repository.msg.CardholderAuthentication8.mmCardholderOnLinePIN);
 				trace_lazy = () -> Authentication.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardholderAuthentication8";
 				definition = "Data related to the authentication of the card and the cardholder.";
@@ -363,48 +421,48 @@ public class CardholderAuthentication8 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AuthntcnMtd", required = true)
 	public AuthenticationMethod7Code getAuthenticationMethod() {
 		return authenticationMethod;
 	}
 
-	public void setAuthenticationMethod(AuthenticationMethod7Code authenticationMethod) {
-		this.authenticationMethod = authenticationMethod;
+	public CardholderAuthentication8 setAuthenticationMethod(AuthenticationMethod7Code authenticationMethod) {
+		this.authenticationMethod = Objects.requireNonNull(authenticationMethod);
+		return this;
 	}
 
-	@XmlElement(name = "TknReqd")
-	public TrueFalseIndicator getTokenRequested() {
-		return tokenRequested;
+	public Optional<TrueFalseIndicator> getTokenRequested() {
+		return tokenRequested == null ? Optional.empty() : Optional.of(tokenRequested);
 	}
 
-	public void setTokenRequested(TrueFalseIndicator tokenRequested) {
+	public CardholderAuthentication8 setTokenRequested(TrueFalseIndicator tokenRequested) {
 		this.tokenRequested = tokenRequested;
+		return this;
 	}
 
-	@XmlElement(name = "AuthntcnVal")
-	public Max5000Binary getAuthenticationValue() {
-		return authenticationValue;
+	public Optional<Max5000Binary> getAuthenticationValue() {
+		return authenticationValue == null ? Optional.empty() : Optional.of(authenticationValue);
 	}
 
-	public void setAuthenticationValue(Max5000Binary authenticationValue) {
+	public CardholderAuthentication8 setAuthenticationValue(Max5000Binary authenticationValue) {
 		this.authenticationValue = authenticationValue;
+		return this;
 	}
 
-	@XmlElement(name = "PrtctdAuthntcnVal")
-	public ContentInformationType10 getProtectedAuthenticationValue() {
-		return protectedAuthenticationValue;
+	public Optional<ContentInformationType10> getProtectedAuthenticationValue() {
+		return protectedAuthenticationValue == null ? Optional.empty() : Optional.of(protectedAuthenticationValue);
 	}
 
-	public void setProtectedAuthenticationValue(com.tools20022.repository.msg.ContentInformationType10 protectedAuthenticationValue) {
+	public CardholderAuthentication8 setProtectedAuthenticationValue(ContentInformationType10 protectedAuthenticationValue) {
 		this.protectedAuthenticationValue = protectedAuthenticationValue;
+		return this;
 	}
 
-	@XmlElement(name = "CrdhldrOnLinePIN")
-	public OnLinePIN5 getCardholderOnLinePIN() {
-		return cardholderOnLinePIN;
+	public Optional<OnLinePIN5> getCardholderOnLinePIN() {
+		return cardholderOnLinePIN == null ? Optional.empty() : Optional.of(cardholderOnLinePIN);
 	}
 
-	public void setCardholderOnLinePIN(com.tools20022.repository.msg.OnLinePIN5 cardholderOnLinePIN) {
+	public CardholderAuthentication8 setCardholderOnLinePIN(OnLinePIN5 cardholderOnLinePIN) {
 		this.cardholderOnLinePIN = cardholderOnLinePIN;
+		return this;
 	}
 }

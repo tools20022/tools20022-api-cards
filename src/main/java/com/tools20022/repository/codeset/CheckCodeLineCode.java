@@ -37,16 +37,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.CheckCodeLineCode#CMC7
- * CheckCodeLineCode.mmCMC7}</li>
+ * CheckCodeLineCode.CMC7}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CheckCodeLineCode#E13B
- * CheckCodeLineCode.mmE13B}</li>
+ * CheckCodeLineCode.E13B}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CheckCodeLineCode#OCRA
- * CheckCodeLineCode.mmOCRA}</li>
+ * CheckCodeLineCode.OCRA}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CheckCodeLineCode#OCRB
- * CheckCodeLineCode.mmOCRB}</li>
+ * CheckCodeLineCode.OCRB}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CheckCodeLineCode#OCRDefault
- * CheckCodeLineCode.mmOCRDefault}</li>
+ * CheckCodeLineCode.OCRDefault}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -106,7 +106,7 @@ public class CheckCodeLineCode extends MMCode {
 		}
 	};
 	/**
-	 * Magnetic ink character recognition.,conform to ISO 1004.
+	 * Magnetic ink character recognition., conform to ISO 1004.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -123,20 +123,21 @@ public class CheckCodeLineCode extends MMCode {
 	 * name} = "E13B"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Magnetic ink character recognition.,conform to ISO 1004."</li>
+	 * definition} = "Magnetic ink character recognition., conform to ISO 1004."
+	 * </li>
 	 * </ul>
 	 */
 	public static final CheckCodeLineCode E13B = new CheckCodeLineCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "E13B";
-			definition = "Magnetic ink character recognition.,conform to ISO 1004.";
+			definition = "Magnetic ink character recognition., conform to ISO 1004.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CheckCodeLineCode.mmObject();
 			codeName = "E13B";
 		}
 	};
 	/**
-	 * Optical character recognition font A, conform to ANSI X3.17:1981.
+	 * Optical character recognition font A, conform to ANSI X3.17: 1981.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -154,20 +155,20 @@ public class CheckCodeLineCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Optical character recognition font A, conform to ANSI X3.17:1981."</li>
+	 * "Optical character recognition font A, conform to ANSI X3.17: 1981."</li>
 	 * </ul>
 	 */
 	public static final CheckCodeLineCode OCRA = new CheckCodeLineCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OCRA";
-			definition = "Optical character recognition font A, conform to ANSI X3.17:1981.";
+			definition = "Optical character recognition font A, conform to ANSI X3.17: 1981.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CheckCodeLineCode.mmObject();
 			codeName = "OCRA";
 		}
 	};
 	/**
-	 * Optical character recognition font B, conform to ANSI X3.49:1975.
+	 * Optical character recognition font B, conform to ANSI X3.49: 1975.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -185,14 +186,14 @@ public class CheckCodeLineCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Optical character recognition font B, conform to ANSI X3.49:1975."</li>
+	 * "Optical character recognition font B, conform to ANSI X3.49: 1975."</li>
 	 * </ul>
 	 */
 	public static final CheckCodeLineCode OCRB = new CheckCodeLineCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OCRB";
-			definition = "Optical character recognition font B, conform to ANSI X3.49:1975.";
+			definition = "Optical character recognition font B, conform to ANSI X3.49: 1975.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CheckCodeLineCode.mmObject();
 			codeName = "OCRB";
 		}
@@ -235,7 +236,7 @@ public class CheckCodeLineCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CheckCodeLineCode";
 				definition = "Format of the check code line.";

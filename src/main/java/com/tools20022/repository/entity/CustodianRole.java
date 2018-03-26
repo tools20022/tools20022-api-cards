@@ -21,10 +21,12 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.InvestmentFund;
 import com.tools20022.repository.entity.SecuritiesPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * The party that safekeeps and administers assets on behalf of the owner.
@@ -58,8 +60,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,8 +78,8 @@ public class CustodianRole extends SecuritiesPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected InvestmentFund investmentFund;
 	/**
-	 * Fund for which a custodian is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -108,7 +110,7 @@ public class CustodianRole extends SecuritiesPartyRole {
 	 * definition} = "Fund for which a custodian is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentFund = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CustodianRole, com.tools20022.repository.entity.InvestmentFund> mmInvestmentFund = new MMBusinessAssociationEnd<CustodianRole, com.tools20022.repository.entity.InvestmentFund>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CustodianRole.mmObject();
@@ -121,12 +123,22 @@ public class CustodianRole extends SecuritiesPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentFund.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.InvestmentFund getValue(CustodianRole obj) {
+			return obj.getInvestmentFund();
+		}
+
+		@Override
+		public void setValue(CustodianRole obj, com.tools20022.repository.entity.InvestmentFund value) {
+			obj.setInvestmentFund(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CustodianRole";
 				definition = "The party that safekeeps and administers assets on behalf of the owner.";
@@ -147,7 +159,8 @@ public class CustodianRole extends SecuritiesPartyRole {
 		return investmentFund;
 	}
 
-	public void setInvestmentFund(com.tools20022.repository.entity.InvestmentFund investmentFund) {
-		this.investmentFund = investmentFund;
+	public CustodianRole setInvestmentFund(com.tools20022.repository.entity.InvestmentFund investmentFund) {
+		this.investmentFund = Objects.requireNonNull(investmentFund);
+		return this;
 	}
 }

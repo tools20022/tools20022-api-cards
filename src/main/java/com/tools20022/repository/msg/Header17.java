@@ -27,9 +27,10 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max3NumericText;
 import com.tools20022.repository.datatype.Max6Text;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.GenericIdentification73;
+import com.tools20022.repository.msg.Traceability3;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -103,8 +104,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -121,15 +122,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Header17", propOrder = {"messageFunction", "protocolVersion", "exchangeIdentification", "reTransmissionCounter", "creationDateTime", "initiatingParty", "recipientParty", "traceability"})
 public class Header17 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgFctn", required = true)
 	protected MessageFunction6Code messageFunction;
 	/**
-	 * Identifies the type of process related to the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -161,9 +163,9 @@ public class Header17 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMessageFunction = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Header17, MessageFunction6Code> mmMessageFunction = new MMMessageAttribute<Header17, MessageFunction6Code>() {
 		{
-			componentContext_lazy = () -> Header17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Header17.mmObject();
 			isDerived = false;
 			xmlTag = "MsgFctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -174,11 +176,22 @@ public class Header17 {
 			minOccurs = 1;
 			simpleType_lazy = () -> MessageFunction6Code.mmObject();
 		}
+
+		@Override
+		public MessageFunction6Code getValue(Header17 obj) {
+			return obj.getMessageFunction();
+		}
+
+		@Override
+		public void setValue(Header17 obj, MessageFunction6Code value) {
+			obj.setMessageFunction(value);
+		}
 	};
+	@XmlElement(name = "PrtcolVrsn", required = true)
 	protected Max6Text protocolVersion;
 	/**
-	 * Version of the acquirer to issuer protocol specifications
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -199,8 +212,8 @@ public class Header17 {
 	 * name} = "ProtocolVersion"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Version of the acquirer to issuer protocol specifications"
-	 * </li>
+	 * definition} =
+	 * "Version of the acquirer to issuer protocol specifications."</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -210,24 +223,35 @@ public class Header17 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProtocolVersion = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Header17, Max6Text> mmProtocolVersion = new MMMessageAttribute<Header17, Max6Text>() {
 		{
-			componentContext_lazy = () -> Header17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Header17.mmObject();
 			isDerived = false;
 			xmlTag = "PrtcolVrsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ProtocolVersion";
-			definition = "Version of the acquirer to issuer protocol specifications";
+			definition = "Version of the acquirer to issuer protocol specifications.";
 			nextVersions_lazy = () -> Arrays.asList(Header18.mmProtocolVersion);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max6Text.mmObject();
 		}
+
+		@Override
+		public Max6Text getValue(Header17 obj) {
+			return obj.getProtocolVersion();
+		}
+
+		@Override
+		public void setValue(Header17 obj, Max6Text value) {
+			obj.setProtocolVersion(value);
+		}
 	};
+	@XmlElement(name = "XchgId", required = true)
 	protected Max3NumericText exchangeIdentification;
 	/**
-	 * Unique identification of an exchange occurrence.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -260,9 +284,9 @@ public class Header17 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExchangeIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Header17, Max3NumericText> mmExchangeIdentification = new MMMessageAttribute<Header17, Max3NumericText>() {
 		{
-			componentContext_lazy = () -> Header17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Header17.mmObject();
 			isDerived = false;
 			xmlTag = "XchgId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -273,12 +297,22 @@ public class Header17 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max3NumericText.mmObject();
 		}
+
+		@Override
+		public Max3NumericText getValue(Header17 obj) {
+			return obj.getExchangeIdentification();
+		}
+
+		@Override
+		public void setValue(Header17 obj, Max3NumericText value) {
+			obj.setExchangeIdentification(value);
+		}
 	};
+	@XmlElement(name = "ReTrnsmssnCntr")
 	protected Max3NumericText reTransmissionCounter;
 	/**
-	 * Number of retransmission of the message. Incremented by one for each
-	 * retransmission.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -313,9 +347,9 @@ public class Header17 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReTransmissionCounter = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Header17, Optional<Max3NumericText>> mmReTransmissionCounter = new MMMessageAttribute<Header17, Optional<Max3NumericText>>() {
 		{
-			componentContext_lazy = () -> Header17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Header17.mmObject();
 			isDerived = false;
 			xmlTag = "ReTrnsmssnCntr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -326,11 +360,22 @@ public class Header17 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max3NumericText.mmObject();
 		}
+
+		@Override
+		public Optional<Max3NumericText> getValue(Header17 obj) {
+			return obj.getReTransmissionCounter();
+		}
+
+		@Override
+		public void setValue(Header17 obj, Optional<Max3NumericText> value) {
+			obj.setReTransmissionCounter(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CreDtTm", required = true)
 	protected ISODateTime creationDateTime;
 	/**
-	 * Date and time at which the message was sent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -362,9 +407,9 @@ public class Header17 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreationDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Header17, ISODateTime> mmCreationDateTime = new MMMessageAttribute<Header17, ISODateTime>() {
 		{
-			componentContext_lazy = () -> Header17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Header17.mmObject();
 			isDerived = false;
 			xmlTag = "CreDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -375,11 +420,22 @@ public class Header17 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public ISODateTime getValue(Header17 obj) {
+			return obj.getCreationDateTime();
+		}
+
+		@Override
+		public void setValue(Header17 obj, ISODateTime value) {
+			obj.setCreationDateTime(value);
+		}
 	};
+	@XmlElement(name = "InitgPty", required = true)
 	protected GenericIdentification73 initiatingParty;
 	/**
-	 * Unique identification of the partner that has initiated the exchange.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -411,9 +467,9 @@ public class Header17 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmInitiatingParty = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Header17, GenericIdentification73> mmInitiatingParty = new MMMessageAssociationEnd<Header17, GenericIdentification73>() {
 		{
-			componentContext_lazy = () -> Header17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Header17.mmObject();
 			isDerived = false;
 			xmlTag = "InitgPty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -423,14 +479,24 @@ public class Header17 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.GenericIdentification73.mmObject();
+			type_lazy = () -> GenericIdentification73.mmObject();
+		}
+
+		@Override
+		public GenericIdentification73 getValue(Header17 obj) {
+			return obj.getInitiatingParty();
+		}
+
+		@Override
+		public void setValue(Header17 obj, GenericIdentification73 value) {
+			obj.setInitiatingParty(value);
 		}
 	};
+	@XmlElement(name = "RcptPty")
 	protected GenericIdentification73 recipientParty;
 	/**
-	 * Unique identification of the partner that is the recipient of the message
-	 * exchange.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -463,9 +529,9 @@ public class Header17 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRecipientParty = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Header17, Optional<GenericIdentification73>> mmRecipientParty = new MMMessageAssociationEnd<Header17, Optional<GenericIdentification73>>() {
 		{
-			componentContext_lazy = () -> Header17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Header17.mmObject();
 			isDerived = false;
 			xmlTag = "RcptPty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -475,14 +541,24 @@ public class Header17 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.GenericIdentification73.mmObject();
+			type_lazy = () -> GenericIdentification73.mmObject();
+		}
+
+		@Override
+		public Optional<GenericIdentification73> getValue(Header17 obj) {
+			return obj.getRecipientParty();
+		}
+
+		@Override
+		public void setValue(Header17 obj, Optional<GenericIdentification73> value) {
+			obj.setRecipientParty(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.msg.Traceability3> traceability;
+	@XmlElement(name = "Tracblt")
+	protected List<Traceability3> traceability;
 	/**
-	 * Identification of partners involved in exchange from the merchant to the
-	 * issuer, with the relative timestamp of their exchanges.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -515,9 +591,9 @@ public class Header17 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTraceability = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Header17, List<Traceability3>> mmTraceability = new MMMessageAttribute<Header17, List<Traceability3>>() {
 		{
-			componentContext_lazy = () -> Header17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Header17.mmObject();
 			isDerived = false;
 			xmlTag = "Tracblt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -525,18 +601,29 @@ public class Header17 {
 			definition = "Identification of partners involved in exchange from the merchant to the issuer, with the relative timestamp of their exchanges.";
 			nextVersions_lazy = () -> Arrays.asList(Header18.mmTraceability);
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.Traceability3.mmObject();
+			complexType_lazy = () -> Traceability3.mmObject();
+		}
+
+		@Override
+		public List<Traceability3> getValue(Header17 obj) {
+			return obj.getTraceability();
+		}
+
+		@Override
+		public void setValue(Header17 obj, List<Traceability3> value) {
+			obj.setTraceability(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Header17.mmMessageFunction, Header17.mmProtocolVersion, Header17.mmExchangeIdentification, Header17.mmReTransmissionCounter, Header17.mmCreationDateTime, Header17.mmInitiatingParty,
-						Header17.mmRecipientParty, Header17.mmTraceability);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Header17.mmMessageFunction, com.tools20022.repository.msg.Header17.mmProtocolVersion, com.tools20022.repository.msg.Header17.mmExchangeIdentification,
+						com.tools20022.repository.msg.Header17.mmReTransmissionCounter, com.tools20022.repository.msg.Header17.mmCreationDateTime, com.tools20022.repository.msg.Header17.mmInitiatingParty,
+						com.tools20022.repository.msg.Header17.mmRecipientParty, com.tools20022.repository.msg.Header17.mmTraceability);
 				messageBuildingBlock_lazy = () -> Arrays.asList(NetworkManagementResponse.mmHeader, AcquirerFinancialResponse.mmHeader, KeyExchangeResponse.mmHeader, AcquirerAuthorisationInitiation.mmHeader,
 						ReconciliationInitiation.mmHeader, AcquirerAuthorisationResponse.mmHeader, NetworkManagementInitiation.mmHeader, KeyExchangeInitiation.mmHeader, ReconciliationResponse.mmHeader, AcquirerFinancialInitiation.mmHeader);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Header17";
 				definition = "Set of characteristics related to the protocol.";
@@ -546,75 +633,75 @@ public class Header17 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgFctn", required = true)
 	public MessageFunction6Code getMessageFunction() {
 		return messageFunction;
 	}
 
-	public void setMessageFunction(MessageFunction6Code messageFunction) {
-		this.messageFunction = messageFunction;
+	public Header17 setMessageFunction(MessageFunction6Code messageFunction) {
+		this.messageFunction = Objects.requireNonNull(messageFunction);
+		return this;
 	}
 
-	@XmlElement(name = "PrtcolVrsn", required = true)
 	public Max6Text getProtocolVersion() {
 		return protocolVersion;
 	}
 
-	public void setProtocolVersion(Max6Text protocolVersion) {
-		this.protocolVersion = protocolVersion;
+	public Header17 setProtocolVersion(Max6Text protocolVersion) {
+		this.protocolVersion = Objects.requireNonNull(protocolVersion);
+		return this;
 	}
 
-	@XmlElement(name = "XchgId", required = true)
 	public Max3NumericText getExchangeIdentification() {
 		return exchangeIdentification;
 	}
 
-	public void setExchangeIdentification(Max3NumericText exchangeIdentification) {
-		this.exchangeIdentification = exchangeIdentification;
+	public Header17 setExchangeIdentification(Max3NumericText exchangeIdentification) {
+		this.exchangeIdentification = Objects.requireNonNull(exchangeIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "ReTrnsmssnCntr")
-	public Max3NumericText getReTransmissionCounter() {
-		return reTransmissionCounter;
+	public Optional<Max3NumericText> getReTransmissionCounter() {
+		return reTransmissionCounter == null ? Optional.empty() : Optional.of(reTransmissionCounter);
 	}
 
-	public void setReTransmissionCounter(Max3NumericText reTransmissionCounter) {
+	public Header17 setReTransmissionCounter(Max3NumericText reTransmissionCounter) {
 		this.reTransmissionCounter = reTransmissionCounter;
+		return this;
 	}
 
-	@XmlElement(name = "CreDtTm", required = true)
 	public ISODateTime getCreationDateTime() {
 		return creationDateTime;
 	}
 
-	public void setCreationDateTime(ISODateTime creationDateTime) {
-		this.creationDateTime = creationDateTime;
+	public Header17 setCreationDateTime(ISODateTime creationDateTime) {
+		this.creationDateTime = Objects.requireNonNull(creationDateTime);
+		return this;
 	}
 
-	@XmlElement(name = "InitgPty", required = true)
 	public GenericIdentification73 getInitiatingParty() {
 		return initiatingParty;
 	}
 
-	public void setInitiatingParty(com.tools20022.repository.msg.GenericIdentification73 initiatingParty) {
-		this.initiatingParty = initiatingParty;
+	public Header17 setInitiatingParty(GenericIdentification73 initiatingParty) {
+		this.initiatingParty = Objects.requireNonNull(initiatingParty);
+		return this;
 	}
 
-	@XmlElement(name = "RcptPty")
-	public GenericIdentification73 getRecipientParty() {
-		return recipientParty;
+	public Optional<GenericIdentification73> getRecipientParty() {
+		return recipientParty == null ? Optional.empty() : Optional.of(recipientParty);
 	}
 
-	public void setRecipientParty(com.tools20022.repository.msg.GenericIdentification73 recipientParty) {
+	public Header17 setRecipientParty(GenericIdentification73 recipientParty) {
 		this.recipientParty = recipientParty;
+		return this;
 	}
 
-	@XmlElement(name = "Tracblt")
 	public List<Traceability3> getTraceability() {
-		return traceability;
+		return traceability == null ? traceability = new ArrayList<>() : traceability;
 	}
 
-	public void setTraceability(List<com.tools20022.repository.msg.Traceability3> traceability) {
-		this.traceability = traceability;
+	public Header17 setTraceability(List<Traceability3> traceability) {
+		this.traceability = Objects.requireNonNull(traceability);
+		return this;
 	}
 }

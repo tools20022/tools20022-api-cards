@@ -25,9 +25,11 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.System;
 import com.tools20022.repository.entity.TerminalManagementSystem;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,15 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Acquirer configuration parameters for a host."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AcquirerHostConfiguration4", propOrder = {"hostIdentification", "messageToSend"})
 public class AcquirerHostConfiguration4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "HstId", required = true)
 	protected Max35Text hostIdentification;
 	/**
-	 * Identification of a host.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,10 +110,10 @@ public class AcquirerHostConfiguration4 {
 	 * definition} = "Identification of a host."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmHostIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AcquirerHostConfiguration4, Max35Text> mmHostIdentification = new MMMessageAttribute<AcquirerHostConfiguration4, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> System.mmSystemIdentification;
-			componentContext_lazy = () -> AcquirerHostConfiguration4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcquirerHostConfiguration4.mmObject();
 			isDerived = false;
 			xmlTag = "HstId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,11 +123,22 @@ public class AcquirerHostConfiguration4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(AcquirerHostConfiguration4 obj) {
+			return obj.getHostIdentification();
+		}
+
+		@Override
+		public void setValue(AcquirerHostConfiguration4 obj, Max35Text value) {
+			obj.setHostIdentification(value);
+		}
 	};
+	@XmlElement(name = "MsgToSnd")
 	protected List<MessageFunction12Code> messageToSend;
 	/**
-	 * Types of message to sent to this host.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,9 +164,9 @@ public class AcquirerHostConfiguration4 {
 	 * definition} = "Types of message to sent to this host."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMessageToSend = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AcquirerHostConfiguration4, List<MessageFunction12Code>> mmMessageToSend = new MMMessageAttribute<AcquirerHostConfiguration4, List<MessageFunction12Code>>() {
 		{
-			componentContext_lazy = () -> AcquirerHostConfiguration4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcquirerHostConfiguration4.mmObject();
 			isDerived = false;
 			xmlTag = "MsgToSnd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -161,14 +175,24 @@ public class AcquirerHostConfiguration4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> MessageFunction12Code.mmObject();
 		}
+
+		@Override
+		public List<MessageFunction12Code> getValue(AcquirerHostConfiguration4 obj) {
+			return obj.getMessageToSend();
+		}
+
+		@Override
+		public void setValue(AcquirerHostConfiguration4 obj, List<MessageFunction12Code> value) {
+			obj.setMessageToSend(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AcquirerHostConfiguration4.mmHostIdentification, AcquirerHostConfiguration4.mmMessageToSend);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AcquirerHostConfiguration4.mmHostIdentification, com.tools20022.repository.msg.AcquirerHostConfiguration4.mmMessageToSend);
 				trace_lazy = () -> TerminalManagementSystem.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AcquirerHostConfiguration4";
 				definition = "Acquirer configuration parameters for a host.";
@@ -177,21 +201,21 @@ public class AcquirerHostConfiguration4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "HstId", required = true)
 	public Max35Text getHostIdentification() {
 		return hostIdentification;
 	}
 
-	public void setHostIdentification(Max35Text hostIdentification) {
-		this.hostIdentification = hostIdentification;
+	public AcquirerHostConfiguration4 setHostIdentification(Max35Text hostIdentification) {
+		this.hostIdentification = Objects.requireNonNull(hostIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "MsgToSnd")
 	public List<MessageFunction12Code> getMessageToSend() {
-		return messageToSend;
+		return messageToSend == null ? messageToSend = new ArrayList<>() : messageToSend;
 	}
 
-	public void setMessageToSend(List<MessageFunction12Code> messageToSend) {
-		this.messageToSend = messageToSend;
+	public AcquirerHostConfiguration4 setMessageToSend(List<MessageFunction12Code> messageToSend) {
+		this.messageToSend = Objects.requireNonNull(messageToSend);
+		return this;
 	}
 }

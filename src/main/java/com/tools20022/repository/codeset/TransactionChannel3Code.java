@@ -39,22 +39,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionChannel3Code#MailOrder
- * TransactionChannel3Code.mmMailOrder}</li>
+ * TransactionChannel3Code.MailOrder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionChannel3Code#TelephoneOrder
- * TransactionChannel3Code.mmTelephoneOrder}</li>
+ * TransactionChannel3Code.TelephoneOrder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionChannel3Code#ElectronicCommerce
- * TransactionChannel3Code.mmElectronicCommerce}</li>
+ * TransactionChannel3Code.ElectronicCommerce}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionChannel3Code#TelevisionPayment
- * TransactionChannel3Code.mmTelevisionPayment}</li>
+ * TransactionChannel3Code.TelevisionPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionChannel3Code#SecuredElectronicCommerce
- * TransactionChannel3Code.mmSecuredElectronicCommerce}</li>
+ * TransactionChannel3Code.SecuredElectronicCommerce}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionChannel3Code#MobilePayment
- * TransactionChannel3Code.mmMobilePayment}</li>
+ * TransactionChannel3Code.MobilePayment}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -63,8 +63,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -113,7 +113,7 @@ public class TransactionChannel3Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.TransactionChannel5Code#MailOrder
-	 * TransactionChannel5Code.mmMailOrder}</li>
+	 * TransactionChannel5Code.MailOrder}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -146,7 +146,7 @@ public class TransactionChannel3Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.TransactionChannel5Code#TelephoneOrder
-	 * TransactionChannel5Code.mmTelephoneOrder}</li>
+	 * TransactionChannel5Code.TelephoneOrder}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -179,7 +179,7 @@ public class TransactionChannel3Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.TransactionChannel5Code#ElectronicCommerce
-	 * TransactionChannel5Code.mmElectronicCommerce}</li>
+	 * TransactionChannel5Code.ElectronicCommerce}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -212,7 +212,7 @@ public class TransactionChannel3Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.TransactionChannel5Code#TelevisionPayment
-	 * TransactionChannel5Code.mmTelevisionPayment}</li>
+	 * TransactionChannel5Code.TelevisionPayment}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -245,7 +245,7 @@ public class TransactionChannel3Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.TransactionChannel5Code#SecuredElectronicCommerce
-	 * TransactionChannel5Code.mmSecuredElectronicCommerce}</li>
+	 * TransactionChannel5Code.SecuredElectronicCommerce}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -278,7 +278,7 @@ public class TransactionChannel3Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.TransactionChannel5Code#MobilePayment
-	 * TransactionChannel5Code.mmMobilePayment}</li>
+	 * TransactionChannel5Code.MobilePayment}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -300,7 +300,7 @@ public class TransactionChannel3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MAIL");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionChannel3Code";

@@ -17,6 +17,8 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -36,45 +38,47 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.SideCode#Buy
- * SideCode.mmBuy}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.SideCode#Buy SideCode.Buy}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SideCode#Sell
- * SideCode.mmSell}</li>
+ * SideCode.Sell}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SideCode#Cross
- * SideCode.mmCross}</li>
+ * SideCode.Cross}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SideCode#CrossShort
- * SideCode.mmCrossShort}</li>
+ * SideCode.CrossShort}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SideCode#CrossShortExempt
- * SideCode.mmCrossShortExempt}</li>
+ * SideCode.CrossShortExempt}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SideCode#AsDefined
- * SideCode.mmAsDefined}</li>
+ * SideCode.AsDefined}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SideCode#Opposite
- * SideCode.mmOpposite}</li>
+ * SideCode.Opposite}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SideCode#Undisclosed
- * SideCode.mmUndisclosed}</li>
+ * SideCode.Undisclosed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SideCode#TwoSided
- * SideCode.mmTwoSided}</li>
+ * SideCode.TwoSided}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SideCode#BuyMinus
- * SideCode.mmBuyMinus}</li>
+ * SideCode.BuyMinus}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SideCode#SellPlus
- * SideCode.mmSellPlus}</li>
+ * SideCode.SellPlus}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SideCode#SellShort
- * SideCode.mmSellShort}</li>
+ * SideCode.SellShort}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SideCode#SellShortExempt
- * SideCode.mmSellShortExempt}</li>
+ * SideCode.SellShortExempt}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SideCode#Lend
- * SideCode.mmLend}</li>
+ * SideCode.Lend}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SideCode#Borrow
- * SideCode.mmBorrow}</li>
+ * SideCode.Borrow}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.SideCode#OptionExercise
- * SideCode.mmOptionExercise}</li>
+ * SideCode.OptionExercise}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = FIXSynonym: Field tag 54</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -105,6 +109,9 @@ public class SideCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "BUYI"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::BUSE//BUYI, FIXSynonym: 54</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -117,6 +124,7 @@ public class SideCode extends MMCode {
 	 */
 	public static final SideCode Buy = new SideCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::BUSE//BUYI"), new FIXSynonym(this, "54"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Buy";
 			definition = "Order is buy driven.";
@@ -134,6 +142,9 @@ public class SideCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "SELL"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::BUSE//SELL, FIXSynonym: 54</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -146,6 +157,7 @@ public class SideCode extends MMCode {
 	 */
 	public static final SideCode Sell = new SideCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::BUSE//SELL"), new FIXSynonym(this, "54"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Sell";
 			definition = "Order is sell driven.";
@@ -328,6 +340,9 @@ public class SideCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "UNDI"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 54</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -340,6 +355,7 @@ public class SideCode extends MMCode {
 	 */
 	public static final SideCode Undisclosed = new SideCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "54"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Undisclosed";
 			definition = "The side of the indication of interest is not disclosed.";
@@ -357,6 +373,9 @@ public class SideCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "TWOS"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 54</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -369,6 +388,7 @@ public class SideCode extends MMCode {
 	 */
 	public static final SideCode TwoSided = new SideCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "54"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TwoSided";
 			definition = "Indicates that the side refers to both buys and sells.";
@@ -399,7 +419,7 @@ public class SideCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "A round-lot market order to buy minus is an order to buy a stated amount of a stock provided that its price is:\n- not higher than the last sale if the last sale was a minus or zero minus tick and\n- not higher than the last sale minus the minimum fractional change in the stock if the last sale was a plus or zero plus tick.\nA limit price order to buy minus also states the highest price at which it can be executed."
+	 * "A round-lot market order to buy minus is an order to buy a stated amount of a stock provided that its price is: \n- not higher than the last sale if the last sale was a minus or zero minus tick and\n- not higher than the last sale minus the minimum fractional change in the stock if the last sale was a plus or zero plus tick.\nA limit price order to buy minus also states the highest price at which it can be executed."
 	 * </li>
 	 * </ul>
 	 */
@@ -407,7 +427,7 @@ public class SideCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BuyMinus";
-			definition = "A round-lot market order to buy minus is an order to buy a stated amount of a stock provided that its price is:\n- not higher than the last sale if the last sale was a minus or zero minus tick and\n- not higher than the last sale minus the minimum fractional change in the stock if the last sale was a plus or zero plus tick.\nA limit price order to buy minus also states the highest price at which it can be executed.";
+			definition = "A round-lot market order to buy minus is an order to buy a stated amount of a stock provided that its price is: \n- not higher than the last sale if the last sale was a minus or zero minus tick and\n- not higher than the last sale minus the minimum fractional change in the stock if the last sale was a plus or zero plus tick.\nA limit price order to buy minus also states the highest price at which it can be executed.";
 			owner_lazy = () -> com.tools20022.repository.codeset.SideCode.mmObject();
 			codeName = "BUMI";
 		}
@@ -435,7 +455,7 @@ public class SideCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "A round-lot market order to sell plus is an order to sell a stated amount of a stock provided that its price is:\n- not lower than the last sale if the last sale was a plus or zero plus tick and\n- not lower than the last sale minus the minimum fractional change in the stock if the last sale was a minus or zero minus tick.\nA limit-price order to sell plus also states the lowest price at which it can be executed."
+	 * "A round-lot market order to sell plus is an order to sell a stated amount of a stock provided that its price is: \n- not lower than the last sale if the last sale was a plus or zero plus tick and\n- not lower than the last sale minus the minimum fractional change in the stock if the last sale was a minus or zero minus tick.\nA limit-price order to sell plus also states the lowest price at which it can be executed."
 	 * </li>
 	 * </ul>
 	 */
@@ -443,7 +463,7 @@ public class SideCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SellPlus";
-			definition = "A round-lot market order to sell plus is an order to sell a stated amount of a stock provided that its price is:\n- not lower than the last sale if the last sale was a plus or zero plus tick and\n- not lower than the last sale minus the minimum fractional change in the stock if the last sale was a minus or zero minus tick.\nA limit-price order to sell plus also states the lowest price at which it can be executed.";
+			definition = "A round-lot market order to sell plus is an order to sell a stated amount of a stock provided that its price is: \n- not lower than the last sale if the last sale was a plus or zero plus tick and\n- not lower than the last sale minus the minimum fractional change in the stock if the last sale was a minus or zero minus tick.\nA limit-price order to sell plus also states the lowest price at which it can be executed.";
 			owner_lazy = () -> com.tools20022.repository.codeset.SideCode.mmObject();
 			codeName = "SEPL";
 		}
@@ -605,7 +625,8 @@ public class SideCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "Field tag 54"));
 				example = Arrays.asList("BUYI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SideCode";

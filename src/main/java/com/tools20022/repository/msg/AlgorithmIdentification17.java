@@ -23,8 +23,11 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.Algorithm14Code;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Parameter8;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,15 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AlgorithmIdentification17", propOrder = {"algorithm", "parameter"})
 public class AlgorithmIdentification17 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Algo", required = true)
 	protected Algorithm14Code algorithm;
 	/**
-	 * Identification of the algorithm.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -99,9 +103,9 @@ public class AlgorithmIdentification17 {
 	 * definition} = "Identification of the algorithm."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAlgorithm = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AlgorithmIdentification17, Algorithm14Code> mmAlgorithm = new MMMessageAttribute<AlgorithmIdentification17, Algorithm14Code>() {
 		{
-			componentContext_lazy = () -> AlgorithmIdentification17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AlgorithmIdentification17.mmObject();
 			isDerived = false;
 			xmlTag = "Algo";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -111,12 +115,22 @@ public class AlgorithmIdentification17 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Algorithm14Code.mmObject();
 		}
+
+		@Override
+		public Algorithm14Code getValue(AlgorithmIdentification17 obj) {
+			return obj.getAlgorithm();
+		}
+
+		@Override
+		public void setValue(AlgorithmIdentification17 obj, Algorithm14Code value) {
+			obj.setAlgorithm(value);
+		}
 	};
+	@XmlElement(name = "Param")
 	protected Parameter8 parameter;
 	/**
-	 * Parameters of the RSASSA-PSS digital signature algorithm (RSA signature
-	 * algorithm with appendix: Probabilistic Signature Scheme).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -141,9 +155,9 @@ public class AlgorithmIdentification17 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmParameter = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AlgorithmIdentification17, Optional<Parameter8>> mmParameter = new MMMessageAssociationEnd<AlgorithmIdentification17, Optional<Parameter8>>() {
 		{
-			componentContext_lazy = () -> AlgorithmIdentification17.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AlgorithmIdentification17.mmObject();
 			isDerived = false;
 			xmlTag = "Param";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -152,15 +166,25 @@ public class AlgorithmIdentification17 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Parameter8.mmObject();
+			type_lazy = () -> Parameter8.mmObject();
+		}
+
+		@Override
+		public Optional<Parameter8> getValue(AlgorithmIdentification17 obj) {
+			return obj.getParameter();
+		}
+
+		@Override
+		public void setValue(AlgorithmIdentification17 obj, Optional<Parameter8> value) {
+			obj.setParameter(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AlgorithmIdentification17.mmAlgorithm, AlgorithmIdentification17.mmParameter);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AlgorithmIdentification17.mmAlgorithm, com.tools20022.repository.msg.AlgorithmIdentification17.mmParameter);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AlgorithmIdentification17";
 				definition = "Identification of a cryptographic algorithm and parameters for digital signatures.";
@@ -169,21 +193,21 @@ public class AlgorithmIdentification17 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Algo", required = true)
 	public Algorithm14Code getAlgorithm() {
 		return algorithm;
 	}
 
-	public void setAlgorithm(Algorithm14Code algorithm) {
-		this.algorithm = algorithm;
+	public AlgorithmIdentification17 setAlgorithm(Algorithm14Code algorithm) {
+		this.algorithm = Objects.requireNonNull(algorithm);
+		return this;
 	}
 
-	@XmlElement(name = "Param")
-	public Parameter8 getParameter() {
-		return parameter;
+	public Optional<Parameter8> getParameter() {
+		return parameter == null ? Optional.empty() : Optional.of(parameter);
 	}
 
-	public void setParameter(com.tools20022.repository.msg.Parameter8 parameter) {
+	public AlgorithmIdentification17 setParameter(Parameter8 parameter) {
 		this.parameter = parameter;
+		return this;
 	}
 }

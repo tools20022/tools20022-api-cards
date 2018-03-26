@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.MoveTypeCode;
 import com.tools20022.repository.codeset.OffsetTypeCode;
@@ -25,10 +26,12 @@ import com.tools20022.repository.codeset.TypeOfDiscretionPriceCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.PlusOrMinusIndicator;
+import com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Indicates on an order that the trader wishes to display one price in the
@@ -77,8 +80,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = FIXSynonym: DiscretionInst</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -96,8 +102,8 @@ public class Discretion {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesOrderExecutionInstruction relatedOrderExecution;
 	/**
-	 * Order instruction for which a discretion is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -128,7 +134,7 @@ public class Discretion {
 	 * definition} = "Order instruction for which a discretion is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedOrderExecution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Discretion, Optional<SecuritiesOrderExecutionInstruction>> mmRelatedOrderExecution = new MMBusinessAssociationEnd<Discretion, Optional<SecuritiesOrderExecutionInstruction>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
@@ -137,15 +143,25 @@ public class Discretion {
 			definition = "Order instruction for which a discretion is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmOrderPriceStrategy;
+			opposite_lazy = () -> SecuritiesOrderExecutionInstruction.mmOrderPriceStrategy;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmObject();
+			type_lazy = () -> SecuritiesOrderExecutionInstruction.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesOrderExecutionInstruction> getValue(Discretion obj) {
+			return obj.getRelatedOrderExecution();
+		}
+
+		@Override
+		public void setValue(Discretion obj, Optional<SecuritiesOrderExecutionInstruction> value) {
+			obj.setRelatedOrderExecution(value.orElse(null));
 		}
 	};
 	protected CurrencyAndAmount offset;
 	/**
-	 * Amount added to the 'related to' price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -168,7 +184,7 @@ public class Discretion {
 	 * definition} = "Amount added to the 'related to' price."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOffset = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Discretion, CurrencyAndAmount> mmOffset = new MMBusinessAttribute<Discretion, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
@@ -180,19 +196,20 @@ public class Discretion {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Discretion.class.getMethod("getOffset", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Discretion obj) {
+			return obj.getOffset();
+		}
+
+		@Override
+		public void setValue(Discretion obj, CurrencyAndAmount value) {
+			obj.setOffset(value);
 		}
 	};
 	protected PlusOrMinusIndicator offsetSign;
 	/**
-	 * Indicates whether the offset should be added or subtracted from the
-	 * related price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -204,6 +221,9 @@ public class Discretion {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.Discretion Discretion}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 389</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -217,10 +237,11 @@ public class Discretion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOffsetSign = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Discretion, PlusOrMinusIndicator> mmOffsetSign = new MMBusinessAttribute<Discretion, PlusOrMinusIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "389"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OffsetSign";
 			definition = "Indicates whether the offset should be added or subtracted from the related price.";
@@ -229,19 +250,20 @@ public class Discretion {
 			simpleType_lazy = () -> PlusOrMinusIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Discretion.class.getMethod("getOffsetSign", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PlusOrMinusIndicator getValue(Discretion obj) {
+			return obj.getOffsetSign();
+		}
+
+		@Override
+		public void setValue(Discretion obj, PlusOrMinusIndicator value) {
+			obj.setOffsetSign(value);
 		}
 	};
 	protected TypeOfDiscretionPriceCode relatedPriceType;
 	/**
-	 * Identify the type of price an offset is related to. The offset can either
-	 * be added or subtracted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -253,6 +275,9 @@ public class Discretion {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.Discretion Discretion}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 388</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -266,10 +291,11 @@ public class Discretion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRelatedPriceType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Discretion, TypeOfDiscretionPriceCode> mmRelatedPriceType = new MMBusinessAttribute<Discretion, TypeOfDiscretionPriceCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "388"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedPriceType";
 			definition = "Identify the type of price an offset is related to. The offset can either be added or subtracted.";
@@ -278,18 +304,20 @@ public class Discretion {
 			simpleType_lazy = () -> TypeOfDiscretionPriceCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Discretion.class.getMethod("getRelatedPriceType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TypeOfDiscretionPriceCode getValue(Discretion obj) {
+			return obj.getRelatedPriceType();
+		}
+
+		@Override
+		public void setValue(Discretion obj, TypeOfDiscretionPriceCode value) {
+			obj.setRelatedPriceType(value);
 		}
 	};
 	protected MoveTypeCode moveType;
 	/**
-	 * Describes whether discretion price is static/fixed or floats.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -312,7 +340,7 @@ public class Discretion {
 	 * "Describes whether discretion price is static/fixed or floats."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMoveType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Discretion, MoveTypeCode> mmMoveType = new MMBusinessAttribute<Discretion, MoveTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
@@ -324,19 +352,20 @@ public class Discretion {
 			simpleType_lazy = () -> MoveTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Discretion.class.getMethod("getMoveType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MoveTypeCode getValue(Discretion obj) {
+			return obj.getMoveType();
+		}
+
+		@Override
+		public void setValue(Discretion obj, MoveTypeCode value) {
+			obj.setMoveType(value);
 		}
 	};
 	protected Max35Text limitType;
 	/**
-	 * Specifies the nature of the resulting discretion price (e.g. or better
-	 * limit, strict limit etc).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -360,7 +389,7 @@ public class Discretion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLimitType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Discretion, Max35Text> mmLimitType = new MMBusinessAttribute<Discretion, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
@@ -372,19 +401,20 @@ public class Discretion {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Discretion.class.getMethod("getLimitType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Discretion obj) {
+			return obj.getLimitType();
+		}
+
+		@Override
+		public void setValue(Discretion obj, Max35Text value) {
+			obj.setLimitType(value);
 		}
 	};
 	protected Max35Text roundDirection;
 	/**
-	 * If the calculated discretion price is not a valid tick price, specifies
-	 * how to round the price (e.g. to be more or less aggressive)
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -408,7 +438,7 @@ public class Discretion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRoundDirection = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Discretion, Max35Text> mmRoundDirection = new MMBusinessAttribute<Discretion, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
@@ -420,19 +450,20 @@ public class Discretion {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Discretion.class.getMethod("getRoundDirection", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Discretion obj) {
+			return obj.getRoundDirection();
+		}
+
+		@Override
+		public void setValue(Discretion obj, Max35Text value) {
+			obj.setRoundDirection(value);
 		}
 	};
 	protected PriceProtectionScopeCode scope;
 	/**
-	 * The scope of "related to" price of the discretion (e.g. local, global
-	 * etc)
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -457,7 +488,7 @@ public class Discretion {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmScope = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Discretion, PriceProtectionScopeCode> mmScope = new MMBusinessAttribute<Discretion, PriceProtectionScopeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
@@ -469,18 +500,20 @@ public class Discretion {
 			simpleType_lazy = () -> PriceProtectionScopeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Discretion.class.getMethod("getScope", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PriceProtectionScopeCode getValue(Discretion obj) {
+			return obj.getScope();
+		}
+
+		@Override
+		public void setValue(Discretion obj, PriceProtectionScopeCode value) {
+			obj.setScope(value);
 		}
 	};
 	protected OffsetTypeCode offsetType;
 	/**
-	 * Describes the type of Discretion Offset .
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -503,7 +536,7 @@ public class Discretion {
 	 * definition} = "Describes the type of Discretion Offset ."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOffsetType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Discretion, OffsetTypeCode> mmOffsetType = new MMBusinessAttribute<Discretion, OffsetTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Discretion.mmObject();
@@ -515,23 +548,26 @@ public class Discretion {
 			simpleType_lazy = () -> OffsetTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Discretion.class.getMethod("getOffsetType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public OffsetTypeCode getValue(Discretion obj) {
+			return obj.getOffsetType();
+		}
+
+		@Override
+		public void setValue(Discretion obj, OffsetTypeCode value) {
+			obj.setOffsetType(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "DiscretionInst"));
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Discretion";
 				definition = "Indicates on an order that the trader wishes to display one price in the market but will accept trades at another price.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction.mmOrderPriceStrategy);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesOrderExecutionInstruction.mmOrderPriceStrategy);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Discretion.mmRelatedOrderExecution, com.tools20022.repository.entity.Discretion.mmOffset, com.tools20022.repository.entity.Discretion.mmOffsetSign,
 						com.tools20022.repository.entity.Discretion.mmRelatedPriceType, com.tools20022.repository.entity.Discretion.mmMoveType, com.tools20022.repository.entity.Discretion.mmLimitType,
 						com.tools20022.repository.entity.Discretion.mmRoundDirection, com.tools20022.repository.entity.Discretion.mmScope, com.tools20022.repository.entity.Discretion.mmOffsetType);
@@ -545,75 +581,84 @@ public class Discretion {
 		return mmObject_lazy.get();
 	}
 
-	public SecuritiesOrderExecutionInstruction getRelatedOrderExecution() {
-		return relatedOrderExecution;
+	public Optional<SecuritiesOrderExecutionInstruction> getRelatedOrderExecution() {
+		return relatedOrderExecution == null ? Optional.empty() : Optional.of(relatedOrderExecution);
 	}
 
-	public void setRelatedOrderExecution(com.tools20022.repository.entity.SecuritiesOrderExecutionInstruction relatedOrderExecution) {
+	public Discretion setRelatedOrderExecution(SecuritiesOrderExecutionInstruction relatedOrderExecution) {
 		this.relatedOrderExecution = relatedOrderExecution;
+		return this;
 	}
 
 	public CurrencyAndAmount getOffset() {
 		return offset;
 	}
 
-	public void setOffset(CurrencyAndAmount offset) {
-		this.offset = offset;
+	public Discretion setOffset(CurrencyAndAmount offset) {
+		this.offset = Objects.requireNonNull(offset);
+		return this;
 	}
 
 	public PlusOrMinusIndicator getOffsetSign() {
 		return offsetSign;
 	}
 
-	public void setOffsetSign(PlusOrMinusIndicator offsetSign) {
-		this.offsetSign = offsetSign;
+	public Discretion setOffsetSign(PlusOrMinusIndicator offsetSign) {
+		this.offsetSign = Objects.requireNonNull(offsetSign);
+		return this;
 	}
 
 	public TypeOfDiscretionPriceCode getRelatedPriceType() {
 		return relatedPriceType;
 	}
 
-	public void setRelatedPriceType(TypeOfDiscretionPriceCode relatedPriceType) {
-		this.relatedPriceType = relatedPriceType;
+	public Discretion setRelatedPriceType(TypeOfDiscretionPriceCode relatedPriceType) {
+		this.relatedPriceType = Objects.requireNonNull(relatedPriceType);
+		return this;
 	}
 
 	public MoveTypeCode getMoveType() {
 		return moveType;
 	}
 
-	public void setMoveType(MoveTypeCode moveType) {
-		this.moveType = moveType;
+	public Discretion setMoveType(MoveTypeCode moveType) {
+		this.moveType = Objects.requireNonNull(moveType);
+		return this;
 	}
 
 	public Max35Text getLimitType() {
 		return limitType;
 	}
 
-	public void setLimitType(Max35Text limitType) {
-		this.limitType = limitType;
+	public Discretion setLimitType(Max35Text limitType) {
+		this.limitType = Objects.requireNonNull(limitType);
+		return this;
 	}
 
 	public Max35Text getRoundDirection() {
 		return roundDirection;
 	}
 
-	public void setRoundDirection(Max35Text roundDirection) {
-		this.roundDirection = roundDirection;
+	public Discretion setRoundDirection(Max35Text roundDirection) {
+		this.roundDirection = Objects.requireNonNull(roundDirection);
+		return this;
 	}
 
 	public PriceProtectionScopeCode getScope() {
 		return scope;
 	}
 
-	public void setScope(PriceProtectionScopeCode scope) {
-		this.scope = scope;
+	public Discretion setScope(PriceProtectionScopeCode scope) {
+		this.scope = Objects.requireNonNull(scope);
+		return this;
 	}
 
 	public OffsetTypeCode getOffsetType() {
 		return offsetType;
 	}
 
-	public void setOffsetType(OffsetTypeCode offsetType) {
-		this.offsetType = offsetType;
+	public Discretion setOffsetType(OffsetTypeCode offsetType) {
+		this.offsetType = Objects.requireNonNull(offsetType);
+		return this;
 	}
 }

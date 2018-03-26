@@ -24,9 +24,8 @@ import com.tools20022.repository.codeset.ATMServiceType6Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.TrueFalseIndicator;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,27 +69,27 @@ import javax.xml.bind.annotation.XmlType;
  * "ATMService11"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Deposit service provided by the ATM inside the session."</li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} = {@linkplain com.tools20022.repository.msg.ATMService9
- * ATMService9}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
  * nextVersions} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.msg.ATMService12 ATMService12}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+ * previousVersion} = {@linkplain com.tools20022.repository.msg.ATMService9
+ * ATMService9}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "ATMService11", propOrder = {"serviceReference", "ATMServiceCode", "serviceType", "serviceVariantIdentification", "cashBack", "multiAccount"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "ATMService11", propOrder = {"serviceReference", "aTMServiceCode", "serviceType", "serviceVariantIdentification", "cashBack", "multiAccount"})
 public class ATMService11 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SvcRef")
 	protected Max35Text serviceReference;
 	/**
-	 * Unique identification of the deposit service provided by the ATM inside
-	 * the session.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -114,11 +113,6 @@ public class ATMService11 {
 	 * definition} =
 	 * "Unique identification of the deposit service provided by the ATM inside the session."
 	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.ATMService9#mmServiceReference
-	 * ATMService9.mmServiceReference}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -127,11 +121,16 @@ public class ATMService11 {
 	 * ATMService12.mmServiceReference}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.ATMService9#mmServiceReference
+	 * ATMService9.mmServiceReference}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmServiceReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMService11, Optional<Max35Text>> mmServiceReference = new MMMessageAttribute<ATMService11, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> ATMService11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMService11.mmObject();
 			isDerived = false;
 			xmlTag = "SvcRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -143,11 +142,22 @@ public class ATMService11 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(ATMService11 obj) {
+			return obj.getServiceReference();
+		}
+
+		@Override
+		public void setValue(ATMService11 obj, Optional<Max35Text> value) {
+			obj.setServiceReference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ATMSvcCd")
 	protected Max35Text aTMServiceCode;
 	/**
-	 * Codification of the type of service for the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -169,11 +179,6 @@ public class ATMService11 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Codification of the type of service for the ATM."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.ATMService9#mmATMServiceCode
-	 * ATMService9.mmATMServiceCode}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -182,11 +187,16 @@ public class ATMService11 {
 	 * ATMService12.mmATMServiceCode}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.ATMService9#mmATMServiceCode
+	 * ATMService9.mmATMServiceCode}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmATMServiceCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMService11, Optional<Max35Text>> mmATMServiceCode = new MMMessageAttribute<ATMService11, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> ATMService11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMService11.mmObject();
 			isDerived = false;
 			xmlTag = "ATMSvcCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -198,11 +208,22 @@ public class ATMService11 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(ATMService11 obj) {
+			return obj.getATMServiceCode();
+		}
+
+		@Override
+		public void setValue(ATMService11 obj, Optional<Max35Text> value) {
+			obj.setATMServiceCode(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SvcTp", required = true)
 	protected ATMServiceType6Code serviceType;
 	/**
-	 * Describes the type of deposit service selected by the customer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -226,11 +247,6 @@ public class ATMService11 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Describes the type of deposit service selected by the customer."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.ATMService9#mmServiceType
-	 * ATMService9.mmServiceType}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -238,11 +254,16 @@ public class ATMService11 {
 	 * ATMService12.mmServiceType}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.ATMService9#mmServiceType
+	 * ATMService9.mmServiceType}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmServiceType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMService11, ATMServiceType6Code> mmServiceType = new MMMessageAttribute<ATMService11, ATMServiceType6Code>() {
 		{
-			componentContext_lazy = () -> ATMService11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMService11.mmObject();
 			isDerived = false;
 			xmlTag = "SvcTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -254,11 +275,22 @@ public class ATMService11 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ATMServiceType6Code.mmObject();
 		}
+
+		@Override
+		public ATMServiceType6Code getValue(ATMService11 obj) {
+			return obj.getServiceType();
+		}
+
+		@Override
+		public void setValue(ATMService11 obj, ATMServiceType6Code value) {
+			obj.setServiceType(value);
+		}
 	};
+	@XmlElement(name = "SvcVarntId")
 	protected List<Max35Text> serviceVariantIdentification;
 	/**
-	 * Identification of the variant of the service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -280,11 +312,6 @@ public class ATMService11 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Identification of the variant of the service."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.ATMService9#mmServiceVariantIdentification
-	 * ATMService9.mmServiceVariantIdentification}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -293,11 +320,16 @@ public class ATMService11 {
 	 * ATMService12.mmServiceVariantIdentification}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.ATMService9#mmServiceVariantIdentification
+	 * ATMService9.mmServiceVariantIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmServiceVariantIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMService11, List<Max35Text>> mmServiceVariantIdentification = new MMMessageAttribute<ATMService11, List<Max35Text>>() {
 		{
-			componentContext_lazy = () -> ATMService11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMService11.mmObject();
 			isDerived = false;
 			xmlTag = "SvcVarntId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -308,11 +340,22 @@ public class ATMService11 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public List<Max35Text> getValue(ATMService11 obj) {
+			return obj.getServiceVariantIdentification();
+		}
+
+		@Override
+		public void setValue(ATMService11 obj, List<Max35Text> value) {
+			obj.setServiceVariantIdentification(value);
+		}
 	};
+	@XmlElement(name = "CshBck")
 	protected TrueFalseIndicator cashBack;
 	/**
-	 * True if deposit with cash back transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -344,9 +387,9 @@ public class ATMService11 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCashBack = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMService11, Optional<TrueFalseIndicator>> mmCashBack = new MMMessageAttribute<ATMService11, Optional<TrueFalseIndicator>>() {
 		{
-			componentContext_lazy = () -> ATMService11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMService11.mmObject();
 			isDerived = false;
 			xmlTag = "CshBck";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -357,11 +400,22 @@ public class ATMService11 {
 			minOccurs = 0;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<TrueFalseIndicator> getValue(ATMService11 obj) {
+			return obj.getCashBack();
+		}
+
+		@Override
+		public void setValue(ATMService11 obj, Optional<TrueFalseIndicator> value) {
+			obj.setCashBack(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MultiAcct")
 	protected TrueFalseIndicator multiAccount;
 	/**
-	 * True if the deposit transaction is split in multiple accounts.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -395,9 +449,9 @@ public class ATMService11 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMultiAccount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMService11, Optional<TrueFalseIndicator>> mmMultiAccount = new MMMessageAttribute<ATMService11, Optional<TrueFalseIndicator>>() {
 		{
-			componentContext_lazy = () -> ATMService11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMService11.mmObject();
 			isDerived = false;
 			xmlTag = "MultiAcct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -408,14 +462,24 @@ public class ATMService11 {
 			minOccurs = 0;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<TrueFalseIndicator> getValue(ATMService11 obj) {
+			return obj.getMultiAccount();
+		}
+
+		@Override
+		public void setValue(ATMService11 obj, Optional<TrueFalseIndicator> value) {
+			obj.setMultiAccount(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ATMService11.mmServiceReference, ATMService11.mmATMServiceCode, ATMService11.mmServiceType, ATMService11.mmServiceVariantIdentification, ATMService11.mmCashBack,
-						ATMService11.mmMultiAccount);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ATMService11.mmServiceReference, com.tools20022.repository.msg.ATMService11.mmATMServiceCode, com.tools20022.repository.msg.ATMService11.mmServiceType,
+						com.tools20022.repository.msg.ATMService11.mmServiceVariantIdentification, com.tools20022.repository.msg.ATMService11.mmCashBack, com.tools20022.repository.msg.ATMService11.mmMultiAccount);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMService11";
 				definition = "Deposit service provided by the ATM inside the session.";
@@ -426,57 +490,57 @@ public class ATMService11 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SvcRef")
-	public Max35Text getServiceReference() {
-		return serviceReference;
+	public Optional<Max35Text> getServiceReference() {
+		return serviceReference == null ? Optional.empty() : Optional.of(serviceReference);
 	}
 
-	public void setServiceReference(Max35Text serviceReference) {
+	public ATMService11 setServiceReference(Max35Text serviceReference) {
 		this.serviceReference = serviceReference;
+		return this;
 	}
 
-	@XmlElement(name = "ATMSvcCd")
-	public Max35Text getATMServiceCode() {
-		return aTMServiceCode;
+	public Optional<Max35Text> getATMServiceCode() {
+		return aTMServiceCode == null ? Optional.empty() : Optional.of(aTMServiceCode);
 	}
 
-	public void setATMServiceCode(Max35Text aTMServiceCode) {
+	public ATMService11 setATMServiceCode(Max35Text aTMServiceCode) {
 		this.aTMServiceCode = aTMServiceCode;
+		return this;
 	}
 
-	@XmlElement(name = "SvcTp", required = true)
 	public ATMServiceType6Code getServiceType() {
 		return serviceType;
 	}
 
-	public void setServiceType(ATMServiceType6Code serviceType) {
-		this.serviceType = serviceType;
+	public ATMService11 setServiceType(ATMServiceType6Code serviceType) {
+		this.serviceType = Objects.requireNonNull(serviceType);
+		return this;
 	}
 
-	@XmlElement(name = "SvcVarntId")
 	public List<Max35Text> getServiceVariantIdentification() {
-		return serviceVariantIdentification;
+		return serviceVariantIdentification == null ? serviceVariantIdentification = new ArrayList<>() : serviceVariantIdentification;
 	}
 
-	public void setServiceVariantIdentification(List<Max35Text> serviceVariantIdentification) {
-		this.serviceVariantIdentification = serviceVariantIdentification;
+	public ATMService11 setServiceVariantIdentification(List<Max35Text> serviceVariantIdentification) {
+		this.serviceVariantIdentification = Objects.requireNonNull(serviceVariantIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "CshBck")
-	public TrueFalseIndicator getCashBack() {
-		return cashBack;
+	public Optional<TrueFalseIndicator> getCashBack() {
+		return cashBack == null ? Optional.empty() : Optional.of(cashBack);
 	}
 
-	public void setCashBack(TrueFalseIndicator cashBack) {
+	public ATMService11 setCashBack(TrueFalseIndicator cashBack) {
 		this.cashBack = cashBack;
+		return this;
 	}
 
-	@XmlElement(name = "MultiAcct")
-	public TrueFalseIndicator getMultiAccount() {
-		return multiAccount;
+	public Optional<TrueFalseIndicator> getMultiAccount() {
+		return multiAccount == null ? Optional.empty() : Optional.of(multiAccount);
 	}
 
-	public void setMultiAccount(TrueFalseIndicator multiAccount) {
+	public ATMService11 setMultiAccount(TrueFalseIndicator multiAccount) {
 		this.multiAccount = multiAccount;
+		return this;
 	}
 }

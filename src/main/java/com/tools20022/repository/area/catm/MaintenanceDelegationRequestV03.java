@@ -21,13 +21,14 @@ import com.tools20022.metamodel.MMMessageBuildingBlock;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.TerminalManagementLatestVersion;
+import com.tools20022.repository.area.TerminalManagementPreviousVersion;
 import com.tools20022.repository.msg.ContentInformationType12;
 import com.tools20022.repository.msg.Header29;
 import com.tools20022.repository.msg.MaintenanceDelegationRequest3;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -58,8 +59,8 @@ import javax.xml.bind.annotation.*;
  * xmlTag} = "MntncDlgtnReq"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageDefinition#getBusinessArea
  * businessArea} =
- * {@linkplain com.tools20022.repository.area.TerminalManagementLatestVersion
- * TerminalManagementLatestVersion}</li>
+ * {@linkplain com.tools20022.repository.area.TerminalManagementPreviousVersion
+ * TerminalManagementPreviousVersion}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code catm.005.001.03}</li>
@@ -75,15 +76,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MaintenanceDelegationRequestV03", propOrder = {"header", "maintenanceDelegationRequest", "securityTrailer"})
 public class MaintenanceDelegationRequestV03 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr")
 	protected Header29 header;
 	/**
-	 * Information related to the protocol management.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,7 +105,7 @@ public class MaintenanceDelegationRequestV03 {
 	 * definition} = "Information related to the protocol management."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MaintenanceDelegationRequestV03, Optional<Header29>> mmHeader = new MMMessageBuildingBlock<MaintenanceDelegationRequestV03, Optional<Header29>>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,18 +116,21 @@ public class MaintenanceDelegationRequestV03 {
 			complexType_lazy = () -> Header29.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MaintenanceDelegationRequestV03.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<Header29> getValue(MaintenanceDelegationRequestV03 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(MaintenanceDelegationRequestV03 obj, Optional<Header29> value) {
+			obj.setHeader(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "MntncDlgtnReq", required = true)
 	protected MaintenanceDelegationRequest3 maintenanceDelegationRequest;
 	/**
-	 * Information related to the request of maintenance delegations.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -147,7 +152,7 @@ public class MaintenanceDelegationRequestV03 {
 	 * "Information related to the request of maintenance delegations."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmMaintenanceDelegationRequest = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MaintenanceDelegationRequestV03, MaintenanceDelegationRequest3> mmMaintenanceDelegationRequest = new MMMessageBuildingBlock<MaintenanceDelegationRequestV03, MaintenanceDelegationRequest3>() {
 		{
 			xmlTag = "MntncDlgtnReq";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -158,18 +163,21 @@ public class MaintenanceDelegationRequestV03 {
 			complexType_lazy = () -> MaintenanceDelegationRequest3.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MaintenanceDelegationRequestV03.class.getMethod("getMaintenanceDelegationRequest", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MaintenanceDelegationRequest3 getValue(MaintenanceDelegationRequestV03 obj) {
+			return obj.getMaintenanceDelegationRequest();
+		}
+
+		@Override
+		public void setValue(MaintenanceDelegationRequestV03 obj, MaintenanceDelegationRequest3 value) {
+			obj.setMaintenanceDelegationRequest(value);
 		}
 	};
+	@XmlElement(name = "SctyTrlr", required = true)
 	protected ContentInformationType12 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC or a digital signature.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -191,7 +199,7 @@ public class MaintenanceDelegationRequestV03 {
 	 * "Trailer of the message containing a MAC or a digital signature."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<MaintenanceDelegationRequestV03, ContentInformationType12> mmSecurityTrailer = new MMMessageBuildingBlock<MaintenanceDelegationRequestV03, ContentInformationType12>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -202,12 +210,14 @@ public class MaintenanceDelegationRequestV03 {
 			complexType_lazy = () -> ContentInformationType12.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MaintenanceDelegationRequestV03.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ContentInformationType12 getValue(MaintenanceDelegationRequestV03 obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(MaintenanceDelegationRequestV03 obj, ContentInformationType12 value) {
+			obj.setSecurityTrailer(value);
 		}
 	};
 
@@ -219,7 +229,7 @@ public class MaintenanceDelegationRequestV03 {
 				definition = "A terminal manager requests to the master terminal manager the delegation of maintenance functions or maintenance operation on the terminal estate managed by the master terminal manager.";
 				rootElement = "Document";
 				xmlTag = "MntncDlgtnReq";
-				businessArea_lazy = () -> TerminalManagementLatestVersion.mmObject();
+				businessArea_lazy = () -> TerminalManagementPreviousVersion.mmObject();
 				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.catm.MaintenanceDelegationRequestV03.mmHeader,
 						com.tools20022.repository.area.catm.MaintenanceDelegationRequestV03.mmMaintenanceDelegationRequest, com.tools20022.repository.area.catm.MaintenanceDelegationRequestV03.mmSecurityTrailer);
 				messageDefinitionIdentifier_lazy = () -> new MMMessageDefinitionIdentifier() {
@@ -240,34 +250,34 @@ public class MaintenanceDelegationRequestV03 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr")
-	public Header29 getHeader() {
-		return header;
+	public Optional<Header29> getHeader() {
+		return header == null ? Optional.empty() : Optional.of(header);
 	}
 
-	public void setHeader(Header29 header) {
+	public MaintenanceDelegationRequestV03 setHeader(Header29 header) {
 		this.header = header;
+		return this;
 	}
 
-	@XmlElement(name = "MntncDlgtnReq", required = true)
 	public MaintenanceDelegationRequest3 getMaintenanceDelegationRequest() {
 		return maintenanceDelegationRequest;
 	}
 
-	public void setMaintenanceDelegationRequest(MaintenanceDelegationRequest3 maintenanceDelegationRequest) {
-		this.maintenanceDelegationRequest = maintenanceDelegationRequest;
+	public MaintenanceDelegationRequestV03 setMaintenanceDelegationRequest(MaintenanceDelegationRequest3 maintenanceDelegationRequest) {
+		this.maintenanceDelegationRequest = Objects.requireNonNull(maintenanceDelegationRequest);
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr", required = true)
 	public ContentInformationType12 getSecurityTrailer() {
 		return securityTrailer;
 	}
 
-	public void setSecurityTrailer(ContentInformationType12 securityTrailer) {
-		this.securityTrailer = securityTrailer;
+	public MaintenanceDelegationRequestV03 setSecurityTrailer(ContentInformationType12 securityTrailer) {
+		this.securityTrailer = Objects.requireNonNull(securityTrailer);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:catm.005.03.03")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:catm.005.001.03")
 	static public class Document {
 		@XmlElement(name = "MntncDlgtnReq", required = true)
 		public MaintenanceDelegationRequestV03 messageBody;

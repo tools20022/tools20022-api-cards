@@ -21,11 +21,14 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.ClearingSystem;
 import com.tools20022.repository.entity.SettlementPartyRole;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Infrastructure that may be a component of a clearing house and which
@@ -64,8 +67,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -81,10 +84,10 @@ import java.util.List;
 public class CentralClearingCounterpartyRole extends SettlementPartyRole {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.ClearingSystem> system;
+	protected List<ClearingSystem> system;
 	/**
-	 * Specifies the system which plays a role in the clearing of securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -116,7 +119,7 @@ public class CentralClearingCounterpartyRole extends SettlementPartyRole {
 	 * "Specifies the system which plays a role in the clearing of securities."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CentralClearingCounterpartyRole, List<ClearingSystem>> mmSystem = new MMBusinessAssociationEnd<CentralClearingCounterpartyRole, List<ClearingSystem>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CentralClearingCounterpartyRole.mmObject();
@@ -124,20 +127,30 @@ public class CentralClearingCounterpartyRole extends SettlementPartyRole {
 			name = "System";
 			definition = "Specifies the system which plays a role in the clearing of securities.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ClearingSystem.mmCentralClearingCounterparty;
+			opposite_lazy = () -> ClearingSystem.mmCentralClearingCounterparty;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ClearingSystem.mmObject();
+			type_lazy = () -> ClearingSystem.mmObject();
+		}
+
+		@Override
+		public List<ClearingSystem> getValue(CentralClearingCounterpartyRole obj) {
+			return obj.getSystem();
+		}
+
+		@Override
+		public void setValue(CentralClearingCounterpartyRole obj, List<ClearingSystem> value) {
+			obj.setSystem(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "CentralClearingCounterpartyRole";
 				definition = "Infrastructure that may be a component of a clearing house and which facilitates clearing and settlement for its members by standing between the buyer and the seller. It may net transactions and it substitutes itself as settlement counterparty for each position.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ClearingSystem.mmCentralClearingCounterparty);
+				associationDomain_lazy = () -> Arrays.asList(ClearingSystem.mmCentralClearingCounterparty);
 				superType_lazy = () -> SettlementPartyRole.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CentralClearingCounterpartyRole.mmSystem);
 			}
@@ -151,10 +164,11 @@ public class CentralClearingCounterpartyRole extends SettlementPartyRole {
 	}
 
 	public List<ClearingSystem> getSystem() {
-		return system;
+		return system == null ? system = new ArrayList<>() : system;
 	}
 
-	public void setSystem(List<com.tools20022.repository.entity.ClearingSystem> system) {
-		this.system = system;
+	public CentralClearingCounterpartyRole setSystem(List<ClearingSystem> system) {
+		this.system = Objects.requireNonNull(system);
+		return this;
 	}
 }

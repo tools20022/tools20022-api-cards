@@ -21,10 +21,12 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Invoice;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Status of the invoice or of the billing process.
@@ -55,8 +57,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,8 +74,8 @@ public class InvoiceStatus extends Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Invoice invoice;
 	/**
-	 * Invoice for which a status is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,7 +105,7 @@ public class InvoiceStatus extends Status {
 	 * definition} = "Invoice for which a status is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvoice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvoiceStatus, com.tools20022.repository.entity.Invoice> mmInvoice = new MMBusinessAssociationEnd<InvoiceStatus, com.tools20022.repository.entity.Invoice>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceStatus.mmObject();
@@ -116,12 +118,22 @@ public class InvoiceStatus extends Status {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.Invoice getValue(InvoiceStatus obj) {
+			return obj.getInvoice();
+		}
+
+		@Override
+		public void setValue(InvoiceStatus obj, com.tools20022.repository.entity.Invoice value) {
+			obj.setInvoice(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvoiceStatus";
 				definition = "Status of the invoice or of the billing process.";
@@ -142,7 +154,8 @@ public class InvoiceStatus extends Status {
 		return invoice;
 	}
 
-	public void setInvoice(com.tools20022.repository.entity.Invoice invoice) {
-		this.invoice = invoice;
+	public InvoiceStatus setInvoice(com.tools20022.repository.entity.Invoice invoice) {
+		this.invoice = Objects.requireNonNull(invoice);
+		return this;
 	}
 }

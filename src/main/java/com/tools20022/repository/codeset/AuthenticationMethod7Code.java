@@ -38,31 +38,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod7Code#AuthenticationToken
- * AuthenticationMethod7Code.mmAuthenticationToken}</li>
+ * AuthenticationMethod7Code.AuthenticationToken}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod7Code#Biometry
- * AuthenticationMethod7Code.mmBiometry}</li>
+ * AuthenticationMethod7Code.Biometry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod7Code#Mobile
- * AuthenticationMethod7Code.mmMobile}</li>
+ * AuthenticationMethod7Code.Mobile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod7Code#Other
- * AuthenticationMethod7Code.mmOther}</li>
+ * AuthenticationMethod7Code.Other}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod7Code#OfflinePIN
- * AuthenticationMethod7Code.mmOfflinePIN}</li>
+ * AuthenticationMethod7Code.OfflinePIN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod7Code#OnLinePIN
- * AuthenticationMethod7Code.mmOnLinePIN}</li>
+ * AuthenticationMethod7Code.OnLinePIN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod7Code#Password
- * AuthenticationMethod7Code.mmPassword}</li>
+ * AuthenticationMethod7Code.Password}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod7Code#SecureCertificate
- * AuthenticationMethod7Code.mmSecureCertificate}</li>
+ * AuthenticationMethod7Code.SecureCertificate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod7Code#SecuredChannel
- * AuthenticationMethod7Code.mmSecuredChannel}</li>
+ * AuthenticationMethod7Code.SecuredChannel}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -71,8 +71,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -311,7 +311,7 @@ public class AuthenticationMethod7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AuthenticationMethod7Code";
 				definition = "Method to authenticate the customer or its card.";

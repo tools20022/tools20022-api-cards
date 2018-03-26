@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.Max9NumericText;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * ProcessTiming3}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ProcessTiming4", propOrder = {"startTime", "endTime", "period"})
 public class ProcessTiming4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "StartTm")
 	protected ISODateTime startTime;
 	/**
-	 * Date and time to start the action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,9 +105,9 @@ public class ProcessTiming4 {
 	 * ProcessTiming3.mmStartTime}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmStartTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProcessTiming4, Optional<ISODateTime>> mmStartTime = new MMMessageAttribute<ProcessTiming4, Optional<ISODateTime>>() {
 		{
-			componentContext_lazy = () -> ProcessTiming4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ProcessTiming4.mmObject();
 			isDerived = false;
 			xmlTag = "StartTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -116,11 +118,22 @@ public class ProcessTiming4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public Optional<ISODateTime> getValue(ProcessTiming4 obj) {
+			return obj.getStartTime();
+		}
+
+		@Override
+		public void setValue(ProcessTiming4 obj, Optional<ISODateTime> value) {
+			obj.setStartTime(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "EndTm")
 	protected ISODateTime endTime;
 	/**
-	 * Date and time after which the action cannot be processed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,9 +163,9 @@ public class ProcessTiming4 {
 	 * ProcessTiming3.mmEndTime}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEndTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProcessTiming4, Optional<ISODateTime>> mmEndTime = new MMMessageAttribute<ProcessTiming4, Optional<ISODateTime>>() {
 		{
-			componentContext_lazy = () -> ProcessTiming4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ProcessTiming4.mmObject();
 			isDerived = false;
 			xmlTag = "EndTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,12 +176,22 @@ public class ProcessTiming4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public Optional<ISODateTime> getValue(ProcessTiming4 obj) {
+			return obj.getEndTime();
+		}
+
+		@Override
+		public void setValue(ProcessTiming4 obj, Optional<ISODateTime> value) {
+			obj.setEndTime(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Prd")
 	protected Max9NumericText period;
 	/**
-	 * Period delay between cyclic action activation in months, days, hours and
-	 * minutes, leading zeros could be omitted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -200,9 +223,9 @@ public class ProcessTiming4 {
 	 * ProcessTiming3.mmPeriod}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPeriod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProcessTiming4, Optional<Max9NumericText>> mmPeriod = new MMMessageAttribute<ProcessTiming4, Optional<Max9NumericText>>() {
 		{
-			componentContext_lazy = () -> ProcessTiming4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ProcessTiming4.mmObject();
 			isDerived = false;
 			xmlTag = "Prd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -213,13 +236,23 @@ public class ProcessTiming4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max9NumericText.mmObject();
 		}
+
+		@Override
+		public Optional<Max9NumericText> getValue(ProcessTiming4 obj) {
+			return obj.getPeriod();
+		}
+
+		@Override
+		public void setValue(ProcessTiming4 obj, Optional<Max9NumericText> value) {
+			obj.setPeriod(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ProcessTiming4.mmStartTime, ProcessTiming4.mmEndTime, ProcessTiming4.mmPeriod);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ProcessTiming4.mmStartTime, com.tools20022.repository.msg.ProcessTiming4.mmEndTime, com.tools20022.repository.msg.ProcessTiming4.mmPeriod);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProcessTiming4";
 				definition = "Parameters defining the timing conditions to process an action.";
@@ -229,30 +262,30 @@ public class ProcessTiming4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "StartTm")
-	public ISODateTime getStartTime() {
-		return startTime;
+	public Optional<ISODateTime> getStartTime() {
+		return startTime == null ? Optional.empty() : Optional.of(startTime);
 	}
 
-	public void setStartTime(ISODateTime startTime) {
+	public ProcessTiming4 setStartTime(ISODateTime startTime) {
 		this.startTime = startTime;
+		return this;
 	}
 
-	@XmlElement(name = "EndTm")
-	public ISODateTime getEndTime() {
-		return endTime;
+	public Optional<ISODateTime> getEndTime() {
+		return endTime == null ? Optional.empty() : Optional.of(endTime);
 	}
 
-	public void setEndTime(ISODateTime endTime) {
+	public ProcessTiming4 setEndTime(ISODateTime endTime) {
 		this.endTime = endTime;
+		return this;
 	}
 
-	@XmlElement(name = "Prd")
-	public Max9NumericText getPeriod() {
-		return period;
+	public Optional<Max9NumericText> getPeriod() {
+		return period == null ? Optional.empty() : Optional.of(period);
 	}
 
-	public void setPeriod(Max9NumericText period) {
+	public ProcessTiming4 setPeriod(Max9NumericText period) {
 		this.period = period;
+		return this;
 	}
 }

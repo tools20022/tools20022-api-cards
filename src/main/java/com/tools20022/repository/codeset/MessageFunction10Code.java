@@ -38,70 +38,70 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#AuthorisationRequest
- * MessageFunction10Code.mmAuthorisationRequest}</li>
+ * MessageFunction10Code.AuthorisationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#AuthorisationResponse
- * MessageFunction10Code.mmAuthorisationResponse}</li>
+ * MessageFunction10Code.AuthorisationResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#FinancialAuthorisationRequest
- * MessageFunction10Code.mmFinancialAuthorisationRequest}</li>
+ * MessageFunction10Code.FinancialAuthorisationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#FinancialAuthorisationResponse
- * MessageFunction10Code.mmFinancialAuthorisationResponse}</li>
+ * MessageFunction10Code.FinancialAuthorisationResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#CompletionAdvice
- * MessageFunction10Code.mmCompletionAdvice}</li>
+ * MessageFunction10Code.CompletionAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#CompletionAdviceResponse
- * MessageFunction10Code.mmCompletionAdviceResponse}</li>
+ * MessageFunction10Code.CompletionAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#FinancialCompletionAdvice
- * MessageFunction10Code.mmFinancialCompletionAdvice}</li>
+ * MessageFunction10Code.FinancialCompletionAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#FinancialCompletionAdviceResponse
- * MessageFunction10Code.mmFinancialCompletionAdviceResponse}</li>
+ * MessageFunction10Code.FinancialCompletionAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#ReversalAdvice
- * MessageFunction10Code.mmReversalAdvice}</li>
+ * MessageFunction10Code.ReversalAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#ReversalAdviceResponse
- * MessageFunction10Code.mmReversalAdviceResponse}</li>
+ * MessageFunction10Code.ReversalAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#FinancialReversalAdvice
- * MessageFunction10Code.mmFinancialReversalAdvice}</li>
+ * MessageFunction10Code.FinancialReversalAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#FinancialReversalAdviceResponse
- * MessageFunction10Code.mmFinancialReversalAdviceResponse}</li>
+ * MessageFunction10Code.FinancialReversalAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#CancellationRequest
- * MessageFunction10Code.mmCancellationRequest}</li>
+ * MessageFunction10Code.CancellationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#CancellationResponse
- * MessageFunction10Code.mmCancellationResponse}</li>
+ * MessageFunction10Code.CancellationResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#CancellationAdvice
- * MessageFunction10Code.mmCancellationAdvice}</li>
+ * MessageFunction10Code.CancellationAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#CancellationAdviceResponse
- * MessageFunction10Code.mmCancellationAdviceResponse}</li>
+ * MessageFunction10Code.CancellationAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#DiagnosticRequest
- * MessageFunction10Code.mmDiagnosticRequest}</li>
+ * MessageFunction10Code.DiagnosticRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#DiagnosticResponse
- * MessageFunction10Code.mmDiagnosticResponse}</li>
+ * MessageFunction10Code.DiagnosticResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#ReconciliationRequest
- * MessageFunction10Code.mmReconciliationRequest}</li>
+ * MessageFunction10Code.ReconciliationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#ReconciliationResponse
- * MessageFunction10Code.mmReconciliationResponse}</li>
+ * MessageFunction10Code.ReconciliationResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#CurrencyConversionRequest
- * MessageFunction10Code.mmCurrencyConversionRequest}</li>
+ * MessageFunction10Code.CurrencyConversionRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction10Code#CurrencyConversionResponse
- * MessageFunction10Code.mmCurrencyConversionResponse}</li>
+ * MessageFunction10Code.CurrencyConversionResponse}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -110,8 +110,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -669,7 +669,7 @@ public class MessageFunction10Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AUTQ");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MessageFunction10Code";

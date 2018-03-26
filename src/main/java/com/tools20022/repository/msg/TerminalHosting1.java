@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -49,8 +50,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,15 +62,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Entity hosting the ATM terminal."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TerminalHosting1", propOrder = {"category", "identification"})
 public class TerminalHosting1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Ctgy")
 	protected TransactionEnvironment3Code category;
 	/**
-	 * Type of ATM terminal hosting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -95,9 +97,9 @@ public class TerminalHosting1 {
 	 * definition} = "Type of ATM terminal hosting."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCategory = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TerminalHosting1, Optional<TransactionEnvironment3Code>> mmCategory = new MMMessageAttribute<TerminalHosting1, Optional<TransactionEnvironment3Code>>() {
 		{
-			componentContext_lazy = () -> TerminalHosting1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TerminalHosting1.mmObject();
 			isDerived = false;
 			xmlTag = "Ctgy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -107,11 +109,22 @@ public class TerminalHosting1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> TransactionEnvironment3Code.mmObject();
 		}
+
+		@Override
+		public Optional<TransactionEnvironment3Code> getValue(TerminalHosting1 obj) {
+			return obj.getCategory();
+		}
+
+		@Override
+		public void setValue(TerminalHosting1 obj, Optional<TransactionEnvironment3Code> value) {
+			obj.setCategory(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Id")
 	protected Max35Text identification;
 	/**
-	 * Identify the entity hosting the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -136,9 +149,9 @@ public class TerminalHosting1 {
 	 * definition} = "Identify the entity hosting the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TerminalHosting1, Optional<Max35Text>> mmIdentification = new MMMessageAttribute<TerminalHosting1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> TerminalHosting1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TerminalHosting1.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -148,13 +161,23 @@ public class TerminalHosting1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(TerminalHosting1 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(TerminalHosting1 obj, Optional<Max35Text> value) {
+			obj.setIdentification(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TerminalHosting1.mmCategory, TerminalHosting1.mmIdentification);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TerminalHosting1.mmCategory, com.tools20022.repository.msg.TerminalHosting1.mmIdentification);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TerminalHosting1";
 				definition = "Entity hosting the ATM terminal.";
@@ -163,21 +186,21 @@ public class TerminalHosting1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Ctgy")
-	public TransactionEnvironment3Code getCategory() {
-		return category;
+	public Optional<TransactionEnvironment3Code> getCategory() {
+		return category == null ? Optional.empty() : Optional.of(category);
 	}
 
-	public void setCategory(TransactionEnvironment3Code category) {
+	public TerminalHosting1 setCategory(TransactionEnvironment3Code category) {
 		this.category = category;
+		return this;
 	}
 
-	@XmlElement(name = "Id")
-	public Max35Text getIdentification() {
-		return identification;
+	public Optional<Max35Text> getIdentification() {
+		return identification == null ? Optional.empty() : Optional.of(identification);
 	}
 
-	public void setIdentification(Max35Text identification) {
+	public TerminalHosting1 setIdentification(Max35Text identification) {
 		this.identification = identification;
+		return this;
 	}
 }

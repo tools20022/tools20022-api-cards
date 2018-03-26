@@ -26,9 +26,9 @@ import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.entity.CardPayment;
 import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.DetailedAmount14;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +60,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Payment transaction with an aggregated amount."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AggregationTransaction2", propOrder = {"firstPaymentDateTime", "lastPaymentDateTime", "numberOfPayments", "individualPayment"})
 public class AggregationTransaction2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "FrstPmtDtTm")
 	protected ISODateTime firstPaymentDateTime;
 	/**
-	 * Date and time of the first payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,10 +111,10 @@ public class AggregationTransaction2 {
 	 * definition} = "Date and time of the first payment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFirstPaymentDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AggregationTransaction2, Optional<ISODateTime>> mmFirstPaymentDateTime = new MMMessageAttribute<AggregationTransaction2, Optional<ISODateTime>>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmValueDate;
-			componentContext_lazy = () -> AggregationTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AggregationTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "FrstPmtDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,11 +124,22 @@ public class AggregationTransaction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public Optional<ISODateTime> getValue(AggregationTransaction2 obj) {
+			return obj.getFirstPaymentDateTime();
+		}
+
+		@Override
+		public void setValue(AggregationTransaction2 obj, Optional<ISODateTime> value) {
+			obj.setFirstPaymentDateTime(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "LastPmtDtTm")
 	protected ISODateTime lastPaymentDateTime;
 	/**
-	 * Date and time of the last payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,10 +169,10 @@ public class AggregationTransaction2 {
 	 * definition} = "Date and time of the last payment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLastPaymentDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AggregationTransaction2, Optional<ISODateTime>> mmLastPaymentDateTime = new MMMessageAttribute<AggregationTransaction2, Optional<ISODateTime>>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmValueDate;
-			componentContext_lazy = () -> AggregationTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AggregationTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "LastPmtDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -170,11 +182,22 @@ public class AggregationTransaction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public Optional<ISODateTime> getValue(AggregationTransaction2 obj) {
+			return obj.getLastPaymentDateTime();
+		}
+
+		@Override
+		public void setValue(AggregationTransaction2 obj, Optional<ISODateTime> value) {
+			obj.setLastPaymentDateTime(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NbOfPmts")
 	protected Number numberOfPayments;
 	/**
-	 * Total number of payments that has been aggregated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -199,9 +222,9 @@ public class AggregationTransaction2 {
 	 * definition} = "Total number of payments that has been aggregated."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNumberOfPayments = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AggregationTransaction2, Optional<Number>> mmNumberOfPayments = new MMMessageAttribute<AggregationTransaction2, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> AggregationTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AggregationTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "NbOfPmts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -211,11 +234,22 @@ public class AggregationTransaction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(AggregationTransaction2 obj) {
+			return obj.getNumberOfPayments();
+		}
+
+		@Override
+		public void setValue(AggregationTransaction2 obj, Optional<Number> value) {
+			obj.setNumberOfPayments(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.msg.DetailedAmount14> individualPayment;
+	@XmlElement(name = "IndvPmt")
+	protected List<DetailedAmount14> individualPayment;
 	/**
-	 * Individual payment that has been aggregated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -243,10 +277,10 @@ public class AggregationTransaction2 {
 	 * definition} = "Individual payment that has been aggregated."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmIndividualPayment = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AggregationTransaction2, List<DetailedAmount14>> mmIndividualPayment = new MMMessageAssociationEnd<AggregationTransaction2, List<DetailedAmount14>>() {
 		{
 			businessComponentTrace_lazy = () -> CardPayment.mmObject();
-			componentContext_lazy = () -> AggregationTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AggregationTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "IndvPmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -254,16 +288,26 @@ public class AggregationTransaction2 {
 			definition = "Individual payment that has been aggregated.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DetailedAmount14.mmObject();
+			type_lazy = () -> DetailedAmount14.mmObject();
+		}
+
+		@Override
+		public List<DetailedAmount14> getValue(AggregationTransaction2 obj) {
+			return obj.getIndividualPayment();
+		}
+
+		@Override
+		public void setValue(AggregationTransaction2 obj, List<DetailedAmount14> value) {
+			obj.setIndividualPayment(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AggregationTransaction2.mmFirstPaymentDateTime, AggregationTransaction2.mmLastPaymentDateTime, AggregationTransaction2.mmNumberOfPayments,
-						AggregationTransaction2.mmIndividualPayment);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AggregationTransaction2.mmFirstPaymentDateTime, com.tools20022.repository.msg.AggregationTransaction2.mmLastPaymentDateTime,
+						com.tools20022.repository.msg.AggregationTransaction2.mmNumberOfPayments, com.tools20022.repository.msg.AggregationTransaction2.mmIndividualPayment);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AggregationTransaction2";
 				definition = "Payment transaction with an aggregated amount.";
@@ -272,39 +316,39 @@ public class AggregationTransaction2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "FrstPmtDtTm")
-	public ISODateTime getFirstPaymentDateTime() {
-		return firstPaymentDateTime;
+	public Optional<ISODateTime> getFirstPaymentDateTime() {
+		return firstPaymentDateTime == null ? Optional.empty() : Optional.of(firstPaymentDateTime);
 	}
 
-	public void setFirstPaymentDateTime(ISODateTime firstPaymentDateTime) {
+	public AggregationTransaction2 setFirstPaymentDateTime(ISODateTime firstPaymentDateTime) {
 		this.firstPaymentDateTime = firstPaymentDateTime;
+		return this;
 	}
 
-	@XmlElement(name = "LastPmtDtTm")
-	public ISODateTime getLastPaymentDateTime() {
-		return lastPaymentDateTime;
+	public Optional<ISODateTime> getLastPaymentDateTime() {
+		return lastPaymentDateTime == null ? Optional.empty() : Optional.of(lastPaymentDateTime);
 	}
 
-	public void setLastPaymentDateTime(ISODateTime lastPaymentDateTime) {
+	public AggregationTransaction2 setLastPaymentDateTime(ISODateTime lastPaymentDateTime) {
 		this.lastPaymentDateTime = lastPaymentDateTime;
+		return this;
 	}
 
-	@XmlElement(name = "NbOfPmts")
-	public Number getNumberOfPayments() {
-		return numberOfPayments;
+	public Optional<Number> getNumberOfPayments() {
+		return numberOfPayments == null ? Optional.empty() : Optional.of(numberOfPayments);
 	}
 
-	public void setNumberOfPayments(Number numberOfPayments) {
+	public AggregationTransaction2 setNumberOfPayments(Number numberOfPayments) {
 		this.numberOfPayments = numberOfPayments;
+		return this;
 	}
 
-	@XmlElement(name = "IndvPmt")
 	public List<DetailedAmount14> getIndividualPayment() {
-		return individualPayment;
+		return individualPayment == null ? individualPayment = new ArrayList<>() : individualPayment;
 	}
 
-	public void setIndividualPayment(List<com.tools20022.repository.msg.DetailedAmount14> individualPayment) {
-		this.individualPayment = individualPayment;
+	public AggregationTransaction2 setIndividualPayment(List<DetailedAmount14> individualPayment) {
+		this.individualPayment = Objects.requireNonNull(individualPayment);
+		return this;
 	}
 }

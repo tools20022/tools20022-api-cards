@@ -19,12 +19,13 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.MemberTypeCode;
-import com.tools20022.repository.entity.SystemPartyRole;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Information about the members of a system.
@@ -74,8 +75,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -91,8 +92,8 @@ public class SystemMemberRole extends SystemPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.CashBalance> cashBalance;
 	/**
-	 * Cash balance for which a counterparty is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -123,7 +124,7 @@ public class SystemMemberRole extends SystemPartyRole {
 	 * definition} = "Cash balance for which a counterparty is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SystemMemberRole, List<CashBalance>> mmCashBalance = new MMBusinessAssociationEnd<SystemMemberRole, List<CashBalance>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SystemMemberRole.mmObject();
@@ -135,11 +136,21 @@ public class SystemMemberRole extends SystemPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashBalance.mmObject();
 		}
+
+		@Override
+		public List<CashBalance> getValue(SystemMemberRole obj) {
+			return obj.getCashBalance();
+		}
+
+		@Override
+		public void setValue(SystemMemberRole obj, List<CashBalance> value) {
+			obj.setCashBalance(value);
+		}
 	};
 	protected MemberTypeCode type;
 	/**
-	 * Nature of the relationship a member has with a system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -163,7 +174,7 @@ public class SystemMemberRole extends SystemPartyRole {
 	 * definition} = "Nature of the relationship a member has with a system."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SystemMemberRole, MemberTypeCode> mmType = new MMBusinessAttribute<SystemMemberRole, MemberTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SystemMemberRole.mmObject();
@@ -175,18 +186,20 @@ public class SystemMemberRole extends SystemPartyRole {
 			simpleType_lazy = () -> MemberTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SystemMemberRole.class.getMethod("getType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MemberTypeCode getValue(SystemMemberRole obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(SystemMemberRole obj, MemberTypeCode value) {
+			obj.setType(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SystemStatus> memberStatus;
+	protected List<SystemStatus> memberStatus;
 	/**
-	 * Specifies the status of a member.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -217,7 +230,7 @@ public class SystemMemberRole extends SystemPartyRole {
 	 * definition} = "Specifies the status of a member."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMemberStatus = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SystemMemberRole, List<SystemStatus>> mmMemberStatus = new MMBusinessAssociationEnd<SystemMemberRole, List<SystemStatus>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SystemMemberRole.mmObject();
@@ -225,22 +238,25 @@ public class SystemMemberRole extends SystemPartyRole {
 			name = "MemberStatus";
 			definition = "Specifies the status of a member.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SystemStatus.mmSystemMemberRole;
+			opposite_lazy = () -> SystemStatus.mmSystemMemberRole;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SystemStatus.mmObject();
+			type_lazy = () -> SystemStatus.mmObject();
+		}
+
+		@Override
+		public List<SystemStatus> getValue(SystemMemberRole obj) {
+			return obj.getMemberStatus();
+		}
+
+		@Override
+		public void setValue(SystemMemberRole obj, List<SystemStatus> value) {
+			obj.setMemberStatus(value);
 		}
 	};
 	protected RiskManagementLimit limit;
 	/**
-	 * Cash management feature limiting the maximum risk a party accepts to take
-	 * with respect to a counterparty or a set of counterparties. A risk
-	 * management limit is either bilateral, ie, for a counterparty, or
-	 * multilateral, ie, for a set of counterparties or all other members in a
-	 * system.The limit may also apply to sponsored members, ie, indirect
-	 * members. In principle, a risk management limit is calculated on the net
-	 * position between two members and is expressed as a credit or debit limit,
-	 * from the point of view of the party setting the limit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -273,7 +289,7 @@ public class SystemMemberRole extends SystemPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmLimit = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SystemMemberRole, RiskManagementLimit> mmLimit = new MMBusinessAssociationEnd<SystemMemberRole, RiskManagementLimit>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SystemMemberRole.mmObject();
@@ -282,32 +298,25 @@ public class SystemMemberRole extends SystemPartyRole {
 			definition = "Cash management feature limiting the maximum risk a party accepts to take with respect to a counterparty or a set of counterparties. A risk management limit is either bilateral, ie, for a counterparty, or multilateral, ie, for a set of counterparties or all other members in a system.The limit may also apply to sponsored members, ie, indirect members. In principle, a risk management limit is calculated on the net position between two members and is expressed as a credit or debit limit, from the point of view of the party setting the limit.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RiskManagementLimit.mmCounterparty;
+			opposite_lazy = () -> RiskManagementLimit.mmCounterparty;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RiskManagementLimit.mmObject();
+			type_lazy = () -> RiskManagementLimit.mmObject();
+		}
+
+		@Override
+		public RiskManagementLimit getValue(SystemMemberRole obj) {
+			return obj.getLimit();
+		}
+
+		@Override
+		public void setValue(SystemMemberRole obj, RiskManagementLimit value) {
+			obj.setLimit(value);
 		}
 	};
 	protected Account account;
 	/**
-	 * Account owned by the member of a system with the system.<br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <br>
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -339,7 +348,7 @@ public class SystemMemberRole extends SystemPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SystemMemberRole, com.tools20022.repository.entity.Account> mmAccount = new MMBusinessAssociationEnd<SystemMemberRole, com.tools20022.repository.entity.Account>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SystemMemberRole.mmObject();
@@ -352,17 +361,27 @@ public class SystemMemberRole extends SystemPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.Account getValue(SystemMemberRole obj) {
+			return obj.getAccount();
+		}
+
+		@Override
+		public void setValue(SystemMemberRole obj, com.tools20022.repository.entity.Account value) {
+			obj.setAccount(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SystemMemberRole";
 				definition = "Information about the members of a system.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Account.mmSystemMember, com.tools20022.repository.entity.RiskManagementLimit.mmCounterparty,
-						com.tools20022.repository.entity.CashBalance.mmCounterparty, com.tools20022.repository.entity.SystemStatus.mmSystemMemberRole);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Account.mmSystemMember, RiskManagementLimit.mmCounterparty, com.tools20022.repository.entity.CashBalance.mmCounterparty,
+						SystemStatus.mmSystemMemberRole);
 				superType_lazy = () -> SystemPartyRole.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SystemMemberRole.mmCashBalance, com.tools20022.repository.entity.SystemMemberRole.mmType, com.tools20022.repository.entity.SystemMemberRole.mmMemberStatus,
 						com.tools20022.repository.entity.SystemMemberRole.mmLimit, com.tools20022.repository.entity.SystemMemberRole.mmAccount);
@@ -377,42 +396,47 @@ public class SystemMemberRole extends SystemPartyRole {
 	}
 
 	public List<CashBalance> getCashBalance() {
-		return cashBalance;
+		return cashBalance == null ? cashBalance = new ArrayList<>() : cashBalance;
 	}
 
-	public void setCashBalance(List<com.tools20022.repository.entity.CashBalance> cashBalance) {
-		this.cashBalance = cashBalance;
+	public SystemMemberRole setCashBalance(List<com.tools20022.repository.entity.CashBalance> cashBalance) {
+		this.cashBalance = Objects.requireNonNull(cashBalance);
+		return this;
 	}
 
 	public MemberTypeCode getType() {
 		return type;
 	}
 
-	public void setType(MemberTypeCode type) {
-		this.type = type;
+	public SystemMemberRole setType(MemberTypeCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public List<SystemStatus> getMemberStatus() {
-		return memberStatus;
+		return memberStatus == null ? memberStatus = new ArrayList<>() : memberStatus;
 	}
 
-	public void setMemberStatus(List<com.tools20022.repository.entity.SystemStatus> memberStatus) {
-		this.memberStatus = memberStatus;
+	public SystemMemberRole setMemberStatus(List<SystemStatus> memberStatus) {
+		this.memberStatus = Objects.requireNonNull(memberStatus);
+		return this;
 	}
 
 	public RiskManagementLimit getLimit() {
 		return limit;
 	}
 
-	public void setLimit(com.tools20022.repository.entity.RiskManagementLimit limit) {
-		this.limit = limit;
+	public SystemMemberRole setLimit(RiskManagementLimit limit) {
+		this.limit = Objects.requireNonNull(limit);
+		return this;
 	}
 
 	public Account getAccount() {
 		return account;
 	}
 
-	public void setAccount(com.tools20022.repository.entity.Account account) {
-		this.account = account;
+	public SystemMemberRole setAccount(com.tools20022.repository.entity.Account account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 }

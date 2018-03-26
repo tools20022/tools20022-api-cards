@@ -38,70 +38,70 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#CustomerTransfer
- * ATMServiceType10Code.mmCustomerTransfer}</li>
+ * ATMServiceType10Code.CustomerTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#InterCustomerTransfer
- * ATMServiceType10Code.mmInterCustomerTransfer}</li>
+ * ATMServiceType10Code.InterCustomerTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#Payment
- * ATMServiceType10Code.mmPayment}</li>
+ * ATMServiceType10Code.Payment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#AccountStatements
- * ATMServiceType10Code.mmAccountStatements}</li>
+ * ATMServiceType10Code.AccountStatements}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#BalanceInquiry
- * ATMServiceType10Code.mmBalanceInquiry}</li>
+ * ATMServiceType10Code.BalanceInquiry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#CardVerification
- * ATMServiceType10Code.mmCardVerification}</li>
+ * ATMServiceType10Code.CardVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#ChosenWithdrawal
- * ATMServiceType10Code.mmChosenWithdrawal}</li>
+ * ATMServiceType10Code.ChosenWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#CustomerProfile
- * ATMServiceType10Code.mmCustomerProfile}</li>
+ * ATMServiceType10Code.CustomerProfile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#DynamicCurrencyConversion
- * ATMServiceType10Code.mmDynamicCurrencyConversion}</li>
+ * ATMServiceType10Code.DynamicCurrencyConversion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#ExchangeRateDeposit
- * ATMServiceType10Code.mmExchangeRateDeposit}</li>
+ * ATMServiceType10Code.ExchangeRateDeposit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#ExchangeRateWithdrawal
- * ATMServiceType10Code.mmExchangeRateWithdrawal}</li>
+ * ATMServiceType10Code.ExchangeRateWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#MakingChange
- * ATMServiceType10Code.mmMakingChange}</li>
+ * ATMServiceType10Code.MakingChange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#NonVerifiedDeposit
- * ATMServiceType10Code.mmNonVerifiedDeposit}</li>
+ * ATMServiceType10Code.NonVerifiedDeposit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#PINChange
- * ATMServiceType10Code.mmPINChange}</li>
+ * ATMServiceType10Code.PINChange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#PINRecovery
- * ATMServiceType10Code.mmPINRecovery}</li>
+ * ATMServiceType10Code.PINRecovery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#PINUnblock
- * ATMServiceType10Code.mmPINUnblock}</li>
+ * ATMServiceType10Code.PINUnblock}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#PreAuthorisedWithdrawal
- * ATMServiceType10Code.mmPreAuthorisedWithdrawal}</li>
+ * ATMServiceType10Code.PreAuthorisedWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#ProfileWithdrawal
- * ATMServiceType10Code.mmProfileWithdrawal}</li>
+ * ATMServiceType10Code.ProfileWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#SelectEMVApplication
- * ATMServiceType10Code.mmSelectEMVApplication}</li>
+ * ATMServiceType10Code.SelectEMVApplication}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#StandardWithdrawal
- * ATMServiceType10Code.mmStandardWithdrawal}</li>
+ * ATMServiceType10Code.StandardWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#SupervisedWithdrawal
- * ATMServiceType10Code.mmSupervisedWithdrawal}</li>
+ * ATMServiceType10Code.SupervisedWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#VerifiedDeposit
- * ATMServiceType10Code.mmVerifiedDeposit}</li>
+ * ATMServiceType10Code.VerifiedDeposit}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -110,8 +110,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -148,7 +148,7 @@ public class ATMServiceType10Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.ATMServiceType9Code#CustomerTransfer
-	 * ATMServiceType9Code.mmCustomerTransfer}</li>
+	 * ATMServiceType9Code.CustomerTransfer}</li>
 	 * </ul>
 	 */
 	public static final ATMServiceType10Code CustomerTransfer = new ATMServiceType10Code() {
@@ -178,7 +178,7 @@ public class ATMServiceType10Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.ATMServiceType9Code#InterCustomerTransfer
-	 * ATMServiceType9Code.mmInterCustomerTransfer}</li>
+	 * ATMServiceType9Code.InterCustomerTransfer}</li>
 	 * </ul>
 	 */
 	public static final ATMServiceType10Code InterCustomerTransfer = new ATMServiceType10Code() {
@@ -208,7 +208,7 @@ public class ATMServiceType10Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.ATMServiceType9Code#Payment
-	 * ATMServiceType9Code.mmPayment}</li>
+	 * ATMServiceType9Code.Payment}</li>
 	 * </ul>
 	 */
 	public static final ATMServiceType10Code Payment = new ATMServiceType10Code() {
@@ -684,7 +684,7 @@ public class ATMServiceType10Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMServiceType10Code";
 				definition = "Describes the type of service selected by the customer.";

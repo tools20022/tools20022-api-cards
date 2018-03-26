@@ -21,13 +21,12 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.ATMCommandParameters1Choice;
 import com.tools20022.repository.codeset.TMSContactLevelCode;
 import com.tools20022.repository.datatype.ISODateTime;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.entity.System;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Terminal management system (TMS), has in charge the maintenance of the
@@ -121,8 +120,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -140,8 +139,8 @@ public class TerminalManagementSystem extends System {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.AcceptorConfiguration> acceptorConfiguration;
 	/**
-	 * Acceptor parameters to be downloaded from the terminal management system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -175,7 +174,7 @@ public class TerminalManagementSystem extends System {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAcceptorConfiguration = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TerminalManagementSystem, List<AcceptorConfiguration>> mmAcceptorConfiguration = new MMBusinessAssociationEnd<TerminalManagementSystem, List<AcceptorConfiguration>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmObject();
@@ -187,11 +186,21 @@ public class TerminalManagementSystem extends System {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 		}
+
+		@Override
+		public List<AcceptorConfiguration> getValue(TerminalManagementSystem obj) {
+			return obj.getAcceptorConfiguration();
+		}
+
+		@Override
+		public void setValue(TerminalManagementSystem obj, List<AcceptorConfiguration> value) {
+			obj.setAcceptorConfiguration(value);
+		}
 	};
 	protected List<com.tools20022.repository.entity.NetworkAccess> networkAccess;
 	/**
-	 * Parameters used to access a network.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -230,7 +239,7 @@ public class TerminalManagementSystem extends System {
 	 * definition} = "Parameters used to access a network."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNetworkAccess = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TerminalManagementSystem, List<NetworkAccess>> mmNetworkAccess = new MMBusinessAssociationEnd<TerminalManagementSystem, List<NetworkAccess>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(HostCommunicationParameter4.mmAddress);
 			isDerived = false;
@@ -243,11 +252,21 @@ public class TerminalManagementSystem extends System {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 		}
+
+		@Override
+		public List<NetworkAccess> getValue(TerminalManagementSystem obj) {
+			return obj.getNetworkAccess();
+		}
+
+		@Override
+		public void setValue(TerminalManagementSystem obj, List<NetworkAccess> value) {
+			obj.setNetworkAccess(value);
+		}
 	};
 	protected CardPaymentAcquiring cardPaymentAcquiring;
 	/**
-	 * Process for which a TMS trigger is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -279,7 +298,7 @@ public class TerminalManagementSystem extends System {
 	 * definition} = "Process for which a TMS trigger is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCardPaymentAcquiring = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TerminalManagementSystem, Optional<CardPaymentAcquiring>> mmCardPaymentAcquiring = new MMBusinessAssociationEnd<TerminalManagementSystem, Optional<CardPaymentAcquiring>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmObject();
@@ -292,11 +311,21 @@ public class TerminalManagementSystem extends System {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CardPaymentAcquiring.mmObject();
 		}
+
+		@Override
+		public Optional<CardPaymentAcquiring> getValue(TerminalManagementSystem obj) {
+			return obj.getCardPaymentAcquiring();
+		}
+
+		@Override
+		public void setValue(TerminalManagementSystem obj, Optional<CardPaymentAcquiring> value) {
+			obj.setCardPaymentAcquiring(value.orElse(null));
+		}
 	};
 	protected TMSContactLevelCode contactLevel;
 	/**
-	 * Level of urgency in contacting the maintenance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -332,7 +361,7 @@ public class TerminalManagementSystem extends System {
 	 * definition} = "Level of urgency in contacting the maintenance."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmContactLevel = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TerminalManagementSystem, TMSContactLevelCode> mmContactLevel = new MMBusinessAttribute<TerminalManagementSystem, TMSContactLevelCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(TMSTrigger1.mmTMSContactLevel, ATMCommand4.mmUrgency, ATMCommand7.mmUrgency);
 			isDerived = false;
@@ -345,18 +374,20 @@ public class TerminalManagementSystem extends System {
 			simpleType_lazy = () -> TMSContactLevelCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TerminalManagementSystem.class.getMethod("getContactLevel", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TMSContactLevelCode getValue(TerminalManagementSystem obj) {
+			return obj.getContactLevel();
+		}
+
+		@Override
+		public void setValue(TerminalManagementSystem obj, TMSContactLevelCode value) {
+			obj.setContactLevel(value);
 		}
 	};
 	protected ISODateTime contactDateTime;
 	/**
-	 * Date and time for calling the maintenance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -387,7 +418,7 @@ public class TerminalManagementSystem extends System {
 	 * definition} = "Date and time for calling the maintenance."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmContactDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TerminalManagementSystem, ISODateTime> mmContactDateTime = new MMBusinessAttribute<TerminalManagementSystem, ISODateTime>() {
 		{
 			derivation_lazy = () -> Arrays.asList(TMSTrigger1.mmTMSContactDateTime);
 			isDerived = false;
@@ -400,19 +431,20 @@ public class TerminalManagementSystem extends System {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TerminalManagementSystem.class.getMethod("getContactDateTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(TerminalManagementSystem obj) {
+			return obj.getContactDateTime();
+		}
+
+		@Override
+		public void setValue(TerminalManagementSystem obj, ISODateTime value) {
+			obj.setContactDateTime(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.TerminalManagerRole> terminalManagerRole;
 	/**
-	 * Identifies the party which is the terminal manager (TM) to contact for
-	 * the maintenance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -445,7 +477,7 @@ public class TerminalManagementSystem extends System {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTerminalManagerRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TerminalManagementSystem, List<TerminalManagerRole>> mmTerminalManagerRole = new MMBusinessAssociationEnd<TerminalManagementSystem, List<TerminalManagerRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmObject();
@@ -457,11 +489,21 @@ public class TerminalManagementSystem extends System {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TerminalManagerRole.mmObject();
 		}
+
+		@Override
+		public List<TerminalManagerRole> getValue(TerminalManagementSystem obj) {
+			return obj.getTerminalManagerRole();
+		}
+
+		@Override
+		public void setValue(TerminalManagementSystem obj, List<TerminalManagerRole> value) {
+			obj.setTerminalManagerRole(value);
+		}
 	};
-	protected List<com.tools20022.repository.entity.PointOfInteraction> controlledPointOfInteraction;
+	protected List<PointOfInteraction> controlledPointOfInteraction;
 	/**
-	 * Specifies each point of interaction controlled by a TMS.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -492,7 +534,7 @@ public class TerminalManagementSystem extends System {
 	 * definition} = "Specifies each point of interaction controlled by a TMS."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmControlledPointOfInteraction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TerminalManagementSystem, List<PointOfInteraction>> mmControlledPointOfInteraction = new MMBusinessAssociationEnd<TerminalManagementSystem, List<PointOfInteraction>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmObject();
@@ -500,15 +542,25 @@ public class TerminalManagementSystem extends System {
 			name = "ControlledPointOfInteraction";
 			definition = "Specifies each point of interaction controlled by a TMS.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmControllingTerminalManagementSystem;
+			opposite_lazy = () -> PointOfInteraction.mmControllingTerminalManagementSystem;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
+			type_lazy = () -> PointOfInteraction.mmObject();
+		}
+
+		@Override
+		public List<PointOfInteraction> getValue(TerminalManagementSystem obj) {
+			return obj.getControlledPointOfInteraction();
+		}
+
+		@Override
+		public void setValue(TerminalManagementSystem obj, List<PointOfInteraction> value) {
+			obj.setControlledPointOfInteraction(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.TerminalManagementAction> action;
+	protected List<TerminalManagementAction> action;
 	/**
-	 * Terminal management action to be performed by the point of interaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -542,7 +594,7 @@ public class TerminalManagementSystem extends System {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TerminalManagementSystem, List<TerminalManagementAction>> mmAction = new MMBusinessAssociationEnd<TerminalManagementSystem, List<TerminalManagementAction>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmObject();
@@ -550,22 +602,32 @@ public class TerminalManagementSystem extends System {
 			name = "Action";
 			definition = "Terminal management action to be performed by the point of interaction.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmTerminalManagementSystem;
+			opposite_lazy = () -> TerminalManagementAction.mmTerminalManagementSystem;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
+			type_lazy = () -> TerminalManagementAction.mmObject();
+		}
+
+		@Override
+		public List<TerminalManagementAction> getValue(TerminalManagementSystem obj) {
+			return obj.getAction();
+		}
+
+		@Override
+		public void setValue(TerminalManagementSystem obj, List<TerminalManagementAction> value) {
+			obj.setAction(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TerminalManagementSystem";
 				definition = "Terminal management system (TMS), has in charge the maintenance of the terminal, including monitoring, software update, configuration parameters management.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardPaymentAcquiring.mmTMSTrigger, com.tools20022.repository.entity.PointOfInteraction.mmControllingTerminalManagementSystem,
-						com.tools20022.repository.entity.AcceptorConfiguration.mmTerminalManagementSystem, com.tools20022.repository.entity.TerminalManagementAction.mmTerminalManagementSystem,
-						com.tools20022.repository.entity.NetworkAccess.mmTerminalManagementSystem, com.tools20022.repository.entity.TerminalManagerRole.mmTerminalManagementSystem);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardPaymentAcquiring.mmTMSTrigger, PointOfInteraction.mmControllingTerminalManagementSystem,
+						com.tools20022.repository.entity.AcceptorConfiguration.mmTerminalManagementSystem, TerminalManagementAction.mmTerminalManagementSystem, com.tools20022.repository.entity.NetworkAccess.mmTerminalManagementSystem,
+						com.tools20022.repository.entity.TerminalManagerRole.mmTerminalManagementSystem);
 				superType_lazy = () -> System.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TerminalManagementSystem.mmAcceptorConfiguration, com.tools20022.repository.entity.TerminalManagementSystem.mmNetworkAccess,
 						com.tools20022.repository.entity.TerminalManagementSystem.mmCardPaymentAcquiring, com.tools20022.repository.entity.TerminalManagementSystem.mmContactLevel,
@@ -584,66 +646,74 @@ public class TerminalManagementSystem extends System {
 	}
 
 	public List<AcceptorConfiguration> getAcceptorConfiguration() {
-		return acceptorConfiguration;
+		return acceptorConfiguration == null ? acceptorConfiguration = new ArrayList<>() : acceptorConfiguration;
 	}
 
-	public void setAcceptorConfiguration(List<com.tools20022.repository.entity.AcceptorConfiguration> acceptorConfiguration) {
-		this.acceptorConfiguration = acceptorConfiguration;
+	public TerminalManagementSystem setAcceptorConfiguration(List<com.tools20022.repository.entity.AcceptorConfiguration> acceptorConfiguration) {
+		this.acceptorConfiguration = Objects.requireNonNull(acceptorConfiguration);
+		return this;
 	}
 
 	public List<NetworkAccess> getNetworkAccess() {
-		return networkAccess;
+		return networkAccess == null ? networkAccess = new ArrayList<>() : networkAccess;
 	}
 
-	public void setNetworkAccess(List<com.tools20022.repository.entity.NetworkAccess> networkAccess) {
-		this.networkAccess = networkAccess;
+	public TerminalManagementSystem setNetworkAccess(List<com.tools20022.repository.entity.NetworkAccess> networkAccess) {
+		this.networkAccess = Objects.requireNonNull(networkAccess);
+		return this;
 	}
 
-	public CardPaymentAcquiring getCardPaymentAcquiring() {
-		return cardPaymentAcquiring;
+	public Optional<CardPaymentAcquiring> getCardPaymentAcquiring() {
+		return cardPaymentAcquiring == null ? Optional.empty() : Optional.of(cardPaymentAcquiring);
 	}
 
-	public void setCardPaymentAcquiring(com.tools20022.repository.entity.CardPaymentAcquiring cardPaymentAcquiring) {
+	public TerminalManagementSystem setCardPaymentAcquiring(com.tools20022.repository.entity.CardPaymentAcquiring cardPaymentAcquiring) {
 		this.cardPaymentAcquiring = cardPaymentAcquiring;
+		return this;
 	}
 
 	public TMSContactLevelCode getContactLevel() {
 		return contactLevel;
 	}
 
-	public void setContactLevel(TMSContactLevelCode contactLevel) {
-		this.contactLevel = contactLevel;
+	public TerminalManagementSystem setContactLevel(TMSContactLevelCode contactLevel) {
+		this.contactLevel = Objects.requireNonNull(contactLevel);
+		return this;
 	}
 
 	public ISODateTime getContactDateTime() {
 		return contactDateTime;
 	}
 
-	public void setContactDateTime(ISODateTime contactDateTime) {
-		this.contactDateTime = contactDateTime;
+	public TerminalManagementSystem setContactDateTime(ISODateTime contactDateTime) {
+		this.contactDateTime = Objects.requireNonNull(contactDateTime);
+		return this;
 	}
 
 	public List<TerminalManagerRole> getTerminalManagerRole() {
-		return terminalManagerRole;
+		return terminalManagerRole == null ? terminalManagerRole = new ArrayList<>() : terminalManagerRole;
 	}
 
-	public void setTerminalManagerRole(List<com.tools20022.repository.entity.TerminalManagerRole> terminalManagerRole) {
-		this.terminalManagerRole = terminalManagerRole;
+	public TerminalManagementSystem setTerminalManagerRole(List<com.tools20022.repository.entity.TerminalManagerRole> terminalManagerRole) {
+		this.terminalManagerRole = Objects.requireNonNull(terminalManagerRole);
+		return this;
 	}
 
 	public List<PointOfInteraction> getControlledPointOfInteraction() {
-		return controlledPointOfInteraction;
+		return controlledPointOfInteraction == null ? controlledPointOfInteraction = new ArrayList<>() : controlledPointOfInteraction;
 	}
 
-	public void setControlledPointOfInteraction(List<com.tools20022.repository.entity.PointOfInteraction> controlledPointOfInteraction) {
-		this.controlledPointOfInteraction = controlledPointOfInteraction;
+	public TerminalManagementSystem setControlledPointOfInteraction(List<PointOfInteraction> controlledPointOfInteraction) {
+		this.controlledPointOfInteraction = Objects.requireNonNull(controlledPointOfInteraction);
+		return this;
 	}
 
 	public List<TerminalManagementAction> getAction() {
-		return action;
+		return action == null ? action = new ArrayList<>() : action;
 	}
 
-	public void setAction(List<com.tools20022.repository.entity.TerminalManagementAction> action) {
-		this.action = action;
+	public TerminalManagementSystem setAction(List<TerminalManagementAction> action) {
+		this.action = Objects.requireNonNull(action);
+		return this;
 	}
 }

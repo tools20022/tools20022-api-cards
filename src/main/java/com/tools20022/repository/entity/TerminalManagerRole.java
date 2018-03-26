@@ -22,10 +22,13 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.SystemPartyRole;
+import com.tools20022.repository.entity.TerminalManagementSystem;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Identifies the party which is the terminal manager (TM) to contact for the
@@ -60,8 +63,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,8 +82,8 @@ public class TerminalManagerRole extends SystemPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.TerminalManagementSystem> terminalManagementSystem;
 	/**
-	 * Identifies the system for which a party plays the terminal manager role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -114,7 +117,7 @@ public class TerminalManagerRole extends SystemPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTerminalManagementSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TerminalManagerRole, List<TerminalManagementSystem>> mmTerminalManagementSystem = new MMBusinessAssociationEnd<TerminalManagerRole, List<TerminalManagementSystem>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagerRole.mmObject();
@@ -126,12 +129,22 @@ public class TerminalManagerRole extends SystemPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmObject();
 		}
+
+		@Override
+		public List<TerminalManagementSystem> getValue(TerminalManagerRole obj) {
+			return obj.getTerminalManagementSystem();
+		}
+
+		@Override
+		public void setValue(TerminalManagerRole obj, List<TerminalManagementSystem> value) {
+			obj.setTerminalManagementSystem(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TerminalManagerRole";
 				definition = "Identifies the party which is the terminal manager (TM) to contact for the maintenance.";
@@ -149,10 +162,11 @@ public class TerminalManagerRole extends SystemPartyRole {
 	}
 
 	public List<TerminalManagementSystem> getTerminalManagementSystem() {
-		return terminalManagementSystem;
+		return terminalManagementSystem == null ? terminalManagementSystem = new ArrayList<>() : terminalManagementSystem;
 	}
 
-	public void setTerminalManagementSystem(List<com.tools20022.repository.entity.TerminalManagementSystem> terminalManagementSystem) {
-		this.terminalManagementSystem = terminalManagementSystem;
+	public TerminalManagerRole setTerminalManagementSystem(List<com.tools20022.repository.entity.TerminalManagementSystem> terminalManagementSystem) {
+		this.terminalManagementSystem = Objects.requireNonNull(terminalManagementSystem);
+		return this;
 	}
 }

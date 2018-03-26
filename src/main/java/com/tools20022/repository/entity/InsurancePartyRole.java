@@ -21,11 +21,14 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.InsuranceCertificate;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Role played by a party in the context of insurance.
@@ -58,8 +61,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,8 +78,8 @@ public class InsurancePartyRole extends Role {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.InsuranceCertificate> insuranceCertificate;
 	/**
-	 * Identifies the certificate for which a party plays a role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,7 +112,7 @@ public class InsurancePartyRole extends Role {
 	 * "Identifies the certificate for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInsuranceCertificate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InsurancePartyRole, List<InsuranceCertificate>> mmInsuranceCertificate = new MMBusinessAssociationEnd<InsurancePartyRole, List<InsuranceCertificate>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InsurancePartyRole.mmObject();
@@ -121,12 +124,22 @@ public class InsurancePartyRole extends Role {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InsuranceCertificate.mmObject();
 		}
+
+		@Override
+		public List<InsuranceCertificate> getValue(InsurancePartyRole obj) {
+			return obj.getInsuranceCertificate();
+		}
+
+		@Override
+		public void setValue(InsurancePartyRole obj, List<InsuranceCertificate> value) {
+			obj.setInsuranceCertificate(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InsurancePartyRole";
 				definition = "Role played by a party in the context of insurance.";
@@ -144,10 +157,11 @@ public class InsurancePartyRole extends Role {
 	}
 
 	public List<InsuranceCertificate> getInsuranceCertificate() {
-		return insuranceCertificate;
+		return insuranceCertificate == null ? insuranceCertificate = new ArrayList<>() : insuranceCertificate;
 	}
 
-	public void setInsuranceCertificate(List<com.tools20022.repository.entity.InsuranceCertificate> insuranceCertificate) {
-		this.insuranceCertificate = insuranceCertificate;
+	public InsurancePartyRole setInsuranceCertificate(List<com.tools20022.repository.entity.InsuranceCertificate> insuranceCertificate) {
+		this.insuranceCertificate = Objects.requireNonNull(insuranceCertificate);
+		return this;
 	}
 }

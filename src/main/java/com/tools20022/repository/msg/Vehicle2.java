@@ -25,6 +25,8 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,15 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * Vehicle1}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Vehicle2", propOrder = {"type", "entryMode", "data"})
 public class Vehicle2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp")
 	protected Max35Text type;
 	/**
-	 * Type of information related to the vehicle.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -97,9 +100,9 @@ public class Vehicle2 {
 	 * definition} = "Type of information related to the vehicle."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Vehicle2, Optional<Max35Text>> mmType = new MMMessageAttribute<Vehicle2, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> Vehicle2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Vehicle2.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -109,11 +112,22 @@ public class Vehicle2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(Vehicle2 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(Vehicle2 obj, Optional<Max35Text> value) {
+			obj.setType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NtryMd")
 	protected CardDataReading5Code entryMode;
 	/**
-	 * Entry mode of the information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -143,9 +157,9 @@ public class Vehicle2 {
 	 * Vehicle1.mmVehicleTagEntryMode}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEntryMode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Vehicle2, Optional<CardDataReading5Code>> mmEntryMode = new MMMessageAttribute<Vehicle2, Optional<CardDataReading5Code>>() {
 		{
-			componentContext_lazy = () -> Vehicle2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Vehicle2.mmObject();
 			isDerived = false;
 			xmlTag = "NtryMd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -156,11 +170,22 @@ public class Vehicle2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> CardDataReading5Code.mmObject();
 		}
+
+		@Override
+		public Optional<CardDataReading5Code> getValue(Vehicle2 obj) {
+			return obj.getEntryMode();
+		}
+
+		@Override
+		public void setValue(Vehicle2 obj, Optional<CardDataReading5Code> value) {
+			obj.setEntryMode(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Data", required = true)
 	protected Max35Text data;
 	/**
-	 * Information related to the vehicle.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -189,9 +214,9 @@ public class Vehicle2 {
 	 * Vehicle1.mmAdditionalVehicleData}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmData = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Vehicle2, Max35Text> mmData = new MMMessageAttribute<Vehicle2, Max35Text>() {
 		{
-			componentContext_lazy = () -> Vehicle2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Vehicle2.mmObject();
 			isDerived = false;
 			xmlTag = "Data";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -202,13 +227,23 @@ public class Vehicle2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(Vehicle2 obj) {
+			return obj.getData();
+		}
+
+		@Override
+		public void setValue(Vehicle2 obj, Max35Text value) {
+			obj.setData(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Vehicle2.mmType, Vehicle2.mmEntryMode, Vehicle2.mmData);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Vehicle2.mmType, com.tools20022.repository.msg.Vehicle2.mmEntryMode, com.tools20022.repository.msg.Vehicle2.mmData);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Vehicle2";
 				definition = "Additional information related to a vehicle.";
@@ -218,30 +253,30 @@ public class Vehicle2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp")
-	public Max35Text getType() {
-		return type;
+	public Optional<Max35Text> getType() {
+		return type == null ? Optional.empty() : Optional.of(type);
 	}
 
-	public void setType(Max35Text type) {
+	public Vehicle2 setType(Max35Text type) {
 		this.type = type;
+		return this;
 	}
 
-	@XmlElement(name = "NtryMd")
-	public CardDataReading5Code getEntryMode() {
-		return entryMode;
+	public Optional<CardDataReading5Code> getEntryMode() {
+		return entryMode == null ? Optional.empty() : Optional.of(entryMode);
 	}
 
-	public void setEntryMode(CardDataReading5Code entryMode) {
+	public Vehicle2 setEntryMode(CardDataReading5Code entryMode) {
 		this.entryMode = entryMode;
+		return this;
 	}
 
-	@XmlElement(name = "Data", required = true)
 	public Max35Text getData() {
 		return data;
 	}
 
-	public void setData(Max35Text data) {
-		this.data = data;
+	public Vehicle2 setData(Max35Text data) {
+		this.data = Objects.requireNonNull(data);
+		return this;
 	}
 }

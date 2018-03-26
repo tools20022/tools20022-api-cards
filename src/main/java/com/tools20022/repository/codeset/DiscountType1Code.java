@@ -39,19 +39,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DiscountType1Code#QuantityDiscount
- * DiscountType1Code.mmQuantityDiscount}</li>
+ * DiscountType1Code.QuantityDiscount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DiscountType1Code#PromotionalDiscount
- * DiscountType1Code.mmPromotionalDiscount}</li>
+ * DiscountType1Code.PromotionalDiscount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DiscountType1Code#PricingDiscount
- * DiscountType1Code.mmPricingDiscount}</li>
+ * DiscountType1Code.PricingDiscount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DiscountType1Code#SpecialAgreementDiscount
- * DiscountType1Code.mmSpecialAgreementDiscount}</li>
+ * DiscountType1Code.SpecialAgreementDiscount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DiscountType1Code#EndOfRangeDiscount
- * DiscountType1Code.mmEndOfRangeDiscount}</li>
+ * DiscountType1Code.EndOfRangeDiscount}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -60,8 +60,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -212,7 +212,7 @@ public class DiscountType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("QUAN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DiscountType1Code";

@@ -37,18 +37,18 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMNoteType1Code#All
- * ATMNoteType1Code.mmAll}</li>
+ * ATMNoteType1Code.All}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMNoteType1Code#Counterfeit
- * ATMNoteType1Code.mmCounterfeit}</li>
+ * ATMNoteType1Code.Counterfeit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMNoteType1Code#Individual
- * ATMNoteType1Code.mmIndividual}</li>
+ * ATMNoteType1Code.Individual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMNoteType1Code#SuspectedCounterfeit
- * ATMNoteType1Code.mmSuspectedCounterfeit}</li>
+ * ATMNoteType1Code.SuspectedCounterfeit}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMNoteType1Code#Unfit
- * ATMNoteType1Code.mmUnfit}</li>
+ * ATMNoteType1Code.Unfit}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -57,8 +57,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -201,7 +201,7 @@ public class ATMNoteType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMNoteType1Code";
 				definition = "Type of items the cash-in cassette.";

@@ -20,10 +20,13 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.CorporateActionEvent;
+import com.tools20022.repository.entity.DateTimePeriod;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Form of lawsuit in which a group of shareholders collectively bring a claim
@@ -74,8 +77,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -93,8 +96,8 @@ public class ClassAction {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text classActionNumber;
 	/**
-	 * Reference assigned by a court to a class action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -116,7 +119,7 @@ public class ClassAction {
 	 * definition} = "Reference assigned by a court to a class action."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmClassActionNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ClassAction, Max35Text> mmClassActionNumber = new MMBusinessAttribute<ClassAction, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
@@ -128,18 +131,20 @@ public class ClassAction {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ClassAction.class.getMethod("getClassActionNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(ClassAction obj) {
+			return obj.getClassActionNumber();
+		}
+
+		@Override
+		public void setValue(ClassAction obj, Max35Text value) {
+			obj.setClassActionNumber(value);
 		}
 	};
 	protected ISODateTime leadPlaintiffDeadline;
 	/**
-	 * Last day an investor can become a lead plaintiff.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -161,7 +166,7 @@ public class ClassAction {
 	 * definition} = "Last day an investor can become a lead plaintiff."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLeadPlaintiffDeadline = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ClassAction, ISODateTime> mmLeadPlaintiffDeadline = new MMBusinessAttribute<ClassAction, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
@@ -173,18 +178,20 @@ public class ClassAction {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ClassAction.class.getMethod("getLeadPlaintiffDeadline", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(ClassAction obj) {
+			return obj.getLeadPlaintiffDeadline();
+		}
+
+		@Override
+		public void setValue(ClassAction obj, ISODateTime value) {
+			obj.setLeadPlaintiffDeadline(value);
 		}
 	};
 	protected ISODateTime courtApprovalDate;
 	/**
-	 * Date upon which the High Court provided approval.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -206,7 +213,7 @@ public class ClassAction {
 	 * definition} = "Date upon which the High Court provided approval."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCourtApprovalDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ClassAction, ISODateTime> mmCourtApprovalDate = new MMBusinessAttribute<ClassAction, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
@@ -218,20 +225,20 @@ public class ClassAction {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ClassAction.class.getMethod("getCourtApprovalDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(ClassAction obj) {
+			return obj.getCourtApprovalDate();
+		}
+
+		@Override
+		public void setValue(ClassAction obj, ISODateTime value) {
+			obj.setCourtApprovalDate(value);
 		}
 	};
 	protected DateTimePeriod claimPeriod;
 	/**
-	 * Period assigned by the court in a class action. It determines the
-	 * client's eligible transactions that will be included in the class action
-	 * and used to determine the resulting entitlement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -263,7 +270,7 @@ public class ClassAction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmClaimPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ClassAction, DateTimePeriod> mmClaimPeriod = new MMBusinessAssociationEnd<ClassAction, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
@@ -272,15 +279,25 @@ public class ClassAction {
 			definition = "Period assigned by the court in a class action. It determines the client's eligible transactions that will be included in the class action and used to determine the resulting entitlement.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmClassAction;
+			opposite_lazy = () -> DateTimePeriod.mmClassAction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(ClassAction obj) {
+			return obj.getClaimPeriod();
+		}
+
+		@Override
+		public void setValue(ClassAction obj, DateTimePeriod value) {
+			obj.setClaimPeriod(value);
 		}
 	};
 	protected ISODateTime filingDate;
 	/**
-	 * Date on which the action was filed at the applicable court.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -303,7 +320,7 @@ public class ClassAction {
 	 * "Date on which the action was filed at the applicable court."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFilingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ClassAction, ISODateTime> mmFilingDate = new MMBusinessAttribute<ClassAction, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
@@ -315,19 +332,20 @@ public class ClassAction {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ClassAction.class.getMethod("getFilingDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(ClassAction obj) {
+			return obj.getFilingDate();
+		}
+
+		@Override
+		public void setValue(ClassAction obj, ISODateTime value) {
+			obj.setFilingDate(value);
 		}
 	};
 	protected ISODateTime hearingDate;
 	/**
-	 * Date for the hearing between the plaintiff and defendant, as set by the
-	 * court.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -351,7 +369,7 @@ public class ClassAction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmHearingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ClassAction, ISODateTime> mmHearingDate = new MMBusinessAttribute<ClassAction, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
@@ -363,18 +381,20 @@ public class ClassAction {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ClassAction.class.getMethod("getHearingDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(ClassAction obj) {
+			return obj.getHearingDate();
+		}
+
+		@Override
+		public void setValue(ClassAction obj, ISODateTime value) {
+			obj.setHearingDate(value);
 		}
 	};
 	protected CorporateActionEvent corporateEvent;
 	/**
-	 * Corporate event for which class action is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -405,7 +425,7 @@ public class ClassAction {
 	 * definition} = "Corporate event for which class action is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCorporateEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ClassAction, Optional<CorporateActionEvent>> mmCorporateEvent = new MMBusinessAssociationEnd<ClassAction, Optional<CorporateActionEvent>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ClassAction.mmObject();
@@ -414,20 +434,30 @@ public class ClassAction {
 			definition = "Corporate event for which class action is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmRelatedClassAction;
+			opposite_lazy = () -> CorporateActionEvent.mmRelatedClassAction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
+			type_lazy = () -> CorporateActionEvent.mmObject();
+		}
+
+		@Override
+		public Optional<CorporateActionEvent> getValue(ClassAction obj) {
+			return obj.getCorporateEvent();
+		}
+
+		@Override
+		public void setValue(ClassAction obj, Optional<CorporateActionEvent> value) {
+			obj.setCorporateEvent(value.orElse(null));
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClassAction";
 				definition = "Form of lawsuit in which a group of shareholders collectively bring a claim to court, mainly because it would be too expensive for each individual shareholder to launch their own lawsuit.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DateTimePeriod.mmClassAction, com.tools20022.repository.entity.CorporateActionEvent.mmRelatedClassAction);
+				associationDomain_lazy = () -> Arrays.asList(DateTimePeriod.mmClassAction, CorporateActionEvent.mmRelatedClassAction);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ClassAction.mmClassActionNumber, com.tools20022.repository.entity.ClassAction.mmLeadPlaintiffDeadline,
 						com.tools20022.repository.entity.ClassAction.mmCourtApprovalDate, com.tools20022.repository.entity.ClassAction.mmClaimPeriod, com.tools20022.repository.entity.ClassAction.mmFilingDate,
 						com.tools20022.repository.entity.ClassAction.mmHearingDate, com.tools20022.repository.entity.ClassAction.mmCorporateEvent);
@@ -445,55 +475,62 @@ public class ClassAction {
 		return classActionNumber;
 	}
 
-	public void setClassActionNumber(Max35Text classActionNumber) {
-		this.classActionNumber = classActionNumber;
+	public ClassAction setClassActionNumber(Max35Text classActionNumber) {
+		this.classActionNumber = Objects.requireNonNull(classActionNumber);
+		return this;
 	}
 
 	public ISODateTime getLeadPlaintiffDeadline() {
 		return leadPlaintiffDeadline;
 	}
 
-	public void setLeadPlaintiffDeadline(ISODateTime leadPlaintiffDeadline) {
-		this.leadPlaintiffDeadline = leadPlaintiffDeadline;
+	public ClassAction setLeadPlaintiffDeadline(ISODateTime leadPlaintiffDeadline) {
+		this.leadPlaintiffDeadline = Objects.requireNonNull(leadPlaintiffDeadline);
+		return this;
 	}
 
 	public ISODateTime getCourtApprovalDate() {
 		return courtApprovalDate;
 	}
 
-	public void setCourtApprovalDate(ISODateTime courtApprovalDate) {
-		this.courtApprovalDate = courtApprovalDate;
+	public ClassAction setCourtApprovalDate(ISODateTime courtApprovalDate) {
+		this.courtApprovalDate = Objects.requireNonNull(courtApprovalDate);
+		return this;
 	}
 
 	public DateTimePeriod getClaimPeriod() {
 		return claimPeriod;
 	}
 
-	public void setClaimPeriod(com.tools20022.repository.entity.DateTimePeriod claimPeriod) {
-		this.claimPeriod = claimPeriod;
+	public ClassAction setClaimPeriod(DateTimePeriod claimPeriod) {
+		this.claimPeriod = Objects.requireNonNull(claimPeriod);
+		return this;
 	}
 
 	public ISODateTime getFilingDate() {
 		return filingDate;
 	}
 
-	public void setFilingDate(ISODateTime filingDate) {
-		this.filingDate = filingDate;
+	public ClassAction setFilingDate(ISODateTime filingDate) {
+		this.filingDate = Objects.requireNonNull(filingDate);
+		return this;
 	}
 
 	public ISODateTime getHearingDate() {
 		return hearingDate;
 	}
 
-	public void setHearingDate(ISODateTime hearingDate) {
-		this.hearingDate = hearingDate;
+	public ClassAction setHearingDate(ISODateTime hearingDate) {
+		this.hearingDate = Objects.requireNonNull(hearingDate);
+		return this;
 	}
 
-	public CorporateActionEvent getCorporateEvent() {
-		return corporateEvent;
+	public Optional<CorporateActionEvent> getCorporateEvent() {
+		return corporateEvent == null ? Optional.empty() : Optional.of(corporateEvent);
 	}
 
-	public void setCorporateEvent(com.tools20022.repository.entity.CorporateActionEvent corporateEvent) {
+	public ClassAction setCorporateEvent(CorporateActionEvent corporateEvent) {
 		this.corporateEvent = corporateEvent;
+		return this;
 	}
 }

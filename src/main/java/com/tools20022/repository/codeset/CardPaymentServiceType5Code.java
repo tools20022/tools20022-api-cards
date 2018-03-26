@@ -38,58 +38,58 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType5Code#Balance
- * CardPaymentServiceType5Code.mmBalance}</li>
+ * CardPaymentServiceType5Code.Balance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType5Code#CardActivation
- * CardPaymentServiceType5Code.mmCardActivation}</li>
+ * CardPaymentServiceType5Code.CardActivation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType5Code#CardPayment
- * CardPaymentServiceType5Code.mmCardPayment}</li>
+ * CardPaymentServiceType5Code.CardPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType5Code#CardsFundTransferPush
- * CardPaymentServiceType5Code.mmCardsFundTransferPush}</li>
+ * CardPaymentServiceType5Code.CardsFundTransferPush}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType5Code#CardVerification
- * CardPaymentServiceType5Code.mmCardVerification}</li>
+ * CardPaymentServiceType5Code.CardVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType5Code#CashAdvance
- * CardPaymentServiceType5Code.mmCashAdvance}</li>
+ * CardPaymentServiceType5Code.CashAdvance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType5Code#CashDeposit
- * CardPaymentServiceType5Code.mmCashDeposit}</li>
+ * CardPaymentServiceType5Code.CashDeposit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType5Code#DeferredPayment
- * CardPaymentServiceType5Code.mmDeferredPayment}</li>
+ * CardPaymentServiceType5Code.DeferredPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType5Code#Loading
- * CardPaymentServiceType5Code.mmLoading}</li>
+ * CardPaymentServiceType5Code.Loading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType5Code#OriginalCredit
- * CardPaymentServiceType5Code.mmOriginalCredit}</li>
+ * CardPaymentServiceType5Code.OriginalCredit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType5Code#PINChange
- * CardPaymentServiceType5Code.mmPINChange}</li>
+ * CardPaymentServiceType5Code.PINChange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType5Code#QuasiCash
- * CardPaymentServiceType5Code.mmQuasiCash}</li>
+ * CardPaymentServiceType5Code.QuasiCash}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType5Code#Refund
- * CardPaymentServiceType5Code.mmRefund}</li>
+ * CardPaymentServiceType5Code.Refund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType5Code#Reservation
- * CardPaymentServiceType5Code.mmReservation}</li>
+ * CardPaymentServiceType5Code.Reservation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType5Code#ValidityCheck
- * CardPaymentServiceType5Code.mmValidityCheck}</li>
+ * CardPaymentServiceType5Code.ValidityCheck}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType5Code#Unloading
- * CardPaymentServiceType5Code.mmUnloading}</li>
+ * CardPaymentServiceType5Code.Unloading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType5Code#CardsFundTransfer
- * CardPaymentServiceType5Code.mmCardsFundTransfer}</li>
+ * CardPaymentServiceType5Code.CardsFundTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType5Code#CardsFundTransferPull
- * CardPaymentServiceType5Code.mmCardsFundTransferPull}</li>
+ * CardPaymentServiceType5Code.CardsFundTransferPull}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -98,8 +98,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -560,7 +560,7 @@ public class CardPaymentServiceType5Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CRDP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPaymentServiceType5Code";

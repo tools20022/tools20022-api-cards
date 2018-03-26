@@ -22,8 +22,12 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.cain.AcquirerFinancialInitiation;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CardTransaction5;
+import com.tools20022.repository.msg.CardTransactionContext1;
+import com.tools20022.repository.msg.CardTransactionEnvironment1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,8 +65,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,15 +77,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Information related to financial authorisation."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AcquirerFinancialInitiation1", propOrder = {"environment", "context", "transaction"})
 public class AcquirerFinancialInitiation1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Envt", required = true)
 	protected CardTransactionEnvironment1 environment;
 	/**
-	 * Environment of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -106,9 +111,9 @@ public class AcquirerFinancialInitiation1 {
 	 * definition} = "Environment of the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEnvironment = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AcquirerFinancialInitiation1, CardTransactionEnvironment1> mmEnvironment = new MMMessageAssociationEnd<AcquirerFinancialInitiation1, CardTransactionEnvironment1>() {
 		{
-			componentContext_lazy = () -> AcquirerFinancialInitiation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcquirerFinancialInitiation1.mmObject();
 			isDerived = false;
 			xmlTag = "Envt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -117,13 +122,24 @@ public class AcquirerFinancialInitiation1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CardTransactionEnvironment1.mmObject();
+			type_lazy = () -> CardTransactionEnvironment1.mmObject();
+		}
+
+		@Override
+		public CardTransactionEnvironment1 getValue(AcquirerFinancialInitiation1 obj) {
+			return obj.getEnvironment();
+		}
+
+		@Override
+		public void setValue(AcquirerFinancialInitiation1 obj, CardTransactionEnvironment1 value) {
+			obj.setEnvironment(value);
 		}
 	};
+	@XmlElement(name = "Cntxt", required = true)
 	protected CardTransactionContext1 context;
 	/**
-	 * Context in which the transaction is performed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -148,9 +164,9 @@ public class AcquirerFinancialInitiation1 {
 	 * definition} = "Context in which the transaction is performed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmContext = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AcquirerFinancialInitiation1, CardTransactionContext1> mmContext = new MMMessageAssociationEnd<AcquirerFinancialInitiation1, CardTransactionContext1>() {
 		{
-			componentContext_lazy = () -> AcquirerFinancialInitiation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcquirerFinancialInitiation1.mmObject();
 			isDerived = false;
 			xmlTag = "Cntxt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -159,14 +175,24 @@ public class AcquirerFinancialInitiation1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CardTransactionContext1.mmObject();
+			type_lazy = () -> CardTransactionContext1.mmObject();
+		}
+
+		@Override
+		public CardTransactionContext1 getValue(AcquirerFinancialInitiation1 obj) {
+			return obj.getContext();
+		}
+
+		@Override
+		public void setValue(AcquirerFinancialInitiation1 obj, CardTransactionContext1 value) {
+			obj.setContext(value);
 		}
 	};
+	@XmlElement(name = "Tx", required = true)
 	protected CardTransaction5 transaction;
 	/**
-	 * Card transaction for which the financial authorisation has been
-	 * requested.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -192,9 +218,9 @@ public class AcquirerFinancialInitiation1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransaction = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AcquirerFinancialInitiation1, CardTransaction5> mmTransaction = new MMMessageAssociationEnd<AcquirerFinancialInitiation1, CardTransaction5>() {
 		{
-			componentContext_lazy = () -> AcquirerFinancialInitiation1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcquirerFinancialInitiation1.mmObject();
 			isDerived = false;
 			xmlTag = "Tx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -203,16 +229,27 @@ public class AcquirerFinancialInitiation1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CardTransaction5.mmObject();
+			type_lazy = () -> CardTransaction5.mmObject();
+		}
+
+		@Override
+		public CardTransaction5 getValue(AcquirerFinancialInitiation1 obj) {
+			return obj.getTransaction();
+		}
+
+		@Override
+		public void setValue(AcquirerFinancialInitiation1 obj, CardTransaction5 value) {
+			obj.setTransaction(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AcquirerFinancialInitiation1.mmEnvironment, AcquirerFinancialInitiation1.mmContext, AcquirerFinancialInitiation1.mmTransaction);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AcquirerFinancialInitiation1.mmEnvironment, com.tools20022.repository.msg.AcquirerFinancialInitiation1.mmContext,
+						com.tools20022.repository.msg.AcquirerFinancialInitiation1.mmTransaction);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AcquirerFinancialInitiation.mmFinancialInitiation);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AcquirerFinancialInitiation1";
 				definition = "Information related to financial authorisation.";
@@ -221,30 +258,30 @@ public class AcquirerFinancialInitiation1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Envt", required = true)
 	public CardTransactionEnvironment1 getEnvironment() {
 		return environment;
 	}
 
-	public void setEnvironment(com.tools20022.repository.msg.CardTransactionEnvironment1 environment) {
-		this.environment = environment;
+	public AcquirerFinancialInitiation1 setEnvironment(CardTransactionEnvironment1 environment) {
+		this.environment = Objects.requireNonNull(environment);
+		return this;
 	}
 
-	@XmlElement(name = "Cntxt", required = true)
 	public CardTransactionContext1 getContext() {
 		return context;
 	}
 
-	public void setContext(com.tools20022.repository.msg.CardTransactionContext1 context) {
-		this.context = context;
+	public AcquirerFinancialInitiation1 setContext(CardTransactionContext1 context) {
+		this.context = Objects.requireNonNull(context);
+		return this;
 	}
 
-	@XmlElement(name = "Tx", required = true)
 	public CardTransaction5 getTransaction() {
 		return transaction;
 	}
 
-	public void setTransaction(com.tools20022.repository.msg.CardTransaction5 transaction) {
-		this.transaction = transaction;
+	public AcquirerFinancialInitiation1 setTransaction(CardTransaction5 transaction) {
+		this.transaction = Objects.requireNonNull(transaction);
+		return this;
 	}
 }

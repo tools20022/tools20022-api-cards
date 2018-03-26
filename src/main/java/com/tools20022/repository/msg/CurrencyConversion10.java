@@ -25,8 +25,11 @@ import com.tools20022.repository.codeset.CurrencyConversionResponse2Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.CurrencyExchange;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CurrencyConversion9;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +61,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,15 +75,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CurrencyConversion10", propOrder = {"result", "resultReason", "conversion"})
 public class CurrencyConversion10 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Rslt", required = true)
 	protected CurrencyConversionResponse2Code result;
 	/**
-	 * Result of a requested currency conversion.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,9 +110,9 @@ public class CurrencyConversion10 {
 	 * definition} = "Result of a requested currency conversion."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmResult = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CurrencyConversion10, CurrencyConversionResponse2Code> mmResult = new MMMessageAttribute<CurrencyConversion10, CurrencyConversionResponse2Code>() {
 		{
-			componentContext_lazy = () -> CurrencyConversion10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyConversion10.mmObject();
 			isDerived = false;
 			xmlTag = "Rslt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,11 +122,22 @@ public class CurrencyConversion10 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyConversionResponse2Code.mmObject();
 		}
+
+		@Override
+		public CurrencyConversionResponse2Code getValue(CurrencyConversion10 obj) {
+			return obj.getResult();
+		}
+
+		@Override
+		public void setValue(CurrencyConversion10 obj, CurrencyConversionResponse2Code value) {
+			obj.setResult(value);
+		}
 	};
+	@XmlElement(name = "RsltRsn")
 	protected Max35Text resultReason;
 	/**
-	 * Plain text explaining the result of the currency conversion request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -145,26 +160,37 @@ public class CurrencyConversion10 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Plain text explaining the result of the  currency conversion request."</li>
+	 * "Plain text explaining the result of the currency conversion request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmResultReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CurrencyConversion10, Optional<Max35Text>> mmResultReason = new MMMessageAttribute<CurrencyConversion10, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> CurrencyConversion10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyConversion10.mmObject();
 			isDerived = false;
 			xmlTag = "RsltRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ResultReason";
-			definition = "Plain text explaining the result of the  currency conversion request.";
+			definition = "Plain text explaining the result of the currency conversion request.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(CurrencyConversion10 obj) {
+			return obj.getResultReason();
+		}
+
+		@Override
+		public void setValue(CurrencyConversion10 obj, Optional<Max35Text> value) {
+			obj.setResultReason(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Convs")
 	protected CurrencyConversion9 conversion;
 	/**
-	 * Information about the conversion of currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -188,9 +214,9 @@ public class CurrencyConversion10 {
 	 * definition} = "Information about the conversion of currency."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmConversion = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CurrencyConversion10, Optional<CurrencyConversion9>> mmConversion = new MMMessageAssociationEnd<CurrencyConversion10, Optional<CurrencyConversion9>>() {
 		{
-			componentContext_lazy = () -> CurrencyConversion10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CurrencyConversion10.mmObject();
 			isDerived = false;
 			xmlTag = "Convs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -199,16 +225,27 @@ public class CurrencyConversion10 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CurrencyConversion9.mmObject();
+			type_lazy = () -> CurrencyConversion9.mmObject();
+		}
+
+		@Override
+		public Optional<CurrencyConversion9> getValue(CurrencyConversion10 obj) {
+			return obj.getConversion();
+		}
+
+		@Override
+		public void setValue(CurrencyConversion10 obj, Optional<CurrencyConversion9> value) {
+			obj.setConversion(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CurrencyConversion10.mmResult, CurrencyConversion10.mmResultReason, CurrencyConversion10.mmConversion);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CurrencyConversion10.mmResult, com.tools20022.repository.msg.CurrencyConversion10.mmResultReason,
+						com.tools20022.repository.msg.CurrencyConversion10.mmConversion);
 				trace_lazy = () -> CurrencyExchange.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CurrencyConversion10";
 				definition = "Conversion between the currency of a card acceptor and the currency of a card issuer, provided by a dedicated service provider.";
@@ -217,30 +254,30 @@ public class CurrencyConversion10 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Rslt", required = true)
 	public CurrencyConversionResponse2Code getResult() {
 		return result;
 	}
 
-	public void setResult(CurrencyConversionResponse2Code result) {
-		this.result = result;
+	public CurrencyConversion10 setResult(CurrencyConversionResponse2Code result) {
+		this.result = Objects.requireNonNull(result);
+		return this;
 	}
 
-	@XmlElement(name = "RsltRsn")
-	public Max35Text getResultReason() {
-		return resultReason;
+	public Optional<Max35Text> getResultReason() {
+		return resultReason == null ? Optional.empty() : Optional.of(resultReason);
 	}
 
-	public void setResultReason(Max35Text resultReason) {
+	public CurrencyConversion10 setResultReason(Max35Text resultReason) {
 		this.resultReason = resultReason;
+		return this;
 	}
 
-	@XmlElement(name = "Convs")
-	public CurrencyConversion9 getConversion() {
-		return conversion;
+	public Optional<CurrencyConversion9> getConversion() {
+		return conversion == null ? Optional.empty() : Optional.of(conversion);
 	}
 
-	public void setConversion(com.tools20022.repository.msg.CurrencyConversion9 conversion) {
+	public CurrencyConversion10 setConversion(CurrencyConversion9 conversion) {
 		this.conversion = conversion;
+		return this;
 	}
 }

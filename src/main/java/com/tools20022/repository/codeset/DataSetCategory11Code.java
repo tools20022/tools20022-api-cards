@@ -38,37 +38,37 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#AcquirerProtocolParameters
- * DataSetCategory11Code.mmAcquirerProtocolParameters}</li>
+ * DataSetCategory11Code.AcquirerProtocolParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#ApplicationParameters
- * DataSetCategory11Code.mmApplicationParameters}</li>
+ * DataSetCategory11Code.ApplicationParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#ApplicationParametersSubsetCreation
- * DataSetCategory11Code.mmApplicationParametersSubsetCreation}</li>
+ * DataSetCategory11Code.ApplicationParametersSubsetCreation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#KeyDownload
- * DataSetCategory11Code.mmKeyDownload}</li>
+ * DataSetCategory11Code.KeyDownload}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#KeyManagement
- * DataSetCategory11Code.mmKeyManagement}</li>
+ * DataSetCategory11Code.KeyManagement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#Reporting
- * DataSetCategory11Code.mmReporting}</li>
+ * DataSetCategory11Code.Reporting}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#SoftwareModule
- * DataSetCategory11Code.mmSoftwareModule}</li>
+ * DataSetCategory11Code.SoftwareModule}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#TMSProtocolParameters
- * DataSetCategory11Code.mmTMSProtocolParameters}</li>
+ * DataSetCategory11Code.TMSProtocolParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#MerchantParameters
- * DataSetCategory11Code.mmMerchantParameters}</li>
+ * DataSetCategory11Code.MerchantParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#TerminalParameters
- * DataSetCategory11Code.mmTerminalParameters}</li>
+ * DataSetCategory11Code.TerminalParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#CertificateParameters
- * DataSetCategory11Code.mmCertificateParameters}</li>
+ * DataSetCategory11Code.CertificateParameters}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -77,8 +77,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -115,7 +115,7 @@ public class DataSetCategory11Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#AcquirerProtocolParameters
-	 * DataSetCategory6Code.mmAcquirerProtocolParameters}</li>
+	 * DataSetCategory6Code.AcquirerProtocolParameters}</li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code AcquirerProtocolParameters = new DataSetCategory11Code() {
@@ -145,7 +145,7 @@ public class DataSetCategory11Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#ApplicationParameters
-	 * DataSetCategory6Code.mmApplicationParameters}</li>
+	 * DataSetCategory6Code.ApplicationParameters}</li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code ApplicationParameters = new DataSetCategory11Code() {
@@ -175,7 +175,7 @@ public class DataSetCategory11Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#ApplicationParametersSubsetCreation
-	 * DataSetCategory6Code.mmApplicationParametersSubsetCreation}</li>
+	 * DataSetCategory6Code.ApplicationParametersSubsetCreation}</li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code ApplicationParametersSubsetCreation = new DataSetCategory11Code() {
@@ -205,7 +205,7 @@ public class DataSetCategory11Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#KeyDownload
-	 * DataSetCategory6Code.mmKeyDownload}</li>
+	 * DataSetCategory6Code.KeyDownload}</li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code KeyDownload = new DataSetCategory11Code() {
@@ -235,7 +235,7 @@ public class DataSetCategory11Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#KeyManagement
-	 * DataSetCategory6Code.mmKeyManagement}</li>
+	 * DataSetCategory6Code.KeyManagement}</li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code KeyManagement = new DataSetCategory11Code() {
@@ -265,7 +265,7 @@ public class DataSetCategory11Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#Reporting
-	 * DataSetCategory6Code.mmReporting}</li>
+	 * DataSetCategory6Code.Reporting}</li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code Reporting = new DataSetCategory11Code() {
@@ -295,7 +295,7 @@ public class DataSetCategory11Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#SoftwareModule
-	 * DataSetCategory6Code.mmSoftwareModule}</li>
+	 * DataSetCategory6Code.SoftwareModule}</li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code SoftwareModule = new DataSetCategory11Code() {
@@ -325,7 +325,7 @@ public class DataSetCategory11Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#TMSProtocolParameters
-	 * DataSetCategory6Code.mmTMSProtocolParameters}</li>
+	 * DataSetCategory6Code.TMSProtocolParameters}</li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code TMSProtocolParameters = new DataSetCategory11Code() {
@@ -355,7 +355,7 @@ public class DataSetCategory11Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#MerchantParameters
-	 * DataSetCategory6Code.mmMerchantParameters}</li>
+	 * DataSetCategory6Code.MerchantParameters}</li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code MerchantParameters = new DataSetCategory11Code() {
@@ -385,7 +385,7 @@ public class DataSetCategory11Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#TerminalParameters
-	 * DataSetCategory6Code.mmTerminalParameters}</li>
+	 * DataSetCategory6Code.TerminalParameters}</li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code TerminalParameters = new DataSetCategory11Code() {
@@ -429,7 +429,7 @@ public class DataSetCategory11Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DataSetCategory11Code";
 				definition = "Maintenance service to delegate.";

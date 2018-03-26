@@ -37,37 +37,37 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMMediaTypeCode#Cards
- * ATMMediaTypeCode.mmCards}</li>
+ * ATMMediaTypeCode.Cards}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMMediaTypeCode#Coins
- * ATMMediaTypeCode.mmCoins}</li>
+ * ATMMediaTypeCode.Coins}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMMediaTypeCode#Commodity
- * ATMMediaTypeCode.mmCommodity}</li>
+ * ATMMediaTypeCode.Commodity}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMMediaTypeCode#Coupons
- * ATMMediaTypeCode.mmCoupons}</li>
+ * ATMMediaTypeCode.Coupons}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMMediaTypeCode#Notes
- * ATMMediaTypeCode.mmNotes}</li>
+ * ATMMediaTypeCode.Notes}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMMediaTypeCode#Stamps
- * ATMMediaTypeCode.mmStamps}</li>
+ * ATMMediaTypeCode.Stamps}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMMediaTypeCode#Undetermined
- * ATMMediaTypeCode.mmUndetermined}</li>
+ * ATMMediaTypeCode.Undetermined}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMMediaTypeCode#Check
- * ATMMediaTypeCode.mmCheck}</li>
+ * ATMMediaTypeCode.Check}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMMediaTypeCode#Counterfeit
- * ATMMediaTypeCode.mmCounterfeit}</li>
+ * ATMMediaTypeCode.Counterfeit}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMMediaTypeCode#Fit
- * ATMMediaTypeCode.mmFit}</li>
+ * ATMMediaTypeCode.Fit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMMediaTypeCode#FitAndUnfit
- * ATMMediaTypeCode.mmFitAndUnfit}</li>
+ * ATMMediaTypeCode.FitAndUnfit}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMMediaTypeCode#Suspect
- * ATMMediaTypeCode.mmSuspect}</li>
+ * ATMMediaTypeCode.Suspect}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMMediaTypeCode#Unfit
- * ATMMediaTypeCode.mmUnfit}</li>
+ * ATMMediaTypeCode.Unfit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMMediaTypeCode#Unrecognised
- * ATMMediaTypeCode.mmUnrecognised}</li>
+ * ATMMediaTypeCode.Unrecognised}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -84,8 +84,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -528,7 +528,7 @@ public class ATMMediaTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMMediaTypeCode";
 				definition = "Type or category of media inside an ATM cassette.";

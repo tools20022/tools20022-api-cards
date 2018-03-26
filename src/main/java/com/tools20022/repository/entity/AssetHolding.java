@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.BlockedReasonCode;
 import com.tools20022.repository.codeset.FinancialAssetBalanceTypeCode;
@@ -24,11 +25,13 @@ import com.tools20022.repository.codeset.UnrealisedCode;
 import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
 import com.tools20022.repository.datatype.ActiveOrHistoricCurrencyAndAmount;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Specifies in terms of value and quantity the assets.
@@ -131,8 +134,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -148,8 +151,8 @@ public class AssetHolding {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ActiveOrHistoricCurrencyAndAmount holdingValue;
 	/**
-	 * Value of the balance of an individual securities holding.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -173,7 +176,7 @@ public class AssetHolding {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmHoldingValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AssetHolding, ActiveOrHistoricCurrencyAndAmount> mmHoldingValue = new MMBusinessAttribute<AssetHolding, ActiveOrHistoricCurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
@@ -185,19 +188,20 @@ public class AssetHolding {
 			simpleType_lazy = () -> ActiveOrHistoricCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AssetHolding.class.getMethod("getHoldingValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ActiveOrHistoricCurrencyAndAmount getValue(AssetHolding obj) {
+			return obj.getHoldingValue();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, ActiveOrHistoricCurrencyAndAmount value) {
+			obj.setHoldingValue(value);
 		}
 	};
 	protected CurrencyAndAmount bookValue;
 	/**
-	 * Value of a security, as booked/acquired in an account. Book value is
-	 * often different from the current market value of the security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -209,6 +213,9 @@ public class AssetHolding {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.AssetHolding AssetHolding}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::BOOK</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -222,10 +229,11 @@ public class AssetHolding {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBookValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AssetHolding, CurrencyAndAmount> mmBookValue = new MMBusinessAttribute<AssetHolding, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::BOOK"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "BookValue";
 			definition = "Value of a security, as booked/acquired in an account. Book value is often different from the current market value of the security.";
@@ -234,19 +242,20 @@ public class AssetHolding {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AssetHolding.class.getMethod("getBookValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(AssetHolding obj) {
+			return obj.getBookValue();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, CurrencyAndAmount value) {
+			obj.setBookValue(value);
 		}
 	};
 	protected CurrencyAndAmount faceAmount;
 	/**
-	 * Quantity expressed as an amount representing the face amount, ie, the
-	 * principal, of a debt instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -258,6 +267,9 @@ public class AssetHolding {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.AssetHolding AssetHolding}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: FAMT</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -271,10 +283,11 @@ public class AssetHolding {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFaceAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AssetHolding, CurrencyAndAmount> mmFaceAmount = new MMBusinessAttribute<AssetHolding, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, "FAMT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FaceAmount";
 			definition = "Quantity expressed as an amount representing the face amount, ie, the principal, of a debt instrument.";
@@ -283,20 +296,20 @@ public class AssetHolding {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AssetHolding.class.getMethod("getFaceAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(AssetHolding obj) {
+			return obj.getFaceAmount();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, CurrencyAndAmount value) {
+			obj.setFaceAmount(value);
 		}
 	};
 	protected CurrencyAndAmount amortisedFaceValue;
 	/**
-	 * Quantity expressed as an amount representing the current amortised face
-	 * amount of a bond, for example, a periodic reduction/increase of a bond's
-	 * principal amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -308,6 +321,9 @@ public class AssetHolding {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.AssetHolding AssetHolding}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: AMOR</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -321,10 +337,11 @@ public class AssetHolding {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAmortisedFaceValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AssetHolding, CurrencyAndAmount> mmAmortisedFaceValue = new MMBusinessAttribute<AssetHolding, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, "AMOR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AmortisedFaceValue";
 			definition = "Quantity expressed as an amount representing the current amortised face amount of a bond, for example, a periodic reduction/increase of a bond's principal amount.";
@@ -333,18 +350,20 @@ public class AssetHolding {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AssetHolding.class.getMethod("getAmortisedFaceValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(AssetHolding obj) {
+			return obj.getAmortisedFaceValue();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, CurrencyAndAmount value) {
+			obj.setAmortisedFaceValue(value);
 		}
 	};
 	protected ActiveCurrencyAndAmount marketValue;
 	/**
-	 * Value of the asset holding based on current market prices.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -368,7 +387,7 @@ public class AssetHolding {
 	 * "Value of the asset holding based on current market prices."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMarketValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AssetHolding, ActiveCurrencyAndAmount> mmMarketValue = new MMBusinessAttribute<AssetHolding, ActiveCurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
@@ -380,18 +399,20 @@ public class AssetHolding {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AssetHolding.class.getMethod("getMarketValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ActiveCurrencyAndAmount getValue(AssetHolding obj) {
+			return obj.getMarketValue();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, ActiveCurrencyAndAmount value) {
+			obj.setMarketValue(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Balance> balance;
+	protected List<Balance> balance;
 	/**
-	 * Specifies the balance of the asset holding.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -420,7 +441,7 @@ public class AssetHolding {
 	 * definition} = "Specifies the balance of the asset holding."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AssetHolding, List<Balance>> mmBalance = new MMBusinessAssociationEnd<AssetHolding, List<Balance>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
@@ -428,15 +449,25 @@ public class AssetHolding {
 			name = "Balance";
 			definition = "Specifies the balance of the asset holding.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Balance.mmAssetHolding;
+			opposite_lazy = () -> Balance.mmAssetHolding;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
+			type_lazy = () -> Balance.mmObject();
+		}
+
+		@Override
+		public List<Balance> getValue(AssetHolding obj) {
+			return obj.getBalance();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, List<Balance> value) {
+			obj.setBalance(value);
 		}
 	};
 	protected CurrencyAndAmount unrealisedGainOrLoss;
 	/**
-	 * Difference between the holding value and the book value of the asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -460,7 +491,7 @@ public class AssetHolding {
 	 * "Difference between the holding value and the book value of the asset."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmUnrealisedGainOrLoss = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AssetHolding, CurrencyAndAmount> mmUnrealisedGainOrLoss = new MMBusinessAttribute<AssetHolding, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
@@ -472,18 +503,20 @@ public class AssetHolding {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AssetHolding.class.getMethod("getUnrealisedGainOrLoss", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(AssetHolding obj) {
+			return obj.getUnrealisedGainOrLoss();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, CurrencyAndAmount value) {
+			obj.setUnrealisedGainOrLoss(value);
 		}
 	};
 	protected Asset asset;
 	/**
-	 * Specifies the asset included in the holding.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -512,7 +545,7 @@ public class AssetHolding {
 	 * definition} = "Specifies the asset included in the holding."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAsset = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AssetHolding, Asset> mmAsset = new MMBusinessAssociationEnd<AssetHolding, Asset>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
@@ -521,16 +554,25 @@ public class AssetHolding {
 			definition = "Specifies the asset included in the holding.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Asset.mmAssetValue;
+			opposite_lazy = () -> Asset.mmAssetValue;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
+			type_lazy = () -> Asset.mmObject();
+		}
+
+		@Override
+		public Asset getValue(AssetHolding obj) {
+			return obj.getAsset();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, Asset value) {
+			obj.setAsset(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.HaircutValuation> haircut;
+	protected List<HaircutValuation> haircut;
 	/**
-	 * Percentage by which an asset's market value is reduced for the purpose of
-	 * calculating capital requirement, margin and collateral levels.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -562,7 +604,7 @@ public class AssetHolding {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmHaircut = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AssetHolding, List<HaircutValuation>> mmHaircut = new MMBusinessAssociationEnd<AssetHolding, List<HaircutValuation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
@@ -570,16 +612,25 @@ public class AssetHolding {
 			name = "Haircut";
 			definition = "Percentage by which an asset's market value is reduced for the purpose of calculating capital requirement, margin and collateral levels.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.HaircutValuation.mmAssetHolding;
+			opposite_lazy = () -> HaircutValuation.mmAssetHolding;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.HaircutValuation.mmObject();
+			type_lazy = () -> HaircutValuation.mmObject();
+		}
+
+		@Override
+		public List<HaircutValuation> getValue(AssetHolding obj) {
+			return obj.getHaircut();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, List<HaircutValuation> value) {
+			obj.setHaircut(value);
 		}
 	};
 	protected ActiveCurrencyAndAmount eligibleCollateralValue;
 	/**
-	 * Value of the position eligible for collateral purposes. This corresponds
-	 * to the sub balance with a type AvailableForCollateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -604,7 +655,7 @@ public class AssetHolding {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEligibleCollateralValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AssetHolding, ActiveCurrencyAndAmount> mmEligibleCollateralValue = new MMBusinessAttribute<AssetHolding, ActiveCurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
@@ -616,19 +667,20 @@ public class AssetHolding {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AssetHolding.class.getMethod("getEligibleCollateralValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ActiveCurrencyAndAmount getValue(AssetHolding obj) {
+			return obj.getEligibleCollateralValue();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, ActiveCurrencyAndAmount value) {
+			obj.setEligibleCollateralValue(value);
 		}
 	};
 	protected CurrencyExchange exchangeRate;
 	/**
-	 * Specifies the exchange rate between the currency of the asset and the
-	 * reporting currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -650,7 +702,7 @@ public class AssetHolding {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "ExchangeRate"</li>
 	 * <li>
@@ -660,24 +712,34 @@ public class AssetHolding {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmExchangeRate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AssetHolding, CurrencyExchange> mmExchangeRate = new MMBusinessAssociationEnd<AssetHolding, CurrencyExchange>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
-			registrationStatus = MMRegistrationStatus.REGISTERED;
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExchangeRate";
 			definition = "Specifies the exchange rate between the currency of the asset and the reporting currency.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmCalculatedAssetValue;
+			opposite_lazy = () -> CurrencyExchange.mmCalculatedAssetValue;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
+			type_lazy = () -> CurrencyExchange.mmObject();
+		}
+
+		@Override
+		public CurrencyExchange getValue(AssetHolding obj) {
+			return obj.getExchangeRate();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, CurrencyExchange value) {
+			obj.setExchangeRate(value);
 		}
 	};
 	protected CurrencyAndAmount capValue;
 	/**
-	 * Maximum notional value for a financial instrument that is capped.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -701,7 +763,7 @@ public class AssetHolding {
 	 * "Maximum notional value for a financial instrument that is capped."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCapValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AssetHolding, CurrencyAndAmount> mmCapValue = new MMBusinessAttribute<AssetHolding, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
@@ -713,19 +775,20 @@ public class AssetHolding {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AssetHolding.class.getMethod("getCapValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(AssetHolding obj) {
+			return obj.getCapValue();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, CurrencyAndAmount value) {
+			obj.setCapValue(value);
 		}
 	};
 	protected ActiveCurrencyAndAmount riskAdjustedValue;
 	/**
-	 * Value of the asset holding after deduction of a percentage (the haircut)
-	 * that reflects the perceived risk associated with holding this asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -750,7 +813,7 @@ public class AssetHolding {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRiskAdjustedValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AssetHolding, ActiveCurrencyAndAmount> mmRiskAdjustedValue = new MMBusinessAttribute<AssetHolding, ActiveCurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
@@ -762,19 +825,20 @@ public class AssetHolding {
 			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AssetHolding.class.getMethod("getRiskAdjustedValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ActiveCurrencyAndAmount getValue(AssetHolding obj) {
+			return obj.getRiskAdjustedValue();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, ActiveCurrencyAndAmount value) {
+			obj.setRiskAdjustedValue(value);
 		}
 	};
 	protected CurrencyAndAmount realisedGainOrLoss;
 	/**
-	 * Difference between the realised value caused by the actual
-	 * trade/re-evaluation and the book value of the asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -799,7 +863,7 @@ public class AssetHolding {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRealisedGainOrLoss = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AssetHolding, CurrencyAndAmount> mmRealisedGainOrLoss = new MMBusinessAttribute<AssetHolding, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
@@ -811,18 +875,20 @@ public class AssetHolding {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AssetHolding.class.getMethod("getRealisedGainOrLoss", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(AssetHolding obj) {
+			return obj.getRealisedGainOrLoss();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, CurrencyAndAmount value) {
+			obj.setRealisedGainOrLoss(value);
 		}
 	};
 	protected UnrealisedCode unrealisedType;
 	/**
-	 * Specifies whether the unrealised amount is a gain or a loss.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -846,7 +912,7 @@ public class AssetHolding {
 	 * "Specifies whether the unrealised amount is a gain or a loss."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmUnrealisedType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AssetHolding, UnrealisedCode> mmUnrealisedType = new MMBusinessAttribute<AssetHolding, UnrealisedCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
@@ -858,19 +924,20 @@ public class AssetHolding {
 			simpleType_lazy = () -> UnrealisedCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AssetHolding.class.getMethod("getUnrealisedType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public UnrealisedCode getValue(AssetHolding obj) {
+			return obj.getUnrealisedType();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, UnrealisedCode value) {
+			obj.setUnrealisedType(value);
 		}
 	};
 	protected CurrencyAndAmount postHaircutValue;
 	/**
-	 * Value of the collateral after deduction of a percentage (the haircut)
-	 * that reflects the perceived risk associated with holding this collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -895,7 +962,7 @@ public class AssetHolding {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPostHaircutValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AssetHolding, CurrencyAndAmount> mmPostHaircutValue = new MMBusinessAttribute<AssetHolding, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
@@ -907,18 +974,20 @@ public class AssetHolding {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AssetHolding.class.getMethod("getPostHaircutValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(AssetHolding obj) {
+			return obj.getPostHaircutValue();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, CurrencyAndAmount value) {
+			obj.setPostHaircutValue(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Interest> interest;
+	protected List<Interest> interest;
 	/**
-	 * interest relative to the asset and the parameters used to calculate it.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -949,7 +1018,7 @@ public class AssetHolding {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AssetHolding, List<Interest>> mmInterest = new MMBusinessAssociationEnd<AssetHolding, List<Interest>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
@@ -957,15 +1026,25 @@ public class AssetHolding {
 			name = "Interest";
 			definition = "interest relative to the asset and the parameters used to calculate it.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Interest.mmRelatedAssetHolding;
+			opposite_lazy = () -> Interest.mmRelatedAssetHolding;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Interest.mmObject();
+			type_lazy = () -> Interest.mmObject();
+		}
+
+		@Override
+		public List<Interest> getValue(AssetHolding obj) {
+			return obj.getInterest();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, List<Interest> value) {
+			obj.setInterest(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Collateral> collateral;
+	protected List<Collateral> collateral;
 	/**
-	 * Specifies the collateral information in relation with some assets.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -996,7 +1075,7 @@ public class AssetHolding {
 	 * "Specifies the collateral information in relation with some assets."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCollateral = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AssetHolding, List<Collateral>> mmCollateral = new MMBusinessAssociationEnd<AssetHolding, List<Collateral>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
@@ -1004,15 +1083,25 @@ public class AssetHolding {
 			name = "Collateral";
 			definition = "Specifies the collateral information in relation with some assets.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Collateral.mmAssetHolding;
+			opposite_lazy = () -> Collateral.mmAssetHolding;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
+			type_lazy = () -> Collateral.mmObject();
+		}
+
+		@Override
+		public List<Collateral> getValue(AssetHolding obj) {
+			return obj.getCollateral();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, List<Collateral> value) {
+			obj.setCollateral(value);
 		}
 	};
 	protected FinancialAssetBalanceTypeCode financialAssetType;
 	/**
-	 * Specifies the asset type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1035,7 +1124,7 @@ public class AssetHolding {
 	 * definition} = "Specifies the asset type."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFinancialAssetType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AssetHolding, FinancialAssetBalanceTypeCode> mmFinancialAssetType = new MMBusinessAttribute<AssetHolding, FinancialAssetBalanceTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
@@ -1047,19 +1136,20 @@ public class AssetHolding {
 			simpleType_lazy = () -> FinancialAssetBalanceTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AssetHolding.class.getMethod("getFinancialAssetType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FinancialAssetBalanceTypeCode getValue(AssetHolding obj) {
+			return obj.getFinancialAssetType();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, FinancialAssetBalanceTypeCode value) {
+			obj.setFinancialAssetType(value);
 		}
 	};
 	protected Collateral variationMarginCollateral;
 	/**
-	 * Specifies the collateral information in relation with the segregated
-	 * independent amount asset holding.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1091,7 +1181,7 @@ public class AssetHolding {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmVariationMarginCollateral = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AssetHolding, Collateral> mmVariationMarginCollateral = new MMBusinessAssociationEnd<AssetHolding, Collateral>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
@@ -1100,16 +1190,25 @@ public class AssetHolding {
 			definition = "Specifies the collateral information in relation with the segregated independent amount asset holding.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Collateral.mmVariationMarginAssetHolding;
+			opposite_lazy = () -> Collateral.mmVariationMarginAssetHolding;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
+			type_lazy = () -> Collateral.mmObject();
+		}
+
+		@Override
+		public Collateral getValue(AssetHolding obj) {
+			return obj.getVariationMarginCollateral();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, Collateral value) {
+			obj.setVariationMarginCollateral(value);
 		}
 	};
 	protected Collateral independentAmountCollateral;
 	/**
-	 * Specifies the collateral information in relation with the segregated
-	 * independent amount asset holding.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1141,7 +1240,7 @@ public class AssetHolding {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIndependentAmountCollateral = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AssetHolding, Collateral> mmIndependentAmountCollateral = new MMBusinessAssociationEnd<AssetHolding, Collateral>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
@@ -1150,15 +1249,25 @@ public class AssetHolding {
 			definition = "Specifies the collateral information in relation with the segregated independent amount asset holding.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Collateral.mmSegregatedIndependentAmountAssetHolding;
+			opposite_lazy = () -> Collateral.mmSegregatedIndependentAmountAssetHolding;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Collateral.mmObject();
+			type_lazy = () -> Collateral.mmObject();
+		}
+
+		@Override
+		public Collateral getValue(AssetHolding obj) {
+			return obj.getIndependentAmountCollateral();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, Collateral value) {
+			obj.setIndependentAmountCollateral(value);
 		}
 	};
 	protected BlockedReasonCode holdingType;
 	/**
-	 * Specifies the type of holding.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1181,7 +1290,7 @@ public class AssetHolding {
 	 * definition} = "Specifies the type of holding."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmHoldingType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AssetHolding, BlockedReasonCode> mmHoldingType = new MMBusinessAttribute<AssetHolding, BlockedReasonCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
@@ -1193,18 +1302,20 @@ public class AssetHolding {
 			simpleType_lazy = () -> BlockedReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AssetHolding.class.getMethod("getHoldingType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BlockedReasonCode getValue(AssetHolding obj) {
+			return obj.getHoldingType();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, BlockedReasonCode value) {
+			obj.setHoldingType(value);
 		}
 	};
 	protected CurrencyAndAmount guaranteeAmount;
 	/**
-	 * Amount of the bank guarantee.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1227,7 +1338,7 @@ public class AssetHolding {
 	 * definition} = "Amount of the bank guarantee."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmGuaranteeAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AssetHolding, CurrencyAndAmount> mmGuaranteeAmount = new MMBusinessAttribute<AssetHolding, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
@@ -1239,25 +1350,26 @@ public class AssetHolding {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AssetHolding.class.getMethod("getGuaranteeAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(AssetHolding obj) {
+			return obj.getGuaranteeAmount();
+		}
+
+		@Override
+		public void setValue(AssetHolding obj, CurrencyAndAmount value) {
+			obj.setGuaranteeAmount(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetHolding";
 				definition = "Specifies in terms of value and quantity the assets.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Asset.mmAssetValue, com.tools20022.repository.entity.Balance.mmAssetHolding, com.tools20022.repository.entity.Interest.mmRelatedAssetHolding,
-						com.tools20022.repository.entity.CurrencyExchange.mmCalculatedAssetValue, com.tools20022.repository.entity.Collateral.mmAssetHolding, com.tools20022.repository.entity.Collateral.mmVariationMarginAssetHolding,
-						com.tools20022.repository.entity.Collateral.mmSegregatedIndependentAmountAssetHolding, com.tools20022.repository.entity.HaircutValuation.mmAssetHolding);
+				associationDomain_lazy = () -> Arrays.asList(Asset.mmAssetValue, Balance.mmAssetHolding, Interest.mmRelatedAssetHolding, CurrencyExchange.mmCalculatedAssetValue, Collateral.mmAssetHolding,
+						Collateral.mmVariationMarginAssetHolding, Collateral.mmSegregatedIndependentAmountAssetHolding, HaircutValuation.mmAssetHolding);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AssetHolding.mmHoldingValue, com.tools20022.repository.entity.AssetHolding.mmBookValue, com.tools20022.repository.entity.AssetHolding.mmFaceAmount,
 						com.tools20022.repository.entity.AssetHolding.mmAmortisedFaceValue, com.tools20022.repository.entity.AssetHolding.mmMarketValue, com.tools20022.repository.entity.AssetHolding.mmBalance,
 						com.tools20022.repository.entity.AssetHolding.mmUnrealisedGainOrLoss, com.tools20022.repository.entity.AssetHolding.mmAsset, com.tools20022.repository.entity.AssetHolding.mmHaircut,
@@ -1280,183 +1392,206 @@ public class AssetHolding {
 		return holdingValue;
 	}
 
-	public void setHoldingValue(ActiveOrHistoricCurrencyAndAmount holdingValue) {
-		this.holdingValue = holdingValue;
+	public AssetHolding setHoldingValue(ActiveOrHistoricCurrencyAndAmount holdingValue) {
+		this.holdingValue = Objects.requireNonNull(holdingValue);
+		return this;
 	}
 
 	public CurrencyAndAmount getBookValue() {
 		return bookValue;
 	}
 
-	public void setBookValue(CurrencyAndAmount bookValue) {
-		this.bookValue = bookValue;
+	public AssetHolding setBookValue(CurrencyAndAmount bookValue) {
+		this.bookValue = Objects.requireNonNull(bookValue);
+		return this;
 	}
 
 	public CurrencyAndAmount getFaceAmount() {
 		return faceAmount;
 	}
 
-	public void setFaceAmount(CurrencyAndAmount faceAmount) {
-		this.faceAmount = faceAmount;
+	public AssetHolding setFaceAmount(CurrencyAndAmount faceAmount) {
+		this.faceAmount = Objects.requireNonNull(faceAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getAmortisedFaceValue() {
 		return amortisedFaceValue;
 	}
 
-	public void setAmortisedFaceValue(CurrencyAndAmount amortisedFaceValue) {
-		this.amortisedFaceValue = amortisedFaceValue;
+	public AssetHolding setAmortisedFaceValue(CurrencyAndAmount amortisedFaceValue) {
+		this.amortisedFaceValue = Objects.requireNonNull(amortisedFaceValue);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getMarketValue() {
 		return marketValue;
 	}
 
-	public void setMarketValue(ActiveCurrencyAndAmount marketValue) {
-		this.marketValue = marketValue;
+	public AssetHolding setMarketValue(ActiveCurrencyAndAmount marketValue) {
+		this.marketValue = Objects.requireNonNull(marketValue);
+		return this;
 	}
 
 	public List<Balance> getBalance() {
-		return balance;
+		return balance == null ? balance = new ArrayList<>() : balance;
 	}
 
-	public void setBalance(List<com.tools20022.repository.entity.Balance> balance) {
-		this.balance = balance;
+	public AssetHolding setBalance(List<Balance> balance) {
+		this.balance = Objects.requireNonNull(balance);
+		return this;
 	}
 
 	public CurrencyAndAmount getUnrealisedGainOrLoss() {
 		return unrealisedGainOrLoss;
 	}
 
-	public void setUnrealisedGainOrLoss(CurrencyAndAmount unrealisedGainOrLoss) {
-		this.unrealisedGainOrLoss = unrealisedGainOrLoss;
+	public AssetHolding setUnrealisedGainOrLoss(CurrencyAndAmount unrealisedGainOrLoss) {
+		this.unrealisedGainOrLoss = Objects.requireNonNull(unrealisedGainOrLoss);
+		return this;
 	}
 
 	public Asset getAsset() {
 		return asset;
 	}
 
-	public void setAsset(com.tools20022.repository.entity.Asset asset) {
-		this.asset = asset;
+	public AssetHolding setAsset(Asset asset) {
+		this.asset = Objects.requireNonNull(asset);
+		return this;
 	}
 
 	public List<HaircutValuation> getHaircut() {
-		return haircut;
+		return haircut == null ? haircut = new ArrayList<>() : haircut;
 	}
 
-	public void setHaircut(List<com.tools20022.repository.entity.HaircutValuation> haircut) {
-		this.haircut = haircut;
+	public AssetHolding setHaircut(List<HaircutValuation> haircut) {
+		this.haircut = Objects.requireNonNull(haircut);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getEligibleCollateralValue() {
 		return eligibleCollateralValue;
 	}
 
-	public void setEligibleCollateralValue(ActiveCurrencyAndAmount eligibleCollateralValue) {
-		this.eligibleCollateralValue = eligibleCollateralValue;
+	public AssetHolding setEligibleCollateralValue(ActiveCurrencyAndAmount eligibleCollateralValue) {
+		this.eligibleCollateralValue = Objects.requireNonNull(eligibleCollateralValue);
+		return this;
 	}
 
 	public CurrencyExchange getExchangeRate() {
 		return exchangeRate;
 	}
 
-	public void setExchangeRate(com.tools20022.repository.entity.CurrencyExchange exchangeRate) {
-		this.exchangeRate = exchangeRate;
+	public AssetHolding setExchangeRate(CurrencyExchange exchangeRate) {
+		this.exchangeRate = Objects.requireNonNull(exchangeRate);
+		return this;
 	}
 
 	public CurrencyAndAmount getCapValue() {
 		return capValue;
 	}
 
-	public void setCapValue(CurrencyAndAmount capValue) {
-		this.capValue = capValue;
+	public AssetHolding setCapValue(CurrencyAndAmount capValue) {
+		this.capValue = Objects.requireNonNull(capValue);
+		return this;
 	}
 
 	public ActiveCurrencyAndAmount getRiskAdjustedValue() {
 		return riskAdjustedValue;
 	}
 
-	public void setRiskAdjustedValue(ActiveCurrencyAndAmount riskAdjustedValue) {
-		this.riskAdjustedValue = riskAdjustedValue;
+	public AssetHolding setRiskAdjustedValue(ActiveCurrencyAndAmount riskAdjustedValue) {
+		this.riskAdjustedValue = Objects.requireNonNull(riskAdjustedValue);
+		return this;
 	}
 
 	public CurrencyAndAmount getRealisedGainOrLoss() {
 		return realisedGainOrLoss;
 	}
 
-	public void setRealisedGainOrLoss(CurrencyAndAmount realisedGainOrLoss) {
-		this.realisedGainOrLoss = realisedGainOrLoss;
+	public AssetHolding setRealisedGainOrLoss(CurrencyAndAmount realisedGainOrLoss) {
+		this.realisedGainOrLoss = Objects.requireNonNull(realisedGainOrLoss);
+		return this;
 	}
 
 	public UnrealisedCode getUnrealisedType() {
 		return unrealisedType;
 	}
 
-	public void setUnrealisedType(UnrealisedCode unrealisedType) {
-		this.unrealisedType = unrealisedType;
+	public AssetHolding setUnrealisedType(UnrealisedCode unrealisedType) {
+		this.unrealisedType = Objects.requireNonNull(unrealisedType);
+		return this;
 	}
 
 	public CurrencyAndAmount getPostHaircutValue() {
 		return postHaircutValue;
 	}
 
-	public void setPostHaircutValue(CurrencyAndAmount postHaircutValue) {
-		this.postHaircutValue = postHaircutValue;
+	public AssetHolding setPostHaircutValue(CurrencyAndAmount postHaircutValue) {
+		this.postHaircutValue = Objects.requireNonNull(postHaircutValue);
+		return this;
 	}
 
 	public List<Interest> getInterest() {
-		return interest;
+		return interest == null ? interest = new ArrayList<>() : interest;
 	}
 
-	public void setInterest(List<com.tools20022.repository.entity.Interest> interest) {
-		this.interest = interest;
+	public AssetHolding setInterest(List<Interest> interest) {
+		this.interest = Objects.requireNonNull(interest);
+		return this;
 	}
 
 	public List<Collateral> getCollateral() {
-		return collateral;
+		return collateral == null ? collateral = new ArrayList<>() : collateral;
 	}
 
-	public void setCollateral(List<com.tools20022.repository.entity.Collateral> collateral) {
-		this.collateral = collateral;
+	public AssetHolding setCollateral(List<Collateral> collateral) {
+		this.collateral = Objects.requireNonNull(collateral);
+		return this;
 	}
 
 	public FinancialAssetBalanceTypeCode getFinancialAssetType() {
 		return financialAssetType;
 	}
 
-	public void setFinancialAssetType(FinancialAssetBalanceTypeCode financialAssetType) {
-		this.financialAssetType = financialAssetType;
+	public AssetHolding setFinancialAssetType(FinancialAssetBalanceTypeCode financialAssetType) {
+		this.financialAssetType = Objects.requireNonNull(financialAssetType);
+		return this;
 	}
 
 	public Collateral getVariationMarginCollateral() {
 		return variationMarginCollateral;
 	}
 
-	public void setVariationMarginCollateral(com.tools20022.repository.entity.Collateral variationMarginCollateral) {
-		this.variationMarginCollateral = variationMarginCollateral;
+	public AssetHolding setVariationMarginCollateral(Collateral variationMarginCollateral) {
+		this.variationMarginCollateral = Objects.requireNonNull(variationMarginCollateral);
+		return this;
 	}
 
 	public Collateral getIndependentAmountCollateral() {
 		return independentAmountCollateral;
 	}
 
-	public void setIndependentAmountCollateral(com.tools20022.repository.entity.Collateral independentAmountCollateral) {
-		this.independentAmountCollateral = independentAmountCollateral;
+	public AssetHolding setIndependentAmountCollateral(Collateral independentAmountCollateral) {
+		this.independentAmountCollateral = Objects.requireNonNull(independentAmountCollateral);
+		return this;
 	}
 
 	public BlockedReasonCode getHoldingType() {
 		return holdingType;
 	}
 
-	public void setHoldingType(BlockedReasonCode holdingType) {
-		this.holdingType = holdingType;
+	public AssetHolding setHoldingType(BlockedReasonCode holdingType) {
+		this.holdingType = Objects.requireNonNull(holdingType);
+		return this;
 	}
 
 	public CurrencyAndAmount getGuaranteeAmount() {
 		return guaranteeAmount;
 	}
 
-	public void setGuaranteeAmount(CurrencyAndAmount guaranteeAmount) {
-		this.guaranteeAmount = guaranteeAmount;
+	public AssetHolding setGuaranteeAmount(CurrencyAndAmount guaranteeAmount) {
+		this.guaranteeAmount = Objects.requireNonNull(guaranteeAmount);
+		return this;
 	}
 }

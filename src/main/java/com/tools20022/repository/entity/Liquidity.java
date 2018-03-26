@@ -17,14 +17,17 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.LiquidityIndicatorTypeCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.ListTrading;
+import com.tools20022.repository.entity.SecuritiesQuantity;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Ability of a financial instrument to be easily traded and converted to cash,
@@ -70,8 +73,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,9 +92,8 @@ public class Liquidity {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesQuantity quantity;
 	/**
-	 * Quantity of a financial instrument for which liquidity range details are
-	 * provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -123,7 +125,7 @@ public class Liquidity {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Liquidity, SecuritiesQuantity> mmQuantity = new MMBusinessAssociationEnd<Liquidity, SecuritiesQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
@@ -132,15 +134,25 @@ public class Liquidity {
 			definition = "Quantity of a financial instrument for which liquidity range details are provided.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmLiquidity;
+			opposite_lazy = () -> SecuritiesQuantity.mmLiquidity;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(Liquidity obj) {
+			return obj.getQuantity();
+		}
+
+		@Override
+		public void setValue(Liquidity obj, SecuritiesQuantity value) {
+			obj.setQuantity(value);
 		}
 	};
 	protected ListTrading listTrading;
 	/**
-	 * List trading process for which liquidity data is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -171,7 +183,7 @@ public class Liquidity {
 	 * "List trading process for which liquidity data is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmListTrading = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Liquidity, ListTrading> mmListTrading = new MMBusinessAssociationEnd<Liquidity, ListTrading>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
@@ -180,15 +192,25 @@ public class Liquidity {
 			definition = "List trading process for which liquidity data is provided.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.ListTrading.mmLiquidity;
+			opposite_lazy = () -> ListTrading.mmLiquidity;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ListTrading.mmObject();
+			type_lazy = () -> ListTrading.mmObject();
+		}
+
+		@Override
+		public ListTrading getValue(Liquidity obj) {
+			return obj.getListTrading();
+		}
+
+		@Override
+		public void setValue(Liquidity obj, ListTrading value) {
+			obj.setListTrading(value);
 		}
 	};
 	protected LiquidityIndicatorTypeCode indicatorType;
 	/**
-	 * Type of liquidity measure, of a financial instrument, on a market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -201,6 +223,9 @@ public class Liquidity {
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Liquidity
 	 * Liquidity}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 409</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -212,10 +237,11 @@ public class Liquidity {
 	 * "Type of liquidity measure, of a financial instrument, on a market."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIndicatorType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Liquidity, LiquidityIndicatorTypeCode> mmIndicatorType = new MMBusinessAttribute<Liquidity, LiquidityIndicatorTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "409"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndicatorType";
 			definition = "Type of liquidity measure, of a financial instrument, on a market.";
@@ -224,19 +250,20 @@ public class Liquidity {
 			simpleType_lazy = () -> LiquidityIndicatorTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Liquidity.class.getMethod("getIndicatorType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public LiquidityIndicatorTypeCode getValue(Liquidity obj) {
+			return obj.getIndicatorType();
+		}
+
+		@Override
+		public void setValue(Liquidity obj, LiquidityIndicatorTypeCode value) {
+			obj.setIndicatorType(value);
 		}
 	};
 	protected PercentageRate upper;
 	/**
-	 * Upper liquidity indicator, represented as a percentage of the average
-	 * trade daily volume.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -248,6 +275,9 @@ public class Liquidity {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Liquidity
 	 * Liquidity}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 403</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -261,10 +291,11 @@ public class Liquidity {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmUpper = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Liquidity, PercentageRate> mmUpper = new MMBusinessAttribute<Liquidity, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "403"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Upper";
 			definition = "Upper liquidity indicator, represented as a percentage of the average trade daily volume.";
@@ -273,19 +304,20 @@ public class Liquidity {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Liquidity.class.getMethod("getUpper", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Liquidity obj) {
+			return obj.getUpper();
+		}
+
+		@Override
+		public void setValue(Liquidity obj, PercentageRate value) {
+			obj.setUpper(value);
 		}
 	};
 	protected PercentageRate lower;
 	/**
-	 * Lower liquidity indicator, represented as a percentage of the average
-	 * trade daily volume.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -297,6 +329,9 @@ public class Liquidity {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Liquidity
 	 * Liquidity}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 402</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -310,10 +345,11 @@ public class Liquidity {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLower = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Liquidity, PercentageRate> mmLower = new MMBusinessAttribute<Liquidity, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "402"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Lower";
 			definition = "Lower liquidity indicator, represented as a percentage of the average trade daily volume.";
@@ -322,19 +358,20 @@ public class Liquidity {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Liquidity.class.getMethod("getLower", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Liquidity obj) {
+			return obj.getLower();
+		}
+
+		@Override
+		public void setValue(Liquidity obj, PercentageRate value) {
+			obj.setLower(value);
 		}
 	};
 	protected CurrencyAndAmount value;
 	/**
-	 * Market value of the securities position for which liquidity details are
-	 * provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -346,6 +383,9 @@ public class Liquidity {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Liquidity
 	 * Liquidity}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 404</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -359,10 +399,11 @@ public class Liquidity {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Liquidity, CurrencyAndAmount> mmValue = new MMBusinessAttribute<Liquidity, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "404"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Value";
 			definition = "Market value of the securities position for which liquidity details are provided.";
@@ -371,19 +412,20 @@ public class Liquidity {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Liquidity.class.getMethod("getValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Liquidity obj) {
+			return obj.getValue();
+		}
+
+		@Override
+		public void setValue(Liquidity obj, CurrencyAndAmount value) {
+			obj.setValue(value);
 		}
 	};
 	protected PercentageRate weightedAverageLiquidity;
 	/**
-	 * Indicates the overall weighted average liquidity expressed as a
-	 * percentage of average daily volume.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -395,6 +437,9 @@ public class Liquidity {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Liquidity
 	 * Liquidity}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 410</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -408,10 +453,11 @@ public class Liquidity {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmWeightedAverageLiquidity = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Liquidity, PercentageRate> mmWeightedAverageLiquidity = new MMBusinessAttribute<Liquidity, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Liquidity.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "410"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WeightedAverageLiquidity";
 			definition = "Indicates the overall weighted average liquidity expressed as a percentage of average daily volume.";
@@ -420,23 +466,25 @@ public class Liquidity {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Liquidity.class.getMethod("getWeightedAverageLiquidity", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Liquidity obj) {
+			return obj.getWeightedAverageLiquidity();
+		}
+
+		@Override
+		public void setValue(Liquidity obj, PercentageRate value) {
+			obj.setWeightedAverageLiquidity(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Liquidity";
 				definition = "Ability of a financial instrument to be easily traded and converted to cash, at conditions that do not affect its price.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesQuantity.mmLiquidity, com.tools20022.repository.entity.ListTrading.mmLiquidity);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesQuantity.mmLiquidity, ListTrading.mmLiquidity);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Liquidity.mmQuantity, com.tools20022.repository.entity.Liquidity.mmListTrading, com.tools20022.repository.entity.Liquidity.mmIndicatorType,
 						com.tools20022.repository.entity.Liquidity.mmUpper, com.tools20022.repository.entity.Liquidity.mmLower, com.tools20022.repository.entity.Liquidity.mmValue,
 						com.tools20022.repository.entity.Liquidity.mmWeightedAverageLiquidity);
@@ -454,55 +502,62 @@ public class Liquidity {
 		return quantity;
 	}
 
-	public void setQuantity(com.tools20022.repository.entity.SecuritiesQuantity quantity) {
-		this.quantity = quantity;
+	public Liquidity setQuantity(SecuritiesQuantity quantity) {
+		this.quantity = Objects.requireNonNull(quantity);
+		return this;
 	}
 
 	public ListTrading getListTrading() {
 		return listTrading;
 	}
 
-	public void setListTrading(com.tools20022.repository.entity.ListTrading listTrading) {
-		this.listTrading = listTrading;
+	public Liquidity setListTrading(ListTrading listTrading) {
+		this.listTrading = Objects.requireNonNull(listTrading);
+		return this;
 	}
 
 	public LiquidityIndicatorTypeCode getIndicatorType() {
 		return indicatorType;
 	}
 
-	public void setIndicatorType(LiquidityIndicatorTypeCode indicatorType) {
-		this.indicatorType = indicatorType;
+	public Liquidity setIndicatorType(LiquidityIndicatorTypeCode indicatorType) {
+		this.indicatorType = Objects.requireNonNull(indicatorType);
+		return this;
 	}
 
 	public PercentageRate getUpper() {
 		return upper;
 	}
 
-	public void setUpper(PercentageRate upper) {
-		this.upper = upper;
+	public Liquidity setUpper(PercentageRate upper) {
+		this.upper = Objects.requireNonNull(upper);
+		return this;
 	}
 
 	public PercentageRate getLower() {
 		return lower;
 	}
 
-	public void setLower(PercentageRate lower) {
-		this.lower = lower;
+	public Liquidity setLower(PercentageRate lower) {
+		this.lower = Objects.requireNonNull(lower);
+		return this;
 	}
 
 	public CurrencyAndAmount getValue() {
 		return value;
 	}
 
-	public void setValue(CurrencyAndAmount value) {
-		this.value = value;
+	public Liquidity setValue(CurrencyAndAmount value) {
+		this.value = Objects.requireNonNull(value);
+		return this;
 	}
 
 	public PercentageRate getWeightedAverageLiquidity() {
 		return weightedAverageLiquidity;
 	}
 
-	public void setWeightedAverageLiquidity(PercentageRate weightedAverageLiquidity) {
-		this.weightedAverageLiquidity = weightedAverageLiquidity;
+	public Liquidity setWeightedAverageLiquidity(PercentageRate weightedAverageLiquidity) {
+		this.weightedAverageLiquidity = Objects.requireNonNull(weightedAverageLiquidity);
+		return this;
 	}
 }

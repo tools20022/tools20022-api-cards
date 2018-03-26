@@ -37,42 +37,50 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMCommandCode#ATMBalance
- * ATMCommandCode.mmATMBalance}</li>
+ * ATMCommandCode.ATMBalance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommandCode#ATMStatusUpdate
- * ATMCommandCode.mmATMStatusUpdate}</li>
+ * ATMCommandCode.ATMStatusUpdate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommandCode#ConfigurationUpdate
- * ATMCommandCode.mmConfigurationUpdate}</li>
+ * ATMCommandCode.ConfigurationUpdate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommandCode#CountersInquiry
- * ATMCommandCode.mmCountersInquiry}</li>
+ * ATMCommandCode.CountersInquiry}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMCommandCode#Disconnect
- * ATMCommandCode.mmDisconnect}</li>
+ * ATMCommandCode.Disconnect}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMCommandCode#SendMessage
- * ATMCommandCode.mmSendMessage}</li>
+ * ATMCommandCode.SendMessage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommandCode#KeyActivation
- * ATMCommandCode.mmKeyActivation}</li>
+ * ATMCommandCode.KeyActivation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommandCode#KeyDeactivation
- * ATMCommandCode.mmKeyDeactivation}</li>
+ * ATMCommandCode.KeyDeactivation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMCommandCode#KeyDownload
- * ATMCommandCode.mmKeyDownload}</li>
+ * ATMCommandCode.KeyDownload}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMCommandCode#KeyRemove
- * ATMCommandCode.mmKeyRemove}</li>
+ * ATMCommandCode.KeyRemove}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommandCode#SecurityDeviceConfigurationUpdate
- * ATMCommandCode.mmSecurityDeviceConfigurationUpdate}</li>
+ * ATMCommandCode.SecurityDeviceConfigurationUpdate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommandCode#SecurityDeviceSchemeUpdate
- * ATMCommandCode.mmSecurityDeviceSchemeUpdate}</li>
+ * ATMCommandCode.SecurityDeviceSchemeUpdate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommandCode#SecurityDeviceStatusUpdate
- * ATMCommandCode.mmSecurityDeviceStatusUpdate}</li>
+ * ATMCommandCode.SecurityDeviceStatusUpdate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommandCode#CountersReport
- * ATMCommandCode.mmCountersReport}</li>
+ * ATMCommandCode.CountersReport}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ATMCommandCode#HLAKeyReplace
+ * ATMCommandCode.HLAKeyReplace}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.ATMCommandCode#HLAKeyRemove
+ * ATMCommandCode.HLAKeyRemove}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ATMCommandCode#KeyReplace
+ * ATMCommandCode.KeyReplace}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -89,8 +97,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -532,6 +540,105 @@ public class ATMCommandCode extends MMCode {
 			codeName = "RPTC";
 		}
 	};
+	/**
+	 * Replace an existing key using a Higher Level Authority (HLA) key. In the
+	 * TR34 scheme this would be used to implement a HLA Rebind operation.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.ATMCommandCode
+	 * ATMCommandCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "HKCG"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "HLAKeyReplace"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Replace an existing key using a Higher Level Authority (HLA) key. In the TR34 scheme this would be used to implement a HLA Rebind operation."
+	 * </li>
+	 * </ul>
+	 */
+	public static final ATMCommandCode HLAKeyReplace = new ATMCommandCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "HLAKeyReplace";
+			definition = "Replace an existing key using a Higher Level Authority (HLA) key. In the TR34 scheme this would be used to implement a HLA Rebind operation.";
+			owner_lazy = () -> com.tools20022.repository.codeset.ATMCommandCode.mmObject();
+			codeName = "HKCG";
+		}
+	};
+	/**
+	 * Remove a cryptographic key using a Higher Level Authority key (HLA). In
+	 * the TR34 scheme this would be used to implement a HLA Unbind operation.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.ATMCommandCode
+	 * ATMCommandCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "HKRV"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "HLAKeyRemove"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Remove a cryptographic key using a Higher Level Authority key (HLA). In the TR34 scheme this would be used to implement a HLA Unbind operation."
+	 * </li>
+	 * </ul>
+	 */
+	public static final ATMCommandCode HLAKeyRemove = new ATMCommandCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "HLAKeyRemove";
+			definition = "Remove a cryptographic key using a Higher Level Authority key (HLA). In the TR34 scheme this would be used to implement a HLA Unbind operation.";
+			owner_lazy = () -> com.tools20022.repository.codeset.ATMCommandCode.mmObject();
+			codeName = "HKRV";
+		}
+	};
+	/**
+	 * Replaces an existing cryptographic key. In a TR34 scheme this would be
+	 * used to implement a Rebind operation.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.ATMCommandCode
+	 * ATMCommandCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "KCHG"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "KeyReplace"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Replaces an existing cryptographic key. In a TR34 scheme this would be used to implement a Rebind operation."
+	 * </li>
+	 * </ul>
+	 */
+	public static final ATMCommandCode KeyReplace = new ATMCommandCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "KeyReplace";
+			definition = "Replaces an existing cryptographic key. In a TR34 scheme this would be used to implement a Rebind operation.";
+			owner_lazy = () -> com.tools20022.repository.codeset.ATMCommandCode.mmObject();
+			codeName = "KCHG";
+		}
+	};
 	final static private LinkedHashMap<String, ATMCommandCode> codesByName = new LinkedHashMap<>();
 
 	protected ATMCommandCode() {
@@ -540,7 +647,7 @@ public class ATMCommandCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMCommandCode";
 				definition = "Type of command performed by an ATM.";
@@ -550,7 +657,8 @@ public class ATMCommandCode extends MMCode {
 						com.tools20022.repository.codeset.ATMCommandCode.SendMessage, com.tools20022.repository.codeset.ATMCommandCode.KeyActivation, com.tools20022.repository.codeset.ATMCommandCode.KeyDeactivation,
 						com.tools20022.repository.codeset.ATMCommandCode.KeyDownload, com.tools20022.repository.codeset.ATMCommandCode.KeyRemove, com.tools20022.repository.codeset.ATMCommandCode.SecurityDeviceConfigurationUpdate,
 						com.tools20022.repository.codeset.ATMCommandCode.SecurityDeviceSchemeUpdate, com.tools20022.repository.codeset.ATMCommandCode.SecurityDeviceStatusUpdate,
-						com.tools20022.repository.codeset.ATMCommandCode.CountersReport);
+						com.tools20022.repository.codeset.ATMCommandCode.CountersReport, com.tools20022.repository.codeset.ATMCommandCode.HLAKeyReplace, com.tools20022.repository.codeset.ATMCommandCode.HLAKeyRemove,
+						com.tools20022.repository.codeset.ATMCommandCode.KeyReplace);
 			}
 		});
 		return mmObject_lazy.get();
@@ -571,6 +679,9 @@ public class ATMCommandCode extends MMCode {
 		codesByName.put(SecurityDeviceSchemeUpdate.getCodeName().get(), SecurityDeviceSchemeUpdate);
 		codesByName.put(SecurityDeviceStatusUpdate.getCodeName().get(), SecurityDeviceStatusUpdate);
 		codesByName.put(CountersReport.getCodeName().get(), CountersReport);
+		codesByName.put(HLAKeyReplace.getCodeName().get(), HLAKeyReplace);
+		codesByName.put(HLAKeyRemove.getCodeName().get(), HLAKeyRemove);
+		codesByName.put(KeyReplace.getCodeName().get(), KeyReplace);
 	}
 
 	public static ATMCommandCode valueOf(String codeName) {

@@ -26,6 +26,7 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Characteristics of a hardware memory module."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "MemoryCharacteristics1", propOrder = {"identification", "totalSize", "freeSize", "unit"})
 public class MemoryCharacteristics1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected Max35Text identification;
 	/**
-	 * Identification or name of the memory.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -101,9 +103,9 @@ public class MemoryCharacteristics1 {
 	 * definition} = "Identification or name of the memory."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MemoryCharacteristics1, Max35Text> mmIdentification = new MMMessageAttribute<MemoryCharacteristics1, Max35Text>() {
 		{
-			componentContext_lazy = () -> MemoryCharacteristics1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MemoryCharacteristics1.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -113,11 +115,22 @@ public class MemoryCharacteristics1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(MemoryCharacteristics1 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(MemoryCharacteristics1 obj, Max35Text value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "TtlSz", required = true)
 	protected DecimalNumber totalSize;
 	/**
-	 * Total size of the memory unit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -143,9 +156,9 @@ public class MemoryCharacteristics1 {
 	 * definition} = "Total size of the memory unit."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalSize = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MemoryCharacteristics1, DecimalNumber> mmTotalSize = new MMMessageAttribute<MemoryCharacteristics1, DecimalNumber>() {
 		{
-			componentContext_lazy = () -> MemoryCharacteristics1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MemoryCharacteristics1.mmObject();
 			isDerived = false;
 			xmlTag = "TtlSz";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -155,11 +168,22 @@ public class MemoryCharacteristics1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		@Override
+		public DecimalNumber getValue(MemoryCharacteristics1 obj) {
+			return obj.getTotalSize();
+		}
+
+		@Override
+		public void setValue(MemoryCharacteristics1 obj, DecimalNumber value) {
+			obj.setTotalSize(value);
+		}
 	};
+	@XmlElement(name = "FreeSz", required = true)
 	protected DecimalNumber freeSize;
 	/**
-	 * Total size of the available memory.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -185,9 +209,9 @@ public class MemoryCharacteristics1 {
 	 * definition} = "Total size of the available memory."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFreeSize = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MemoryCharacteristics1, DecimalNumber> mmFreeSize = new MMMessageAttribute<MemoryCharacteristics1, DecimalNumber>() {
 		{
-			componentContext_lazy = () -> MemoryCharacteristics1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MemoryCharacteristics1.mmObject();
 			isDerived = false;
 			xmlTag = "FreeSz";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -197,11 +221,22 @@ public class MemoryCharacteristics1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		@Override
+		public DecimalNumber getValue(MemoryCharacteristics1 obj) {
+			return obj.getFreeSize();
+		}
+
+		@Override
+		public void setValue(MemoryCharacteristics1 obj, DecimalNumber value) {
+			obj.setFreeSize(value);
+		}
 	};
+	@XmlElement(name = "Unit", required = true)
 	protected MemoryUnit1Code unit;
 	/**
-	 * Memory unit of the sizes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -227,9 +262,9 @@ public class MemoryCharacteristics1 {
 	 * definition} = "Memory unit of the sizes."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUnit = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MemoryCharacteristics1, MemoryUnit1Code> mmUnit = new MMMessageAttribute<MemoryCharacteristics1, MemoryUnit1Code>() {
 		{
-			componentContext_lazy = () -> MemoryCharacteristics1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MemoryCharacteristics1.mmObject();
 			isDerived = false;
 			xmlTag = "Unit";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -239,13 +274,24 @@ public class MemoryCharacteristics1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> MemoryUnit1Code.mmObject();
 		}
+
+		@Override
+		public MemoryUnit1Code getValue(MemoryCharacteristics1 obj) {
+			return obj.getUnit();
+		}
+
+		@Override
+		public void setValue(MemoryCharacteristics1 obj, MemoryUnit1Code value) {
+			obj.setUnit(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MemoryCharacteristics1.mmIdentification, MemoryCharacteristics1.mmTotalSize, MemoryCharacteristics1.mmFreeSize, MemoryCharacteristics1.mmUnit);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MemoryCharacteristics1.mmIdentification, com.tools20022.repository.msg.MemoryCharacteristics1.mmTotalSize,
+						com.tools20022.repository.msg.MemoryCharacteristics1.mmFreeSize, com.tools20022.repository.msg.MemoryCharacteristics1.mmUnit);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MemoryCharacteristics1";
 				definition = "Characteristics of a hardware memory module.";
@@ -254,39 +300,39 @@ public class MemoryCharacteristics1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public MemoryCharacteristics1 setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "TtlSz", required = true)
 	public DecimalNumber getTotalSize() {
 		return totalSize;
 	}
 
-	public void setTotalSize(DecimalNumber totalSize) {
-		this.totalSize = totalSize;
+	public MemoryCharacteristics1 setTotalSize(DecimalNumber totalSize) {
+		this.totalSize = Objects.requireNonNull(totalSize);
+		return this;
 	}
 
-	@XmlElement(name = "FreeSz", required = true)
 	public DecimalNumber getFreeSize() {
 		return freeSize;
 	}
 
-	public void setFreeSize(DecimalNumber freeSize) {
-		this.freeSize = freeSize;
+	public MemoryCharacteristics1 setFreeSize(DecimalNumber freeSize) {
+		this.freeSize = Objects.requireNonNull(freeSize);
+		return this;
 	}
 
-	@XmlElement(name = "Unit", required = true)
 	public MemoryUnit1Code getUnit() {
 		return unit;
 	}
 
-	public void setUnit(MemoryUnit1Code unit) {
-		this.unit = unit;
+	public MemoryCharacteristics1 setUnit(MemoryUnit1Code unit) {
+		this.unit = Objects.requireNonNull(unit);
+		return this;
 	}
 }

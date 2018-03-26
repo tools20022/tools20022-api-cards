@@ -37,21 +37,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.EntryStatusCode#Booked
- * EntryStatusCode.mmBooked}</li>
+ * EntryStatusCode.Booked}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.EntryStatusCode#Pending
- * EntryStatusCode.mmPending}</li>
+ * EntryStatusCode.Pending}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EntryStatusCode#Information
- * EntryStatusCode.mmInformation}</li>
+ * EntryStatusCode.Information}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.EntryStatusCode#Future
- * EntryStatusCode.mmFuture}</li>
+ * EntryStatusCode.Future}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -76,10 +76,10 @@ public class EntryStatusCode extends MMCode {
 	 * Booked means that the transfer of money has been completed between
 	 * account servicer and account owner
 	 * 
-	 * Usage : Status Booked does not necessarily imply finality of money as
-	 * this depends on other factors such as the payment system used, the
-	 * completion of the end-to-end transaction and the terms agreed between
-	 * account servicer and owner. Status Booked is the only status that can be
+	 * Usage: Status Booked does not necessarily imply finality of money as this
+	 * depends on other factors such as the payment system used, the completion
+	 * of the end-to-end transaction and the terms agreed between account
+	 * servicer and owner. Status Booked is the only status that can be
 	 * reversed.
 	 * <p>
 	 * <strong>Constant fields:</strong>
@@ -98,7 +98,7 @@ public class EntryStatusCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Booked means that the transfer of money has been completed between account servicer and account owner\n\nUsage :   \nStatus Booked does not necessarily imply finality of money as this depends on other factors such as the payment system used, the completion of the end-to-end transaction and the terms agreed between account servicer and owner.\nStatus Booked is the only status that can be reversed."
+	 * "Booked means that the transfer of money has been completed between account servicer and account owner\n\nUsage: \nStatus Booked does not necessarily imply finality of money as this depends on other factors such as the payment system used, the completion of the end-to-end transaction and the terms agreed between account servicer and owner.\nStatus Booked is the only status that can be reversed."
 	 * </li>
 	 * </ul>
 	 */
@@ -106,7 +106,7 @@ public class EntryStatusCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Booked";
-			definition = "Booked means that the transfer of money has been completed between account servicer and account owner\n\nUsage :   \nStatus Booked does not necessarily imply finality of money as this depends on other factors such as the payment system used, the completion of the end-to-end transaction and the terms agreed between account servicer and owner.\nStatus Booked is the only status that can be reversed.";
+			definition = "Booked means that the transfer of money has been completed between account servicer and account owner\n\nUsage: \nStatus Booked does not necessarily imply finality of money as this depends on other factors such as the payment system used, the completion of the end-to-end transaction and the terms agreed between account servicer and owner.\nStatus Booked is the only status that can be reversed.";
 			owner_lazy = () -> com.tools20022.repository.codeset.EntryStatusCode.mmObject();
 			codeName = "BOOK";
 		}
@@ -115,7 +115,7 @@ public class EntryStatusCode extends MMCode {
 	 * Booking on the account owner's account in the account servicer's ledger
 	 * has not been completed.
 	 * 
-	 * Usage : this can be used for expected items, or for items for which some
+	 * Usage: this can be used for expected items, or for items for which some
 	 * conditions still need to be fulfilled before they can be booked. If
 	 * booking takes place, the entry will be included with status Booked in
 	 * subsequent account report or statement. Status Pending cannot be
@@ -137,7 +137,7 @@ public class EntryStatusCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Booking on the account owner's account in the account servicer's ledger has not been completed.\n\nUsage : this can be used for expected items, or for items for which some conditions still need to be fulfilled before they can be booked. If booking takes place, the entry will be included with status Booked in subsequent account report or statement. Status Pending cannot be reversed."
+	 * "Booking on the account owner's account in the account servicer's ledger has not been completed.\n\nUsage: this can be used for expected items, or for items for which some conditions still need to be fulfilled before they can be booked. If booking takes place, the entry will be included with status Booked in subsequent account report or statement. Status Pending cannot be reversed."
 	 * </li>
 	 * </ul>
 	 */
@@ -145,7 +145,7 @@ public class EntryStatusCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Pending";
-			definition = "Booking on the account owner's account in the account servicer's ledger has not been completed.\n\nUsage : this can be used for expected items, or for items for which some conditions still need to be fulfilled before they can be booked. If booking takes place, the entry will be included with status Booked in subsequent account report or statement. Status Pending cannot be reversed.";
+			definition = "Booking on the account owner's account in the account servicer's ledger has not been completed.\n\nUsage: this can be used for expected items, or for items for which some conditions still need to be fulfilled before they can be booked. If booking takes place, the entry will be included with status Booked in subsequent account report or statement. Status Pending cannot be reversed.";
 			owner_lazy = () -> com.tools20022.repository.codeset.EntryStatusCode.mmObject();
 			codeName = "PDNG";
 		}
@@ -224,7 +224,7 @@ public class EntryStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BOOK");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EntryStatusCode";

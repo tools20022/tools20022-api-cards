@@ -20,13 +20,15 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.FailureReasonCode;
 import com.tools20022.repository.codeset.RejectReasonCode;
+import com.tools20022.repository.entity.CardPayment;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Status of a payment by card.
@@ -80,8 +82,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -97,8 +99,8 @@ public class CardPaymentStatus extends Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected RejectReasonCode rejectionReason;
 	/**
-	 * Reason of the rejection of a request or an advice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -136,7 +138,7 @@ public class CardPaymentStatus extends Status {
 	 * definition} = "Reason of the rejection of a request or an advice."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRejectionReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CardPaymentStatus, RejectReasonCode> mmRejectionReason = new MMBusinessAttribute<CardPaymentStatus, RejectReasonCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AcceptorRejection2.mmRejectReason, AcceptorRejection3.mmRejectReason, AcceptorRejection4.mmRejectReason);
 			isDerived = false;
@@ -149,18 +151,20 @@ public class CardPaymentStatus extends Status {
 			simpleType_lazy = () -> RejectReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CardPaymentStatus.class.getMethod("getRejectionReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public RejectReasonCode getValue(CardPaymentStatus obj) {
+			return obj.getRejectionReason();
+		}
+
+		@Override
+		public void setValue(CardPaymentStatus obj, RejectReasonCode value) {
+			obj.setRejectionReason(value);
 		}
 	};
 	protected FailureReasonCode failureReason;
 	/**
-	 * List of incidents during the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -201,7 +205,7 @@ public class CardPaymentStatus extends Status {
 	 * definition} = "List of incidents during the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFailureReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CardPaymentStatus, FailureReasonCode> mmFailureReason = new MMBusinessAttribute<CardPaymentStatus, FailureReasonCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(ATMTransaction20.mmIncident, CardPaymentTransaction75.mmFailureReason, CardPaymentTransaction70.mmFailureReason, CardPaymentTransaction69.mmFailureReason);
 			isDerived = false;
@@ -214,18 +218,20 @@ public class CardPaymentStatus extends Status {
 			simpleType_lazy = () -> FailureReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CardPaymentStatus.class.getMethod("getFailureReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FailureReasonCode getValue(CardPaymentStatus obj) {
+			return obj.getFailureReason();
+		}
+
+		@Override
+		public void setValue(CardPaymentStatus obj, FailureReasonCode value) {
+			obj.setFailureReason(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.CardPayment> cardPayment;
 	/**
-	 * Card payment for which a status is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -264,7 +270,7 @@ public class CardPaymentStatus extends Status {
 	 * definition} = "Card payment for which a status is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCardPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CardPaymentStatus, List<CardPayment>> mmCardPayment = new MMBusinessAssociationEnd<CardPaymentStatus, List<CardPayment>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AcceptorReconciliationResponse4.mmEnvironment);
 			isDerived = false;
@@ -277,12 +283,22 @@ public class CardPaymentStatus extends Status {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CardPayment.mmObject();
 		}
+
+		@Override
+		public List<CardPayment> getValue(CardPaymentStatus obj) {
+			return obj.getCardPayment();
+		}
+
+		@Override
+		public void setValue(CardPaymentStatus obj, List<CardPayment> value) {
+			obj.setCardPayment(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPaymentStatus";
 				definition = "Status of a payment by card.";
@@ -305,23 +321,26 @@ public class CardPaymentStatus extends Status {
 		return rejectionReason;
 	}
 
-	public void setRejectionReason(RejectReasonCode rejectionReason) {
-		this.rejectionReason = rejectionReason;
+	public CardPaymentStatus setRejectionReason(RejectReasonCode rejectionReason) {
+		this.rejectionReason = Objects.requireNonNull(rejectionReason);
+		return this;
 	}
 
 	public FailureReasonCode getFailureReason() {
 		return failureReason;
 	}
 
-	public void setFailureReason(FailureReasonCode failureReason) {
-		this.failureReason = failureReason;
+	public CardPaymentStatus setFailureReason(FailureReasonCode failureReason) {
+		this.failureReason = Objects.requireNonNull(failureReason);
+		return this;
 	}
 
 	public List<CardPayment> getCardPayment() {
-		return cardPayment;
+		return cardPayment == null ? cardPayment = new ArrayList<>() : cardPayment;
 	}
 
-	public void setCardPayment(List<com.tools20022.repository.entity.CardPayment> cardPayment) {
-		this.cardPayment = cardPayment;
+	public CardPaymentStatus setCardPayment(List<com.tools20022.repository.entity.CardPayment> cardPayment) {
+		this.cardPayment = Objects.requireNonNull(cardPayment);
+		return this;
 	}
 }

@@ -23,8 +23,11 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ATMService16;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -49,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -61,16 +64,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Context in which the inquiry is performed."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ATMContext15", propOrder = {"sessionReference", "service"})
 public class ATMContext15 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SsnRef")
 	protected Max35Text sessionReference;
 	/**
-	 * Unique identification of the customer session in which the service is
-	 * performed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -96,9 +99,9 @@ public class ATMContext15 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSessionReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMContext15, Optional<Max35Text>> mmSessionReference = new MMMessageAttribute<ATMContext15, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> ATMContext15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMContext15.mmObject();
 			isDerived = false;
 			xmlTag = "SsnRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -108,11 +111,22 @@ public class ATMContext15 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(ATMContext15 obj) {
+			return obj.getSessionReference();
+		}
+
+		@Override
+		public void setValue(ATMContext15 obj, Optional<Max35Text> value) {
+			obj.setSessionReference(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Svc", required = true)
 	protected ATMService16 service;
 	/**
-	 * Withdrawal service provided by the ATM inside the session.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -136,9 +150,9 @@ public class ATMContext15 {
 	 * "Withdrawal service provided by the ATM inside the session."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmService = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMContext15, ATMService16> mmService = new MMMessageAssociationEnd<ATMContext15, ATMService16>() {
 		{
-			componentContext_lazy = () -> ATMContext15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMContext15.mmObject();
 			isDerived = false;
 			xmlTag = "Svc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -147,15 +161,25 @@ public class ATMContext15 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMService16.mmObject();
+			type_lazy = () -> ATMService16.mmObject();
+		}
+
+		@Override
+		public ATMService16 getValue(ATMContext15 obj) {
+			return obj.getService();
+		}
+
+		@Override
+		public void setValue(ATMContext15 obj, ATMService16 value) {
+			obj.setService(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ATMContext15.mmSessionReference, ATMContext15.mmService);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ATMContext15.mmSessionReference, com.tools20022.repository.msg.ATMContext15.mmService);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMContext15";
 				definition = "Context in which the inquiry is performed.";
@@ -164,21 +188,21 @@ public class ATMContext15 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SsnRef")
-	public Max35Text getSessionReference() {
-		return sessionReference;
+	public Optional<Max35Text> getSessionReference() {
+		return sessionReference == null ? Optional.empty() : Optional.of(sessionReference);
 	}
 
-	public void setSessionReference(Max35Text sessionReference) {
+	public ATMContext15 setSessionReference(Max35Text sessionReference) {
 		this.sessionReference = sessionReference;
+		return this;
 	}
 
-	@XmlElement(name = "Svc", required = true)
 	public ATMService16 getService() {
 		return service;
 	}
 
-	public void setService(com.tools20022.repository.msg.ATMService16 service) {
-		this.service = service;
+	public ATMContext15 setService(ATMService16 service) {
+		this.service = Objects.requireNonNull(service);
+		return this;
 	}
 }

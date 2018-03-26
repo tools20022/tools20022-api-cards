@@ -25,6 +25,7 @@ import com.tools20022.repository.msg.GeographicCoordinates1;
 import com.tools20022.repository.msg.UTMCoordinates1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,16 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "GeographicLocation1Choice", propOrder = {"geographicCoordinates", "UTMCoordinates"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "GeographicLocation1Choice", propOrder = {"geographicCoordinates", "uTMCoordinates"})
 public class GeographicLocation1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "GeogcCordints", required = true)
 	protected GeographicCoordinates1 geographicCoordinates;
 	/**
-	 * Location on the earth specified by two numbers representing vertical and
-	 * horizontal position.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -100,9 +101,9 @@ public class GeographicLocation1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmGeographicCoordinates = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<GeographicLocation1Choice, GeographicCoordinates1> mmGeographicCoordinates = new MMMessageAssociationEnd<GeographicLocation1Choice, GeographicCoordinates1>() {
 		{
-			componentContext_lazy = () -> GeographicLocation1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.GeographicLocation1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "GeogcCordints";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -113,12 +114,22 @@ public class GeographicLocation1Choice {
 			isComposite = true;
 			type_lazy = () -> GeographicCoordinates1.mmObject();
 		}
+
+		@Override
+		public GeographicCoordinates1 getValue(GeographicLocation1Choice obj) {
+			return obj.getGeographicCoordinates();
+		}
+
+		@Override
+		public void setValue(GeographicLocation1Choice obj, GeographicCoordinates1 value) {
+			obj.setGeographicCoordinates(value);
+		}
 	};
+	@XmlElement(name = "UTMCordints", required = true)
 	protected UTMCoordinates1 uTMCoordinates;
 	/**
-	 * Location on the earth specified by the Universal Transverse Mercator
-	 * coordinate system, using the WGS84 geodesic system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -144,9 +155,9 @@ public class GeographicLocation1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmUTMCoordinates = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<GeographicLocation1Choice, UTMCoordinates1> mmUTMCoordinates = new MMMessageAssociationEnd<GeographicLocation1Choice, UTMCoordinates1>() {
 		{
-			componentContext_lazy = () -> GeographicLocation1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.GeographicLocation1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "UTMCordints";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -157,13 +168,23 @@ public class GeographicLocation1Choice {
 			isComposite = true;
 			type_lazy = () -> UTMCoordinates1.mmObject();
 		}
+
+		@Override
+		public UTMCoordinates1 getValue(GeographicLocation1Choice obj) {
+			return obj.getUTMCoordinates();
+		}
+
+		@Override
+		public void setValue(GeographicLocation1Choice obj, UTMCoordinates1 value) {
+			obj.setUTMCoordinates(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(GeographicLocation1Choice.mmGeographicCoordinates, GeographicLocation1Choice.mmUTMCoordinates);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.GeographicLocation1Choice.mmGeographicCoordinates, com.tools20022.repository.choice.GeographicLocation1Choice.mmUTMCoordinates);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GeographicLocation1Choice";
 				definition = "Geographic location of the ATM specified by geographic coordinates or UTM coordinates.";
@@ -172,21 +193,21 @@ public class GeographicLocation1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "GeogcCordints", required = true)
 	public GeographicCoordinates1 getGeographicCoordinates() {
 		return geographicCoordinates;
 	}
 
-	public void setGeographicCoordinates(GeographicCoordinates1 geographicCoordinates) {
-		this.geographicCoordinates = geographicCoordinates;
+	public GeographicLocation1Choice setGeographicCoordinates(GeographicCoordinates1 geographicCoordinates) {
+		this.geographicCoordinates = Objects.requireNonNull(geographicCoordinates);
+		return this;
 	}
 
-	@XmlElement(name = "UTMCordints", required = true)
 	public UTMCoordinates1 getUTMCoordinates() {
 		return uTMCoordinates;
 	}
 
-	public void setUTMCoordinates(UTMCoordinates1 uTMCoordinates) {
-		this.uTMCoordinates = uTMCoordinates;
+	public GeographicLocation1Choice setUTMCoordinates(UTMCoordinates1 uTMCoordinates) {
+		this.uTMCoordinates = Objects.requireNonNull(uTMCoordinates);
+		return this;
 	}
 }

@@ -38,322 +38,334 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AuthorisationRequest
- * MessageFunctionCode.mmAuthorisationRequest}</li>
+ * MessageFunctionCode.AuthorisationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AuthorisationResponse
- * MessageFunctionCode.mmAuthorisationResponse}</li>
+ * MessageFunctionCode.AuthorisationResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#FinancialAuthorisationRequest
- * MessageFunctionCode.mmFinancialAuthorisationRequest}</li>
+ * MessageFunctionCode.FinancialAuthorisationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#FinancialAuthorisationResponse
- * MessageFunctionCode.mmFinancialAuthorisationResponse}</li>
+ * MessageFunctionCode.FinancialAuthorisationResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#CompletionAdvice
- * MessageFunctionCode.mmCompletionAdvice}</li>
+ * MessageFunctionCode.CompletionAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#CompletionAdviceResponse
- * MessageFunctionCode.mmCompletionAdviceResponse}</li>
+ * MessageFunctionCode.CompletionAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#FinancialCompletionAdvice
- * MessageFunctionCode.mmFinancialCompletionAdvice}</li>
+ * MessageFunctionCode.FinancialCompletionAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#FinancialCompletionAdviceResponse
- * MessageFunctionCode.mmFinancialCompletionAdviceResponse}</li>
+ * MessageFunctionCode.FinancialCompletionAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ReversalAdvice
- * MessageFunctionCode.mmReversalAdvice}</li>
+ * MessageFunctionCode.ReversalAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ReversalAdviceResponse
- * MessageFunctionCode.mmReversalAdviceResponse}</li>
+ * MessageFunctionCode.ReversalAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#FinancialReversalAdvice
- * MessageFunctionCode.mmFinancialReversalAdvice}</li>
+ * MessageFunctionCode.FinancialReversalAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#FinancialReversalAdviceResponse
- * MessageFunctionCode.mmFinancialReversalAdviceResponse}</li>
+ * MessageFunctionCode.FinancialReversalAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#CancellationRequest
- * MessageFunctionCode.mmCancellationRequest}</li>
+ * MessageFunctionCode.CancellationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#CancellationResponse
- * MessageFunctionCode.mmCancellationResponse}</li>
+ * MessageFunctionCode.CancellationResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#CancellationAdvice
- * MessageFunctionCode.mmCancellationAdvice}</li>
+ * MessageFunctionCode.CancellationAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#CancellationAdviceResponse
- * MessageFunctionCode.mmCancellationAdviceResponse}</li>
+ * MessageFunctionCode.CancellationAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#DiagnosticRequest
- * MessageFunctionCode.mmDiagnosticRequest}</li>
+ * MessageFunctionCode.DiagnosticRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#DiagnosticResponse
- * MessageFunctionCode.mmDiagnosticResponse}</li>
+ * MessageFunctionCode.DiagnosticResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ReconciliationRequest
- * MessageFunctionCode.mmReconciliationRequest}</li>
+ * MessageFunctionCode.ReconciliationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ReconciliationResponse
- * MessageFunctionCode.mmReconciliationResponse}</li>
+ * MessageFunctionCode.ReconciliationResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#BatchTransfer
- * MessageFunctionCode.mmBatchTransfer}</li>
+ * MessageFunctionCode.BatchTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#Rejection
- * MessageFunctionCode.mmRejection}</li>
+ * MessageFunctionCode.Rejection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#Response
- * MessageFunctionCode.mmResponse}</li>
+ * MessageFunctionCode.Response}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#Request
- * MessageFunctionCode.mmRequest}</li>
+ * MessageFunctionCode.Request}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#CurrencyConversionRequest
- * MessageFunctionCode.mmCurrencyConversionRequest}</li>
+ * MessageFunctionCode.CurrencyConversionRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#CurrencyConversionResponse
- * MessageFunctionCode.mmCurrencyConversionResponse}</li>
+ * MessageFunctionCode.CurrencyConversionResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AcquirerReconciliationAdvice
- * MessageFunctionCode.mmAcquirerReconciliationAdvice}</li>
+ * MessageFunctionCode.AcquirerReconciliationAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AcquirerReconciliationAdviceResponse
- * MessageFunctionCode.mmAcquirerReconciliationAdviceResponse}</li>
+ * MessageFunctionCode.AcquirerReconciliationAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AcquirerReconciliationNotification
- * MessageFunctionCode.mmAcquirerReconciliationNotification}</li>
+ * MessageFunctionCode.AcquirerReconciliationNotification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AcquirerReconciliationRequest
- * MessageFunctionCode.mmAcquirerReconciliationRequest}</li>
+ * MessageFunctionCode.AcquirerReconciliationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AcquirerReconciliationResponse
- * MessageFunctionCode.mmAcquirerReconciliationResponse}</li>
+ * MessageFunctionCode.AcquirerReconciliationResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AcquirerReject
- * MessageFunctionCode.mmAcquirerReject}</li>
+ * MessageFunctionCode.AcquirerReject}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AgentReconciliationAdvice
- * MessageFunctionCode.mmAgentReconciliationAdvice}</li>
+ * MessageFunctionCode.AgentReconciliationAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AgentReconciliationAdviceResponse
- * MessageFunctionCode.mmAgentReconciliationAdviceResponse}</li>
+ * MessageFunctionCode.AgentReconciliationAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AgentReconciliationNotification
- * MessageFunctionCode.mmAgentReconciliationNotification}</li>
+ * MessageFunctionCode.AgentReconciliationNotification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AgentReconciliationRequest
- * MessageFunctionCode.mmAgentReconciliationRequest}</li>
+ * MessageFunctionCode.AgentReconciliationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AgentReconciliationResponse
- * MessageFunctionCode.mmAgentReconciliationResponse}</li>
+ * MessageFunctionCode.AgentReconciliationResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AgentReject
- * MessageFunctionCode.mmAgentReject}</li>
+ * MessageFunctionCode.AgentReject}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AuthorisationAdvice
- * MessageFunctionCode.mmAuthorisationAdvice}</li>
+ * MessageFunctionCode.AuthorisationAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AuthorisationAdviceResponse
- * MessageFunctionCode.mmAuthorisationAdviceResponse}</li>
+ * MessageFunctionCode.AuthorisationAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AuthorisationNotification
- * MessageFunctionCode.mmAuthorisationNotification}</li>
+ * MessageFunctionCode.AuthorisationNotification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#FinancialAdvice
- * MessageFunctionCode.mmFinancialAdvice}</li>
+ * MessageFunctionCode.FinancialAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#FinancialAdviceResponse
- * MessageFunctionCode.mmFinancialAdviceResponse}</li>
+ * MessageFunctionCode.FinancialAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#FinancialNotification
- * MessageFunctionCode.mmFinancialNotification}</li>
+ * MessageFunctionCode.FinancialNotification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#FinancialRequest
- * MessageFunctionCode.mmFinancialRequest}</li>
+ * MessageFunctionCode.FinancialRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#FinancialResponse
- * MessageFunctionCode.mmFinancialResponse}</li>
+ * MessageFunctionCode.FinancialResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#IssuerReconciliationAdvice
- * MessageFunctionCode.mmIssuerReconciliationAdvice}</li>
+ * MessageFunctionCode.IssuerReconciliationAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#IssuerReconciliationAdviceResponse
- * MessageFunctionCode.mmIssuerReconciliationAdviceResponse}</li>
+ * MessageFunctionCode.IssuerReconciliationAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#IssuerReconciliationNotification
- * MessageFunctionCode.mmIssuerReconciliationNotification}</li>
+ * MessageFunctionCode.IssuerReconciliationNotification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#IssuerReconciliationRequest
- * MessageFunctionCode.mmIssuerReconciliationRequest}</li>
+ * MessageFunctionCode.IssuerReconciliationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#IssuerReconciliationResponse
- * MessageFunctionCode.mmIssuerReconciliationResponse}</li>
+ * MessageFunctionCode.IssuerReconciliationResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#IssuerReject
- * MessageFunctionCode.mmIssuerReject}</li>
+ * MessageFunctionCode.IssuerReject}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#NetworkManagementAdvice
- * MessageFunctionCode.mmNetworkManagementAdvice}</li>
+ * MessageFunctionCode.NetworkManagementAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#NetworkManagementAdviceResponse
- * MessageFunctionCode.mmNetworkManagementAdviceResponse}</li>
+ * MessageFunctionCode.NetworkManagementAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#NetworkManagementRequest
- * MessageFunctionCode.mmNetworkManagementRequest}</li>
+ * MessageFunctionCode.NetworkManagementRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#NetworkManagementResponse
- * MessageFunctionCode.mmNetworkManagementResponse}</li>
+ * MessageFunctionCode.NetworkManagementResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#KeyExchangeAdvice
- * MessageFunctionCode.mmKeyExchangeAdvice}</li>
+ * MessageFunctionCode.KeyExchangeAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#KeyExchangeAdviceResponse
- * MessageFunctionCode.mmKeyExchangeAdviceResponse}</li>
+ * MessageFunctionCode.KeyExchangeAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#KeyExchangeRequest
- * MessageFunctionCode.mmKeyExchangeRequest}</li>
+ * MessageFunctionCode.KeyExchangeRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#KeyExchangeResponse
- * MessageFunctionCode.mmKeyExchangeResponse}</li>
+ * MessageFunctionCode.KeyExchangeResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AcquirerReversalAdvice
- * MessageFunctionCode.mmAcquirerReversalAdvice}</li>
+ * MessageFunctionCode.AcquirerReversalAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AcquirerReversalAdviceResponse
- * MessageFunctionCode.mmAcquirerReversalAdviceResponse}</li>
+ * MessageFunctionCode.AcquirerReversalAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AcquirerReversalNotification
- * MessageFunctionCode.mmAcquirerReversalNotification}</li>
+ * MessageFunctionCode.AcquirerReversalNotification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AcquirerReversalRequest
- * MessageFunctionCode.mmAcquirerReversalRequest}</li>
+ * MessageFunctionCode.AcquirerReversalRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AcquirerReversalResponse
- * MessageFunctionCode.mmAcquirerReversalResponse}</li>
+ * MessageFunctionCode.AcquirerReversalResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMBalance
- * MessageFunctionCode.mmATMBalance}</li>
+ * MessageFunctionCode.ATMBalance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMCompletionAdvice
- * MessageFunctionCode.mmATMCompletionAdvice}</li>
+ * MessageFunctionCode.ATMCompletionAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMCompletionAcknowledgement
- * MessageFunctionCode.mmATMCompletionAcknowledgement}</li>
+ * MessageFunctionCode.ATMCompletionAcknowledgement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMControl
- * MessageFunctionCode.mmATMControl}</li>
+ * MessageFunctionCode.ATMControl}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMDeviceControl
- * MessageFunctionCode.mmATMDeviceControl}</li>
+ * MessageFunctionCode.ATMDeviceControl}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMDiagnosticRequest
- * MessageFunctionCode.mmATMDiagnosticRequest}</li>
+ * MessageFunctionCode.ATMDiagnosticRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMDiagnosticResponse
- * MessageFunctionCode.mmATMDiagnosticResponse}</li>
+ * MessageFunctionCode.ATMDiagnosticResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMGlobalStatus
- * MessageFunctionCode.mmATMGlobalStatus}</li>
+ * MessageFunctionCode.ATMGlobalStatus}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMInquiryRequest
- * MessageFunctionCode.mmATMInquiryRequest}</li>
+ * MessageFunctionCode.ATMInquiryRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMInquiryResponse
- * MessageFunctionCode.mmATMInquiryResponse}</li>
+ * MessageFunctionCode.ATMInquiryResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMKeyDownloadRequest
- * MessageFunctionCode.mmATMKeyDownloadRequest}</li>
+ * MessageFunctionCode.ATMKeyDownloadRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMPINManagementResponse
- * MessageFunctionCode.mmATMPINManagementResponse}</li>
+ * MessageFunctionCode.ATMPINManagementResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMPINManagementRequest
- * MessageFunctionCode.mmATMPINManagementRequest}</li>
+ * MessageFunctionCode.ATMPINManagementRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMKeyDownloadResponse
- * MessageFunctionCode.mmATMKeyDownloadResponse}</li>
+ * MessageFunctionCode.ATMKeyDownloadResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMRequestReject
- * MessageFunctionCode.mmATMRequestReject}</li>
+ * MessageFunctionCode.ATMRequestReject}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMResponseReject
- * MessageFunctionCode.mmATMResponseReject}</li>
+ * MessageFunctionCode.ATMResponseReject}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMWithdrawalRequest
- * MessageFunctionCode.mmATMWithdrawalRequest}</li>
+ * MessageFunctionCode.ATMWithdrawalRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMWithdrawalResponse
- * MessageFunctionCode.mmATMWithdrawalResponse}</li>
+ * MessageFunctionCode.ATMWithdrawalResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMWithdrawalAdvice
- * MessageFunctionCode.mmATMWithdrawalAdvice}</li>
+ * MessageFunctionCode.ATMWithdrawalAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMWithdrawalAknowledgement
- * MessageFunctionCode.mmATMWithdrawalAknowledgement}</li>
+ * MessageFunctionCode.ATMWithdrawalAknowledgement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#CountersInquiry
- * MessageFunctionCode.mmCountersInquiry}</li>
+ * MessageFunctionCode.CountersInquiry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#HostToATMRequest
- * MessageFunctionCode.mmHostToATMRequest}</li>
+ * MessageFunctionCode.HostToATMRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#HostToATMAcknowledgement
- * MessageFunctionCode.mmHostToATMAcknowledgement}</li>
+ * MessageFunctionCode.HostToATMAcknowledgement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMOperation
- * MessageFunctionCode.mmATMOperation}</li>
+ * MessageFunctionCode.ATMOperation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#SecurityControl
- * MessageFunctionCode.mmSecurityControl}</li>
+ * MessageFunctionCode.SecurityControl}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#SecurityDetails
- * MessageFunctionCode.mmSecurityDetails}</li>
+ * MessageFunctionCode.SecurityDetails}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#SecurityKeyCompletion
- * MessageFunctionCode.mmSecurityKeyCompletion}</li>
+ * MessageFunctionCode.SecurityKeyCompletion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#SecurityKeyStatus
- * MessageFunctionCode.mmSecurityKeyStatus}</li>
+ * MessageFunctionCode.SecurityKeyStatus}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AcceptorRequestReject
- * MessageFunctionCode.mmAcceptorRequestReject}</li>
+ * MessageFunctionCode.AcceptorRequestReject}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#AcceptorResponseReject
- * MessageFunctionCode.mmAcceptorResponseReject}</li>
+ * MessageFunctionCode.AcceptorResponseReject}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMDepositRequest
- * MessageFunctionCode.mmATMDepositRequest}</li>
+ * MessageFunctionCode.ATMDepositRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMDepositResponse
- * MessageFunctionCode.mmATMDepositResponse}</li>
+ * MessageFunctionCode.ATMDepositResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMDepositCompletionAdvice
- * MessageFunctionCode.mmATMDepositCompletionAdvice}</li>
+ * MessageFunctionCode.ATMDepositCompletionAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMDepositCompletionAcknowledgement
- * MessageFunctionCode.mmATMDepositCompletionAcknowledgement}</li>
+ * MessageFunctionCode.ATMDepositCompletionAcknowledgement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMExceptionAdvice
- * MessageFunctionCode.mmATMExceptionAdvice}</li>
+ * MessageFunctionCode.ATMExceptionAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMExceptionAcknowledgement
- * MessageFunctionCode.mmATMExceptionAcknowledgement}</li>
+ * MessageFunctionCode.ATMExceptionAcknowledgement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMTransferRequest
- * MessageFunctionCode.mmATMTransferRequest}</li>
+ * MessageFunctionCode.ATMTransferRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#ATMTransferResponse
- * MessageFunctionCode.mmATMTransferResponse}</li>
+ * MessageFunctionCode.ATMTransferResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#CountersReport
- * MessageFunctionCode.mmCountersReport}</li>
+ * MessageFunctionCode.CountersReport}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#CurrencyConversionAdvice
- * MessageFunctionCode.mmCurrencyConversionAdvice}</li>
+ * MessageFunctionCode.CurrencyConversionAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#CurrencyConversionAdviceResponse
- * MessageFunctionCode.mmCurrencyConversionAdviceResponse}</li>
+ * MessageFunctionCode.CurrencyConversionAdviceResponse}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#CardDebitRequest
+ * MessageFunctionCode.CardDebitRequest}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#CardDebitResponse
+ * MessageFunctionCode.CardDebitResponse}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#CardDebitAdvice
+ * MessageFunctionCode.CardDebitAdvice}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode#CardDebitAdviceResponse
+ * MessageFunctionCode.CardDebitAdviceResponse}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -380,8 +392,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -1734,14 +1746,14 @@ public class MessageFunctionCode extends MMCode {
 	 * name} = "FinancialNotification"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Initiator requests the clearing of the transaction. "</li>
+	 * definition} = "Initiator requests the clearing of the transaction."</li>
 	 * </ul>
 	 */
 	public static final MessageFunctionCode FinancialNotification = new MessageFunctionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FinancialNotification";
-			definition = "Initiator requests the clearing of the transaction. ";
+			definition = "Initiator requests the clearing of the transaction.";
 			owner_lazy = () -> com.tools20022.repository.codeset.MessageFunctionCode.mmObject();
 			codeName = "FNCN";
 		}
@@ -3634,6 +3646,126 @@ public class MessageFunctionCode extends MMCode {
 			codeName = "DCRR";
 		}
 	};
+	/**
+	 * Request to initiate a Card Direct Debit.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode
+	 * MessageFunctionCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "CDDR"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "CardDebitRequest"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Request to initiate a Card Direct Debit."</li>
+	 * </ul>
+	 */
+	public static final MessageFunctionCode CardDebitRequest = new MessageFunctionCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "CardDebitRequest";
+			definition = "Request to initiate a Card Direct Debit.";
+			owner_lazy = () -> com.tools20022.repository.codeset.MessageFunctionCode.mmObject();
+			codeName = "CDDR";
+		}
+	};
+	/**
+	 * Response to a Card Direct Debit Request.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode
+	 * MessageFunctionCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "CDDP"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "CardDebitResponse"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Response to a Card Direct Debit Request."</li>
+	 * </ul>
+	 */
+	public static final MessageFunctionCode CardDebitResponse = new MessageFunctionCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "CardDebitResponse";
+			definition = "Response to a Card Direct Debit Request.";
+			owner_lazy = () -> com.tools20022.repository.codeset.MessageFunctionCode.mmObject();
+			codeName = "CDDP";
+		}
+	};
+	/**
+	 * Advice for a Card Direct Debit.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode
+	 * MessageFunctionCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "CDDQ"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "CardDebitAdvice"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Advice for a Card Direct Debit."</li>
+	 * </ul>
+	 */
+	public static final MessageFunctionCode CardDebitAdvice = new MessageFunctionCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "CardDebitAdvice";
+			definition = "Advice for a Card Direct Debit.";
+			owner_lazy = () -> com.tools20022.repository.codeset.MessageFunctionCode.mmObject();
+			codeName = "CDDQ";
+		}
+	};
+	/**
+	 * Response to a Card Direct Debit Advice.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.MessageFunctionCode
+	 * MessageFunctionCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "CDDK"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "CardDebitAdviceResponse"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Response to a Card Direct Debit Advice."</li>
+	 * </ul>
+	 */
+	public static final MessageFunctionCode CardDebitAdviceResponse = new MessageFunctionCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "CardDebitAdviceResponse";
+			definition = "Response to a Card Direct Debit Advice.";
+			owner_lazy = () -> com.tools20022.repository.codeset.MessageFunctionCode.mmObject();
+			codeName = "CDDK";
+		}
+	};
 	final static private LinkedHashMap<String, MessageFunctionCode> codesByName = new LinkedHashMap<>();
 
 	protected MessageFunctionCode() {
@@ -3642,7 +3774,7 @@ public class MessageFunctionCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AUTQ");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MessageFunctionCode";
@@ -3701,7 +3833,9 @@ public class MessageFunctionCode extends MMCode {
 						com.tools20022.repository.codeset.MessageFunctionCode.ATMExceptionAdvice, com.tools20022.repository.codeset.MessageFunctionCode.ATMExceptionAcknowledgement,
 						com.tools20022.repository.codeset.MessageFunctionCode.ATMTransferRequest, com.tools20022.repository.codeset.MessageFunctionCode.ATMTransferResponse,
 						com.tools20022.repository.codeset.MessageFunctionCode.CountersReport, com.tools20022.repository.codeset.MessageFunctionCode.CurrencyConversionAdvice,
-						com.tools20022.repository.codeset.MessageFunctionCode.CurrencyConversionAdviceResponse);
+						com.tools20022.repository.codeset.MessageFunctionCode.CurrencyConversionAdviceResponse, com.tools20022.repository.codeset.MessageFunctionCode.CardDebitRequest,
+						com.tools20022.repository.codeset.MessageFunctionCode.CardDebitResponse, com.tools20022.repository.codeset.MessageFunctionCode.CardDebitAdvice,
+						com.tools20022.repository.codeset.MessageFunctionCode.CardDebitAdviceResponse);
 			}
 		});
 		return mmObject_lazy.get();
@@ -3814,6 +3948,10 @@ public class MessageFunctionCode extends MMCode {
 		codesByName.put(CountersReport.getCodeName().get(), CountersReport);
 		codesByName.put(CurrencyConversionAdvice.getCodeName().get(), CurrencyConversionAdvice);
 		codesByName.put(CurrencyConversionAdviceResponse.getCodeName().get(), CurrencyConversionAdviceResponse);
+		codesByName.put(CardDebitRequest.getCodeName().get(), CardDebitRequest);
+		codesByName.put(CardDebitResponse.getCodeName().get(), CardDebitResponse);
+		codesByName.put(CardDebitAdvice.getCodeName().get(), CardDebitAdvice);
+		codesByName.put(CardDebitAdviceResponse.getCodeName().get(), CardDebitAdviceResponse);
 	}
 
 	public static MessageFunctionCode valueOf(String codeName) {

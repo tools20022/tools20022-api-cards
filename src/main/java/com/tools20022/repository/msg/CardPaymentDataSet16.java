@@ -23,9 +23,9 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.choice.CardPaymentDataSetTransaction5Choice;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.*;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -63,8 +63,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,15 +76,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Set of transactions to capture, sharing common characteristics."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CardPaymentDataSet16", propOrder = {"dataSetIdentification", "traceability", "dataSetInitiator", "transactionTotals", "commonData", "transaction"})
 public class CardPaymentDataSet16 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "DataSetId", required = true)
 	protected DataSetIdentification5 dataSetIdentification;
 	/**
-	 * Identification of the data set.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -108,9 +109,9 @@ public class CardPaymentDataSet16 {
 	 * definition} = "Identification of the data set."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDataSetIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CardPaymentDataSet16, DataSetIdentification5> mmDataSetIdentification = new MMMessageAssociationEnd<CardPaymentDataSet16, DataSetIdentification5>() {
 		{
-			componentContext_lazy = () -> CardPaymentDataSet16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardPaymentDataSet16.mmObject();
 			isDerived = false;
 			xmlTag = "DataSetId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,13 +120,24 @@ public class CardPaymentDataSet16 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DataSetIdentification5.mmObject();
+			type_lazy = () -> DataSetIdentification5.mmObject();
+		}
+
+		@Override
+		public DataSetIdentification5 getValue(CardPaymentDataSet16 obj) {
+			return obj.getDataSetIdentification();
+		}
+
+		@Override
+		public void setValue(CardPaymentDataSet16 obj, DataSetIdentification5 value) {
+			obj.setDataSetIdentification(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.Traceability5> traceability;
+	@XmlElement(name = "Tracblt")
+	protected List<Traceability5> traceability;
 	/**
-	 * Identification of partners involved in the data set building.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -150,9 +162,9 @@ public class CardPaymentDataSet16 {
 	 * "Identification of partners involved in the data set building."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTraceability = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CardPaymentDataSet16, List<Traceability5>> mmTraceability = new MMMessageAssociationEnd<CardPaymentDataSet16, List<Traceability5>>() {
 		{
-			componentContext_lazy = () -> CardPaymentDataSet16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardPaymentDataSet16.mmObject();
 			isDerived = false;
 			xmlTag = "Tracblt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -160,13 +172,24 @@ public class CardPaymentDataSet16 {
 			definition = "Identification of partners involved in the data set building.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Traceability5.mmObject();
+			type_lazy = () -> Traceability5.mmObject();
+		}
+
+		@Override
+		public List<Traceability5> getValue(CardPaymentDataSet16 obj) {
+			return obj.getTraceability();
+		}
+
+		@Override
+		public void setValue(CardPaymentDataSet16 obj, List<Traceability5> value) {
+			obj.setTraceability(value);
 		}
 	};
+	@XmlElement(name = "DataSetInitr")
 	protected GenericIdentification53 dataSetInitiator;
 	/**
-	 * Initiator of the data set.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -191,9 +214,9 @@ public class CardPaymentDataSet16 {
 	 * definition} = "Initiator of the data set."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDataSetInitiator = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CardPaymentDataSet16, Optional<GenericIdentification53>> mmDataSetInitiator = new MMMessageAssociationEnd<CardPaymentDataSet16, Optional<GenericIdentification53>>() {
 		{
-			componentContext_lazy = () -> CardPaymentDataSet16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardPaymentDataSet16.mmObject();
 			isDerived = false;
 			xmlTag = "DataSetInitr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -202,13 +225,24 @@ public class CardPaymentDataSet16 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.GenericIdentification53.mmObject();
+			type_lazy = () -> GenericIdentification53.mmObject();
+		}
+
+		@Override
+		public Optional<GenericIdentification53> getValue(CardPaymentDataSet16 obj) {
+			return obj.getDataSetInitiator();
+		}
+
+		@Override
+		public void setValue(CardPaymentDataSet16 obj, Optional<GenericIdentification53> value) {
+			obj.setDataSetInitiator(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.msg.TransactionTotals7> transactionTotals;
+	@XmlElement(name = "TxTtls", required = true)
+	protected List<TransactionTotals7> transactionTotals;
 	/**
-	 * Transaction totals of the data set.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -232,9 +266,9 @@ public class CardPaymentDataSet16 {
 	 * definition} = "Transaction totals of the data set."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransactionTotals = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CardPaymentDataSet16, List<TransactionTotals7>> mmTransactionTotals = new MMMessageAssociationEnd<CardPaymentDataSet16, List<TransactionTotals7>>() {
 		{
-			componentContext_lazy = () -> CardPaymentDataSet16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardPaymentDataSet16.mmObject();
 			isDerived = false;
 			xmlTag = "TxTtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -242,13 +276,24 @@ public class CardPaymentDataSet16 {
 			definition = "Transaction totals of the data set.";
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TransactionTotals7.mmObject();
+			type_lazy = () -> TransactionTotals7.mmObject();
+		}
+
+		@Override
+		public List<TransactionTotals7> getValue(CardPaymentDataSet16 obj) {
+			return obj.getTransactionTotals();
+		}
+
+		@Override
+		public void setValue(CardPaymentDataSet16 obj, List<TransactionTotals7> value) {
+			obj.setTransactionTotals(value);
 		}
 	};
+	@XmlElement(name = "CmonData")
 	protected CommonData6 commonData;
 	/**
-	 * Data common to all transactions of the data set.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -272,9 +317,9 @@ public class CardPaymentDataSet16 {
 	 * definition} = "Data common to all transactions of the data set."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCommonData = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CardPaymentDataSet16, Optional<CommonData6>> mmCommonData = new MMMessageAssociationEnd<CardPaymentDataSet16, Optional<CommonData6>>() {
 		{
-			componentContext_lazy = () -> CardPaymentDataSet16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardPaymentDataSet16.mmObject();
 			isDerived = false;
 			xmlTag = "CmonData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -283,13 +328,24 @@ public class CardPaymentDataSet16 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CommonData6.mmObject();
+			type_lazy = () -> CommonData6.mmObject();
+		}
+
+		@Override
+		public Optional<CommonData6> getValue(CardPaymentDataSet16 obj) {
+			return obj.getCommonData();
+		}
+
+		@Override
+		public void setValue(CardPaymentDataSet16 obj, Optional<CommonData6> value) {
+			obj.setCommonData(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "Tx", required = true)
 	protected List<CardPaymentDataSetTransaction5Choice> transaction;
 	/**
-	 * Set of transaction to Process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -315,9 +371,9 @@ public class CardPaymentDataSet16 {
 	 * definition} = "Set of transaction to Process."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransaction = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CardPaymentDataSet16, List<CardPaymentDataSetTransaction5Choice>> mmTransaction = new MMMessageAttribute<CardPaymentDataSet16, List<CardPaymentDataSetTransaction5Choice>>() {
 		{
-			componentContext_lazy = () -> CardPaymentDataSet16.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardPaymentDataSet16.mmObject();
 			isDerived = false;
 			xmlTag = "Tx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -326,14 +382,25 @@ public class CardPaymentDataSet16 {
 			minOccurs = 1;
 			complexType_lazy = () -> CardPaymentDataSetTransaction5Choice.mmObject();
 		}
+
+		@Override
+		public List<CardPaymentDataSetTransaction5Choice> getValue(CardPaymentDataSet16 obj) {
+			return obj.getTransaction();
+		}
+
+		@Override
+		public void setValue(CardPaymentDataSet16 obj, List<CardPaymentDataSetTransaction5Choice> value) {
+			obj.setTransaction(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CardPaymentDataSet16.mmDataSetIdentification, CardPaymentDataSet16.mmTraceability, CardPaymentDataSet16.mmDataSetInitiator, CardPaymentDataSet16.mmTransactionTotals,
-						CardPaymentDataSet16.mmCommonData, CardPaymentDataSet16.mmTransaction);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CardPaymentDataSet16.mmDataSetIdentification, com.tools20022.repository.msg.CardPaymentDataSet16.mmTraceability,
+						com.tools20022.repository.msg.CardPaymentDataSet16.mmDataSetInitiator, com.tools20022.repository.msg.CardPaymentDataSet16.mmTransactionTotals, com.tools20022.repository.msg.CardPaymentDataSet16.mmCommonData,
+						com.tools20022.repository.msg.CardPaymentDataSet16.mmTransaction);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPaymentDataSet16";
 				definition = "Set of transactions to capture, sharing common characteristics.";
@@ -342,57 +409,57 @@ public class CardPaymentDataSet16 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "DataSetId", required = true)
 	public DataSetIdentification5 getDataSetIdentification() {
 		return dataSetIdentification;
 	}
 
-	public void setDataSetIdentification(com.tools20022.repository.msg.DataSetIdentification5 dataSetIdentification) {
-		this.dataSetIdentification = dataSetIdentification;
+	public CardPaymentDataSet16 setDataSetIdentification(DataSetIdentification5 dataSetIdentification) {
+		this.dataSetIdentification = Objects.requireNonNull(dataSetIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Tracblt")
 	public List<Traceability5> getTraceability() {
-		return traceability;
+		return traceability == null ? traceability = new ArrayList<>() : traceability;
 	}
 
-	public void setTraceability(List<com.tools20022.repository.msg.Traceability5> traceability) {
-		this.traceability = traceability;
+	public CardPaymentDataSet16 setTraceability(List<Traceability5> traceability) {
+		this.traceability = Objects.requireNonNull(traceability);
+		return this;
 	}
 
-	@XmlElement(name = "DataSetInitr")
-	public GenericIdentification53 getDataSetInitiator() {
-		return dataSetInitiator;
+	public Optional<GenericIdentification53> getDataSetInitiator() {
+		return dataSetInitiator == null ? Optional.empty() : Optional.of(dataSetInitiator);
 	}
 
-	public void setDataSetInitiator(com.tools20022.repository.msg.GenericIdentification53 dataSetInitiator) {
+	public CardPaymentDataSet16 setDataSetInitiator(GenericIdentification53 dataSetInitiator) {
 		this.dataSetInitiator = dataSetInitiator;
+		return this;
 	}
 
-	@XmlElement(name = "TxTtls", required = true)
 	public List<TransactionTotals7> getTransactionTotals() {
-		return transactionTotals;
+		return transactionTotals == null ? transactionTotals = new ArrayList<>() : transactionTotals;
 	}
 
-	public void setTransactionTotals(List<com.tools20022.repository.msg.TransactionTotals7> transactionTotals) {
-		this.transactionTotals = transactionTotals;
+	public CardPaymentDataSet16 setTransactionTotals(List<TransactionTotals7> transactionTotals) {
+		this.transactionTotals = Objects.requireNonNull(transactionTotals);
+		return this;
 	}
 
-	@XmlElement(name = "CmonData")
-	public CommonData6 getCommonData() {
-		return commonData;
+	public Optional<CommonData6> getCommonData() {
+		return commonData == null ? Optional.empty() : Optional.of(commonData);
 	}
 
-	public void setCommonData(com.tools20022.repository.msg.CommonData6 commonData) {
+	public CardPaymentDataSet16 setCommonData(CommonData6 commonData) {
 		this.commonData = commonData;
+		return this;
 	}
 
-	@XmlElement(name = "Tx", required = true)
 	public List<CardPaymentDataSetTransaction5Choice> getTransaction() {
-		return transaction;
+		return transaction == null ? transaction = new ArrayList<>() : transaction;
 	}
 
-	public void setTransaction(List<CardPaymentDataSetTransaction5Choice> transaction) {
-		this.transaction = transaction;
+	public CardPaymentDataSet16 setTransaction(List<CardPaymentDataSetTransaction5Choice> transaction) {
+		this.transaction = Objects.requireNonNull(transaction);
+		return this;
 	}
 }

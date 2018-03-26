@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.PositionEffectCode#Open
- * PositionEffectCode.mmOpen}</li>
+ * PositionEffectCode.Open}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PositionEffectCode#Close
- * PositionEffectCode.mmClose}</li>
+ * PositionEffectCode.Close}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PositionEffectCode#Rolled
- * PositionEffectCode.mmRolled}</li>
+ * PositionEffectCode.Rolled}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PositionEffectCode#Fifo
- * PositionEffectCode.mmFifo}</li>
+ * PositionEffectCode.Fifo}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PositionEffectCode#Lifo
- * PositionEffectCode.mmLifo}</li>
+ * PositionEffectCode.Lifo}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -68,7 +68,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "PositionEffectCode"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Indicates whether the resulting position after a  trade should be an opening position or closing position."
+ * "Indicates whether the resulting position after a trade should be an opening position or closing position."
  * </li>
  * </ul>
  */
@@ -243,11 +243,11 @@ public class PositionEffectCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("OPEN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PositionEffectCode";
-				definition = "Indicates whether the resulting position after a  trade should be an opening position or closing position.";
+				definition = "Indicates whether the resulting position after a trade should be an opening position or closing position.";
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PositionEffectCode.Open, com.tools20022.repository.codeset.PositionEffectCode.Close, com.tools20022.repository.codeset.PositionEffectCode.Rolled,
 						com.tools20022.repository.codeset.PositionEffectCode.Fifo, com.tools20022.repository.codeset.PositionEffectCode.Lifo);
 			}

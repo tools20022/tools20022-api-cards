@@ -38,25 +38,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponse2Code#Allowed
- * CurrencyConversionResponse2Code.mmAllowed}</li>
+ * CurrencyConversionResponse2Code.Allowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponse2Code#InvalidCard
- * CurrencyConversionResponse2Code.mmInvalidCard}</li>
+ * CurrencyConversionResponse2Code.InvalidCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponse2Code#InvalidProduct
- * CurrencyConversionResponse2Code.mmInvalidProduct}</li>
+ * CurrencyConversionResponse2Code.InvalidProduct}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponse2Code#NoRate
- * CurrencyConversionResponse2Code.mmNoRate}</li>
+ * CurrencyConversionResponse2Code.NoRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponse2Code#NotAvailable
- * CurrencyConversionResponse2Code.mmNotAvailable}</li>
+ * CurrencyConversionResponse2Code.NotAvailable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponse2Code#InvalidATMManager
- * CurrencyConversionResponse2Code.mmInvalidATMManager}</li>
+ * CurrencyConversionResponse2Code.InvalidATMManager}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponse2Code#InvalidATM
- * CurrencyConversionResponse2Code.mmInvalidATM}</li>
+ * CurrencyConversionResponse2Code.InvalidATM}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -65,8 +65,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -257,7 +257,7 @@ public class CurrencyConversionResponse2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CurrencyConversionResponse2Code";
 				definition = "Result of a requested currency conversion.";

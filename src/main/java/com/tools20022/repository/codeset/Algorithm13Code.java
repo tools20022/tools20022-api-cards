@@ -37,20 +37,20 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.Algorithm13Code#AES128CBC
- * Algorithm13Code.mmAES128CBC}</li>
+ * Algorithm13Code.AES128CBC}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Algorithm13Code#DES112CBC
- * Algorithm13Code.mmDES112CBC}</li>
+ * Algorithm13Code.DES112CBC}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Algorithm13Code#DUKPT2009
- * Algorithm13Code.mmDUKPT2009}</li>
+ * Algorithm13Code.DUKPT2009}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Algorithm13Code#UKPT
- * Algorithm13Code.mmUKPT}</li>
+ * Algorithm13Code.UKPT}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Algorithm13Code#UKPTwithAES128
- * Algorithm13Code.mmUKPTwithAES128}</li>
+ * Algorithm13Code.UKPTwithAES128}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Algorithm13Code#AES192CBC
- * Algorithm13Code.mmAES192CBC}</li>
+ * Algorithm13Code.AES192CBC}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Algorithm13Code#AES256CBC
- * Algorithm13Code.mmAES256CBC}</li>
+ * Algorithm13Code.AES256CBC}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -58,8 +58,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -257,7 +257,7 @@ public class Algorithm13Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("EA2C");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Algorithm13Code";

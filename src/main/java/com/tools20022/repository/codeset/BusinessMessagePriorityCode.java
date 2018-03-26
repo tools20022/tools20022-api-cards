@@ -33,15 +33,23 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * Specifies the priority levels for the BusinessMessage.<br>
  * The different priorities are typically user / service / implementation
  * dependent. The semantics of the different values for a Mesage (Set) need to
- * be defined by the relevant user community (SEG, ...).
+ * be defined by the relevant user community (SEG.).
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintValidationByTable#forBusinessMessagePriorityCode
+ * ConstraintValidationByTable.forBusinessMessagePriorityCode}</li>
+ * </ul>
+ * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -56,7 +64,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "BusinessMessagePriorityCode"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Specifies the priority levels for the BusinessMessage.\r\nThe different priorities are typically user / service / implementation dependent. The semantics of the different values for a Mesage (Set) need to be defined by the relevant user community (SEG, ...)."
+ * "Specifies the priority levels for the BusinessMessage.\r\nThe different priorities are typically user / service / implementation dependent. The semantics of the different values for a Mesage (Set) need to be defined by the relevant user community (SEG.)."
  * </li>
  * </ul>
  */
@@ -72,11 +80,12 @@ public class BusinessMessagePriorityCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintValidationByTable.forBusinessMessagePriorityCode);
 				example = Arrays.asList("high");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BusinessMessagePriorityCode";
-				definition = "Specifies the priority levels for the BusinessMessage.\r\nThe different priorities are typically user / service / implementation dependent. The semantics of the different values for a Mesage (Set) need to be defined by the relevant user community (SEG, ...).";
+				definition = "Specifies the priority levels for the BusinessMessage.\r\nThe different priorities are typically user / service / implementation dependent. The semantics of the different values for a Mesage (Set) need to be defined by the relevant user community (SEG.).";
 			}
 		});
 		return mmObject_lazy.get();

@@ -39,18 +39,18 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategory1Code#Fixed
- * LocationCategory1Code.mmFixed}</li>
+ * LocationCategory1Code.Fixed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategory1Code#Aboard
- * LocationCategory1Code.mmAboard}</li>
+ * LocationCategory1Code.Aboard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategory1Code#Nomadic
- * LocationCategory1Code.mmNomadic}</li>
+ * LocationCategory1Code.Nomadic}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategory1Code#MailOrderTelephoneOrder
- * LocationCategory1Code.mmMailOrderTelephoneOrder}</li>
+ * LocationCategory1Code.MailOrderTelephoneOrder}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.LocationCategory1Code#Home
- * LocationCategory1Code.mmHome}</li>
+ * LocationCategory1Code.Home}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -211,7 +211,7 @@ public class LocationCategory1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FIXD");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LocationCategory1Code";

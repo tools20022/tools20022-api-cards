@@ -37,22 +37,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMCounterTypeCode#CutOff
- * ATMCounterTypeCode.mmCutOff}</li>
+ * ATMCounterTypeCode.CutOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCounterTypeCode#OperatorAdjust
- * ATMCounterTypeCode.mmOperatorAdjust}</li>
+ * ATMCounterTypeCode.OperatorAdjust}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCounterTypeCode#CountersInquiry
- * ATMCounterTypeCode.mmCountersInquiry}</li>
+ * ATMCounterTypeCode.CountersInquiry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCounterTypeCode#CustomerTransaction
- * ATMCounterTypeCode.mmCustomerTransaction}</li>
+ * ATMCounterTypeCode.CustomerTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCounterTypeCode#BusinessDay
- * ATMCounterTypeCode.mmBusinessDay}</li>
+ * ATMCounterTypeCode.BusinessDay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCounterTypeCode#Operation
- * ATMCounterTypeCode.mmOperation}</li>
+ * ATMCounterTypeCode.Operation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -67,8 +67,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -273,7 +273,7 @@ public class ATMCounterTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMCounterTypeCode";
 				definition = "Type of ATM cassette counters.";

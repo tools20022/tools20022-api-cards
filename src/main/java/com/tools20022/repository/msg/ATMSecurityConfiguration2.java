@@ -24,6 +24,7 @@ import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,10 +66,6 @@ import javax.xml.bind.annotation.XmlType;
  * "ATMSecurityConfiguration2"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Configuration of the cryptographic keys."</li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} =
- * {@linkplain com.tools20022.repository.msg.ATMSecurityConfiguration1
- * ATMSecurityConfiguration1}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
  * nextVersions} =
  * <ul>
@@ -76,17 +73,22 @@ import javax.xml.bind.annotation.XmlType;
  * ATMSecurityConfiguration3}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+ * previousVersion} =
+ * {@linkplain com.tools20022.repository.msg.ATMSecurityConfiguration1
+ * ATMSecurityConfiguration1}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ATMSecurityConfiguration2", propOrder = {"maximumSymmetricKey", "maximumAsymmetricKey", "maximumRSAKeyLength", "maximumRootKeyLength"})
 public class ATMSecurityConfiguration2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MaxSmmtrcKey")
 	protected Number maximumSymmetricKey;
 	/**
-	 * Maximum number of symmetric keys the security module is able to manage.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,9 +115,9 @@ public class ATMSecurityConfiguration2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMaximumSymmetricKey = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMSecurityConfiguration2, Optional<Number>> mmMaximumSymmetricKey = new MMMessageAttribute<ATMSecurityConfiguration2, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> ATMSecurityConfiguration2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMSecurityConfiguration2.mmObject();
 			isDerived = false;
 			xmlTag = "MaxSmmtrcKey";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -125,11 +127,22 @@ public class ATMSecurityConfiguration2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(ATMSecurityConfiguration2 obj) {
+			return obj.getMaximumSymmetricKey();
+		}
+
+		@Override
+		public void setValue(ATMSecurityConfiguration2 obj, Optional<Number> value) {
+			obj.setMaximumSymmetricKey(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MaxAsmmtrcKey")
 	protected Number maximumAsymmetricKey;
 	/**
-	 * Maximum number of asymmetric keys the security module is able to manage.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,9 +169,9 @@ public class ATMSecurityConfiguration2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMaximumAsymmetricKey = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMSecurityConfiguration2, Optional<Number>> mmMaximumAsymmetricKey = new MMMessageAttribute<ATMSecurityConfiguration2, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> ATMSecurityConfiguration2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMSecurityConfiguration2.mmObject();
 			isDerived = false;
 			xmlTag = "MaxAsmmtrcKey";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -168,12 +181,22 @@ public class ATMSecurityConfiguration2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(ATMSecurityConfiguration2 obj) {
+			return obj.getMaximumAsymmetricKey();
+		}
+
+		@Override
+		public void setValue(ATMSecurityConfiguration2 obj, Optional<Number> value) {
+			obj.setMaximumAsymmetricKey(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MaxRSAKeyLngth")
 	protected Number maximumRSAKeyLength;
 	/**
-	 * Maximum RSA key length (in number of bytes), the security module is able
-	 * to manage.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -200,9 +223,9 @@ public class ATMSecurityConfiguration2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMaximumRSAKeyLength = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMSecurityConfiguration2, Optional<Number>> mmMaximumRSAKeyLength = new MMMessageAttribute<ATMSecurityConfiguration2, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> ATMSecurityConfiguration2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMSecurityConfiguration2.mmObject();
 			isDerived = false;
 			xmlTag = "MaxRSAKeyLngth";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -212,12 +235,22 @@ public class ATMSecurityConfiguration2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(ATMSecurityConfiguration2 obj) {
+			return obj.getMaximumRSAKeyLength();
+		}
+
+		@Override
+		public void setValue(ATMSecurityConfiguration2 obj, Optional<Number> value) {
+			obj.setMaximumRSAKeyLength(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MaxRootKeyLngth")
 	protected Number maximumRootKeyLength;
 	/**
-	 * Maximum RSA root key length (in number of bytes), the security module is
-	 * able to manage, if different from the maximum RSA key length.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -244,9 +277,9 @@ public class ATMSecurityConfiguration2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMaximumRootKeyLength = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMSecurityConfiguration2, Optional<Number>> mmMaximumRootKeyLength = new MMMessageAttribute<ATMSecurityConfiguration2, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> ATMSecurityConfiguration2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMSecurityConfiguration2.mmObject();
 			isDerived = false;
 			xmlTag = "MaxRootKeyLngth";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -256,14 +289,24 @@ public class ATMSecurityConfiguration2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(ATMSecurityConfiguration2 obj) {
+			return obj.getMaximumRootKeyLength();
+		}
+
+		@Override
+		public void setValue(ATMSecurityConfiguration2 obj, Optional<Number> value) {
+			obj.setMaximumRootKeyLength(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ATMSecurityConfiguration2.mmMaximumSymmetricKey, ATMSecurityConfiguration2.mmMaximumAsymmetricKey, ATMSecurityConfiguration2.mmMaximumRSAKeyLength,
-						ATMSecurityConfiguration2.mmMaximumRootKeyLength);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ATMSecurityConfiguration2.mmMaximumSymmetricKey, com.tools20022.repository.msg.ATMSecurityConfiguration2.mmMaximumAsymmetricKey,
+						com.tools20022.repository.msg.ATMSecurityConfiguration2.mmMaximumRSAKeyLength, com.tools20022.repository.msg.ATMSecurityConfiguration2.mmMaximumRootKeyLength);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMSecurityConfiguration2";
 				definition = "Configuration of the cryptographic keys.";
@@ -274,39 +317,39 @@ public class ATMSecurityConfiguration2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MaxSmmtrcKey")
-	public Number getMaximumSymmetricKey() {
-		return maximumSymmetricKey;
+	public Optional<Number> getMaximumSymmetricKey() {
+		return maximumSymmetricKey == null ? Optional.empty() : Optional.of(maximumSymmetricKey);
 	}
 
-	public void setMaximumSymmetricKey(Number maximumSymmetricKey) {
+	public ATMSecurityConfiguration2 setMaximumSymmetricKey(Number maximumSymmetricKey) {
 		this.maximumSymmetricKey = maximumSymmetricKey;
+		return this;
 	}
 
-	@XmlElement(name = "MaxAsmmtrcKey")
-	public Number getMaximumAsymmetricKey() {
-		return maximumAsymmetricKey;
+	public Optional<Number> getMaximumAsymmetricKey() {
+		return maximumAsymmetricKey == null ? Optional.empty() : Optional.of(maximumAsymmetricKey);
 	}
 
-	public void setMaximumAsymmetricKey(Number maximumAsymmetricKey) {
+	public ATMSecurityConfiguration2 setMaximumAsymmetricKey(Number maximumAsymmetricKey) {
 		this.maximumAsymmetricKey = maximumAsymmetricKey;
+		return this;
 	}
 
-	@XmlElement(name = "MaxRSAKeyLngth")
-	public Number getMaximumRSAKeyLength() {
-		return maximumRSAKeyLength;
+	public Optional<Number> getMaximumRSAKeyLength() {
+		return maximumRSAKeyLength == null ? Optional.empty() : Optional.of(maximumRSAKeyLength);
 	}
 
-	public void setMaximumRSAKeyLength(Number maximumRSAKeyLength) {
+	public ATMSecurityConfiguration2 setMaximumRSAKeyLength(Number maximumRSAKeyLength) {
 		this.maximumRSAKeyLength = maximumRSAKeyLength;
+		return this;
 	}
 
-	@XmlElement(name = "MaxRootKeyLngth")
-	public Number getMaximumRootKeyLength() {
-		return maximumRootKeyLength;
+	public Optional<Number> getMaximumRootKeyLength() {
+		return maximumRootKeyLength == null ? Optional.empty() : Optional.of(maximumRootKeyLength);
 	}
 
-	public void setMaximumRootKeyLength(Number maximumRootKeyLength) {
+	public ATMSecurityConfiguration2 setMaximumRootKeyLength(Number maximumRootKeyLength) {
 		this.maximumRootKeyLength = maximumRootKeyLength;
+		return this;
 	}
 }

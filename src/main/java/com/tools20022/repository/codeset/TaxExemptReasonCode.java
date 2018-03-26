@@ -38,133 +38,133 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#None
- * TaxExemptReasonCode.mmNone}</li>
+ * TaxExemptReasonCode.None}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#MaxiISA
- * TaxExemptReasonCode.mmMaxiISA}</li>
+ * TaxExemptReasonCode.MaxiISA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#MiniCashISA
- * TaxExemptReasonCode.mmMiniCashISA}</li>
+ * TaxExemptReasonCode.MiniCashISA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#MiniStocksAndSharesISA
- * TaxExemptReasonCode.mmMiniStocksAndSharesISA}</li>
+ * TaxExemptReasonCode.MiniStocksAndSharesISA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#MiniInsuranceISA
- * TaxExemptReasonCode.mmMiniInsuranceISA}</li>
+ * TaxExemptReasonCode.MiniInsuranceISA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#CurrentYearPayment
- * TaxExemptReasonCode.mmCurrentYearPayment}</li>
+ * TaxExemptReasonCode.CurrentYearPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#PriorYearPayment
- * TaxExemptReasonCode.mmPriorYearPayment}</li>
+ * TaxExemptReasonCode.PriorYearPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#AssetTransfer
- * TaxExemptReasonCode.mmAssetTransfer}</li>
+ * TaxExemptReasonCode.AssetTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#EmployeePriorYear
- * TaxExemptReasonCode.mmEmployeePriorYear}</li>
+ * TaxExemptReasonCode.EmployeePriorYear}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#EmployeeCurrentYear
- * TaxExemptReasonCode.mmEmployeeCurrentYear}</li>
+ * TaxExemptReasonCode.EmployeeCurrentYear}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#EmployerPriorYear
- * TaxExemptReasonCode.mmEmployerPriorYear}</li>
+ * TaxExemptReasonCode.EmployerPriorYear}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#EmployerCurrentYear
- * TaxExemptReasonCode.mmEmployerCurrentYear}</li>
+ * TaxExemptReasonCode.EmployerCurrentYear}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#NonFundPrototypeIRA
- * TaxExemptReasonCode.mmNonFundPrototypeIRA}</li>
+ * TaxExemptReasonCode.NonFundPrototypeIRA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#NonFundQualifiedPlan
- * TaxExemptReasonCode.mmNonFundQualifiedPlan}</li>
+ * TaxExemptReasonCode.NonFundQualifiedPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#DefinedContributionPlan
- * TaxExemptReasonCode.mmDefinedContributionPlan}</li>
+ * TaxExemptReasonCode.DefinedContributionPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#IndividualRetirementAccount
- * TaxExemptReasonCode.mmIndividualRetirementAccount}</li>
+ * TaxExemptReasonCode.IndividualRetirementAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#IndividualRetirementAccountRollover
- * TaxExemptReasonCode.mmIndividualRetirementAccountRollover}</li>
+ * TaxExemptReasonCode.IndividualRetirementAccountRollover}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#KEOGH
- * TaxExemptReasonCode.mmKEOGH}</li>
+ * TaxExemptReasonCode.KEOGH}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#ProfitSharingPlan
- * TaxExemptReasonCode.mmProfitSharingPlan}</li>
+ * TaxExemptReasonCode.ProfitSharingPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#FourHundredAndOneK
- * TaxExemptReasonCode.mmFourHundredAndOneK}</li>
+ * TaxExemptReasonCode.FourHundredAndOneK}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#SelfDirectedIRA
- * TaxExemptReasonCode.mmSelfDirectedIRA}</li>
+ * TaxExemptReasonCode.SelfDirectedIRA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#FourHundredAndThreeB
- * TaxExemptReasonCode.mmFourHundredAndThreeB}</li>
+ * TaxExemptReasonCode.FourHundredAndThreeB}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#FourHundredFiftySeven
- * TaxExemptReasonCode.mmFourHundredFiftySeven}</li>
+ * TaxExemptReasonCode.FourHundredFiftySeven}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#RothIRAFundPrototype
- * TaxExemptReasonCode.mmRothIRAFundPrototype}</li>
+ * TaxExemptReasonCode.RothIRAFundPrototype}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#RothIRANonPrototype
- * TaxExemptReasonCode.mmRothIRANonPrototype}</li>
+ * TaxExemptReasonCode.RothIRANonPrototype}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#RothConversionIRAFundPrototype
- * TaxExemptReasonCode.mmRothConversionIRAFundPrototype}</li>
+ * TaxExemptReasonCode.RothConversionIRAFundPrototype}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#RothConversionIRANonPrototype
- * TaxExemptReasonCode.mmRothConversionIRANonPrototype}</li>
+ * TaxExemptReasonCode.RothConversionIRANonPrototype}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#EducationIRAFundPrototype
- * TaxExemptReasonCode.mmEducationIRAFundPrototype}</li>
+ * TaxExemptReasonCode.EducationIRAFundPrototype}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#EducationIRANonPrototype
- * TaxExemptReasonCode.mmEducationIRANonPrototype}</li>
+ * TaxExemptReasonCode.EducationIRANonPrototype}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Other
- * TaxExemptReasonCode.mmOther}</li>
+ * TaxExemptReasonCode.Other}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Minor
- * TaxExemptReasonCode.mmMinor}</li>
+ * TaxExemptReasonCode.Minor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Incapacity
- * TaxExemptReasonCode.mmIncapacity}</li>
+ * TaxExemptReasonCode.Incapacity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Foreigner
- * TaxExemptReasonCode.mmForeigner}</li>
+ * TaxExemptReasonCode.Foreigner}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Ordinary
- * TaxExemptReasonCode.mmOrdinary}</li>
+ * TaxExemptReasonCode.Ordinary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Association
- * TaxExemptReasonCode.mmAssociation}</li>
+ * TaxExemptReasonCode.Association}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Domestic
- * TaxExemptReasonCode.mmDomestic}</li>
+ * TaxExemptReasonCode.Domestic}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#OneOrBothForeign
- * TaxExemptReasonCode.mmOneOrBothForeign}</li>
+ * TaxExemptReasonCode.OneOrBothForeign}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#RightsHolder
- * TaxExemptReasonCode.mmRightsHolder}</li>
+ * TaxExemptReasonCode.RightsHolder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#PensionFund
- * TaxExemptReasonCode.mmPensionFund}</li>
+ * TaxExemptReasonCode.PensionFund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Diplomat
- * TaxExemptReasonCode.mmDiplomat}</li>
+ * TaxExemptReasonCode.Diplomat}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Refugee
- * TaxExemptReasonCode.mmRefugee}</li>
+ * TaxExemptReasonCode.Refugee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#OneNonResident
- * TaxExemptReasonCode.mmOneNonResident}</li>
+ * TaxExemptReasonCode.OneNonResident}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#TwoNonResident
- * TaxExemptReasonCode.mmTwoNonResident}</li>
+ * TaxExemptReasonCode.TwoNonResident}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxExemptReasonCode#Administrator
- * TaxExemptReasonCode.mmAdministrator}</li>
+ * TaxExemptReasonCode.Administrator}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -177,8 +177,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -362,7 +362,7 @@ public class TaxExemptReasonCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Mini Insurance Individual Savings Account (ISA). Account is an ISA  with an ISA manager that may only contain life insurance investments up to the prescribed annual subscription limit (required for UK)."
+	 * "Mini Insurance Individual Savings Account (ISA). Account is an ISA with an ISA manager that may only contain life insurance investments up to the prescribed annual subscription limit (required for UK)."
 	 * </li>
 	 * </ul>
 	 */
@@ -370,7 +370,7 @@ public class TaxExemptReasonCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MiniInsuranceISA";
-			definition = "Mini Insurance Individual Savings Account (ISA). Account is an ISA  with an ISA manager that may only contain life insurance investments up to the prescribed annual subscription limit (required for UK).";
+			definition = "Mini Insurance Individual Savings Account (ISA). Account is an ISA with an ISA manager that may only contain life insurance investments up to the prescribed annual subscription limit (required for UK).";
 			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "IISA";
 		}
@@ -1166,7 +1166,7 @@ public class TaxExemptReasonCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Education Individual Retirement Account Non-Prototype (also known as an Education Savings Account).  Account is a savings plan open to anyone under the age of 18. When the account owner withdraws money to pay for qualified higher education expenses, the withdrawals are generally tax-free (required in the US)."
+	 * "Education Individual Retirement Account Non-Prototype (also known as an Education Savings Account). Account is a savings plan open to anyone under the age of 18. When the account owner withdraws money to pay for qualified higher education expenses, the withdrawals are generally tax-free (required in the US)."
 	 * </li>
 	 * </ul>
 	 */
@@ -1174,7 +1174,7 @@ public class TaxExemptReasonCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EducationIRANonPrototype";
-			definition = "Education Individual Retirement Account Non-Prototype (also known as an Education Savings Account).  Account is a savings plan open to anyone under the age of 18. When the account owner withdraws money to pay for qualified higher education expenses, the withdrawals are generally tax-free (required in the US).";
+			definition = "Education Individual Retirement Account Non-Prototype (also known as an Education Savings Account). Account is a savings plan open to anyone under the age of 18. When the account owner withdraws money to pay for qualified higher education expenses, the withdrawals are generally tax-free (required in the US).";
 			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "EIOP";
 		}
@@ -1241,7 +1241,7 @@ public class TaxExemptReasonCode extends MMCode {
 		}
 	};
 	/**
-	 * Exemption due to incapacitation
+	 * Exemption due to incapacitation.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1258,14 +1258,14 @@ public class TaxExemptReasonCode extends MMCode {
 	 * name} = "Incapacity"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Exemption due to incapacitation "</li>
+	 * definition} = "Exemption due to incapacitation."</li>
 	 * </ul>
 	 */
 	public static final TaxExemptReasonCode Incapacity = new TaxExemptReasonCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Incapacity";
-			definition = "Exemption due to incapacitation ";
+			definition = "Exemption due to incapacitation.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TaxExemptReasonCode.mmObject();
 			codeName = "INCA";
 		}
@@ -1651,7 +1651,7 @@ public class TaxExemptReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("NONE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxExemptReasonCode";

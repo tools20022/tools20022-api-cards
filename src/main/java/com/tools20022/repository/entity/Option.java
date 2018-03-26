@@ -17,16 +17,18 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.datatype.Number;
-import com.tools20022.repository.entity.Derivative;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Contracts which grant to the holder either the privilege to purchase or the
@@ -119,8 +121,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -138,8 +140,8 @@ public class Option extends Derivative {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected AssignmentMethodCode instrumentAssignmentMethod;
 	/**
-	 * Method under which assignment was conducted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -162,7 +164,7 @@ public class Option extends Derivative {
 	 * definition} = "Method under which assignment was conducted."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInstrumentAssignmentMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Option, AssignmentMethodCode> mmInstrumentAssignmentMethod = new MMBusinessAttribute<Option, AssignmentMethodCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -174,19 +176,20 @@ public class Option extends Derivative {
 			simpleType_lazy = () -> AssignmentMethodCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Option.class.getMethod("getInstrumentAssignmentMethod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AssignmentMethodCode getValue(Option obj) {
+			return obj.getInstrumentAssignmentMethod();
+		}
+
+		@Override
+		public void setValue(Option obj, AssignmentMethodCode value) {
+			obj.setInstrumentAssignmentMethod(value);
 		}
 	};
 	protected SettleStyleCode settleStyle;
 	/**
-	 * Specifies whether the option contract settles at the open or close of the
-	 * market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -211,7 +214,7 @@ public class Option extends Derivative {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSettleStyle = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Option, SettleStyleCode> mmSettleStyle = new MMBusinessAttribute<Option, SettleStyleCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -223,20 +226,20 @@ public class Option extends Derivative {
 			simpleType_lazy = () -> SettleStyleCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Option.class.getMethod("getSettleStyle", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SettleStyleCode getValue(Option obj) {
+			return obj.getSettleStyle();
+		}
+
+		@Override
+		public void setValue(Option obj, SettleStyleCode value) {
+			obj.setSettleStyle(value);
 		}
 	};
 	protected StandardisationCode standardisation;
 	/**
-	 * Specifies whether the terms of the security (underlying instruments,
-	 * expiration date, contract size) are defined according to the exchange
-	 * specifications or whether they can be user defined.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -261,7 +264,7 @@ public class Option extends Derivative {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStandardisation = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Option, StandardisationCode> mmStandardisation = new MMBusinessAttribute<Option, StandardisationCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -273,20 +276,20 @@ public class Option extends Derivative {
 			simpleType_lazy = () -> StandardisationCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Option.class.getMethod("getStandardisation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public StandardisationCode getValue(Option obj) {
+			return obj.getStandardisation();
+		}
+
+		@Override
+		public void setValue(Option obj, StandardisationCode value) {
+			obj.setStandardisation(value);
 		}
 	};
 	protected Number positionLimit;
 	/**
-	 * Indicates the maximum number of listed option contracts on a single
-	 * security which can be held by an investor or group of investors acting
-	 * jointly.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -310,7 +313,7 @@ public class Option extends Derivative {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPositionLimit = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Option, Number> mmPositionLimit = new MMBusinessAttribute<Option, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -322,18 +325,20 @@ public class Option extends Derivative {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Option.class.getMethod("getPositionLimit", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(Option obj) {
+			return obj.getPositionLimit();
+		}
+
+		@Override
+		public void setValue(Option obj, Number value) {
+			obj.setPositionLimit(value);
 		}
 	};
 	protected UnderlyingTypeCode underlyingType;
 	/**
-	 * Specifies the type of underlying to which the option relates.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -357,7 +362,7 @@ public class Option extends Derivative {
 	 * "Specifies the type of underlying to which the option relates."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmUnderlyingType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Option, UnderlyingTypeCode> mmUnderlyingType = new MMBusinessAttribute<Option, UnderlyingTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -369,19 +374,20 @@ public class Option extends Derivative {
 			simpleType_lazy = () -> UnderlyingTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Option.class.getMethod("getUnderlyingType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public UnderlyingTypeCode getValue(Option obj) {
+			return obj.getUnderlyingType();
+		}
+
+		@Override
+		public void setValue(Option obj, UnderlyingTypeCode value) {
+			obj.setUnderlyingType(value);
 		}
 	};
 	protected YesNoIndicator coverIndicator;
 	/**
-	 * Indicates whether the underlying financial instrument of an option is
-	 * owned by the writer of the option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -393,6 +399,9 @@ public class Option extends Derivative {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Option
 	 * Option}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :17B::COVE</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -406,10 +415,11 @@ public class Option extends Derivative {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCoverIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Option, YesNoIndicator> mmCoverIndicator = new MMBusinessAttribute<Option, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":17B::COVE"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CoverIndicator";
 			definition = "Indicates whether the underlying financial instrument of an option is owned by the writer of the option.";
@@ -418,19 +428,20 @@ public class Option extends Derivative {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Option.class.getMethod("getCoverIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(Option obj) {
+			return obj.getCoverIndicator();
+		}
+
+		@Override
+		public void setValue(Option obj, YesNoIndicator value) {
+			obj.setCoverIndicator(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesConversion> optionConversionInformation;
+	protected List<SecuritiesConversion> optionConversionInformation;
 	/**
-	 * Information on the conversion exchange of an option into another form of
-	 * securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -463,7 +474,7 @@ public class Option extends Derivative {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOptionConversionInformation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Option, List<SecuritiesConversion>> mmOptionConversionInformation = new MMBusinessAssociationEnd<Option, List<SecuritiesConversion>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -471,17 +482,25 @@ public class Option extends Derivative {
 			name = "OptionConversionInformation";
 			definition = "Information on the conversion exchange of an option into another form of securities.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmRelatedOption;
+			opposite_lazy = () -> SecuritiesConversion.mmRelatedOption;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesConversion.mmObject();
+			type_lazy = () -> SecuritiesConversion.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesConversion> getValue(Option obj) {
+			return obj.getOptionConversionInformation();
+		}
+
+		@Override
+		public void setValue(Option obj, List<SecuritiesConversion> value) {
+			obj.setOptionConversionInformation(value);
 		}
 	};
 	protected PercentageRate optionRatio;
 	/**
-	 * Expresses the risk of an option leg. Value must be between -1 and 1. A
-	 * Call Option will require a ratio value between 0 and 1. A Put Option will
-	 * require a ratio value between -1 and 0.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -506,7 +525,7 @@ public class Option extends Derivative {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOptionRatio = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Option, PercentageRate> mmOptionRatio = new MMBusinessAttribute<Option, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -518,18 +537,20 @@ public class Option extends Derivative {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Option.class.getMethod("getOptionRatio", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Option obj) {
+			return obj.getOptionRatio();
+		}
+
+		@Override
+		public void setValue(Option obj, PercentageRate value) {
+			obj.setOptionRatio(value);
 		}
 	};
 	protected SecuritiesOptionTrade securitiesOptionTrade;
 	/**
-	 * Specifies the trade elements for the option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -560,7 +581,7 @@ public class Option extends Derivative {
 	 * definition} = "Specifies the trade elements for the option."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesOptionTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Option, com.tools20022.repository.entity.SecuritiesOptionTrade> mmSecuritiesOptionTrade = new MMBusinessAssociationEnd<Option, com.tools20022.repository.entity.SecuritiesOptionTrade>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -573,12 +594,21 @@ public class Option extends Derivative {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOptionTrade.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesOptionTrade getValue(Option obj) {
+			return obj.getSecuritiesOptionTrade();
+		}
+
+		@Override
+		public void setValue(Option obj, com.tools20022.repository.entity.SecuritiesOptionTrade value) {
+			obj.setSecuritiesOptionTrade(value);
+		}
 	};
 	protected SettlementTypeCode settlementType;
 	/**
-	 * Indicates whether the trade is to be settled as principal or netted off
-	 * against another trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -603,7 +633,7 @@ public class Option extends Derivative {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSettlementType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Option, SettlementTypeCode> mmSettlementType = new MMBusinessAttribute<Option, SettlementTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -615,19 +645,20 @@ public class Option extends Derivative {
 			simpleType_lazy = () -> SettlementTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Option.class.getMethod("getSettlementType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SettlementTypeCode getValue(Option obj) {
+			return obj.getSettlementType();
+		}
+
+		@Override
+		public void setValue(Option obj, SettlementTypeCode value) {
+			obj.setSettlementType(value);
 		}
 	};
 	protected Number strikeMultiplier;
 	/**
-	 * Multiplier applied to the strike price for the purpose of calculating the
-	 * settlement value (Used for derivatives).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -651,7 +682,7 @@ public class Option extends Derivative {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStrikeMultiplier = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Option, Number> mmStrikeMultiplier = new MMBusinessAttribute<Option, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -663,18 +694,20 @@ public class Option extends Derivative {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Option.class.getMethod("getStrikeMultiplier", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(Option obj) {
+			return obj.getStrikeMultiplier();
+		}
+
+		@Override
+		public void setValue(Option obj, Number value) {
+			obj.setStrikeMultiplier(value);
 		}
 	};
 	protected Max4AlphaNumericText expiryLocation;
 	/**
-	 * Financial center where option expires.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -697,7 +730,7 @@ public class Option extends Derivative {
 	 * definition} = "Financial center where option expires."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmExpiryLocation = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Option, Max4AlphaNumericText> mmExpiryLocation = new MMBusinessAttribute<Option, Max4AlphaNumericText>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -709,18 +742,20 @@ public class Option extends Derivative {
 			simpleType_lazy = () -> Max4AlphaNumericText.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Option.class.getMethod("getExpiryLocation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max4AlphaNumericText getValue(Option obj) {
+			return obj.getExpiryLocation();
+		}
+
+		@Override
+		public void setValue(Option obj, Max4AlphaNumericText value) {
+			obj.setExpiryLocation(value);
 		}
 	};
 	protected ISODate finalSettlementDate;
 	/**
-	 * Date on which the trade is settled. i.e., the amounts are due.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -743,7 +778,7 @@ public class Option extends Derivative {
 	 * "Date on which the trade is settled. i.e., the amounts are due."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFinalSettlementDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Option, ISODate> mmFinalSettlementDate = new MMBusinessAttribute<Option, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -755,18 +790,20 @@ public class Option extends Derivative {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Option.class.getMethod("getFinalSettlementDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(Option obj) {
+			return obj.getFinalSettlementDate();
+		}
+
+		@Override
+		public void setValue(Option obj, ISODate value) {
+			obj.setFinalSettlementDate(value);
 		}
 	};
 	protected OptionStyleCode optionStyle;
 	/**
-	 * Specifies how an option can be exercised (American, European, Bermudan)
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -791,7 +828,7 @@ public class Option extends Derivative {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOptionStyle = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Option, OptionStyleCode> mmOptionStyle = new MMBusinessAttribute<Option, OptionStyleCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -803,18 +840,20 @@ public class Option extends Derivative {
 			simpleType_lazy = () -> OptionStyleCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Option.class.getMethod("getOptionStyle", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public OptionStyleCode getValue(Option obj) {
+			return obj.getOptionStyle();
+		}
+
+		@Override
+		public void setValue(Option obj, OptionStyleCode value) {
+			obj.setOptionStyle(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.CurrencyOption> currencyOption;
 	/**
-	 * Information specific to a currency option.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -844,7 +883,7 @@ public class Option extends Derivative {
 	 * definition} = "Information specific to a currency option."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCurrencyOption = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Option, List<CurrencyOption>> mmCurrencyOption = new MMBusinessAssociationEnd<Option, List<CurrencyOption>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -856,11 +895,21 @@ public class Option extends Derivative {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CurrencyOption.mmObject();
 		}
+
+		@Override
+		public List<CurrencyOption> getValue(Option obj) {
+			return obj.getCurrencyOption();
+		}
+
+		@Override
+		public void setValue(Option obj, List<CurrencyOption> value) {
+			obj.setCurrencyOption(value);
+		}
 	};
 	protected ISODateTime earliestExerciseDate;
 	/**
-	 * First date on which an american option can be exercised.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -882,7 +931,7 @@ public class Option extends Derivative {
 	 * definition} = "First date on which an american option can be exercised."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEarliestExerciseDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Option, ISODateTime> mmEarliestExerciseDate = new MMBusinessAttribute<Option, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -894,19 +943,20 @@ public class Option extends Derivative {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Option.class.getMethod("getEarliestExerciseDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Option obj) {
+			return obj.getEarliestExerciseDate();
+		}
+
+		@Override
+		public void setValue(Option obj, ISODateTime value) {
+			obj.setEarliestExerciseDate(value);
 		}
 	};
 	protected Number settlementDays;
 	/**
-	 * Number of business days between the hit date and the payment date in case
-	 * of settlement at hit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -930,7 +980,7 @@ public class Option extends Derivative {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSettlementDays = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Option, Number> mmSettlementDays = new MMBusinessAttribute<Option, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -942,19 +992,20 @@ public class Option extends Derivative {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Option.class.getMethod("getSettlementDays", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(Option obj) {
+			return obj.getSettlementDays();
+		}
+
+		@Override
+		public void setValue(Option obj, Number value) {
+			obj.setSettlementDays(value);
 		}
 	};
 	protected Price strikePrice;
 	/**
-	 * Predetermined price at which the holder will have to buy or sell the
-	 * underlying instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -984,7 +1035,7 @@ public class Option extends Derivative {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmStrikePrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Option, Price> mmStrikePrice = new MMBusinessAssociationEnd<Option, Price>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -993,15 +1044,25 @@ public class Option extends Derivative {
 			definition = "Predetermined price at which the holder will have to buy or sell the underlying instrument.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Price.mmOption;
+			opposite_lazy = () -> Price.mmOption;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
+			type_lazy = () -> Price.mmObject();
+		}
+
+		@Override
+		public Price getValue(Option obj) {
+			return obj.getStrikePrice();
+		}
+
+		@Override
+		public void setValue(Option obj, Price value) {
+			obj.setStrikePrice(value);
 		}
 	};
 	protected ISODateTime optionStartDate;
 	/**
-	 * First date on which an option becomes effective.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1023,7 +1084,7 @@ public class Option extends Derivative {
 	 * definition} = "First date on which an option becomes effective."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOptionStartDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Option, ISODateTime> mmOptionStartDate = new MMBusinessAttribute<Option, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -1035,20 +1096,20 @@ public class Option extends Derivative {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Option.class.getMethod("getOptionStartDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Option obj) {
+			return obj.getOptionStartDate();
+		}
+
+		@Override
+		public void setValue(Option obj, ISODateTime value) {
+			obj.setOptionStartDate(value);
 		}
 	};
 	protected ISODateTime expiryDateAndTime;
 	/**
-	 * For European options, date on which the option holder can only exercise
-	 * the right or let it lapse. For American options, the option holder can
-	 * exercise the right up to the expiry date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1072,7 +1133,7 @@ public class Option extends Derivative {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmExpiryDateAndTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Option, ISODateTime> mmExpiryDateAndTime = new MMBusinessAttribute<Option, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -1084,20 +1145,20 @@ public class Option extends Derivative {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Option.class.getMethod("getExpiryDateAndTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Option obj) {
+			return obj.getExpiryDateAndTime();
+		}
+
+		@Override
+		public void setValue(Option obj, ISODateTime value) {
+			obj.setExpiryDateAndTime(value);
 		}
 	};
 	protected OptionDefinitionTypeCode optionType;
 	/**
-	 * Specifies whether it is a Call option (right to purchase a specific
-	 * underlying asset) or a Put option (right to sell a specific underlying
-	 * asset).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1122,7 +1183,7 @@ public class Option extends Derivative {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOptionType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Option, OptionDefinitionTypeCode> mmOptionType = new MMBusinessAttribute<Option, OptionDefinitionTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -1134,19 +1195,20 @@ public class Option extends Derivative {
 			simpleType_lazy = () -> OptionDefinitionTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Option.class.getMethod("getOptionType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public OptionDefinitionTypeCode getValue(Option obj) {
+			return obj.getOptionType();
+		}
+
+		@Override
+		public void setValue(Option obj, OptionDefinitionTypeCode value) {
+			obj.setOptionType(value);
 		}
 	};
 	protected Number strikeValue;
 	/**
-	 * Number of shares/units for the financial instrument involved in the
-	 * option trade (Used for derivatives).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1170,7 +1232,7 @@ public class Option extends Derivative {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStrikeValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Option, Number> mmStrikeValue = new MMBusinessAttribute<Option, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -1182,19 +1244,20 @@ public class Option extends Derivative {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Option.class.getMethod("getStrikeValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(Option obj) {
+			return obj.getStrikeValue();
+		}
+
+		@Override
+		public void setValue(Option obj, Number value) {
+			obj.setStrikeValue(value);
 		}
 	};
 	protected Max35Text settlementPeriodType;
 	/**
-	 * Specifies how settlement will take place for instance at expiration or at
-	 * hit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1218,7 +1281,7 @@ public class Option extends Derivative {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSettlementPeriodType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Option, Max35Text> mmSettlementPeriodType = new MMBusinessAttribute<Option, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Option.mmObject();
@@ -1230,24 +1293,26 @@ public class Option extends Derivative {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Option.class.getMethod("getSettlementPeriodType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Option obj) {
+			return obj.getSettlementPeriodType();
+		}
+
+		@Override
+		public void setValue(Option obj, Max35Text value) {
+			obj.setSettlementPeriodType(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Option";
 				definition = "Contracts which grant to the holder either the privilege to purchase or the privilege to sell the assets specified at a predetermined price or formula at or within a time in the future.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Price.mmOption, com.tools20022.repository.entity.SecuritiesConversion.mmRelatedOption,
-						com.tools20022.repository.entity.CurrencyOption.mmOptionDefinition, com.tools20022.repository.entity.SecuritiesOptionTrade.mmOption);
+				associationDomain_lazy = () -> Arrays.asList(Price.mmOption, SecuritiesConversion.mmRelatedOption, com.tools20022.repository.entity.CurrencyOption.mmOptionDefinition,
+						com.tools20022.repository.entity.SecuritiesOptionTrade.mmOption);
 				superType_lazy = () -> com.tools20022.repository.entity.Derivative.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Option.mmInstrumentAssignmentMethod, com.tools20022.repository.entity.Option.mmSettleStyle, com.tools20022.repository.entity.Option.mmStandardisation,
 						com.tools20022.repository.entity.Option.mmPositionLimit, com.tools20022.repository.entity.Option.mmUnderlyingType, com.tools20022.repository.entity.Option.mmCoverIndicator,
@@ -1271,183 +1336,206 @@ public class Option extends Derivative {
 		return instrumentAssignmentMethod;
 	}
 
-	public void setInstrumentAssignmentMethod(AssignmentMethodCode instrumentAssignmentMethod) {
-		this.instrumentAssignmentMethod = instrumentAssignmentMethod;
+	public Option setInstrumentAssignmentMethod(AssignmentMethodCode instrumentAssignmentMethod) {
+		this.instrumentAssignmentMethod = Objects.requireNonNull(instrumentAssignmentMethod);
+		return this;
 	}
 
 	public SettleStyleCode getSettleStyle() {
 		return settleStyle;
 	}
 
-	public void setSettleStyle(SettleStyleCode settleStyle) {
-		this.settleStyle = settleStyle;
+	public Option setSettleStyle(SettleStyleCode settleStyle) {
+		this.settleStyle = Objects.requireNonNull(settleStyle);
+		return this;
 	}
 
 	public StandardisationCode getStandardisation() {
 		return standardisation;
 	}
 
-	public void setStandardisation(StandardisationCode standardisation) {
-		this.standardisation = standardisation;
+	public Option setStandardisation(StandardisationCode standardisation) {
+		this.standardisation = Objects.requireNonNull(standardisation);
+		return this;
 	}
 
 	public Number getPositionLimit() {
 		return positionLimit;
 	}
 
-	public void setPositionLimit(Number positionLimit) {
-		this.positionLimit = positionLimit;
+	public Option setPositionLimit(Number positionLimit) {
+		this.positionLimit = Objects.requireNonNull(positionLimit);
+		return this;
 	}
 
 	public UnderlyingTypeCode getUnderlyingType() {
 		return underlyingType;
 	}
 
-	public void setUnderlyingType(UnderlyingTypeCode underlyingType) {
-		this.underlyingType = underlyingType;
+	public Option setUnderlyingType(UnderlyingTypeCode underlyingType) {
+		this.underlyingType = Objects.requireNonNull(underlyingType);
+		return this;
 	}
 
 	public YesNoIndicator getCoverIndicator() {
 		return coverIndicator;
 	}
 
-	public void setCoverIndicator(YesNoIndicator coverIndicator) {
-		this.coverIndicator = coverIndicator;
+	public Option setCoverIndicator(YesNoIndicator coverIndicator) {
+		this.coverIndicator = Objects.requireNonNull(coverIndicator);
+		return this;
 	}
 
 	public List<SecuritiesConversion> getOptionConversionInformation() {
-		return optionConversionInformation;
+		return optionConversionInformation == null ? optionConversionInformation = new ArrayList<>() : optionConversionInformation;
 	}
 
-	public void setOptionConversionInformation(List<com.tools20022.repository.entity.SecuritiesConversion> optionConversionInformation) {
-		this.optionConversionInformation = optionConversionInformation;
+	public Option setOptionConversionInformation(List<SecuritiesConversion> optionConversionInformation) {
+		this.optionConversionInformation = Objects.requireNonNull(optionConversionInformation);
+		return this;
 	}
 
 	public PercentageRate getOptionRatio() {
 		return optionRatio;
 	}
 
-	public void setOptionRatio(PercentageRate optionRatio) {
-		this.optionRatio = optionRatio;
+	public Option setOptionRatio(PercentageRate optionRatio) {
+		this.optionRatio = Objects.requireNonNull(optionRatio);
+		return this;
 	}
 
 	public SecuritiesOptionTrade getSecuritiesOptionTrade() {
 		return securitiesOptionTrade;
 	}
 
-	public void setSecuritiesOptionTrade(com.tools20022.repository.entity.SecuritiesOptionTrade securitiesOptionTrade) {
-		this.securitiesOptionTrade = securitiesOptionTrade;
+	public Option setSecuritiesOptionTrade(com.tools20022.repository.entity.SecuritiesOptionTrade securitiesOptionTrade) {
+		this.securitiesOptionTrade = Objects.requireNonNull(securitiesOptionTrade);
+		return this;
 	}
 
 	public SettlementTypeCode getSettlementType() {
 		return settlementType;
 	}
 
-	public void setSettlementType(SettlementTypeCode settlementType) {
-		this.settlementType = settlementType;
+	public Option setSettlementType(SettlementTypeCode settlementType) {
+		this.settlementType = Objects.requireNonNull(settlementType);
+		return this;
 	}
 
 	public Number getStrikeMultiplier() {
 		return strikeMultiplier;
 	}
 
-	public void setStrikeMultiplier(Number strikeMultiplier) {
-		this.strikeMultiplier = strikeMultiplier;
+	public Option setStrikeMultiplier(Number strikeMultiplier) {
+		this.strikeMultiplier = Objects.requireNonNull(strikeMultiplier);
+		return this;
 	}
 
 	public Max4AlphaNumericText getExpiryLocation() {
 		return expiryLocation;
 	}
 
-	public void setExpiryLocation(Max4AlphaNumericText expiryLocation) {
-		this.expiryLocation = expiryLocation;
+	public Option setExpiryLocation(Max4AlphaNumericText expiryLocation) {
+		this.expiryLocation = Objects.requireNonNull(expiryLocation);
+		return this;
 	}
 
 	public ISODate getFinalSettlementDate() {
 		return finalSettlementDate;
 	}
 
-	public void setFinalSettlementDate(ISODate finalSettlementDate) {
-		this.finalSettlementDate = finalSettlementDate;
+	public Option setFinalSettlementDate(ISODate finalSettlementDate) {
+		this.finalSettlementDate = Objects.requireNonNull(finalSettlementDate);
+		return this;
 	}
 
 	public OptionStyleCode getOptionStyle() {
 		return optionStyle;
 	}
 
-	public void setOptionStyle(OptionStyleCode optionStyle) {
-		this.optionStyle = optionStyle;
+	public Option setOptionStyle(OptionStyleCode optionStyle) {
+		this.optionStyle = Objects.requireNonNull(optionStyle);
+		return this;
 	}
 
 	public List<CurrencyOption> getCurrencyOption() {
-		return currencyOption;
+		return currencyOption == null ? currencyOption = new ArrayList<>() : currencyOption;
 	}
 
-	public void setCurrencyOption(List<com.tools20022.repository.entity.CurrencyOption> currencyOption) {
-		this.currencyOption = currencyOption;
+	public Option setCurrencyOption(List<com.tools20022.repository.entity.CurrencyOption> currencyOption) {
+		this.currencyOption = Objects.requireNonNull(currencyOption);
+		return this;
 	}
 
 	public ISODateTime getEarliestExerciseDate() {
 		return earliestExerciseDate;
 	}
 
-	public void setEarliestExerciseDate(ISODateTime earliestExerciseDate) {
-		this.earliestExerciseDate = earliestExerciseDate;
+	public Option setEarliestExerciseDate(ISODateTime earliestExerciseDate) {
+		this.earliestExerciseDate = Objects.requireNonNull(earliestExerciseDate);
+		return this;
 	}
 
 	public Number getSettlementDays() {
 		return settlementDays;
 	}
 
-	public void setSettlementDays(Number settlementDays) {
-		this.settlementDays = settlementDays;
+	public Option setSettlementDays(Number settlementDays) {
+		this.settlementDays = Objects.requireNonNull(settlementDays);
+		return this;
 	}
 
 	public Price getStrikePrice() {
 		return strikePrice;
 	}
 
-	public void setStrikePrice(com.tools20022.repository.entity.Price strikePrice) {
-		this.strikePrice = strikePrice;
+	public Option setStrikePrice(Price strikePrice) {
+		this.strikePrice = Objects.requireNonNull(strikePrice);
+		return this;
 	}
 
 	public ISODateTime getOptionStartDate() {
 		return optionStartDate;
 	}
 
-	public void setOptionStartDate(ISODateTime optionStartDate) {
-		this.optionStartDate = optionStartDate;
+	public Option setOptionStartDate(ISODateTime optionStartDate) {
+		this.optionStartDate = Objects.requireNonNull(optionStartDate);
+		return this;
 	}
 
 	public ISODateTime getExpiryDateAndTime() {
 		return expiryDateAndTime;
 	}
 
-	public void setExpiryDateAndTime(ISODateTime expiryDateAndTime) {
-		this.expiryDateAndTime = expiryDateAndTime;
+	public Option setExpiryDateAndTime(ISODateTime expiryDateAndTime) {
+		this.expiryDateAndTime = Objects.requireNonNull(expiryDateAndTime);
+		return this;
 	}
 
 	public OptionDefinitionTypeCode getOptionType() {
 		return optionType;
 	}
 
-	public void setOptionType(OptionDefinitionTypeCode optionType) {
-		this.optionType = optionType;
+	public Option setOptionType(OptionDefinitionTypeCode optionType) {
+		this.optionType = Objects.requireNonNull(optionType);
+		return this;
 	}
 
 	public Number getStrikeValue() {
 		return strikeValue;
 	}
 
-	public void setStrikeValue(Number strikeValue) {
-		this.strikeValue = strikeValue;
+	public Option setStrikeValue(Number strikeValue) {
+		this.strikeValue = Objects.requireNonNull(strikeValue);
+		return this;
 	}
 
 	public Max35Text getSettlementPeriodType() {
 		return settlementPeriodType;
 	}
 
-	public void setSettlementPeriodType(Max35Text settlementPeriodType) {
-		this.settlementPeriodType = settlementPeriodType;
+	public Option setSettlementPeriodType(Max35Text settlementPeriodType) {
+		this.settlementPeriodType = Objects.requireNonNull(settlementPeriodType);
+		return this;
 	}
 }

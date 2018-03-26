@@ -38,34 +38,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory8Code#SoftwareModule
- * DataSetCategory8Code.mmSoftwareModule}</li>
+ * DataSetCategory8Code.SoftwareModule}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory8Code#VendorParameters
- * DataSetCategory8Code.mmVendorParameters}</li>
+ * DataSetCategory8Code.VendorParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory8Code#AcquirerParameters
- * DataSetCategory8Code.mmAcquirerParameters}</li>
+ * DataSetCategory8Code.AcquirerParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory8Code#MerchantParameters
- * DataSetCategory8Code.mmMerchantParameters}</li>
+ * DataSetCategory8Code.MerchantParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory8Code#BatchCapture
- * DataSetCategory8Code.mmBatchCapture}</li>
+ * DataSetCategory8Code.BatchCapture}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory8Code#CaptureResponse
- * DataSetCategory8Code.mmCaptureResponse}</li>
+ * DataSetCategory8Code.CaptureResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory8Code#StatusReport
- * DataSetCategory8Code.mmStatusReport}</li>
+ * DataSetCategory8Code.StatusReport}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory8Code#DelegationData
- * DataSetCategory8Code.mmDelegationData}</li>
+ * DataSetCategory8Code.DelegationData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory8Code#ManagementPlan
- * DataSetCategory8Code.mmManagementPlan}</li>
+ * DataSetCategory8Code.ManagementPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory8Code#ReconciliationError
- * DataSetCategory8Code.mmReconciliationError}</li>
+ * DataSetCategory8Code.ReconciliationError}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -74,8 +74,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -344,7 +344,7 @@ public class DataSetCategory8Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("SWPK");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DataSetCategory8Code";

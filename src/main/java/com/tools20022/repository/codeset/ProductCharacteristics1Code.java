@@ -38,46 +38,46 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristics1Code#BuyersItemSpecification
- * ProductCharacteristics1Code.mmBuyersItemSpecification}</li>
+ * ProductCharacteristics1Code.BuyersItemSpecification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristics1Code#ChassisNumber
- * ProductCharacteristics1Code.mmChassisNumber}</li>
+ * ProductCharacteristics1Code.ChassisNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristics1Code#Colour
- * ProductCharacteristics1Code.mmColour}</li>
+ * ProductCharacteristics1Code.Colour}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristics1Code#EngineDisplacement
- * ProductCharacteristics1Code.mmEngineDisplacement}</li>
+ * ProductCharacteristics1Code.EngineDisplacement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristics1Code#EngineNumber
- * ProductCharacteristics1Code.mmEngineNumber}</li>
+ * ProductCharacteristics1Code.EngineNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristics1Code#Option
- * ProductCharacteristics1Code.mmOption}</li>
+ * ProductCharacteristics1Code.Option}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristics1Code#OriginCriterion
- * ProductCharacteristics1Code.mmOriginCriterion}</li>
+ * ProductCharacteristics1Code.OriginCriterion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristics1Code#PercentageByVolume
- * ProductCharacteristics1Code.mmPercentageByVolume}</li>
+ * ProductCharacteristics1Code.PercentageByVolume}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristics1Code#SellersItemSpecification
- * ProductCharacteristics1Code.mmSellersItemSpecification}</li>
+ * ProductCharacteristics1Code.SellersItemSpecification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristics1Code#Size
- * ProductCharacteristics1Code.mmSize}</li>
+ * ProductCharacteristics1Code.Size}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristics1Code#SizeRange
- * ProductCharacteristics1Code.mmSizeRange}</li>
+ * ProductCharacteristics1Code.SizeRange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristics1Code#SpecialRemarks
- * ProductCharacteristics1Code.mmSpecialRemarks}</li>
+ * ProductCharacteristics1Code.SpecialRemarks}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristics1Code#StorageCode
- * ProductCharacteristics1Code.mmStorageCode}</li>
+ * ProductCharacteristics1Code.StorageCode}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCharacteristics1Code#VehicleIdentificationNumber
- * ProductCharacteristics1Code.mmVehicleIdentificationNumber}</li>
+ * ProductCharacteristics1Code.VehicleIdentificationNumber}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -86,8 +86,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -452,7 +452,7 @@ public class ProductCharacteristics1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BISP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProductCharacteristics1Code";

@@ -37,307 +37,307 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ResultDetailCode#WrongCard
- * ResultDetailCode.mmWrongCard}</li>
+ * ResultDetailCode.WrongCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#WithdrawalNumberLimit
- * ResultDetailCode.mmWithdrawalNumberLimit}</li>
+ * ResultDetailCode.WithdrawalNumberLimit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#WithdrawalAmountLimit
- * ResultDetailCode.mmWithdrawalAmountLimit}</li>
+ * ResultDetailCode.WithdrawalAmountLimit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#VendorNotFound
- * ResultDetailCode.mmVendorNotFound}</li>
+ * ResultDetailCode.VendorNotFound}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#VendorFormatError
- * ResultDetailCode.mmVendorFormatError}</li>
+ * ResultDetailCode.VendorFormatError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#AccountNotFound
- * ResultDetailCode.mmAccountNotFound}</li>
+ * ResultDetailCode.AccountNotFound}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#AcquirerNotSupported
- * ResultDetailCode.mmAcquirerNotSupported}</li>
+ * ResultDetailCode.AcquirerNotSupported}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#AMLValidation
- * ResultDetailCode.mmAMLValidation}</li>
+ * ResultDetailCode.AMLValidation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#UnsupportedService
- * ResultDetailCode.mmUnsupportedService}</li>
+ * ResultDetailCode.UnsupportedService}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#UneffectiveCard
- * ResultDetailCode.mmUneffectiveCard}</li>
+ * ResultDetailCode.UneffectiveCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#UnavailablecommunicationKey
- * ResultDetailCode.mmUnavailablecommunicationKey}</li>
+ * ResultDetailCode.UnavailablecommunicationKey}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#UnacceptableCurrency
- * ResultDetailCode.mmUnacceptableCurrency}</li>
+ * ResultDetailCode.UnacceptableCurrency}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#UnableToProcessOffLine
- * ResultDetailCode.mmUnableToProcessOffLine}</li>
+ * ResultDetailCode.UnableToProcessOffLine}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#UnableToGoOnLine
- * ResultDetailCode.mmUnableToGoOnLine}</li>
+ * ResultDetailCode.UnableToGoOnLine}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#UnableToFindOriginal
- * ResultDetailCode.mmUnableToFindOriginal}</li>
+ * ResultDetailCode.UnableToFindOriginal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#TransactionDuplicate
- * ResultDetailCode.mmTransactionDuplicate}</li>
+ * ResultDetailCode.TransactionDuplicate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#TransactionDidNotComplete
- * ResultDetailCode.mmTransactionDidNotComplete}</li>
+ * ResultDetailCode.TransactionDidNotComplete}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#TotalsNotAvailable
- * ResultDetailCode.mmTotalsNotAvailable}</li>
+ * ResultDetailCode.TotalsNotAvailable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#ToAccountError
- * ResultDetailCode.mmToAccountError}</li>
+ * ResultDetailCode.ToAccountError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#SystemMalfunction
- * ResultDetailCode.mmSystemMalfunction}</li>
+ * ResultDetailCode.SystemMalfunction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#SystemInoperative
- * ResultDetailCode.mmSystemInoperative}</li>
+ * ResultDetailCode.SystemInoperative}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#SuspectedFraud
- * ResultDetailCode.mmSuspectedFraud}</li>
+ * ResultDetailCode.SuspectedFraud}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#SuspectedCounterfeitCard
- * ResultDetailCode.mmSuspectedCounterfeitCard}</li>
+ * ResultDetailCode.SuspectedCounterfeitCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#SurchargeNotPermitted
- * ResultDetailCode.mmSurchargeNotPermitted}</li>
+ * ResultDetailCode.SurchargeNotPermitted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#SpecialConditions
- * ResultDetailCode.mmSpecialConditions}</li>
+ * ResultDetailCode.SpecialConditions}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#StolenCard
- * ResultDetailCode.mmStolenCard}</li>
+ * ResultDetailCode.StolenCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#SoftwareOrHardwareError
- * ResultDetailCode.mmSoftwareOrHardwareError}</li>
+ * ResultDetailCode.SoftwareOrHardwareError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#SecurityViolation
- * ResultDetailCode.mmSecurityViolation}</li>
+ * ResultDetailCode.SecurityViolation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#RestrictedCard
- * ResultDetailCode.mmRestrictedCard}</li>
+ * ResultDetailCode.RestrictedCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#RecurringDataError
- * ResultDetailCode.mmRecurringDataError}</li>
+ * ResultDetailCode.RecurringDataError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#QueueMaximumExceeded
- * ResultDetailCode.mmQueueMaximumExceeded}</li>
+ * ResultDetailCode.QueueMaximumExceeded}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#PINTriesExceeded
- * ResultDetailCode.mmPINTriesExceeded}</li>
+ * ResultDetailCode.PINTriesExceeded}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#PINSecurityError
- * ResultDetailCode.mmPINSecurityError}</li>
+ * ResultDetailCode.PINSecurityError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#PINEncryptionError
- * ResultDetailCode.mmPINEncryptionError}</li>
+ * ResultDetailCode.PINEncryptionError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#PINDataRequired
- * ResultDetailCode.mmPINDataRequired}</li>
+ * ResultDetailCode.PINDataRequired}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#PINChangeRequired
- * ResultDetailCode.mmPINChangeRequired}</li>
+ * ResultDetailCode.PINChangeRequired}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#PaymentNumberLimit
- * ResultDetailCode.mmPaymentNumberLimit}</li>
+ * ResultDetailCode.PaymentNumberLimit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#PaymentAmountLimit
- * ResultDetailCode.mmPaymentAmountLimit}</li>
+ * ResultDetailCode.PaymentAmountLimit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#OutOfSequence
- * ResultDetailCode.mmOutOfSequence}</li>
+ * ResultDetailCode.OutOfSequence}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#OutOfBalance
- * ResultDetailCode.mmOutOfBalance}</li>
+ * ResultDetailCode.OutOfBalance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#OtherError
- * ResultDetailCode.mmOtherError}</li>
+ * ResultDetailCode.OtherError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#OriginalDoesNotMatch
- * ResultDetailCode.mmOriginalDoesNotMatch}</li>
+ * ResultDetailCode.OriginalDoesNotMatch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#OffLineProcessAfterReferral
- * ResultDetailCode.mmOffLineProcessAfterReferral}</li>
+ * ResultDetailCode.OffLineProcessAfterReferral}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#OffLineProcess
- * ResultDetailCode.mmOffLineProcess}</li>
+ * ResultDetailCode.OffLineProcess}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#NotPermittedToCardholder
- * ResultDetailCode.mmNotPermittedToCardholder}</li>
+ * ResultDetailCode.NotPermittedToCardholder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#NotPermittedToAcceptor
- * ResultDetailCode.mmNotPermittedToAcceptor}</li>
+ * ResultDetailCode.NotPermittedToAcceptor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#NotAbleToValidatePIN
- * ResultDetailCode.mmNotAbleToValidatePIN}</li>
+ * ResultDetailCode.NotAbleToValidatePIN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#NoCardRecord
- * ResultDetailCode.mmNoCardRecord}</li>
+ * ResultDetailCode.NoCardRecord}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#NewPINInvalid
- * ResultDetailCode.mmNewPINInvalid}</li>
+ * ResultDetailCode.NewPINInvalid}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ResultDetailCode#LostCard
- * ResultDetailCode.mmLostCard}</li>
+ * ResultDetailCode.LostCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#NoLiabilityAccepted
- * ResultDetailCode.mmNoLiabilityAccepted}</li>
+ * ResultDetailCode.NoLiabilityAccepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#MACKeyError
- * ResultDetailCode.mmMACKeyError}</li>
+ * ResultDetailCode.MACKeyError}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ResultDetailCode#MACError
- * ResultDetailCode.mmMACError}</li>
+ * ResultDetailCode.MACError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#LiabilityAccepted
- * ResultDetailCode.mmLiabilityAccepted}</li>
+ * ResultDetailCode.LiabilityAccepted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#IssuerUnavailable
- * ResultDetailCode.mmIssuerUnavailable}</li>
+ * ResultDetailCode.IssuerUnavailable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#IssuerTimeOut
- * ResultDetailCode.mmIssuerTimeOut}</li>
+ * ResultDetailCode.IssuerTimeOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#IssuerSignedOff
- * ResultDetailCode.mmIssuerSignedOff}</li>
+ * ResultDetailCode.IssuerSignedOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#IssuerNotFound
- * ResultDetailCode.mmIssuerNotFound}</li>
+ * ResultDetailCode.IssuerNotFound}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#IssuerInoperative
- * ResultDetailCode.mmIssuerInoperative}</li>
+ * ResultDetailCode.IssuerInoperative}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#InvalidTransactionDateTime
- * ResultDetailCode.mmInvalidTransactionDateTime}</li>
+ * ResultDetailCode.InvalidTransactionDateTime}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#InvalidTransaction
- * ResultDetailCode.mmInvalidTransaction}</li>
+ * ResultDetailCode.InvalidTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#InvalidTokenIdentification
- * ResultDetailCode.mmInvalidTokenIdentification}</li>
+ * ResultDetailCode.InvalidTokenIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#InvalidToken
- * ResultDetailCode.mmInvalidToken}</li>
+ * ResultDetailCode.InvalidToken}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#InvalidSecurityCode
- * ResultDetailCode.mmInvalidSecurityCode}</li>
+ * ResultDetailCode.InvalidSecurityCode}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#InvalidPIN
- * ResultDetailCode.mmInvalidPIN}</li>
+ * ResultDetailCode.InvalidPIN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#InvalidOriginalAmount
- * ResultDetailCode.mmInvalidOriginalAmount}</li>
+ * ResultDetailCode.InvalidOriginalAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#InvalidCertificate
- * ResultDetailCode.mmInvalidCertificate}</li>
+ * ResultDetailCode.InvalidCertificate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#InvalidCardNumber
- * ResultDetailCode.mmInvalidCardNumber}</li>
+ * ResultDetailCode.InvalidCardNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#InvalidCardholderIdentification
- * ResultDetailCode.mmInvalidCardholderIdentification}</li>
+ * ResultDetailCode.InvalidCardholderIdentification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#InvalidAmount
- * ResultDetailCode.mmInvalidAmount}</li>
+ * ResultDetailCode.InvalidAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#InvalidAcceptor
- * ResultDetailCode.mmInvalidAcceptor}</li>
+ * ResultDetailCode.InvalidAcceptor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#InsufficientFunds
- * ResultDetailCode.mmInsufficientFunds}</li>
+ * ResultDetailCode.InsufficientFunds}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#InProgress
- * ResultDetailCode.mmInProgress}</li>
+ * ResultDetailCode.InProgress}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#FromAccountError
- * ResultDetailCode.mmFromAccountError}</li>
+ * ResultDetailCode.FromAccountError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#FormatError
- * ResultDetailCode.mmFormatError}</li>
+ * ResultDetailCode.FormatError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#ExpiredCard
- * ResultDetailCode.mmExpiredCard}</li>
+ * ResultDetailCode.ExpiredCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#ExceededTransactionLifeCycle
- * ResultDetailCode.mmExceededTransactionLifeCycle}</li>
+ * ResultDetailCode.ExceededTransactionLifeCycle}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#DisputedFees
- * ResultDetailCode.mmDisputedFees}</li>
+ * ResultDetailCode.DisputedFees}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#DatabaseError
- * ResultDetailCode.mmDatabaseError}</li>
+ * ResultDetailCode.DatabaseError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#CutoverInProcess
- * ResultDetailCode.mmCutoverInProcess}</li>
+ * ResultDetailCode.CutoverInProcess}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#ClosedAccount
- * ResultDetailCode.mmClosedAccount}</li>
+ * ResultDetailCode.ClosedAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#CasbackNotAllowed
- * ResultDetailCode.mmCasbackNotAllowed}</li>
+ * ResultDetailCode.CasbackNotAllowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#CashbackAmountExceeded
- * ResultDetailCode.mmCashbackAmountExceeded}</li>
+ * ResultDetailCode.CashbackAmountExceeded}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#CardVerificationFailed
- * ResultDetailCode.mmCardVerificationFailed}</li>
+ * ResultDetailCode.CardVerificationFailed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ResultDetailCode#CardError
- * ResultDetailCode.mmCardError}</li>
+ * ResultDetailCode.CardError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#BankNotFound
- * ResultDetailCode.mmBankNotFound}</li>
+ * ResultDetailCode.BankNotFound}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#AmountNotFound
- * ResultDetailCode.mmAmountNotFound}</li>
+ * ResultDetailCode.AmountNotFound}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#AcknowledgementOnly
- * ResultDetailCode.mmAcknowledgementOnly}</li>
+ * ResultDetailCode.AcknowledgementOnly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#AuthenticationFailed
- * ResultDetailCode.mmAuthenticationFailed}</li>
+ * ResultDetailCode.AuthenticationFailed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#DepositAmountLimit
- * ResultDetailCode.mmDepositAmountLimit}</li>
+ * ResultDetailCode.DepositAmountLimit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#DepositNumberLimit
- * ResultDetailCode.mmDepositNumberLimit}</li>
+ * ResultDetailCode.DepositNumberLimit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#FallbackDeclined
- * ResultDetailCode.mmFallbackDeclined}</li>
+ * ResultDetailCode.FallbackDeclined}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#InvalidAddress
- * ResultDetailCode.mmInvalidAddress}</li>
+ * ResultDetailCode.InvalidAddress}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#InvalidBranch
- * ResultDetailCode.mmInvalidBranch}</li>
+ * ResultDetailCode.InvalidBranch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#InvalidSignature
- * ResultDetailCode.mmInvalidSignature}</li>
+ * ResultDetailCode.InvalidSignature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#KeyStorageSaturation
- * ResultDetailCode.mmKeyStorageSaturation}</li>
+ * ResultDetailCode.KeyStorageSaturation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#MissingICCData
- * ResultDetailCode.mmMissingICCData}</li>
+ * ResultDetailCode.MissingICCData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#ServiceNotEnabled
- * ResultDetailCode.mmServiceNotEnabled}</li>
+ * ResultDetailCode.ServiceNotEnabled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#TerminalNotConfigured
- * ResultDetailCode.mmTerminalNotConfigured}</li>
+ * ResultDetailCode.TerminalNotConfigured}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#UnknownCertificate
- * ResultDetailCode.mmUnknownCertificate}</li>
+ * ResultDetailCode.UnknownCertificate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#InvalidMediaType
- * ResultDetailCode.mmInvalidMediaType}</li>
+ * ResultDetailCode.InvalidMediaType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ResultDetailCode#InvalidService
- * ResultDetailCode.mmInvalidService}</li>
+ * ResultDetailCode.InvalidService}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -354,8 +354,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -3477,7 +3477,7 @@ public class ResultDetailCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ResultDetailCode";
 				definition = "Detail of the result.";

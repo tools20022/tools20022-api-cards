@@ -38,41 +38,41 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType8Code#SignatureService
- * ChargeType8Code.mmSignatureService}</li>
+ * ChargeType8Code.SignatureService}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType8Code#StorageAtDestination
- * ChargeType8Code.mmStorageAtDestination}</li>
+ * ChargeType8Code.StorageAtDestination}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType8Code#StorageAtOrigin
- * ChargeType8Code.mmStorageAtOrigin}</li>
+ * ChargeType8Code.StorageAtOrigin}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeType8Code#Packaging
- * ChargeType8Code.mmPackaging}</li>
+ * ChargeType8Code.Packaging}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeType8Code#PickUp
- * ChargeType8Code.mmPickUp}</li>
+ * ChargeType8Code.PickUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType8Code#DangerousGoodsFee
- * ChargeType8Code.mmDangerousGoodsFee}</li>
+ * ChargeType8Code.DangerousGoodsFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType8Code#SecurityCharge
- * ChargeType8Code.mmSecurityCharge}</li>
+ * ChargeType8Code.SecurityCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType8Code#InsurancePremium
- * ChargeType8Code.mmInsurancePremium}</li>
+ * ChargeType8Code.InsurancePremium}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType8Code#CollectFreight
- * ChargeType8Code.mmCollectFreight}</li>
+ * ChargeType8Code.CollectFreight}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType8Code#ClearanceAndHandlingAtOrigin
- * ChargeType8Code.mmClearanceAndHandlingAtOrigin}</li>
+ * ChargeType8Code.ClearanceAndHandlingAtOrigin}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType8Code#ClearanceAndHandlingAtDestination
- * ChargeType8Code.mmClearanceAndHandlingAtDestination}</li>
+ * ChargeType8Code.ClearanceAndHandlingAtDestination}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType8Code#AirWayBillFee
- * ChargeType8Code.mmAirWayBillFee}</li>
+ * ChargeType8Code.AirWayBillFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType8Code#TransportCharges
- * ChargeType8Code.mmTransportCharges}</li>
+ * ChargeType8Code.TransportCharges}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -80,8 +80,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -422,7 +422,7 @@ public class ChargeType8Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("SIGN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ChargeType8Code";

@@ -38,36 +38,36 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType6Code#AcceptCurrencyConversion
- * ActionType6Code.mmAcceptCurrencyConversion}</li>
+ * ActionType6Code.AcceptCurrencyConversion}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionType6Code#AcceptFees
- * ActionType6Code.mmAcceptFees}</li>
+ * ActionType6Code.AcceptFees}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType6Code#AcceptHigherAmount
- * ActionType6Code.mmAcceptHigherAmount}</li>
+ * ActionType6Code.AcceptHigherAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType6Code#AcceptLowerAmount
- * ActionType6Code.mmAcceptLowerAmount}</li>
+ * ActionType6Code.AcceptLowerAmount}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionType6Code#Busy
- * ActionType6Code.mmBusy}</li>
+ * ActionType6Code.Busy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType6Code#CaptureCard
- * ActionType6Code.mmCaptureCard}</li>
+ * ActionType6Code.CaptureCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType6Code#DisplayMessage
- * ActionType6Code.mmDisplayMessage}</li>
+ * ActionType6Code.DisplayMessage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType6Code#DistributeCoupon
- * ActionType6Code.mmDistributeCoupon}</li>
+ * ActionType6Code.DistributeCoupon}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType6Code#PerformRequest
- * ActionType6Code.mmPerformRequest}</li>
+ * ActionType6Code.PerformRequest}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionType6Code#PINLastTry
- * ActionType6Code.mmPINLastTry}</li>
+ * ActionType6Code.PINLastTry}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionType6Code#PINRetry
- * ActionType6Code.mmPINRetry}</li>
+ * ActionType6Code.PINRetry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType6Code#UpdateTrack
- * ActionType6Code.mmUpdateTrack}</li>
+ * ActionType6Code.UpdateTrack}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -75,8 +75,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -387,7 +387,7 @@ public class ActionType6Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ActionType6Code";
 				definition = "Type of action to be performed.";

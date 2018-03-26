@@ -37,28 +37,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentMethodCode#Cheque
- * PaymentMethodCode.mmCheque}</li>
+ * PaymentMethodCode.Cheque}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentMethodCode#CreditTransfer
- * PaymentMethodCode.mmCreditTransfer}</li>
+ * PaymentMethodCode.CreditTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentMethodCode#DirectDebit
- * PaymentMethodCode.mmDirectDebit}</li>
+ * PaymentMethodCode.DirectDebit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentMethodCode#TransferAdvice
- * PaymentMethodCode.mmTransferAdvice}</li>
+ * PaymentMethodCode.TransferAdvice}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PaymentMethodCode#Direct
- * PaymentMethodCode.mmDirect}</li>
+ * PaymentMethodCode.Direct}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PaymentMethodCode#Classical
- * PaymentMethodCode.mmClassical}</li>
+ * PaymentMethodCode.Classical}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -73,7 +73,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "PaymentMethodCode"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Specifies the transfer method that will be used  to transfer the cash."</li>
+ * "Specifies the transfer method that will be used to transfer the cash."</li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -164,7 +164,7 @@ public class PaymentMethodCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Collection of an amount of money from the debtor's bank account by the creditor.  The amount of money and dates of collections may vary."
+	 * "Collection of an amount of money from the debtor's bank account by the creditor. The amount of money and dates of collections may vary."
 	 * </li>
 	 * </ul>
 	 */
@@ -172,7 +172,7 @@ public class PaymentMethodCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DirectDebit";
-			definition = "Collection of an amount of money from the debtor's bank account by the creditor.  The amount of money and dates of collections may vary.";
+			definition = "Collection of an amount of money from the debtor's bank account by the creditor. The amount of money and dates of collections may vary.";
 			owner_lazy = () -> com.tools20022.repository.codeset.PaymentMethodCode.mmObject();
 			codeName = "DD";
 		}
@@ -278,11 +278,11 @@ public class PaymentMethodCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CHK");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentMethodCode";
-				definition = "Specifies the transfer method that will be used  to transfer the cash.";
+				definition = "Specifies the transfer method that will be used to transfer the cash.";
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.PaymentMethodCode.Cheque, com.tools20022.repository.codeset.PaymentMethodCode.CreditTransfer,
 						com.tools20022.repository.codeset.PaymentMethodCode.DirectDebit, com.tools20022.repository.codeset.PaymentMethodCode.TransferAdvice, com.tools20022.repository.codeset.PaymentMethodCode.Direct,
 						com.tools20022.repository.codeset.PaymentMethodCode.Classical);

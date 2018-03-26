@@ -26,9 +26,10 @@ import com.tools20022.repository.msg.ATMDiagnosticResponse2;
 import com.tools20022.repository.msg.ContentInformationType10;
 import com.tools20022.repository.msg.ContentInformationType15;
 import com.tools20022.repository.msg.Header31;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -79,16 +80,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "ATMDiagnosticResponseV02", propOrder = {"header", "protectedATMDiagnosticResponse", "ATMDiagnosticResponse", "securityTrailer"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "ATMDiagnosticResponseV02", propOrder = {"header", "protectedATMDiagnosticResponse", "aTMDiagnosticResponse", "securityTrailer"})
 public class ATMDiagnosticResponseV02 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header31 header;
 	/**
-	 * Information related to the protocol management on a segment of the path
-	 * from the ATM to the acquirer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,7 +111,7 @@ public class ATMDiagnosticResponseV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMDiagnosticResponseV02, Header31> mmHeader = new MMMessageBuildingBlock<ATMDiagnosticResponseV02, Header31>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,18 +122,21 @@ public class ATMDiagnosticResponseV02 {
 			complexType_lazy = () -> Header31.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMDiagnosticResponseV02.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header31 getValue(ATMDiagnosticResponseV02 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(ATMDiagnosticResponseV02 obj, Header31 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "PrtctdATMDgnstcRspn")
 	protected ContentInformationType10 protectedATMDiagnosticResponse;
 	/**
-	 * Encrypted body of the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,7 +157,7 @@ public class ATMDiagnosticResponseV02 {
 	 * definition} = "Encrypted body of the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmProtectedATMDiagnosticResponse = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMDiagnosticResponseV02, Optional<ContentInformationType10>> mmProtectedATMDiagnosticResponse = new MMMessageBuildingBlock<ATMDiagnosticResponseV02, Optional<ContentInformationType10>>() {
 		{
 			xmlTag = "PrtctdATMDgnstcRspn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -164,18 +168,21 @@ public class ATMDiagnosticResponseV02 {
 			complexType_lazy = () -> ContentInformationType10.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMDiagnosticResponseV02.class.getMethod("getProtectedATMDiagnosticResponse", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType10> getValue(ATMDiagnosticResponseV02 obj) {
+			return obj.getProtectedATMDiagnosticResponse();
+		}
+
+		@Override
+		public void setValue(ATMDiagnosticResponseV02 obj, Optional<ContentInformationType10> value) {
+			obj.setProtectedATMDiagnosticResponse(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "ATMDgnstcRspn")
 	protected ATMDiagnosticResponse2 aTMDiagnosticResponse;
 	/**
-	 * Information related to the response of a diagnostic from an ATM manager.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -198,7 +205,7 @@ public class ATMDiagnosticResponseV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmATMDiagnosticResponse = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMDiagnosticResponseV02, Optional<ATMDiagnosticResponse2>> mmATMDiagnosticResponse = new MMMessageBuildingBlock<ATMDiagnosticResponseV02, Optional<ATMDiagnosticResponse2>>() {
 		{
 			xmlTag = "ATMDgnstcRspn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -209,18 +216,21 @@ public class ATMDiagnosticResponseV02 {
 			complexType_lazy = () -> ATMDiagnosticResponse2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMDiagnosticResponseV02.class.getMethod("getATMDiagnosticResponse", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ATMDiagnosticResponse2> getValue(ATMDiagnosticResponseV02 obj) {
+			return obj.getATMDiagnosticResponse();
+		}
+
+		@Override
+		public void setValue(ATMDiagnosticResponseV02 obj, Optional<ATMDiagnosticResponse2> value) {
+			obj.setATMDiagnosticResponse(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SctyTrlr")
 	protected ContentInformationType15 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -241,7 +251,7 @@ public class ATMDiagnosticResponseV02 {
 	 * definition} = "Trailer of the message containing a MAC."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMDiagnosticResponseV02, Optional<ContentInformationType15>> mmSecurityTrailer = new MMMessageBuildingBlock<ATMDiagnosticResponseV02, Optional<ContentInformationType15>>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -252,12 +262,14 @@ public class ATMDiagnosticResponseV02 {
 			complexType_lazy = () -> ContentInformationType15.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMDiagnosticResponseV02.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType15> getValue(ATMDiagnosticResponseV02 obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(ATMDiagnosticResponseV02 obj, Optional<ContentInformationType15> value) {
+			obj.setSecurityTrailer(value.orElse(null));
 		}
 	};
 
@@ -290,43 +302,43 @@ public class ATMDiagnosticResponseV02 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header31 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header31 header) {
-		this.header = header;
+	public ATMDiagnosticResponseV02 setHeader(Header31 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "PrtctdATMDgnstcRspn")
-	public ContentInformationType10 getProtectedATMDiagnosticResponse() {
-		return protectedATMDiagnosticResponse;
+	public Optional<ContentInformationType10> getProtectedATMDiagnosticResponse() {
+		return protectedATMDiagnosticResponse == null ? Optional.empty() : Optional.of(protectedATMDiagnosticResponse);
 	}
 
-	public void setProtectedATMDiagnosticResponse(ContentInformationType10 protectedATMDiagnosticResponse) {
+	public ATMDiagnosticResponseV02 setProtectedATMDiagnosticResponse(ContentInformationType10 protectedATMDiagnosticResponse) {
 		this.protectedATMDiagnosticResponse = protectedATMDiagnosticResponse;
+		return this;
 	}
 
-	@XmlElement(name = "ATMDgnstcRspn")
-	public ATMDiagnosticResponse2 getATMDiagnosticResponse() {
-		return aTMDiagnosticResponse;
+	public Optional<ATMDiagnosticResponse2> getATMDiagnosticResponse() {
+		return aTMDiagnosticResponse == null ? Optional.empty() : Optional.of(aTMDiagnosticResponse);
 	}
 
-	public void setATMDiagnosticResponse(ATMDiagnosticResponse2 aTMDiagnosticResponse) {
+	public ATMDiagnosticResponseV02 setATMDiagnosticResponse(ATMDiagnosticResponse2 aTMDiagnosticResponse) {
 		this.aTMDiagnosticResponse = aTMDiagnosticResponse;
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr")
-	public ContentInformationType15 getSecurityTrailer() {
-		return securityTrailer;
+	public Optional<ContentInformationType15> getSecurityTrailer() {
+		return securityTrailer == null ? Optional.empty() : Optional.of(securityTrailer);
 	}
 
-	public void setSecurityTrailer(ContentInformationType15 securityTrailer) {
+	public ATMDiagnosticResponseV02 setSecurityTrailer(ContentInformationType15 securityTrailer) {
 		this.securityTrailer = securityTrailer;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:caam.006.02.02")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:caam.006.001.02")
 	static public class Document {
 		@XmlElement(name = "ATMDgnstcRspn", required = true)
 		public ATMDiagnosticResponseV02 messageBody;

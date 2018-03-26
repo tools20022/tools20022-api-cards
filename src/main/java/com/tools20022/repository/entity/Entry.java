@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.DebitCreditCode;
 import com.tools20022.repository.codeset.EntryCode;
@@ -24,11 +25,13 @@ import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.TrueFalseIndicator;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.Account;
+import com.tools20022.repository.entity.Balance;
+import com.tools20022.repository.entity.BankTransaction;
+import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Posting to an account that results in an increase or decrease to a balance.
@@ -98,8 +101,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -117,8 +120,8 @@ public class Entry {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected DebitCreditCode creditDebitIndicator;
 	/**
-	 * Indicates whether an entry is a credit or a debit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -141,7 +144,7 @@ public class Entry {
 	 * definition} = "Indicates whether an entry is a credit or a debit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Entry, DebitCreditCode> mmCreditDebitIndicator = new MMBusinessAttribute<Entry, DebitCreditCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
@@ -153,19 +156,20 @@ public class Entry {
 			simpleType_lazy = () -> DebitCreditCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Entry.class.getMethod("getCreditDebitIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DebitCreditCode getValue(Entry obj) {
+			return obj.getCreditDebitIndicator();
+		}
+
+		@Override
+		public void setValue(Entry obj, DebitCreditCode value) {
+			obj.setCreditDebitIndicator(value);
 		}
 	};
 	protected ISODateTime entryDate;
 	/**
-	 * Date and time at which an entry is posted to an account on the account
-	 * servicer's books.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -189,7 +193,7 @@ public class Entry {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEntryDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Entry, ISODateTime> mmEntryDate = new MMBusinessAttribute<Entry, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
@@ -201,19 +205,20 @@ public class Entry {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Entry.class.getMethod("getEntryDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Entry obj) {
+			return obj.getEntryDate();
+		}
+
+		@Override
+		public void setValue(Entry obj, ISODateTime value) {
+			obj.setEntryDate(value);
 		}
 	};
 	protected Max35Text identification;
 	/**
-	 * Unique and unambiguous identifier for an entry, as assigned by the
-	 * account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -237,7 +242,7 @@ public class Entry {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Entry, Max35Text> mmIdentification = new MMBusinessAttribute<Entry, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
@@ -249,19 +254,20 @@ public class Entry {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Entry.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Entry obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(Entry obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 	protected Max35Text accountOwnerTransactionIdentification;
 	/**
-	 * Unambiguous identification of the transaction as known by the account
-	 * owner (or the instructing party managing the account).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -285,7 +291,7 @@ public class Entry {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAccountOwnerTransactionIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Entry, Max35Text> mmAccountOwnerTransactionIdentification = new MMBusinessAttribute<Entry, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
@@ -297,19 +303,20 @@ public class Entry {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Entry.class.getMethod("getAccountOwnerTransactionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Entry obj) {
+			return obj.getAccountOwnerTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(Entry obj, Max35Text value) {
+			obj.setAccountOwnerTransactionIdentification(value);
 		}
 	};
 	protected Max35Text accountServicerTransactionIdentification;
 	/**
-	 * Unambiguous identification of the transaction as known by the account
-	 * servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -333,7 +340,7 @@ public class Entry {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAccountServicerTransactionIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Entry, Max35Text> mmAccountServicerTransactionIdentification = new MMBusinessAttribute<Entry, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
@@ -345,18 +352,20 @@ public class Entry {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Entry.class.getMethod("getAccountServicerTransactionIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Entry obj) {
+			return obj.getAccountServicerTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(Entry obj, Max35Text value) {
+			obj.setAccountServicerTransactionIdentification(value);
 		}
 	};
 	protected TrueFalseIndicator reversalIndicator;
 	/**
-	 * Indicates whether or not the entry is the result of a reversal.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -380,7 +389,7 @@ public class Entry {
 	 * "Indicates whether or not the entry is the result of a reversal."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReversalIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Entry, TrueFalseIndicator> mmReversalIndicator = new MMBusinessAttribute<Entry, TrueFalseIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
@@ -392,19 +401,20 @@ public class Entry {
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Entry.class.getMethod("getReversalIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TrueFalseIndicator getValue(Entry obj) {
+			return obj.getReversalIndicator();
+		}
+
+		@Override
+		public void setValue(Entry obj, TrueFalseIndicator value) {
+			obj.setReversalIndicator(value);
 		}
 	};
 	protected ISODateTime valueDate;
 	/**
-	 * Date and time assets become available to the account owner (in a credit
-	 * entry), or cease to be available to the account owner (in a debit entry).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -415,6 +425,9 @@ public class Entry {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Entry
 	 * Entry}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :98a::VALU</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -428,10 +441,11 @@ public class Entry {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValueDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Entry, ISODateTime> mmValueDate = new MMBusinessAttribute<Entry, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":98a::VALU"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValueDate";
 			definition = "Date and time assets become available to the account owner (in a credit entry), or cease to be available to the account owner (in a debit entry).";
@@ -440,18 +454,20 @@ public class Entry {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Entry.class.getMethod("getValueDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Entry obj) {
+			return obj.getValueDate();
+		}
+
+		@Override
+		public void setValue(Entry obj, ISODateTime value) {
+			obj.setValueDate(value);
 		}
 	};
 	protected BankTransaction bankTransactionCode;
 	/**
-	 * Type of underlying transaction resulting in the entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -481,7 +497,7 @@ public class Entry {
 	 * definition} = "Type of underlying transaction resulting in the entry."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBankTransactionCode = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Entry, Optional<BankTransaction>> mmBankTransactionCode = new MMBusinessAssociationEnd<Entry, Optional<BankTransaction>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
@@ -490,15 +506,25 @@ public class Entry {
 			definition = "Type of underlying transaction resulting in the entry.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmRelatedEntry;
+			opposite_lazy = () -> BankTransaction.mmRelatedEntry;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmObject();
+			type_lazy = () -> BankTransaction.mmObject();
+		}
+
+		@Override
+		public Optional<BankTransaction> getValue(Entry obj) {
+			return obj.getBankTransactionCode();
+		}
+
+		@Override
+		public void setValue(Entry obj, Optional<BankTransaction> value) {
+			obj.setBankTransactionCode(value.orElse(null));
 		}
 	};
 	protected YesNoIndicator commissionWaiverIndicator;
 	/**
-	 * Indicates whether the transaction is exempt from commission or not.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -522,7 +548,7 @@ public class Entry {
 	 * "Indicates whether the transaction is exempt from commission or not."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCommissionWaiverIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Entry, YesNoIndicator> mmCommissionWaiverIndicator = new MMBusinessAttribute<Entry, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
@@ -534,19 +560,20 @@ public class Entry {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Entry.class.getMethod("getCommissionWaiverIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(Entry obj) {
+			return obj.getCommissionWaiverIndicator();
+		}
+
+		@Override
+		public void setValue(Entry obj, YesNoIndicator value) {
+			obj.setCommissionWaiverIndicator(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Role> role;
+	protected List<Role> role;
 	/**
-	 * Specifies the role played by a party or a system in the context of an
-	 * entry in an account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -576,7 +603,7 @@ public class Entry {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Entry, List<Role>> mmRole = new MMBusinessAssociationEnd<Entry, List<Role>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
@@ -584,16 +611,25 @@ public class Entry {
 			name = "Role";
 			definition = "Specifies the role played by a party or a system in the context of an entry in an account.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Role.mmEntry;
+			opposite_lazy = () -> Role.mmEntry;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Role.mmObject();
+			type_lazy = () -> Role.mmObject();
+		}
+
+		@Override
+		public List<Role> getValue(Entry obj) {
+			return obj.getRole();
+		}
+
+		@Override
+		public void setValue(Entry obj, List<Role> value) {
+			obj.setRole(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Account> account;
+	protected List<Account> account;
 	/**
-	 * Posting of an item to an account, that results in an increase or a
-	 * decrease to the balance of the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -623,7 +659,7 @@ public class Entry {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Entry, List<Account>> mmAccount = new MMBusinessAssociationEnd<Entry, List<Account>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
@@ -631,16 +667,25 @@ public class Entry {
 			name = "Account";
 			definition = "Posting of an item to an account, that results in an increase or a decrease to the balance of the account.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmEntry;
+			opposite_lazy = () -> Account.mmEntry;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
+			type_lazy = () -> Account.mmObject();
+		}
+
+		@Override
+		public List<Account> getValue(Entry obj) {
+			return obj.getAccount();
+		}
+
+		@Override
+		public void setValue(Entry obj, List<Account> value) {
+			obj.setAccount(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Balance> balance;
+	protected List<Balance> balance;
 	/**
-	 * Amount that is the result of the sum of the entries from or to an
-	 * account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -671,7 +716,7 @@ public class Entry {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Entry, List<Balance>> mmBalance = new MMBusinessAssociationEnd<Entry, List<Balance>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
@@ -679,15 +724,25 @@ public class Entry {
 			name = "Balance";
 			definition = "Amount that is the result of the sum of the entries from or to an account.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Balance.mmBalanceEntry;
+			opposite_lazy = () -> Balance.mmBalanceEntry;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
+			type_lazy = () -> Balance.mmObject();
+		}
+
+		@Override
+		public List<Balance> getValue(Entry obj) {
+			return obj.getBalance();
+		}
+
+		@Override
+		public void setValue(Entry obj, List<Balance> value) {
+			obj.setBalance(value);
 		}
 	};
 	protected EntryCode entryType;
 	/**
-	 * Specifies the type of an entry in a report.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -709,7 +764,7 @@ public class Entry {
 	 * definition} = "Specifies the type of an entry in a report."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEntryType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Entry, EntryCode> mmEntryType = new MMBusinessAttribute<Entry, EntryCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Entry.mmObject();
@@ -721,24 +776,25 @@ public class Entry {
 			simpleType_lazy = () -> EntryCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Entry.class.getMethod("getEntryType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public EntryCode getValue(Entry obj) {
+			return obj.getEntryType();
+		}
+
+		@Override
+		public void setValue(Entry obj, EntryCode value) {
+			obj.setEntryType(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Entry";
 				definition = "Posting to an account that results in an increase or decrease to a balance.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Role.mmEntry, com.tools20022.repository.entity.Account.mmEntry, com.tools20022.repository.entity.Balance.mmBalanceEntry,
-						com.tools20022.repository.entity.BankTransaction.mmRelatedEntry);
+				associationDomain_lazy = () -> Arrays.asList(Role.mmEntry, Account.mmEntry, Balance.mmBalanceEntry, BankTransaction.mmRelatedEntry);
 				subType_lazy = () -> Arrays.asList(CashEntry.mmObject(), SecuritiesEntry.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Entry.mmCreditDebitIndicator, com.tools20022.repository.entity.Entry.mmEntryDate, com.tools20022.repository.entity.Entry.mmIdentification,
 						com.tools20022.repository.entity.Entry.mmAccountOwnerTransactionIdentification, com.tools20022.repository.entity.Entry.mmAccountServicerTransactionIdentification,
@@ -759,103 +815,116 @@ public class Entry {
 		return creditDebitIndicator;
 	}
 
-	public void setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
-		this.creditDebitIndicator = creditDebitIndicator;
+	public Entry setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
+		this.creditDebitIndicator = Objects.requireNonNull(creditDebitIndicator);
+		return this;
 	}
 
 	public ISODateTime getEntryDate() {
 		return entryDate;
 	}
 
-	public void setEntryDate(ISODateTime entryDate) {
-		this.entryDate = entryDate;
+	public Entry setEntryDate(ISODateTime entryDate) {
+		this.entryDate = Objects.requireNonNull(entryDate);
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public Entry setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public Max35Text getAccountOwnerTransactionIdentification() {
 		return accountOwnerTransactionIdentification;
 	}
 
-	public void setAccountOwnerTransactionIdentification(Max35Text accountOwnerTransactionIdentification) {
-		this.accountOwnerTransactionIdentification = accountOwnerTransactionIdentification;
+	public Entry setAccountOwnerTransactionIdentification(Max35Text accountOwnerTransactionIdentification) {
+		this.accountOwnerTransactionIdentification = Objects.requireNonNull(accountOwnerTransactionIdentification);
+		return this;
 	}
 
 	public Max35Text getAccountServicerTransactionIdentification() {
 		return accountServicerTransactionIdentification;
 	}
 
-	public void setAccountServicerTransactionIdentification(Max35Text accountServicerTransactionIdentification) {
-		this.accountServicerTransactionIdentification = accountServicerTransactionIdentification;
+	public Entry setAccountServicerTransactionIdentification(Max35Text accountServicerTransactionIdentification) {
+		this.accountServicerTransactionIdentification = Objects.requireNonNull(accountServicerTransactionIdentification);
+		return this;
 	}
 
 	public TrueFalseIndicator getReversalIndicator() {
 		return reversalIndicator;
 	}
 
-	public void setReversalIndicator(TrueFalseIndicator reversalIndicator) {
-		this.reversalIndicator = reversalIndicator;
+	public Entry setReversalIndicator(TrueFalseIndicator reversalIndicator) {
+		this.reversalIndicator = Objects.requireNonNull(reversalIndicator);
+		return this;
 	}
 
 	public ISODateTime getValueDate() {
 		return valueDate;
 	}
 
-	public void setValueDate(ISODateTime valueDate) {
-		this.valueDate = valueDate;
+	public Entry setValueDate(ISODateTime valueDate) {
+		this.valueDate = Objects.requireNonNull(valueDate);
+		return this;
 	}
 
-	public BankTransaction getBankTransactionCode() {
-		return bankTransactionCode;
+	public Optional<BankTransaction> getBankTransactionCode() {
+		return bankTransactionCode == null ? Optional.empty() : Optional.of(bankTransactionCode);
 	}
 
-	public void setBankTransactionCode(com.tools20022.repository.entity.BankTransaction bankTransactionCode) {
+	public Entry setBankTransactionCode(BankTransaction bankTransactionCode) {
 		this.bankTransactionCode = bankTransactionCode;
+		return this;
 	}
 
 	public YesNoIndicator getCommissionWaiverIndicator() {
 		return commissionWaiverIndicator;
 	}
 
-	public void setCommissionWaiverIndicator(YesNoIndicator commissionWaiverIndicator) {
-		this.commissionWaiverIndicator = commissionWaiverIndicator;
+	public Entry setCommissionWaiverIndicator(YesNoIndicator commissionWaiverIndicator) {
+		this.commissionWaiverIndicator = Objects.requireNonNull(commissionWaiverIndicator);
+		return this;
 	}
 
 	public List<Role> getRole() {
-		return role;
+		return role == null ? role = new ArrayList<>() : role;
 	}
 
-	public void setRole(List<com.tools20022.repository.entity.Role> role) {
-		this.role = role;
+	public Entry setRole(List<Role> role) {
+		this.role = Objects.requireNonNull(role);
+		return this;
 	}
 
 	public List<Account> getAccount() {
-		return account;
+		return account == null ? account = new ArrayList<>() : account;
 	}
 
-	public void setAccount(List<com.tools20022.repository.entity.Account> account) {
-		this.account = account;
+	public Entry setAccount(List<Account> account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 
 	public List<Balance> getBalance() {
-		return balance;
+		return balance == null ? balance = new ArrayList<>() : balance;
 	}
 
-	public void setBalance(List<com.tools20022.repository.entity.Balance> balance) {
-		this.balance = balance;
+	public Entry setBalance(List<Balance> balance) {
+		this.balance = Objects.requireNonNull(balance);
+		return this;
 	}
 
 	public EntryCode getEntryType() {
 		return entryType;
 	}
 
-	public void setEntryType(EntryCode entryType) {
-		this.entryType = entryType;
+	public Entry setEntryType(EntryCode entryType) {
+		this.entryType = Objects.requireNonNull(entryType);
+		return this;
 	}
 }

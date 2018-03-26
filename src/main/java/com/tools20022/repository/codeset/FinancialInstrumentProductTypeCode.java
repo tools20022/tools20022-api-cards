@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,266 +39,266 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#TermLoan
- * FinancialInstrumentProductTypeCode.mmTermLoan}</li>
+ * FinancialInstrumentProductTypeCode.TermLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#RevolverLoan
- * FinancialInstrumentProductTypeCode.mmRevolverLoan}</li>
+ * FinancialInstrumentProductTypeCode.RevolverLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#RevolverTermLoan
- * FinancialInstrumentProductTypeCode.mmRevolverTermLoan}</li>
+ * FinancialInstrumentProductTypeCode.RevolverTermLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#BridgeLoan
- * FinancialInstrumentProductTypeCode.mmBridgeLoan}</li>
+ * FinancialInstrumentProductTypeCode.BridgeLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#LetterOfCredit
- * FinancialInstrumentProductTypeCode.mmLetterOfCredit}</li>
+ * FinancialInstrumentProductTypeCode.LetterOfCredit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#SwingLineFacilityLoan
- * FinancialInstrumentProductTypeCode.mmSwingLineFacilityLoan}</li>
+ * FinancialInstrumentProductTypeCode.SwingLineFacilityLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#DebtorInPossession
- * FinancialInstrumentProductTypeCode.mmDebtorInPossession}</li>
+ * FinancialInstrumentProductTypeCode.DebtorInPossession}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#DefaultedLoan
- * FinancialInstrumentProductTypeCode.mmDefaultedLoan}</li>
+ * FinancialInstrumentProductTypeCode.DefaultedLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#WithdrawnLoan
- * FinancialInstrumentProductTypeCode.mmWithdrawnLoan}</li>
+ * FinancialInstrumentProductTypeCode.WithdrawnLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#ReplacedLoan
- * FinancialInstrumentProductTypeCode.mmReplacedLoan}</li>
+ * FinancialInstrumentProductTypeCode.ReplacedLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#MaturedLoan
- * FinancialInstrumentProductTypeCode.mmMaturedLoan}</li>
+ * FinancialInstrumentProductTypeCode.MaturedLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#AmendedRestatedLoan
- * FinancialInstrumentProductTypeCode.mmAmendedRestatedLoan}</li>
+ * FinancialInstrumentProductTypeCode.AmendedRestatedLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#RetiredLoan
- * FinancialInstrumentProductTypeCode.mmRetiredLoan}</li>
+ * FinancialInstrumentProductTypeCode.RetiredLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#BradyBond
- * FinancialInstrumentProductTypeCode.mmBradyBond}</li>
+ * FinancialInstrumentProductTypeCode.BradyBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#USTreasuryBond
- * FinancialInstrumentProductTypeCode.mmUSTreasuryBond}</li>
+ * FinancialInstrumentProductTypeCode.USTreasuryBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#STRIPS
- * FinancialInstrumentProductTypeCode.mmSTRIPS}</li>
+ * FinancialInstrumentProductTypeCode.STRIPS}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#TreasuryInflationProtectedSecurity
- * FinancialInstrumentProductTypeCode.mmTreasuryInflationProtectedSecurity}</li>
+ * FinancialInstrumentProductTypeCode.TreasuryInflationProtectedSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#PrincipalStripCallableBond
- * FinancialInstrumentProductTypeCode.mmPrincipalStripCallableBond}</li>
+ * FinancialInstrumentProductTypeCode.PrincipalStripCallableBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#PrincipalStripNonCallableBond
- * FinancialInstrumentProductTypeCode.mmPrincipalStripNonCallableBond}</li>
+ * FinancialInstrumentProductTypeCode.PrincipalStripNonCallableBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#USTreasuryNote
- * FinancialInstrumentProductTypeCode.mmUSTreasuryNote}</li>
+ * FinancialInstrumentProductTypeCode.USTreasuryNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#USTreasuryBill
- * FinancialInstrumentProductTypeCode.mmUSTreasuryBill}</li>
+ * FinancialInstrumentProductTypeCode.USTreasuryBill}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#CommonStock
- * FinancialInstrumentProductTypeCode.mmCommonStock}</li>
+ * FinancialInstrumentProductTypeCode.CommonStock}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#PreferredStock
- * FinancialInstrumentProductTypeCode.mmPreferredStock}</li>
+ * FinancialInstrumentProductTypeCode.PreferredStock}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#NoSecurityType
- * FinancialInstrumentProductTypeCode.mmNoSecurityType}</li>
+ * FinancialInstrumentProductTypeCode.NoSecurityType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#MutualFund
- * FinancialInstrumentProductTypeCode.mmMutualFund}</li>
+ * FinancialInstrumentProductTypeCode.MutualFund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#MultiLeg
- * FinancialInstrumentProductTypeCode.mmMultiLeg}</li>
+ * FinancialInstrumentProductTypeCode.MultiLeg}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#ForeignExchangeContract
- * FinancialInstrumentProductTypeCode.mmForeignExchangeContract}</li>
+ * FinancialInstrumentProductTypeCode.ForeignExchangeContract}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#OtherAnticipationNote
- * FinancialInstrumentProductTypeCode.mmOtherAnticipationNote}</li>
+ * FinancialInstrumentProductTypeCode.OtherAnticipationNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#CertificateOfObligation
- * FinancialInstrumentProductTypeCode.mmCertificateOfObligation}</li>
+ * FinancialInstrumentProductTypeCode.CertificateOfObligation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#CertificateOfParticipation
- * FinancialInstrumentProductTypeCode.mmCertificateOfParticipation}</li>
+ * FinancialInstrumentProductTypeCode.CertificateOfParticipation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#GeneralObligationBond
- * FinancialInstrumentProductTypeCode.mmGeneralObligationBond}</li>
+ * FinancialInstrumentProductTypeCode.GeneralObligationBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#MandatoryTender
- * FinancialInstrumentProductTypeCode.mmMandatoryTender}</li>
+ * FinancialInstrumentProductTypeCode.MandatoryTender}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#RevenueAnticipationNote
- * FinancialInstrumentProductTypeCode.mmRevenueAnticipationNote}</li>
+ * FinancialInstrumentProductTypeCode.RevenueAnticipationNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#RevenueBond
- * FinancialInstrumentProductTypeCode.mmRevenueBond}</li>
+ * FinancialInstrumentProductTypeCode.RevenueBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#SpecialAssessmentMunicipalBond
- * FinancialInstrumentProductTypeCode.mmSpecialAssessmentMunicipalBond}</li>
+ * FinancialInstrumentProductTypeCode.SpecialAssessmentMunicipalBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#SpecialObligation
- * FinancialInstrumentProductTypeCode.mmSpecialObligation}</li>
+ * FinancialInstrumentProductTypeCode.SpecialObligation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#SpecialTax
- * FinancialInstrumentProductTypeCode.mmSpecialTax}</li>
+ * FinancialInstrumentProductTypeCode.SpecialTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#TaxAnticipationNote
- * FinancialInstrumentProductTypeCode.mmTaxAnticipationNote}</li>
+ * FinancialInstrumentProductTypeCode.TaxAnticipationNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#TaxAllocation
- * FinancialInstrumentProductTypeCode.mmTaxAllocation}</li>
+ * FinancialInstrumentProductTypeCode.TaxAllocation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#TaxExemptCommercialPaper
- * FinancialInstrumentProductTypeCode.mmTaxExemptCommercialPaper}</li>
+ * FinancialInstrumentProductTypeCode.TaxExemptCommercialPaper}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#TaxRevenueAnticipationNote
- * FinancialInstrumentProductTypeCode.mmTaxRevenueAnticipationNote}</li>
+ * FinancialInstrumentProductTypeCode.TaxRevenueAnticipationNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#VariableRateDemandNote
- * FinancialInstrumentProductTypeCode.mmVariableRateDemandNote}</li>
+ * FinancialInstrumentProductTypeCode.VariableRateDemandNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#Warrant
- * FinancialInstrumentProductTypeCode.mmWarrant}</li>
+ * FinancialInstrumentProductTypeCode.Warrant}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#AgencyPool
- * FinancialInstrumentProductTypeCode.mmAgencyPool}</li>
+ * FinancialInstrumentProductTypeCode.AgencyPool}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#AssetBackedBond
- * FinancialInstrumentProductTypeCode.mmAssetBackedBond}</li>
+ * FinancialInstrumentProductTypeCode.AssetBackedBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#CollateralisedMortgageSecurity
- * FinancialInstrumentProductTypeCode.mmCollateralisedMortgageSecurity}</li>
+ * FinancialInstrumentProductTypeCode.CollateralisedMortgageSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#CorporateMortgageBackedSecurity
- * FinancialInstrumentProductTypeCode.mmCorporateMortgageBackedSecurity}</li>
+ * FinancialInstrumentProductTypeCode.CorporateMortgageBackedSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#IOETTEMortgage
- * FinancialInstrumentProductTypeCode.mmIOETTEMortgage}</li>
+ * FinancialInstrumentProductTypeCode.IOETTEMortgage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#MortgageBackedSecurity
- * FinancialInstrumentProductTypeCode.mmMortgageBackedSecurity}</li>
+ * FinancialInstrumentProductTypeCode.MortgageBackedSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#MortgageInterestOnly
- * FinancialInstrumentProductTypeCode.mmMortgageInterestOnly}</li>
+ * FinancialInstrumentProductTypeCode.MortgageInterestOnly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#MortgagePrincipalOnly
- * FinancialInstrumentProductTypeCode.mmMortgagePrincipalOnly}</li>
+ * FinancialInstrumentProductTypeCode.MortgagePrincipalOnly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#MortgagePrivatePlacement
- * FinancialInstrumentProductTypeCode.mmMortgagePrivatePlacement}</li>
+ * FinancialInstrumentProductTypeCode.MortgagePrivatePlacement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#MiscellaneousPassThrough
- * FinancialInstrumentProductTypeCode.mmMiscellaneousPassThrough}</li>
+ * FinancialInstrumentProductTypeCode.MiscellaneousPassThrough}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#ToBeAnnouncedMortgage
- * FinancialInstrumentProductTypeCode.mmToBeAnnouncedMortgage}</li>
+ * FinancialInstrumentProductTypeCode.ToBeAnnouncedMortgage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#FederalAgencyCoupon
- * FinancialInstrumentProductTypeCode.mmFederalAgencyCoupon}</li>
+ * FinancialInstrumentProductTypeCode.FederalAgencyCoupon}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#FederalAgencyDiscountNote
- * FinancialInstrumentProductTypeCode.mmFederalAgencyDiscountNote}</li>
+ * FinancialInstrumentProductTypeCode.FederalAgencyDiscountNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#PrivateExportFunding
- * FinancialInstrumentProductTypeCode.mmPrivateExportFunding}</li>
+ * FinancialInstrumentProductTypeCode.PrivateExportFunding}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#BankersAcceptance
- * FinancialInstrumentProductTypeCode.mmBankersAcceptance}</li>
+ * FinancialInstrumentProductTypeCode.BankersAcceptance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#BankNote
- * FinancialInstrumentProductTypeCode.mmBankNote}</li>
+ * FinancialInstrumentProductTypeCode.BankNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#BillOfExchange
- * FinancialInstrumentProductTypeCode.mmBillOfExchange}</li>
+ * FinancialInstrumentProductTypeCode.BillOfExchange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#CertificateOfDeposit
- * FinancialInstrumentProductTypeCode.mmCertificateOfDeposit}</li>
+ * FinancialInstrumentProductTypeCode.CertificateOfDeposit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#CallLoan
- * FinancialInstrumentProductTypeCode.mmCallLoan}</li>
+ * FinancialInstrumentProductTypeCode.CallLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#CommercialPaper
- * FinancialInstrumentProductTypeCode.mmCommercialPaper}</li>
+ * FinancialInstrumentProductTypeCode.CommercialPaper}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#DepositNote
- * FinancialInstrumentProductTypeCode.mmDepositNote}</li>
+ * FinancialInstrumentProductTypeCode.DepositNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#LiquidityNote
- * FinancialInstrumentProductTypeCode.mmLiquidityNote}</li>
+ * FinancialInstrumentProductTypeCode.LiquidityNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#MediumTermNote
- * FinancialInstrumentProductTypeCode.mmMediumTermNote}</li>
+ * FinancialInstrumentProductTypeCode.MediumTermNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#OvernightDeposit
- * FinancialInstrumentProductTypeCode.mmOvernightDeposit}</li>
+ * FinancialInstrumentProductTypeCode.OvernightDeposit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#PromissoryNote
- * FinancialInstrumentProductTypeCode.mmPromissoryNote}</li>
+ * FinancialInstrumentProductTypeCode.PromissoryNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#RepurchaseAgreement
- * FinancialInstrumentProductTypeCode.mmRepurchaseAgreement}</li>
+ * FinancialInstrumentProductTypeCode.RepurchaseAgreement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#ReverseRepurchaseAgreement
- * FinancialInstrumentProductTypeCode.mmReverseRepurchaseAgreement}</li>
+ * FinancialInstrumentProductTypeCode.ReverseRepurchaseAgreement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#ShortTermLoanNote
- * FinancialInstrumentProductTypeCode.mmShortTermLoanNote}</li>
+ * FinancialInstrumentProductTypeCode.ShortTermLoanNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#TimeDeposit
- * FinancialInstrumentProductTypeCode.mmTimeDeposit}</li>
+ * FinancialInstrumentProductTypeCode.TimeDeposit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#ExtendedCommercialNote
- * FinancialInstrumentProductTypeCode.mmExtendedCommercialNote}</li>
+ * FinancialInstrumentProductTypeCode.ExtendedCommercialNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#CorporateBond
- * FinancialInstrumentProductTypeCode.mmCorporateBond}</li>
+ * FinancialInstrumentProductTypeCode.CorporateBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#CorporatePrivatePlacement
- * FinancialInstrumentProductTypeCode.mmCorporatePrivatePlacement}</li>
+ * FinancialInstrumentProductTypeCode.CorporatePrivatePlacement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#ConvertibleBond
- * FinancialInstrumentProductTypeCode.mmConvertibleBond}</li>
+ * FinancialInstrumentProductTypeCode.ConvertibleBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#DualCurrencyBond
- * FinancialInstrumentProductTypeCode.mmDualCurrencyBond}</li>
+ * FinancialInstrumentProductTypeCode.DualCurrencyBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#IndexedLinkedCorporateBond
- * FinancialInstrumentProductTypeCode.mmIndexedLinkedCorporateBond}</li>
+ * FinancialInstrumentProductTypeCode.IndexedLinkedCorporateBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#StructuredNote
- * FinancialInstrumentProductTypeCode.mmStructuredNote}</li>
+ * FinancialInstrumentProductTypeCode.StructuredNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#YankeeCorporateBond
- * FinancialInstrumentProductTypeCode.mmYankeeCorporateBond}</li>
+ * FinancialInstrumentProductTypeCode.YankeeCorporateBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#AssetBackedCommercialPaper
- * FinancialInstrumentProductTypeCode.mmAssetBackedCommercialPaper}</li>
+ * FinancialInstrumentProductTypeCode.AssetBackedCommercialPaper}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#FloatingRateNote
- * FinancialInstrumentProductTypeCode.mmFloatingRateNote}</li>
+ * FinancialInstrumentProductTypeCode.FloatingRateNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#OtherShortTermDebtSecurities
- * FinancialInstrumentProductTypeCode.mmOtherShortTermDebtSecurities}</li>
+ * FinancialInstrumentProductTypeCode.OtherShortTermDebtSecurities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#CallAccountCallMoney
- * FinancialInstrumentProductTypeCode.mmCallAccountCallMoney}</li>
+ * FinancialInstrumentProductTypeCode.CallAccountCallMoney}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode#Deposit
- * FinancialInstrumentProductTypeCode.mmDeposit}</li>
+ * FinancialInstrumentProductTypeCode.Deposit}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -834,7 +835,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Separate Trading of Registered Interest and Principal of Securities.  STRIPS are also called zero-coupon securities, because the only time an investor receives a payment during the life of a STRIP is when it matures. The STRIPS program lets investors hold and trade the individual interest."
+	 * "Separate Trading of Registered Interest and Principal of Securities. STRIPS are also called zero-coupon securities, because the only time an investor receives a payment during the life of a STRIP is when it matures. The STRIPS program lets investors hold and trade the individual interest."
 	 * </li>
 	 * </ul>
 	 */
@@ -842,7 +843,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "STRIPS";
-			definition = "Separate Trading of Registered Interest and Principal of Securities.  STRIPS are also called zero-coupon securities, because the only time an investor receives a payment during the life of a STRIP is when it matures. The STRIPS program lets investors hold and trade the individual interest.";
+			definition = "Separate Trading of Registered Interest and Principal of Securities. STRIPS are also called zero-coupon securities, because the only time an investor receives a payment during the life of a STRIP is when it matures. The STRIPS program lets investors hold and trade the individual interest.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode.mmObject();
 			codeName = "TINT";
 		}
@@ -994,7 +995,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Short-term securities that mature in one year or less from their issue date, and are sold at a price less than their par (face) value.  A US Treasury Bill is also called a T-Bill."
+	 * "Short-term securities that mature in one year or less from their issue date, and are sold at a price less than their par (face) value. A US Treasury Bill is also called a T-Bill."
 	 * </li>
 	 * </ul>
 	 */
@@ -1002,7 +1003,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "USTreasuryBill";
-			definition = "Short-term securities that mature in one year or less from their issue date, and are sold at a price less than their par (face) value.  A US Treasury Bill is also called a T-Bill.";
+			definition = "Short-term securities that mature in one year or less from their issue date, and are sold at a price less than their par (face) value. A US Treasury Bill is also called a T-Bill.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode.mmObject();
 			codeName = "USTB";
 		}
@@ -1429,7 +1430,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Bond issued by a municipality to finance either a project or an enterprise.  The issuer pledges to the bondholders that the debt service is payable solely by the revenues generated by the operation of the projects financed, a category of facilities, or from another non-tax source."
+	 * "Bond issued by a municipality to finance either a project or an enterprise. The issuer pledges to the bondholders that the debt service is payable solely by the revenues generated by the operation of the projects financed, a category of facilities, or from another non-tax source."
 	 * </li>
 	 * </ul>
 	 */
@@ -1437,7 +1438,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RevenueBond";
-			definition = "Bond issued by a municipality to finance either a project or an enterprise.  The issuer pledges to the bondholders that the debt service is payable solely by the revenues generated by the operation of the projects financed, a category of facilities, or from another non-tax source.";
+			definition = "Bond issued by a municipality to finance either a project or an enterprise. The issuer pledges to the bondholders that the debt service is payable solely by the revenues generated by the operation of the projects financed, a category of facilities, or from another non-tax source.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode.mmObject();
 			codeName = "REVB";
 		}
@@ -2090,7 +2091,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Security created when one or more mortgage holders form a collection (pool) of mortgages and sell shares or participation certificates in the pool. The cash flow from the collateral pool is \"passed through\" to the security holder as monthly payments of principal, interest, and prepayments.  A miscellaneous pass through is also called a passthrough."
+	 * "Security created when one or more mortgage holders form a collection (pool) of mortgages and sell shares or participation certificates in the pool. The cash flow from the collateral pool is \"passed through\" to the security holder as monthly payments of principal, interest, and prepayments. A miscellaneous pass through is also called a passthrough."
 	 * </li>
 	 * </ul>
 	 */
@@ -2098,7 +2099,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MiscellaneousPassThrough";
-			definition = "Security created when one or more mortgage holders form a collection (pool) of mortgages and sell shares or participation certificates in the pool. The cash flow from the collateral pool is \"passed through\" to the security holder as monthly payments of principal, interest, and prepayments.  A miscellaneous pass through is also called a passthrough.";
+			definition = "Security created when one or more mortgage holders form a collection (pool) of mortgages and sell shares or participation certificates in the pool. The cash flow from the collateral pool is \"passed through\" to the security holder as monthly payments of principal, interest, and prepayments. A miscellaneous pass through is also called a passthrough.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode.mmObject();
 			codeName = "MIPT";
 		}
@@ -2125,7 +2126,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Contract for the purchase or sale of a mortgage backed security to be delivered at an agreed-upon future date.  A To Be Announced (TBA) Mortgage does not include a specified pool number, number of pools or the precise amount to be delivered."
+	 * "Contract for the purchase or sale of a mortgage backed security to be delivered at an agreed-upon future date. A To Be Announced (TBA) Mortgage does not include a specified pool number, number of pools or the precise amount to be delivered."
 	 * </li>
 	 * </ul>
 	 */
@@ -2133,7 +2134,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ToBeAnnouncedMortgage";
-			definition = "Contract for the purchase or sale of a mortgage backed security to be delivered at an agreed-upon future date.  A To Be Announced (TBA) Mortgage does not include a specified pool number, number of pools or the precise amount to be delivered.";
+			definition = "Contract for the purchase or sale of a mortgage backed security to be delivered at an agreed-upon future date. A To Be Announced (TBA) Mortgage does not include a specified pool number, number of pools or the precise amount to be delivered.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode.mmObject();
 			codeName = "TOBA";
 		}
@@ -2547,7 +2548,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Highly flexible debt instruments that can be easily structured in response to changing market conditions and investor tastes. The maturity ranges from 9 months to 30 years or more. Medium term notes are typically non-callable, unsecured senior debt with fixed-coupon rates that carry an investment grade credit rating.  It is also a corporate debt instrument that is continuously offered to investors over a period of time by an agent of the issuer."
+	 * "Highly flexible debt instruments that can be easily structured in response to changing market conditions and investor tastes. The maturity ranges from 9 months to 30 years or more. Medium term notes are typically non-callable, unsecured senior debt with fixed-coupon rates that carry an investment grade credit rating. It is also a corporate debt instrument that is continuously offered to investors over a period of time by an agent of the issuer."
 	 * </li>
 	 * </ul>
 	 */
@@ -2555,7 +2556,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "MediumTermNote";
-			definition = "Highly flexible debt instruments that can be easily structured in response to changing market conditions and investor tastes. The maturity ranges from 9 months to 30 years or more. Medium term notes are typically non-callable, unsecured senior debt with fixed-coupon rates that carry an investment grade credit rating.  It is also a corporate debt instrument that is continuously offered to investors over a period of time by an agent of the issuer.";
+			definition = "Highly flexible debt instruments that can be easily structured in response to changing market conditions and investor tastes. The maturity ranges from 9 months to 30 years or more. Medium term notes are typically non-callable, unsecured senior debt with fixed-coupon rates that carry an investment grade credit rating. It is also a corporate debt instrument that is continuously offered to investors over a period of time by an agent of the issuer.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode.mmObject();
 			codeName = "METN";
 		}
@@ -2692,7 +2693,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Similar to a repurchase agreement, with the exception that it is from the purchaser's (customer's) perspective.  Reverse repos offer the holders of fixed income securities a means of temporarily absorbing reserves by selling securities under an agreement to subsequently repurchase them. It offers the customer of the transaction the security as collateral to the loan."
+	 * "Similar to a repurchase agreement, with the exception that it is from the purchaser's (customer's) perspective. Reverse repos offer the holders of fixed income securities a means of temporarily absorbing reserves by selling securities under an agreement to subsequently repurchase them. It offers the customer of the transaction the security as collateral to the loan."
 	 * </li>
 	 * </ul>
 	 */
@@ -2700,7 +2701,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ReverseRepurchaseAgreement";
-			definition = "Similar to a repurchase agreement, with the exception that it is from the purchaser's (customer's) perspective.  Reverse repos offer the holders of fixed income securities a means of temporarily absorbing reserves by selling securities under an agreement to subsequently repurchase them. It offers the customer of the transaction the security as collateral to the loan.";
+			definition = "Similar to a repurchase agreement, with the exception that it is from the purchaser's (customer's) perspective. Reverse repos offer the holders of fixed income securities a means of temporarily absorbing reserves by selling securities under an agreement to subsequently repurchase them. It offers the customer of the transaction the security as collateral to the loan.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode.mmObject();
 			codeName = "RERA";
 		}
@@ -2725,7 +2726,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Note with a  term that is usually less than a year, but can be as long as two years."
+	 * "Note with a term that is usually less than a year, but can be as long as two years."
 	 * </li>
 	 * </ul>
 	 */
@@ -2733,7 +2734,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ShortTermLoanNote";
-			definition = "Note with a  term that is usually less than a year, but can be as long as two years.";
+			definition = "Note with a term that is usually less than a year, but can be as long as two years.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode.mmObject();
 			codeName = "SHTN";
 		}
@@ -2760,7 +2761,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Loan that accrues interest for a pre-set time, eg, a bank savings account or Certificate of Deposit (CD).  Money is invested for a fixed period and earns an attractive return. A time deposit is usually offered with a range of investment amounts, maturities, and interest payment dates."
+	 * "Loan that accrues interest for a pre-set time, eg, a bank savings account or Certificate of Deposit (CD). Money is invested for a fixed period and earns an attractive return. A time deposit is usually offered with a range of investment amounts, maturities, and interest payment dates."
 	 * </li>
 	 * </ul>
 	 */
@@ -2768,7 +2769,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TimeDeposit";
-			definition = "Loan that accrues interest for a pre-set time, eg, a bank savings account or Certificate of Deposit (CD).  Money is invested for a fixed period and earns an attractive return. A time deposit is usually offered with a range of investment amounts, maturities, and interest payment dates.";
+			definition = "Loan that accrues interest for a pre-set time, eg, a bank savings account or Certificate of Deposit (CD). Money is invested for a fixed period and earns an attractive return. A time deposit is usually offered with a range of investment amounts, maturities, and interest payment dates.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode.mmObject();
 			codeName = "TIDE";
 		}
@@ -2859,7 +2860,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Sale of bonds directly to an institutional investor, eg,  an insurance company. Securities are purchased for investment, and are not to be resold to the public."
+	 * "Sale of bonds directly to an institutional investor, eg, an insurance company. Securities are purchased for investment, and are not to be resold to the public."
 	 * </li>
 	 * </ul>
 	 */
@@ -2867,7 +2868,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CorporatePrivatePlacement";
-			definition = "Sale of bonds directly to an institutional investor, eg,  an insurance company. Securities are purchased for investment, and are not to be resold to the public.";
+			definition = "Sale of bonds directly to an institutional investor, eg, an insurance company. Securities are purchased for investment, and are not to be resold to the public.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FinancialInstrumentProductTypeCode.mmObject();
 			codeName = "CPPE";
 		}
@@ -2885,6 +2886,9 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CONV"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 167</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -2899,6 +2903,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 	 */
 	public static final FinancialInstrumentProductTypeCode ConvertibleBond = new FinancialInstrumentProductTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "167"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ConvertibleBond";
 			definition = "Bond that can be exchanged for specified amounts of common stock in the issuing firm. The conversion process cannot be reversed, and the conversion details are described in the bond's indenture.";
@@ -3219,7 +3224,7 @@ public class FinancialInstrumentProductTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("TERM");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialInstrumentProductTypeCode";

@@ -38,36 +38,36 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductIdentifier2Code#BuyersItemNumber
- * ProductIdentifier2Code.mmBuyersItemNumber}</li>
+ * ProductIdentifier2Code.BuyersItemNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductIdentifier2Code#CommercialDescriptionCodeName
- * ProductIdentifier2Code.mmCommercialDescriptionCodeName}</li>
+ * ProductIdentifier2Code.CommercialDescriptionCodeName}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ProductIdentifier2Code#EAN
- * ProductIdentifier2Code.mmEAN}</li>
+ * ProductIdentifier2Code.EAN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductIdentifier2Code#HarmonizedTariffCodeName
- * ProductIdentifier2Code.mmHarmonizedTariffCodeName}</li>
+ * ProductIdentifier2Code.HarmonizedTariffCodeName}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductIdentifier2Code#ManufacturersItemNumber
- * ProductIdentifier2Code.mmManufacturersItemNumber}</li>
+ * ProductIdentifier2Code.ManufacturersItemNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductIdentifier2Code#ModelNumber
- * ProductIdentifier2Code.mmModelNumber}</li>
+ * ProductIdentifier2Code.ModelNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductIdentifier2Code#PartNumber
- * ProductIdentifier2Code.mmPartNumber}</li>
+ * ProductIdentifier2Code.PartNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductIdentifier2Code#QuotaCategory
- * ProductIdentifier2Code.mmQuotaCategory}</li>
+ * ProductIdentifier2Code.QuotaCategory}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductIdentifier2Code#StyleNumber
- * ProductIdentifier2Code.mmStyleNumber}</li>
+ * ProductIdentifier2Code.StyleNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductIdentifier2Code#SuppliersItemNumber
- * ProductIdentifier2Code.mmSuppliersItemNumber}</li>
+ * ProductIdentifier2Code.SuppliersItemNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductIdentifier2Code#UniversalProductCode
- * ProductIdentifier2Code.mmUniversalProductCode}</li>
+ * ProductIdentifier2Code.UniversalProductCode}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -76,8 +76,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -370,7 +370,7 @@ public class ProductIdentifier2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BINR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProductIdentifier2Code";

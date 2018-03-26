@@ -38,20 +38,26 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AllegementStatusCode#Cancelled
- * AllegementStatusCode.mmCancelled}</li>
+ * AllegementStatusCode.Cancelled}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AllegementStatusCode#Removed
- * AllegementStatusCode.mmRemoved}</li>
+ * AllegementStatusCode.Removed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AllegementStatusCode#Pending
- * AllegementStatusCode.mmPending}</li>
+ * AllegementStatusCode.Pending}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.AllegementStatusCode#Accepted
+ * AllegementStatusCode.Accepted}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.AllegementStatusCode#Rejected
+ * AllegementStatusCode.Rejected}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -169,6 +175,66 @@ public class AllegementStatusCode extends MMCode {
 			codeName = "PEND";
 		}
 	};
+	/**
+	 * Allegement has been accepted.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.AllegementStatusCode
+	 * AllegementStatusCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "ACPT"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "Accepted"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Allegement has been accepted."</li>
+	 * </ul>
+	 */
+	public static final AllegementStatusCode Accepted = new AllegementStatusCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "Accepted";
+			definition = "Allegement has been accepted.";
+			owner_lazy = () -> com.tools20022.repository.codeset.AllegementStatusCode.mmObject();
+			codeName = "ACPT";
+		}
+	};
+	/**
+	 * Transaction or report has been rejected.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.AllegementStatusCode
+	 * AllegementStatusCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "REJT"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "Rejected"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Transaction or report has been rejected."</li>
+	 * </ul>
+	 */
+	public static final AllegementStatusCode Rejected = new AllegementStatusCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "Rejected";
+			definition = "Transaction or report has been rejected.";
+			owner_lazy = () -> com.tools20022.repository.codeset.AllegementStatusCode.mmObject();
+			codeName = "REJT";
+		}
+	};
 	final static private LinkedHashMap<String, AllegementStatusCode> codesByName = new LinkedHashMap<>();
 
 	protected AllegementStatusCode() {
@@ -177,13 +243,13 @@ public class AllegementStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CANC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AllegementStatusCode";
 				definition = "Specifies the status of an allegement.";
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AllegementStatusCode.Cancelled, com.tools20022.repository.codeset.AllegementStatusCode.Removed,
-						com.tools20022.repository.codeset.AllegementStatusCode.Pending);
+						com.tools20022.repository.codeset.AllegementStatusCode.Pending, com.tools20022.repository.codeset.AllegementStatusCode.Accepted, com.tools20022.repository.codeset.AllegementStatusCode.Rejected);
 			}
 		});
 		return mmObject_lazy.get();
@@ -193,6 +259,8 @@ public class AllegementStatusCode extends MMCode {
 		codesByName.put(Cancelled.getCodeName().get(), Cancelled);
 		codesByName.put(Removed.getCodeName().get(), Removed);
 		codesByName.put(Pending.getCodeName().get(), Pending);
+		codesByName.put(Accepted.getCodeName().get(), Accepted);
+		codesByName.put(Rejected.getCodeName().get(), Rejected);
 	}
 
 	public static AllegementStatusCode valueOf(String codeName) {

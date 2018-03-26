@@ -26,8 +26,11 @@ import com.tools20022.repository.datatype.Max15NumericText;
 import com.tools20022.repository.datatype.Max3Text;
 import com.tools20022.repository.entity.PaymentCard;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ContentInformationType10;
+import com.tools20022.repository.msg.PlainCardData11;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -63,8 +66,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,16 +81,16 @@ import javax.xml.bind.annotation.XmlType;
  * PaymentCard12}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PaymentCard14", propOrder = {"protectedCardData", "plainCardData", "issuerBIN", "cardCountryCode", "cardCurrencyCode"})
 public class PaymentCard14 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PrtctdCardData")
 	protected ContentInformationType10 protectedCardData;
 	/**
-	 * Replacement of the message element PlainCardData by a digital envelope
-	 * using a cryptographic key.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -118,9 +121,9 @@ public class PaymentCard14 {
 	 * PaymentCard12.mmProtectedCardData}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProtectedCardData = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PaymentCard14, Optional<ContentInformationType10>> mmProtectedCardData = new MMMessageAssociationEnd<PaymentCard14, Optional<ContentInformationType10>>() {
 		{
-			componentContext_lazy = () -> PaymentCard14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentCard14.mmObject();
 			isDerived = false;
 			xmlTag = "PrtctdCardData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -130,13 +133,24 @@ public class PaymentCard14 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ContentInformationType10.mmObject();
+			type_lazy = () -> ContentInformationType10.mmObject();
+		}
+
+		@Override
+		public Optional<ContentInformationType10> getValue(PaymentCard14 obj) {
+			return obj.getProtectedCardData();
+		}
+
+		@Override
+		public void setValue(PaymentCard14 obj, Optional<ContentInformationType10> value) {
+			obj.setProtectedCardData(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "PlainCardData")
 	protected PlainCardData11 plainCardData;
 	/**
-	 * Sensitive data associated with the card performing the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -165,9 +179,9 @@ public class PaymentCard14 {
 	 * PaymentCard12.mmPlainCardData}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPlainCardData = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PaymentCard14, Optional<PlainCardData11>> mmPlainCardData = new MMMessageAssociationEnd<PaymentCard14, Optional<PlainCardData11>>() {
 		{
-			componentContext_lazy = () -> PaymentCard14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentCard14.mmObject();
 			isDerived = false;
 			xmlTag = "PlainCardData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -177,13 +191,24 @@ public class PaymentCard14 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PlainCardData11.mmObject();
+			type_lazy = () -> PlainCardData11.mmObject();
+		}
+
+		@Override
+		public Optional<PlainCardData11> getValue(PaymentCard14 obj) {
+			return obj.getPlainCardData();
+		}
+
+		@Override
+		public void setValue(PaymentCard14 obj, Optional<PlainCardData11> value) {
+			obj.setPlainCardData(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "IssrBIN")
 	protected Max15NumericText issuerBIN;
 	/**
-	 * Bank identifier number of the issuer for routing purpose.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -214,9 +239,9 @@ public class PaymentCard14 {
 	 * PaymentCard12.mmIssuerBIN}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIssuerBIN = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentCard14, Optional<Max15NumericText>> mmIssuerBIN = new MMMessageAttribute<PaymentCard14, Optional<Max15NumericText>>() {
 		{
-			componentContext_lazy = () -> PaymentCard14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentCard14.mmObject();
 			isDerived = false;
 			xmlTag = "IssrBIN";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -227,11 +252,22 @@ public class PaymentCard14 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max15NumericText.mmObject();
 		}
+
+		@Override
+		public Optional<Max15NumericText> getValue(PaymentCard14 obj) {
+			return obj.getIssuerBIN();
+		}
+
+		@Override
+		public void setValue(PaymentCard14 obj, Optional<Max15NumericText> value) {
+			obj.setIssuerBIN(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CardCtryCd")
 	protected Max3Text cardCountryCode;
 	/**
-	 * Country code assigned to the card by the card issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -265,10 +301,10 @@ public class PaymentCard14 {
 	 * PaymentCard12.mmCardCountryCode}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCardCountryCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentCard14, Optional<Max3Text>> mmCardCountryCode = new MMMessageAttribute<PaymentCard14, Optional<Max3Text>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentCard.mmCardCountryCode;
-			componentContext_lazy = () -> PaymentCard14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentCard14.mmObject();
 			isDerived = false;
 			xmlTag = "CardCtryCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -279,11 +315,22 @@ public class PaymentCard14 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max3Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max3Text> getValue(PaymentCard14 obj) {
+			return obj.getCardCountryCode();
+		}
+
+		@Override
+		public void setValue(PaymentCard14 obj, Optional<Max3Text> value) {
+			obj.setCardCountryCode(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CardCcyCd")
 	protected Exact3AlphaNumericText cardCurrencyCode;
 	/**
-	 * Currency code of the card issuer (ISO 4217 numeric code).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -319,10 +366,10 @@ public class PaymentCard14 {
 	 * PaymentCard12.mmCardCurrencyCode}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCardCurrencyCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentCard14, Optional<Exact3AlphaNumericText>> mmCardCurrencyCode = new MMMessageAttribute<PaymentCard14, Optional<Exact3AlphaNumericText>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentCard.mmCardCurrencyCode;
-			componentContext_lazy = () -> PaymentCard14.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentCard14.mmObject();
 			isDerived = false;
 			xmlTag = "CardCcyCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -333,14 +380,25 @@ public class PaymentCard14 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Exact3AlphaNumericText.mmObject();
 		}
+
+		@Override
+		public Optional<Exact3AlphaNumericText> getValue(PaymentCard14 obj) {
+			return obj.getCardCurrencyCode();
+		}
+
+		@Override
+		public void setValue(PaymentCard14 obj, Optional<Exact3AlphaNumericText> value) {
+			obj.setCardCurrencyCode(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PaymentCard14.mmProtectedCardData, PaymentCard14.mmPlainCardData, PaymentCard14.mmIssuerBIN, PaymentCard14.mmCardCountryCode, PaymentCard14.mmCardCurrencyCode);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PaymentCard14.mmProtectedCardData, com.tools20022.repository.msg.PaymentCard14.mmPlainCardData,
+						com.tools20022.repository.msg.PaymentCard14.mmIssuerBIN, com.tools20022.repository.msg.PaymentCard14.mmCardCountryCode, com.tools20022.repository.msg.PaymentCard14.mmCardCurrencyCode);
 				trace_lazy = () -> PaymentCard.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentCard14";
 				definition = "Payment card performing the transaction.";
@@ -350,48 +408,48 @@ public class PaymentCard14 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PrtctdCardData")
-	public ContentInformationType10 getProtectedCardData() {
-		return protectedCardData;
+	public Optional<ContentInformationType10> getProtectedCardData() {
+		return protectedCardData == null ? Optional.empty() : Optional.of(protectedCardData);
 	}
 
-	public void setProtectedCardData(com.tools20022.repository.msg.ContentInformationType10 protectedCardData) {
+	public PaymentCard14 setProtectedCardData(ContentInformationType10 protectedCardData) {
 		this.protectedCardData = protectedCardData;
+		return this;
 	}
 
-	@XmlElement(name = "PlainCardData")
-	public PlainCardData11 getPlainCardData() {
-		return plainCardData;
+	public Optional<PlainCardData11> getPlainCardData() {
+		return plainCardData == null ? Optional.empty() : Optional.of(plainCardData);
 	}
 
-	public void setPlainCardData(com.tools20022.repository.msg.PlainCardData11 plainCardData) {
+	public PaymentCard14 setPlainCardData(PlainCardData11 plainCardData) {
 		this.plainCardData = plainCardData;
+		return this;
 	}
 
-	@XmlElement(name = "IssrBIN")
-	public Max15NumericText getIssuerBIN() {
-		return issuerBIN;
+	public Optional<Max15NumericText> getIssuerBIN() {
+		return issuerBIN == null ? Optional.empty() : Optional.of(issuerBIN);
 	}
 
-	public void setIssuerBIN(Max15NumericText issuerBIN) {
+	public PaymentCard14 setIssuerBIN(Max15NumericText issuerBIN) {
 		this.issuerBIN = issuerBIN;
+		return this;
 	}
 
-	@XmlElement(name = "CardCtryCd")
-	public Max3Text getCardCountryCode() {
-		return cardCountryCode;
+	public Optional<Max3Text> getCardCountryCode() {
+		return cardCountryCode == null ? Optional.empty() : Optional.of(cardCountryCode);
 	}
 
-	public void setCardCountryCode(Max3Text cardCountryCode) {
+	public PaymentCard14 setCardCountryCode(Max3Text cardCountryCode) {
 		this.cardCountryCode = cardCountryCode;
+		return this;
 	}
 
-	@XmlElement(name = "CardCcyCd")
-	public Exact3AlphaNumericText getCardCurrencyCode() {
-		return cardCurrencyCode;
+	public Optional<Exact3AlphaNumericText> getCardCurrencyCode() {
+		return cardCurrencyCode == null ? Optional.empty() : Optional.of(cardCurrencyCode);
 	}
 
-	public void setCardCurrencyCode(Exact3AlphaNumericText cardCurrencyCode) {
+	public PaymentCard14 setCardCurrencyCode(Exact3AlphaNumericText cardCurrencyCode) {
 		this.cardCurrencyCode = cardCurrencyCode;
+		return this;
 	}
 }

@@ -37,21 +37,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMMediaType1Code#Cards
- * ATMMediaType1Code.mmCards}</li>
+ * ATMMediaType1Code.Cards}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMMediaType1Code#Coins
- * ATMMediaType1Code.mmCoins}</li>
+ * ATMMediaType1Code.Coins}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMMediaType1Code#Commodity
- * ATMMediaType1Code.mmCommodity}</li>
+ * ATMMediaType1Code.Commodity}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMMediaType1Code#Coupons
- * ATMMediaType1Code.mmCoupons}</li>
+ * ATMMediaType1Code.Coupons}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMMediaType1Code#Notes
- * ATMMediaType1Code.mmNotes}</li>
+ * ATMMediaType1Code.Notes}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMMediaType1Code#Stamps
- * ATMMediaType1Code.mmStamps}</li>
+ * ATMMediaType1Code.Stamps}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMMediaType1Code#Undetermined
- * ATMMediaType1Code.mmUndetermined}</li>
+ * ATMMediaType1Code.Undetermined}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -60,8 +60,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -102,7 +102,7 @@ public class ATMMediaType1Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.ATMMediaType2Code#Cards
-	 * ATMMediaType2Code.mmCards}</li>
+	 * ATMMediaType2Code.Cards}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -135,7 +135,7 @@ public class ATMMediaType1Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.ATMMediaType2Code#Coins
-	 * ATMMediaType2Code.mmCoins}</li>
+	 * ATMMediaType2Code.Coins}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -168,7 +168,7 @@ public class ATMMediaType1Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.ATMMediaType2Code#Commodity
-	 * ATMMediaType2Code.mmCommodity}</li>
+	 * ATMMediaType2Code.Commodity}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -201,7 +201,7 @@ public class ATMMediaType1Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.ATMMediaType2Code#Coupons
-	 * ATMMediaType2Code.mmCoupons}</li>
+	 * ATMMediaType2Code.Coupons}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -234,7 +234,7 @@ public class ATMMediaType1Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.ATMMediaType2Code#Notes
-	 * ATMMediaType2Code.mmNotes}</li>
+	 * ATMMediaType2Code.Notes}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -267,7 +267,7 @@ public class ATMMediaType1Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.ATMMediaType2Code#Stamps
-	 * ATMMediaType2Code.mmStamps}</li>
+	 * ATMMediaType2Code.Stamps}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -300,7 +300,7 @@ public class ATMMediaType1Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.ATMMediaType2Code#Undetermined
-	 * ATMMediaType2Code.mmUndetermined}</li>
+	 * ATMMediaType2Code.Undetermined}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -322,7 +322,7 @@ public class ATMMediaType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMMediaType1Code";
 				definition = "Type of media inside an ATM cassette.";

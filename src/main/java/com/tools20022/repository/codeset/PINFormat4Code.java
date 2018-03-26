@@ -37,39 +37,39 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormat4Code#ANSI0
- * PINFormat4Code.mmANSI0}</li>
+ * PINFormat4Code.ANSI0}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormat4Code#Bancomat
- * PINFormat4Code.mmBancomat}</li>
+ * PINFormat4Code.Bancomat}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormat4Code#Banksys
- * PINFormat4Code.mmBanksys}</li>
+ * PINFormat4Code.Banksys}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormat4Code#Diebold
- * PINFormat4Code.mmDiebold}</li>
+ * PINFormat4Code.Diebold}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormat4Code#DieboldCO
- * PINFormat4Code.mmDieboldCO}</li>
+ * PINFormat4Code.DieboldCO}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormat4Code#ECI2
- * PINFormat4Code.mmECI2}</li>
+ * PINFormat4Code.ECI2}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormat4Code#ECI3
- * PINFormat4Code.mmECI3}</li>
+ * PINFormat4Code.ECI3}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormat4Code#EMVRSA
- * PINFormat4Code.mmEMVRSA}</li>
+ * PINFormat4Code.EMVRSA}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormat4Code#IBM3624
- * PINFormat4Code.mmIBM3624}</li>
+ * PINFormat4Code.IBM3624}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormat4Code#ISO0
- * PINFormat4Code.mmISO0}</li>
+ * PINFormat4Code.ISO0}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormat4Code#ISO1
- * PINFormat4Code.mmISO1}</li>
+ * PINFormat4Code.ISO1}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormat4Code#ISO2
- * PINFormat4Code.mmISO2}</li>
+ * PINFormat4Code.ISO2}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormat4Code#ISO3
- * PINFormat4Code.mmISO3}</li>
+ * PINFormat4Code.ISO3}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormat4Code#ISO4
- * PINFormat4Code.mmISO4}</li>
+ * PINFormat4Code.ISO4}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormat4Code#ISO5
- * PINFormat4Code.mmISO5}</li>
+ * PINFormat4Code.ISO5}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormat4Code#VISA2
- * PINFormat4Code.mmVISA2}</li>
+ * PINFormat4Code.VISA2}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PINFormat4Code#VISA3
- * PINFormat4Code.mmVISA3}</li>
+ * PINFormat4Code.VISA3}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -77,8 +77,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -509,7 +509,7 @@ public class PINFormat4Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PINFormat4Code";
 				definition = "Format of an ATM PIN block before encryption.";

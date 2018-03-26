@@ -37,24 +37,24 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMCommand4Code#ATMBalance
- * ATMCommand4Code.mmATMBalance}</li>
+ * ATMCommand4Code.ATMBalance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommand4Code#ATMStatusUpdate
- * ATMCommand4Code.mmATMStatusUpdate}</li>
+ * ATMCommand4Code.ATMStatusUpdate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommand4Code#ConfigurationUpdate
- * ATMCommand4Code.mmConfigurationUpdate}</li>
+ * ATMCommand4Code.ConfigurationUpdate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommand4Code#CountersInquiry
- * ATMCommand4Code.mmCountersInquiry}</li>
+ * ATMCommand4Code.CountersInquiry}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMCommand4Code#Disconnect
- * ATMCommand4Code.mmDisconnect}</li>
+ * ATMCommand4Code.Disconnect}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommand4Code#SendMessage
- * ATMCommand4Code.mmSendMessage}</li>
+ * ATMCommand4Code.SendMessage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommand4Code#CountersReport
- * ATMCommand4Code.mmCountersReport}</li>
+ * ATMCommand4Code.CountersReport}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -254,7 +254,7 @@ public class ATMCommand4Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMCommand4Code";
 				definition = "Type of command to be performed by an ATM.";

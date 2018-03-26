@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Algorithm12Code#RetailCBCMAC
- * Algorithm12Code.mmRetailCBCMAC}</li>
+ * Algorithm12Code.RetailCBCMAC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Algorithm12Code#RetailSHA256MAC
- * Algorithm12Code.mmRetailSHA256MAC}</li>
+ * Algorithm12Code.RetailSHA256MAC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Algorithm12Code#SHA256CMACwithAES128
- * Algorithm12Code.mmSHA256CMACwithAES128}</li>
+ * Algorithm12Code.SHA256CMACwithAES128}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Algorithm12Code#RetailSHA1MAC
- * Algorithm12Code.mmRetailSHA1MAC}</li>
+ * Algorithm12Code.RetailSHA1MAC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Algorithm12Code#SHA384CMACwithAES192
- * Algorithm12Code.mmSHA384CMACwithAES192}</li>
+ * Algorithm12Code.SHA384CMACwithAES192}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Algorithm12Code#SHA512CMACwithAES256
- * Algorithm12Code.mmSHA512CMACwithAES256}</li>
+ * Algorithm12Code.SHA512CMACwithAES256}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -61,8 +61,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -236,7 +236,7 @@ public class Algorithm12Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MACC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Algorithm12Code";

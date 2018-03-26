@@ -19,13 +19,13 @@ package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMIdentifierSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.datatype.BBANIdentifier.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 /**
  * Basic Bank Account Number (BBAN). Identifier used nationally by financial
@@ -44,8 +44,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -64,16 +64,18 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * </li>
  * </ul>
  */
-@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType
 public class BBANIdentifier {
 
 	final static private AtomicReference<MMIdentifierSet> mmObject_lazy = new AtomicReference<>();
+	@XmlValue
 	protected String value;
 
 	final static public MMIdentifierSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMIdentifierSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BARC12345612345678");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BBANIdentifier";
@@ -85,24 +87,23 @@ public class BBANIdentifier {
 		return mmObject_lazy.get();
 	}
 
+	public BBANIdentifier() {
+	}
+
 	public BBANIdentifier(String value) {
+		this.value = value;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
 		this.value = value;
 	}
 
 	@Override
 	public String toString() {
-		return value;
-	}
-
-	protected static class InternalXmlAdapter extends XmlAdapter<String, BBANIdentifier> {
-		@Override
-		public BBANIdentifier unmarshal(String value) {
-			return new BBANIdentifier(value);
-		}
-
-		@Override
-		public String marshal(BBANIdentifier typedData) {
-			return typedData.value;
-		}
+		return value == null ? null : value.toString();
 	}
 }

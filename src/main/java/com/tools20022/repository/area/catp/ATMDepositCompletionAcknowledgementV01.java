@@ -26,9 +26,10 @@ import com.tools20022.repository.msg.ATMDepositCompletionAcknowledgement1;
 import com.tools20022.repository.msg.ContentInformationType10;
 import com.tools20022.repository.msg.ContentInformationType15;
 import com.tools20022.repository.msg.Header32;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -81,16 +82,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "ATMDepositCompletionAcknowledgementV01", propOrder = {"header", "protectedATMDepositCompletionAcknowledgement", "ATMDepositCompletionAcknowledgement", "securityTrailer"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "ATMDepositCompletionAcknowledgementV01", propOrder = {"header", "protectedATMDepositCompletionAcknowledgement", "aTMDepositCompletionAcknowledgement", "securityTrailer"})
 public class ATMDepositCompletionAcknowledgementV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header32 header;
 	/**
-	 * Information related to the protocol management on a segment of the path
-	 * from the ATM to the acquirer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -112,7 +113,7 @@ public class ATMDepositCompletionAcknowledgementV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMDepositCompletionAcknowledgementV01, Header32> mmHeader = new MMMessageBuildingBlock<ATMDepositCompletionAcknowledgementV01, Header32>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,18 +124,21 @@ public class ATMDepositCompletionAcknowledgementV01 {
 			complexType_lazy = () -> Header32.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMDepositCompletionAcknowledgementV01.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header32 getValue(ATMDepositCompletionAcknowledgementV01 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(ATMDepositCompletionAcknowledgementV01 obj, Header32 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "PrtctdATMDpstCmpltnAck")
 	protected ContentInformationType10 protectedATMDepositCompletionAcknowledgement;
 	/**
-	 * Encrypted body of the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,7 +159,7 @@ public class ATMDepositCompletionAcknowledgementV01 {
 	 * definition} = "Encrypted body of the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmProtectedATMDepositCompletionAcknowledgement = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMDepositCompletionAcknowledgementV01, Optional<ContentInformationType10>> mmProtectedATMDepositCompletionAcknowledgement = new MMMessageBuildingBlock<ATMDepositCompletionAcknowledgementV01, Optional<ContentInformationType10>>() {
 		{
 			xmlTag = "PrtctdATMDpstCmpltnAck";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -166,19 +170,21 @@ public class ATMDepositCompletionAcknowledgementV01 {
 			complexType_lazy = () -> ContentInformationType10.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMDepositCompletionAcknowledgementV01.class.getMethod("getProtectedATMDepositCompletionAcknowledgement", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType10> getValue(ATMDepositCompletionAcknowledgementV01 obj) {
+			return obj.getProtectedATMDepositCompletionAcknowledgement();
+		}
+
+		@Override
+		public void setValue(ATMDepositCompletionAcknowledgementV01 obj, Optional<ContentInformationType10> value) {
+			obj.setProtectedATMDepositCompletionAcknowledgement(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "ATMDpstCmpltnAck")
 	protected ATMDepositCompletionAcknowledgement1 aTMDepositCompletionAcknowledgement;
 	/**
-	 * Information related to the acknowledgement of an ATM deposit transaction
-	 * from the ATM manager.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -197,33 +203,36 @@ public class ATMDepositCompletionAcknowledgementV01 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Information related to the acknowledgement  of an ATM deposit transaction from the ATM manager."
+	 * "Information related to the acknowledgement of an ATM deposit transaction from the ATM manager."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmATMDepositCompletionAcknowledgement = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMDepositCompletionAcknowledgementV01, Optional<ATMDepositCompletionAcknowledgement1>> mmATMDepositCompletionAcknowledgement = new MMMessageBuildingBlock<ATMDepositCompletionAcknowledgementV01, Optional<ATMDepositCompletionAcknowledgement1>>() {
 		{
 			xmlTag = "ATMDpstCmpltnAck";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ATMDepositCompletionAcknowledgement";
-			definition = "Information related to the acknowledgement  of an ATM deposit transaction from the ATM manager.";
+			definition = "Information related to the acknowledgement of an ATM deposit transaction from the ATM manager.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			complexType_lazy = () -> ATMDepositCompletionAcknowledgement1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMDepositCompletionAcknowledgementV01.class.getMethod("getATMDepositCompletionAcknowledgement", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ATMDepositCompletionAcknowledgement1> getValue(ATMDepositCompletionAcknowledgementV01 obj) {
+			return obj.getATMDepositCompletionAcknowledgement();
+		}
+
+		@Override
+		public void setValue(ATMDepositCompletionAcknowledgementV01 obj, Optional<ATMDepositCompletionAcknowledgement1> value) {
+			obj.setATMDepositCompletionAcknowledgement(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SctyTrlr")
 	protected ContentInformationType15 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -244,7 +253,7 @@ public class ATMDepositCompletionAcknowledgementV01 {
 	 * definition} = "Trailer of the message containing a MAC."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMDepositCompletionAcknowledgementV01, Optional<ContentInformationType15>> mmSecurityTrailer = new MMMessageBuildingBlock<ATMDepositCompletionAcknowledgementV01, Optional<ContentInformationType15>>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -255,12 +264,14 @@ public class ATMDepositCompletionAcknowledgementV01 {
 			complexType_lazy = () -> ContentInformationType15.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMDepositCompletionAcknowledgementV01.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType15> getValue(ATMDepositCompletionAcknowledgementV01 obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(ATMDepositCompletionAcknowledgementV01 obj, Optional<ContentInformationType15> value) {
+			obj.setSecurityTrailer(value.orElse(null));
 		}
 	};
 
@@ -294,43 +305,43 @@ public class ATMDepositCompletionAcknowledgementV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header32 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header32 header) {
-		this.header = header;
+	public ATMDepositCompletionAcknowledgementV01 setHeader(Header32 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "PrtctdATMDpstCmpltnAck")
-	public ContentInformationType10 getProtectedATMDepositCompletionAcknowledgement() {
-		return protectedATMDepositCompletionAcknowledgement;
+	public Optional<ContentInformationType10> getProtectedATMDepositCompletionAcknowledgement() {
+		return protectedATMDepositCompletionAcknowledgement == null ? Optional.empty() : Optional.of(protectedATMDepositCompletionAcknowledgement);
 	}
 
-	public void setProtectedATMDepositCompletionAcknowledgement(ContentInformationType10 protectedATMDepositCompletionAcknowledgement) {
+	public ATMDepositCompletionAcknowledgementV01 setProtectedATMDepositCompletionAcknowledgement(ContentInformationType10 protectedATMDepositCompletionAcknowledgement) {
 		this.protectedATMDepositCompletionAcknowledgement = protectedATMDepositCompletionAcknowledgement;
+		return this;
 	}
 
-	@XmlElement(name = "ATMDpstCmpltnAck")
-	public ATMDepositCompletionAcknowledgement1 getATMDepositCompletionAcknowledgement() {
-		return aTMDepositCompletionAcknowledgement;
+	public Optional<ATMDepositCompletionAcknowledgement1> getATMDepositCompletionAcknowledgement() {
+		return aTMDepositCompletionAcknowledgement == null ? Optional.empty() : Optional.of(aTMDepositCompletionAcknowledgement);
 	}
 
-	public void setATMDepositCompletionAcknowledgement(ATMDepositCompletionAcknowledgement1 aTMDepositCompletionAcknowledgement) {
+	public ATMDepositCompletionAcknowledgementV01 setATMDepositCompletionAcknowledgement(ATMDepositCompletionAcknowledgement1 aTMDepositCompletionAcknowledgement) {
 		this.aTMDepositCompletionAcknowledgement = aTMDepositCompletionAcknowledgement;
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr")
-	public ContentInformationType15 getSecurityTrailer() {
-		return securityTrailer;
+	public Optional<ContentInformationType15> getSecurityTrailer() {
+		return securityTrailer == null ? Optional.empty() : Optional.of(securityTrailer);
 	}
 
-	public void setSecurityTrailer(ContentInformationType15 securityTrailer) {
+	public ATMDepositCompletionAcknowledgementV01 setSecurityTrailer(ContentInformationType15 securityTrailer) {
 		this.securityTrailer = securityTrailer;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:catp.015.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:catp.015.001.01")
 	static public class Document {
 		@XmlElement(name = "ATMDpstCmpltnAck", required = true)
 		public ATMDepositCompletionAcknowledgementV01 messageBody;

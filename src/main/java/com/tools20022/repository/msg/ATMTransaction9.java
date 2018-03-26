@@ -24,8 +24,12 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max10000Binary;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.OnLinePIN5;
+import com.tools20022.repository.msg.TransactionIdentifier1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +61,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,15 +73,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Transaction for which the service is requested."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "ATMTransaction9", propOrder = {"transactionIdentification", "reconciliationIdentification", "cardholderNewPIN", "ICCRelatedData"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "ATMTransaction9", propOrder = {"transactionIdentification", "reconciliationIdentification", "cardholderNewPIN", "iCCRelatedData"})
 public class ATMTransaction9 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TxId", required = true)
 	protected TransactionIdentifier1 transactionIdentification;
 	/**
-	 * Identification of the transaction assigned by the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -101,9 +106,9 @@ public class ATMTransaction9 {
 	 * definition} = "Identification of the transaction assigned by the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransactionIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMTransaction9, TransactionIdentifier1> mmTransactionIdentification = new MMMessageAssociationEnd<ATMTransaction9, TransactionIdentifier1>() {
 		{
-			componentContext_lazy = () -> ATMTransaction9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMTransaction9.mmObject();
 			isDerived = false;
 			xmlTag = "TxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -112,13 +117,24 @@ public class ATMTransaction9 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TransactionIdentifier1.mmObject();
+			type_lazy = () -> TransactionIdentifier1.mmObject();
+		}
+
+		@Override
+		public TransactionIdentifier1 getValue(ATMTransaction9 obj) {
+			return obj.getTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(ATMTransaction9 obj, TransactionIdentifier1 value) {
+			obj.setTransactionIdentification(value);
 		}
 	};
+	@XmlElement(name = "RcncltnId")
 	protected Max35Text reconciliationIdentification;
 	/**
-	 * Identification of the reconciliation period assigned by the ATM manager.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -145,9 +161,9 @@ public class ATMTransaction9 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReconciliationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMTransaction9, Optional<Max35Text>> mmReconciliationIdentification = new MMMessageAttribute<ATMTransaction9, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> ATMTransaction9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMTransaction9.mmObject();
 			isDerived = false;
 			xmlTag = "RcncltnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -157,11 +173,22 @@ public class ATMTransaction9 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(ATMTransaction9 obj) {
+			return obj.getReconciliationIdentification();
+		}
+
+		@Override
+		public void setValue(ATMTransaction9 obj, Optional<Max35Text> value) {
+			obj.setReconciliationIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CrdhldrNewPIN")
 	protected OnLinePIN5 cardholderNewPIN;
 	/**
-	 * Encrypted personal identification number (PIN) and related information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -186,9 +213,9 @@ public class ATMTransaction9 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCardholderNewPIN = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMTransaction9, Optional<OnLinePIN5>> mmCardholderNewPIN = new MMMessageAssociationEnd<ATMTransaction9, Optional<OnLinePIN5>>() {
 		{
-			componentContext_lazy = () -> ATMTransaction9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMTransaction9.mmObject();
 			isDerived = false;
 			xmlTag = "CrdhldrNewPIN";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -197,15 +224,24 @@ public class ATMTransaction9 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.OnLinePIN5.mmObject();
+			type_lazy = () -> OnLinePIN5.mmObject();
+		}
+
+		@Override
+		public Optional<OnLinePIN5> getValue(ATMTransaction9 obj) {
+			return obj.getCardholderNewPIN();
+		}
+
+		@Override
+		public void setValue(ATMTransaction9 obj, Optional<OnLinePIN5> value) {
+			obj.setCardholderNewPIN(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "ICCRltdData")
 	protected Max10000Binary iCCRelatedData;
 	/**
-	 * Sequence of one or more TLV data elements from the ATM application, in
-	 * accordance with ISO 7816-6, not in a specific order. Present if the
-	 * transaction is performed with an EMV chip card application.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -233,9 +269,9 @@ public class ATMTransaction9 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmICCRelatedData = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMTransaction9, Optional<Max10000Binary>> mmICCRelatedData = new MMMessageAttribute<ATMTransaction9, Optional<Max10000Binary>>() {
 		{
-			componentContext_lazy = () -> ATMTransaction9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMTransaction9.mmObject();
 			isDerived = false;
 			xmlTag = "ICCRltdData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -245,13 +281,24 @@ public class ATMTransaction9 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max10000Binary.mmObject();
 		}
+
+		@Override
+		public Optional<Max10000Binary> getValue(ATMTransaction9 obj) {
+			return obj.getICCRelatedData();
+		}
+
+		@Override
+		public void setValue(ATMTransaction9 obj, Optional<Max10000Binary> value) {
+			obj.setICCRelatedData(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ATMTransaction9.mmTransactionIdentification, ATMTransaction9.mmReconciliationIdentification, ATMTransaction9.mmCardholderNewPIN, ATMTransaction9.mmICCRelatedData);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ATMTransaction9.mmTransactionIdentification, com.tools20022.repository.msg.ATMTransaction9.mmReconciliationIdentification,
+						com.tools20022.repository.msg.ATMTransaction9.mmCardholderNewPIN, com.tools20022.repository.msg.ATMTransaction9.mmICCRelatedData);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMTransaction9";
 				definition = "Transaction for which the service is requested.";
@@ -260,39 +307,39 @@ public class ATMTransaction9 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TxId", required = true)
 	public TransactionIdentifier1 getTransactionIdentification() {
 		return transactionIdentification;
 	}
 
-	public void setTransactionIdentification(com.tools20022.repository.msg.TransactionIdentifier1 transactionIdentification) {
-		this.transactionIdentification = transactionIdentification;
+	public ATMTransaction9 setTransactionIdentification(TransactionIdentifier1 transactionIdentification) {
+		this.transactionIdentification = Objects.requireNonNull(transactionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "RcncltnId")
-	public Max35Text getReconciliationIdentification() {
-		return reconciliationIdentification;
+	public Optional<Max35Text> getReconciliationIdentification() {
+		return reconciliationIdentification == null ? Optional.empty() : Optional.of(reconciliationIdentification);
 	}
 
-	public void setReconciliationIdentification(Max35Text reconciliationIdentification) {
+	public ATMTransaction9 setReconciliationIdentification(Max35Text reconciliationIdentification) {
 		this.reconciliationIdentification = reconciliationIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "CrdhldrNewPIN")
-	public OnLinePIN5 getCardholderNewPIN() {
-		return cardholderNewPIN;
+	public Optional<OnLinePIN5> getCardholderNewPIN() {
+		return cardholderNewPIN == null ? Optional.empty() : Optional.of(cardholderNewPIN);
 	}
 
-	public void setCardholderNewPIN(com.tools20022.repository.msg.OnLinePIN5 cardholderNewPIN) {
+	public ATMTransaction9 setCardholderNewPIN(OnLinePIN5 cardholderNewPIN) {
 		this.cardholderNewPIN = cardholderNewPIN;
+		return this;
 	}
 
-	@XmlElement(name = "ICCRltdData")
-	public Max10000Binary getICCRelatedData() {
-		return iCCRelatedData;
+	public Optional<Max10000Binary> getICCRelatedData() {
+		return iCCRelatedData == null ? Optional.empty() : Optional.of(iCCRelatedData);
 	}
 
-	public void setICCRelatedData(Max10000Binary iCCRelatedData) {
+	public ATMTransaction9 setICCRelatedData(Max10000Binary iCCRelatedData) {
 		this.iCCRelatedData = iCCRelatedData;
+		return this;
 	}
 }

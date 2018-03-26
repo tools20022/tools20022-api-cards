@@ -25,9 +25,9 @@ import com.tools20022.repository.codeset.ActiveCurrencyCode;
 import com.tools20022.repository.datatype.ImpliedCurrencyAndAmount;
 import com.tools20022.repository.entity.Limit;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.ATMTransactionAmounts7;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,8 +61,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,15 +80,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ATMTransactionAmounts6", propOrder = {"currency", "maximumPossibleAmount", "minimumPossibleAmount", "additionalAmount"})
 public class ATMTransactionAmounts6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Ccy")
 	protected ActiveCurrencyCode currency;
 	/**
-	 * Default currency of the limits.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -127,10 +128,10 @@ public class ATMTransactionAmounts6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMTransactionAmounts6, Optional<ActiveCurrencyCode>> mmCurrency = new MMMessageAttribute<ATMTransactionAmounts6, Optional<ActiveCurrencyCode>>() {
 		{
 			businessElementTrace_lazy = () -> Limit.mmCurrency;
-			componentContext_lazy = () -> ATMTransactionAmounts6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMTransactionAmounts6.mmObject();
 			isDerived = false;
 			xmlTag = "Ccy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -141,11 +142,22 @@ public class ATMTransactionAmounts6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyCode> getValue(ATMTransactionAmounts6 obj) {
+			return obj.getCurrency();
+		}
+
+		@Override
+		public void setValue(ATMTransactionAmounts6 obj, Optional<ActiveCurrencyCode> value) {
+			obj.setCurrency(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MaxPssblAmt")
 	protected ImpliedCurrencyAndAmount maximumPossibleAmount;
 	/**
-	 * Maximum amount allowed for a transaction in the service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -184,10 +196,10 @@ public class ATMTransactionAmounts6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMaximumPossibleAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMTransactionAmounts6, Optional<ImpliedCurrencyAndAmount>> mmMaximumPossibleAmount = new MMMessageAttribute<ATMTransactionAmounts6, Optional<ImpliedCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> Limit.mmAvailableAmount;
-			componentContext_lazy = () -> ATMTransactionAmounts6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMTransactionAmounts6.mmObject();
 			isDerived = false;
 			xmlTag = "MaxPssblAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -198,11 +210,22 @@ public class ATMTransactionAmounts6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ImpliedCurrencyAndAmount> getValue(ATMTransactionAmounts6 obj) {
+			return obj.getMaximumPossibleAmount();
+		}
+
+		@Override
+		public void setValue(ATMTransactionAmounts6 obj, Optional<ImpliedCurrencyAndAmount> value) {
+			obj.setMaximumPossibleAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MinPssblAmt")
 	protected ImpliedCurrencyAndAmount minimumPossibleAmount;
 	/**
-	 * Minimum amount allowed for a transaction in the service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -241,10 +264,10 @@ public class ATMTransactionAmounts6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMinimumPossibleAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMTransactionAmounts6, Optional<ImpliedCurrencyAndAmount>> mmMinimumPossibleAmount = new MMMessageAttribute<ATMTransactionAmounts6, Optional<ImpliedCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> Limit.mmAmount;
-			componentContext_lazy = () -> ATMTransactionAmounts6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMTransactionAmounts6.mmObject();
 			isDerived = false;
 			xmlTag = "MinPssblAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -255,12 +278,22 @@ public class ATMTransactionAmounts6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ImpliedCurrencyAndAmount> getValue(ATMTransactionAmounts6 obj) {
+			return obj.getMinimumPossibleAmount();
+		}
+
+		@Override
+		public void setValue(ATMTransactionAmounts6 obj, Optional<ImpliedCurrencyAndAmount> value) {
+			obj.setMinimumPossibleAmount(value.orElse(null));
+		}
 	};
-	protected List<com.tools20022.repository.msg.ATMTransactionAmounts7> additionalAmount;
+	@XmlElement(name = "AddtlAmt")
+	protected List<ATMTransactionAmounts7> additionalAmount;
 	/**
-	 * Additional amount that may be displayed to the customer, for instance the
-	 * daily limit or the daily balance for the service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -294,9 +327,9 @@ public class ATMTransactionAmounts6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAdditionalAmount = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMTransactionAmounts6, List<ATMTransactionAmounts7>> mmAdditionalAmount = new MMMessageAssociationEnd<ATMTransactionAmounts6, List<ATMTransactionAmounts7>>() {
 		{
-			componentContext_lazy = () -> ATMTransactionAmounts6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMTransactionAmounts6.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -305,16 +338,27 @@ public class ATMTransactionAmounts6 {
 			nextVersions_lazy = () -> Arrays.asList(ATMTransactionAmounts8.mmAdditionalAmount);
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMTransactionAmounts7.mmObject();
+			type_lazy = () -> ATMTransactionAmounts7.mmObject();
+		}
+
+		@Override
+		public List<ATMTransactionAmounts7> getValue(ATMTransactionAmounts6 obj) {
+			return obj.getAdditionalAmount();
+		}
+
+		@Override
+		public void setValue(ATMTransactionAmounts6 obj, List<ATMTransactionAmounts7> value) {
+			obj.setAdditionalAmount(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ATMTransactionAmounts6.mmCurrency, ATMTransactionAmounts6.mmMaximumPossibleAmount, ATMTransactionAmounts6.mmMinimumPossibleAmount, ATMTransactionAmounts6.mmAdditionalAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ATMTransactionAmounts6.mmCurrency, com.tools20022.repository.msg.ATMTransactionAmounts6.mmMaximumPossibleAmount,
+						com.tools20022.repository.msg.ATMTransactionAmounts6.mmMinimumPossibleAmount, com.tools20022.repository.msg.ATMTransactionAmounts6.mmAdditionalAmount);
 				trace_lazy = () -> Limit.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMTransactionAmounts6";
 				definition = "Limit of amounts for the customer.";
@@ -324,39 +368,39 @@ public class ATMTransactionAmounts6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Ccy")
-	public ActiveCurrencyCode getCurrency() {
-		return currency;
+	public Optional<ActiveCurrencyCode> getCurrency() {
+		return currency == null ? Optional.empty() : Optional.of(currency);
 	}
 
-	public void setCurrency(ActiveCurrencyCode currency) {
+	public ATMTransactionAmounts6 setCurrency(ActiveCurrencyCode currency) {
 		this.currency = currency;
+		return this;
 	}
 
-	@XmlElement(name = "MaxPssblAmt")
-	public ImpliedCurrencyAndAmount getMaximumPossibleAmount() {
-		return maximumPossibleAmount;
+	public Optional<ImpliedCurrencyAndAmount> getMaximumPossibleAmount() {
+		return maximumPossibleAmount == null ? Optional.empty() : Optional.of(maximumPossibleAmount);
 	}
 
-	public void setMaximumPossibleAmount(ImpliedCurrencyAndAmount maximumPossibleAmount) {
+	public ATMTransactionAmounts6 setMaximumPossibleAmount(ImpliedCurrencyAndAmount maximumPossibleAmount) {
 		this.maximumPossibleAmount = maximumPossibleAmount;
+		return this;
 	}
 
-	@XmlElement(name = "MinPssblAmt")
-	public ImpliedCurrencyAndAmount getMinimumPossibleAmount() {
-		return minimumPossibleAmount;
+	public Optional<ImpliedCurrencyAndAmount> getMinimumPossibleAmount() {
+		return minimumPossibleAmount == null ? Optional.empty() : Optional.of(minimumPossibleAmount);
 	}
 
-	public void setMinimumPossibleAmount(ImpliedCurrencyAndAmount minimumPossibleAmount) {
+	public ATMTransactionAmounts6 setMinimumPossibleAmount(ImpliedCurrencyAndAmount minimumPossibleAmount) {
 		this.minimumPossibleAmount = minimumPossibleAmount;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlAmt")
 	public List<ATMTransactionAmounts7> getAdditionalAmount() {
-		return additionalAmount;
+		return additionalAmount == null ? additionalAmount = new ArrayList<>() : additionalAmount;
 	}
 
-	public void setAdditionalAmount(List<com.tools20022.repository.msg.ATMTransactionAmounts7> additionalAmount) {
-		this.additionalAmount = additionalAmount;
+	public ATMTransactionAmounts6 setAdditionalAmount(List<ATMTransactionAmounts7> additionalAmount) {
+		this.additionalAmount = Objects.requireNonNull(additionalAmount);
+		return this;
 	}
 }

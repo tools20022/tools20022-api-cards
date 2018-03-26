@@ -37,52 +37,52 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.KeyUsage1Code#Encryption
- * KeyUsage1Code.mmEncryption}</li>
+ * KeyUsage1Code.Encryption}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.KeyUsage1Code#Decryption
- * KeyUsage1Code.mmDecryption}</li>
+ * KeyUsage1Code.Decryption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsage1Code#DataEncryption
- * KeyUsage1Code.mmDataEncryption}</li>
+ * KeyUsage1Code.DataEncryption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsage1Code#DataDecryption
- * KeyUsage1Code.mmDataDecryption}</li>
+ * KeyUsage1Code.DataDecryption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsage1Code#TranslateInput
- * KeyUsage1Code.mmTranslateInput}</li>
+ * KeyUsage1Code.TranslateInput}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsage1Code#TranslateOutput
- * KeyUsage1Code.mmTranslateOutput}</li>
+ * KeyUsage1Code.TranslateOutput}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsage1Code#MessageAuthenticationCodeGeneration
- * KeyUsage1Code.mmMessageAuthenticationCodeGeneration}</li>
+ * KeyUsage1Code.MessageAuthenticationCodeGeneration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsage1Code#MessageAuthenticationCodeVerification
- * KeyUsage1Code.mmMessageAuthenticationCodeVerification}</li>
+ * KeyUsage1Code.MessageAuthenticationCodeVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsage1Code#SignatureGeneration
- * KeyUsage1Code.mmSignatureGeneration}</li>
+ * KeyUsage1Code.SignatureGeneration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsage1Code#SignatureVerification
- * KeyUsage1Code.mmSignatureVerification}</li>
+ * KeyUsage1Code.SignatureVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsage1Code#PINEncryption
- * KeyUsage1Code.mmPINEncryption}</li>
+ * KeyUsage1Code.PINEncryption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsage1Code#PINDecryption
- * KeyUsage1Code.mmPINDecryption}</li>
+ * KeyUsage1Code.PINDecryption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsage1Code#PINVerification
- * KeyUsage1Code.mmPINVerification}</li>
+ * KeyUsage1Code.PINVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsage1Code#KeyGeneration
- * KeyUsage1Code.mmKeyGeneration}</li>
+ * KeyUsage1Code.KeyGeneration}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.KeyUsage1Code#KeyImport
- * KeyUsage1Code.mmKeyImport}</li>
+ * KeyUsage1Code.KeyImport}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.KeyUsage1Code#KeyExport
- * KeyUsage1Code.mmKeyExport}</li>
+ * KeyUsage1Code.KeyExport}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsage1Code#KeyDerivation
- * KeyUsage1Code.mmKeyDerivation}</li>
+ * KeyUsage1Code.KeyDerivation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -90,8 +90,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -528,7 +528,7 @@ public class KeyUsage1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ENCR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "KeyUsage1Code";

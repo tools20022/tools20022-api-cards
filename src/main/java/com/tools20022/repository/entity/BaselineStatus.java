@@ -19,11 +19,12 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.BaselineStatusCode;
+import com.tools20022.repository.entity.CommercialTrade;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Indicates the status of a baseline.
@@ -58,8 +59,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,8 +76,8 @@ public class BaselineStatus extends Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected BaselineStatusCode status;
 	/**
-	 * Specifies the status of the processing of a baseline.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -100,7 +101,7 @@ public class BaselineStatus extends Status {
 	 * definition} = "Specifies the status of the processing of a baseline."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BaselineStatus, BaselineStatusCode> mmStatus = new MMBusinessAttribute<BaselineStatus, BaselineStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BaselineStatus.mmObject();
@@ -112,18 +113,20 @@ public class BaselineStatus extends Status {
 			simpleType_lazy = () -> BaselineStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BaselineStatus.class.getMethod("getStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BaselineStatusCode getValue(BaselineStatus obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(BaselineStatus obj, BaselineStatusCode value) {
+			obj.setStatus(value);
 		}
 	};
 	protected CommercialTrade commercialTrade;
 	/**
-	 * Commercial trade for which a status is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -154,7 +157,7 @@ public class BaselineStatus extends Status {
 	 * definition} = "Commercial trade for which a status is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCommercialTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BaselineStatus, com.tools20022.repository.entity.CommercialTrade> mmCommercialTrade = new MMBusinessAssociationEnd<BaselineStatus, com.tools20022.repository.entity.CommercialTrade>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BaselineStatus.mmObject();
@@ -167,12 +170,22 @@ public class BaselineStatus extends Status {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.CommercialTrade getValue(BaselineStatus obj) {
+			return obj.getCommercialTrade();
+		}
+
+		@Override
+		public void setValue(BaselineStatus obj, com.tools20022.repository.entity.CommercialTrade value) {
+			obj.setCommercialTrade(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BaselineStatus";
 				definition = "Indicates the status of a baseline.";
@@ -193,15 +206,17 @@ public class BaselineStatus extends Status {
 		return status;
 	}
 
-	public void setStatus(BaselineStatusCode status) {
-		this.status = status;
+	public BaselineStatus setStatus(BaselineStatusCode status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 
 	public CommercialTrade getCommercialTrade() {
 		return commercialTrade;
 	}
 
-	public void setCommercialTrade(com.tools20022.repository.entity.CommercialTrade commercialTrade) {
-		this.commercialTrade = commercialTrade;
+	public BaselineStatus setCommercialTrade(com.tools20022.repository.entity.CommercialTrade commercialTrade) {
+		this.commercialTrade = Objects.requireNonNull(commercialTrade);
+		return this;
 	}
 }

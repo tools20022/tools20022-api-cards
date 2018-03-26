@@ -37,17 +37,17 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMOperationCode#Adjust
- * ATMOperationCode.mmAdjust}</li>
+ * ATMOperationCode.Adjust}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMOperationCode#InsertMedia
- * ATMOperationCode.mmInsertMedia}</li>
+ * ATMOperationCode.InsertMedia}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMOperationCode#Loading
- * ATMOperationCode.mmLoading}</li>
+ * ATMOperationCode.Loading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMOperationCode#RemoveMedia
- * ATMOperationCode.mmRemoveMedia}</li>
+ * ATMOperationCode.RemoveMedia}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMOperationCode#Unloading
- * ATMOperationCode.mmUnloading}</li>
+ * ATMOperationCode.Unloading}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -60,8 +60,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -234,7 +234,7 @@ public class ATMOperationCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMOperationCode";
 				definition = "Type of logical or physical operation on an ATM.";

@@ -24,11 +24,14 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.datatype.TrueFalseIndicator;
+import com.tools20022.repository.entity.DirectDebit;
 import com.tools20022.repository.entity.Mandate;
+import com.tools20022.repository.entity.PaymentProcessing;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Authorisation in favour of the creditor given by the debtor to debit its own
@@ -95,8 +98,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -114,8 +117,8 @@ public class DirectDebitMandate extends Mandate {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected DirectDebit relatedDirectDebit;
 	/**
-	 * Direct debit to which a mandate applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,7 +149,7 @@ public class DirectDebitMandate extends Mandate {
 	 * definition} = "Direct debit to which a mandate applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedDirectDebit = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DirectDebitMandate, Optional<DirectDebit>> mmRelatedDirectDebit = new MMBusinessAssociationEnd<DirectDebitMandate, Optional<DirectDebit>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
@@ -155,15 +158,25 @@ public class DirectDebitMandate extends Mandate {
 			definition = "Direct debit to which a mandate applies.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.DirectDebit.mmDirectDebitMandate;
+			opposite_lazy = () -> DirectDebit.mmDirectDebitMandate;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DirectDebit.mmObject();
+			type_lazy = () -> DirectDebit.mmObject();
+		}
+
+		@Override
+		public Optional<DirectDebit> getValue(DirectDebitMandate obj) {
+			return obj.getRelatedDirectDebit();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate obj, Optional<DirectDebit> value) {
+			obj.setRelatedDirectDebit(value.orElse(null));
 		}
 	};
 	protected ISODate finalCollectionDate;
 	/**
-	 * Date of the final collection of a direct debit as per the mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -187,7 +200,7 @@ public class DirectDebitMandate extends Mandate {
 	 * "Date of the final collection of a direct debit as per the mandate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFinalCollectionDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DirectDebitMandate, ISODate> mmFinalCollectionDate = new MMBusinessAttribute<DirectDebitMandate, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
@@ -199,19 +212,20 @@ public class DirectDebitMandate extends Mandate {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DirectDebitMandate.class.getMethod("getFinalCollectionDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(DirectDebitMandate obj) {
+			return obj.getFinalCollectionDate();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate obj, ISODate value) {
+			obj.setFinalCollectionDate(value);
 		}
 	};
 	protected FrequencyCode frequency;
 	/**
-	 * Regularity with which direct debit instructions are to be created and
-	 * processed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -237,7 +251,7 @@ public class DirectDebitMandate extends Mandate {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFrequency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DirectDebitMandate, FrequencyCode> mmFrequency = new MMBusinessAttribute<DirectDebitMandate, FrequencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
@@ -249,18 +263,20 @@ public class DirectDebitMandate extends Mandate {
 			simpleType_lazy = () -> FrequencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DirectDebitMandate.class.getMethod("getFrequency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FrequencyCode getValue(DirectDebitMandate obj) {
+			return obj.getFrequency();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate obj, FrequencyCode value) {
+			obj.setFrequency(value);
 		}
 	};
 	protected ISODate firstCollectionDate;
 	/**
-	 * Date of the first collection of a direct debit as per the mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -284,7 +300,7 @@ public class DirectDebitMandate extends Mandate {
 	 * "Date of the first collection of a direct debit as per the mandate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFirstCollectionDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DirectDebitMandate, ISODate> mmFirstCollectionDate = new MMBusinessAttribute<DirectDebitMandate, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
@@ -296,20 +312,20 @@ public class DirectDebitMandate extends Mandate {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DirectDebitMandate.class.getMethod("getFirstCollectionDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(DirectDebitMandate obj) {
+			return obj.getFirstCollectionDate();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate obj, ISODate value) {
+			obj.setFirstCollectionDate(value);
 		}
 	};
 	protected PaymentProcessing mandatePaymentType;
 	/**
-	 * Set of elements that further identifies the type of mandate (service
-	 * level and/or paper or electronic) being requested or given by the
-	 * initiating party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -342,7 +358,7 @@ public class DirectDebitMandate extends Mandate {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMandatePaymentType = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<DirectDebitMandate, PaymentProcessing> mmMandatePaymentType = new MMBusinessAssociationEnd<DirectDebitMandate, PaymentProcessing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
@@ -351,16 +367,25 @@ public class DirectDebitMandate extends Mandate {
 			definition = "Set of elements that further identifies the type of mandate (service level and/or paper or electronic) being requested or given by the initiating party.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentProcessing.mmRelatedMandate;
+			opposite_lazy = () -> PaymentProcessing.mmRelatedMandate;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentProcessing.mmObject();
+			type_lazy = () -> PaymentProcessing.mmObject();
+		}
+
+		@Override
+		public PaymentProcessing getValue(DirectDebitMandate obj) {
+			return obj.getMandatePaymentType();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate obj, PaymentProcessing value) {
+			obj.setMandatePaymentType(value);
 		}
 	};
 	protected CurrencyAndAmount collectionAmount;
 	/**
-	 * Fixed amount that the debtor has agreed will be collected from their
-	 * account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -386,7 +411,7 @@ public class DirectDebitMandate extends Mandate {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCollectionAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DirectDebitMandate, CurrencyAndAmount> mmCollectionAmount = new MMBusinessAttribute<DirectDebitMandate, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
@@ -398,19 +423,20 @@ public class DirectDebitMandate extends Mandate {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DirectDebitMandate.class.getMethod("getCollectionAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(DirectDebitMandate obj) {
+			return obj.getCollectionAmount();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate obj, CurrencyAndAmount value) {
+			obj.setCollectionAmount(value);
 		}
 	};
 	protected CurrencyAndAmount maximumAmount;
 	/**
-	 * Maximum amount that may be collected from the debtor's account, per
-	 * instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -436,7 +462,7 @@ public class DirectDebitMandate extends Mandate {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMaximumAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DirectDebitMandate, CurrencyAndAmount> mmMaximumAmount = new MMBusinessAttribute<DirectDebitMandate, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
@@ -448,19 +474,20 @@ public class DirectDebitMandate extends Mandate {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DirectDebitMandate.class.getMethod("getMaximumAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(DirectDebitMandate obj) {
+			return obj.getMaximumAmount();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate obj, CurrencyAndAmount value) {
+			obj.setMaximumAmount(value);
 		}
 	};
 	protected TrueFalseIndicator preNotification;
 	/**
-	 * Indicates wether a pre-notification must be sent by the creditor to the
-	 * debtor before a direct debit occurs
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -486,7 +513,7 @@ public class DirectDebitMandate extends Mandate {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPreNotification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DirectDebitMandate, TrueFalseIndicator> mmPreNotification = new MMBusinessAttribute<DirectDebitMandate, TrueFalseIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
@@ -498,19 +525,20 @@ public class DirectDebitMandate extends Mandate {
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DirectDebitMandate.class.getMethod("getPreNotification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TrueFalseIndicator getValue(DirectDebitMandate obj) {
+			return obj.getPreNotification();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate obj, TrueFalseIndicator value) {
+			obj.setPreNotification(value);
 		}
 	};
 	protected Number preNotificationThreshold;
 	/**
-	 * Specifies the number of days before the direct debit for notifying the
-	 * debtor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -535,7 +563,7 @@ public class DirectDebitMandate extends Mandate {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPreNotificationThreshold = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DirectDebitMandate, Number> mmPreNotificationThreshold = new MMBusinessAttribute<DirectDebitMandate, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
@@ -547,18 +575,20 @@ public class DirectDebitMandate extends Mandate {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DirectDebitMandate.class.getMethod("getPreNotificationThreshold", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(DirectDebitMandate obj) {
+			return obj.getPreNotificationThreshold();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate obj, Number value) {
+			obj.setPreNotificationThreshold(value);
 		}
 	};
 	protected MandateClassificationCode classification;
 	/**
-	 * Type of direct debit instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -582,7 +612,7 @@ public class DirectDebitMandate extends Mandate {
 	 * definition} = "Type of direct debit instruction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmClassification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DirectDebitMandate, MandateClassificationCode> mmClassification = new MMBusinessAttribute<DirectDebitMandate, MandateClassificationCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
@@ -594,19 +624,20 @@ public class DirectDebitMandate extends Mandate {
 			simpleType_lazy = () -> MandateClassificationCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DirectDebitMandate.class.getMethod("getClassification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public MandateClassificationCode getValue(DirectDebitMandate obj) {
+			return obj.getClassification();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate obj, MandateClassificationCode value) {
+			obj.setClassification(value);
 		}
 	};
 	protected FrequencyCode pointInTime;
 	/**
-	 * Specifies a frequency in terms of an exact point in time or moment within
-	 * a specified period type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -632,7 +663,7 @@ public class DirectDebitMandate extends Mandate {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPointInTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<DirectDebitMandate, FrequencyCode> mmPointInTime = new MMBusinessAttribute<DirectDebitMandate, FrequencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DirectDebitMandate.mmObject();
@@ -644,23 +675,25 @@ public class DirectDebitMandate extends Mandate {
 			simpleType_lazy = () -> FrequencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return DirectDebitMandate.class.getMethod("getPointInTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FrequencyCode getValue(DirectDebitMandate obj) {
+			return obj.getPointInTime();
+		}
+
+		@Override
+		public void setValue(DirectDebitMandate obj, FrequencyCode value) {
+			obj.setPointInTime(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DirectDebitMandate";
 				definition = "Authorisation in favour of the creditor given by the debtor to debit its own account.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DirectDebit.mmDirectDebitMandate, com.tools20022.repository.entity.PaymentProcessing.mmRelatedMandate);
+				associationDomain_lazy = () -> Arrays.asList(DirectDebit.mmDirectDebitMandate, PaymentProcessing.mmRelatedMandate);
 				superType_lazy = () -> Mandate.mmObject();
 				element_lazy = () -> Arrays
 						.asList(com.tools20022.repository.entity.DirectDebitMandate.mmRelatedDirectDebit, com.tools20022.repository.entity.DirectDebitMandate.mmFinalCollectionDate,
@@ -679,91 +712,102 @@ public class DirectDebitMandate extends Mandate {
 		return mmObject_lazy.get();
 	}
 
-	public DirectDebit getRelatedDirectDebit() {
-		return relatedDirectDebit;
+	public Optional<DirectDebit> getRelatedDirectDebit() {
+		return relatedDirectDebit == null ? Optional.empty() : Optional.of(relatedDirectDebit);
 	}
 
-	public void setRelatedDirectDebit(com.tools20022.repository.entity.DirectDebit relatedDirectDebit) {
+	public DirectDebitMandate setRelatedDirectDebit(DirectDebit relatedDirectDebit) {
 		this.relatedDirectDebit = relatedDirectDebit;
+		return this;
 	}
 
 	public ISODate getFinalCollectionDate() {
 		return finalCollectionDate;
 	}
 
-	public void setFinalCollectionDate(ISODate finalCollectionDate) {
-		this.finalCollectionDate = finalCollectionDate;
+	public DirectDebitMandate setFinalCollectionDate(ISODate finalCollectionDate) {
+		this.finalCollectionDate = Objects.requireNonNull(finalCollectionDate);
+		return this;
 	}
 
 	public FrequencyCode getFrequency() {
 		return frequency;
 	}
 
-	public void setFrequency(FrequencyCode frequency) {
-		this.frequency = frequency;
+	public DirectDebitMandate setFrequency(FrequencyCode frequency) {
+		this.frequency = Objects.requireNonNull(frequency);
+		return this;
 	}
 
 	public ISODate getFirstCollectionDate() {
 		return firstCollectionDate;
 	}
 
-	public void setFirstCollectionDate(ISODate firstCollectionDate) {
-		this.firstCollectionDate = firstCollectionDate;
+	public DirectDebitMandate setFirstCollectionDate(ISODate firstCollectionDate) {
+		this.firstCollectionDate = Objects.requireNonNull(firstCollectionDate);
+		return this;
 	}
 
 	public PaymentProcessing getMandatePaymentType() {
 		return mandatePaymentType;
 	}
 
-	public void setMandatePaymentType(com.tools20022.repository.entity.PaymentProcessing mandatePaymentType) {
-		this.mandatePaymentType = mandatePaymentType;
+	public DirectDebitMandate setMandatePaymentType(PaymentProcessing mandatePaymentType) {
+		this.mandatePaymentType = Objects.requireNonNull(mandatePaymentType);
+		return this;
 	}
 
 	public CurrencyAndAmount getCollectionAmount() {
 		return collectionAmount;
 	}
 
-	public void setCollectionAmount(CurrencyAndAmount collectionAmount) {
-		this.collectionAmount = collectionAmount;
+	public DirectDebitMandate setCollectionAmount(CurrencyAndAmount collectionAmount) {
+		this.collectionAmount = Objects.requireNonNull(collectionAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getMaximumAmount() {
 		return maximumAmount;
 	}
 
-	public void setMaximumAmount(CurrencyAndAmount maximumAmount) {
-		this.maximumAmount = maximumAmount;
+	public DirectDebitMandate setMaximumAmount(CurrencyAndAmount maximumAmount) {
+		this.maximumAmount = Objects.requireNonNull(maximumAmount);
+		return this;
 	}
 
 	public TrueFalseIndicator getPreNotification() {
 		return preNotification;
 	}
 
-	public void setPreNotification(TrueFalseIndicator preNotification) {
-		this.preNotification = preNotification;
+	public DirectDebitMandate setPreNotification(TrueFalseIndicator preNotification) {
+		this.preNotification = Objects.requireNonNull(preNotification);
+		return this;
 	}
 
 	public Number getPreNotificationThreshold() {
 		return preNotificationThreshold;
 	}
 
-	public void setPreNotificationThreshold(Number preNotificationThreshold) {
-		this.preNotificationThreshold = preNotificationThreshold;
+	public DirectDebitMandate setPreNotificationThreshold(Number preNotificationThreshold) {
+		this.preNotificationThreshold = Objects.requireNonNull(preNotificationThreshold);
+		return this;
 	}
 
 	public MandateClassificationCode getClassification() {
 		return classification;
 	}
 
-	public void setClassification(MandateClassificationCode classification) {
-		this.classification = classification;
+	public DirectDebitMandate setClassification(MandateClassificationCode classification) {
+		this.classification = Objects.requireNonNull(classification);
+		return this;
 	}
 
 	public FrequencyCode getPointInTime() {
 		return pointInTime;
 	}
 
-	public void setPointInTime(FrequencyCode pointInTime) {
-		this.pointInTime = pointInTime;
+	public DirectDebitMandate setPointInTime(FrequencyCode pointInTime) {
+		this.pointInTime = Objects.requireNonNull(pointInTime);
+		return this;
 	}
 }

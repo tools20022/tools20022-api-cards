@@ -39,70 +39,70 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#Balance
- * CardPaymentServiceType7Code.mmBalance}</li>
+ * CardPaymentServiceType7Code.Balance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#CardActivation
- * CardPaymentServiceType7Code.mmCardActivation}</li>
+ * CardPaymentServiceType7Code.CardActivation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#CardPayment
- * CardPaymentServiceType7Code.mmCardPayment}</li>
+ * CardPaymentServiceType7Code.CardPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#CardsFundTransfer
- * CardPaymentServiceType7Code.mmCardsFundTransfer}</li>
+ * CardPaymentServiceType7Code.CardsFundTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#CardsFundTransferPull
- * CardPaymentServiceType7Code.mmCardsFundTransferPull}</li>
+ * CardPaymentServiceType7Code.CardsFundTransferPull}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#CardsFundTransferPush
- * CardPaymentServiceType7Code.mmCardsFundTransferPush}</li>
+ * CardPaymentServiceType7Code.CardsFundTransferPush}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#CardVerification
- * CardPaymentServiceType7Code.mmCardVerification}</li>
+ * CardPaymentServiceType7Code.CardVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#CashAdvance
- * CardPaymentServiceType7Code.mmCashAdvance}</li>
+ * CardPaymentServiceType7Code.CashAdvance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#CashDeposit
- * CardPaymentServiceType7Code.mmCashDeposit}</li>
+ * CardPaymentServiceType7Code.CashDeposit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#CashWithdrawal
- * CardPaymentServiceType7Code.mmCashWithdrawal}</li>
+ * CardPaymentServiceType7Code.CashWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#DeferredPayment
- * CardPaymentServiceType7Code.mmDeferredPayment}</li>
+ * CardPaymentServiceType7Code.DeferredPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#Loading
- * CardPaymentServiceType7Code.mmLoading}</li>
+ * CardPaymentServiceType7Code.Loading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#OriginalCredit
- * CardPaymentServiceType7Code.mmOriginalCredit}</li>
+ * CardPaymentServiceType7Code.OriginalCredit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#PINChange
- * CardPaymentServiceType7Code.mmPINChange}</li>
+ * CardPaymentServiceType7Code.PINChange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#PINUnblock
- * CardPaymentServiceType7Code.mmPINUnblock}</li>
+ * CardPaymentServiceType7Code.PINUnblock}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#QuasiCash
- * CardPaymentServiceType7Code.mmQuasiCash}</li>
+ * CardPaymentServiceType7Code.QuasiCash}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#Refund
- * CardPaymentServiceType7Code.mmRefund}</li>
+ * CardPaymentServiceType7Code.Refund}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#Reservation
- * CardPaymentServiceType7Code.mmReservation}</li>
+ * CardPaymentServiceType7Code.Reservation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#Unloading
- * CardPaymentServiceType7Code.mmUnloading}</li>
+ * CardPaymentServiceType7Code.Unloading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#ValidityCheck
- * CardPaymentServiceType7Code.mmValidityCheck}</li>
+ * CardPaymentServiceType7Code.ValidityCheck}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#DebitAdjustement
- * CardPaymentServiceType7Code.mmDebitAdjustement}</li>
+ * CardPaymentServiceType7Code.DebitAdjustement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType7Code#CreditAdjustement
- * CardPaymentServiceType7Code.mmCreditAdjustement}</li>
+ * CardPaymentServiceType7Code.CreditAdjustement}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -111,8 +111,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -665,7 +665,7 @@ public class CardPaymentServiceType7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPaymentServiceType7Code";
 				definition = "Type of transaction being undertaken for the main service. \r\nIt correspond partially to the ISO 8583, field number 3.";

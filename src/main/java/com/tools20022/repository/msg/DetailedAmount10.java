@@ -28,6 +28,8 @@ import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +62,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,9 +74,6 @@ import javax.xml.bind.annotation.XmlType;
  * definition} =
  * "Additional amounts from the processor or the issuer without financial impacts on the transaction amount."
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} = {@linkplain com.tools20022.repository.msg.DetailedAmount9
- * DetailedAmount9}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
  * nextVersions} =
  * <ul>
@@ -82,17 +81,21 @@ import javax.xml.bind.annotation.XmlType;
  * DetailedAmount11}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+ * previousVersion} = {@linkplain com.tools20022.repository.msg.DetailedAmount9
+ * DetailedAmount9}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DetailedAmount10", propOrder = {"type", "additionalType", "amount", "label"})
 public class DetailedAmount10 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected TypeOfAmount6Code type;
 	/**
-	 * Type or class of amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -128,10 +131,10 @@ public class DetailedAmount10 {
 	 * DetailedAmount9.mmType}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DetailedAmount10, TypeOfAmount6Code> mmType = new MMMessageAttribute<DetailedAmount10, TypeOfAmount6Code>() {
 		{
 			businessElementTrace_lazy = () -> CardPayment.mmAmountQualifier;
-			componentContext_lazy = () -> DetailedAmount10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DetailedAmount10.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -142,11 +145,22 @@ public class DetailedAmount10 {
 			minOccurs = 1;
 			simpleType_lazy = () -> TypeOfAmount6Code.mmObject();
 		}
+
+		@Override
+		public TypeOfAmount6Code getValue(DetailedAmount10 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(DetailedAmount10 obj, TypeOfAmount6Code value) {
+			obj.setType(value);
+		}
 	};
+	@XmlElement(name = "AddtlTp")
 	protected Max35Text additionalType;
 	/**
-	 * Additional information to specify the type of amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -169,11 +183,6 @@ public class DetailedAmount10 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Additional information to specify the type of amount."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.DetailedAmount9#mmAdditionalType
-	 * DetailedAmount9.mmAdditionalType}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -182,11 +191,16 @@ public class DetailedAmount10 {
 	 * DetailedAmount11.mmAdditionalType}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.DetailedAmount9#mmAdditionalType
+	 * DetailedAmount9.mmAdditionalType}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DetailedAmount10, Optional<Max35Text>> mmAdditionalType = new MMMessageAttribute<DetailedAmount10, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> DetailedAmount10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DetailedAmount10.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -198,11 +212,22 @@ public class DetailedAmount10 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(DetailedAmount10 obj) {
+			return obj.getAdditionalType();
+		}
+
+		@Override
+		public void setValue(DetailedAmount10 obj, Optional<Max35Text> value) {
+			obj.setAdditionalType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Amt", required = true)
 	protected CurrencyAndAmount amount;
 	/**
-	 * Amount value.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -231,11 +256,6 @@ public class DetailedAmount10 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Amount value."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.DetailedAmount9#mmAmount
-	 * DetailedAmount9.mmAmount}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -243,12 +263,17 @@ public class DetailedAmount10 {
 	 * DetailedAmount11.mmAmount}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.DetailedAmount9#mmAmount
+	 * DetailedAmount9.mmAmount}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DetailedAmount10, CurrencyAndAmount> mmAmount = new MMMessageAttribute<DetailedAmount10, CurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmAmount;
-			componentContext_lazy = () -> DetailedAmount10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DetailedAmount10.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -260,11 +285,22 @@ public class DetailedAmount10 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public CurrencyAndAmount getValue(DetailedAmount10 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(DetailedAmount10 obj, CurrencyAndAmount value) {
+			obj.setAmount(value);
+		}
 	};
+	@XmlElement(name = "Labl")
 	protected Max35Text label;
 	/**
-	 * Short description of the amount to provide to the cardholder.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -295,9 +331,9 @@ public class DetailedAmount10 {
 	 * DetailedAmount9.mmLabel}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLabel = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DetailedAmount10, Optional<Max35Text>> mmLabel = new MMMessageAttribute<DetailedAmount10, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> DetailedAmount10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DetailedAmount10.mmObject();
 			isDerived = false;
 			xmlTag = "Labl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -308,14 +344,25 @@ public class DetailedAmount10 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(DetailedAmount10 obj) {
+			return obj.getLabel();
+		}
+
+		@Override
+		public void setValue(DetailedAmount10 obj, Optional<Max35Text> value) {
+			obj.setLabel(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DetailedAmount10.mmType, DetailedAmount10.mmAdditionalType, DetailedAmount10.mmAmount, DetailedAmount10.mmLabel);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DetailedAmount10.mmType, com.tools20022.repository.msg.DetailedAmount10.mmAdditionalType, com.tools20022.repository.msg.DetailedAmount10.mmAmount,
+						com.tools20022.repository.msg.DetailedAmount10.mmLabel);
 				trace_lazy = () -> CardPayment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DetailedAmount10";
 				definition = "Additional amounts from the processor or the issuer without financial impacts on the transaction amount.";
@@ -326,39 +373,39 @@ public class DetailedAmount10 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public TypeOfAmount6Code getType() {
 		return type;
 	}
 
-	public void setType(TypeOfAmount6Code type) {
-		this.type = type;
+	public DetailedAmount10 setType(TypeOfAmount6Code type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlTp")
-	public Max35Text getAdditionalType() {
-		return additionalType;
+	public Optional<Max35Text> getAdditionalType() {
+		return additionalType == null ? Optional.empty() : Optional.of(additionalType);
 	}
 
-	public void setAdditionalType(Max35Text additionalType) {
+	public DetailedAmount10 setAdditionalType(Max35Text additionalType) {
 		this.additionalType = additionalType;
+		return this;
 	}
 
-	@XmlElement(name = "Amt", required = true)
 	public CurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(CurrencyAndAmount amount) {
-		this.amount = amount;
+	public DetailedAmount10 setAmount(CurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
-	@XmlElement(name = "Labl")
-	public Max35Text getLabel() {
-		return label;
+	public Optional<Max35Text> getLabel() {
+		return label == null ? Optional.empty() : Optional.of(label);
 	}
 
-	public void setLabel(Max35Text label) {
+	public DetailedAmount10 setLabel(Max35Text label) {
 		this.label = label;
+		return this;
 	}
 }

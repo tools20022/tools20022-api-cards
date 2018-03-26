@@ -38,71 +38,71 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#AssetBackedSecurity
- * InstrumentSubStructureTypeCode.mmAssetBackedSecurity}</li>
+ * InstrumentSubStructureTypeCode.AssetBackedSecurity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#AirlineTrust
- * InstrumentSubStructureTypeCode.mmAirlineTrust}</li>
+ * InstrumentSubStructureTypeCode.AirlineTrust}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#AutoTrust
- * InstrumentSubStructureTypeCode.mmAutoTrust}</li>
+ * InstrumentSubStructureTypeCode.AutoTrust}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#CollateralBondObligation
- * InstrumentSubStructureTypeCode.mmCollateralBondObligation}</li>
+ * InstrumentSubStructureTypeCode.CollateralBondObligation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#CollateralDebtObligation
- * InstrumentSubStructureTypeCode.mmCollateralDebtObligation}</li>
+ * InstrumentSubStructureTypeCode.CollateralDebtObligation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#CreditLinkedNotes
- * InstrumentSubStructureTypeCode.mmCreditLinkedNotes}</li>
+ * InstrumentSubStructureTypeCode.CreditLinkedNotes}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#CollateralLoanObligation
- * InstrumentSubStructureTypeCode.mmCollateralLoanObligation}</li>
+ * InstrumentSubStructureTypeCode.CollateralLoanObligation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#CommercialMortgage
- * InstrumentSubStructureTypeCode.mmCommercialMortgage}</li>
+ * InstrumentSubStructureTypeCode.CommercialMortgage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#Consumer
- * InstrumentSubStructureTypeCode.mmConsumer}</li>
+ * InstrumentSubStructureTypeCode.Consumer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#CreditCardTrust
- * InstrumentSubStructureTypeCode.mmCreditCardTrust}</li>
+ * InstrumentSubStructureTypeCode.CreditCardTrust}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#HomeEquityLoans
- * InstrumentSubStructureTypeCode.mmHomeEquityLoans}</li>
+ * InstrumentSubStructureTypeCode.HomeEquityLoans}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#LoanParticipationNote
- * InstrumentSubStructureTypeCode.mmLoanParticipationNote}</li>
+ * InstrumentSubStructureTypeCode.LoanParticipationNote}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#CoveredBond
- * InstrumentSubStructureTypeCode.mmCoveredBond}</li>
+ * InstrumentSubStructureTypeCode.CoveredBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#PaymentRight
- * InstrumentSubStructureTypeCode.mmPaymentRight}</li>
+ * InstrumentSubStructureTypeCode.PaymentRight}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#Repackagings
- * InstrumentSubStructureTypeCode.mmRepackagings}</li>
+ * InstrumentSubStructureTypeCode.Repackagings}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#ResidentialMortgage
- * InstrumentSubStructureTypeCode.mmResidentialMortgage}</li>
+ * InstrumentSubStructureTypeCode.ResidentialMortgage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#StructuredCoveredBond
- * InstrumentSubStructureTypeCode.mmStructuredCoveredBond}</li>
+ * InstrumentSubStructureTypeCode.StructuredCoveredBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#StraightBond
- * InstrumentSubStructureTypeCode.mmStraightBond}</li>
+ * InstrumentSubStructureTypeCode.StraightBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#StudentLoanTrust
- * InstrumentSubStructureTypeCode.mmStudentLoanTrust}</li>
+ * InstrumentSubStructureTypeCode.StudentLoanTrust}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.InstrumentSubStructureTypeCode#WholeBusinessSecurity
- * InstrumentSubStructureTypeCode.mmWholeBusinessSecurity}</li>
+ * InstrumentSubStructureTypeCode.WholeBusinessSecurity}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -413,7 +413,7 @@ public class InstrumentSubStructureTypeCode extends MMCode {
 		}
 	};
 	/**
-	 * Sub structured type of the financial instrument is a credit card trust .
+	 * Sub structured type of the financial instrument is a credit card trust.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -431,7 +431,7 @@ public class InstrumentSubStructureTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Sub structured type of the financial instrument is a credit card trust ."
+	 * "Sub structured type of the financial instrument is a credit card trust."
 	 * </li>
 	 * </ul>
 	 */
@@ -439,7 +439,7 @@ public class InstrumentSubStructureTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreditCardTrust";
-			definition = "Sub structured type of the financial instrument is a credit card trust .";
+			definition = "Sub structured type of the financial instrument is a credit card trust.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InstrumentSubStructureTypeCode.mmObject();
 			codeName = "CRCT";
 		}
@@ -477,7 +477,7 @@ public class InstrumentSubStructureTypeCode extends MMCode {
 	};
 	/**
 	 * Sub structured type of the financial instrument is a loan participation
-	 * notes .
+	 * notes.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -495,7 +495,7 @@ public class InstrumentSubStructureTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Sub structured type of the financial instrument is a loan participation notes ."
+	 * "Sub structured type of the financial instrument is a loan participation notes."
 	 * </li>
 	 * </ul>
 	 */
@@ -503,7 +503,7 @@ public class InstrumentSubStructureTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "LoanParticipationNote";
-			definition = "Sub structured type of the financial instrument is a loan participation notes .";
+			definition = "Sub structured type of the financial instrument is a loan participation notes.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InstrumentSubStructureTypeCode.mmObject();
 			codeName = "LPNO";
 		}
@@ -602,8 +602,8 @@ public class InstrumentSubStructureTypeCode extends MMCode {
 		}
 	};
 	/**
-	 * Sub structured type of the financial instrument is a residential mortgage
-	 * .
+	 * Sub structured type of the financial instrument is a residential
+	 * mortgage.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -621,7 +621,7 @@ public class InstrumentSubStructureTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Sub structured type of the financial instrument is a residential mortgage ."
+	 * "Sub structured type of the financial instrument is a residential mortgage."
 	 * </li>
 	 * </ul>
 	 */
@@ -629,14 +629,14 @@ public class InstrumentSubStructureTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ResidentialMortgage";
-			definition = "Sub structured type of the financial instrument is a residential mortgage .";
+			definition = "Sub structured type of the financial instrument is a residential mortgage.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InstrumentSubStructureTypeCode.mmObject();
 			codeName = "RMBS";
 		}
 	};
 	/**
 	 * Sub structured type of the financial instrument is a structured covered
-	 * bond .
+	 * bond.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -654,7 +654,7 @@ public class InstrumentSubStructureTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Sub structured type of the financial instrument is a structured covered bond ."
+	 * "Sub structured type of the financial instrument is a structured covered bond."
 	 * </li>
 	 * </ul>
 	 */
@@ -662,7 +662,7 @@ public class InstrumentSubStructureTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StructuredCoveredBond";
-			definition = "Sub structured type of the financial instrument is a structured covered bond .";
+			definition = "Sub structured type of the financial instrument is a structured covered bond.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InstrumentSubStructureTypeCode.mmObject();
 			codeName = "SCBO";
 		}
@@ -699,7 +699,7 @@ public class InstrumentSubStructureTypeCode extends MMCode {
 		}
 	};
 	/**
-	 * Sub structured type of the financial instrument is a student loan trust .
+	 * Sub structured type of the financial instrument is a student loan trust.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -717,7 +717,7 @@ public class InstrumentSubStructureTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Sub structured type of the financial instrument is a student loan trust ."
+	 * "Sub structured type of the financial instrument is a student loan trust."
 	 * </li>
 	 * </ul>
 	 */
@@ -725,14 +725,14 @@ public class InstrumentSubStructureTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StudentLoanTrust";
-			definition = "Sub structured type of the financial instrument is a student loan trust .";
+			definition = "Sub structured type of the financial instrument is a student loan trust.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InstrumentSubStructureTypeCode.mmObject();
 			codeName = "STUT";
 		}
 	};
 	/**
 	 * Sub structured type of the financial instrument is a whole business
-	 * security .
+	 * security.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -750,7 +750,7 @@ public class InstrumentSubStructureTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Sub structured type of the financial instrument is a whole business security ."
+	 * "Sub structured type of the financial instrument is a whole business security."
 	 * </li>
 	 * </ul>
 	 */
@@ -758,7 +758,7 @@ public class InstrumentSubStructureTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "WholeBusinessSecurity";
-			definition = "Sub structured type of the financial instrument is a whole business security .";
+			definition = "Sub structured type of the financial instrument is a whole business security.";
 			owner_lazy = () -> com.tools20022.repository.codeset.InstrumentSubStructureTypeCode.mmObject();
 			codeName = "WBSE";
 		}
@@ -771,7 +771,7 @@ public class InstrumentSubStructureTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ABSE");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InstrumentSubStructureTypeCode";

@@ -40,18 +40,18 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardDataReading3Code#CardOnFile
- * CardDataReading3Code.mmCardOnFile}</li>
+ * CardDataReading3Code.CardOnFile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardDataReading3Code#EMVProximityReader
- * CardDataReading3Code.mmEMVProximityReader}</li>
+ * CardDataReading3Code.EMVProximityReader}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CardDataReading3Code#ICC
- * CardDataReading3Code.mmICC}</li>
+ * CardDataReading3Code.ICC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardDataReading3Code#MagneticStripe
- * CardDataReading3Code.mmMagneticStripe}</li>
+ * CardDataReading3Code.MagneticStripe}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardDataReading3Code#ProximityReader
- * CardDataReading3Code.mmProximityReader}</li>
+ * CardDataReading3Code.ProximityReader}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -60,8 +60,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,7 +70,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "CardDataReading3Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Card  writing capabilities of the terminal performing the transaction. \r\nIt correspond to the ISO 8583, field number 22-10 for the version 93, and 27-8_9 for the version 2003."
+ * "Card writing capabilities of the terminal performing the transaction. \r\nIt correspond to the ISO 8583, field number 22-10 for the version 93, and 27-8_9 for the version 2003."
  * </li>
  * </ul>
  */
@@ -206,10 +206,10 @@ public class CardDataReading3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardDataReading3Code";
-				definition = "Card  writing capabilities of the terminal performing the transaction. \r\nIt correspond to the ISO 8583, field number 22-10 for the version 93, and 27-8_9 for the version 2003.";
+				definition = "Card writing capabilities of the terminal performing the transaction. \r\nIt correspond to the ISO 8583, field number 22-10 for the version 93, and 27-8_9 for the version 2003.";
 				trace_lazy = () -> CardDataReadingCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CardDataReading3Code.CardOnFile, com.tools20022.repository.codeset.CardDataReading3Code.EMVProximityReader,
 						com.tools20022.repository.codeset.CardDataReading3Code.ICC, com.tools20022.repository.codeset.CardDataReading3Code.MagneticStripe, com.tools20022.repository.codeset.CardDataReading3Code.ProximityReader);

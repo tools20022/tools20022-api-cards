@@ -83,8 +83,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelCatalogueEntry#getBusinessProcessCatalogue
  * businessProcessCatalogue} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmcatalogue
- * GeneratedRepository.mmcatalogue}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#catalogue
+ * GeneratedRepository.catalogue}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -104,15 +104,15 @@ public class ATMCardTransactionLatestVersion {
 	final static public MMBusinessArea mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessArea() {
 			{
-				businessProcessCatalogue_lazy = () -> GeneratedRepository.mmcatalogue;
+				businessProcessCatalogue_lazy = () -> GeneratedRepository.catalogue;
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "ATM Card Transaction - Latest version - master";
 				definition = "Messages that support any card related Automated Teller Machine (ATM) transactions and services between an ATM equipment and an ATM acquirer. These services include cash withdrawals, kiosk functions and card account management transactions.";
-				code = "catp";
 				messageDefinition_lazy = () -> Arrays.asList(ATMWithdrawalRequestV02.mmObject(), ATMDepositResponseV01.mmObject(), ATMDepositRequestV01.mmObject(), ATMWithdrawalCompletionAdviceV02.mmObject(),
 						ATMInquiryResponseV02.mmObject(), ATMDepositCompletionAcknowledgementV01.mmObject(), ATMPINManagementRequestV02.mmObject(), ATMTransferRequestV01.mmObject(), ATMWithdrawalResponseV02.mmObject(),
 						ATMWithdrawalCompletionAcknowledgementV02.mmObject(), ATMPINManagementResponseV02.mmObject(), ATMDepositCompletionAdviceV01.mmObject(), ATMRejectV02.mmObject(), ATMInquiryRequestV02.mmObject(),
 						ATMCompletionAcknowledgementV02.mmObject(), ATMCompletionAdviceV02.mmObject(), ATMTransferResponseV01.mmObject());
+				code = "catp";
 			}
 		});
 		return mmObject_lazy.get();

@@ -21,13 +21,14 @@ import com.tools20022.metamodel.MMMessageBuildingBlock;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.TerminalManagementLatestVersion;
+import com.tools20022.repository.area.TerminalManagementPreviousVersion;
 import com.tools20022.repository.msg.CertificateManagementResponse1;
 import com.tools20022.repository.msg.ContentInformationType13;
 import com.tools20022.repository.msg.Header29;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -58,8 +59,8 @@ import javax.xml.bind.annotation.*;
  * xmlTag} = "CertMgmtRspn"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageDefinition#getBusinessArea
  * businessArea} =
- * {@linkplain com.tools20022.repository.area.TerminalManagementLatestVersion
- * TerminalManagementLatestVersion}</li>
+ * {@linkplain com.tools20022.repository.area.TerminalManagementPreviousVersion
+ * TerminalManagementPreviousVersion}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code catm.008.001.01}</li>
@@ -75,15 +76,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CertificateManagementResponseV01", propOrder = {"header", "certificateManagementResponse", "securityTrailer"})
 public class CertificateManagementResponseV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header29 header;
 	/**
-	 * Information related to the protocol management.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,7 +105,7 @@ public class CertificateManagementResponseV01 {
 	 * definition} = "Information related to the protocol management."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CertificateManagementResponseV01, Header29> mmHeader = new MMMessageBuildingBlock<CertificateManagementResponseV01, Header29>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,18 +116,21 @@ public class CertificateManagementResponseV01 {
 			complexType_lazy = () -> Header29.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CertificateManagementResponseV01.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header29 getValue(CertificateManagementResponseV01 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(CertificateManagementResponseV01 obj, Header29 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "CertMgmtRspn", required = true)
 	protected CertificateManagementResponse1 certificateManagementResponse;
 	/**
-	 * Information related to the result of the certificate management request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,7 +153,7 @@ public class CertificateManagementResponseV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCertificateManagementResponse = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CertificateManagementResponseV01, CertificateManagementResponse1> mmCertificateManagementResponse = new MMMessageBuildingBlock<CertificateManagementResponseV01, CertificateManagementResponse1>() {
 		{
 			xmlTag = "CertMgmtRspn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -159,18 +164,21 @@ public class CertificateManagementResponseV01 {
 			complexType_lazy = () -> CertificateManagementResponse1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CertificateManagementResponseV01.class.getMethod("getCertificateManagementResponse", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CertificateManagementResponse1 getValue(CertificateManagementResponseV01 obj) {
+			return obj.getCertificateManagementResponse();
+		}
+
+		@Override
+		public void setValue(CertificateManagementResponseV01 obj, CertificateManagementResponse1 value) {
+			obj.setCertificateManagementResponse(value);
 		}
 	};
+	@XmlElement(name = "SctyTrlr")
 	protected ContentInformationType13 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC or a digital signature.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -192,7 +200,7 @@ public class CertificateManagementResponseV01 {
 	 * "Trailer of the message containing a MAC or a digital signature."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<CertificateManagementResponseV01, Optional<ContentInformationType13>> mmSecurityTrailer = new MMMessageBuildingBlock<CertificateManagementResponseV01, Optional<ContentInformationType13>>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -203,12 +211,14 @@ public class CertificateManagementResponseV01 {
 			complexType_lazy = () -> ContentInformationType13.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CertificateManagementResponseV01.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType13> getValue(CertificateManagementResponseV01 obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(CertificateManagementResponseV01 obj, Optional<ContentInformationType13> value) {
+			obj.setSecurityTrailer(value.orElse(null));
 		}
 	};
 
@@ -220,7 +230,7 @@ public class CertificateManagementResponseV01 {
 				definition = "The CertificateManagementResponse is sent by a terminal manager in response to a CertificateManagementRequest to provide the outcome of the requested service.";
 				rootElement = "Document";
 				xmlTag = "CertMgmtRspn";
-				businessArea_lazy = () -> TerminalManagementLatestVersion.mmObject();
+				businessArea_lazy = () -> TerminalManagementPreviousVersion.mmObject();
 				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.catm.CertificateManagementResponseV01.mmHeader,
 						com.tools20022.repository.area.catm.CertificateManagementResponseV01.mmCertificateManagementResponse, com.tools20022.repository.area.catm.CertificateManagementResponseV01.mmSecurityTrailer);
 				messageDefinitionIdentifier_lazy = () -> new MMMessageDefinitionIdentifier() {
@@ -241,34 +251,34 @@ public class CertificateManagementResponseV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header29 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header29 header) {
-		this.header = header;
+	public CertificateManagementResponseV01 setHeader(Header29 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "CertMgmtRspn", required = true)
 	public CertificateManagementResponse1 getCertificateManagementResponse() {
 		return certificateManagementResponse;
 	}
 
-	public void setCertificateManagementResponse(CertificateManagementResponse1 certificateManagementResponse) {
-		this.certificateManagementResponse = certificateManagementResponse;
+	public CertificateManagementResponseV01 setCertificateManagementResponse(CertificateManagementResponse1 certificateManagementResponse) {
+		this.certificateManagementResponse = Objects.requireNonNull(certificateManagementResponse);
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr")
-	public ContentInformationType13 getSecurityTrailer() {
-		return securityTrailer;
+	public Optional<ContentInformationType13> getSecurityTrailer() {
+		return securityTrailer == null ? Optional.empty() : Optional.of(securityTrailer);
 	}
 
-	public void setSecurityTrailer(ContentInformationType13 securityTrailer) {
+	public CertificateManagementResponseV01 setSecurityTrailer(ContentInformationType13 securityTrailer) {
 		this.securityTrailer = securityTrailer;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:catm.008.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:catm.008.001.01")
 	static public class Document {
 		@XmlElement(name = "CertMgmtRspn", required = true)
 		public CertificateManagementResponseV01 messageBody;

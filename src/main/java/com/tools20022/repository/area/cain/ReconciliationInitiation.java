@@ -25,9 +25,10 @@ import com.tools20022.repository.area.AcquirertoIssuerCardTransactionLatestVersi
 import com.tools20022.repository.msg.AcquirerReconciliationInitiation1;
 import com.tools20022.repository.msg.ContentInformationType15;
 import com.tools20022.repository.msg.Header17;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -75,15 +76,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ReconciliationInitiation", propOrder = {"header", "reconciliationInitiation", "securityTrailer"})
 public class ReconciliationInitiation {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header17 header;
 	/**
-	 * Information related to the protocol management.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,7 +105,7 @@ public class ReconciliationInitiation {
 	 * definition} = "Information related to the protocol management."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ReconciliationInitiation, Header17> mmHeader = new MMMessageBuildingBlock<ReconciliationInitiation, Header17>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,18 +116,21 @@ public class ReconciliationInitiation {
 			complexType_lazy = () -> Header17.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ReconciliationInitiation.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header17 getValue(ReconciliationInitiation obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(ReconciliationInitiation obj, Header17 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "RcncltnInitn", required = true)
 	protected AcquirerReconciliationInitiation1 reconciliationInitiation;
 	/**
-	 * Information related to the reconciliation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,7 +151,7 @@ public class ReconciliationInitiation {
 	 * definition} = "Information related to the reconciliation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReconciliationInitiation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ReconciliationInitiation, AcquirerReconciliationInitiation1> mmReconciliationInitiation = new MMMessageBuildingBlock<ReconciliationInitiation, AcquirerReconciliationInitiation1>() {
 		{
 			xmlTag = "RcncltnInitn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -157,18 +162,21 @@ public class ReconciliationInitiation {
 			complexType_lazy = () -> AcquirerReconciliationInitiation1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ReconciliationInitiation.class.getMethod("getReconciliationInitiation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AcquirerReconciliationInitiation1 getValue(ReconciliationInitiation obj) {
+			return obj.getReconciliationInitiation();
+		}
+
+		@Override
+		public void setValue(ReconciliationInitiation obj, AcquirerReconciliationInitiation1 value) {
+			obj.setReconciliationInitiation(value);
 		}
 	};
+	@XmlElement(name = "SctyTrlr")
 	protected ContentInformationType15 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -189,7 +197,7 @@ public class ReconciliationInitiation {
 	 * definition} = "Trailer of the message containing a MAC."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ReconciliationInitiation, Optional<ContentInformationType15>> mmSecurityTrailer = new MMMessageBuildingBlock<ReconciliationInitiation, Optional<ContentInformationType15>>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -200,12 +208,14 @@ public class ReconciliationInitiation {
 			complexType_lazy = () -> ContentInformationType15.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ReconciliationInitiation.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType15> getValue(ReconciliationInitiation obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(ReconciliationInitiation obj, Optional<ContentInformationType15> value) {
+			obj.setSecurityTrailer(value.orElse(null));
 		}
 	};
 
@@ -238,34 +248,34 @@ public class ReconciliationInitiation {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header17 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header17 header) {
-		this.header = header;
+	public ReconciliationInitiation setHeader(Header17 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "RcncltnInitn", required = true)
 	public AcquirerReconciliationInitiation1 getReconciliationInitiation() {
 		return reconciliationInitiation;
 	}
 
-	public void setReconciliationInitiation(AcquirerReconciliationInitiation1 reconciliationInitiation) {
-		this.reconciliationInitiation = reconciliationInitiation;
+	public ReconciliationInitiation setReconciliationInitiation(AcquirerReconciliationInitiation1 reconciliationInitiation) {
+		this.reconciliationInitiation = Objects.requireNonNull(reconciliationInitiation);
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr")
-	public ContentInformationType15 getSecurityTrailer() {
-		return securityTrailer;
+	public Optional<ContentInformationType15> getSecurityTrailer() {
+		return securityTrailer == null ? Optional.empty() : Optional.of(securityTrailer);
 	}
 
-	public void setSecurityTrailer(ContentInformationType15 securityTrailer) {
+	public ReconciliationInitiation setSecurityTrailer(ContentInformationType15 securityTrailer) {
 		this.securityTrailer = securityTrailer;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:cain.007.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:cain.007.001.01")
 	static public class Document {
 		@XmlElement(name = "RcncltnInitn", required = true)
 		public ReconciliationInitiation messageBody;

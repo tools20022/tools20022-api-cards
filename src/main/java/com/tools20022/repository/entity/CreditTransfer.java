@@ -19,10 +19,12 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.CashStandingOrder;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Payment made by transferring an amount of money from a debtor to a creditor.
@@ -57,8 +59,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,9 +78,8 @@ public class CreditTransfer {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected YesNoIndicator standingOrder;
 	/**
-	 * Transaction is a standing order. This information is derived from the
-	 * presence of detailed standing order specification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -104,7 +105,7 @@ public class CreditTransfer {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStandingOrder = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CreditTransfer, YesNoIndicator> mmStandingOrder = new MMBusinessAttribute<CreditTransfer, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CreditTransfer.mmObject();
@@ -116,18 +117,20 @@ public class CreditTransfer {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CreditTransfer.class.getMethod("getStandingOrder", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(CreditTransfer obj) {
+			return obj.getStandingOrder();
+		}
+
+		@Override
+		public void setValue(CreditTransfer obj, YesNoIndicator value) {
+			obj.setStandingOrder(value);
 		}
 	};
 	protected CashStandingOrder relatedStandingOrder;
 	/**
-	 * Standing order which creates the credit transfers.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,7 +161,7 @@ public class CreditTransfer {
 	 * definition} = "Standing order which creates the credit transfers."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedStandingOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CreditTransfer, Optional<CashStandingOrder>> mmRelatedStandingOrder = new MMBusinessAssociationEnd<CreditTransfer, Optional<CashStandingOrder>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CreditTransfer.mmObject();
@@ -167,20 +170,30 @@ public class CreditTransfer {
 			definition = "Standing order which creates the credit transfers.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmCreditTransfer;
+			opposite_lazy = () -> CashStandingOrder.mmCreditTransfer;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashStandingOrder.mmObject();
+			type_lazy = () -> CashStandingOrder.mmObject();
+		}
+
+		@Override
+		public Optional<CashStandingOrder> getValue(CreditTransfer obj) {
+			return obj.getRelatedStandingOrder();
+		}
+
+		@Override
+		public void setValue(CreditTransfer obj, Optional<CashStandingOrder> value) {
+			obj.setRelatedStandingOrder(value.orElse(null));
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CreditTransfer";
 				definition = "Payment made by transferring an amount of money from a debtor to a creditor. The payment flows through one or more financial institutions or systems.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashStandingOrder.mmCreditTransfer);
+				associationDomain_lazy = () -> Arrays.asList(CashStandingOrder.mmCreditTransfer);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CreditTransfer.mmStandingOrder, com.tools20022.repository.entity.CreditTransfer.mmRelatedStandingOrder);
 			}
 
@@ -196,15 +209,17 @@ public class CreditTransfer {
 		return standingOrder;
 	}
 
-	public void setStandingOrder(YesNoIndicator standingOrder) {
-		this.standingOrder = standingOrder;
+	public CreditTransfer setStandingOrder(YesNoIndicator standingOrder) {
+		this.standingOrder = Objects.requireNonNull(standingOrder);
+		return this;
 	}
 
-	public CashStandingOrder getRelatedStandingOrder() {
-		return relatedStandingOrder;
+	public Optional<CashStandingOrder> getRelatedStandingOrder() {
+		return relatedStandingOrder == null ? Optional.empty() : Optional.of(relatedStandingOrder);
 	}
 
-	public void setRelatedStandingOrder(com.tools20022.repository.entity.CashStandingOrder relatedStandingOrder) {
+	public CreditTransfer setRelatedStandingOrder(CashStandingOrder relatedStandingOrder) {
 		this.relatedStandingOrder = relatedStandingOrder;
+		return this;
 	}
 }

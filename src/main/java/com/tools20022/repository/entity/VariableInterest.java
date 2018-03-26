@@ -17,16 +17,19 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.FrequencyCode;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max16Text;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Specifies the estimated interest rate and the parameters used for determining
@@ -106,8 +109,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -125,9 +128,8 @@ public class VariableInterest {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected FrequencyCode variableRateChangeFrequency;
 	/**
-	 * Specifies the frequency of change to the variable rate of an interest
-	 * bearing instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,7 +155,7 @@ public class VariableInterest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmVariableRateChangeFrequency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VariableInterest, FrequencyCode> mmVariableRateChangeFrequency = new MMBusinessAttribute<VariableInterest, FrequencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
@@ -165,20 +167,20 @@ public class VariableInterest {
 			simpleType_lazy = () -> FrequencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VariableInterest.class.getMethod("getVariableRateChangeFrequency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FrequencyCode getValue(VariableInterest obj) {
+			return obj.getVariableRateChangeFrequency();
+		}
+
+		@Override
+		public void setValue(VariableInterest obj, FrequencyCode value) {
+			obj.setVariableRateChangeFrequency(value);
 		}
 	};
 	protected ISODateTime fixingDate;
 	/**
-	 * Date/time at which the rate determination is made, also called
-	 * determination date, for instance the date the interest rate of a floating
-	 * rate note will be/was calculated, according to the terms of the issue.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -190,6 +192,9 @@ public class VariableInterest {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.VariableInterest
 	 * VariableInterest}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :98a::FRNR</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -203,10 +208,11 @@ public class VariableInterest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFixingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VariableInterest, ISODateTime> mmFixingDate = new MMBusinessAttribute<VariableInterest, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":98a::FRNR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FixingDate";
 			definition = "Date/time at which the rate determination is made, also called determination date, for instance the date the interest rate of a floating rate note will be/was calculated, according to the terms of the issue.";
@@ -215,18 +221,20 @@ public class VariableInterest {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VariableInterest.class.getMethod("getFixingDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(VariableInterest obj) {
+			return obj.getFixingDate();
+		}
+
+		@Override
+		public void setValue(VariableInterest obj, ISODateTime value) {
+			obj.setFixingDate(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.InterestCalculation> interestCalculation;
+	protected List<InterestCalculation> interestCalculation;
 	/**
-	 * Interest calculation for which a variable interest is used.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -258,7 +266,7 @@ public class VariableInterest {
 	 * "Interest calculation for which a variable interest is used."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInterestCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<VariableInterest, List<InterestCalculation>> mmInterestCalculation = new MMBusinessAssociationEnd<VariableInterest, List<InterestCalculation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
@@ -266,15 +274,25 @@ public class VariableInterest {
 			name = "InterestCalculation";
 			definition = "Interest calculation for which a variable interest is used.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InterestCalculation.mmVariableInterest;
+			opposite_lazy = () -> InterestCalculation.mmVariableInterest;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InterestCalculation.mmObject();
+			type_lazy = () -> InterestCalculation.mmObject();
+		}
+
+		@Override
+		public List<InterestCalculation> getValue(VariableInterest obj) {
+			return obj.getInterestCalculation();
+		}
+
+		@Override
+		public void setValue(VariableInterest obj, List<InterestCalculation> value) {
+			obj.setInterestCalculation(value);
 		}
 	};
 	protected ISODateTime reportingDate;
 	/**
-	 * Last date the new interest rate must be reported to the market.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -298,7 +316,7 @@ public class VariableInterest {
 	 * "Last date the new interest rate must be reported to the market."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReportingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VariableInterest, ISODateTime> mmReportingDate = new MMBusinessAttribute<VariableInterest, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
@@ -310,19 +328,20 @@ public class VariableInterest {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VariableInterest.class.getMethod("getReportingDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(VariableInterest obj) {
+			return obj.getReportingDate();
+		}
+
+		@Override
+		public void setValue(VariableInterest obj, ISODateTime value) {
+			obj.setReportingDate(value);
 		}
 	};
 	protected ISODateTime resetDate;
 	/**
-	 * Date/time at which the interest rate of an interest bearing instrument
-	 * will be reset, according to the terms of the issue.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -347,7 +366,7 @@ public class VariableInterest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmResetDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VariableInterest, ISODateTime> mmResetDate = new MMBusinessAttribute<VariableInterest, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
@@ -359,19 +378,20 @@ public class VariableInterest {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VariableInterest.class.getMethod("getResetDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(VariableInterest obj) {
+			return obj.getResetDate();
+		}
+
+		@Override
+		public void setValue(VariableInterest obj, ISODateTime value) {
+			obj.setResetDate(value);
 		}
 	};
 	protected Max16Text arrears;
 	/**
-	 * Indicates that the rate reset will occur at the end of the payment period
-	 * (True case)
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -396,7 +416,7 @@ public class VariableInterest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmArrears = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VariableInterest, Max16Text> mmArrears = new MMBusinessAttribute<VariableInterest, Max16Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
@@ -408,18 +428,20 @@ public class VariableInterest {
 			simpleType_lazy = () -> Max16Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VariableInterest.class.getMethod("getArrears", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max16Text getValue(VariableInterest obj) {
+			return obj.getArrears();
+		}
+
+		@Override
+		public void setValue(VariableInterest obj, Max16Text value) {
+			obj.setArrears(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Index> index;
+	protected List<Index> index;
 	/**
-	 * Identifies the index used for calculating the interest
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -449,7 +471,7 @@ public class VariableInterest {
 	 * definition} = "Identifies the index used for calculating the interest"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIndex = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<VariableInterest, List<Index>> mmIndex = new MMBusinessAssociationEnd<VariableInterest, List<Index>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
@@ -457,15 +479,25 @@ public class VariableInterest {
 			name = "Index";
 			definition = "Identifies the index used for calculating the interest";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Index.mmVariableInterest;
+			opposite_lazy = () -> Index.mmVariableInterest;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Index.mmObject();
+			type_lazy = () -> Index.mmObject();
+		}
+
+		@Override
+		public List<Index> getValue(VariableInterest obj) {
+			return obj.getIndex();
+		}
+
+		@Override
+		public void setValue(VariableInterest obj, List<Index> value) {
+			obj.setIndex(value);
 		}
 	};
 	protected YieldCalculation yieldCalculation;
 	/**
-	 * Yield calculation for which a variable interest is used.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -496,7 +528,7 @@ public class VariableInterest {
 	 * definition} = "Yield calculation for which a variable interest is used."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmYieldCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<VariableInterest, YieldCalculation> mmYieldCalculation = new MMBusinessAssociationEnd<VariableInterest, YieldCalculation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
@@ -505,16 +537,25 @@ public class VariableInterest {
 			definition = "Yield calculation for which a variable interest is used.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmVariableInterest;
+			opposite_lazy = () -> YieldCalculation.mmVariableInterest;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.YieldCalculation.mmObject();
+			type_lazy = () -> YieldCalculation.mmObject();
+		}
+
+		@Override
+		public YieldCalculation getValue(VariableInterest obj) {
+			return obj.getYieldCalculation();
+		}
+
+		@Override
+		public void setValue(VariableInterest obj, YieldCalculation value) {
+			obj.setYieldCalculation(value);
 		}
 	};
 	protected Security benchmarkReference;
 	/**
-	 * Benchmark rate against which variable rate instruments are measured to
-	 * determine the interest rate, for example, LIBOR.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -546,7 +587,7 @@ public class VariableInterest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBenchmarkReference = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<VariableInterest, Security> mmBenchmarkReference = new MMBusinessAssociationEnd<VariableInterest, Security>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
@@ -555,16 +596,25 @@ public class VariableInterest {
 			definition = "Benchmark rate against which variable rate instruments are measured to determine the interest rate, for example, LIBOR.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmRelatedVariableInterest;
+			opposite_lazy = () -> Security.mmRelatedVariableInterest;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+			type_lazy = () -> Security.mmObject();
+		}
+
+		@Override
+		public Security getValue(VariableInterest obj) {
+			return obj.getBenchmarkReference();
+		}
+
+		@Override
+		public void setValue(VariableInterest obj, Security value) {
+			obj.setBenchmarkReference(value);
 		}
 	};
 	protected PercentageRate estimatedInterestRate;
 	/**
-	 * Estimated per annum ratio of interest paid to the principal amount of the
-	 * financial instrument for a specific period of time.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -590,7 +640,7 @@ public class VariableInterest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEstimatedInterestRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VariableInterest, PercentageRate> mmEstimatedInterestRate = new MMBusinessAttribute<VariableInterest, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
@@ -602,18 +652,20 @@ public class VariableInterest {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VariableInterest.class.getMethod("getEstimatedInterestRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(VariableInterest obj) {
+			return obj.getEstimatedInterestRate();
+		}
+
+		@Override
+		public void setValue(VariableInterest obj, PercentageRate value) {
+			obj.setEstimatedInterestRate(value);
 		}
 	};
 	protected ISODateTime variableRateValueDate;
 	/**
-	 * Date/time as of which the variable rate is valid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -636,7 +688,7 @@ public class VariableInterest {
 	 * definition} = "Date/time as of which the variable rate is valid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmVariableRateValueDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<VariableInterest, ISODateTime> mmVariableRateValueDate = new MMBusinessAttribute<VariableInterest, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
@@ -648,18 +700,20 @@ public class VariableInterest {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return VariableInterest.class.getMethod("getVariableRateValueDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(VariableInterest obj) {
+			return obj.getVariableRateValueDate();
+		}
+
+		@Override
+		public void setValue(VariableInterest obj, ISODateTime value) {
+			obj.setVariableRateValueDate(value);
 		}
 	};
 	protected LifeCalculation lifeCalculation;
 	/**
-	 * Lfe calculation for which a variable interest is used.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -690,7 +744,7 @@ public class VariableInterest {
 	 * definition} = "Lfe calculation for which a variable interest is used."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmLifeCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<VariableInterest, LifeCalculation> mmLifeCalculation = new MMBusinessAssociationEnd<VariableInterest, LifeCalculation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
@@ -699,15 +753,25 @@ public class VariableInterest {
 			definition = "Lfe calculation for which a variable interest is used.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.LifeCalculation.mmVariableInterest;
+			opposite_lazy = () -> LifeCalculation.mmVariableInterest;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.LifeCalculation.mmObject();
+			type_lazy = () -> LifeCalculation.mmObject();
+		}
+
+		@Override
+		public LifeCalculation getValue(VariableInterest obj) {
+			return obj.getLifeCalculation();
+		}
+
+		@Override
+		public void setValue(VariableInterest obj, LifeCalculation value) {
+			obj.setLifeCalculation(value);
 		}
 	};
 	protected DurationCalculation durationCalculation;
 	/**
-	 * Duration calculation for which a variable interest is used.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -739,7 +803,7 @@ public class VariableInterest {
 	 * "Duration calculation for which a variable interest is used."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDurationCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<VariableInterest, DurationCalculation> mmDurationCalculation = new MMBusinessAssociationEnd<VariableInterest, DurationCalculation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.VariableInterest.mmObject();
@@ -748,22 +812,31 @@ public class VariableInterest {
 			definition = "Duration calculation for which a variable interest is used.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmVariableInterest;
+			opposite_lazy = () -> DurationCalculation.mmVariableInterest;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DurationCalculation.mmObject();
+			type_lazy = () -> DurationCalculation.mmObject();
+		}
+
+		@Override
+		public DurationCalculation getValue(VariableInterest obj) {
+			return obj.getDurationCalculation();
+		}
+
+		@Override
+		public void setValue(VariableInterest obj, DurationCalculation value) {
+			obj.setDurationCalculation(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "VariableInterest";
 				definition = "Specifies the estimated interest rate and the parameters used for determining its value.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmRelatedVariableInterest, com.tools20022.repository.entity.InterestCalculation.mmVariableInterest,
-						com.tools20022.repository.entity.Index.mmVariableInterest, com.tools20022.repository.entity.YieldCalculation.mmVariableInterest, com.tools20022.repository.entity.DurationCalculation.mmVariableInterest,
-						com.tools20022.repository.entity.LifeCalculation.mmVariableInterest);
+				associationDomain_lazy = () -> Arrays.asList(Security.mmRelatedVariableInterest, InterestCalculation.mmVariableInterest, Index.mmVariableInterest, YieldCalculation.mmVariableInterest, DurationCalculation.mmVariableInterest,
+						LifeCalculation.mmVariableInterest);
 				element_lazy = () -> Arrays
 						.asList(com.tools20022.repository.entity.VariableInterest.mmVariableRateChangeFrequency, com.tools20022.repository.entity.VariableInterest.mmFixingDate,
 								com.tools20022.repository.entity.VariableInterest.mmInterestCalculation, com.tools20022.repository.entity.VariableInterest.mmReportingDate, com.tools20022.repository.entity.VariableInterest.mmResetDate,
@@ -785,103 +858,116 @@ public class VariableInterest {
 		return variableRateChangeFrequency;
 	}
 
-	public void setVariableRateChangeFrequency(FrequencyCode variableRateChangeFrequency) {
-		this.variableRateChangeFrequency = variableRateChangeFrequency;
+	public VariableInterest setVariableRateChangeFrequency(FrequencyCode variableRateChangeFrequency) {
+		this.variableRateChangeFrequency = Objects.requireNonNull(variableRateChangeFrequency);
+		return this;
 	}
 
 	public ISODateTime getFixingDate() {
 		return fixingDate;
 	}
 
-	public void setFixingDate(ISODateTime fixingDate) {
-		this.fixingDate = fixingDate;
+	public VariableInterest setFixingDate(ISODateTime fixingDate) {
+		this.fixingDate = Objects.requireNonNull(fixingDate);
+		return this;
 	}
 
 	public List<InterestCalculation> getInterestCalculation() {
-		return interestCalculation;
+		return interestCalculation == null ? interestCalculation = new ArrayList<>() : interestCalculation;
 	}
 
-	public void setInterestCalculation(List<com.tools20022.repository.entity.InterestCalculation> interestCalculation) {
-		this.interestCalculation = interestCalculation;
+	public VariableInterest setInterestCalculation(List<InterestCalculation> interestCalculation) {
+		this.interestCalculation = Objects.requireNonNull(interestCalculation);
+		return this;
 	}
 
 	public ISODateTime getReportingDate() {
 		return reportingDate;
 	}
 
-	public void setReportingDate(ISODateTime reportingDate) {
-		this.reportingDate = reportingDate;
+	public VariableInterest setReportingDate(ISODateTime reportingDate) {
+		this.reportingDate = Objects.requireNonNull(reportingDate);
+		return this;
 	}
 
 	public ISODateTime getResetDate() {
 		return resetDate;
 	}
 
-	public void setResetDate(ISODateTime resetDate) {
-		this.resetDate = resetDate;
+	public VariableInterest setResetDate(ISODateTime resetDate) {
+		this.resetDate = Objects.requireNonNull(resetDate);
+		return this;
 	}
 
 	public Max16Text getArrears() {
 		return arrears;
 	}
 
-	public void setArrears(Max16Text arrears) {
-		this.arrears = arrears;
+	public VariableInterest setArrears(Max16Text arrears) {
+		this.arrears = Objects.requireNonNull(arrears);
+		return this;
 	}
 
 	public List<Index> getIndex() {
-		return index;
+		return index == null ? index = new ArrayList<>() : index;
 	}
 
-	public void setIndex(List<com.tools20022.repository.entity.Index> index) {
-		this.index = index;
+	public VariableInterest setIndex(List<Index> index) {
+		this.index = Objects.requireNonNull(index);
+		return this;
 	}
 
 	public YieldCalculation getYieldCalculation() {
 		return yieldCalculation;
 	}
 
-	public void setYieldCalculation(com.tools20022.repository.entity.YieldCalculation yieldCalculation) {
-		this.yieldCalculation = yieldCalculation;
+	public VariableInterest setYieldCalculation(YieldCalculation yieldCalculation) {
+		this.yieldCalculation = Objects.requireNonNull(yieldCalculation);
+		return this;
 	}
 
 	public Security getBenchmarkReference() {
 		return benchmarkReference;
 	}
 
-	public void setBenchmarkReference(com.tools20022.repository.entity.Security benchmarkReference) {
-		this.benchmarkReference = benchmarkReference;
+	public VariableInterest setBenchmarkReference(Security benchmarkReference) {
+		this.benchmarkReference = Objects.requireNonNull(benchmarkReference);
+		return this;
 	}
 
 	public PercentageRate getEstimatedInterestRate() {
 		return estimatedInterestRate;
 	}
 
-	public void setEstimatedInterestRate(PercentageRate estimatedInterestRate) {
-		this.estimatedInterestRate = estimatedInterestRate;
+	public VariableInterest setEstimatedInterestRate(PercentageRate estimatedInterestRate) {
+		this.estimatedInterestRate = Objects.requireNonNull(estimatedInterestRate);
+		return this;
 	}
 
 	public ISODateTime getVariableRateValueDate() {
 		return variableRateValueDate;
 	}
 
-	public void setVariableRateValueDate(ISODateTime variableRateValueDate) {
-		this.variableRateValueDate = variableRateValueDate;
+	public VariableInterest setVariableRateValueDate(ISODateTime variableRateValueDate) {
+		this.variableRateValueDate = Objects.requireNonNull(variableRateValueDate);
+		return this;
 	}
 
 	public LifeCalculation getLifeCalculation() {
 		return lifeCalculation;
 	}
 
-	public void setLifeCalculation(com.tools20022.repository.entity.LifeCalculation lifeCalculation) {
-		this.lifeCalculation = lifeCalculation;
+	public VariableInterest setLifeCalculation(LifeCalculation lifeCalculation) {
+		this.lifeCalculation = Objects.requireNonNull(lifeCalculation);
+		return this;
 	}
 
 	public DurationCalculation getDurationCalculation() {
 		return durationCalculation;
 	}
 
-	public void setDurationCalculation(com.tools20022.repository.entity.DurationCalculation durationCalculation) {
-		this.durationCalculation = durationCalculation;
+	public VariableInterest setDurationCalculation(DurationCalculation durationCalculation) {
+		this.durationCalculation = Objects.requireNonNull(durationCalculation);
+		return this;
 	}
 }

@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,17 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "UTMCoordinates1", propOrder = {"UTMZone", "UTMEastward", "UTMNorthward"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "UTMCoordinates1", propOrder = {"uTMZone", "uTMEastward", "uTMNorthward"})
 public class UTMCoordinates1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "UTMZone", required = true)
 	protected Max16Text uTMZone;
 	/**
-	 * UTM grid zone combination of the longitude zone (1 to 60) and the
-	 * latitude band, C to X, excluding I and O (for example Eiffel tower UTM
-	 * zone is 31U).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -102,9 +102,9 @@ public class UTMCoordinates1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUTMZone = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UTMCoordinates1, Max16Text> mmUTMZone = new MMMessageAttribute<UTMCoordinates1, Max16Text>() {
 		{
-			componentContext_lazy = () -> UTMCoordinates1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UTMCoordinates1.mmObject();
 			isDerived = false;
 			xmlTag = "UTMZone";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,12 +114,22 @@ public class UTMCoordinates1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max16Text.mmObject();
 		}
+
+		@Override
+		public Max16Text getValue(UTMCoordinates1 obj) {
+			return obj.getUTMZone();
+		}
+
+		@Override
+		public void setValue(UTMCoordinates1 obj, Max16Text value) {
+			obj.setUTMZone(value);
+		}
 	};
+	@XmlElement(name = "UTMEstwrd", required = true)
 	protected Number uTMEastward;
 	/**
-	 * X-coordinate of the Universal Transverse Mercator coordinate system in
-	 * meters (for example 448 265m for Eiffel Tower X-coordinate).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,9 +156,9 @@ public class UTMCoordinates1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUTMEastward = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UTMCoordinates1, Number> mmUTMEastward = new MMMessageAttribute<UTMCoordinates1, Number>() {
 		{
-			componentContext_lazy = () -> UTMCoordinates1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UTMCoordinates1.mmObject();
 			isDerived = false;
 			xmlTag = "UTMEstwrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -158,12 +168,22 @@ public class UTMCoordinates1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Number getValue(UTMCoordinates1 obj) {
+			return obj.getUTMEastward();
+		}
+
+		@Override
+		public void setValue(UTMCoordinates1 obj, Number value) {
+			obj.setUTMEastward(value);
+		}
 	};
+	@XmlElement(name = "UTMNrthwrd", required = true)
 	protected Number uTMNorthward;
 	/**
-	 * Y-coordinate of the Universal Transverse Mercator coordinate system (for
-	 * example 5 411 920m for Eiffel Tower Y-coordinate).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -190,9 +210,9 @@ public class UTMCoordinates1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUTMNorthward = new MMMessageAttribute() {
+	public static final MMMessageAttribute<UTMCoordinates1, Number> mmUTMNorthward = new MMMessageAttribute<UTMCoordinates1, Number>() {
 		{
-			componentContext_lazy = () -> UTMCoordinates1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.UTMCoordinates1.mmObject();
 			isDerived = false;
 			xmlTag = "UTMNrthwrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -202,13 +222,23 @@ public class UTMCoordinates1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Number getValue(UTMCoordinates1 obj) {
+			return obj.getUTMNorthward();
+		}
+
+		@Override
+		public void setValue(UTMCoordinates1 obj, Number value) {
+			obj.setUTMNorthward(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(UTMCoordinates1.mmUTMZone, UTMCoordinates1.mmUTMEastward, UTMCoordinates1.mmUTMNorthward);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.UTMCoordinates1.mmUTMZone, com.tools20022.repository.msg.UTMCoordinates1.mmUTMEastward, com.tools20022.repository.msg.UTMCoordinates1.mmUTMNorthward);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UTMCoordinates1";
 				definition = "Location on the Earth specified by the Universal Transverse Mercator coordinate system, using the WGS84 geodesic system.";
@@ -217,30 +247,30 @@ public class UTMCoordinates1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "UTMZone", required = true)
 	public Max16Text getUTMZone() {
 		return uTMZone;
 	}
 
-	public void setUTMZone(Max16Text uTMZone) {
-		this.uTMZone = uTMZone;
+	public UTMCoordinates1 setUTMZone(Max16Text uTMZone) {
+		this.uTMZone = Objects.requireNonNull(uTMZone);
+		return this;
 	}
 
-	@XmlElement(name = "UTMEstwrd", required = true)
 	public Number getUTMEastward() {
 		return uTMEastward;
 	}
 
-	public void setUTMEastward(Number uTMEastward) {
-		this.uTMEastward = uTMEastward;
+	public UTMCoordinates1 setUTMEastward(Number uTMEastward) {
+		this.uTMEastward = Objects.requireNonNull(uTMEastward);
+		return this;
 	}
 
-	@XmlElement(name = "UTMNrthwrd", required = true)
 	public Number getUTMNorthward() {
 		return uTMNorthward;
 	}
 
-	public void setUTMNorthward(Number uTMNorthward) {
-		this.uTMNorthward = uTMNorthward;
+	public UTMCoordinates1 setUTMNorthward(Number uTMNorthward) {
+		this.uTMNorthward = Objects.requireNonNull(uTMNorthward);
+		return this;
 	}
 }

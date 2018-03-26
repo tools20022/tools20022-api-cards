@@ -38,49 +38,49 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability4Code#AccountDigitalSignature
- * CardholderVerificationCapability4Code.mmAccountDigitalSignature}</li>
+ * CardholderVerificationCapability4Code.AccountDigitalSignature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability4Code#CardholderData
- * CardholderVerificationCapability4Code.mmCardholderData}</li>
+ * CardholderVerificationCapability4Code.CardholderData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability4Code#ManualSignature
- * CardholderVerificationCapability4Code.mmManualSignature}</li>
+ * CardholderVerificationCapability4Code.ManualSignature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability4Code#ManualVerification
- * CardholderVerificationCapability4Code.mmManualVerification}</li>
+ * CardholderVerificationCapability4Code.ManualVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability4Code#OfflineBiographics
- * CardholderVerificationCapability4Code.mmOfflineBiographics}</li>
+ * CardholderVerificationCapability4Code.OfflineBiographics}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability4Code#OfflineBiometrics
- * CardholderVerificationCapability4Code.mmOfflineBiometrics}</li>
+ * CardholderVerificationCapability4Code.OfflineBiometrics}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability4Code#OfflineDigitalSignature
- * CardholderVerificationCapability4Code.mmOfflineDigitalSignature}</li>
+ * CardholderVerificationCapability4Code.OfflineDigitalSignature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability4Code#OfflinePINClear
- * CardholderVerificationCapability4Code.mmOfflinePINClear}</li>
+ * CardholderVerificationCapability4Code.OfflinePINClear}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability4Code#OfflinePINEncrypted
- * CardholderVerificationCapability4Code.mmOfflinePINEncrypted}</li>
+ * CardholderVerificationCapability4Code.OfflinePINEncrypted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability4Code#OnLinePIN
- * CardholderVerificationCapability4Code.mmOnLinePIN}</li>
+ * CardholderVerificationCapability4Code.OnLinePIN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability4Code#PKISignature
- * CardholderVerificationCapability4Code.mmPKISignature}</li>
+ * CardholderVerificationCapability4Code.PKISignature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability4Code#SecureElectronicCommerce
- * CardholderVerificationCapability4Code.mmSecureElectronicCommerce}</li>
+ * CardholderVerificationCapability4Code.SecureElectronicCommerce}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability4Code#OnLineBiometrics
- * CardholderVerificationCapability4Code.mmOnLineBiometrics}</li>
+ * CardholderVerificationCapability4Code.OnLineBiometrics}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability4Code#NoCapabilities
- * CardholderVerificationCapability4Code.mmNoCapabilities}</li>
+ * CardholderVerificationCapability4Code.NoCapabilities}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability4Code#Other
- * CardholderVerificationCapability4Code.mmOther}</li>
+ * CardholderVerificationCapability4Code.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -89,8 +89,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -127,7 +127,7 @@ public class CardholderVerificationCapability4Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability2Code#AccountDigitalSignature
-	 * CardholderVerificationCapability2Code.mmAccountDigitalSignature}</li>
+	 * CardholderVerificationCapability2Code.AccountDigitalSignature}</li>
 	 * </ul>
 	 */
 	public static final CardholderVerificationCapability4Code AccountDigitalSignature = new CardholderVerificationCapability4Code() {
@@ -157,7 +157,7 @@ public class CardholderVerificationCapability4Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability2Code#CardholderData
-	 * CardholderVerificationCapability2Code.mmCardholderData}</li>
+	 * CardholderVerificationCapability2Code.CardholderData}</li>
 	 * </ul>
 	 */
 	public static final CardholderVerificationCapability4Code CardholderData = new CardholderVerificationCapability4Code() {
@@ -187,7 +187,7 @@ public class CardholderVerificationCapability4Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability2Code#ManualSignature
-	 * CardholderVerificationCapability2Code.mmManualSignature}</li>
+	 * CardholderVerificationCapability2Code.ManualSignature}</li>
 	 * </ul>
 	 */
 	public static final CardholderVerificationCapability4Code ManualSignature = new CardholderVerificationCapability4Code() {
@@ -217,7 +217,7 @@ public class CardholderVerificationCapability4Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability2Code#ManualVerification
-	 * CardholderVerificationCapability2Code.mmManualVerification}</li>
+	 * CardholderVerificationCapability2Code.ManualVerification}</li>
 	 * </ul>
 	 */
 	public static final CardholderVerificationCapability4Code ManualVerification = new CardholderVerificationCapability4Code() {
@@ -247,7 +247,7 @@ public class CardholderVerificationCapability4Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability2Code#OfflineBiographics
-	 * CardholderVerificationCapability2Code.mmOfflineBiographics}</li>
+	 * CardholderVerificationCapability2Code.OfflineBiographics}</li>
 	 * </ul>
 	 */
 	public static final CardholderVerificationCapability4Code OfflineBiographics = new CardholderVerificationCapability4Code() {
@@ -277,7 +277,7 @@ public class CardholderVerificationCapability4Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability2Code#OfflineBiometrics
-	 * CardholderVerificationCapability2Code.mmOfflineBiometrics}</li>
+	 * CardholderVerificationCapability2Code.OfflineBiometrics}</li>
 	 * </ul>
 	 */
 	public static final CardholderVerificationCapability4Code OfflineBiometrics = new CardholderVerificationCapability4Code() {
@@ -307,7 +307,7 @@ public class CardholderVerificationCapability4Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability2Code#OfflineDigitalSignature
-	 * CardholderVerificationCapability2Code.mmOfflineDigitalSignature}</li>
+	 * CardholderVerificationCapability2Code.OfflineDigitalSignature}</li>
 	 * </ul>
 	 */
 	public static final CardholderVerificationCapability4Code OfflineDigitalSignature = new CardholderVerificationCapability4Code() {
@@ -337,7 +337,7 @@ public class CardholderVerificationCapability4Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability2Code#OfflinePINClear
-	 * CardholderVerificationCapability2Code.mmOfflinePINClear}</li>
+	 * CardholderVerificationCapability2Code.OfflinePINClear}</li>
 	 * </ul>
 	 */
 	public static final CardholderVerificationCapability4Code OfflinePINClear = new CardholderVerificationCapability4Code() {
@@ -367,7 +367,7 @@ public class CardholderVerificationCapability4Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability2Code#OfflinePINEncrypted
-	 * CardholderVerificationCapability2Code.mmOfflinePINEncrypted}</li>
+	 * CardholderVerificationCapability2Code.OfflinePINEncrypted}</li>
 	 * </ul>
 	 */
 	public static final CardholderVerificationCapability4Code OfflinePINEncrypted = new CardholderVerificationCapability4Code() {
@@ -397,7 +397,7 @@ public class CardholderVerificationCapability4Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability2Code#OnLinePIN
-	 * CardholderVerificationCapability2Code.mmOnLinePIN}</li>
+	 * CardholderVerificationCapability2Code.OnLinePIN}</li>
 	 * </ul>
 	 */
 	public static final CardholderVerificationCapability4Code OnLinePIN = new CardholderVerificationCapability4Code() {
@@ -427,7 +427,7 @@ public class CardholderVerificationCapability4Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability2Code#PKISignature
-	 * CardholderVerificationCapability2Code.mmPKISignature}</li>
+	 * CardholderVerificationCapability2Code.PKISignature}</li>
 	 * </ul>
 	 */
 	public static final CardholderVerificationCapability4Code PKISignature = new CardholderVerificationCapability4Code() {
@@ -457,7 +457,7 @@ public class CardholderVerificationCapability4Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability2Code#SecureElectronicCommerce
-	 * CardholderVerificationCapability2Code.mmSecureElectronicCommerce}</li>
+	 * CardholderVerificationCapability2Code.SecureElectronicCommerce}</li>
 	 * </ul>
 	 */
 	public static final CardholderVerificationCapability4Code SecureElectronicCommerce = new CardholderVerificationCapability4Code() {
@@ -487,7 +487,7 @@ public class CardholderVerificationCapability4Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability2Code#OnLineBiometrics
-	 * CardholderVerificationCapability2Code.mmOnLineBiometrics}</li>
+	 * CardholderVerificationCapability2Code.OnLineBiometrics}</li>
 	 * </ul>
 	 */
 	public static final CardholderVerificationCapability4Code OnLineBiometrics = new CardholderVerificationCapability4Code() {
@@ -517,7 +517,7 @@ public class CardholderVerificationCapability4Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability2Code#NoCapabilities
-	 * CardholderVerificationCapability2Code.mmNoCapabilities}</li>
+	 * CardholderVerificationCapability2Code.NoCapabilities}</li>
 	 * </ul>
 	 */
 	public static final CardholderVerificationCapability4Code NoCapabilities = new CardholderVerificationCapability4Code() {
@@ -547,7 +547,7 @@ public class CardholderVerificationCapability4Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability2Code#Other
-	 * CardholderVerificationCapability2Code.mmOther}</li>
+	 * CardholderVerificationCapability2Code.Other}</li>
 	 * </ul>
 	 */
 	public static final CardholderVerificationCapability4Code Other = new CardholderVerificationCapability4Code() {
@@ -567,7 +567,7 @@ public class CardholderVerificationCapability4Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardholderVerificationCapability4Code";
 				definition = "Cardholder verification capabilities by the terminal.";

@@ -20,10 +20,12 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.InvestmentAccount;
+import com.tools20022.repository.entity.SecuritiesQuantity;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Separate account containing illiquid assets of a hedge fund portfolio. Only
@@ -67,8 +69,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,9 +88,8 @@ public class SidePocket {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected YesNoIndicator sidePocketInclusionIndicator;
 	/**
-	 * Indicates whether the investor wants to participate in the optional side
-	 * pocket.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,7 +114,7 @@ public class SidePocket {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSidePocketInclusionIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SidePocket, YesNoIndicator> mmSidePocketInclusionIndicator = new MMBusinessAttribute<SidePocket, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SidePocket.mmObject();
@@ -125,23 +126,20 @@ public class SidePocket {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SidePocket.class.getMethod("getSidePocketInclusionIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(SidePocket obj) {
+			return obj.getSidePocketInclusionIndicator();
+		}
+
+		@Override
+		public void setValue(SidePocket obj, YesNoIndicator value) {
+			obj.setSidePocketInclusionIndicator(value);
 		}
 	};
 	protected Max35Text sidePocketIdentification;
 	/**
-	 * Identifies the side pocket.<br>
-	 * Type of account used in hedge funds to separate illiquid assets from
-	 * other more liquid investments. <br>
-	 * Once an asset is designated for inclusion in a side pocket, new investors
-	 * do not share in it, and when existing investors redeem from the hedge
-	 * fund, they remain as investors in the side pocket until it is liquidated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -165,7 +163,7 @@ public class SidePocket {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSidePocketIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SidePocket, Max35Text> mmSidePocketIdentification = new MMBusinessAttribute<SidePocket, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SidePocket.mmObject();
@@ -177,18 +175,20 @@ public class SidePocket {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SidePocket.class.getMethod("getSidePocketIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SidePocket obj) {
+			return obj.getSidePocketIdentification();
+		}
+
+		@Override
+		public void setValue(SidePocket obj, Max35Text value) {
+			obj.setSidePocketIdentification(value);
 		}
 	};
 	protected InvestmentAccount investmentAccount;
 	/**
-	 * Investment account which contains the liquid assets of a hedge fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -219,7 +219,7 @@ public class SidePocket {
 	 * "Investment account which contains the liquid assets of a hedge fund."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SidePocket, InvestmentAccount> mmInvestmentAccount = new MMBusinessAssociationEnd<SidePocket, InvestmentAccount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SidePocket.mmObject();
@@ -228,15 +228,25 @@ public class SidePocket {
 			definition = "Investment account which contains the liquid assets of a hedge fund.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmSidePocket;
+			opposite_lazy = () -> InvestmentAccount.mmSidePocket;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
+			type_lazy = () -> InvestmentAccount.mmObject();
+		}
+
+		@Override
+		public InvestmentAccount getValue(SidePocket obj) {
+			return obj.getInvestmentAccount();
+		}
+
+		@Override
+		public void setValue(SidePocket obj, InvestmentAccount value) {
+			obj.setInvestmentAccount(value);
 		}
 	};
 	protected SecuritiesQuantity sidePocketQuantity;
 	/**
-	 * Quantity of the side pocket.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -266,7 +276,7 @@ public class SidePocket {
 	 * definition} = "Quantity of the side pocket."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSidePocketQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SidePocket, SecuritiesQuantity> mmSidePocketQuantity = new MMBusinessAssociationEnd<SidePocket, SecuritiesQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SidePocket.mmObject();
@@ -275,20 +285,30 @@ public class SidePocket {
 			definition = "Quantity of the side pocket.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmSidePocket;
+			opposite_lazy = () -> SecuritiesQuantity.mmSidePocket;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(SidePocket obj) {
+			return obj.getSidePocketQuantity();
+		}
+
+		@Override
+		public void setValue(SidePocket obj, SecuritiesQuantity value) {
+			obj.setSidePocketQuantity(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SidePocket";
 				definition = "Separate account containing illiquid assets of a hedge fund portfolio. Only the present participants in the hedge fund will be entitled to a share of it.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccount.mmSidePocket, com.tools20022.repository.entity.SecuritiesQuantity.mmSidePocket);
+				associationDomain_lazy = () -> Arrays.asList(InvestmentAccount.mmSidePocket, SecuritiesQuantity.mmSidePocket);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SidePocket.mmSidePocketInclusionIndicator, com.tools20022.repository.entity.SidePocket.mmSidePocketIdentification,
 						com.tools20022.repository.entity.SidePocket.mmInvestmentAccount, com.tools20022.repository.entity.SidePocket.mmSidePocketQuantity);
 			}
@@ -305,31 +325,35 @@ public class SidePocket {
 		return sidePocketInclusionIndicator;
 	}
 
-	public void setSidePocketInclusionIndicator(YesNoIndicator sidePocketInclusionIndicator) {
-		this.sidePocketInclusionIndicator = sidePocketInclusionIndicator;
+	public SidePocket setSidePocketInclusionIndicator(YesNoIndicator sidePocketInclusionIndicator) {
+		this.sidePocketInclusionIndicator = Objects.requireNonNull(sidePocketInclusionIndicator);
+		return this;
 	}
 
 	public Max35Text getSidePocketIdentification() {
 		return sidePocketIdentification;
 	}
 
-	public void setSidePocketIdentification(Max35Text sidePocketIdentification) {
-		this.sidePocketIdentification = sidePocketIdentification;
+	public SidePocket setSidePocketIdentification(Max35Text sidePocketIdentification) {
+		this.sidePocketIdentification = Objects.requireNonNull(sidePocketIdentification);
+		return this;
 	}
 
 	public InvestmentAccount getInvestmentAccount() {
 		return investmentAccount;
 	}
 
-	public void setInvestmentAccount(com.tools20022.repository.entity.InvestmentAccount investmentAccount) {
-		this.investmentAccount = investmentAccount;
+	public SidePocket setInvestmentAccount(InvestmentAccount investmentAccount) {
+		this.investmentAccount = Objects.requireNonNull(investmentAccount);
+		return this;
 	}
 
 	public SecuritiesQuantity getSidePocketQuantity() {
 		return sidePocketQuantity;
 	}
 
-	public void setSidePocketQuantity(com.tools20022.repository.entity.SecuritiesQuantity sidePocketQuantity) {
-		this.sidePocketQuantity = sidePocketQuantity;
+	public SidePocket setSidePocketQuantity(SecuritiesQuantity sidePocketQuantity) {
+		this.sidePocketQuantity = Objects.requireNonNull(sidePocketQuantity);
+		return this;
 	}
 }

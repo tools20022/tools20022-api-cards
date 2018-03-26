@@ -26,9 +26,10 @@ import com.tools20022.repository.msg.ATMExceptionAcknowledgement1;
 import com.tools20022.repository.msg.ContentInformationType10;
 import com.tools20022.repository.msg.ContentInformationType15;
 import com.tools20022.repository.msg.Header32;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -78,16 +79,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "ATMExceptionAcknowledgementV01", propOrder = {"header", "protectedATMExceptionAcknowledgement", "ATMExceptionAcknowledgement", "securityTrailer"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "ATMExceptionAcknowledgementV01", propOrder = {"header", "protectedATMExceptionAcknowledgement", "aTMExceptionAcknowledgement", "securityTrailer"})
 public class ATMExceptionAcknowledgementV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header32 header;
 	/**
-	 * Information related to the protocol management on a segment of the path
-	 * from the ATM to the acquirer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,7 +110,7 @@ public class ATMExceptionAcknowledgementV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMExceptionAcknowledgementV01, Header32> mmHeader = new MMMessageBuildingBlock<ATMExceptionAcknowledgementV01, Header32>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,18 +121,21 @@ public class ATMExceptionAcknowledgementV01 {
 			complexType_lazy = () -> Header32.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMExceptionAcknowledgementV01.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header32 getValue(ATMExceptionAcknowledgementV01 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(ATMExceptionAcknowledgementV01 obj, Header32 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "PrtctdATMXcptnAck")
 	protected ContentInformationType10 protectedATMExceptionAcknowledgement;
 	/**
-	 * Encrypted body of the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,7 +156,7 @@ public class ATMExceptionAcknowledgementV01 {
 	 * definition} = "Encrypted body of the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmProtectedATMExceptionAcknowledgement = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMExceptionAcknowledgementV01, Optional<ContentInformationType10>> mmProtectedATMExceptionAcknowledgement = new MMMessageBuildingBlock<ATMExceptionAcknowledgementV01, Optional<ContentInformationType10>>() {
 		{
 			xmlTag = "PrtctdATMXcptnAck";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,18 +167,21 @@ public class ATMExceptionAcknowledgementV01 {
 			complexType_lazy = () -> ContentInformationType10.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMExceptionAcknowledgementV01.class.getMethod("getProtectedATMExceptionAcknowledgement", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType10> getValue(ATMExceptionAcknowledgementV01 obj) {
+			return obj.getProtectedATMExceptionAcknowledgement();
+		}
+
+		@Override
+		public void setValue(ATMExceptionAcknowledgementV01 obj, Optional<ContentInformationType10> value) {
+			obj.setProtectedATMExceptionAcknowledgement(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "ATMXcptnAck")
 	protected ATMExceptionAcknowledgement1 aTMExceptionAcknowledgement;
 	/**
-	 * Information related to the acknowledgement of an ATM exception.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -193,32 +200,35 @@ public class ATMExceptionAcknowledgementV01 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Information related to the acknowledgement  of an ATM exception."</li>
+	 * "Information related to the acknowledgement of an ATM exception."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmATMExceptionAcknowledgement = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMExceptionAcknowledgementV01, Optional<ATMExceptionAcknowledgement1>> mmATMExceptionAcknowledgement = new MMMessageBuildingBlock<ATMExceptionAcknowledgementV01, Optional<ATMExceptionAcknowledgement1>>() {
 		{
 			xmlTag = "ATMXcptnAck";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ATMExceptionAcknowledgement";
-			definition = "Information related to the acknowledgement  of an ATM exception.";
+			definition = "Information related to the acknowledgement of an ATM exception.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			complexType_lazy = () -> ATMExceptionAcknowledgement1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMExceptionAcknowledgementV01.class.getMethod("getATMExceptionAcknowledgement", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ATMExceptionAcknowledgement1> getValue(ATMExceptionAcknowledgementV01 obj) {
+			return obj.getATMExceptionAcknowledgement();
+		}
+
+		@Override
+		public void setValue(ATMExceptionAcknowledgementV01 obj, Optional<ATMExceptionAcknowledgement1> value) {
+			obj.setATMExceptionAcknowledgement(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SctyTrlr")
 	protected ContentInformationType15 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -239,7 +249,7 @@ public class ATMExceptionAcknowledgementV01 {
 	 * definition} = "Trailer of the message containing a MAC."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMExceptionAcknowledgementV01, Optional<ContentInformationType15>> mmSecurityTrailer = new MMMessageBuildingBlock<ATMExceptionAcknowledgementV01, Optional<ContentInformationType15>>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -250,12 +260,14 @@ public class ATMExceptionAcknowledgementV01 {
 			complexType_lazy = () -> ContentInformationType15.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMExceptionAcknowledgementV01.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType15> getValue(ATMExceptionAcknowledgementV01 obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(ATMExceptionAcknowledgementV01 obj, Optional<ContentInformationType15> value) {
+			obj.setSecurityTrailer(value.orElse(null));
 		}
 	};
 
@@ -289,43 +301,43 @@ public class ATMExceptionAcknowledgementV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header32 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header32 header) {
-		this.header = header;
+	public ATMExceptionAcknowledgementV01 setHeader(Header32 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "PrtctdATMXcptnAck")
-	public ContentInformationType10 getProtectedATMExceptionAcknowledgement() {
-		return protectedATMExceptionAcknowledgement;
+	public Optional<ContentInformationType10> getProtectedATMExceptionAcknowledgement() {
+		return protectedATMExceptionAcknowledgement == null ? Optional.empty() : Optional.of(protectedATMExceptionAcknowledgement);
 	}
 
-	public void setProtectedATMExceptionAcknowledgement(ContentInformationType10 protectedATMExceptionAcknowledgement) {
+	public ATMExceptionAcknowledgementV01 setProtectedATMExceptionAcknowledgement(ContentInformationType10 protectedATMExceptionAcknowledgement) {
 		this.protectedATMExceptionAcknowledgement = protectedATMExceptionAcknowledgement;
+		return this;
 	}
 
-	@XmlElement(name = "ATMXcptnAck")
-	public ATMExceptionAcknowledgement1 getATMExceptionAcknowledgement() {
-		return aTMExceptionAcknowledgement;
+	public Optional<ATMExceptionAcknowledgement1> getATMExceptionAcknowledgement() {
+		return aTMExceptionAcknowledgement == null ? Optional.empty() : Optional.of(aTMExceptionAcknowledgement);
 	}
 
-	public void setATMExceptionAcknowledgement(ATMExceptionAcknowledgement1 aTMExceptionAcknowledgement) {
+	public ATMExceptionAcknowledgementV01 setATMExceptionAcknowledgement(ATMExceptionAcknowledgement1 aTMExceptionAcknowledgement) {
 		this.aTMExceptionAcknowledgement = aTMExceptionAcknowledgement;
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr")
-	public ContentInformationType15 getSecurityTrailer() {
-		return securityTrailer;
+	public Optional<ContentInformationType15> getSecurityTrailer() {
+		return securityTrailer == null ? Optional.empty() : Optional.of(securityTrailer);
 	}
 
-	public void setSecurityTrailer(ContentInformationType15 securityTrailer) {
+	public ATMExceptionAcknowledgementV01 setSecurityTrailer(ContentInformationType15 securityTrailer) {
 		this.securityTrailer = securityTrailer;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:caam.012.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:caam.012.001.01")
 	static public class Document {
 		@XmlElement(name = "ATMXcptnAck", required = true)
 		public ATMExceptionAcknowledgementV01 messageBody;

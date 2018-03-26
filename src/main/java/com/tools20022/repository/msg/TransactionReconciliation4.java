@@ -27,9 +27,10 @@ import com.tools20022.repository.datatype.TrueFalseIndicator;
 import com.tools20022.repository.entity.CardPayment;
 import com.tools20022.repository.entity.ReconciliationTransaction;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.TransactionIdentifier1;
+import com.tools20022.repository.msg.TransactionTotals7;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -68,8 +69,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -81,16 +82,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Reconciliation transaction between an acceptor and an acquirer."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TransactionReconciliation4", propOrder = {"closePeriod", "reconciliationTransactionIdentification", "reconciliationIdentification", "transactionTotals", "additionalTransactionData"})
 public class TransactionReconciliation4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ClsPrd")
 	protected TrueFalseIndicator closePeriod;
 	/**
-	 * Indicates if the transaction requires a closure of the reconciliation
-	 * period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -118,9 +119,9 @@ public class TransactionReconciliation4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClosePeriod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TransactionReconciliation4, Optional<TrueFalseIndicator>> mmClosePeriod = new MMMessageAttribute<TransactionReconciliation4, Optional<TrueFalseIndicator>>() {
 		{
-			componentContext_lazy = () -> TransactionReconciliation4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionReconciliation4.mmObject();
 			isDerived = false;
 			xmlTag = "ClsPrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -130,11 +131,22 @@ public class TransactionReconciliation4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<TrueFalseIndicator> getValue(TransactionReconciliation4 obj) {
+			return obj.getClosePeriod();
+		}
+
+		@Override
+		public void setValue(TransactionReconciliation4 obj, Optional<TrueFalseIndicator> value) {
+			obj.setClosePeriod(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RcncltnTxId", required = true)
 	protected TransactionIdentifier1 reconciliationTransactionIdentification;
 	/**
-	 * Unique identification of a reconciliation transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -163,10 +175,10 @@ public class TransactionReconciliation4 {
 	 * definition} = "Unique identification of a reconciliation transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReconciliationTransactionIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TransactionReconciliation4, TransactionIdentifier1> mmReconciliationTransactionIdentification = new MMMessageAssociationEnd<TransactionReconciliation4, TransactionIdentifier1>() {
 		{
 			businessElementTrace_lazy = () -> CardPayment.mmCardPaymentAcquiring;
-			componentContext_lazy = () -> TransactionReconciliation4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionReconciliation4.mmObject();
 			isDerived = false;
 			xmlTag = "RcncltnTxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -175,14 +187,24 @@ public class TransactionReconciliation4 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TransactionIdentifier1.mmObject();
+			type_lazy = () -> TransactionIdentifier1.mmObject();
+		}
+
+		@Override
+		public TransactionIdentifier1 getValue(TransactionReconciliation4 obj) {
+			return obj.getReconciliationTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(TransactionReconciliation4 obj, TransactionIdentifier1 value) {
+			obj.setReconciliationTransactionIdentification(value);
 		}
 	};
+	@XmlElement(name = "RcncltnId", required = true)
 	protected Max35Text reconciliationIdentification;
 	/**
-	 * Unique identification of the reconciliation period between the acceptor
-	 * and the acquirer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -214,10 +236,10 @@ public class TransactionReconciliation4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReconciliationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TransactionReconciliation4, Max35Text> mmReconciliationIdentification = new MMMessageAttribute<TransactionReconciliation4, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> ReconciliationTransaction.mmReconciliationIdentification;
-			componentContext_lazy = () -> TransactionReconciliation4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionReconciliation4.mmObject();
 			isDerived = false;
 			xmlTag = "RcncltnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -227,12 +249,22 @@ public class TransactionReconciliation4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(TransactionReconciliation4 obj) {
+			return obj.getReconciliationIdentification();
+		}
+
+		@Override
+		public void setValue(TransactionReconciliation4 obj, Max35Text value) {
+			obj.setReconciliationIdentification(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.TransactionTotals7> transactionTotals;
+	@XmlElement(name = "TxTtls")
+	protected List<TransactionTotals7> transactionTotals;
 	/**
-	 * Transaction totals during the reconciliation period for a certain type of
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -258,9 +290,9 @@ public class TransactionReconciliation4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransactionTotals = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<TransactionReconciliation4, List<TransactionTotals7>> mmTransactionTotals = new MMMessageAssociationEnd<TransactionReconciliation4, List<TransactionTotals7>>() {
 		{
-			componentContext_lazy = () -> TransactionReconciliation4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionReconciliation4.mmObject();
 			isDerived = false;
 			xmlTag = "TxTtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -268,13 +300,24 @@ public class TransactionReconciliation4 {
 			definition = "Transaction totals during the reconciliation period for a certain type of transaction.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TransactionTotals7.mmObject();
+			type_lazy = () -> TransactionTotals7.mmObject();
+		}
+
+		@Override
+		public List<TransactionTotals7> getValue(TransactionReconciliation4 obj) {
+			return obj.getTransactionTotals();
+		}
+
+		@Override
+		public void setValue(TransactionReconciliation4 obj, List<TransactionTotals7> value) {
+			obj.setTransactionTotals(value);
 		}
 	};
+	@XmlElement(name = "AddtlTxData")
 	protected Max70Text additionalTransactionData;
 	/**
-	 * Additional information related to the reconciliation transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -300,9 +343,9 @@ public class TransactionReconciliation4 {
 	 * "Additional information related to the reconciliation transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalTransactionData = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TransactionReconciliation4, Optional<Max70Text>> mmAdditionalTransactionData = new MMMessageAttribute<TransactionReconciliation4, Optional<Max70Text>>() {
 		{
-			componentContext_lazy = () -> TransactionReconciliation4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TransactionReconciliation4.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlTxData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -312,15 +355,26 @@ public class TransactionReconciliation4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max70Text> getValue(TransactionReconciliation4 obj) {
+			return obj.getAdditionalTransactionData();
+		}
+
+		@Override
+		public void setValue(TransactionReconciliation4 obj, Optional<Max70Text> value) {
+			obj.setAdditionalTransactionData(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TransactionReconciliation4.mmClosePeriod, TransactionReconciliation4.mmReconciliationTransactionIdentification, TransactionReconciliation4.mmReconciliationIdentification,
-						TransactionReconciliation4.mmTransactionTotals, TransactionReconciliation4.mmAdditionalTransactionData);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TransactionReconciliation4.mmClosePeriod, com.tools20022.repository.msg.TransactionReconciliation4.mmReconciliationTransactionIdentification,
+						com.tools20022.repository.msg.TransactionReconciliation4.mmReconciliationIdentification, com.tools20022.repository.msg.TransactionReconciliation4.mmTransactionTotals,
+						com.tools20022.repository.msg.TransactionReconciliation4.mmAdditionalTransactionData);
 				trace_lazy = () -> ReconciliationTransaction.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionReconciliation4";
 				definition = "Reconciliation transaction between an acceptor and an acquirer.";
@@ -329,48 +383,48 @@ public class TransactionReconciliation4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ClsPrd")
-	public TrueFalseIndicator getClosePeriod() {
-		return closePeriod;
+	public Optional<TrueFalseIndicator> getClosePeriod() {
+		return closePeriod == null ? Optional.empty() : Optional.of(closePeriod);
 	}
 
-	public void setClosePeriod(TrueFalseIndicator closePeriod) {
+	public TransactionReconciliation4 setClosePeriod(TrueFalseIndicator closePeriod) {
 		this.closePeriod = closePeriod;
+		return this;
 	}
 
-	@XmlElement(name = "RcncltnTxId", required = true)
 	public TransactionIdentifier1 getReconciliationTransactionIdentification() {
 		return reconciliationTransactionIdentification;
 	}
 
-	public void setReconciliationTransactionIdentification(com.tools20022.repository.msg.TransactionIdentifier1 reconciliationTransactionIdentification) {
-		this.reconciliationTransactionIdentification = reconciliationTransactionIdentification;
+	public TransactionReconciliation4 setReconciliationTransactionIdentification(TransactionIdentifier1 reconciliationTransactionIdentification) {
+		this.reconciliationTransactionIdentification = Objects.requireNonNull(reconciliationTransactionIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "RcncltnId", required = true)
 	public Max35Text getReconciliationIdentification() {
 		return reconciliationIdentification;
 	}
 
-	public void setReconciliationIdentification(Max35Text reconciliationIdentification) {
-		this.reconciliationIdentification = reconciliationIdentification;
+	public TransactionReconciliation4 setReconciliationIdentification(Max35Text reconciliationIdentification) {
+		this.reconciliationIdentification = Objects.requireNonNull(reconciliationIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "TxTtls")
 	public List<TransactionTotals7> getTransactionTotals() {
-		return transactionTotals;
+		return transactionTotals == null ? transactionTotals = new ArrayList<>() : transactionTotals;
 	}
 
-	public void setTransactionTotals(List<com.tools20022.repository.msg.TransactionTotals7> transactionTotals) {
-		this.transactionTotals = transactionTotals;
+	public TransactionReconciliation4 setTransactionTotals(List<TransactionTotals7> transactionTotals) {
+		this.transactionTotals = Objects.requireNonNull(transactionTotals);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlTxData")
-	public Max70Text getAdditionalTransactionData() {
-		return additionalTransactionData;
+	public Optional<Max70Text> getAdditionalTransactionData() {
+		return additionalTransactionData == null ? Optional.empty() : Optional.of(additionalTransactionData);
 	}
 
-	public void setAdditionalTransactionData(Max70Text additionalTransactionData) {
+	public TransactionReconciliation4 setAdditionalTransactionData(Max70Text additionalTransactionData) {
 		this.additionalTransactionData = additionalTransactionData;
+		return this;
 	}
 }

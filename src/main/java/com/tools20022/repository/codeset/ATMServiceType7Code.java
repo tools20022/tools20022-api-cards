@@ -38,46 +38,46 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType7Code#ChosenWithdrawal
- * ATMServiceType7Code.mmChosenWithdrawal}</li>
+ * ATMServiceType7Code.ChosenWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType7Code#PINChange
- * ATMServiceType7Code.mmPINChange}</li>
+ * ATMServiceType7Code.PINChange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType7Code#PINRecovery
- * ATMServiceType7Code.mmPINRecovery}</li>
+ * ATMServiceType7Code.PINRecovery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType7Code#PINUnblock
- * ATMServiceType7Code.mmPINUnblock}</li>
+ * ATMServiceType7Code.PINUnblock}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType7Code#PreAuthorisedWithdrawal
- * ATMServiceType7Code.mmPreAuthorisedWithdrawal}</li>
+ * ATMServiceType7Code.PreAuthorisedWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType7Code#ProfileWithdrawal
- * ATMServiceType7Code.mmProfileWithdrawal}</li>
+ * ATMServiceType7Code.ProfileWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType7Code#StandardWithdrawal
- * ATMServiceType7Code.mmStandardWithdrawal}</li>
+ * ATMServiceType7Code.StandardWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType7Code#SupervisedWithdrawal
- * ATMServiceType7Code.mmSupervisedWithdrawal}</li>
+ * ATMServiceType7Code.SupervisedWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType7Code#CustomerTransfer
- * ATMServiceType7Code.mmCustomerTransfer}</li>
+ * ATMServiceType7Code.CustomerTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType7Code#InterCustomerTransfer
- * ATMServiceType7Code.mmInterCustomerTransfer}</li>
+ * ATMServiceType7Code.InterCustomerTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType7Code#NonVerifiedDeposit
- * ATMServiceType7Code.mmNonVerifiedDeposit}</li>
+ * ATMServiceType7Code.NonVerifiedDeposit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType7Code#VerifiedDeposit
- * ATMServiceType7Code.mmVerifiedDeposit}</li>
+ * ATMServiceType7Code.VerifiedDeposit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType7Code#MakingChange
- * ATMServiceType7Code.mmMakingChange}</li>
+ * ATMServiceType7Code.MakingChange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType7Code#Payment
- * ATMServiceType7Code.mmPayment}</li>
+ * ATMServiceType7Code.Payment}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -86,8 +86,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -447,7 +447,7 @@ public class ATMServiceType7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMServiceType7Code";
 				definition = "Describes the type of ATM transaction selected by the customer.";

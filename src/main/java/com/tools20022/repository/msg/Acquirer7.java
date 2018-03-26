@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.FinancialInstitution;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,26 +67,27 @@ import javax.xml.bind.annotation.XmlType;
  * definition} =
  * "Acquirer of the withdrawal transaction, in charge of the funds settlement with the issuer."
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} = {@linkplain com.tools20022.repository.msg.Acquirer6
- * Acquirer6}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
  * nextVersions} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.msg.Acquirer8 Acquirer8}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+ * previousVersion} = {@linkplain com.tools20022.repository.msg.Acquirer6
+ * Acquirer6}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Acquirer7", propOrder = {"acquiringInstitution", "branch"})
 public class Acquirer7 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AcqrgInstn")
 	protected Max35Text acquiringInstitution;
 	/**
-	 * Identification of the acquirer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -112,11 +114,6 @@ public class Acquirer7 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Identification of the acquirer."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.Acquirer6#mmIdentification
-	 * Acquirer6.mmIdentification}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -124,12 +121,17 @@ public class Acquirer7 {
 	 * Acquirer8.mmIdentification}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.Acquirer6#mmIdentification
+	 * Acquirer6.mmIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAcquiringInstitution = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Acquirer7, Optional<Max35Text>> mmAcquiringInstitution = new MMMessageAttribute<Acquirer7, Optional<Max35Text>>() {
 		{
 			businessComponentTrace_lazy = () -> FinancialInstitution.mmObject();
-			componentContext_lazy = () -> Acquirer7.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Acquirer7.mmObject();
 			isDerived = false;
 			xmlTag = "AcqrgInstn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -141,11 +143,22 @@ public class Acquirer7 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(Acquirer7 obj) {
+			return obj.getAcquiringInstitution();
+		}
+
+		@Override
+		public void setValue(Acquirer7 obj, Optional<Max35Text> value) {
+			obj.setAcquiringInstitution(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Brnch")
 	protected Max35Text branch;
 	/**
-	 * Identification of the acquirer branch.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -167,11 +180,6 @@ public class Acquirer7 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Identification of the acquirer branch."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.Acquirer6#mmIssuer
-	 * Acquirer6.mmIssuer}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -180,11 +188,16 @@ public class Acquirer7 {
 	 * Acquirer8.mmApplicationVersion}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.Acquirer6#mmIssuer
+	 * Acquirer6.mmIssuer}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBranch = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Acquirer7, Optional<Max35Text>> mmBranch = new MMMessageAttribute<Acquirer7, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> Acquirer7.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Acquirer7.mmObject();
 			isDerived = false;
 			xmlTag = "Brnch";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -196,14 +209,24 @@ public class Acquirer7 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(Acquirer7 obj) {
+			return obj.getBranch();
+		}
+
+		@Override
+		public void setValue(Acquirer7 obj, Optional<Max35Text> value) {
+			obj.setBranch(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Acquirer7.mmAcquiringInstitution, Acquirer7.mmBranch);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Acquirer7.mmAcquiringInstitution, com.tools20022.repository.msg.Acquirer7.mmBranch);
 				trace_lazy = () -> AcquirerRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Acquirer7";
 				definition = "Acquirer of the withdrawal transaction, in charge of the funds settlement with the issuer.";
@@ -214,21 +237,21 @@ public class Acquirer7 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AcqrgInstn")
-	public Max35Text getAcquiringInstitution() {
-		return acquiringInstitution;
+	public Optional<Max35Text> getAcquiringInstitution() {
+		return acquiringInstitution == null ? Optional.empty() : Optional.of(acquiringInstitution);
 	}
 
-	public void setAcquiringInstitution(Max35Text acquiringInstitution) {
+	public Acquirer7 setAcquiringInstitution(Max35Text acquiringInstitution) {
 		this.acquiringInstitution = acquiringInstitution;
+		return this;
 	}
 
-	@XmlElement(name = "Brnch")
-	public Max35Text getBranch() {
-		return branch;
+	public Optional<Max35Text> getBranch() {
+		return branch == null ? Optional.empty() : Optional.of(branch);
 	}
 
-	public void setBranch(Max35Text branch) {
+	public Acquirer7 setBranch(Max35Text branch) {
 		this.branch = branch;
+		return this;
 	}
 }

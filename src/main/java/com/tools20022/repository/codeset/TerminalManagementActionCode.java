@@ -39,31 +39,40 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Activate
- * TerminalManagementActionCode.mmActivate}</li>
+ * TerminalManagementActionCode.Activate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Deactivate
- * TerminalManagementActionCode.mmDeactivate}</li>
+ * TerminalManagementActionCode.Deactivate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Delete
- * TerminalManagementActionCode.mmDelete}</li>
+ * TerminalManagementActionCode.Delete}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Download
- * TerminalManagementActionCode.mmDownload}</li>
+ * TerminalManagementActionCode.Download}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Install
- * TerminalManagementActionCode.mmInstall}</li>
+ * TerminalManagementActionCode.Install}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Restart
- * TerminalManagementActionCode.mmRestart}</li>
+ * TerminalManagementActionCode.Restart}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Upload
- * TerminalManagementActionCode.mmUpload}</li>
+ * TerminalManagementActionCode.Upload}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Update
- * TerminalManagementActionCode.mmUpdate}</li>
+ * TerminalManagementActionCode.Update}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Create
- * TerminalManagementActionCode.mmCreate}</li>
+ * TerminalManagementActionCode.Create}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Bind
+ * TerminalManagementActionCode.Bind}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Unbind
+ * TerminalManagementActionCode.Unbind}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode#Rebind
+ * TerminalManagementActionCode.Rebind}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -80,8 +89,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -105,7 +114,7 @@ public class TerminalManagementActionCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
-	 * Data set must be activated.
+	 * Request to activate the element identified inside the message exchange.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -122,20 +131,22 @@ public class TerminalManagementActionCode extends MMCode {
 	 * name} = "Activate"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Data set must be activated."</li>
+	 * definition} =
+	 * "Request to activate the element identified inside the message exchange."
+	 * </li>
 	 * </ul>
 	 */
 	public static final TerminalManagementActionCode Activate = new TerminalManagementActionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Activate";
-			definition = "Data set must be activated.";
+			definition = "Request to activate the element identified inside the message exchange.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TerminalManagementActionCode.mmObject();
 			codeName = "ACTV";
 		}
 	};
 	/**
-	 * Data set must be deactivated.
+	 * Request to deactivate the element identified inside the message exchange.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -152,20 +163,22 @@ public class TerminalManagementActionCode extends MMCode {
 	 * name} = "Deactivate"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Data set must be deactivated."</li>
+	 * definition} =
+	 * "Request to deactivate the element identified inside the message exchange."
+	 * </li>
 	 * </ul>
 	 */
 	public static final TerminalManagementActionCode Deactivate = new TerminalManagementActionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Deactivate";
-			definition = "Data set must be deactivated.";
+			definition = "Request to deactivate the element identified inside the message exchange.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TerminalManagementActionCode.mmObject();
 			codeName = "DCTV";
 		}
 	};
 	/**
-	 * Data set must be deleted.
+	 * Request to delete the element identified inside the message exchange.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -182,20 +195,21 @@ public class TerminalManagementActionCode extends MMCode {
 	 * name} = "Delete"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Data set must be deleted."</li>
+	 * definition} =
+	 * "Request to delete the element identified inside the message exchange."</li>
 	 * </ul>
 	 */
 	public static final TerminalManagementActionCode Delete = new TerminalManagementActionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Delete";
-			definition = "Data set must be deleted.";
+			definition = "Request to delete the element identified inside the message exchange.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TerminalManagementActionCode.mmObject();
 			codeName = "DELT";
 		}
 	};
 	/**
-	 * Data set must be downloaded.
+	 * Request to download the element identified inside the message exchange.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -212,20 +226,22 @@ public class TerminalManagementActionCode extends MMCode {
 	 * name} = "Download"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Data set must be downloaded."</li>
+	 * definition} =
+	 * "Request to download the element identified inside the message exchange."
+	 * </li>
 	 * </ul>
 	 */
 	public static final TerminalManagementActionCode Download = new TerminalManagementActionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Download";
-			definition = "Data set must be downloaded.";
+			definition = "Request to download the element identified inside the message exchange.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TerminalManagementActionCode.mmObject();
 			codeName = "DWNL";
 		}
 	};
 	/**
-	 * Data set must be installed.
+	 * Request to install the element identified inside the message exchange.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -242,20 +258,21 @@ public class TerminalManagementActionCode extends MMCode {
 	 * name} = "Install"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Data set must be installed."</li>
+	 * definition} =
+	 * "Request to install the element identified inside the message exchange."</li>
 	 * </ul>
 	 */
 	public static final TerminalManagementActionCode Install = new TerminalManagementActionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Install";
-			definition = "Data set must be installed.";
+			definition = "Request to install the element identified inside the message exchange.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TerminalManagementActionCode.mmObject();
 			codeName = "INST";
 		}
 	};
 	/**
-	 * Point of interaction must be restarted.
+	 * Request to restart the element identified inside the message exchange.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -272,20 +289,21 @@ public class TerminalManagementActionCode extends MMCode {
 	 * name} = "Restart"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Point of interaction must be restarted."</li>
+	 * definition} =
+	 * "Request to restart the element identified inside the message exchange."</li>
 	 * </ul>
 	 */
 	public static final TerminalManagementActionCode Restart = new TerminalManagementActionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Restart";
-			definition = "Point of interaction must be restarted.";
+			definition = "Request to restart the element identified inside the message exchange.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TerminalManagementActionCode.mmObject();
 			codeName = "RSTR";
 		}
 	};
 	/**
-	 * Data set must be uploaded.
+	 * Request to upload the element identified inside the message exchange.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -302,20 +320,21 @@ public class TerminalManagementActionCode extends MMCode {
 	 * name} = "Upload"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Data set must be uploaded."</li>
+	 * definition} =
+	 * "Request to upload the element identified inside the message exchange."</li>
 	 * </ul>
 	 */
 	public static final TerminalManagementActionCode Upload = new TerminalManagementActionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Upload";
-			definition = "Data set must be uploaded.";
+			definition = "Request to upload the element identified inside the message exchange.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TerminalManagementActionCode.mmObject();
 			codeName = "UPLD";
 		}
 	};
 	/**
-	 * Update, or replacement of the data set.
+	 * Request to update the element identified inside the message exchange.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -332,20 +351,22 @@ public class TerminalManagementActionCode extends MMCode {
 	 * name} = "Update"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Update, or replacement of the data set."</li>
+	 * definition} =
+	 * "Request to update the element identified inside the message exchange."</li>
 	 * </ul>
 	 */
 	public static final TerminalManagementActionCode Update = new TerminalManagementActionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Update";
-			definition = "Update, or replacement of the data set.";
+			definition = "Request to update the element identified inside the message exchange.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TerminalManagementActionCode.mmObject();
 			codeName = "UPDT";
 		}
 	};
 	/**
-	 * Creation or addition of a new data set.
+	 * Request to create or add the element identified inside the message
+	 * exchange.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -362,16 +383,108 @@ public class TerminalManagementActionCode extends MMCode {
 	 * name} = "Create"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Creation or addition of a new data set."</li>
+	 * definition} =
+	 * "Request to create or add the element identified inside the message exchange."
+	 * </li>
 	 * </ul>
 	 */
 	public static final TerminalManagementActionCode Create = new TerminalManagementActionCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Create";
-			definition = "Creation or addition of a new data set.";
+			definition = "Request to create or add the element identified inside the message exchange.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TerminalManagementActionCode.mmObject();
 			codeName = "CREA";
+		}
+	};
+	/**
+	 * Request sent to a POI to bind with a server.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode
+	 * TerminalManagementActionCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "BIND"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "Bind"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Request sent to a POI to bind with a server."</li>
+	 * </ul>
+	 */
+	public static final TerminalManagementActionCode Bind = new TerminalManagementActionCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "Bind";
+			definition = "Request sent to a POI to bind with a server.";
+			owner_lazy = () -> com.tools20022.repository.codeset.TerminalManagementActionCode.mmObject();
+			codeName = "BIND";
+		}
+	};
+	/**
+	 * Request sent to a POI to unbind with a server.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode
+	 * TerminalManagementActionCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "UBND"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "Unbind"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Request sent to a POI to unbind with a server."</li>
+	 * </ul>
+	 */
+	public static final TerminalManagementActionCode Unbind = new TerminalManagementActionCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "Unbind";
+			definition = "Request sent to a POI to unbind with a server.";
+			owner_lazy = () -> com.tools20022.repository.codeset.TerminalManagementActionCode.mmObject();
+			codeName = "UBND";
+		}
+	};
+	/**
+	 * Request sent to a POI to rebind with a server.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionCode
+	 * TerminalManagementActionCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "RBND"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "Rebind"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Request sent to a POI to rebind with a server."</li>
+	 * </ul>
+	 */
+	public static final TerminalManagementActionCode Rebind = new TerminalManagementActionCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "Rebind";
+			definition = "Request sent to a POI to rebind with a server.";
+			owner_lazy = () -> com.tools20022.repository.codeset.TerminalManagementActionCode.mmObject();
+			codeName = "RBND";
 		}
 	};
 	final static private LinkedHashMap<String, TerminalManagementActionCode> codesByName = new LinkedHashMap<>();
@@ -382,7 +495,7 @@ public class TerminalManagementActionCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACTV");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TerminalManagementActionCode";
@@ -391,7 +504,8 @@ public class TerminalManagementActionCode extends MMCode {
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TerminalManagementActionCode.Activate, com.tools20022.repository.codeset.TerminalManagementActionCode.Deactivate,
 						com.tools20022.repository.codeset.TerminalManagementActionCode.Delete, com.tools20022.repository.codeset.TerminalManagementActionCode.Download, com.tools20022.repository.codeset.TerminalManagementActionCode.Install,
 						com.tools20022.repository.codeset.TerminalManagementActionCode.Restart, com.tools20022.repository.codeset.TerminalManagementActionCode.Upload, com.tools20022.repository.codeset.TerminalManagementActionCode.Update,
-						com.tools20022.repository.codeset.TerminalManagementActionCode.Create);
+						com.tools20022.repository.codeset.TerminalManagementActionCode.Create, com.tools20022.repository.codeset.TerminalManagementActionCode.Bind, com.tools20022.repository.codeset.TerminalManagementActionCode.Unbind,
+						com.tools20022.repository.codeset.TerminalManagementActionCode.Rebind);
 			}
 		});
 		return mmObject_lazy.get();
@@ -407,6 +521,9 @@ public class TerminalManagementActionCode extends MMCode {
 		codesByName.put(Upload.getCodeName().get(), Upload);
 		codesByName.put(Update.getCodeName().get(), Update);
 		codesByName.put(Create.getCodeName().get(), Create);
+		codesByName.put(Bind.getCodeName().get(), Bind);
+		codesByName.put(Unbind.getCodeName().get(), Unbind);
+		codesByName.put(Rebind.getCodeName().get(), Rebind);
 	}
 
 	public static TerminalManagementActionCode valueOf(String codeName) {

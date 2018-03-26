@@ -38,21 +38,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMDevice1Code#CustomerConsole
- * ATMDevice1Code.mmCustomerConsole}</li>
+ * ATMDevice1Code.CustomerConsole}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMDevice1Code#DocumentPrinter
- * ATMDevice1Code.mmDocumentPrinter}</li>
+ * ATMDevice1Code.DocumentPrinter}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMDevice1Code#Journal
- * ATMDevice1Code.mmJournal}</li>
+ * ATMDevice1Code.Journal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMDevice1Code#JournalPrinter
- * ATMDevice1Code.mmJournalPrinter}</li>
+ * ATMDevice1Code.JournalPrinter}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMDevice1Code#ReceiptPrinter
- * ATMDevice1Code.mmReceiptPrinter}</li>
+ * ATMDevice1Code.ReceiptPrinter}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMDevice1Code#WithdrawalReceipt
- * ATMDevice1Code.mmWithdrawalReceipt}</li>
+ * ATMDevice1Code.WithdrawalReceipt}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -60,8 +60,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -228,7 +228,7 @@ public class ATMDevice1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMDevice1Code";
 				definition = "ATM device to output message.";

@@ -23,8 +23,10 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.Algorithm11Code;
 import com.tools20022.repository.codeset.EncryptionFormat1Code;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AlgorithmIdentification12;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +53,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,16 +71,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Parameter4", propOrder = {"encryptionFormat", "digestAlgorithm", "maskGeneratorAlgorithm"})
 public class Parameter4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "NcrptnFrmt")
 	protected EncryptionFormat1Code encryptionFormat;
 	/**
-	 * Format of data before encryption, if the format is not plaintext or
-	 * implicit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,9 +107,9 @@ public class Parameter4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEncryptionFormat = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Parameter4, Optional<EncryptionFormat1Code>> mmEncryptionFormat = new MMMessageAttribute<Parameter4, Optional<EncryptionFormat1Code>>() {
 		{
-			componentContext_lazy = () -> Parameter4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Parameter4.mmObject();
 			isDerived = false;
 			xmlTag = "NcrptnFrmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -117,11 +119,22 @@ public class Parameter4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> EncryptionFormat1Code.mmObject();
 		}
+
+		@Override
+		public Optional<EncryptionFormat1Code> getValue(Parameter4 obj) {
+			return obj.getEncryptionFormat();
+		}
+
+		@Override
+		public void setValue(Parameter4 obj, Optional<EncryptionFormat1Code> value) {
+			obj.setEncryptionFormat(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DgstAlgo")
 	protected Algorithm11Code digestAlgorithm;
 	/**
-	 * Identification of the digest algorithm.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -154,9 +167,9 @@ public class Parameter4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDigestAlgorithm = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Parameter4, Optional<Algorithm11Code>> mmDigestAlgorithm = new MMMessageAttribute<Parameter4, Optional<Algorithm11Code>>() {
 		{
-			componentContext_lazy = () -> Parameter4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Parameter4.mmObject();
 			isDerived = false;
 			xmlTag = "DgstAlgo";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -167,11 +180,22 @@ public class Parameter4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Algorithm11Code.mmObject();
 		}
+
+		@Override
+		public Optional<Algorithm11Code> getValue(Parameter4 obj) {
+			return obj.getDigestAlgorithm();
+		}
+
+		@Override
+		public void setValue(Parameter4 obj, Optional<Algorithm11Code> value) {
+			obj.setDigestAlgorithm(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MskGnrtrAlgo")
 	protected AlgorithmIdentification12 maskGeneratorAlgorithm;
 	/**
-	 * Mask generator function cryptographic algorithm and parameters.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -205,9 +229,9 @@ public class Parameter4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMaskGeneratorAlgorithm = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Parameter4, Optional<AlgorithmIdentification12>> mmMaskGeneratorAlgorithm = new MMMessageAttribute<Parameter4, Optional<AlgorithmIdentification12>>() {
 		{
-			componentContext_lazy = () -> Parameter4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Parameter4.mmObject();
 			isDerived = false;
 			xmlTag = "MskGnrtrAlgo";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -216,15 +240,26 @@ public class Parameter4 {
 			nextVersions_lazy = () -> Arrays.asList(Parameter8.mmMaskGeneratorAlgorithm);
 			maxOccurs = 1;
 			minOccurs = 0;
-			complexType_lazy = () -> com.tools20022.repository.msg.AlgorithmIdentification12.mmObject();
+			complexType_lazy = () -> AlgorithmIdentification12.mmObject();
+		}
+
+		@Override
+		public Optional<AlgorithmIdentification12> getValue(Parameter4 obj) {
+			return obj.getMaskGeneratorAlgorithm();
+		}
+
+		@Override
+		public void setValue(Parameter4 obj, Optional<AlgorithmIdentification12> value) {
+			obj.setMaskGeneratorAlgorithm(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Parameter4.mmEncryptionFormat, Parameter4.mmDigestAlgorithm, Parameter4.mmMaskGeneratorAlgorithm);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Parameter4.mmEncryptionFormat, com.tools20022.repository.msg.Parameter4.mmDigestAlgorithm,
+						com.tools20022.repository.msg.Parameter4.mmMaskGeneratorAlgorithm);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Parameter4";
 				definition = "Parameters of the asymmetric encryption algorithm.";
@@ -234,30 +269,30 @@ public class Parameter4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "NcrptnFrmt")
-	public EncryptionFormat1Code getEncryptionFormat() {
-		return encryptionFormat;
+	public Optional<EncryptionFormat1Code> getEncryptionFormat() {
+		return encryptionFormat == null ? Optional.empty() : Optional.of(encryptionFormat);
 	}
 
-	public void setEncryptionFormat(EncryptionFormat1Code encryptionFormat) {
+	public Parameter4 setEncryptionFormat(EncryptionFormat1Code encryptionFormat) {
 		this.encryptionFormat = encryptionFormat;
+		return this;
 	}
 
-	@XmlElement(name = "DgstAlgo")
-	public Algorithm11Code getDigestAlgorithm() {
-		return digestAlgorithm;
+	public Optional<Algorithm11Code> getDigestAlgorithm() {
+		return digestAlgorithm == null ? Optional.empty() : Optional.of(digestAlgorithm);
 	}
 
-	public void setDigestAlgorithm(Algorithm11Code digestAlgorithm) {
+	public Parameter4 setDigestAlgorithm(Algorithm11Code digestAlgorithm) {
 		this.digestAlgorithm = digestAlgorithm;
+		return this;
 	}
 
-	@XmlElement(name = "MskGnrtrAlgo")
-	public AlgorithmIdentification12 getMaskGeneratorAlgorithm() {
-		return maskGeneratorAlgorithm;
+	public Optional<AlgorithmIdentification12> getMaskGeneratorAlgorithm() {
+		return maskGeneratorAlgorithm == null ? Optional.empty() : Optional.of(maskGeneratorAlgorithm);
 	}
 
-	public void setMaskGeneratorAlgorithm(com.tools20022.repository.msg.AlgorithmIdentification12 maskGeneratorAlgorithm) {
+	public Parameter4 setMaskGeneratorAlgorithm(AlgorithmIdentification12 maskGeneratorAlgorithm) {
 		this.maskGeneratorAlgorithm = maskGeneratorAlgorithm;
+		return this;
 	}
 }

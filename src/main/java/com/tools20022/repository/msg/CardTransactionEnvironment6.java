@@ -21,8 +21,10 @@ import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.GenericIdentification73;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -48,8 +50,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -64,16 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * CardTransactionEnvironment5}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CardTransactionEnvironment6", propOrder = {"sendingInstitution", "receivingInstitution"})
 public class CardTransactionEnvironment6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SndgInstn", required = true)
 	protected GenericIdentification73 sendingInstitution;
 	/**
-	 * Institution initiator of the reconciliation (correspond to the ISO 8583
-	 * field 94).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -105,9 +107,9 @@ public class CardTransactionEnvironment6 {
 	 * CardTransactionEnvironment5.mmSendingInstitution}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSendingInstitution = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CardTransactionEnvironment6, GenericIdentification73> mmSendingInstitution = new MMMessageAssociationEnd<CardTransactionEnvironment6, GenericIdentification73>() {
 		{
-			componentContext_lazy = () -> CardTransactionEnvironment6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardTransactionEnvironment6.mmObject();
 			isDerived = false;
 			xmlTag = "SndgInstn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -117,14 +119,24 @@ public class CardTransactionEnvironment6 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.GenericIdentification73.mmObject();
+			type_lazy = () -> GenericIdentification73.mmObject();
+		}
+
+		@Override
+		public GenericIdentification73 getValue(CardTransactionEnvironment6 obj) {
+			return obj.getSendingInstitution();
+		}
+
+		@Override
+		public void setValue(CardTransactionEnvironment6 obj, GenericIdentification73 value) {
+			obj.setSendingInstitution(value);
 		}
 	};
+	@XmlElement(name = "RcvgInstn", required = true)
 	protected GenericIdentification73 receivingInstitution;
 	/**
-	 * Institution destination of the reconciliation (correspond to the ISO 8583
-	 * field 93).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -156,9 +168,9 @@ public class CardTransactionEnvironment6 {
 	 * CardTransactionEnvironment5.mmReceivingInstitution}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReceivingInstitution = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CardTransactionEnvironment6, GenericIdentification73> mmReceivingInstitution = new MMMessageAssociationEnd<CardTransactionEnvironment6, GenericIdentification73>() {
 		{
-			componentContext_lazy = () -> CardTransactionEnvironment6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CardTransactionEnvironment6.mmObject();
 			isDerived = false;
 			xmlTag = "RcvgInstn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -168,15 +180,25 @@ public class CardTransactionEnvironment6 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.GenericIdentification73.mmObject();
+			type_lazy = () -> GenericIdentification73.mmObject();
+		}
+
+		@Override
+		public GenericIdentification73 getValue(CardTransactionEnvironment6 obj) {
+			return obj.getReceivingInstitution();
+		}
+
+		@Override
+		public void setValue(CardTransactionEnvironment6 obj, GenericIdentification73 value) {
+			obj.setReceivingInstitution(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CardTransactionEnvironment6.mmSendingInstitution, CardTransactionEnvironment6.mmReceivingInstitution);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CardTransactionEnvironment6.mmSendingInstitution, com.tools20022.repository.msg.CardTransactionEnvironment6.mmReceivingInstitution);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardTransactionEnvironment6";
 				definition = "Environment of the transaction.";
@@ -186,21 +208,21 @@ public class CardTransactionEnvironment6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SndgInstn", required = true)
 	public GenericIdentification73 getSendingInstitution() {
 		return sendingInstitution;
 	}
 
-	public void setSendingInstitution(com.tools20022.repository.msg.GenericIdentification73 sendingInstitution) {
-		this.sendingInstitution = sendingInstitution;
+	public CardTransactionEnvironment6 setSendingInstitution(GenericIdentification73 sendingInstitution) {
+		this.sendingInstitution = Objects.requireNonNull(sendingInstitution);
+		return this;
 	}
 
-	@XmlElement(name = "RcvgInstn", required = true)
 	public GenericIdentification73 getReceivingInstitution() {
 		return receivingInstitution;
 	}
 
-	public void setReceivingInstitution(com.tools20022.repository.msg.GenericIdentification73 receivingInstitution) {
-		this.receivingInstitution = receivingInstitution;
+	public CardTransactionEnvironment6 setReceivingInstitution(GenericIdentification73 receivingInstitution) {
+		this.receivingInstitution = Objects.requireNonNull(receivingInstitution);
+		return this;
 	}
 }

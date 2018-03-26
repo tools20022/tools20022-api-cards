@@ -22,10 +22,13 @@ import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.Asset;
+import com.tools20022.repository.entity.Trade;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Separate transactions which combined together form a trade.
@@ -64,8 +67,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -81,8 +84,8 @@ public class Leg {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Asset relatedAsset;
 	/**
-	 * Asset for which leg information is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,7 +113,7 @@ public class Leg {
 	 * definition} = "Asset for which leg information is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedAsset = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Leg, Optional<Asset>> mmRelatedAsset = new MMBusinessAssociationEnd<Leg, Optional<Asset>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Leg.mmObject();
@@ -119,16 +122,25 @@ public class Leg {
 			definition = "Asset for which leg information is provided.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Asset.mmLegAdditionalInformation;
+			opposite_lazy = () -> Asset.mmLegAdditionalInformation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
+			type_lazy = () -> Asset.mmObject();
+		}
+
+		@Override
+		public Optional<Asset> getValue(Leg obj) {
+			return obj.getRelatedAsset();
+		}
+
+		@Override
+		public void setValue(Leg obj, Optional<Asset> value) {
+			obj.setRelatedAsset(value.orElse(null));
 		}
 	};
 	protected PercentageRate ratioQuantity;
 	/**
-	 * Only for multileg instrument - Ratio of quantity for an individual leg
-	 * relative to the entire multileg security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,7 +164,7 @@ public class Leg {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRatioQuantity = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Leg, PercentageRate> mmRatioQuantity = new MMBusinessAttribute<Leg, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Leg.mmObject();
@@ -164,19 +176,20 @@ public class Leg {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Leg.class.getMethod("getRatioQuantity", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Leg obj) {
+			return obj.getRatioQuantity();
+		}
+
+		@Override
+		public void setValue(Leg obj, PercentageRate value) {
+			obj.setRatioQuantity(value);
 		}
 	};
 	protected CurrencyCode currency;
 	/**
-	 * Only for multileg instrument - Currency associated with a particular
-	 * Leg's quantity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -199,7 +212,7 @@ public class Leg {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Leg, CurrencyCode> mmCurrency = new MMBusinessAttribute<Leg, CurrencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Leg.mmObject();
@@ -211,20 +224,20 @@ public class Leg {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Leg.class.getMethod("getCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(Leg obj) {
+			return obj.getCurrency();
+		}
+
+		@Override
+		public void setValue(Leg obj, CurrencyCode value) {
+			obj.setCurrency(value);
 		}
 	};
 	protected Max35Text swapType;
 	/**
-	 * For Fixed Income, used instead of LegQty or LegOrderQty to requests the
-	 * respondent to calculate the quantity based on the quantity on the
-	 * opposite side of the swap.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -247,7 +260,7 @@ public class Leg {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSwapType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Leg, Max35Text> mmSwapType = new MMBusinessAttribute<Leg, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Leg.mmObject();
@@ -259,19 +272,20 @@ public class Leg {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Leg.class.getMethod("getSwapType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Leg obj) {
+			return obj.getSwapType();
+		}
+
+		@Override
+		public void setValue(Leg obj, Max35Text value) {
+			obj.setSwapType(value);
 		}
 	};
 	protected Number pool;
 	/**
-	 * For Fixed Income, identifies MBS / ABS pool for a specific leg of a
-	 * multi-leg instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -294,7 +308,7 @@ public class Leg {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPool = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Leg, Number> mmPool = new MMBusinessAttribute<Leg, Number>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Leg.mmObject();
@@ -306,18 +320,20 @@ public class Leg {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Leg.class.getMethod("getPool", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(Leg obj) {
+			return obj.getPool();
+		}
+
+		@Override
+		public void setValue(Leg obj, Number value) {
+			obj.setPool(value);
 		}
 	};
 	protected Trade trade;
 	/**
-	 * Trade which is composed of several legs.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -344,7 +360,7 @@ public class Leg {
 	 * definition} = "Trade which is composed of several legs."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Leg, Trade> mmTrade = new MMBusinessAssociationEnd<Leg, Trade>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Leg.mmObject();
@@ -353,20 +369,30 @@ public class Leg {
 			definition = "Trade which is composed of several legs.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Trade.mmLeg;
+			opposite_lazy = () -> Trade.mmLeg;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
+			type_lazy = () -> Trade.mmObject();
+		}
+
+		@Override
+		public Trade getValue(Leg obj) {
+			return obj.getTrade();
+		}
+
+		@Override
+		public void setValue(Leg obj, Trade value) {
+			obj.setTrade(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Leg";
 				definition = "Separate transactions which combined together form a trade.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Asset.mmLegAdditionalInformation, com.tools20022.repository.entity.Trade.mmLeg);
+				associationDomain_lazy = () -> Arrays.asList(Asset.mmLegAdditionalInformation, Trade.mmLeg);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Leg.mmRelatedAsset, com.tools20022.repository.entity.Leg.mmRatioQuantity, com.tools20022.repository.entity.Leg.mmCurrency,
 						com.tools20022.repository.entity.Leg.mmSwapType, com.tools20022.repository.entity.Leg.mmPool, com.tools20022.repository.entity.Leg.mmTrade);
 			}
@@ -379,51 +405,57 @@ public class Leg {
 		return mmObject_lazy.get();
 	}
 
-	public Asset getRelatedAsset() {
-		return relatedAsset;
+	public Optional<Asset> getRelatedAsset() {
+		return relatedAsset == null ? Optional.empty() : Optional.of(relatedAsset);
 	}
 
-	public void setRelatedAsset(com.tools20022.repository.entity.Asset relatedAsset) {
+	public Leg setRelatedAsset(Asset relatedAsset) {
 		this.relatedAsset = relatedAsset;
+		return this;
 	}
 
 	public PercentageRate getRatioQuantity() {
 		return ratioQuantity;
 	}
 
-	public void setRatioQuantity(PercentageRate ratioQuantity) {
-		this.ratioQuantity = ratioQuantity;
+	public Leg setRatioQuantity(PercentageRate ratioQuantity) {
+		this.ratioQuantity = Objects.requireNonNull(ratioQuantity);
+		return this;
 	}
 
 	public CurrencyCode getCurrency() {
 		return currency;
 	}
 
-	public void setCurrency(CurrencyCode currency) {
-		this.currency = currency;
+	public Leg setCurrency(CurrencyCode currency) {
+		this.currency = Objects.requireNonNull(currency);
+		return this;
 	}
 
 	public Max35Text getSwapType() {
 		return swapType;
 	}
 
-	public void setSwapType(Max35Text swapType) {
-		this.swapType = swapType;
+	public Leg setSwapType(Max35Text swapType) {
+		this.swapType = Objects.requireNonNull(swapType);
+		return this;
 	}
 
 	public Number getPool() {
 		return pool;
 	}
 
-	public void setPool(Number pool) {
-		this.pool = pool;
+	public Leg setPool(Number pool) {
+		this.pool = Objects.requireNonNull(pool);
+		return this;
 	}
 
 	public Trade getTrade() {
 		return trade;
 	}
 
-	public void setTrade(com.tools20022.repository.entity.Trade trade) {
-		this.trade = trade;
+	public Leg setTrade(Trade trade) {
+		this.trade = Objects.requireNonNull(trade);
+		return this;
 	}
 }

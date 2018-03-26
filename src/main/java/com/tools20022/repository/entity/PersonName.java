@@ -21,11 +21,13 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.NamePrefix1Code;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.PartyName;
+import com.tools20022.repository.entity.PersonIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Name by which a person is known and that is usually used to identify that
@@ -69,8 +71,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -88,8 +90,8 @@ public class PersonName extends PartyName {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text birthName;
 	/**
-	 * Name received at birth, eg, maiden name.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -111,7 +113,7 @@ public class PersonName extends PartyName {
 	 * definition} = "Name received at birth, eg, maiden name."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBirthName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonName, Max35Text> mmBirthName = new MMBusinessAttribute<PersonName, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonName.mmObject();
@@ -123,18 +125,20 @@ public class PersonName extends PartyName {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonName.class.getMethod("getBirthName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PersonName obj) {
+			return obj.getBirthName();
+		}
+
+		@Override
+		public void setValue(PersonName obj, Max35Text value) {
+			obj.setBirthName(value);
 		}
 	};
 	protected NamePrefix1Code namePrefix;
 	/**
-	 * Specifies the terms used to formally address a person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -167,7 +171,7 @@ public class PersonName extends PartyName {
 	 * definition} = "Specifies the terms used to formally address a person."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNamePrefix = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonName, NamePrefix1Code> mmNamePrefix = new MMBusinessAttribute<PersonName, NamePrefix1Code>() {
 		{
 			derivation_lazy = () -> Arrays.asList(ContactDetails2.mmNamePrefix, Contacts3.mmNamePrefix);
 			isDerived = false;
@@ -180,18 +184,20 @@ public class PersonName extends PartyName {
 			simpleType_lazy = () -> NamePrefix1Code.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonName.class.getMethod("getNamePrefix", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public NamePrefix1Code getValue(PersonName obj) {
+			return obj.getNamePrefix();
+		}
+
+		@Override
+		public void setValue(PersonName obj, NamePrefix1Code value) {
+			obj.setNamePrefix(value);
 		}
 	};
 	protected Max35Text givenName;
 	/**
-	 * First name of a person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -224,7 +230,7 @@ public class PersonName extends PartyName {
 	 * definition} = "First name of a person."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmGivenName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonName, Max35Text> mmGivenName = new MMBusinessAttribute<PersonName, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Cardholder9.mmName, Cardholder11.mmName, Cardholder12.mmName);
 			isDerived = false;
@@ -237,18 +243,20 @@ public class PersonName extends PartyName {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonName.class.getMethod("getGivenName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PersonName obj) {
+			return obj.getGivenName();
+		}
+
+		@Override
+		public void setValue(PersonName obj, Max35Text value) {
+			obj.setGivenName(value);
 		}
 	};
 	protected Max35Text middleName;
 	/**
-	 * Second name of a person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -270,7 +278,7 @@ public class PersonName extends PartyName {
 	 * definition} = "Second name of a person."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMiddleName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonName, Max35Text> mmMiddleName = new MMBusinessAttribute<PersonName, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonName.mmObject();
@@ -282,19 +290,20 @@ public class PersonName extends PartyName {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonName.class.getMethod("getMiddleName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PersonName obj) {
+			return obj.getMiddleName();
+		}
+
+		@Override
+		public void setValue(PersonName obj, Max35Text value) {
+			obj.setMiddleName(value);
 		}
 	};
 	protected Max35Text nameSuffix;
 	/**
-	 * Additional information about a person that follows a person's name, eg,
-	 * qualification such as Doctor of Philosophy (PhD).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -318,7 +327,7 @@ public class PersonName extends PartyName {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNameSuffix = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonName, Max35Text> mmNameSuffix = new MMBusinessAttribute<PersonName, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonName.mmObject();
@@ -330,18 +339,20 @@ public class PersonName extends PartyName {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonName.class.getMethod("getNameSuffix", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PersonName obj) {
+			return obj.getNameSuffix();
+		}
+
+		@Override
+		public void setValue(PersonName obj, Max35Text value) {
+			obj.setNameSuffix(value);
 		}
 	};
 	protected PersonIdentification identification;
 	/**
-	 * Person identification which contains a name.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -372,7 +383,7 @@ public class PersonName extends PartyName {
 	 * definition} = "Person identification which contains a name."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PersonName, Optional<PersonIdentification>> mmIdentification = new MMBusinessAssociationEnd<PersonName, Optional<PersonIdentification>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonName.mmObject();
@@ -381,20 +392,30 @@ public class PersonName extends PartyName {
 			definition = "Person identification which contains a name.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmPersonName;
+			opposite_lazy = () -> PersonIdentification.mmPersonName;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
+			type_lazy = () -> PersonIdentification.mmObject();
+		}
+
+		@Override
+		public Optional<PersonIdentification> getValue(PersonName obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(PersonName obj, Optional<PersonIdentification> value) {
+			obj.setIdentification(value.orElse(null));
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PersonName";
 				definition = "Name by which a person is known and that is usually used to identify that person.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PersonIdentification.mmPersonName);
+				associationDomain_lazy = () -> Arrays.asList(PersonIdentification.mmPersonName);
 				superType_lazy = () -> PartyName.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PersonName.mmBirthName, com.tools20022.repository.entity.PersonName.mmNamePrefix, com.tools20022.repository.entity.PersonName.mmGivenName,
 						com.tools20022.repository.entity.PersonName.mmMiddleName, com.tools20022.repository.entity.PersonName.mmNameSuffix, com.tools20022.repository.entity.PersonName.mmIdentification);
@@ -412,47 +433,53 @@ public class PersonName extends PartyName {
 		return birthName;
 	}
 
-	public void setBirthName(Max35Text birthName) {
-		this.birthName = birthName;
+	public PersonName setBirthName(Max35Text birthName) {
+		this.birthName = Objects.requireNonNull(birthName);
+		return this;
 	}
 
 	public NamePrefix1Code getNamePrefix() {
 		return namePrefix;
 	}
 
-	public void setNamePrefix(NamePrefix1Code namePrefix) {
-		this.namePrefix = namePrefix;
+	public PersonName setNamePrefix(NamePrefix1Code namePrefix) {
+		this.namePrefix = Objects.requireNonNull(namePrefix);
+		return this;
 	}
 
 	public Max35Text getGivenName() {
 		return givenName;
 	}
 
-	public void setGivenName(Max35Text givenName) {
-		this.givenName = givenName;
+	public PersonName setGivenName(Max35Text givenName) {
+		this.givenName = Objects.requireNonNull(givenName);
+		return this;
 	}
 
 	public Max35Text getMiddleName() {
 		return middleName;
 	}
 
-	public void setMiddleName(Max35Text middleName) {
-		this.middleName = middleName;
+	public PersonName setMiddleName(Max35Text middleName) {
+		this.middleName = Objects.requireNonNull(middleName);
+		return this;
 	}
 
 	public Max35Text getNameSuffix() {
 		return nameSuffix;
 	}
 
-	public void setNameSuffix(Max35Text nameSuffix) {
-		this.nameSuffix = nameSuffix;
+	public PersonName setNameSuffix(Max35Text nameSuffix) {
+		this.nameSuffix = Objects.requireNonNull(nameSuffix);
+		return this;
 	}
 
-	public PersonIdentification getIdentification() {
-		return identification;
+	public Optional<PersonIdentification> getIdentification() {
+		return identification == null ? Optional.empty() : Optional.of(identification);
 	}
 
-	public void setIdentification(com.tools20022.repository.entity.PersonIdentification identification) {
+	public PersonName setIdentification(PersonIdentification identification) {
 		this.identification = identification;
+		return this;
 	}
 }

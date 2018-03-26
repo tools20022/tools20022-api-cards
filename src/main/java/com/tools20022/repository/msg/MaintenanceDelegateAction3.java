@@ -25,9 +25,12 @@ import com.tools20022.repository.datatype.Max3000Binary;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.TrueFalseIndicator;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.DataSetIdentification6;
+import com.tools20022.repository.msg.NetworkParameters5;
+import com.tools20022.repository.msg.ProcessRetry2;
+import com.tools20022.repository.msg.TMSAction6;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -72,8 +75,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,16 +89,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "MaintenanceDelegateAction3", propOrder = {"periodicAction", "TMRemoteAccess", "TMSProtocol", "TMSProtocolVersion", "dataSetIdentification", "reTry", "additionalInformation", "action"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "MaintenanceDelegateAction3", propOrder = {"periodicAction", "tMRemoteAccess", "tMSProtocol", "tMSProtocolVersion", "dataSetIdentification", "reTry", "additionalInformation", "action"})
 public class MaintenanceDelegateAction3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PrdcActn")
 	protected TrueFalseIndicator periodicAction;
 	/**
-	 * Flag to indicate that the delegated actions have to be included in a
-	 * periodic sequence of actions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -123,9 +126,9 @@ public class MaintenanceDelegateAction3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPeriodicAction = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MaintenanceDelegateAction3, Optional<TrueFalseIndicator>> mmPeriodicAction = new MMMessageAttribute<MaintenanceDelegateAction3, Optional<TrueFalseIndicator>>() {
 		{
-			componentContext_lazy = () -> MaintenanceDelegateAction3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MaintenanceDelegateAction3.mmObject();
 			isDerived = false;
 			xmlTag = "PrdcActn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -135,12 +138,22 @@ public class MaintenanceDelegateAction3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<TrueFalseIndicator> getValue(MaintenanceDelegateAction3 obj) {
+			return obj.getPeriodicAction();
+		}
+
+		@Override
+		public void setValue(MaintenanceDelegateAction3 obj, Optional<TrueFalseIndicator> value) {
+			obj.setPeriodicAction(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TMRmotAccs")
 	protected NetworkParameters5 tMRemoteAccess;
 	/**
-	 * Network address and parameters of the terminal manager host which will
-	 * performs the delegated actions.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -166,9 +179,9 @@ public class MaintenanceDelegateAction3 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTMRemoteAccess = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MaintenanceDelegateAction3, Optional<NetworkParameters5>> mmTMRemoteAccess = new MMMessageAssociationEnd<MaintenanceDelegateAction3, Optional<NetworkParameters5>>() {
 		{
-			componentContext_lazy = () -> MaintenanceDelegateAction3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MaintenanceDelegateAction3.mmObject();
 			isDerived = false;
 			xmlTag = "TMRmotAccs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -177,13 +190,24 @@ public class MaintenanceDelegateAction3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.NetworkParameters5.mmObject();
+			type_lazy = () -> NetworkParameters5.mmObject();
+		}
+
+		@Override
+		public Optional<NetworkParameters5> getValue(MaintenanceDelegateAction3 obj) {
+			return obj.getTMRemoteAccess();
+		}
+
+		@Override
+		public void setValue(MaintenanceDelegateAction3 obj, Optional<NetworkParameters5> value) {
+			obj.setTMRemoteAccess(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "TMSPrtcol")
 	protected Max35Text tMSProtocol;
 	/**
-	 * TMS protocol to use to perform the maintenance action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -208,9 +232,9 @@ public class MaintenanceDelegateAction3 {
 	 * definition} = "TMS protocol to use to perform the maintenance action."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTMSProtocol = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MaintenanceDelegateAction3, Optional<Max35Text>> mmTMSProtocol = new MMMessageAttribute<MaintenanceDelegateAction3, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> MaintenanceDelegateAction3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MaintenanceDelegateAction3.mmObject();
 			isDerived = false;
 			xmlTag = "TMSPrtcol";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -220,11 +244,22 @@ public class MaintenanceDelegateAction3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(MaintenanceDelegateAction3 obj) {
+			return obj.getTMSProtocol();
+		}
+
+		@Override
+		public void setValue(MaintenanceDelegateAction3 obj, Optional<Max35Text> value) {
+			obj.setTMSProtocol(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TMSPrtcolVrsn")
 	protected Max35Text tMSProtocolVersion;
 	/**
-	 * Version of the TMS protocol to use to perform the maintenance action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -250,9 +285,9 @@ public class MaintenanceDelegateAction3 {
 	 * "Version of the TMS protocol to use to perform the maintenance action."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTMSProtocolVersion = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MaintenanceDelegateAction3, Optional<Max35Text>> mmTMSProtocolVersion = new MMMessageAttribute<MaintenanceDelegateAction3, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> MaintenanceDelegateAction3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MaintenanceDelegateAction3.mmObject();
 			isDerived = false;
 			xmlTag = "TMSPrtcolVrsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -262,11 +297,22 @@ public class MaintenanceDelegateAction3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(MaintenanceDelegateAction3 obj) {
+			return obj.getTMSProtocolVersion();
+		}
+
+		@Override
+		public void setValue(MaintenanceDelegateAction3 obj, Optional<Max35Text> value) {
+			obj.setTMSProtocolVersion(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DataSetId")
 	protected DataSetIdentification6 dataSetIdentification;
 	/**
-	 * Data set on which the delegated action has to be performed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -288,27 +334,38 @@ public class MaintenanceDelegateAction3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Data set  on which the delegated action has to be performed."</li>
+	 * "Data set on which the delegated action has to be performed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDataSetIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MaintenanceDelegateAction3, Optional<DataSetIdentification6>> mmDataSetIdentification = new MMMessageAssociationEnd<MaintenanceDelegateAction3, Optional<DataSetIdentification6>>() {
 		{
-			componentContext_lazy = () -> MaintenanceDelegateAction3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MaintenanceDelegateAction3.mmObject();
 			isDerived = false;
 			xmlTag = "DataSetId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DataSetIdentification";
-			definition = "Data set  on which the delegated action has to be performed.";
+			definition = "Data set on which the delegated action has to be performed.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DataSetIdentification6.mmObject();
+			type_lazy = () -> DataSetIdentification6.mmObject();
+		}
+
+		@Override
+		public Optional<DataSetIdentification6> getValue(MaintenanceDelegateAction3 obj) {
+			return obj.getDataSetIdentification();
+		}
+
+		@Override
+		public void setValue(MaintenanceDelegateAction3 obj, Optional<DataSetIdentification6> value) {
+			obj.setDataSetIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "ReTry")
 	protected ProcessRetry2 reTry;
 	/**
-	 * Definition of retry process when activation of the action fails.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -333,9 +390,9 @@ public class MaintenanceDelegateAction3 {
 	 * "Definition of retry process when activation of the action fails."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmReTry = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MaintenanceDelegateAction3, Optional<ProcessRetry2>> mmReTry = new MMMessageAssociationEnd<MaintenanceDelegateAction3, Optional<ProcessRetry2>>() {
 		{
-			componentContext_lazy = () -> MaintenanceDelegateAction3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MaintenanceDelegateAction3.mmObject();
 			isDerived = false;
 			xmlTag = "ReTry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -344,13 +401,24 @@ public class MaintenanceDelegateAction3 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ProcessRetry2.mmObject();
+			type_lazy = () -> ProcessRetry2.mmObject();
+		}
+
+		@Override
+		public Optional<ProcessRetry2> getValue(MaintenanceDelegateAction3 obj) {
+			return obj.getReTry();
+		}
+
+		@Override
+		public void setValue(MaintenanceDelegateAction3 obj, Optional<ProcessRetry2> value) {
+			obj.setReTry(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "AddtlInf")
 	protected List<Max3000Binary> additionalInformation;
 	/**
-	 * Additional information to include in the maintenance action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -377,9 +445,9 @@ public class MaintenanceDelegateAction3 {
 	 * "Additional information to include in the maintenance action."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<MaintenanceDelegateAction3, List<Max3000Binary>> mmAdditionalInformation = new MMMessageAttribute<MaintenanceDelegateAction3, List<Max3000Binary>>() {
 		{
-			componentContext_lazy = () -> MaintenanceDelegateAction3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MaintenanceDelegateAction3.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -388,11 +456,22 @@ public class MaintenanceDelegateAction3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max3000Binary.mmObject();
 		}
+
+		@Override
+		public List<Max3000Binary> getValue(MaintenanceDelegateAction3 obj) {
+			return obj.getAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(MaintenanceDelegateAction3 obj, List<Max3000Binary> value) {
+			obj.setAdditionalInformation(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.TMSAction6> action;
+	@XmlElement(name = "Actn")
+	protected List<TMSAction6> action;
 	/**
-	 * Sequence of action to include in the next MTM management plan.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -416,9 +495,9 @@ public class MaintenanceDelegateAction3 {
 	 * "Sequence of action to include in the next MTM management plan."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAction = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<MaintenanceDelegateAction3, List<TMSAction6>> mmAction = new MMMessageAssociationEnd<MaintenanceDelegateAction3, List<TMSAction6>>() {
 		{
-			componentContext_lazy = () -> MaintenanceDelegateAction3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.MaintenanceDelegateAction3.mmObject();
 			isDerived = false;
 			xmlTag = "Actn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -426,16 +505,28 @@ public class MaintenanceDelegateAction3 {
 			definition = "Sequence of action to include in the next MTM management plan.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TMSAction6.mmObject();
+			type_lazy = () -> TMSAction6.mmObject();
+		}
+
+		@Override
+		public List<TMSAction6> getValue(MaintenanceDelegateAction3 obj) {
+			return obj.getAction();
+		}
+
+		@Override
+		public void setValue(MaintenanceDelegateAction3 obj, List<TMSAction6> value) {
+			obj.setAction(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(MaintenanceDelegateAction3.mmPeriodicAction, MaintenanceDelegateAction3.mmTMRemoteAccess, MaintenanceDelegateAction3.mmTMSProtocol, MaintenanceDelegateAction3.mmTMSProtocolVersion,
-						MaintenanceDelegateAction3.mmDataSetIdentification, MaintenanceDelegateAction3.mmReTry, MaintenanceDelegateAction3.mmAdditionalInformation, MaintenanceDelegateAction3.mmAction);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.MaintenanceDelegateAction3.mmPeriodicAction, com.tools20022.repository.msg.MaintenanceDelegateAction3.mmTMRemoteAccess,
+						com.tools20022.repository.msg.MaintenanceDelegateAction3.mmTMSProtocol, com.tools20022.repository.msg.MaintenanceDelegateAction3.mmTMSProtocolVersion,
+						com.tools20022.repository.msg.MaintenanceDelegateAction3.mmDataSetIdentification, com.tools20022.repository.msg.MaintenanceDelegateAction3.mmReTry,
+						com.tools20022.repository.msg.MaintenanceDelegateAction3.mmAdditionalInformation, com.tools20022.repository.msg.MaintenanceDelegateAction3.mmAction);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MaintenanceDelegateAction3";
 				definition = "Information for the MTM to build or include delegated actions in the management plan of the POI.";
@@ -444,75 +535,75 @@ public class MaintenanceDelegateAction3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PrdcActn")
-	public TrueFalseIndicator getPeriodicAction() {
-		return periodicAction;
+	public Optional<TrueFalseIndicator> getPeriodicAction() {
+		return periodicAction == null ? Optional.empty() : Optional.of(periodicAction);
 	}
 
-	public void setPeriodicAction(TrueFalseIndicator periodicAction) {
+	public MaintenanceDelegateAction3 setPeriodicAction(TrueFalseIndicator periodicAction) {
 		this.periodicAction = periodicAction;
+		return this;
 	}
 
-	@XmlElement(name = "TMRmotAccs")
-	public NetworkParameters5 getTMRemoteAccess() {
-		return tMRemoteAccess;
+	public Optional<NetworkParameters5> getTMRemoteAccess() {
+		return tMRemoteAccess == null ? Optional.empty() : Optional.of(tMRemoteAccess);
 	}
 
-	public void setTMRemoteAccess(com.tools20022.repository.msg.NetworkParameters5 tMRemoteAccess) {
+	public MaintenanceDelegateAction3 setTMRemoteAccess(NetworkParameters5 tMRemoteAccess) {
 		this.tMRemoteAccess = tMRemoteAccess;
+		return this;
 	}
 
-	@XmlElement(name = "TMSPrtcol")
-	public Max35Text getTMSProtocol() {
-		return tMSProtocol;
+	public Optional<Max35Text> getTMSProtocol() {
+		return tMSProtocol == null ? Optional.empty() : Optional.of(tMSProtocol);
 	}
 
-	public void setTMSProtocol(Max35Text tMSProtocol) {
+	public MaintenanceDelegateAction3 setTMSProtocol(Max35Text tMSProtocol) {
 		this.tMSProtocol = tMSProtocol;
+		return this;
 	}
 
-	@XmlElement(name = "TMSPrtcolVrsn")
-	public Max35Text getTMSProtocolVersion() {
-		return tMSProtocolVersion;
+	public Optional<Max35Text> getTMSProtocolVersion() {
+		return tMSProtocolVersion == null ? Optional.empty() : Optional.of(tMSProtocolVersion);
 	}
 
-	public void setTMSProtocolVersion(Max35Text tMSProtocolVersion) {
+	public MaintenanceDelegateAction3 setTMSProtocolVersion(Max35Text tMSProtocolVersion) {
 		this.tMSProtocolVersion = tMSProtocolVersion;
+		return this;
 	}
 
-	@XmlElement(name = "DataSetId")
-	public DataSetIdentification6 getDataSetIdentification() {
-		return dataSetIdentification;
+	public Optional<DataSetIdentification6> getDataSetIdentification() {
+		return dataSetIdentification == null ? Optional.empty() : Optional.of(dataSetIdentification);
 	}
 
-	public void setDataSetIdentification(com.tools20022.repository.msg.DataSetIdentification6 dataSetIdentification) {
+	public MaintenanceDelegateAction3 setDataSetIdentification(DataSetIdentification6 dataSetIdentification) {
 		this.dataSetIdentification = dataSetIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "ReTry")
-	public ProcessRetry2 getReTry() {
-		return reTry;
+	public Optional<ProcessRetry2> getReTry() {
+		return reTry == null ? Optional.empty() : Optional.of(reTry);
 	}
 
-	public void setReTry(com.tools20022.repository.msg.ProcessRetry2 reTry) {
+	public MaintenanceDelegateAction3 setReTry(ProcessRetry2 reTry) {
 		this.reTry = reTry;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlInf")
 	public List<Max3000Binary> getAdditionalInformation() {
-		return additionalInformation;
+		return additionalInformation == null ? additionalInformation = new ArrayList<>() : additionalInformation;
 	}
 
-	public void setAdditionalInformation(List<Max3000Binary> additionalInformation) {
-		this.additionalInformation = additionalInformation;
+	public MaintenanceDelegateAction3 setAdditionalInformation(List<Max3000Binary> additionalInformation) {
+		this.additionalInformation = Objects.requireNonNull(additionalInformation);
+		return this;
 	}
 
-	@XmlElement(name = "Actn")
 	public List<TMSAction6> getAction() {
-		return action;
+		return action == null ? action = new ArrayList<>() : action;
 	}
 
-	public void setAction(List<com.tools20022.repository.msg.TMSAction6> action) {
-		this.action = action;
+	public MaintenanceDelegateAction3 setAction(List<TMSAction6> action) {
+		this.action = Objects.requireNonNull(action);
+		return this;
 	}
 }

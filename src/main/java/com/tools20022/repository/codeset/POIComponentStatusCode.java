@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentStatusCode#WaitingActivation
- * POIComponentStatusCode.mmWaitingActivation}</li>
+ * POIComponentStatusCode.WaitingActivation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentStatusCode#InOperation
- * POIComponentStatusCode.mmInOperation}</li>
+ * POIComponentStatusCode.InOperation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentStatusCode#OutOfOrder
- * POIComponentStatusCode.mmOutOfOrder}</li>
+ * POIComponentStatusCode.OutOfOrder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentStatusCode#Deactivated
- * POIComponentStatusCode.mmDeactivated}</li>
+ * POIComponentStatusCode.Deactivated}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -60,8 +60,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -211,7 +211,7 @@ public class POIComponentStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("WAIT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "POIComponentStatusCode";

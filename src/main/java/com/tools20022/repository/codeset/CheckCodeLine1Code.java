@@ -37,16 +37,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.CheckCodeLine1Code#CMC7
- * CheckCodeLine1Code.mmCMC7}</li>
+ * CheckCodeLine1Code.CMC7}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CheckCodeLine1Code#E13B
- * CheckCodeLine1Code.mmE13B}</li>
+ * CheckCodeLine1Code.E13B}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CheckCodeLine1Code#OCRA
- * CheckCodeLine1Code.mmOCRA}</li>
+ * CheckCodeLine1Code.OCRA}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CheckCodeLine1Code#OCRB
- * CheckCodeLine1Code.mmOCRB}</li>
+ * CheckCodeLine1Code.OCRB}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CheckCodeLine1Code#OCRDefault
- * CheckCodeLine1Code.mmOCRDefault}</li>
+ * CheckCodeLine1Code.OCRDefault}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -55,8 +55,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -199,7 +199,7 @@ public class CheckCodeLine1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CheckCodeLine1Code";
 				definition = "Format of the check code line.";

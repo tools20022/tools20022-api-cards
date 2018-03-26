@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommandReason1Code#Diagnostic
- * ATMCommandReason1Code.mmDiagnostic}</li>
+ * ATMCommandReason1Code.Diagnostic}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommandReason1Code#Monitoring
- * ATMCommandReason1Code.mmMonitoring}</li>
+ * ATMCommandReason1Code.Monitoring}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommandReason1Code#SecurityError
- * ATMCommandReason1Code.mmSecurityError}</li>
+ * ATMCommandReason1Code.SecurityError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommandReason1Code#Synchronisation
- * ATMCommandReason1Code.mmSynchronisation}</li>
+ * ATMCommandReason1Code.Synchronisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommandReason1Code#Update
- * ATMCommandReason1Code.mmUpdate}</li>
+ * ATMCommandReason1Code.Update}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -203,7 +203,7 @@ public class ATMCommandReason1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMCommandReason1Code";
 				definition = "Reason for sending the command.";

@@ -26,9 +26,10 @@ import com.tools20022.repository.msg.ATMReconciliationAdvice2;
 import com.tools20022.repository.msg.ContentInformationType10;
 import com.tools20022.repository.msg.ContentInformationType15;
 import com.tools20022.repository.msg.Header32;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -79,16 +80,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "ATMReconciliationAdviceV02", propOrder = {"header", "protectedATMReconciliationAdvice", "ATMReconciliationAdvice", "securityTrailer"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "ATMReconciliationAdviceV02", propOrder = {"header", "protectedATMReconciliationAdvice", "aTMReconciliationAdvice", "securityTrailer"})
 public class ATMReconciliationAdviceV02 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header32 header;
 	/**
-	 * Information related to the protocol management on a segment of the path
-	 * from the ATM to the acquirer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,7 +111,7 @@ public class ATMReconciliationAdviceV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMReconciliationAdviceV02, Header32> mmHeader = new MMMessageBuildingBlock<ATMReconciliationAdviceV02, Header32>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,18 +122,21 @@ public class ATMReconciliationAdviceV02 {
 			complexType_lazy = () -> Header32.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMReconciliationAdviceV02.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header32 getValue(ATMReconciliationAdviceV02 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(ATMReconciliationAdviceV02 obj, Header32 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "PrtctdATMRcncltnAdvc")
 	protected ContentInformationType10 protectedATMReconciliationAdvice;
 	/**
-	 * Encrypted body of the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,7 +157,7 @@ public class ATMReconciliationAdviceV02 {
 	 * definition} = "Encrypted body of the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmProtectedATMReconciliationAdvice = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMReconciliationAdviceV02, Optional<ContentInformationType10>> mmProtectedATMReconciliationAdvice = new MMMessageBuildingBlock<ATMReconciliationAdviceV02, Optional<ContentInformationType10>>() {
 		{
 			xmlTag = "PrtctdATMRcncltnAdvc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -164,18 +168,21 @@ public class ATMReconciliationAdviceV02 {
 			complexType_lazy = () -> ContentInformationType10.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMReconciliationAdviceV02.class.getMethod("getProtectedATMReconciliationAdvice", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType10> getValue(ATMReconciliationAdviceV02 obj) {
+			return obj.getProtectedATMReconciliationAdvice();
+		}
+
+		@Override
+		public void setValue(ATMReconciliationAdviceV02 obj, Optional<ContentInformationType10> value) {
+			obj.setProtectedATMReconciliationAdvice(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "ATMRcncltnAdvc")
 	protected ATMReconciliationAdvice2 aTMReconciliationAdvice;
 	/**
-	 * Information related to the reconciliation of an ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -196,7 +203,7 @@ public class ATMReconciliationAdviceV02 {
 	 * definition} = "Information related to the reconciliation of an ATM."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmATMReconciliationAdvice = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMReconciliationAdviceV02, Optional<ATMReconciliationAdvice2>> mmATMReconciliationAdvice = new MMMessageBuildingBlock<ATMReconciliationAdviceV02, Optional<ATMReconciliationAdvice2>>() {
 		{
 			xmlTag = "ATMRcncltnAdvc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -207,18 +214,21 @@ public class ATMReconciliationAdviceV02 {
 			complexType_lazy = () -> ATMReconciliationAdvice2.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMReconciliationAdviceV02.class.getMethod("getATMReconciliationAdvice", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ATMReconciliationAdvice2> getValue(ATMReconciliationAdviceV02 obj) {
+			return obj.getATMReconciliationAdvice();
+		}
+
+		@Override
+		public void setValue(ATMReconciliationAdviceV02 obj, Optional<ATMReconciliationAdvice2> value) {
+			obj.setATMReconciliationAdvice(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SctyTrlr")
 	protected ContentInformationType15 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -239,7 +249,7 @@ public class ATMReconciliationAdviceV02 {
 	 * definition} = "Trailer of the message containing a MAC."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMReconciliationAdviceV02, Optional<ContentInformationType15>> mmSecurityTrailer = new MMMessageBuildingBlock<ATMReconciliationAdviceV02, Optional<ContentInformationType15>>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -250,12 +260,14 @@ public class ATMReconciliationAdviceV02 {
 			complexType_lazy = () -> ContentInformationType15.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMReconciliationAdviceV02.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType15> getValue(ATMReconciliationAdviceV02 obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(ATMReconciliationAdviceV02 obj, Optional<ContentInformationType15> value) {
+			obj.setSecurityTrailer(value.orElse(null));
 		}
 	};
 
@@ -288,43 +300,43 @@ public class ATMReconciliationAdviceV02 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header32 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header32 header) {
-		this.header = header;
+	public ATMReconciliationAdviceV02 setHeader(Header32 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "PrtctdATMRcncltnAdvc")
-	public ContentInformationType10 getProtectedATMReconciliationAdvice() {
-		return protectedATMReconciliationAdvice;
+	public Optional<ContentInformationType10> getProtectedATMReconciliationAdvice() {
+		return protectedATMReconciliationAdvice == null ? Optional.empty() : Optional.of(protectedATMReconciliationAdvice);
 	}
 
-	public void setProtectedATMReconciliationAdvice(ContentInformationType10 protectedATMReconciliationAdvice) {
+	public ATMReconciliationAdviceV02 setProtectedATMReconciliationAdvice(ContentInformationType10 protectedATMReconciliationAdvice) {
 		this.protectedATMReconciliationAdvice = protectedATMReconciliationAdvice;
+		return this;
 	}
 
-	@XmlElement(name = "ATMRcncltnAdvc")
-	public ATMReconciliationAdvice2 getATMReconciliationAdvice() {
-		return aTMReconciliationAdvice;
+	public Optional<ATMReconciliationAdvice2> getATMReconciliationAdvice() {
+		return aTMReconciliationAdvice == null ? Optional.empty() : Optional.of(aTMReconciliationAdvice);
 	}
 
-	public void setATMReconciliationAdvice(ATMReconciliationAdvice2 aTMReconciliationAdvice) {
+	public ATMReconciliationAdviceV02 setATMReconciliationAdvice(ATMReconciliationAdvice2 aTMReconciliationAdvice) {
 		this.aTMReconciliationAdvice = aTMReconciliationAdvice;
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr")
-	public ContentInformationType15 getSecurityTrailer() {
-		return securityTrailer;
+	public Optional<ContentInformationType15> getSecurityTrailer() {
+		return securityTrailer == null ? Optional.empty() : Optional.of(securityTrailer);
 	}
 
-	public void setSecurityTrailer(ContentInformationType15 securityTrailer) {
+	public ATMReconciliationAdviceV02 setSecurityTrailer(ContentInformationType15 securityTrailer) {
 		this.securityTrailer = securityTrailer;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:caam.009.02.02")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:caam.009.001.02")
 	static public class Document {
 		@XmlElement(name = "ATMRcncltnAdvc", required = true)
 		public ATMReconciliationAdviceV02 messageBody;

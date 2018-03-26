@@ -21,6 +21,10 @@ import com.tools20022.metamodel.MMBinary;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 /**
  * Specifies a binary string with a maximum length of 10000 binary bytes.
@@ -30,8 +34,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -43,14 +47,18 @@ import java.util.concurrent.atomic.AtomicReference;
  * "Specifies a binary string with a maximum length of 10000 binary bytes."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType
 public class Max10000Binary {
 
 	final static private AtomicReference<MMBinary> mmObject_lazy = new AtomicReference<>();
+	@XmlValue
+	protected String value;
 
 	final static public MMBinary mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBinary() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Max10000Binary";
 				definition = "Specifies a binary string with a maximum length of 10000 binary bytes.";
@@ -59,5 +67,25 @@ public class Max10000Binary {
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public Max10000Binary() {
+	}
+
+	public Max10000Binary(String value) {
+		this.value = value;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		return value == null ? null : value.toString();
 	}
 }

@@ -20,11 +20,13 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.ResponseCode;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.CardPaymentValidation;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Response of a requested service.
@@ -88,8 +90,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -105,8 +107,8 @@ public class Response {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text responseReason;
 	/**
-	 * Detailed result of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -151,7 +153,7 @@ public class Response {
 	 * definition} = "Detailed result of the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmResponseReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Response, Max35Text> mmResponseReason = new MMBusinessAttribute<Response, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(ResponseType1.mmResponseReason, ResponseType2.mmResultDetails, ResponseType5.mmResponseReason, ResponseType6.mmResponseDetail, ResponseType8.mmResponseReason,
 					ATMTransaction18.mmResponseReason);
@@ -165,18 +167,20 @@ public class Response {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Response.class.getMethod("getResponseReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Response obj) {
+			return obj.getResponseReason();
+		}
+
+		@Override
+		public void setValue(Response obj, Max35Text value) {
+			obj.setResponseReason(value);
 		}
 	};
 	protected CardPaymentValidation relatedCardPaymentValidation;
 	/**
-	 * Validation process to which a response is given.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,7 +211,7 @@ public class Response {
 	 * definition} = "Validation process to which a response is given."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedCardPaymentValidation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Response, Optional<CardPaymentValidation>> mmRelatedCardPaymentValidation = new MMBusinessAssociationEnd<Response, Optional<CardPaymentValidation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Response.mmObject();
@@ -216,15 +220,25 @@ public class Response {
 			definition = "Validation process to which a response is given.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmResponse;
+			opposite_lazy = () -> CardPaymentValidation.mmResponse;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
+			type_lazy = () -> CardPaymentValidation.mmObject();
+		}
+
+		@Override
+		public Optional<CardPaymentValidation> getValue(Response obj) {
+			return obj.getRelatedCardPaymentValidation();
+		}
+
+		@Override
+		public void setValue(Response obj, Optional<CardPaymentValidation> value) {
+			obj.setRelatedCardPaymentValidation(value.orElse(null));
 		}
 	};
 	protected ResponseCode responseToAuthorisation;
 	/**
-	 * Response from the issuer to the authorisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -260,7 +274,7 @@ public class Response {
 	 * definition} = "Response from the issuer to the authorisation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmResponseToAuthorisation = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Response, ResponseCode> mmResponseToAuthorisation = new MMBusinessAttribute<Response, ResponseCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardPaymentTransactionAdviceResponse5.mmResponse, CardPaymentTransactionAdviceResponse6.mmResponse, CardPaymentTransactionResult3.mmResponseToAuthorisation);
 			isDerived = false;
@@ -273,23 +287,25 @@ public class Response {
 			simpleType_lazy = () -> ResponseCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Response.class.getMethod("getResponseToAuthorisation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ResponseCode getValue(Response obj) {
+			return obj.getResponseToAuthorisation();
+		}
+
+		@Override
+		public void setValue(Response obj, ResponseCode value) {
+			obj.setResponseToAuthorisation(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Response";
 				definition = "Response of a requested service.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardPaymentValidation.mmResponse);
+				associationDomain_lazy = () -> Arrays.asList(CardPaymentValidation.mmResponse);
 				derivationElement_lazy = () -> Arrays.asList(ResponseType2.mmResult, ResponseType8.mmResponse);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Response.mmResponseReason, com.tools20022.repository.entity.Response.mmRelatedCardPaymentValidation,
 						com.tools20022.repository.entity.Response.mmResponseToAuthorisation);
@@ -309,23 +325,26 @@ public class Response {
 		return responseReason;
 	}
 
-	public void setResponseReason(Max35Text responseReason) {
-		this.responseReason = responseReason;
+	public Response setResponseReason(Max35Text responseReason) {
+		this.responseReason = Objects.requireNonNull(responseReason);
+		return this;
 	}
 
-	public CardPaymentValidation getRelatedCardPaymentValidation() {
-		return relatedCardPaymentValidation;
+	public Optional<CardPaymentValidation> getRelatedCardPaymentValidation() {
+		return relatedCardPaymentValidation == null ? Optional.empty() : Optional.of(relatedCardPaymentValidation);
 	}
 
-	public void setRelatedCardPaymentValidation(com.tools20022.repository.entity.CardPaymentValidation relatedCardPaymentValidation) {
+	public Response setRelatedCardPaymentValidation(CardPaymentValidation relatedCardPaymentValidation) {
 		this.relatedCardPaymentValidation = relatedCardPaymentValidation;
+		return this;
 	}
 
 	public ResponseCode getResponseToAuthorisation() {
 		return responseToAuthorisation;
 	}
 
-	public void setResponseToAuthorisation(ResponseCode responseToAuthorisation) {
-		this.responseToAuthorisation = responseToAuthorisation;
+	public Response setResponseToAuthorisation(ResponseCode responseToAuthorisation) {
+		this.responseToAuthorisation = Objects.requireNonNull(responseToAuthorisation);
+		return this;
 	}
 }

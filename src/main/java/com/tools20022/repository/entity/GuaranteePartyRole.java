@@ -21,10 +21,12 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Guarantee;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Role played by a party in the context of guarantees.
@@ -57,8 +59,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,8 +76,8 @@ public class GuaranteePartyRole extends Role {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Guarantee guarantee;
 	/**
-	 * Guarantee for which a party plays a role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,7 +108,7 @@ public class GuaranteePartyRole extends Role {
 	 * definition} = "Guarantee for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmGuarantee = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GuaranteePartyRole, com.tools20022.repository.entity.Guarantee> mmGuarantee = new MMBusinessAssociationEnd<GuaranteePartyRole, com.tools20022.repository.entity.Guarantee>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GuaranteePartyRole.mmObject();
@@ -119,12 +121,22 @@ public class GuaranteePartyRole extends Role {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Guarantee.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.Guarantee getValue(GuaranteePartyRole obj) {
+			return obj.getGuarantee();
+		}
+
+		@Override
+		public void setValue(GuaranteePartyRole obj, com.tools20022.repository.entity.Guarantee value) {
+			obj.setGuarantee(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GuaranteePartyRole";
 				definition = "Role played by a party in the context of guarantees.";
@@ -145,7 +157,8 @@ public class GuaranteePartyRole extends Role {
 		return guarantee;
 	}
 
-	public void setGuarantee(com.tools20022.repository.entity.Guarantee guarantee) {
-		this.guarantee = guarantee;
+	public GuaranteePartyRole setGuarantee(com.tools20022.repository.entity.Guarantee guarantee) {
+		this.guarantee = Objects.requireNonNull(guarantee);
+		return this;
 	}
 }

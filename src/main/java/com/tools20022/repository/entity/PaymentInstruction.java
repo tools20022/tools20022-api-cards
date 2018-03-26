@@ -17,15 +17,20 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.InstructionCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
+import com.tools20022.repository.entity.CashSettlement;
+import com.tools20022.repository.entity.DateTimePeriod;
 import com.tools20022.repository.entity.PaymentExecution;
+import com.tools20022.repository.entity.StandingOrder;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Instruction to pay an amount of money to an ultimate beneficiary, on behalf
@@ -84,8 +89,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -103,9 +108,8 @@ public class PaymentInstruction extends PaymentExecution {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected DateTimePeriod processingValidityTime;
 	/**
-	 * Date and time range within which the payment instruction must be
-	 * processed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,7 +142,7 @@ public class PaymentInstruction extends PaymentExecution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmProcessingValidityTime = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentInstruction, DateTimePeriod> mmProcessingValidityTime = new MMBusinessAssociationEnd<PaymentInstruction, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInstruction.mmObject();
@@ -147,20 +151,25 @@ public class PaymentInstruction extends PaymentExecution {
 			definition = "Date and time range within which the payment instruction must be processed.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmPaymentInstruction;
+			opposite_lazy = () -> DateTimePeriod.mmPaymentInstruction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(PaymentInstruction obj) {
+			return obj.getProcessingValidityTime();
+		}
+
+		@Override
+		public void setValue(PaymentInstruction obj, DateTimePeriod value) {
+			obj.setProcessingValidityTime(value);
 		}
 	};
 	protected InstructionCode instructionForNextAgent;
 	/**
-	 * Further information related to the processing of the payment instruction
-	 * that may need to be acted upon by the next agent. <br>
-	 * Usage: The next agent may not be the creditor agent.<br>
-	 * The instruction can relate to a level of service, can be an instruction
-	 * that has to be executed by the agent, or can be information required by
-	 * the next agent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -186,7 +195,7 @@ public class PaymentInstruction extends PaymentExecution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInstructionForNextAgent = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentInstruction, InstructionCode> mmInstructionForNextAgent = new MMBusinessAttribute<PaymentInstruction, InstructionCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInstruction.mmObject();
@@ -198,18 +207,20 @@ public class PaymentInstruction extends PaymentExecution {
 			simpleType_lazy = () -> InstructionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentInstruction.class.getMethod("getInstructionForNextAgent", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public InstructionCode getValue(PaymentInstruction obj) {
+			return obj.getInstructionForNextAgent();
+		}
+
+		@Override
+		public void setValue(PaymentInstruction obj, InstructionCode value) {
+			obj.setInstructionForNextAgent(value);
 		}
 	};
 	protected CashSettlement settlementInstruction;
 	/**
-	 * Instruction for the cash settlement between two clearing agents.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -241,7 +252,7 @@ public class PaymentInstruction extends PaymentExecution {
 	 * "Instruction for the cash settlement between two clearing agents."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSettlementInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentInstruction, CashSettlement> mmSettlementInstruction = new MMBusinessAssociationEnd<PaymentInstruction, CashSettlement>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInstruction.mmObject();
@@ -250,17 +261,25 @@ public class PaymentInstruction extends PaymentExecution {
 			definition = "Instruction for the cash settlement between two clearing agents.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmRelatedPaymentInstruction;
+			opposite_lazy = () -> CashSettlement.mmRelatedPaymentInstruction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
+			type_lazy = () -> CashSettlement.mmObject();
+		}
+
+		@Override
+		public CashSettlement getValue(PaymentInstruction obj) {
+			return obj.getSettlementInstruction();
+		}
+
+		@Override
+		public void setValue(PaymentInstruction obj, CashSettlement value) {
+			obj.setSettlementInstruction(value);
 		}
 	};
 	protected CurrencyAndAmount clearingChargeAmount;
 	/**
-	 * Amount of money taken by a clearing agent as compensation for the
-	 * processing of the payment instruction. This charge is paid either by the
-	 * debtor or by the creditor or shared between them.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -274,6 +293,9 @@ public class PaymentInstruction extends PaymentExecution {
 	 * {@linkplain com.tools20022.repository.entity.PaymentInstruction
 	 * PaymentInstruction}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :19A::OTHR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -286,10 +308,11 @@ public class PaymentInstruction extends PaymentExecution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmClearingChargeAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentInstruction, CurrencyAndAmount> mmClearingChargeAmount = new MMBusinessAttribute<PaymentInstruction, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInstruction.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":19A::OTHR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ClearingChargeAmount";
 			definition = "Amount of money taken by a clearing agent as compensation for the processing of the payment instruction. This charge is paid either by the debtor or by the creditor or shared between them.";
@@ -298,19 +321,20 @@ public class PaymentInstruction extends PaymentExecution {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentInstruction.class.getMethod("getClearingChargeAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(PaymentInstruction obj) {
+			return obj.getClearingChargeAmount();
+		}
+
+		@Override
+		public void setValue(PaymentInstruction obj, CurrencyAndAmount value) {
+			obj.setClearingChargeAmount(value);
 		}
 	};
 	protected StandingOrder standingOrder;
 	/**
-	 * Instruction given by an account holder to an account servicer to make
-	 * regular transfers on given dates to the same beneficiary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -343,7 +367,7 @@ public class PaymentInstruction extends PaymentExecution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmStandingOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentInstruction, com.tools20022.repository.entity.StandingOrder> mmStandingOrder = new MMBusinessAssociationEnd<PaymentInstruction, com.tools20022.repository.entity.StandingOrder>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInstruction.mmObject();
@@ -356,12 +380,21 @@ public class PaymentInstruction extends PaymentExecution {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.StandingOrder.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.StandingOrder getValue(PaymentInstruction obj) {
+			return obj.getStandingOrder();
+		}
+
+		@Override
+		public void setValue(PaymentInstruction obj, com.tools20022.repository.entity.StandingOrder value) {
+			obj.setStandingOrder(value);
+		}
 	};
 	protected List<PaymentExecution> previous;
 	/**
-	 * Specifies that a payment instruction may be preceeded by another payment
-	 * instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -394,7 +427,7 @@ public class PaymentInstruction extends PaymentExecution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPrevious = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentInstruction, List<PaymentExecution>> mmPrevious = new MMBusinessAssociationEnd<PaymentInstruction, List<PaymentExecution>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInstruction.mmObject();
@@ -406,16 +439,26 @@ public class PaymentInstruction extends PaymentExecution {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> PaymentExecution.mmObject();
 		}
+
+		@Override
+		public List<PaymentExecution> getValue(PaymentInstruction obj) {
+			return obj.getPrevious();
+		}
+
+		@Override
+		public void setValue(PaymentInstruction obj, List<PaymentExecution> value) {
+			obj.setPrevious(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentInstruction";
 				definition = "Instruction to pay an amount of money to an ultimate beneficiary, on behalf of an originator. This instruction may have to be forwarded several times to complete the settlement chain.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DateTimePeriod.mmPaymentInstruction, PaymentExecution.mmNext, com.tools20022.repository.entity.CashSettlement.mmRelatedPaymentInstruction,
+				associationDomain_lazy = () -> Arrays.asList(DateTimePeriod.mmPaymentInstruction, PaymentExecution.mmNext, CashSettlement.mmRelatedPaymentInstruction,
 						com.tools20022.repository.entity.StandingOrder.mmPaymentInstructionTrigger);
 				superType_lazy = () -> PaymentExecution.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentInstruction.mmProcessingValidityTime, com.tools20022.repository.entity.PaymentInstruction.mmInstructionForNextAgent,
@@ -435,47 +478,53 @@ public class PaymentInstruction extends PaymentExecution {
 		return processingValidityTime;
 	}
 
-	public void setProcessingValidityTime(com.tools20022.repository.entity.DateTimePeriod processingValidityTime) {
-		this.processingValidityTime = processingValidityTime;
+	public PaymentInstruction setProcessingValidityTime(DateTimePeriod processingValidityTime) {
+		this.processingValidityTime = Objects.requireNonNull(processingValidityTime);
+		return this;
 	}
 
 	public InstructionCode getInstructionForNextAgent() {
 		return instructionForNextAgent;
 	}
 
-	public void setInstructionForNextAgent(InstructionCode instructionForNextAgent) {
-		this.instructionForNextAgent = instructionForNextAgent;
+	public PaymentInstruction setInstructionForNextAgent(InstructionCode instructionForNextAgent) {
+		this.instructionForNextAgent = Objects.requireNonNull(instructionForNextAgent);
+		return this;
 	}
 
 	public CashSettlement getSettlementInstruction() {
 		return settlementInstruction;
 	}
 
-	public void setSettlementInstruction(com.tools20022.repository.entity.CashSettlement settlementInstruction) {
-		this.settlementInstruction = settlementInstruction;
+	public PaymentInstruction setSettlementInstruction(CashSettlement settlementInstruction) {
+		this.settlementInstruction = Objects.requireNonNull(settlementInstruction);
+		return this;
 	}
 
 	public CurrencyAndAmount getClearingChargeAmount() {
 		return clearingChargeAmount;
 	}
 
-	public void setClearingChargeAmount(CurrencyAndAmount clearingChargeAmount) {
-		this.clearingChargeAmount = clearingChargeAmount;
+	public PaymentInstruction setClearingChargeAmount(CurrencyAndAmount clearingChargeAmount) {
+		this.clearingChargeAmount = Objects.requireNonNull(clearingChargeAmount);
+		return this;
 	}
 
 	public StandingOrder getStandingOrder() {
 		return standingOrder;
 	}
 
-	public void setStandingOrder(com.tools20022.repository.entity.StandingOrder standingOrder) {
-		this.standingOrder = standingOrder;
+	public PaymentInstruction setStandingOrder(com.tools20022.repository.entity.StandingOrder standingOrder) {
+		this.standingOrder = Objects.requireNonNull(standingOrder);
+		return this;
 	}
 
 	public List<PaymentExecution> getPrevious() {
-		return previous;
+		return previous == null ? previous = new ArrayList<>() : previous;
 	}
 
-	public void setPrevious(List<PaymentExecution> previous) {
-		this.previous = previous;
+	public PaymentInstruction setPrevious(List<PaymentExecution> previous) {
+		this.previous = Objects.requireNonNull(previous);
+		return this;
 	}
 }

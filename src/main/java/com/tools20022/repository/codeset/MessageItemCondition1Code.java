@@ -38,25 +38,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageItemCondition1Code#Mandatory
- * MessageItemCondition1Code.mmMandatory}</li>
+ * MessageItemCondition1Code.Mandatory}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageItemCondition1Code#ConfiguredValue
- * MessageItemCondition1Code.mmConfiguredValue}</li>
+ * MessageItemCondition1Code.ConfiguredValue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageItemCondition1Code#DefaultValue
- * MessageItemCondition1Code.mmDefaultValue}</li>
+ * MessageItemCondition1Code.DefaultValue}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageItemCondition1Code#AllowedValues
- * MessageItemCondition1Code.mmAllowedValues}</li>
+ * MessageItemCondition1Code.AllowedValues}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageItemCondition1Code#IfAvailable
- * MessageItemCondition1Code.mmIfAvailable}</li>
+ * MessageItemCondition1Code.IfAvailable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageItemCondition1Code#Copy
- * MessageItemCondition1Code.mmCopy}</li>
+ * MessageItemCondition1Code.Copy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageItemCondition1Code#NotSupported
- * MessageItemCondition1Code.mmNotSupported}</li>
+ * MessageItemCondition1Code.NotSupported}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -65,8 +65,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -263,7 +263,7 @@ public class MessageItemCondition1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MNDT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MessageItemCondition1Code";

@@ -24,8 +24,12 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max500Binary;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AlgorithmIdentification13;
+import com.tools20022.repository.msg.KEKIdentifier2;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -52,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Key encryption key (KEK), using previously distributed symmetric key."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "KEK4", propOrder = {"version", "KEKIdentification", "keyEncryptionAlgorithm", "encryptedKey"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "KEK4", propOrder = {"version", "kEKIdentification", "keyEncryptionAlgorithm", "encryptedKey"})
 public class KEK4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Vrsn")
 	protected Number version;
 	/**
-	 * Version of the data structure.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -96,9 +101,9 @@ public class KEK4 {
 	 * definition} = "Version of the data structure."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVersion = new MMMessageAttribute() {
+	public static final MMMessageAttribute<KEK4, Optional<Number>> mmVersion = new MMMessageAttribute<KEK4, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> KEK4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.KEK4.mmObject();
 			isDerived = false;
 			xmlTag = "Vrsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -108,11 +113,22 @@ public class KEK4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(KEK4 obj) {
+			return obj.getVersion();
+		}
+
+		@Override
+		public void setValue(KEK4 obj, Optional<Number> value) {
+			obj.setVersion(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "KEKId", required = true)
 	protected KEKIdentifier2 kEKIdentification;
 	/**
-	 * Identification of the key encryption key (KEK).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -134,9 +150,9 @@ public class KEK4 {
 	 * definition} = "Identification of the key encryption key (KEK)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmKEKIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<KEK4, KEKIdentifier2> mmKEKIdentification = new MMMessageAssociationEnd<KEK4, KEKIdentifier2>() {
 		{
-			componentContext_lazy = () -> KEK4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.KEK4.mmObject();
 			isDerived = false;
 			xmlTag = "KEKId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -145,13 +161,24 @@ public class KEK4 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.KEKIdentifier2.mmObject();
+			type_lazy = () -> KEKIdentifier2.mmObject();
+		}
+
+		@Override
+		public KEKIdentifier2 getValue(KEK4 obj) {
+			return obj.getKEKIdentification();
+		}
+
+		@Override
+		public void setValue(KEK4 obj, KEKIdentifier2 value) {
+			obj.setKEKIdentification(value);
 		}
 	};
+	@XmlElement(name = "KeyNcrptnAlgo", required = true)
 	protected AlgorithmIdentification13 keyEncryptionAlgorithm;
 	/**
-	 * Algorithm to encrypt the key encryption key (KEK).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -174,9 +201,9 @@ public class KEK4 {
 	 * definition} = "Algorithm to encrypt the key encryption key (KEK)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmKeyEncryptionAlgorithm = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<KEK4, AlgorithmIdentification13> mmKeyEncryptionAlgorithm = new MMMessageAssociationEnd<KEK4, AlgorithmIdentification13>() {
 		{
-			componentContext_lazy = () -> KEK4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.KEK4.mmObject();
 			isDerived = false;
 			xmlTag = "KeyNcrptnAlgo";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -185,13 +212,24 @@ public class KEK4 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AlgorithmIdentification13.mmObject();
+			type_lazy = () -> AlgorithmIdentification13.mmObject();
+		}
+
+		@Override
+		public AlgorithmIdentification13 getValue(KEK4 obj) {
+			return obj.getKeyEncryptionAlgorithm();
+		}
+
+		@Override
+		public void setValue(KEK4 obj, AlgorithmIdentification13 value) {
+			obj.setKeyEncryptionAlgorithm(value);
 		}
 	};
+	@XmlElement(name = "NcrptdKey", required = true)
 	protected Max500Binary encryptedKey;
 	/**
-	 * Encrypted key encryption key (KEK).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -215,9 +253,9 @@ public class KEK4 {
 	 * definition} = "Encrypted key encryption key (KEK)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEncryptedKey = new MMMessageAttribute() {
+	public static final MMMessageAttribute<KEK4, Max500Binary> mmEncryptedKey = new MMMessageAttribute<KEK4, Max500Binary>() {
 		{
-			componentContext_lazy = () -> KEK4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.KEK4.mmObject();
 			isDerived = false;
 			xmlTag = "NcrptdKey";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -227,13 +265,24 @@ public class KEK4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max500Binary.mmObject();
 		}
+
+		@Override
+		public Max500Binary getValue(KEK4 obj) {
+			return obj.getEncryptedKey();
+		}
+
+		@Override
+		public void setValue(KEK4 obj, Max500Binary value) {
+			obj.setEncryptedKey(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(KEK4.mmVersion, KEK4.mmKEKIdentification, KEK4.mmKeyEncryptionAlgorithm, KEK4.mmEncryptedKey);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.KEK4.mmVersion, com.tools20022.repository.msg.KEK4.mmKEKIdentification, com.tools20022.repository.msg.KEK4.mmKeyEncryptionAlgorithm,
+						com.tools20022.repository.msg.KEK4.mmEncryptedKey);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "KEK4";
 				definition = "Key encryption key (KEK), using previously distributed symmetric key.";
@@ -242,39 +291,39 @@ public class KEK4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Vrsn")
-	public Number getVersion() {
-		return version;
+	public Optional<Number> getVersion() {
+		return version == null ? Optional.empty() : Optional.of(version);
 	}
 
-	public void setVersion(Number version) {
+	public KEK4 setVersion(Number version) {
 		this.version = version;
+		return this;
 	}
 
-	@XmlElement(name = "KEKId", required = true)
 	public KEKIdentifier2 getKEKIdentification() {
 		return kEKIdentification;
 	}
 
-	public void setKEKIdentification(com.tools20022.repository.msg.KEKIdentifier2 kEKIdentification) {
-		this.kEKIdentification = kEKIdentification;
+	public KEK4 setKEKIdentification(KEKIdentifier2 kEKIdentification) {
+		this.kEKIdentification = Objects.requireNonNull(kEKIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "KeyNcrptnAlgo", required = true)
 	public AlgorithmIdentification13 getKeyEncryptionAlgorithm() {
 		return keyEncryptionAlgorithm;
 	}
 
-	public void setKeyEncryptionAlgorithm(com.tools20022.repository.msg.AlgorithmIdentification13 keyEncryptionAlgorithm) {
-		this.keyEncryptionAlgorithm = keyEncryptionAlgorithm;
+	public KEK4 setKeyEncryptionAlgorithm(AlgorithmIdentification13 keyEncryptionAlgorithm) {
+		this.keyEncryptionAlgorithm = Objects.requireNonNull(keyEncryptionAlgorithm);
+		return this;
 	}
 
-	@XmlElement(name = "NcrptdKey", required = true)
 	public Max500Binary getEncryptedKey() {
 		return encryptedKey;
 	}
 
-	public void setEncryptedKey(Max500Binary encryptedKey) {
-		this.encryptedKey = encryptedKey;
+	public KEK4 setEncryptedKey(Max500Binary encryptedKey) {
+		this.encryptedKey = Objects.requireNonNull(encryptedKey);
+		return this;
 	}
 }

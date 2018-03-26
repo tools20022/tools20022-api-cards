@@ -37,18 +37,18 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMOperation1Code#Adjust
- * ATMOperation1Code.mmAdjust}</li>
+ * ATMOperation1Code.Adjust}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMOperation1Code#InsertMedia
- * ATMOperation1Code.mmInsertMedia}</li>
+ * ATMOperation1Code.InsertMedia}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMOperation1Code#Loading
- * ATMOperation1Code.mmLoading}</li>
+ * ATMOperation1Code.Loading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMOperation1Code#RemoveMedia
- * ATMOperation1Code.mmRemoveMedia}</li>
+ * ATMOperation1Code.RemoveMedia}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMOperation1Code#Unloading
- * ATMOperation1Code.mmUnloading}</li>
+ * ATMOperation1Code.Unloading}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -57,8 +57,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -201,7 +201,7 @@ public class ATMOperation1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMOperation1Code";
 				definition = "Type of logical or physical operation on an ATM.";

@@ -38,33 +38,33 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType17Code#PostageCharge
- * ChargeType17Code.mmPostageCharge}</li>
+ * ChargeType17Code.PostageCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType17Code#RegulatoryFee
- * ChargeType17Code.mmRegulatoryFee}</li>
+ * ChargeType17Code.RegulatoryFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType17Code#ShippingCharge
- * ChargeType17Code.mmShippingCharge}</li>
+ * ChargeType17Code.ShippingCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType17Code#ServiceProvisionFee
- * ChargeType17Code.mmServiceProvisionFee}</li>
+ * ChargeType17Code.ServiceProvisionFee}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeType17Code#Other
- * ChargeType17Code.mmOther}</li>
+ * ChargeType17Code.Other}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeType17Code#Premium
- * ChargeType17Code.mmPremium}</li>
+ * ChargeType17Code.Premium}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeType17Code#Packaging
- * ChargeType17Code.mmPackaging}</li>
+ * ChargeType17Code.Packaging}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ChargeType17Code#PickUp
- * ChargeType17Code.mmPickUp}</li>
+ * ChargeType17Code.PickUp}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType17Code#SecurityCharge
- * ChargeType17Code.mmSecurityCharge}</li>
+ * ChargeType17Code.SecurityCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType17Code#InsurancePremium
- * ChargeType17Code.mmInsurancePremium}</li>
+ * ChargeType17Code.InsurancePremium}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ChargeType17Code#MiscellaneousFee
- * ChargeType17Code.mmMiscellaneousFee}</li>
+ * ChargeType17Code.MiscellaneousFee}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -72,8 +72,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -366,7 +366,7 @@ public class ChargeType17Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("POST");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ChargeType17Code";

@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.Charges;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -52,8 +53,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -64,15 +65,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the type of charges as a code or free text."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ChargesType1Choice", propOrder = {"type", "otherChargesType"})
 public class ChargesType1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected ChargeType8Code type;
 	/**
-	 * Type of service for which a charge is asked or paid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,10 +105,10 @@ public class ChargesType1Choice {
 	 * definition} = "Type of service for which a charge is asked or paid."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ChargesType1Choice, ChargeType8Code> mmType = new MMMessageAttribute<ChargesType1Choice, ChargeType8Code>() {
 		{
 			businessElementTrace_lazy = () -> Charges.mmChargeType;
-			componentContext_lazy = () -> ChargesType1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ChargesType1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -116,11 +118,22 @@ public class ChargesType1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ChargeType8Code.mmObject();
 		}
+
+		@Override
+		public ChargeType8Code getValue(ChargesType1Choice obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(ChargesType1Choice obj, ChargeType8Code value) {
+			obj.setType(value);
+		}
 	};
+	@XmlElement(name = "OthrChrgsTp", required = true)
 	protected Max35Text otherChargesType;
 	/**
-	 * Specifies the type of charge by means of a free text
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -147,30 +160,40 @@ public class ChargesType1Choice {
 	 * name} = "OtherChargesType"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Specifies the type of charge by means of a free text"</li>
+	 * definition} = "Specifies the type of charge by means of a free text."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOtherChargesType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ChargesType1Choice, Max35Text> mmOtherChargesType = new MMMessageAttribute<ChargesType1Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> Charges.mmChargeType;
-			componentContext_lazy = () -> ChargesType1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ChargesType1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "OthrChrgsTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "OtherChargesType";
-			definition = "Specifies the type of charge by means of a free text";
+			definition = "Specifies the type of charge by means of a free text.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
+		}
+
+		@Override
+		public Max35Text getValue(ChargesType1Choice obj) {
+			return obj.getOtherChargesType();
+		}
+
+		@Override
+		public void setValue(ChargesType1Choice obj, Max35Text value) {
+			obj.setOtherChargesType(value);
 		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ChargesType1Choice.mmType, ChargesType1Choice.mmOtherChargesType);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ChargesType1Choice.mmType, com.tools20022.repository.choice.ChargesType1Choice.mmOtherChargesType);
 				trace_lazy = () -> Charges.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ChargesType1Choice";
 				definition = "Specifies the type of charges as a code or free text.";
@@ -179,21 +202,21 @@ public class ChargesType1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public ChargeType8Code getType() {
 		return type;
 	}
 
-	public void setType(ChargeType8Code type) {
-		this.type = type;
+	public ChargesType1Choice setType(ChargeType8Code type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "OthrChrgsTp", required = true)
 	public Max35Text getOtherChargesType() {
 		return otherChargesType;
 	}
 
-	public void setOtherChargesType(Max35Text otherChargesType) {
-		this.otherChargesType = otherChargesType;
+	public ChargesType1Choice setOtherChargesType(Max35Text otherChargesType) {
+		this.otherChargesType = Objects.requireNonNull(otherChargesType);
+		return this;
 	}
 }

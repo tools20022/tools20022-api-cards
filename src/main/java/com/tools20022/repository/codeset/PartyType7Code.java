@@ -38,18 +38,18 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType7Code#Acquirer
- * PartyType7Code.mmAcquirer}</li>
+ * PartyType7Code.Acquirer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType7Code#IntermediaryAgent
- * PartyType7Code.mmIntermediaryAgent}</li>
+ * PartyType7Code.IntermediaryAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType7Code#POIComponent
- * PartyType7Code.mmPOIComponent}</li>
+ * PartyType7Code.POIComponent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType7Code#TerminalManager
- * PartyType7Code.mmTerminalManager}</li>
+ * PartyType7Code.TerminalManager}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType7Code#SaleSystem
- * PartyType7Code.mmSaleSystem}</li>
+ * PartyType7Code.SaleSystem}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -57,8 +57,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -209,7 +209,7 @@ public class PartyType7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACQR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyType7Code";

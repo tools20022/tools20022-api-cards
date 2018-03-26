@@ -38,70 +38,70 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#CertificateOfDeposit
- * CardAccountType3Code.mmCertificateOfDeposit}</li>
+ * CardAccountType3Code.CertificateOfDeposit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#Checking
- * CardAccountType3Code.mmChecking}</li>
+ * CardAccountType3Code.Checking}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#CreditCard
- * CardAccountType3Code.mmCreditCard}</li>
+ * CardAccountType3Code.CreditCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#Current
- * CardAccountType3Code.mmCurrent}</li>
+ * CardAccountType3Code.Current}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#DebitCard
- * CardAccountType3Code.mmDebitCard}</li>
+ * CardAccountType3Code.DebitCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#Default
- * CardAccountType3Code.mmDefault}</li>
+ * CardAccountType3Code.Default}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#EpurseCard
- * CardAccountType3Code.mmEpurseCard}</li>
+ * CardAccountType3Code.EpurseCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#HomeEquityLoan
- * CardAccountType3Code.mmHomeEquityLoan}</li>
+ * CardAccountType3Code.HomeEquityLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#InstalmentLoan
- * CardAccountType3Code.mmInstalmentLoan}</li>
+ * CardAccountType3Code.InstalmentLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#Investment
- * CardAccountType3Code.mmInvestment}</li>
+ * CardAccountType3Code.Investment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#LineOfCredit
- * CardAccountType3Code.mmLineOfCredit}</li>
+ * CardAccountType3Code.LineOfCredit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#MobilePhoneAccount
- * CardAccountType3Code.mmMobilePhoneAccount}</li>
+ * CardAccountType3Code.MobilePhoneAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#MoneyMarket
- * CardAccountType3Code.mmMoneyMarket}</li>
+ * CardAccountType3Code.MoneyMarket}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#MoneyMarketChecking
- * CardAccountType3Code.mmMoneyMarketChecking}</li>
+ * CardAccountType3Code.MoneyMarketChecking}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#MortgageLoan
- * CardAccountType3Code.mmMortgageLoan}</li>
+ * CardAccountType3Code.MortgageLoan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#RetirementAccount
- * CardAccountType3Code.mmRetirementAccount}</li>
+ * CardAccountType3Code.RetirementAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#RevolvingLoanAccount
- * CardAccountType3Code.mmRevolvingLoanAccount}</li>
+ * CardAccountType3Code.RevolvingLoanAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#Savings
- * CardAccountType3Code.mmSavings}</li>
+ * CardAccountType3Code.Savings}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#StockOrBond
- * CardAccountType3Code.mmStockOrBond}</li>
+ * CardAccountType3Code.StockOrBond}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#Universal
- * CardAccountType3Code.mmUniversal}</li>
+ * CardAccountType3Code.Universal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#PrePaid
- * CardAccountType3Code.mmPrePaid}</li>
+ * CardAccountType3Code.PrePaid}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardAccountType3Code#FleetCard
- * CardAccountType3Code.mmFleetCard}</li>
+ * CardAccountType3Code.FleetCard}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -110,8 +110,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -148,7 +148,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#CertificateOfDeposit
-	 * CardAccountType2Code.mmCertificateOfDeposit}</li>
+	 * CardAccountType2Code.CertificateOfDeposit}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code CertificateOfDeposit = new CardAccountType3Code() {
@@ -178,7 +178,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#Checking
-	 * CardAccountType2Code.mmChecking}</li>
+	 * CardAccountType2Code.Checking}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code Checking = new CardAccountType3Code() {
@@ -208,7 +208,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#CreditCard
-	 * CardAccountType2Code.mmCreditCard}</li>
+	 * CardAccountType2Code.CreditCard}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code CreditCard = new CardAccountType3Code() {
@@ -238,7 +238,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#Current
-	 * CardAccountType2Code.mmCurrent}</li>
+	 * CardAccountType2Code.Current}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code Current = new CardAccountType3Code() {
@@ -268,7 +268,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#DebitCard
-	 * CardAccountType2Code.mmDebitCard}</li>
+	 * CardAccountType2Code.DebitCard}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code DebitCard = new CardAccountType3Code() {
@@ -298,7 +298,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#Default
-	 * CardAccountType2Code.mmDefault}</li>
+	 * CardAccountType2Code.Default}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code Default = new CardAccountType3Code() {
@@ -328,7 +328,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#EpurseCard
-	 * CardAccountType2Code.mmEpurseCard}</li>
+	 * CardAccountType2Code.EpurseCard}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code EpurseCard = new CardAccountType3Code() {
@@ -358,7 +358,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#HomeEquityLoan
-	 * CardAccountType2Code.mmHomeEquityLoan}</li>
+	 * CardAccountType2Code.HomeEquityLoan}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code HomeEquityLoan = new CardAccountType3Code() {
@@ -388,7 +388,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#InstalmentLoan
-	 * CardAccountType2Code.mmInstalmentLoan}</li>
+	 * CardAccountType2Code.InstalmentLoan}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code InstalmentLoan = new CardAccountType3Code() {
@@ -418,7 +418,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#Investment
-	 * CardAccountType2Code.mmInvestment}</li>
+	 * CardAccountType2Code.Investment}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code Investment = new CardAccountType3Code() {
@@ -448,7 +448,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#LineOfCredit
-	 * CardAccountType2Code.mmLineOfCredit}</li>
+	 * CardAccountType2Code.LineOfCredit}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code LineOfCredit = new CardAccountType3Code() {
@@ -478,7 +478,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#MobilePhoneAccount
-	 * CardAccountType2Code.mmMobilePhoneAccount}</li>
+	 * CardAccountType2Code.MobilePhoneAccount}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code MobilePhoneAccount = new CardAccountType3Code() {
@@ -508,7 +508,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#MoneyMarket
-	 * CardAccountType2Code.mmMoneyMarket}</li>
+	 * CardAccountType2Code.MoneyMarket}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code MoneyMarket = new CardAccountType3Code() {
@@ -538,7 +538,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#MoneyMarketChecking
-	 * CardAccountType2Code.mmMoneyMarketChecking}</li>
+	 * CardAccountType2Code.MoneyMarketChecking}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code MoneyMarketChecking = new CardAccountType3Code() {
@@ -568,7 +568,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#MortgageLoan
-	 * CardAccountType2Code.mmMortgageLoan}</li>
+	 * CardAccountType2Code.MortgageLoan}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code MortgageLoan = new CardAccountType3Code() {
@@ -598,7 +598,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#RetirementAccount
-	 * CardAccountType2Code.mmRetirementAccount}</li>
+	 * CardAccountType2Code.RetirementAccount}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code RetirementAccount = new CardAccountType3Code() {
@@ -628,7 +628,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#RevolvingLoanAccount
-	 * CardAccountType2Code.mmRevolvingLoanAccount}</li>
+	 * CardAccountType2Code.RevolvingLoanAccount}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code RevolvingLoanAccount = new CardAccountType3Code() {
@@ -658,7 +658,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#Savings
-	 * CardAccountType2Code.mmSavings}</li>
+	 * CardAccountType2Code.Savings}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code Savings = new CardAccountType3Code() {
@@ -688,7 +688,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#StockOrBond
-	 * CardAccountType2Code.mmStockOrBond}</li>
+	 * CardAccountType2Code.StockOrBond}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code StockOrBond = new CardAccountType3Code() {
@@ -718,7 +718,7 @@ public class CardAccountType3Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardAccountType2Code#Universal
-	 * CardAccountType2Code.mmUniversal}</li>
+	 * CardAccountType2Code.Universal}</li>
 	 * </ul>
 	 */
 	public static final CardAccountType3Code Universal = new CardAccountType3Code() {
@@ -786,7 +786,7 @@ public class CardAccountType3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardAccountType3Code";
 				definition = "Type of cardholder account used for the transaction.";

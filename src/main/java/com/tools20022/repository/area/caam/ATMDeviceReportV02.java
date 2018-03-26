@@ -21,14 +21,15 @@ import com.tools20022.metamodel.MMMessageBuildingBlock;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.ATMManagementLatestVersion;
+import com.tools20022.repository.area.ATMManagementPreviousVersion;
 import com.tools20022.repository.msg.ATMDeviceReport1;
 import com.tools20022.repository.msg.ContentInformationType10;
 import com.tools20022.repository.msg.ContentInformationType13;
 import com.tools20022.repository.msg.Header31;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -36,7 +37,7 @@ import javax.xml.bind.annotation.*;
  * an agent, to report:<br>
  * - The result of maintenance commands performed by the ATM,<br>
  * - The components of the ATM,<br>
- * - The status of the ATM components
+ * - The status of the ATM components.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -64,8 +65,8 @@ import javax.xml.bind.annotation.*;
  * xmlTag} = "ATMDvcRpt"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageDefinition#getBusinessArea
  * businessArea} =
- * {@linkplain com.tools20022.repository.area.ATMManagementLatestVersion
- * ATMManagementLatestVersion}</li>
+ * {@linkplain com.tools20022.repository.area.ATMManagementPreviousVersion
+ * ATMManagementPreviousVersion}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code caam.001.001.02}</li>
@@ -77,20 +78,20 @@ import javax.xml.bind.annotation.*;
  * "ATMDeviceReportV02"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "The ATMDeviceReport message is sent to an acquirer by an ATM, or forwarded by an agent, to report:\r\n- The result of maintenance commands performed by the ATM,\r\n- The components of the ATM,\r\n- The status of the ATM components"
+ * "The ATMDeviceReport message is sent to an acquirer by an ATM, or forwarded by an agent, to report:\r\n- The result of maintenance commands performed by the ATM,\r\n- The components of the ATM,\r\n- The status of the ATM components."
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "ATMDeviceReportV02", propOrder = {"header", "protectedATMDeviceReport", "ATMDeviceReport", "securityTrailer"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "ATMDeviceReportV02", propOrder = {"header", "protectedATMDeviceReport", "aTMDeviceReport", "securityTrailer"})
 public class ATMDeviceReportV02 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header31 header;
 	/**
-	 * Information related to the protocol management on a segment of the path
-	 * from the ATM to the acquirer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -112,7 +113,7 @@ public class ATMDeviceReportV02 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMDeviceReportV02, Header31> mmHeader = new MMMessageBuildingBlock<ATMDeviceReportV02, Header31>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,18 +124,21 @@ public class ATMDeviceReportV02 {
 			complexType_lazy = () -> Header31.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMDeviceReportV02.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header31 getValue(ATMDeviceReportV02 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(ATMDeviceReportV02 obj, Header31 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "PrtctdATMDvcRpt")
 	protected ContentInformationType10 protectedATMDeviceReport;
 	/**
-	 * Encrypted body of the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,7 +159,7 @@ public class ATMDeviceReportV02 {
 	 * definition} = "Encrypted body of the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmProtectedATMDeviceReport = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMDeviceReportV02, Optional<ContentInformationType10>> mmProtectedATMDeviceReport = new MMMessageBuildingBlock<ATMDeviceReportV02, Optional<ContentInformationType10>>() {
 		{
 			xmlTag = "PrtctdATMDvcRpt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -166,18 +170,21 @@ public class ATMDeviceReportV02 {
 			complexType_lazy = () -> ContentInformationType10.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMDeviceReportV02.class.getMethod("getProtectedATMDeviceReport", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType10> getValue(ATMDeviceReportV02 obj) {
+			return obj.getProtectedATMDeviceReport();
+		}
+
+		@Override
+		public void setValue(ATMDeviceReportV02 obj, Optional<ContentInformationType10> value) {
+			obj.setProtectedATMDeviceReport(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "ATMDvcRpt")
 	protected ATMDeviceReport1 aTMDeviceReport;
 	/**
-	 * Information related to the status report from an ATM device.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -199,7 +206,7 @@ public class ATMDeviceReportV02 {
 	 * "Information related to the status report from an ATM device."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmATMDeviceReport = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMDeviceReportV02, Optional<ATMDeviceReport1>> mmATMDeviceReport = new MMMessageBuildingBlock<ATMDeviceReportV02, Optional<ATMDeviceReport1>>() {
 		{
 			xmlTag = "ATMDvcRpt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -210,18 +217,21 @@ public class ATMDeviceReportV02 {
 			complexType_lazy = () -> ATMDeviceReport1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMDeviceReportV02.class.getMethod("getATMDeviceReport", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ATMDeviceReport1> getValue(ATMDeviceReportV02 obj) {
+			return obj.getATMDeviceReport();
+		}
+
+		@Override
+		public void setValue(ATMDeviceReportV02 obj, Optional<ATMDeviceReport1> value) {
+			obj.setATMDeviceReport(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SctyTrlr")
 	protected ContentInformationType13 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC or a digital signature.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -243,7 +253,7 @@ public class ATMDeviceReportV02 {
 	 * "Trailer of the message containing a MAC or a digital signature."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<ATMDeviceReportV02, Optional<ContentInformationType13>> mmSecurityTrailer = new MMMessageBuildingBlock<ATMDeviceReportV02, Optional<ContentInformationType13>>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -254,12 +264,14 @@ public class ATMDeviceReportV02 {
 			complexType_lazy = () -> ContentInformationType13.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ATMDeviceReportV02.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType13> getValue(ATMDeviceReportV02 obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(ATMDeviceReportV02 obj, Optional<ContentInformationType13> value) {
+			obj.setSecurityTrailer(value.orElse(null));
 		}
 	};
 
@@ -268,10 +280,10 @@ public class ATMDeviceReportV02 {
 			{
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMDeviceReportV02";
-				definition = "The ATMDeviceReport message is sent to an acquirer by an ATM, or forwarded by an agent, to report:\r\n- The result of maintenance commands performed by the ATM,\r\n- The components of the ATM,\r\n- The status of the ATM components";
+				definition = "The ATMDeviceReport message is sent to an acquirer by an ATM, or forwarded by an agent, to report:\r\n- The result of maintenance commands performed by the ATM,\r\n- The components of the ATM,\r\n- The status of the ATM components.";
 				rootElement = "Document";
 				xmlTag = "ATMDvcRpt";
-				businessArea_lazy = () -> ATMManagementLatestVersion.mmObject();
+				businessArea_lazy = () -> ATMManagementPreviousVersion.mmObject();
 				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.caam.ATMDeviceReportV02.mmHeader, com.tools20022.repository.area.caam.ATMDeviceReportV02.mmProtectedATMDeviceReport,
 						com.tools20022.repository.area.caam.ATMDeviceReportV02.mmATMDeviceReport, com.tools20022.repository.area.caam.ATMDeviceReportV02.mmSecurityTrailer);
 				messageDefinitionIdentifier_lazy = () -> new MMMessageDefinitionIdentifier() {
@@ -292,43 +304,43 @@ public class ATMDeviceReportV02 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header31 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header31 header) {
-		this.header = header;
+	public ATMDeviceReportV02 setHeader(Header31 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "PrtctdATMDvcRpt")
-	public ContentInformationType10 getProtectedATMDeviceReport() {
-		return protectedATMDeviceReport;
+	public Optional<ContentInformationType10> getProtectedATMDeviceReport() {
+		return protectedATMDeviceReport == null ? Optional.empty() : Optional.of(protectedATMDeviceReport);
 	}
 
-	public void setProtectedATMDeviceReport(ContentInformationType10 protectedATMDeviceReport) {
+	public ATMDeviceReportV02 setProtectedATMDeviceReport(ContentInformationType10 protectedATMDeviceReport) {
 		this.protectedATMDeviceReport = protectedATMDeviceReport;
+		return this;
 	}
 
-	@XmlElement(name = "ATMDvcRpt")
-	public ATMDeviceReport1 getATMDeviceReport() {
-		return aTMDeviceReport;
+	public Optional<ATMDeviceReport1> getATMDeviceReport() {
+		return aTMDeviceReport == null ? Optional.empty() : Optional.of(aTMDeviceReport);
 	}
 
-	public void setATMDeviceReport(ATMDeviceReport1 aTMDeviceReport) {
+	public ATMDeviceReportV02 setATMDeviceReport(ATMDeviceReport1 aTMDeviceReport) {
 		this.aTMDeviceReport = aTMDeviceReport;
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr")
-	public ContentInformationType13 getSecurityTrailer() {
-		return securityTrailer;
+	public Optional<ContentInformationType13> getSecurityTrailer() {
+		return securityTrailer == null ? Optional.empty() : Optional.of(securityTrailer);
 	}
 
-	public void setSecurityTrailer(ContentInformationType13 securityTrailer) {
+	public ATMDeviceReportV02 setSecurityTrailer(ContentInformationType13 securityTrailer) {
 		this.securityTrailer = securityTrailer;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:caam.001.02.02")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:caam.001.001.02")
 	static public class Document {
 		@XmlElement(name = "ATMDvcRpt", required = true)
 		public ATMDeviceReportV02 messageBody;

@@ -38,34 +38,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MeetingTypeCode#AnnualGeneralMeeting
- * MeetingTypeCode.mmAnnualGeneralMeeting}</li>
+ * MeetingTypeCode.AnnualGeneralMeeting}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MeetingTypeCode#Ordinary
- * MeetingTypeCode.mmOrdinary}</li>
+ * MeetingTypeCode.Ordinary}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MeetingTypeCode#Extraordinary
- * MeetingTypeCode.mmExtraordinary}</li>
+ * MeetingTypeCode.Extraordinary}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MeetingTypeCode#Mixed
- * MeetingTypeCode.mmMixed}</li>
+ * MeetingTypeCode.Mixed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MeetingTypeCode#ClassMeeting
- * MeetingTypeCode.mmClassMeeting}</li>
+ * MeetingTypeCode.ClassMeeting}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MeetingTypeCode#CourtMeeting
- * MeetingTypeCode.mmCourtMeeting}</li>
+ * MeetingTypeCode.CourtMeeting}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MeetingTypeCode#Special
- * MeetingTypeCode.mmSpecial}</li>
+ * MeetingTypeCode.Special}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MeetingTypeCode#General
- * MeetingTypeCode.mmGeneral}</li>
+ * MeetingTypeCode.General}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MeetingTypeCode#BondHolderMeeting
- * MeetingTypeCode.mmBondHolderMeeting}</li>
+ * MeetingTypeCode.BondHolderMeeting}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -333,7 +333,7 @@ public class MeetingTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Includes annual and ordinary meeting. Statutory meeting(s) usually held at least once a year.  The resolutions are related to the usual business of the company, for example approval of dividends, directors, etc. These meetings are always issuer initiated."
+	 * "Includes annual and ordinary meeting. Statutory meeting(s) usually held at least once a year. The resolutions are related to the usual business of the company, for example approval of dividends, directors, etc. These meetings are always issuer initiated."
 	 * </li>
 	 * </ul>
 	 */
@@ -341,7 +341,7 @@ public class MeetingTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "General";
-			definition = "Includes annual and ordinary meeting. Statutory meeting(s) usually held at least once a year.  The resolutions are related to the usual business of the company, for example approval of dividends, directors, etc. These meetings are always issuer initiated.";
+			definition = "Includes annual and ordinary meeting. Statutory meeting(s) usually held at least once a year. The resolutions are related to the usual business of the company, for example approval of dividends, directors, etc. These meetings are always issuer initiated.";
 			owner_lazy = () -> com.tools20022.repository.codeset.MeetingTypeCode.mmObject();
 			codeName = "GMET";
 		}
@@ -384,7 +384,7 @@ public class MeetingTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AMET");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingTypeCode";

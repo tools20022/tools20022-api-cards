@@ -26,6 +26,7 @@ import com.tools20022.repository.msg.GenericIdentification4;
 import com.tools20022.repository.msg.ProductCharacteristics1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,15 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ProductCharacteristics1Choice", propOrder = {"structuredProductCharacteristics", "otherProductCharacteristics"})
 public class ProductCharacteristics1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "StrdPdctChrtcs", required = true)
 	protected ProductCharacteristics1 structuredProductCharacteristics;
 	/**
-	 * Specifies the type of product characteristic.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -107,10 +109,10 @@ public class ProductCharacteristics1Choice {
 	 * definition} = "Specifies the type of product characteristic."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmStructuredProductCharacteristics = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProductCharacteristics1Choice, ProductCharacteristics1> mmStructuredProductCharacteristics = new MMMessageAssociationEnd<ProductCharacteristics1Choice, ProductCharacteristics1>() {
 		{
 			businessComponentTrace_lazy = () -> ProductCharacteristics.mmObject();
-			componentContext_lazy = () -> ProductCharacteristics1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProductCharacteristics1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "StrdPdctChrtcs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,12 +123,22 @@ public class ProductCharacteristics1Choice {
 			isComposite = true;
 			type_lazy = () -> ProductCharacteristics1.mmObject();
 		}
+
+		@Override
+		public ProductCharacteristics1 getValue(ProductCharacteristics1Choice obj) {
+			return obj.getStructuredProductCharacteristics();
+		}
+
+		@Override
+		public void setValue(ProductCharacteristics1Choice obj, ProductCharacteristics1 value) {
+			obj.setStructuredProductCharacteristics(value);
+		}
 	};
+	@XmlElement(name = "OthrPdctChrtcs", required = true)
 	protected GenericIdentification4 otherProductCharacteristics;
 	/**
-	 * Specifies the type of product characteristic not present in the code
-	 * list.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -157,10 +169,10 @@ public class ProductCharacteristics1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOtherProductCharacteristics = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ProductCharacteristics1Choice, GenericIdentification4> mmOtherProductCharacteristics = new MMMessageAssociationEnd<ProductCharacteristics1Choice, GenericIdentification4>() {
 		{
 			businessComponentTrace_lazy = () -> ProductCharacteristics.mmObject();
-			componentContext_lazy = () -> ProductCharacteristics1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ProductCharacteristics1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "OthrPdctChrtcs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,14 +183,25 @@ public class ProductCharacteristics1Choice {
 			isComposite = true;
 			type_lazy = () -> GenericIdentification4.mmObject();
 		}
+
+		@Override
+		public GenericIdentification4 getValue(ProductCharacteristics1Choice obj) {
+			return obj.getOtherProductCharacteristics();
+		}
+
+		@Override
+		public void setValue(ProductCharacteristics1Choice obj, GenericIdentification4 value) {
+			obj.setOtherProductCharacteristics(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ProductCharacteristics1Choice.mmStructuredProductCharacteristics, ProductCharacteristics1Choice.mmOtherProductCharacteristics);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ProductCharacteristics1Choice.mmStructuredProductCharacteristics,
+						com.tools20022.repository.choice.ProductCharacteristics1Choice.mmOtherProductCharacteristics);
 				trace_lazy = () -> ProductCharacteristics.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProductCharacteristics1Choice";
 				definition = "Specifies that the category of a product may be indicated by a code or by free text.";
@@ -187,21 +210,21 @@ public class ProductCharacteristics1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "StrdPdctChrtcs", required = true)
 	public ProductCharacteristics1 getStructuredProductCharacteristics() {
 		return structuredProductCharacteristics;
 	}
 
-	public void setStructuredProductCharacteristics(ProductCharacteristics1 structuredProductCharacteristics) {
-		this.structuredProductCharacteristics = structuredProductCharacteristics;
+	public ProductCharacteristics1Choice setStructuredProductCharacteristics(ProductCharacteristics1 structuredProductCharacteristics) {
+		this.structuredProductCharacteristics = Objects.requireNonNull(structuredProductCharacteristics);
+		return this;
 	}
 
-	@XmlElement(name = "OthrPdctChrtcs", required = true)
 	public GenericIdentification4 getOtherProductCharacteristics() {
 		return otherProductCharacteristics;
 	}
 
-	public void setOtherProductCharacteristics(GenericIdentification4 otherProductCharacteristics) {
-		this.otherProductCharacteristics = otherProductCharacteristics;
+	public ProductCharacteristics1Choice setOtherProductCharacteristics(GenericIdentification4 otherProductCharacteristics) {
+		this.otherProductCharacteristics = Objects.requireNonNull(otherProductCharacteristics);
+		return this;
 	}
 }

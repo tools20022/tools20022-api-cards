@@ -23,10 +23,12 @@ import com.tools20022.repository.codeset.EventFrequencyCode;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.Document;
+import com.tools20022.repository.entity.PersonProfile;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies the parameters associated with the production of a certificate to
@@ -74,8 +76,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -93,8 +95,8 @@ public class PrivateCertificate extends Document {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CertificateTypeCode certificateType;
 	/**
-	 * Identifies the type of certificate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -118,7 +120,7 @@ public class PrivateCertificate extends Document {
 	 * definition} = "Identifies the type of certificate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCertificateType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PrivateCertificate, CertificateTypeCode> mmCertificateType = new MMBusinessAttribute<PrivateCertificate, CertificateTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmObject();
@@ -130,18 +132,20 @@ public class PrivateCertificate extends Document {
 			simpleType_lazy = () -> CertificateTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PrivateCertificate.class.getMethod("getCertificateType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CertificateTypeCode getValue(PrivateCertificate obj) {
+			return obj.getCertificateType();
+		}
+
+		@Override
+		public void setValue(PrivateCertificate obj, CertificateTypeCode value) {
+			obj.setCertificateType(value);
 		}
 	};
 	protected YesNoIndicator certificationIndicator;
 	/**
-	 * Indicates whether the certificate type has been obtained and verified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -166,7 +170,7 @@ public class PrivateCertificate extends Document {
 	 * "Indicates whether the certificate type has been obtained and verified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCertificationIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PrivateCertificate, YesNoIndicator> mmCertificationIndicator = new MMBusinessAttribute<PrivateCertificate, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmObject();
@@ -178,18 +182,20 @@ public class PrivateCertificate extends Document {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PrivateCertificate.class.getMethod("getCertificationIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(PrivateCertificate obj) {
+			return obj.getCertificationIndicator();
+		}
+
+		@Override
+		public void setValue(PrivateCertificate obj, YesNoIndicator value) {
+			obj.setCertificationIndicator(value);
 		}
 	};
 	protected ISODate checkingDate;
 	/**
-	 * Date at which the certification check has been performed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -213,7 +219,7 @@ public class PrivateCertificate extends Document {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCheckingDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PrivateCertificate, ISODate> mmCheckingDate = new MMBusinessAttribute<PrivateCertificate, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmObject();
@@ -225,18 +231,20 @@ public class PrivateCertificate extends Document {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PrivateCertificate.class.getMethod("getCheckingDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(PrivateCertificate obj) {
+			return obj.getCheckingDate();
+		}
+
+		@Override
+		public void setValue(PrivateCertificate obj, ISODate value) {
+			obj.setCheckingDate(value);
 		}
 	};
 	protected EventFrequencyCode checkingFrequency;
 	/**
-	 * Specifies how frequently the check is performed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -260,7 +268,7 @@ public class PrivateCertificate extends Document {
 	 * definition} = "Specifies how frequently the check is performed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCheckingFrequency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PrivateCertificate, EventFrequencyCode> mmCheckingFrequency = new MMBusinessAttribute<PrivateCertificate, EventFrequencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmObject();
@@ -272,19 +280,20 @@ public class PrivateCertificate extends Document {
 			simpleType_lazy = () -> EventFrequencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PrivateCertificate.class.getMethod("getCheckingFrequency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public EventFrequencyCode getValue(PrivateCertificate obj) {
+			return obj.getCheckingFrequency();
+		}
+
+		@Override
+		public void setValue(PrivateCertificate obj, EventFrequencyCode value) {
+			obj.setCheckingFrequency(value);
 		}
 	};
 	protected ISODate nextRevisionDate;
 	/**
-	 * Specifies the date at which the next certification check will be
-	 * performed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -309,7 +318,7 @@ public class PrivateCertificate extends Document {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNextRevisionDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PrivateCertificate, ISODate> mmNextRevisionDate = new MMBusinessAttribute<PrivateCertificate, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmObject();
@@ -321,18 +330,20 @@ public class PrivateCertificate extends Document {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PrivateCertificate.class.getMethod("getNextRevisionDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(PrivateCertificate obj) {
+			return obj.getNextRevisionDate();
+		}
+
+		@Override
+		public void setValue(PrivateCertificate obj, ISODate value) {
+			obj.setNextRevisionDate(value);
 		}
 	};
 	protected PersonProfile person;
 	/**
-	 * Profile of a person for which a private certificate is described.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -364,7 +375,7 @@ public class PrivateCertificate extends Document {
 	 * "Profile of a person for which a private certificate is described."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPerson = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PrivateCertificate, Optional<PersonProfile>> mmPerson = new MMBusinessAssociationEnd<PrivateCertificate, Optional<PersonProfile>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PrivateCertificate.mmObject();
@@ -373,20 +384,30 @@ public class PrivateCertificate extends Document {
 			definition = "Profile of a person for which a private certificate is described.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmProfileCertification;
+			opposite_lazy = () -> PersonProfile.mmProfileCertification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PersonProfile.mmObject();
+			type_lazy = () -> PersonProfile.mmObject();
+		}
+
+		@Override
+		public Optional<PersonProfile> getValue(PrivateCertificate obj) {
+			return obj.getPerson();
+		}
+
+		@Override
+		public void setValue(PrivateCertificate obj, Optional<PersonProfile> value) {
+			obj.setPerson(value.orElse(null));
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PrivateCertificate";
 				definition = "Specifies the parameters associated with the production of a certificate to identify the profile of a customer.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PersonProfile.mmProfileCertification);
+				associationDomain_lazy = () -> Arrays.asList(PersonProfile.mmProfileCertification);
 				superType_lazy = () -> Document.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PrivateCertificate.mmCertificateType, com.tools20022.repository.entity.PrivateCertificate.mmCertificationIndicator,
 						com.tools20022.repository.entity.PrivateCertificate.mmCheckingDate, com.tools20022.repository.entity.PrivateCertificate.mmCheckingFrequency, com.tools20022.repository.entity.PrivateCertificate.mmNextRevisionDate,
@@ -405,47 +426,53 @@ public class PrivateCertificate extends Document {
 		return certificateType;
 	}
 
-	public void setCertificateType(CertificateTypeCode certificateType) {
-		this.certificateType = certificateType;
+	public PrivateCertificate setCertificateType(CertificateTypeCode certificateType) {
+		this.certificateType = Objects.requireNonNull(certificateType);
+		return this;
 	}
 
 	public YesNoIndicator getCertificationIndicator() {
 		return certificationIndicator;
 	}
 
-	public void setCertificationIndicator(YesNoIndicator certificationIndicator) {
-		this.certificationIndicator = certificationIndicator;
+	public PrivateCertificate setCertificationIndicator(YesNoIndicator certificationIndicator) {
+		this.certificationIndicator = Objects.requireNonNull(certificationIndicator);
+		return this;
 	}
 
 	public ISODate getCheckingDate() {
 		return checkingDate;
 	}
 
-	public void setCheckingDate(ISODate checkingDate) {
-		this.checkingDate = checkingDate;
+	public PrivateCertificate setCheckingDate(ISODate checkingDate) {
+		this.checkingDate = Objects.requireNonNull(checkingDate);
+		return this;
 	}
 
 	public EventFrequencyCode getCheckingFrequency() {
 		return checkingFrequency;
 	}
 
-	public void setCheckingFrequency(EventFrequencyCode checkingFrequency) {
-		this.checkingFrequency = checkingFrequency;
+	public PrivateCertificate setCheckingFrequency(EventFrequencyCode checkingFrequency) {
+		this.checkingFrequency = Objects.requireNonNull(checkingFrequency);
+		return this;
 	}
 
 	public ISODate getNextRevisionDate() {
 		return nextRevisionDate;
 	}
 
-	public void setNextRevisionDate(ISODate nextRevisionDate) {
-		this.nextRevisionDate = nextRevisionDate;
+	public PrivateCertificate setNextRevisionDate(ISODate nextRevisionDate) {
+		this.nextRevisionDate = Objects.requireNonNull(nextRevisionDate);
+		return this;
 	}
 
-	public PersonProfile getPerson() {
-		return person;
+	public Optional<PersonProfile> getPerson() {
+		return person == null ? Optional.empty() : Optional.of(person);
 	}
 
-	public void setPerson(com.tools20022.repository.entity.PersonProfile person) {
+	public PrivateCertificate setPerson(PersonProfile person) {
 		this.person = person;
+		return this;
 	}
 }

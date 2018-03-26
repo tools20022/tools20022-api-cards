@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCategory1Code#HarmonizedTariffCodeName
- * ProductCategory1Code.mmHarmonizedTariffCodeName}</li>
+ * ProductCategory1Code.HarmonizedTariffCodeName}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCategory1Code#QuotaCategory
- * ProductCategory1Code.mmQuotaCategory}</li>
+ * ProductCategory1Code.QuotaCategory}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCategory1Code#ProductGroup
- * ProductCategory1Code.mmProductGroup}</li>
+ * ProductCategory1Code.ProductGroup}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCategory1Code#LineOfBusiness
- * ProductCategory1Code.mmLineOfBusiness}</li>
+ * ProductCategory1Code.LineOfBusiness}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ProductCategory1Code#Gender
- * ProductCategory1Code.mmGender}</li>
+ * ProductCategory1Code.Gender}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -209,7 +209,7 @@ public class ProductCategory1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("HRTR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProductCategory1Code";

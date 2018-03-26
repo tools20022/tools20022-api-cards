@@ -23,11 +23,12 @@ import com.tools20022.repository.codeset.InvestorTypeCode;
 import com.tools20022.repository.codeset.LegalRestrictionsCode;
 import com.tools20022.repository.codeset.RestrictionTypeCode;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.DateTimePeriod;
+import com.tools20022.repository.entity.Jurisdiction;
+import com.tools20022.repository.entity.Security;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Restrictions applicable to the security.
@@ -82,8 +83,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -99,8 +100,8 @@ public class SecuritiesRestriction {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Security security;
 	/**
-	 * Security for which restriction information is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -130,7 +131,7 @@ public class SecuritiesRestriction {
 	 * definition} = "Security for which restriction information is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesRestriction, Optional<Security>> mmSecurity = new MMBusinessAssociationEnd<SecuritiesRestriction, Optional<Security>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
@@ -139,15 +140,25 @@ public class SecuritiesRestriction {
 			definition = "Security for which restriction information is provided.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmRestriction;
+			opposite_lazy = () -> Security.mmRestriction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+			type_lazy = () -> Security.mmObject();
+		}
+
+		@Override
+		public Optional<Security> getValue(SecuritiesRestriction obj) {
+			return obj.getSecurity();
+		}
+
+		@Override
+		public void setValue(SecuritiesRestriction obj, Optional<Security> value) {
+			obj.setSecurity(value.orElse(null));
 		}
 	};
 	protected LegalRestrictionsCode legalRestrictionType;
 	/**
-	 * Specifies the regulatory restrictions applicable to a security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -172,7 +183,7 @@ public class SecuritiesRestriction {
 	 * "Specifies the regulatory restrictions applicable to a security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLegalRestrictionType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesRestriction, LegalRestrictionsCode> mmLegalRestrictionType = new MMBusinessAttribute<SecuritiesRestriction, LegalRestrictionsCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
@@ -184,19 +195,20 @@ public class SecuritiesRestriction {
 			simpleType_lazy = () -> LegalRestrictionsCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesRestriction.class.getMethod("getLegalRestrictionType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public LegalRestrictionsCode getValue(SecuritiesRestriction obj) {
+			return obj.getLegalRestrictionType();
+		}
+
+		@Override
+		public void setValue(SecuritiesRestriction obj, LegalRestrictionsCode value) {
+			obj.setLegalRestrictionType(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Jurisdiction> jurisdiction;
+	protected List<Jurisdiction> jurisdiction;
 	/**
-	 * Jurisdiction (country, county, state, province, city) where the
-	 * restriction applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -229,7 +241,7 @@ public class SecuritiesRestriction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmJurisdiction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesRestriction, List<Jurisdiction>> mmJurisdiction = new MMBusinessAssociationEnd<SecuritiesRestriction, List<Jurisdiction>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
@@ -237,16 +249,25 @@ public class SecuritiesRestriction {
 			name = "Jurisdiction";
 			definition = "Jurisdiction (country, county, state, province, city) where the restriction applies.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmSecuritiesRestriction;
+			opposite_lazy = () -> Jurisdiction.mmSecuritiesRestriction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Jurisdiction.mmObject();
+			type_lazy = () -> Jurisdiction.mmObject();
+		}
+
+		@Override
+		public List<Jurisdiction> getValue(SecuritiesRestriction obj) {
+			return obj.getJurisdiction();
+		}
+
+		@Override
+		public void setValue(SecuritiesRestriction obj, List<Jurisdiction> value) {
+			obj.setJurisdiction(value);
 		}
 	};
 	protected RestrictionTypeCode restrictionType;
 	/**
-	 * Type of the restriction, for example, selling restriction, buying
-	 * restriction, placing restriction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -272,7 +293,7 @@ public class SecuritiesRestriction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRestrictionType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesRestriction, RestrictionTypeCode> mmRestrictionType = new MMBusinessAttribute<SecuritiesRestriction, RestrictionTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
@@ -284,19 +305,20 @@ public class SecuritiesRestriction {
 			simpleType_lazy = () -> RestrictionTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesRestriction.class.getMethod("getRestrictionType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public RestrictionTypeCode getValue(SecuritiesRestriction obj) {
+			return obj.getRestrictionType();
+		}
+
+		@Override
+		public void setValue(SecuritiesRestriction obj, RestrictionTypeCode value) {
+			obj.setRestrictionType(value);
 		}
 	};
 	protected InvestorRestrictionTypeCode investorStatusRestrictionType;
 	/**
-	 * Specifies whether the restriction to be applied is relevant for citizen,
-	 * resident, country.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -322,7 +344,7 @@ public class SecuritiesRestriction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInvestorStatusRestrictionType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesRestriction, InvestorRestrictionTypeCode> mmInvestorStatusRestrictionType = new MMBusinessAttribute<SecuritiesRestriction, InvestorRestrictionTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
@@ -334,18 +356,20 @@ public class SecuritiesRestriction {
 			simpleType_lazy = () -> InvestorRestrictionTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesRestriction.class.getMethod("getInvestorStatusRestrictionType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public InvestorRestrictionTypeCode getValue(SecuritiesRestriction obj) {
+			return obj.getInvestorStatusRestrictionType();
+		}
+
+		@Override
+		public void setValue(SecuritiesRestriction obj, InvestorRestrictionTypeCode value) {
+			obj.setInvestorStatusRestrictionType(value);
 		}
 	};
 	protected DateTimePeriod effectivePeriod;
 	/**
-	 * Period during which the restriction applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -369,7 +393,7 @@ public class SecuritiesRestriction {
 	 * definition} = "Period during which the restriction applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEffectivePeriod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesRestriction, DateTimePeriod> mmEffectivePeriod = new MMBusinessAttribute<SecuritiesRestriction, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
@@ -378,21 +402,23 @@ public class SecuritiesRestriction {
 			definition = "Period during which the restriction applies.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			complexType_lazy = () -> DateTimePeriod.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesRestriction.class.getMethod("getEffectivePeriod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DateTimePeriod getValue(SecuritiesRestriction obj) {
+			return obj.getEffectivePeriod();
+		}
+
+		@Override
+		public void setValue(SecuritiesRestriction obj, DateTimePeriod value) {
+			obj.setEffectivePeriod(value);
 		}
 	};
 	protected PercentageRate rate;
 	/**
-	 * Rate used for the calculation of the restriction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -416,7 +442,7 @@ public class SecuritiesRestriction {
 	 * definition} = "Rate used for the calculation of the restriction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesRestriction, PercentageRate> mmRate = new MMBusinessAttribute<SecuritiesRestriction, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
@@ -428,18 +454,20 @@ public class SecuritiesRestriction {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesRestriction.class.getMethod("getRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(SecuritiesRestriction obj) {
+			return obj.getRate();
+		}
+
+		@Override
+		public void setValue(SecuritiesRestriction obj, PercentageRate value) {
+			obj.setRate(value);
 		}
 	};
 	protected InvestorTypeCode investorType;
 	/**
-	 * Type of investor that is allowed to hold the security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -463,7 +491,7 @@ public class SecuritiesRestriction {
 	 * definition} = "Type of investor that is allowed to hold the security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInvestorType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesRestriction, InvestorTypeCode> mmInvestorType = new MMBusinessAttribute<SecuritiesRestriction, InvestorTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesRestriction.mmObject();
@@ -475,23 +503,25 @@ public class SecuritiesRestriction {
 			simpleType_lazy = () -> InvestorTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesRestriction.class.getMethod("getInvestorType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public InvestorTypeCode getValue(SecuritiesRestriction obj) {
+			return obj.getInvestorType();
+		}
+
+		@Override
+		public void setValue(SecuritiesRestriction obj, InvestorTypeCode value) {
+			obj.setInvestorType(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesRestriction";
 				definition = "Restrictions applicable to the security.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmRestriction, com.tools20022.repository.entity.Jurisdiction.mmSecuritiesRestriction);
+				associationDomain_lazy = () -> Arrays.asList(Security.mmRestriction, Jurisdiction.mmSecuritiesRestriction);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesRestriction.mmSecurity, com.tools20022.repository.entity.SecuritiesRestriction.mmLegalRestrictionType,
 						com.tools20022.repository.entity.SecuritiesRestriction.mmJurisdiction, com.tools20022.repository.entity.SecuritiesRestriction.mmRestrictionType,
 						com.tools20022.repository.entity.SecuritiesRestriction.mmInvestorStatusRestrictionType, com.tools20022.repository.entity.SecuritiesRestriction.mmEffectivePeriod,
@@ -506,67 +536,75 @@ public class SecuritiesRestriction {
 		return mmObject_lazy.get();
 	}
 
-	public Security getSecurity() {
-		return security;
+	public Optional<Security> getSecurity() {
+		return security == null ? Optional.empty() : Optional.of(security);
 	}
 
-	public void setSecurity(com.tools20022.repository.entity.Security security) {
+	public SecuritiesRestriction setSecurity(Security security) {
 		this.security = security;
+		return this;
 	}
 
 	public LegalRestrictionsCode getLegalRestrictionType() {
 		return legalRestrictionType;
 	}
 
-	public void setLegalRestrictionType(LegalRestrictionsCode legalRestrictionType) {
-		this.legalRestrictionType = legalRestrictionType;
+	public SecuritiesRestriction setLegalRestrictionType(LegalRestrictionsCode legalRestrictionType) {
+		this.legalRestrictionType = Objects.requireNonNull(legalRestrictionType);
+		return this;
 	}
 
 	public List<Jurisdiction> getJurisdiction() {
-		return jurisdiction;
+		return jurisdiction == null ? jurisdiction = new ArrayList<>() : jurisdiction;
 	}
 
-	public void setJurisdiction(List<com.tools20022.repository.entity.Jurisdiction> jurisdiction) {
-		this.jurisdiction = jurisdiction;
+	public SecuritiesRestriction setJurisdiction(List<Jurisdiction> jurisdiction) {
+		this.jurisdiction = Objects.requireNonNull(jurisdiction);
+		return this;
 	}
 
 	public RestrictionTypeCode getRestrictionType() {
 		return restrictionType;
 	}
 
-	public void setRestrictionType(RestrictionTypeCode restrictionType) {
-		this.restrictionType = restrictionType;
+	public SecuritiesRestriction setRestrictionType(RestrictionTypeCode restrictionType) {
+		this.restrictionType = Objects.requireNonNull(restrictionType);
+		return this;
 	}
 
 	public InvestorRestrictionTypeCode getInvestorStatusRestrictionType() {
 		return investorStatusRestrictionType;
 	}
 
-	public void setInvestorStatusRestrictionType(InvestorRestrictionTypeCode investorStatusRestrictionType) {
-		this.investorStatusRestrictionType = investorStatusRestrictionType;
+	public SecuritiesRestriction setInvestorStatusRestrictionType(InvestorRestrictionTypeCode investorStatusRestrictionType) {
+		this.investorStatusRestrictionType = Objects.requireNonNull(investorStatusRestrictionType);
+		return this;
 	}
 
 	public DateTimePeriod getEffectivePeriod() {
 		return effectivePeriod;
 	}
 
-	public void setEffectivePeriod(com.tools20022.repository.entity.DateTimePeriod effectivePeriod) {
-		this.effectivePeriod = effectivePeriod;
+	public SecuritiesRestriction setEffectivePeriod(DateTimePeriod effectivePeriod) {
+		this.effectivePeriod = Objects.requireNonNull(effectivePeriod);
+		return this;
 	}
 
 	public PercentageRate getRate() {
 		return rate;
 	}
 
-	public void setRate(PercentageRate rate) {
-		this.rate = rate;
+	public SecuritiesRestriction setRate(PercentageRate rate) {
+		this.rate = Objects.requireNonNull(rate);
+		return this;
 	}
 
 	public InvestorTypeCode getInvestorType() {
 		return investorType;
 	}
 
-	public void setInvestorType(InvestorTypeCode investorType) {
-		this.investorType = investorType;
+	public SecuritiesRestriction setInvestorType(InvestorTypeCode investorType) {
+		this.investorType = Objects.requireNonNull(investorType);
+		return this;
 	}
 }

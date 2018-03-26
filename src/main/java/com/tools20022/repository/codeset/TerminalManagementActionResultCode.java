@@ -38,62 +38,70 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#AccessDenied
- * TerminalManagementActionResultCode.mmAccessDenied}</li>
+ * TerminalManagementActionResultCode.AccessDenied}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#ConnectionError
- * TerminalManagementActionResultCode.mmConnectionError}</li>
+ * TerminalManagementActionResultCode.ConnectionError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#FormatError
- * TerminalManagementActionResultCode.mmFormatError}</li>
+ * TerminalManagementActionResultCode.FormatError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#InvalidContent
- * TerminalManagementActionResultCode.mmInvalidContent}</li>
+ * TerminalManagementActionResultCode.InvalidContent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#LengthError
- * TerminalManagementActionResultCode.mmLengthError}</li>
+ * TerminalManagementActionResultCode.LengthError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#MemoryOverflow
- * TerminalManagementActionResultCode.mmMemoryOverflow}</li>
+ * TerminalManagementActionResultCode.MemoryOverflow}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#MissingFile
- * TerminalManagementActionResultCode.mmMissingFile}</li>
+ * TerminalManagementActionResultCode.MissingFile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#NotSupported
- * TerminalManagementActionResultCode.mmNotSupported}</li>
+ * TerminalManagementActionResultCode.NotSupported}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#SignatureError
- * TerminalManagementActionResultCode.mmSignatureError}</li>
+ * TerminalManagementActionResultCode.SignatureError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#Success
- * TerminalManagementActionResultCode.mmSuccess}</li>
+ * TerminalManagementActionResultCode.Success}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#SyntaxError
- * TerminalManagementActionResultCode.mmSyntaxError}</li>
+ * TerminalManagementActionResultCode.SyntaxError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#Timeout
- * TerminalManagementActionResultCode.mmTimeout}</li>
+ * TerminalManagementActionResultCode.Timeout}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#UnknownData
- * TerminalManagementActionResultCode.mmUnknownData}</li>
+ * TerminalManagementActionResultCode.UnknownData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#UnknownKeyReference
- * TerminalManagementActionResultCode.mmUnknownKeyReference}</li>
+ * TerminalManagementActionResultCode.UnknownKeyReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#Hardware
- * TerminalManagementActionResultCode.mmHardware}</li>
+ * TerminalManagementActionResultCode.Hardware}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#Security
- * TerminalManagementActionResultCode.mmSecurity}</li>
+ * TerminalManagementActionResultCode.Security}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#DelegationParametersReceivedUnauthorized
- * TerminalManagementActionResultCode.mmDelegationParametersReceivedUnauthorized
- * }</li>
+ * TerminalManagementActionResultCode.DelegationParametersReceivedUnauthorized}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#InvalidDelegationInManagementPlan
- * TerminalManagementActionResultCode.mmInvalidDelegationInManagementPlan}</li>
+ * TerminalManagementActionResultCode.InvalidDelegationInManagementPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#InvalidDelegationProof
- * TerminalManagementActionResultCode.mmInvalidDelegationProof}</li>
+ * TerminalManagementActionResultCode.InvalidDelegationProof}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#CommunicationError
+ * TerminalManagementActionResultCode.CommunicationError}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#AnyError
+ * TerminalManagementActionResultCode.AnyError}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode#UnlistedError
+ * TerminalManagementActionResultCode.UnlistedError}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -110,8 +118,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -712,6 +720,103 @@ public class TerminalManagementActionResultCode extends MMCode {
 			codeName = "INDP";
 		}
 	};
+	/**
+	 * Error in communication once the connection has been established.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode
+	 * TerminalManagementActionResultCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "CMER"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "CommunicationError"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Error in communication once the connection has been established."</li>
+	 * </ul>
+	 */
+	public static final TerminalManagementActionResultCode CommunicationError = new TerminalManagementActionResultCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "CommunicationError";
+			definition = "Error in communication once the connection has been established.";
+			owner_lazy = () -> com.tools20022.repository.codeset.TerminalManagementActionResultCode.mmObject();
+			codeName = "CMER";
+		}
+	};
+	/**
+	 * This code value means all TerminalManagementActionResultCode except
+	 * "Any Error" and "Unlisted Error".
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode
+	 * TerminalManagementActionResultCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "AERR"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "AnyError"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "This code value means all TerminalManagementActionResultCode except \"Any Error\" and \"Unlisted Error\"."
+	 * </li>
+	 * </ul>
+	 */
+	public static final TerminalManagementActionResultCode AnyError = new TerminalManagementActionResultCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "AnyError";
+			definition = "This code value means all TerminalManagementActionResultCode except \"Any Error\" and \"Unlisted Error\".";
+			owner_lazy = () -> com.tools20022.repository.codeset.TerminalManagementActionResultCode.mmObject();
+			codeName = "AERR";
+		}
+	};
+	/**
+	 * Any error that is not defined by a code value inside the
+	 * TerminalManagementActionResultCode.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResultCode
+	 * TerminalManagementActionResultCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "ULER"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "UnlistedError"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Any error that is not defined by a code value inside the TerminalManagementActionResultCode."
+	 * </li>
+	 * </ul>
+	 */
+	public static final TerminalManagementActionResultCode UnlistedError = new TerminalManagementActionResultCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "UnlistedError";
+			definition = "Any error that is not defined by a code value inside the TerminalManagementActionResultCode.";
+			owner_lazy = () -> com.tools20022.repository.codeset.TerminalManagementActionResultCode.mmObject();
+			codeName = "ULER";
+		}
+	};
 	final static private LinkedHashMap<String, TerminalManagementActionResultCode> codesByName = new LinkedHashMap<>();
 
 	protected TerminalManagementActionResultCode() {
@@ -720,7 +825,7 @@ public class TerminalManagementActionResultCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACCD");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TerminalManagementActionResultCode";
@@ -735,7 +840,8 @@ public class TerminalManagementActionResultCode extends MMCode {
 						com.tools20022.repository.codeset.TerminalManagementActionResultCode.UnknownData, com.tools20022.repository.codeset.TerminalManagementActionResultCode.UnknownKeyReference,
 						com.tools20022.repository.codeset.TerminalManagementActionResultCode.Hardware, com.tools20022.repository.codeset.TerminalManagementActionResultCode.Security,
 						com.tools20022.repository.codeset.TerminalManagementActionResultCode.DelegationParametersReceivedUnauthorized, com.tools20022.repository.codeset.TerminalManagementActionResultCode.InvalidDelegationInManagementPlan,
-						com.tools20022.repository.codeset.TerminalManagementActionResultCode.InvalidDelegationProof);
+						com.tools20022.repository.codeset.TerminalManagementActionResultCode.InvalidDelegationProof, com.tools20022.repository.codeset.TerminalManagementActionResultCode.CommunicationError,
+						com.tools20022.repository.codeset.TerminalManagementActionResultCode.AnyError, com.tools20022.repository.codeset.TerminalManagementActionResultCode.UnlistedError);
 			}
 		});
 		return mmObject_lazy.get();
@@ -761,6 +867,9 @@ public class TerminalManagementActionResultCode extends MMCode {
 		codesByName.put(DelegationParametersReceivedUnauthorized.getCodeName().get(), DelegationParametersReceivedUnauthorized);
 		codesByName.put(InvalidDelegationInManagementPlan.getCodeName().get(), InvalidDelegationInManagementPlan);
 		codesByName.put(InvalidDelegationProof.getCodeName().get(), InvalidDelegationProof);
+		codesByName.put(CommunicationError.getCodeName().get(), CommunicationError);
+		codesByName.put(AnyError.getCodeName().get(), AnyError);
+		codesByName.put(UnlistedError.getCodeName().get(), UnlistedError);
 	}
 
 	public static TerminalManagementActionResultCode valueOf(String codeName) {

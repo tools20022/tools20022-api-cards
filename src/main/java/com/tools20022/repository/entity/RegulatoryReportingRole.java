@@ -21,10 +21,12 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.RegisteredContract;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Party which plays a role for regulatory reporting.
@@ -76,8 +78,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -93,9 +95,8 @@ public class RegulatoryReportingRole extends Role {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected RegisteredContract relatedReportingParty;
 	/**
-	 * Related party which must register the contract for regulatory reporting
-	 * reasons.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -128,7 +129,7 @@ public class RegulatoryReportingRole extends Role {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedReportingParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegulatoryReportingRole, RegisteredContract> mmRelatedReportingParty = new MMBusinessAssociationEnd<RegulatoryReportingRole, RegisteredContract>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
@@ -137,15 +138,25 @@ public class RegulatoryReportingRole extends Role {
 			definition = "Related party which must register the contract for regulatory reporting reasons.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmReportingParty;
+			opposite_lazy = () -> RegisteredContract.mmReportingParty;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
+			type_lazy = () -> RegisteredContract.mmObject();
+		}
+
+		@Override
+		public RegisteredContract getValue(RegulatoryReportingRole obj) {
+			return obj.getRelatedReportingParty();
+		}
+
+		@Override
+		public void setValue(RegulatoryReportingRole obj, RegisteredContract value) {
+			obj.setRelatedReportingParty(value);
 		}
 	};
 	protected RegisteredContract relatedRegistrationAgent;
 	/**
-	 * Related agent which is in charge of the registration of the contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -177,7 +188,7 @@ public class RegulatoryReportingRole extends Role {
 	 * "Related agent which is in charge of the registration of the contract."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedRegistrationAgent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegulatoryReportingRole, RegisteredContract> mmRelatedRegistrationAgent = new MMBusinessAssociationEnd<RegulatoryReportingRole, RegisteredContract>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
@@ -186,16 +197,25 @@ public class RegulatoryReportingRole extends Role {
 			definition = "Related agent which is in charge of the registration of the contract.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmRegistrationAgent;
+			opposite_lazy = () -> RegisteredContract.mmRegistrationAgent;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
+			type_lazy = () -> RegisteredContract.mmObject();
+		}
+
+		@Override
+		public RegisteredContract getValue(RegulatoryReportingRole obj) {
+			return obj.getRelatedRegistrationAgent();
+		}
+
+		@Override
+		public void setValue(RegulatoryReportingRole obj, RegisteredContract value) {
+			obj.setRelatedRegistrationAgent(value);
 		}
 	};
 	protected RegisteredContract relatedReceivingParty;
 	/**
-	 * Related party which receives support information about the registered
-	 * contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -228,7 +248,7 @@ public class RegulatoryReportingRole extends Role {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedReceivingParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegulatoryReportingRole, RegisteredContract> mmRelatedReceivingParty = new MMBusinessAssociationEnd<RegulatoryReportingRole, RegisteredContract>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
@@ -237,16 +257,25 @@ public class RegulatoryReportingRole extends Role {
 			definition = "Related party which receives support information about the registered contract.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmReceivingParty;
+			opposite_lazy = () -> RegisteredContract.mmReceivingParty;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
+			type_lazy = () -> RegisteredContract.mmObject();
+		}
+
+		@Override
+		public RegisteredContract getValue(RegulatoryReportingRole obj) {
+			return obj.getRelatedReceivingParty();
+		}
+
+		@Override
+		public void setValue(RegulatoryReportingRole obj, RegisteredContract value) {
+			obj.setRelatedReceivingParty(value);
 		}
 	};
 	protected RegisteredContract relatedSendingParty;
 	/**
-	 * Related Party which sends support information about the registered
-	 * contract.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -279,7 +308,7 @@ public class RegulatoryReportingRole extends Role {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSendingParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegulatoryReportingRole, RegisteredContract> mmRelatedSendingParty = new MMBusinessAssociationEnd<RegulatoryReportingRole, RegisteredContract>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryReportingRole.mmObject();
@@ -288,21 +317,30 @@ public class RegulatoryReportingRole extends Role {
 			definition = "Related Party which sends support information about the registered contract.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmSendingParty;
+			opposite_lazy = () -> RegisteredContract.mmSendingParty;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RegisteredContract.mmObject();
+			type_lazy = () -> RegisteredContract.mmObject();
+		}
+
+		@Override
+		public RegisteredContract getValue(RegulatoryReportingRole obj) {
+			return obj.getRelatedSendingParty();
+		}
+
+		@Override
+		public void setValue(RegulatoryReportingRole obj, RegisteredContract value) {
+			obj.setRelatedSendingParty(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegulatoryReportingRole";
 				definition = "Party which plays a role for regulatory reporting.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RegisteredContract.mmReportingParty, com.tools20022.repository.entity.RegisteredContract.mmRegistrationAgent,
-						com.tools20022.repository.entity.RegisteredContract.mmReceivingParty, com.tools20022.repository.entity.RegisteredContract.mmSendingParty);
+				associationDomain_lazy = () -> Arrays.asList(RegisteredContract.mmReportingParty, RegisteredContract.mmRegistrationAgent, RegisteredContract.mmReceivingParty, RegisteredContract.mmSendingParty);
 				superType_lazy = () -> Role.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedReportingParty, com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedRegistrationAgent,
 						com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedReceivingParty, com.tools20022.repository.entity.RegulatoryReportingRole.mmRelatedSendingParty);
@@ -320,31 +358,35 @@ public class RegulatoryReportingRole extends Role {
 		return relatedReportingParty;
 	}
 
-	public void setRelatedReportingParty(com.tools20022.repository.entity.RegisteredContract relatedReportingParty) {
-		this.relatedReportingParty = relatedReportingParty;
+	public RegulatoryReportingRole setRelatedReportingParty(RegisteredContract relatedReportingParty) {
+		this.relatedReportingParty = Objects.requireNonNull(relatedReportingParty);
+		return this;
 	}
 
 	public RegisteredContract getRelatedRegistrationAgent() {
 		return relatedRegistrationAgent;
 	}
 
-	public void setRelatedRegistrationAgent(com.tools20022.repository.entity.RegisteredContract relatedRegistrationAgent) {
-		this.relatedRegistrationAgent = relatedRegistrationAgent;
+	public RegulatoryReportingRole setRelatedRegistrationAgent(RegisteredContract relatedRegistrationAgent) {
+		this.relatedRegistrationAgent = Objects.requireNonNull(relatedRegistrationAgent);
+		return this;
 	}
 
 	public RegisteredContract getRelatedReceivingParty() {
 		return relatedReceivingParty;
 	}
 
-	public void setRelatedReceivingParty(com.tools20022.repository.entity.RegisteredContract relatedReceivingParty) {
-		this.relatedReceivingParty = relatedReceivingParty;
+	public RegulatoryReportingRole setRelatedReceivingParty(RegisteredContract relatedReceivingParty) {
+		this.relatedReceivingParty = Objects.requireNonNull(relatedReceivingParty);
+		return this;
 	}
 
 	public RegisteredContract getRelatedSendingParty() {
 		return relatedSendingParty;
 	}
 
-	public void setRelatedSendingParty(com.tools20022.repository.entity.RegisteredContract relatedSendingParty) {
-		this.relatedSendingParty = relatedSendingParty;
+	public RegulatoryReportingRole setRelatedSendingParty(RegisteredContract relatedSendingParty) {
+		this.relatedSendingParty = Objects.requireNonNull(relatedSendingParty);
+		return this;
 	}
 }

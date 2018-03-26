@@ -23,8 +23,11 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.Algorithm13Code;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Parameter6;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,15 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AlgorithmIdentification13", propOrder = {"algorithm", "parameter"})
 public class AlgorithmIdentification13 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Algo", required = true)
 	protected Algorithm13Code algorithm;
 	/**
-	 * Identification of the algorithm.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -99,9 +103,9 @@ public class AlgorithmIdentification13 {
 	 * definition} = "Identification of the algorithm."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAlgorithm = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AlgorithmIdentification13, Algorithm13Code> mmAlgorithm = new MMMessageAttribute<AlgorithmIdentification13, Algorithm13Code>() {
 		{
-			componentContext_lazy = () -> AlgorithmIdentification13.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AlgorithmIdentification13.mmObject();
 			isDerived = false;
 			xmlTag = "Algo";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -111,11 +115,22 @@ public class AlgorithmIdentification13 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Algorithm13Code.mmObject();
 		}
+
+		@Override
+		public Algorithm13Code getValue(AlgorithmIdentification13 obj) {
+			return obj.getAlgorithm();
+		}
+
+		@Override
+		public void setValue(AlgorithmIdentification13 obj, Algorithm13Code value) {
+			obj.setAlgorithm(value);
+		}
 	};
+	@XmlElement(name = "Param")
 	protected Parameter6 parameter;
 	/**
-	 * Parameters associated to the encryption algorithm.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -138,9 +153,9 @@ public class AlgorithmIdentification13 {
 	 * definition} = "Parameters associated to the encryption algorithm."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmParameter = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AlgorithmIdentification13, Optional<Parameter6>> mmParameter = new MMMessageAssociationEnd<AlgorithmIdentification13, Optional<Parameter6>>() {
 		{
-			componentContext_lazy = () -> AlgorithmIdentification13.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AlgorithmIdentification13.mmObject();
 			isDerived = false;
 			xmlTag = "Param";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -149,15 +164,25 @@ public class AlgorithmIdentification13 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Parameter6.mmObject();
+			type_lazy = () -> Parameter6.mmObject();
+		}
+
+		@Override
+		public Optional<Parameter6> getValue(AlgorithmIdentification13 obj) {
+			return obj.getParameter();
+		}
+
+		@Override
+		public void setValue(AlgorithmIdentification13 obj, Optional<Parameter6> value) {
+			obj.setParameter(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AlgorithmIdentification13.mmAlgorithm, AlgorithmIdentification13.mmParameter);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AlgorithmIdentification13.mmAlgorithm, com.tools20022.repository.msg.AlgorithmIdentification13.mmParameter);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AlgorithmIdentification13";
 				definition = "Cryptographic algorithm and parameters for the protection of the transported key.";
@@ -166,21 +191,21 @@ public class AlgorithmIdentification13 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Algo", required = true)
 	public Algorithm13Code getAlgorithm() {
 		return algorithm;
 	}
 
-	public void setAlgorithm(Algorithm13Code algorithm) {
-		this.algorithm = algorithm;
+	public AlgorithmIdentification13 setAlgorithm(Algorithm13Code algorithm) {
+		this.algorithm = Objects.requireNonNull(algorithm);
+		return this;
 	}
 
-	@XmlElement(name = "Param")
-	public Parameter6 getParameter() {
-		return parameter;
+	public Optional<Parameter6> getParameter() {
+		return parameter == null ? Optional.empty() : Optional.of(parameter);
 	}
 
-	public void setParameter(com.tools20022.repository.msg.Parameter6 parameter) {
+	public AlgorithmIdentification13 setParameter(Parameter6 parameter) {
 		this.parameter = parameter;
+		return this;
 	}
 }

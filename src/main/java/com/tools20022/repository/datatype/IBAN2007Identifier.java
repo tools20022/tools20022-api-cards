@@ -19,18 +19,18 @@ package com.tools20022.repository.datatype;
 
 import com.tools20022.metamodel.MMIdentifierSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.datatype.IBAN2007Identifier.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.String;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 /**
  * An identifier used internationally by financial institutions to uniquely
  * identify the account of a customer at a financial institution, as described
- * in the latest edition of the international standard ISO 13616:2007 -
+ * in the latest edition of the international standard ISO 13616: 2007 -
  * "Banking and related financial services - International Bank Account Number (IBAN)"
  * .
  * <p>
@@ -46,8 +46,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintIBAN#forIBAN2007Identifier
+ * ConstraintIBAN.forIBAN2007Identifier}</li>
+ * </ul>
+ * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -62,24 +70,27 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "IBAN2007Identifier"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "An identifier used internationally by financial institutions to uniquely identify the account of a customer at a financial institution, as described in the latest edition of the international standard ISO 13616:2007 - \"Banking and related financial services - International Bank Account Number (IBAN)\"."
+ * "An identifier used internationally by financial institutions to uniquely identify the account of a customer at a financial institution, as described in the latest edition of the international standard ISO 13616: 2007 - \"Banking and related financial services - International Bank Account Number (IBAN)\"."
  * </li>
  * </ul>
  */
-@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType
 public class IBAN2007Identifier {
 
 	final static private AtomicReference<MMIdentifierSet> mmObject_lazy = new AtomicReference<>();
+	@XmlValue
 	protected String value;
 
 	final static public MMIdentifierSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMIdentifierSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintIBAN.forIBAN2007Identifier);
 				example = Arrays.asList("AT611904300234573201");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IBAN2007Identifier";
-				definition = "An identifier used internationally by financial institutions to uniquely identify the account of a customer at a financial institution, as described in the latest edition of the international standard ISO 13616:2007 - \"Banking and related financial services - International Bank Account Number (IBAN)\".";
+				definition = "An identifier used internationally by financial institutions to uniquely identify the account of a customer at a financial institution, as described in the latest edition of the international standard ISO 13616: 2007 - \"Banking and related financial services - International Bank Account Number (IBAN)\".";
 				identificationScheme = "National Banking Association; International Bank Account Number (ISO 13616)";
 				pattern = "[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}";
 			}
@@ -87,24 +98,23 @@ public class IBAN2007Identifier {
 		return mmObject_lazy.get();
 	}
 
+	public IBAN2007Identifier() {
+	}
+
 	public IBAN2007Identifier(String value) {
+		this.value = value;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
 		this.value = value;
 	}
 
 	@Override
 	public String toString() {
-		return value;
-	}
-
-	protected static class InternalXmlAdapter extends XmlAdapter<String, IBAN2007Identifier> {
-		@Override
-		public IBAN2007Identifier unmarshal(String value) {
-			return new IBAN2007Identifier(value);
-		}
-
-		@Override
-		public String marshal(IBAN2007Identifier typedData) {
-			return typedData.value;
-		}
+		return value == null ? null : value.toString();
 	}
 }

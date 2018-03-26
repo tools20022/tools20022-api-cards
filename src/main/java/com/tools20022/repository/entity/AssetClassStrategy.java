@@ -21,11 +21,14 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.AssetClassification;
 import com.tools20022.repository.entity.PortfolioStrategy;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Strategy is asset class based.
@@ -59,8 +62,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -74,10 +77,10 @@ import java.util.List;
 public class AssetClassStrategy extends PortfolioStrategy {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.AssetClassification> assetClass;
+	protected List<AssetClassification> assetClass;
 	/**
-	 * Strategy based on asset classes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -108,7 +111,7 @@ public class AssetClassStrategy extends PortfolioStrategy {
 	 * definition} = "Strategy based on asset classes."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAssetClass = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AssetClassStrategy, List<AssetClassification>> mmAssetClass = new MMBusinessAssociationEnd<AssetClassStrategy, List<AssetClassification>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AssetClassStrategy.mmObject();
@@ -116,20 +119,30 @@ public class AssetClassStrategy extends PortfolioStrategy {
 			name = "AssetClass";
 			definition = "Strategy based on asset classes.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmStrategy;
+			opposite_lazy = () -> AssetClassification.mmStrategy;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
+			type_lazy = () -> AssetClassification.mmObject();
+		}
+
+		@Override
+		public List<AssetClassification> getValue(AssetClassStrategy obj) {
+			return obj.getAssetClass();
+		}
+
+		@Override
+		public void setValue(AssetClassStrategy obj, List<AssetClassification> value) {
+			obj.setAssetClass(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AssetClassStrategy";
 				definition = "Strategy is asset class based.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AssetClassification.mmStrategy);
+				associationDomain_lazy = () -> Arrays.asList(AssetClassification.mmStrategy);
 				superType_lazy = () -> PortfolioStrategy.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AssetClassStrategy.mmAssetClass);
 			}
@@ -143,10 +156,11 @@ public class AssetClassStrategy extends PortfolioStrategy {
 	}
 
 	public List<AssetClassification> getAssetClass() {
-		return assetClass;
+		return assetClass == null ? assetClass = new ArrayList<>() : assetClass;
 	}
 
-	public void setAssetClass(List<com.tools20022.repository.entity.AssetClassification> assetClass) {
-		this.assetClass = assetClass;
+	public AssetClassStrategy setAssetClass(List<AssetClassification> assetClass) {
+		this.assetClass = Objects.requireNonNull(assetClass);
+		return this;
 	}
 }

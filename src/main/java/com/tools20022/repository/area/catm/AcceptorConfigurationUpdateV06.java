@@ -21,13 +21,14 @@ import com.tools20022.metamodel.MMMessageBuildingBlock;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.TerminalManagementLatestVersion;
+import com.tools20022.repository.area.TerminalManagementPreviousVersion;
 import com.tools20022.repository.msg.AcceptorConfiguration6;
 import com.tools20022.repository.msg.ContentInformationType12;
 import com.tools20022.repository.msg.Header27;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -57,8 +58,8 @@ import javax.xml.bind.annotation.*;
  * xmlTag} = "AccptrCfgtnUpd"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageDefinition#getBusinessArea
  * businessArea} =
- * {@linkplain com.tools20022.repository.area.TerminalManagementLatestVersion
- * TerminalManagementLatestVersion}</li>
+ * {@linkplain com.tools20022.repository.area.TerminalManagementPreviousVersion
+ * TerminalManagementPreviousVersion}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code catm.003.001.06}</li>
@@ -74,16 +75,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AcceptorConfigurationUpdateV06", propOrder = {"header", "acceptorConfiguration", "securityTrailer"})
 public class AcceptorConfigurationUpdateV06 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header27 header;
 	/**
-	 * Set of characteristics related to the transfer of the acceptor
-	 * parameters.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,7 +106,7 @@ public class AcceptorConfigurationUpdateV06 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorConfigurationUpdateV06, Header27> mmHeader = new MMMessageBuildingBlock<AcceptorConfigurationUpdateV06, Header27>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -116,19 +117,21 @@ public class AcceptorConfigurationUpdateV06 {
 			complexType_lazy = () -> Header27.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfigurationUpdateV06.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header27 getValue(AcceptorConfigurationUpdateV06 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(AcceptorConfigurationUpdateV06 obj, Header27 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "AccptrCfgtn", required = true)
 	protected AcceptorConfiguration6 acceptorConfiguration;
 	/**
-	 * Acceptor configuration to be downloaded from the terminal management
-	 * system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -151,7 +154,7 @@ public class AcceptorConfigurationUpdateV06 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAcceptorConfiguration = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorConfigurationUpdateV06, AcceptorConfiguration6> mmAcceptorConfiguration = new MMMessageBuildingBlock<AcceptorConfigurationUpdateV06, AcceptorConfiguration6>() {
 		{
 			xmlTag = "AccptrCfgtn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -162,18 +165,21 @@ public class AcceptorConfigurationUpdateV06 {
 			complexType_lazy = () -> AcceptorConfiguration6.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfigurationUpdateV06.class.getMethod("getAcceptorConfiguration", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AcceptorConfiguration6 getValue(AcceptorConfigurationUpdateV06 obj) {
+			return obj.getAcceptorConfiguration();
+		}
+
+		@Override
+		public void setValue(AcceptorConfigurationUpdateV06 obj, AcceptorConfiguration6 value) {
+			obj.setAcceptorConfiguration(value);
 		}
 	};
+	@XmlElement(name = "SctyTrlr")
 	protected ContentInformationType12 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC or a digital signature.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -195,7 +201,7 @@ public class AcceptorConfigurationUpdateV06 {
 	 * "Trailer of the message containing a MAC or a digital signature."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorConfigurationUpdateV06, Optional<ContentInformationType12>> mmSecurityTrailer = new MMMessageBuildingBlock<AcceptorConfigurationUpdateV06, Optional<ContentInformationType12>>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -206,12 +212,14 @@ public class AcceptorConfigurationUpdateV06 {
 			complexType_lazy = () -> ContentInformationType12.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfigurationUpdateV06.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType12> getValue(AcceptorConfigurationUpdateV06 obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(AcceptorConfigurationUpdateV06 obj, Optional<ContentInformationType12> value) {
+			obj.setSecurityTrailer(value.orElse(null));
 		}
 	};
 
@@ -223,7 +231,7 @@ public class AcceptorConfigurationUpdateV06 {
 				definition = "Update of the acceptor configuration to be downloaded by the terminal management system.";
 				rootElement = "Document";
 				xmlTag = "AccptrCfgtnUpd";
-				businessArea_lazy = () -> TerminalManagementLatestVersion.mmObject();
+				businessArea_lazy = () -> TerminalManagementPreviousVersion.mmObject();
 				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.catm.AcceptorConfigurationUpdateV06.mmHeader, com.tools20022.repository.area.catm.AcceptorConfigurationUpdateV06.mmAcceptorConfiguration,
 						com.tools20022.repository.area.catm.AcceptorConfigurationUpdateV06.mmSecurityTrailer);
 				messageDefinitionIdentifier_lazy = () -> new MMMessageDefinitionIdentifier() {
@@ -244,34 +252,34 @@ public class AcceptorConfigurationUpdateV06 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header27 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header27 header) {
-		this.header = header;
+	public AcceptorConfigurationUpdateV06 setHeader(Header27 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "AccptrCfgtn", required = true)
 	public AcceptorConfiguration6 getAcceptorConfiguration() {
 		return acceptorConfiguration;
 	}
 
-	public void setAcceptorConfiguration(AcceptorConfiguration6 acceptorConfiguration) {
-		this.acceptorConfiguration = acceptorConfiguration;
+	public AcceptorConfigurationUpdateV06 setAcceptorConfiguration(AcceptorConfiguration6 acceptorConfiguration) {
+		this.acceptorConfiguration = Objects.requireNonNull(acceptorConfiguration);
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr")
-	public ContentInformationType12 getSecurityTrailer() {
-		return securityTrailer;
+	public Optional<ContentInformationType12> getSecurityTrailer() {
+		return securityTrailer == null ? Optional.empty() : Optional.of(securityTrailer);
 	}
 
-	public void setSecurityTrailer(ContentInformationType12 securityTrailer) {
+	public AcceptorConfigurationUpdateV06 setSecurityTrailer(ContentInformationType12 securityTrailer) {
 		this.securityTrailer = securityTrailer;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:catm.003.06.06")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:catm.003.001.06")
 	static public class Document {
 		@XmlElement(name = "AccptrCfgtnUpd", required = true)
 		public AcceptorConfigurationUpdateV06 messageBody;

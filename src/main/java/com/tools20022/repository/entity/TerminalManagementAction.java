@@ -19,11 +19,13 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
+import com.tools20022.repository.entity.TerminalManagementSystem;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Terminal management action to be performed by the point of interaction.
@@ -95,8 +97,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -113,9 +115,8 @@ public class TerminalManagementAction {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected TerminalManagementActionCode type;
 	/**
-	 * Types of terminal management action to be performed by a point of
-	 * interaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -151,7 +152,7 @@ public class TerminalManagementAction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TerminalManagementAction, TerminalManagementActionCode> mmType = new MMBusinessAttribute<TerminalManagementAction, TerminalManagementActionCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(TMSActionIdentification4.mmActionType, TMSAction6.mmType);
 			isDerived = false;
@@ -164,19 +165,20 @@ public class TerminalManagementAction {
 			simpleType_lazy = () -> TerminalManagementActionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TerminalManagementAction.class.getMethod("getType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TerminalManagementActionCode getValue(TerminalManagementAction obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(TerminalManagementAction obj, TerminalManagementActionCode value) {
+			obj.setType(value);
 		}
 	};
 	protected TerminalManagementActionTriggerCode trigger;
 	/**
-	 * Event to start the terminal management action by the point of interaction
-	 * (POI).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -209,7 +211,7 @@ public class TerminalManagementAction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTrigger = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TerminalManagementAction, TerminalManagementActionTriggerCode> mmTrigger = new MMBusinessAttribute<TerminalManagementAction, TerminalManagementActionTriggerCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(TMSAction6.mmTrigger);
 			isDerived = false;
@@ -222,19 +224,20 @@ public class TerminalManagementAction {
 			simpleType_lazy = () -> TerminalManagementActionTriggerCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TerminalManagementAction.class.getMethod("getTrigger", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TerminalManagementActionTriggerCode getValue(TerminalManagementAction obj) {
+			return obj.getTrigger();
+		}
+
+		@Override
+		public void setValue(TerminalManagementAction obj, TerminalManagementActionTriggerCode value) {
+			obj.setTrigger(value);
 		}
 	};
 	protected TerminalManagementAdditionalProcessCode additionalProcess;
 	/**
-	 * Additional process to perform before starting or after the terminal
-	 * management action by the point of interaction (POI).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -268,7 +271,7 @@ public class TerminalManagementAction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAdditionalProcess = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TerminalManagementAction, TerminalManagementAdditionalProcessCode> mmAdditionalProcess = new MMBusinessAttribute<TerminalManagementAction, TerminalManagementAdditionalProcessCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(TMSAction6.mmAdditionalProcess);
 			isDerived = false;
@@ -281,18 +284,20 @@ public class TerminalManagementAction {
 			simpleType_lazy = () -> TerminalManagementAdditionalProcessCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TerminalManagementAction.class.getMethod("getAdditionalProcess", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TerminalManagementAdditionalProcessCode getValue(TerminalManagementAction obj) {
+			return obj.getAdditionalProcess();
+		}
+
+		@Override
+		public void setValue(TerminalManagementAction obj, TerminalManagementAdditionalProcessCode value) {
+			obj.setAdditionalProcess(value);
 		}
 	};
 	protected TerminalManagementActionResultCode actionResult;
 	/**
-	 * List of action result codes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -328,7 +333,7 @@ public class TerminalManagementAction {
 	 * definition} = "List of action result codes."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmActionResult = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TerminalManagementAction, TerminalManagementActionResultCode> mmActionResult = new MMBusinessAttribute<TerminalManagementAction, TerminalManagementActionResultCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(ATMCommand8.mmResult, ErrorAction3.mmActionResult, TMSEvent5.mmResult);
 			isDerived = false;
@@ -341,18 +346,20 @@ public class TerminalManagementAction {
 			simpleType_lazy = () -> TerminalManagementActionResultCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TerminalManagementAction.class.getMethod("getActionResult", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TerminalManagementActionResultCode getValue(TerminalManagementAction obj) {
+			return obj.getActionResult();
+		}
+
+		@Override
+		public void setValue(TerminalManagementAction obj, TerminalManagementActionResultCode value) {
+			obj.setActionResult(value);
 		}
 	};
 	protected TerminalManagementErrorActionCode actionToProcess;
 	/**
-	 * Action to be processed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -384,7 +391,7 @@ public class TerminalManagementAction {
 	 * definition} = "Action to be processed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmActionToProcess = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<TerminalManagementAction, TerminalManagementErrorActionCode> mmActionToProcess = new MMBusinessAttribute<TerminalManagementAction, TerminalManagementErrorActionCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(ErrorAction3.mmActionToProcess);
 			isDerived = false;
@@ -397,18 +404,20 @@ public class TerminalManagementAction {
 			simpleType_lazy = () -> TerminalManagementErrorActionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return TerminalManagementAction.class.getMethod("getActionToProcess", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TerminalManagementErrorActionCode getValue(TerminalManagementAction obj) {
+			return obj.getActionToProcess();
+		}
+
+		@Override
+		public void setValue(TerminalManagementAction obj, TerminalManagementErrorActionCode value) {
+			obj.setActionToProcess(value);
 		}
 	};
 	protected TerminalManagementSystem terminalManagementSystem;
 	/**
-	 * Terminal management system from which an action took place
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -441,7 +450,7 @@ public class TerminalManagementAction {
 	 * "Terminal management system from which an action took place"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTerminalManagementSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TerminalManagementAction, Optional<TerminalManagementSystem>> mmTerminalManagementSystem = new MMBusinessAssociationEnd<TerminalManagementAction, Optional<TerminalManagementSystem>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementAction.mmObject();
@@ -450,20 +459,30 @@ public class TerminalManagementAction {
 			definition = "Terminal management system from which an action took place";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmAction;
+			opposite_lazy = () -> TerminalManagementSystem.mmAction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmObject();
+			type_lazy = () -> TerminalManagementSystem.mmObject();
+		}
+
+		@Override
+		public Optional<TerminalManagementSystem> getValue(TerminalManagementAction obj) {
+			return obj.getTerminalManagementSystem();
+		}
+
+		@Override
+		public void setValue(TerminalManagementAction obj, Optional<TerminalManagementSystem> value) {
+			obj.setTerminalManagementSystem(value.orElse(null));
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TerminalManagementAction";
 				definition = "Terminal management action to be performed by the point of interaction.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TerminalManagementSystem.mmAction);
+				associationDomain_lazy = () -> Arrays.asList(TerminalManagementSystem.mmAction);
 				derivationElement_lazy = () -> Arrays.asList(ManagementPlan6.mmDataSet);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TerminalManagementAction.mmType, com.tools20022.repository.entity.TerminalManagementAction.mmTrigger,
 						com.tools20022.repository.entity.TerminalManagementAction.mmAdditionalProcess, com.tools20022.repository.entity.TerminalManagementAction.mmActionResult,
@@ -484,47 +503,53 @@ public class TerminalManagementAction {
 		return type;
 	}
 
-	public void setType(TerminalManagementActionCode type) {
-		this.type = type;
+	public TerminalManagementAction setType(TerminalManagementActionCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public TerminalManagementActionTriggerCode getTrigger() {
 		return trigger;
 	}
 
-	public void setTrigger(TerminalManagementActionTriggerCode trigger) {
-		this.trigger = trigger;
+	public TerminalManagementAction setTrigger(TerminalManagementActionTriggerCode trigger) {
+		this.trigger = Objects.requireNonNull(trigger);
+		return this;
 	}
 
 	public TerminalManagementAdditionalProcessCode getAdditionalProcess() {
 		return additionalProcess;
 	}
 
-	public void setAdditionalProcess(TerminalManagementAdditionalProcessCode additionalProcess) {
-		this.additionalProcess = additionalProcess;
+	public TerminalManagementAction setAdditionalProcess(TerminalManagementAdditionalProcessCode additionalProcess) {
+		this.additionalProcess = Objects.requireNonNull(additionalProcess);
+		return this;
 	}
 
 	public TerminalManagementActionResultCode getActionResult() {
 		return actionResult;
 	}
 
-	public void setActionResult(TerminalManagementActionResultCode actionResult) {
-		this.actionResult = actionResult;
+	public TerminalManagementAction setActionResult(TerminalManagementActionResultCode actionResult) {
+		this.actionResult = Objects.requireNonNull(actionResult);
+		return this;
 	}
 
 	public TerminalManagementErrorActionCode getActionToProcess() {
 		return actionToProcess;
 	}
 
-	public void setActionToProcess(TerminalManagementErrorActionCode actionToProcess) {
-		this.actionToProcess = actionToProcess;
+	public TerminalManagementAction setActionToProcess(TerminalManagementErrorActionCode actionToProcess) {
+		this.actionToProcess = Objects.requireNonNull(actionToProcess);
+		return this;
 	}
 
-	public TerminalManagementSystem getTerminalManagementSystem() {
-		return terminalManagementSystem;
+	public Optional<TerminalManagementSystem> getTerminalManagementSystem() {
+		return terminalManagementSystem == null ? Optional.empty() : Optional.of(terminalManagementSystem);
 	}
 
-	public void setTerminalManagementSystem(com.tools20022.repository.entity.TerminalManagementSystem terminalManagementSystem) {
+	public TerminalManagementAction setTerminalManagementSystem(TerminalManagementSystem terminalManagementSystem) {
 		this.terminalManagementSystem = terminalManagementSystem;
+		return this;
 	}
 }

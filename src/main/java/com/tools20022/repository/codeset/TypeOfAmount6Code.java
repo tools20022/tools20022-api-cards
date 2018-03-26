@@ -38,38 +38,38 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount6Code#ATMCommissionFee
- * TypeOfAmount6Code.mmATMCommissionFee}</li>
+ * TypeOfAmount6Code.ATMCommissionFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount6Code#AuthorisedAmount
- * TypeOfAmount6Code.mmAuthorisedAmount}</li>
+ * TypeOfAmount6Code.AuthorisedAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount6Code#CardRemainingBalance
- * TypeOfAmount6Code.mmCardRemainingBalance}</li>
+ * TypeOfAmount6Code.CardRemainingBalance}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmount6Code#Discount
- * TypeOfAmount6Code.mmDiscount}</li>
+ * TypeOfAmount6Code.Discount}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmount6Code#Fees
- * TypeOfAmount6Code.mmFees}</li>
+ * TypeOfAmount6Code.Fees}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount6Code#MaximumAllowedAmount
- * TypeOfAmount6Code.mmMaximumAllowedAmount}</li>
+ * TypeOfAmount6Code.MaximumAllowedAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount6Code#MinimumAllowedAmount
- * TypeOfAmount6Code.mmMinimumAllowedAmount}</li>
+ * TypeOfAmount6Code.MinimumAllowedAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount6Code#RequestedAmount
- * TypeOfAmount6Code.mmRequestedAmount}</li>
+ * TypeOfAmount6Code.RequestedAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount6Code#Surcharge
- * TypeOfAmount6Code.mmSurcharge}</li>
+ * TypeOfAmount6Code.Surcharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount6Code#ValueAddedTax
- * TypeOfAmount6Code.mmValueAddedTax}</li>
+ * TypeOfAmount6Code.ValueAddedTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount6Code#IssuerCommission
- * TypeOfAmount6Code.mmIssuerCommission}</li>
+ * TypeOfAmount6Code.IssuerCommission}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount6Code#IssuerFees
- * TypeOfAmount6Code.mmIssuerFees}</li>
+ * TypeOfAmount6Code.IssuerFees}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -78,8 +78,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -390,7 +390,7 @@ public class TypeOfAmount6Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeOfAmount6Code";
 				definition = "Type or class of amount.";

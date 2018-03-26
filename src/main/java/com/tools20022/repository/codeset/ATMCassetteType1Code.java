@@ -37,21 +37,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMCassetteType1Code#In
- * ATMCassetteType1Code.mmIn}</li>
+ * ATMCassetteType1Code.In}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMCassetteType1Code#Out
- * ATMCassetteType1Code.mmOut}</li>
+ * ATMCassetteType1Code.Out}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCassetteType1Code#Recycling
- * ATMCassetteType1Code.mmRecycling}</li>
+ * ATMCassetteType1Code.Recycling}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCassetteType1Code#Reject
- * ATMCassetteType1Code.mmReject}</li>
+ * ATMCassetteType1Code.Reject}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCassetteType1Code#Replenishment
- * ATMCassetteType1Code.mmReplenishment}</li>
+ * ATMCassetteType1Code.Replenishment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCassetteType1Code#Retract
- * ATMCassetteType1Code.mmRetract}</li>
+ * ATMCassetteType1Code.Retract}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -60,8 +60,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -228,7 +228,7 @@ public class ATMCassetteType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMCassetteType1Code";
 				definition = "Type of cassette.";

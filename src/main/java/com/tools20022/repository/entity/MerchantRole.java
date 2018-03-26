@@ -25,9 +25,9 @@ import com.tools20022.repository.datatype.Min3Max4Text;
 import com.tools20022.repository.entity.CardPaymentPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Party performing the card payment transaction.
@@ -83,8 +83,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -100,9 +100,8 @@ public class MerchantRole extends CardPaymentPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Min3Max4Text merchantCategoryCode;
 	/**
-	 * Category code conform to ISO 18245, related to the type of services or
-	 * goods the merchant provides for the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -162,7 +161,7 @@ public class MerchantRole extends CardPaymentPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMerchantCategoryCode = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MerchantRole, Min3Max4Text> mmMerchantCategoryCode = new MMBusinessAttribute<MerchantRole, Min3Max4Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardTransaction5.mmMerchantCategoryCode, CardTransaction15.mmMerchantCategoryCode, CardPaymentTransaction71.mmMerchantCategoryCode, CardPaymentTransaction75.mmMerchantCategoryCode,
 					CardPaymentTransaction74.mmMerchantCategoryCode, CardPaymentTransaction70.mmMerchantCategoryCode, CardPaymentTransaction72.mmMerchantCategoryCode, CardPaymentTransaction76.mmMerchantCategoryCode,
@@ -177,18 +176,20 @@ public class MerchantRole extends CardPaymentPartyRole {
 			simpleType_lazy = () -> Min3Max4Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MerchantRole.class.getMethod("getMerchantCategoryCode", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Min3Max4Text getValue(MerchantRole obj) {
+			return obj.getMerchantCategoryCode();
+		}
+
+		@Override
+		public void setValue(MerchantRole obj, Min3Max4Text value) {
+			obj.setMerchantCategoryCode(value);
 		}
 	};
 	protected Max35Text merchantIdentification;
 	/**
-	 * Number that identifies the merchant to the card issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -210,7 +211,7 @@ public class MerchantRole extends CardPaymentPartyRole {
 	 * definition} = "Number that identifies the merchant to the card issuer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMerchantIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MerchantRole, Max35Text> mmMerchantIdentification = new MMBusinessAttribute<MerchantRole, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MerchantRole.mmObject();
@@ -222,19 +223,21 @@ public class MerchantRole extends CardPaymentPartyRole {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MerchantRole.class.getMethod("getMerchantIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(MerchantRole obj) {
+			return obj.getMerchantIdentification();
+		}
+
+		@Override
+		public void setValue(MerchantRole obj, Max35Text value) {
+			obj.setMerchantIdentification(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MerchantRole";
 				definition = "Party performing the card payment transaction.";
@@ -256,15 +259,17 @@ public class MerchantRole extends CardPaymentPartyRole {
 		return merchantCategoryCode;
 	}
 
-	public void setMerchantCategoryCode(Min3Max4Text merchantCategoryCode) {
-		this.merchantCategoryCode = merchantCategoryCode;
+	public MerchantRole setMerchantCategoryCode(Min3Max4Text merchantCategoryCode) {
+		this.merchantCategoryCode = Objects.requireNonNull(merchantCategoryCode);
+		return this;
 	}
 
 	public Max35Text getMerchantIdentification() {
 		return merchantIdentification;
 	}
 
-	public void setMerchantIdentification(Max35Text merchantIdentification) {
-		this.merchantIdentification = merchantIdentification;
+	public MerchantRole setMerchantIdentification(Max35Text merchantIdentification) {
+		this.merchantIdentification = Objects.requireNonNull(merchantIdentification);
+		return this;
 	}
 }

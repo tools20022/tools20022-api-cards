@@ -23,11 +23,13 @@ import com.tools20022.repository.codeset.ExchangePolicyCode;
 import com.tools20022.repository.codeset.FinancialCaptureCode;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.datatype.Number;
+import com.tools20022.repository.entity.TerminalManagementSystem;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Acceptor parameters to be downloaded from the terminal management system.
@@ -129,8 +131,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -147,8 +149,8 @@ public class AcceptorConfiguration {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text applicationIdentification;
 	/**
-	 * Identification of the payment application.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -182,7 +184,7 @@ public class AcceptorConfiguration {
 	 * definition} = "Identification of the payment application."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmApplicationIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, Max35Text> mmApplicationIdentification = new MMBusinessAttribute<AcceptorConfiguration, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(ApplicationParameters6.mmApplicationIdentification, AcquirerProtocolParameters10.mmApplicationIdentification);
 			isDerived = false;
@@ -195,18 +197,20 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getApplicationIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(AcceptorConfiguration obj) {
+			return obj.getApplicationIdentification();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, Max35Text value) {
+			obj.setApplicationIdentification(value);
 		}
 	};
 	protected FinancialCaptureCode financialCapture;
 	/**
-	 * Mode for the financial capture of the transaction by the acquirer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -239,7 +243,7 @@ public class AcceptorConfiguration {
 	 * "Mode for the financial capture of the transaction by the acquirer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFinancialCapture = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, FinancialCaptureCode> mmFinancialCapture = new MMBusinessAttribute<AcceptorConfiguration, FinancialCaptureCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AcquirerProtocolParameters8.mmFinancialCapture);
 			isDerived = false;
@@ -252,18 +256,20 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> FinancialCaptureCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getFinancialCapture", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FinancialCaptureCode getValue(AcceptorConfiguration obj) {
+			return obj.getFinancialCapture();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, FinancialCaptureCode value) {
+			obj.setFinancialCapture(value);
 		}
 	};
 	protected BatchTransactionTypeCode batchTransferContent;
 	/**
-	 * Types of transaction to include in the batch.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -298,7 +304,7 @@ public class AcceptorConfiguration {
 	 * definition} = "Types of transaction to include in the batch."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBatchTransferContent = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, BatchTransactionTypeCode> mmBatchTransferContent = new MMBusinessAttribute<AcceptorConfiguration, BatchTransactionTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AcquirerProtocolParameters8.mmBatchTransfer, AcquirerProtocolParameters10.mmBatchTransferContent);
 			isDerived = false;
@@ -311,18 +317,20 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> BatchTransactionTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getBatchTransferContent", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BatchTransactionTypeCode getValue(AcceptorConfiguration obj) {
+			return obj.getBatchTransferContent();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, BatchTransactionTypeCode value) {
+			obj.setBatchTransferContent(value);
 		}
 	};
 	protected ExchangePolicyCode exchangePolicy;
 	/**
-	 * Exchange policy between parties.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -357,7 +365,7 @@ public class AcceptorConfiguration {
 	 * definition} = "Exchange policy between parties."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmExchangePolicy = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, ExchangePolicyCode> mmExchangePolicy = new MMBusinessAttribute<AcceptorConfiguration, ExchangePolicyCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(ExchangeConfiguration6.mmExchangePolicy, ExchangeConfiguration7.mmExchangePolicy);
 			isDerived = false;
@@ -370,18 +378,20 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> ExchangePolicyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getExchangePolicy", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ExchangePolicyCode getValue(AcceptorConfiguration obj) {
+			return obj.getExchangePolicy();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, ExchangePolicyCode value) {
+			obj.setExchangePolicy(value);
 		}
 	};
 	protected Number maximumNumber;
 	/**
-	 * Maximum number of transactions without exchange.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -415,7 +425,7 @@ public class AcceptorConfiguration {
 	 * definition} = "Maximum number of transactions without exchange."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMaximumNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, Number> mmMaximumNumber = new MMBusinessAttribute<AcceptorConfiguration, Number>() {
 		{
 			derivation_lazy = () -> Arrays.asList(ExchangeConfiguration6.mmMaximumNumber, ExchangeConfiguration7.mmMaximumNumber);
 			isDerived = false;
@@ -428,18 +438,20 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> Number.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getMaximumNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Number getValue(AcceptorConfiguration obj) {
+			return obj.getMaximumNumber();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, Number value) {
+			obj.setMaximumNumber(value);
 		}
 	};
 	protected ImpliedCurrencyAndAmount maximumAmount;
 	/**
-	 * Maximum cumulative amount of the transactions without exchange.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -475,7 +487,7 @@ public class AcceptorConfiguration {
 	 * "Maximum cumulative amount of the transactions without exchange."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMaximumAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, ImpliedCurrencyAndAmount> mmMaximumAmount = new MMBusinessAttribute<AcceptorConfiguration, ImpliedCurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(ExchangeConfiguration6.mmMaximumAmount, ExchangeConfiguration7.mmMaximumAmount);
 			isDerived = false;
@@ -488,19 +500,20 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getMaximumAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ImpliedCurrencyAndAmount getValue(AcceptorConfiguration obj) {
+			return obj.getMaximumAmount();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, ImpliedCurrencyAndAmount value) {
+			obj.setMaximumAmount(value);
 		}
 	};
 	protected TrueFalseIndicator reconciliationByAcquirer;
 	/**
-	 * Indicates the reconciliation period is assigned by the acquirer instead
-	 * of the acceptor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -534,7 +547,7 @@ public class AcceptorConfiguration {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReconciliationByAcquirer = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, TrueFalseIndicator> mmReconciliationByAcquirer = new MMBusinessAttribute<AcceptorConfiguration, TrueFalseIndicator>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AcquirerProtocolParameters10.mmReconciliationByAcquirer);
 			isDerived = false;
@@ -547,18 +560,20 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getReconciliationByAcquirer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TrueFalseIndicator getValue(AcceptorConfiguration obj) {
+			return obj.getReconciliationByAcquirer();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, TrueFalseIndicator value) {
+			obj.setReconciliationByAcquirer(value);
 		}
 	};
 	protected TrueFalseIndicator totalsPerCurrency;
 	/**
-	 * Indicates the reconciliation total amounts are computed per currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -591,7 +606,7 @@ public class AcceptorConfiguration {
 	 * "Indicates the reconciliation total amounts are computed per currency."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTotalsPerCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, TrueFalseIndicator> mmTotalsPerCurrency = new MMBusinessAttribute<AcceptorConfiguration, TrueFalseIndicator>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AcquirerProtocolParameters10.mmTotalsPerCurrency);
 			isDerived = false;
@@ -604,18 +619,20 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getTotalsPerCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TrueFalseIndicator getValue(AcceptorConfiguration obj) {
+			return obj.getTotalsPerCurrency();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, TrueFalseIndicator value) {
+			obj.setTotalsPerCurrency(value);
 		}
 	};
 	protected TrueFalseIndicator protectCardData;
 	/**
-	 * Indicator to require protection of sensitive card data in messages.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -648,7 +665,7 @@ public class AcceptorConfiguration {
 	 * "Indicator to require protection of sensitive card data in messages."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmProtectCardData = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, TrueFalseIndicator> mmProtectCardData = new MMBusinessAttribute<AcceptorConfiguration, TrueFalseIndicator>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AcquirerProtocolParameters10.mmProtectCardData);
 			isDerived = false;
@@ -661,18 +678,20 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getProtectCardData", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TrueFalseIndicator getValue(AcceptorConfiguration obj) {
+			return obj.getProtectCardData();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, TrueFalseIndicator value) {
+			obj.setProtectCardData(value);
 		}
 	};
 	protected Max10000Binary retailerParameters;
 	/**
-	 * Acceptor parameters dedicated to the retailer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -696,7 +715,7 @@ public class AcceptorConfiguration {
 	 * definition} = "Acceptor parameters dedicated to the retailer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRetailerParameters = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, Max10000Binary> mmRetailerParameters = new MMBusinessAttribute<AcceptorConfiguration, Max10000Binary>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
@@ -708,18 +727,20 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> Max10000Binary.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getRetailerParameters", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max10000Binary getValue(AcceptorConfiguration obj) {
+			return obj.getRetailerParameters();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, Max10000Binary value) {
+			obj.setRetailerParameters(value);
 		}
 	};
 	protected Max10000Binary applicationParameters;
 	/**
-	 * Configuration parameters attached to the payment application.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -752,7 +773,7 @@ public class AcceptorConfiguration {
 	 * "Configuration parameters attached to the payment application."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmApplicationParameters = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, Max10000Binary> mmApplicationParameters = new MMBusinessAttribute<AcceptorConfiguration, Max10000Binary>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AcceptorConfigurationContent6.mmApplicationParameters);
 			isDerived = false;
@@ -765,19 +786,20 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> Max10000Binary.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getApplicationParameters", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max10000Binary getValue(AcceptorConfiguration obj) {
+			return obj.getApplicationParameters();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, Max10000Binary value) {
+			obj.setApplicationParameters(value);
 		}
 	};
 	protected TerminalManagementSystem terminalManagementSystem;
 	/**
-	 * Terminal management system for which an acceptor configuration is
-	 * provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -822,7 +844,7 @@ public class AcceptorConfiguration {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTerminalManagementSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AcceptorConfiguration, Optional<TerminalManagementSystem>> mmTerminalManagementSystem = new MMBusinessAssociationEnd<AcceptorConfiguration, Optional<TerminalManagementSystem>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AcceptorConfigurationContent6.mmHostCommunicationParameters, AcquirerProtocolParameters10.mmHost);
 			isDerived = false;
@@ -832,15 +854,25 @@ public class AcceptorConfiguration {
 			definition = "Terminal management system for which an acceptor configuration is provided.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmAcceptorConfiguration;
+			opposite_lazy = () -> TerminalManagementSystem.mmAcceptorConfiguration;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmObject();
+			type_lazy = () -> TerminalManagementSystem.mmObject();
+		}
+
+		@Override
+		public Optional<TerminalManagementSystem> getValue(AcceptorConfiguration obj) {
+			return obj.getTerminalManagementSystem();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, Optional<TerminalManagementSystem> value) {
+			obj.setTerminalManagementSystem(value.orElse(null));
 		}
 	};
 	protected Max35Text applicationVersion;
 	/**
-	 * Version of the application.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -863,7 +895,7 @@ public class AcceptorConfiguration {
 	 * definition} = "Version of the application."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmApplicationVersion = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AcceptorConfiguration, Max35Text> mmApplicationVersion = new MMBusinessAttribute<AcceptorConfiguration, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
@@ -875,23 +907,25 @@ public class AcceptorConfiguration {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorConfiguration.class.getMethod("getApplicationVersion", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(AcceptorConfiguration obj) {
+			return obj.getApplicationVersion();
+		}
+
+		@Override
+		public void setValue(AcceptorConfiguration obj, Max35Text value) {
+			obj.setApplicationVersion(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AcceptorConfiguration";
 				definition = "Acceptor parameters to be downloaded from the terminal management system.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TerminalManagementSystem.mmAcceptorConfiguration);
+				associationDomain_lazy = () -> Arrays.asList(TerminalManagementSystem.mmAcceptorConfiguration);
 				derivationElement_lazy = () -> Arrays.asList(AcceptorConfigurationContent6.mmAcquirerProtocolParameters, AcquirerProtocolParameters10.mmOnLineTransaction);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AcceptorConfiguration.mmApplicationIdentification, com.tools20022.repository.entity.AcceptorConfiguration.mmFinancialCapture,
 						com.tools20022.repository.entity.AcceptorConfiguration.mmBatchTransferContent, com.tools20022.repository.entity.AcceptorConfiguration.mmExchangePolicy,
@@ -916,103 +950,116 @@ public class AcceptorConfiguration {
 		return applicationIdentification;
 	}
 
-	public void setApplicationIdentification(Max35Text applicationIdentification) {
-		this.applicationIdentification = applicationIdentification;
+	public AcceptorConfiguration setApplicationIdentification(Max35Text applicationIdentification) {
+		this.applicationIdentification = Objects.requireNonNull(applicationIdentification);
+		return this;
 	}
 
 	public FinancialCaptureCode getFinancialCapture() {
 		return financialCapture;
 	}
 
-	public void setFinancialCapture(FinancialCaptureCode financialCapture) {
-		this.financialCapture = financialCapture;
+	public AcceptorConfiguration setFinancialCapture(FinancialCaptureCode financialCapture) {
+		this.financialCapture = Objects.requireNonNull(financialCapture);
+		return this;
 	}
 
 	public BatchTransactionTypeCode getBatchTransferContent() {
 		return batchTransferContent;
 	}
 
-	public void setBatchTransferContent(BatchTransactionTypeCode batchTransferContent) {
-		this.batchTransferContent = batchTransferContent;
+	public AcceptorConfiguration setBatchTransferContent(BatchTransactionTypeCode batchTransferContent) {
+		this.batchTransferContent = Objects.requireNonNull(batchTransferContent);
+		return this;
 	}
 
 	public ExchangePolicyCode getExchangePolicy() {
 		return exchangePolicy;
 	}
 
-	public void setExchangePolicy(ExchangePolicyCode exchangePolicy) {
-		this.exchangePolicy = exchangePolicy;
+	public AcceptorConfiguration setExchangePolicy(ExchangePolicyCode exchangePolicy) {
+		this.exchangePolicy = Objects.requireNonNull(exchangePolicy);
+		return this;
 	}
 
 	public Number getMaximumNumber() {
 		return maximumNumber;
 	}
 
-	public void setMaximumNumber(Number maximumNumber) {
-		this.maximumNumber = maximumNumber;
+	public AcceptorConfiguration setMaximumNumber(Number maximumNumber) {
+		this.maximumNumber = Objects.requireNonNull(maximumNumber);
+		return this;
 	}
 
 	public ImpliedCurrencyAndAmount getMaximumAmount() {
 		return maximumAmount;
 	}
 
-	public void setMaximumAmount(ImpliedCurrencyAndAmount maximumAmount) {
-		this.maximumAmount = maximumAmount;
+	public AcceptorConfiguration setMaximumAmount(ImpliedCurrencyAndAmount maximumAmount) {
+		this.maximumAmount = Objects.requireNonNull(maximumAmount);
+		return this;
 	}
 
 	public TrueFalseIndicator getReconciliationByAcquirer() {
 		return reconciliationByAcquirer;
 	}
 
-	public void setReconciliationByAcquirer(TrueFalseIndicator reconciliationByAcquirer) {
-		this.reconciliationByAcquirer = reconciliationByAcquirer;
+	public AcceptorConfiguration setReconciliationByAcquirer(TrueFalseIndicator reconciliationByAcquirer) {
+		this.reconciliationByAcquirer = Objects.requireNonNull(reconciliationByAcquirer);
+		return this;
 	}
 
 	public TrueFalseIndicator getTotalsPerCurrency() {
 		return totalsPerCurrency;
 	}
 
-	public void setTotalsPerCurrency(TrueFalseIndicator totalsPerCurrency) {
-		this.totalsPerCurrency = totalsPerCurrency;
+	public AcceptorConfiguration setTotalsPerCurrency(TrueFalseIndicator totalsPerCurrency) {
+		this.totalsPerCurrency = Objects.requireNonNull(totalsPerCurrency);
+		return this;
 	}
 
 	public TrueFalseIndicator getProtectCardData() {
 		return protectCardData;
 	}
 
-	public void setProtectCardData(TrueFalseIndicator protectCardData) {
-		this.protectCardData = protectCardData;
+	public AcceptorConfiguration setProtectCardData(TrueFalseIndicator protectCardData) {
+		this.protectCardData = Objects.requireNonNull(protectCardData);
+		return this;
 	}
 
 	public Max10000Binary getRetailerParameters() {
 		return retailerParameters;
 	}
 
-	public void setRetailerParameters(Max10000Binary retailerParameters) {
-		this.retailerParameters = retailerParameters;
+	public AcceptorConfiguration setRetailerParameters(Max10000Binary retailerParameters) {
+		this.retailerParameters = Objects.requireNonNull(retailerParameters);
+		return this;
 	}
 
 	public Max10000Binary getApplicationParameters() {
 		return applicationParameters;
 	}
 
-	public void setApplicationParameters(Max10000Binary applicationParameters) {
-		this.applicationParameters = applicationParameters;
+	public AcceptorConfiguration setApplicationParameters(Max10000Binary applicationParameters) {
+		this.applicationParameters = Objects.requireNonNull(applicationParameters);
+		return this;
 	}
 
-	public TerminalManagementSystem getTerminalManagementSystem() {
-		return terminalManagementSystem;
+	public Optional<TerminalManagementSystem> getTerminalManagementSystem() {
+		return terminalManagementSystem == null ? Optional.empty() : Optional.of(terminalManagementSystem);
 	}
 
-	public void setTerminalManagementSystem(com.tools20022.repository.entity.TerminalManagementSystem terminalManagementSystem) {
+	public AcceptorConfiguration setTerminalManagementSystem(TerminalManagementSystem terminalManagementSystem) {
 		this.terminalManagementSystem = terminalManagementSystem;
+		return this;
 	}
 
 	public Max35Text getApplicationVersion() {
 		return applicationVersion;
 	}
 
-	public void setApplicationVersion(Max35Text applicationVersion) {
-		this.applicationVersion = applicationVersion;
+	public AcceptorConfiguration setApplicationVersion(Max35Text applicationVersion) {
+		this.applicationVersion = Objects.requireNonNull(applicationVersion);
+		return this;
 	}
 }

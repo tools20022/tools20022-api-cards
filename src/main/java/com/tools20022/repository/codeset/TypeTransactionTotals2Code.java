@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotals2Code#Credit
- * TypeTransactionTotals2Code.mmCredit}</li>
+ * TypeTransactionTotals2Code.Credit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotals2Code#CreditReverse
- * TypeTransactionTotals2Code.mmCreditReverse}</li>
+ * TypeTransactionTotals2Code.CreditReverse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotals2Code#Debit
- * TypeTransactionTotals2Code.mmDebit}</li>
+ * TypeTransactionTotals2Code.Debit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotals2Code#DebitReverse
- * TypeTransactionTotals2Code.mmDebitReverse}</li>
+ * TypeTransactionTotals2Code.DebitReverse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotals2Code#Declined
- * TypeTransactionTotals2Code.mmDeclined}</li>
+ * TypeTransactionTotals2Code.Declined}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeTransactionTotals2Code#Failed
- * TypeTransactionTotals2Code.mmFailed}</li>
+ * TypeTransactionTotals2Code.Failed}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -238,7 +238,7 @@ public class TypeTransactionTotals2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CRDT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeTransactionTotals2Code";

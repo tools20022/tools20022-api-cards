@@ -38,29 +38,29 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethodCode#BalanceCompensable
- * ServicePaymentMethodCode.mmBalanceCompensable}</li>
+ * ServicePaymentMethodCode.BalanceCompensable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethodCode#HardCharge
- * ServicePaymentMethodCode.mmHardCharge}</li>
+ * ServicePaymentMethodCode.HardCharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethodCode#PreviouslyCharged
- * ServicePaymentMethodCode.mmPreviouslyCharged}</li>
+ * ServicePaymentMethodCode.PreviouslyCharged}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethodCode#InvoicedSeparately
- * ServicePaymentMethodCode.mmInvoicedSeparately}</li>
+ * ServicePaymentMethodCode.InvoicedSeparately}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethodCode#Waived
- * ServicePaymentMethodCode.mmWaived}</li>
+ * ServicePaymentMethodCode.Waived}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ServicePaymentMethodCode#Free
- * ServicePaymentMethodCode.mmFree}</li>
+ * ServicePaymentMethodCode.Free}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -104,7 +104,7 @@ public class ServicePaymentMethodCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Allows the bank to offset a service charge with interest earned on the deposit account balance. The actual charges arising from balance compensable services are always calculated and charged at month end.  Used in the USA."
+	 * "Allows the bank to offset a service charge with interest earned on the deposit account balance. The actual charges arising from balance compensable services are always calculated and charged at month end. Used in the USA."
 	 * </li>
 	 * </ul>
 	 */
@@ -112,7 +112,7 @@ public class ServicePaymentMethodCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BalanceCompensable";
-			definition = "Allows the bank to offset a service charge with interest earned on the deposit account balance. The actual charges arising from balance compensable services are always calculated and charged at month end.  Used in the USA.";
+			definition = "Allows the bank to offset a service charge with interest earned on the deposit account balance. The actual charges arising from balance compensable services are always calculated and charged at month end. Used in the USA.";
 			owner_lazy = () -> com.tools20022.repository.codeset.ServicePaymentMethodCode.mmObject();
 			codeName = "BCMP";
 		}
@@ -290,7 +290,7 @@ public class ServicePaymentMethodCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BCMP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ServicePaymentMethodCode";

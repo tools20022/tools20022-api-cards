@@ -37,26 +37,26 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmount5Code#Cashback
- * TypeOfAmount5Code.mmCashback}</li>
+ * TypeOfAmount5Code.Cashback}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmount5Code#Discount
- * TypeOfAmount5Code.mmDiscount}</li>
+ * TypeOfAmount5Code.Discount}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmount5Code#Fees
- * TypeOfAmount5Code.mmFees}</li>
+ * TypeOfAmount5Code.Fees}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmount5Code#Gratuity
- * TypeOfAmount5Code.mmGratuity}</li>
+ * TypeOfAmount5Code.Gratuity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount5Code#Surcharge
- * TypeOfAmount5Code.mmSurcharge}</li>
+ * TypeOfAmount5Code.Surcharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount5Code#ValueAddedTax
- * TypeOfAmount5Code.mmValueAddedTax}</li>
+ * TypeOfAmount5Code.ValueAddedTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount5Code#Commission
- * TypeOfAmount5Code.mmCommission}</li>
+ * TypeOfAmount5Code.Commission}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmount5Code#Donation
- * TypeOfAmount5Code.mmDonation}</li>
+ * TypeOfAmount5Code.Donation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmount5Code#Tax
- * TypeOfAmount5Code.mmTax}</li>
+ * TypeOfAmount5Code.Tax}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -65,8 +65,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -305,7 +305,7 @@ public class TypeOfAmount5Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeOfAmount5Code";
 				definition = "Type or class of amount.";

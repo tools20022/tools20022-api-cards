@@ -21,11 +21,15 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.InvestigationCase;
 import com.tools20022.repository.entity.Role;
+import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Role played by a party in the context of an investigation process.
@@ -64,8 +68,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,8 +86,8 @@ public class InvestigationPartyRole extends Role {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.InvestigationCase> investigationCase;
 	/**
-	 * Identifies the case for which a party plays a role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -114,7 +118,7 @@ public class InvestigationPartyRole extends Role {
 	 * definition} = "Identifies the case for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestigationCase = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestigationPartyRole, List<InvestigationCase>> mmInvestigationCase = new MMBusinessAssociationEnd<InvestigationPartyRole, List<InvestigationCase>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationPartyRole.mmObject();
@@ -126,11 +130,21 @@ public class InvestigationPartyRole extends Role {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 		}
+
+		@Override
+		public List<InvestigationCase> getValue(InvestigationPartyRole obj) {
+			return obj.getInvestigationCase();
+		}
+
+		@Override
+		public void setValue(InvestigationPartyRole obj, List<InvestigationCase> value) {
+			obj.setInvestigationCase(value);
+		}
 	};
 	protected List<com.tools20022.repository.entity.Status> status;
 	/**
-	 * Status for which a party plays a role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -160,7 +174,7 @@ public class InvestigationPartyRole extends Role {
 	 * definition} = "Status for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmStatus = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvestigationPartyRole, List<Status>> mmStatus = new MMBusinessAssociationEnd<InvestigationPartyRole, List<Status>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvestigationPartyRole.mmObject();
@@ -172,12 +186,22 @@ public class InvestigationPartyRole extends Role {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 		}
+
+		@Override
+		public List<Status> getValue(InvestigationPartyRole obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(InvestigationPartyRole obj, List<Status> value) {
+			obj.setStatus(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvestigationPartyRole";
 				definition = "Role played by a party in the context of an investigation process.";
@@ -195,18 +219,20 @@ public class InvestigationPartyRole extends Role {
 	}
 
 	public List<InvestigationCase> getInvestigationCase() {
-		return investigationCase;
+		return investigationCase == null ? investigationCase = new ArrayList<>() : investigationCase;
 	}
 
-	public void setInvestigationCase(List<com.tools20022.repository.entity.InvestigationCase> investigationCase) {
-		this.investigationCase = investigationCase;
+	public InvestigationPartyRole setInvestigationCase(List<com.tools20022.repository.entity.InvestigationCase> investigationCase) {
+		this.investigationCase = Objects.requireNonNull(investigationCase);
+		return this;
 	}
 
 	public List<Status> getStatus() {
-		return status;
+		return status == null ? status = new ArrayList<>() : status;
 	}
 
-	public void setStatus(List<com.tools20022.repository.entity.Status> status) {
-		this.status = status;
+	public InvestigationPartyRole setStatus(List<com.tools20022.repository.entity.Status> status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 }

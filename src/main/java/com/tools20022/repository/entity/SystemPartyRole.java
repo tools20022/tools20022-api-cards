@@ -22,10 +22,13 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Role;
+import com.tools20022.repository.entity.System;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Role played by a party in a system.
@@ -70,8 +73,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,10 +88,10 @@ import java.util.List;
 public class SystemPartyRole extends Role {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.System> relatedSystem;
+	protected List<System> relatedSystem;
 	/**
-	 * Specifies the system for which a party plays a role
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -118,7 +121,7 @@ public class SystemPartyRole extends Role {
 	 * definition} = "Specifies the system for which a party plays a role"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SystemPartyRole, List<System>> mmRelatedSystem = new MMBusinessAssociationEnd<SystemPartyRole, List<System>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SystemPartyRole.mmObject();
@@ -126,20 +129,30 @@ public class SystemPartyRole extends Role {
 			name = "RelatedSystem";
 			definition = "Specifies the system for which a party plays a role";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.System.mmPartyRole;
+			opposite_lazy = () -> System.mmPartyRole;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.System.mmObject();
+			type_lazy = () -> System.mmObject();
+		}
+
+		@Override
+		public List<System> getValue(SystemPartyRole obj) {
+			return obj.getRelatedSystem();
+		}
+
+		@Override
+		public void setValue(SystemPartyRole obj, List<System> value) {
+			obj.setRelatedSystem(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SystemPartyRole";
 				definition = "Role played by a party in a system.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.System.mmPartyRole);
+				associationDomain_lazy = () -> Arrays.asList(System.mmPartyRole);
 				subType_lazy = () -> Arrays.asList(SystemMemberRole.mmObject(), TransactionAdministrator.mmObject(), TerminalManagerRole.mmObject(), ClearingMemberRole.mmObject());
 				superType_lazy = () -> Role.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SystemPartyRole.mmRelatedSystem);
@@ -154,10 +167,11 @@ public class SystemPartyRole extends Role {
 	}
 
 	public List<System> getRelatedSystem() {
-		return relatedSystem;
+		return relatedSystem == null ? relatedSystem = new ArrayList<>() : relatedSystem;
 	}
 
-	public void setRelatedSystem(List<com.tools20022.repository.entity.System> relatedSystem) {
-		this.relatedSystem = relatedSystem;
+	public SystemPartyRole setRelatedSystem(List<System> relatedSystem) {
+		this.relatedSystem = Objects.requireNonNull(relatedSystem);
+		return this;
 	}
 }

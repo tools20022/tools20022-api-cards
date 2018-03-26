@@ -25,9 +25,9 @@ import com.tools20022.repository.area.AcquirertoIssuerCardTransactionLatestVersi
 import com.tools20022.repository.msg.AcquirerFinancialInitiation1;
 import com.tools20022.repository.msg.ContentInformationType15;
 import com.tools20022.repository.msg.Header17;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -71,19 +71,20 @@ import javax.xml.bind.annotation.*;
  * "AcquirerFinancialInitiation"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "The AcquirerFinancialInitiation message is sent by an acquirer or  an agent to an issuer or an agent, to request, advice or notify the approval and the clearing of a card transaction."
+ * "The AcquirerFinancialInitiation message is sent by an acquirer or an agent to an issuer or an agent, to request, advice or notify the approval and the clearing of a card transaction."
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AcquirerFinancialInitiation", propOrder = {"header", "financialInitiation", "securityTrailer"})
 public class AcquirerFinancialInitiation {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header17 header;
 	/**
-	 * Information related to the protocol management.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,7 +104,7 @@ public class AcquirerFinancialInitiation {
 	 * definition} = "Information related to the protocol management."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcquirerFinancialInitiation, Header17> mmHeader = new MMMessageBuildingBlock<AcquirerFinancialInitiation, Header17>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,18 +115,21 @@ public class AcquirerFinancialInitiation {
 			complexType_lazy = () -> Header17.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcquirerFinancialInitiation.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header17 getValue(AcquirerFinancialInitiation obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(AcquirerFinancialInitiation obj, Header17 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "FinInitn", required = true)
 	protected AcquirerFinancialInitiation1 financialInitiation;
 	/**
-	 * Information related to financial authorisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,7 +150,7 @@ public class AcquirerFinancialInitiation {
 	 * definition} = "Information related to financial authorisation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmFinancialInitiation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcquirerFinancialInitiation, AcquirerFinancialInitiation1> mmFinancialInitiation = new MMMessageBuildingBlock<AcquirerFinancialInitiation, AcquirerFinancialInitiation1>() {
 		{
 			xmlTag = "FinInitn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -157,18 +161,21 @@ public class AcquirerFinancialInitiation {
 			complexType_lazy = () -> AcquirerFinancialInitiation1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcquirerFinancialInitiation.class.getMethod("getFinancialInitiation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AcquirerFinancialInitiation1 getValue(AcquirerFinancialInitiation obj) {
+			return obj.getFinancialInitiation();
+		}
+
+		@Override
+		public void setValue(AcquirerFinancialInitiation obj, AcquirerFinancialInitiation1 value) {
+			obj.setFinancialInitiation(value);
 		}
 	};
+	@XmlElement(name = "SctyTrlr", required = true)
 	protected ContentInformationType15 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -189,7 +196,7 @@ public class AcquirerFinancialInitiation {
 	 * definition} = "Trailer of the message containing a MAC."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcquirerFinancialInitiation, ContentInformationType15> mmSecurityTrailer = new MMMessageBuildingBlock<AcquirerFinancialInitiation, ContentInformationType15>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -200,12 +207,14 @@ public class AcquirerFinancialInitiation {
 			complexType_lazy = () -> ContentInformationType15.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcquirerFinancialInitiation.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ContentInformationType15 getValue(AcquirerFinancialInitiation obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(AcquirerFinancialInitiation obj, ContentInformationType15 value) {
+			obj.setSecurityTrailer(value);
 		}
 	};
 
@@ -214,7 +223,7 @@ public class AcquirerFinancialInitiation {
 			{
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AcquirerFinancialInitiation";
-				definition = "The AcquirerFinancialInitiation message is sent by an acquirer or  an agent to an issuer or an agent, to request, advice or notify the approval and the clearing of a card transaction.";
+				definition = "The AcquirerFinancialInitiation message is sent by an acquirer or an agent to an issuer or an agent, to request, advice or notify the approval and the clearing of a card transaction.";
 				rootElement = "Document";
 				xmlTag = "AcqrrFinInitn";
 				businessArea_lazy = () -> AcquirertoIssuerCardTransactionLatestVersion.mmObject();
@@ -238,34 +247,34 @@ public class AcquirerFinancialInitiation {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header17 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header17 header) {
-		this.header = header;
+	public AcquirerFinancialInitiation setHeader(Header17 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "FinInitn", required = true)
 	public AcquirerFinancialInitiation1 getFinancialInitiation() {
 		return financialInitiation;
 	}
 
-	public void setFinancialInitiation(AcquirerFinancialInitiation1 financialInitiation) {
-		this.financialInitiation = financialInitiation;
+	public AcquirerFinancialInitiation setFinancialInitiation(AcquirerFinancialInitiation1 financialInitiation) {
+		this.financialInitiation = Objects.requireNonNull(financialInitiation);
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr", required = true)
 	public ContentInformationType15 getSecurityTrailer() {
 		return securityTrailer;
 	}
 
-	public void setSecurityTrailer(ContentInformationType15 securityTrailer) {
-		this.securityTrailer = securityTrailer;
+	public AcquirerFinancialInitiation setSecurityTrailer(ContentInformationType15 securityTrailer) {
+		this.securityTrailer = Objects.requireNonNull(securityTrailer);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:cain.003.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:cain.003.001.01")
 	static public class Document {
 		@XmlElement(name = "AcqrrFinInitn", required = true)
 		public AcquirerFinancialInitiation messageBody;

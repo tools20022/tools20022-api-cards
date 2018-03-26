@@ -37,9 +37,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.EncryptionFormatCode#TR31
- * EncryptionFormatCode.mmTR31}</li>
+ * EncryptionFormatCode.TR31}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.EncryptionFormatCode#TR34
- * EncryptionFormatCode.mmTR34}</li>
+ * EncryptionFormatCode.TR34}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.EncryptionFormatCode#ISO20038KeyWrap
+ * EncryptionFormatCode.ISO20038KeyWrap}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -52,8 +55,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -138,6 +141,37 @@ public class EncryptionFormatCode extends MMCode {
 			codeName = "TR34";
 		}
 	};
+	/**
+	 * Format of a cryptographic key specified by the ISO20038 standard.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.EncryptionFormatCode
+	 * EncryptionFormatCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "I238"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "ISO20038KeyWrap"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Format of a cryptographic key specified by the ISO20038 standard."</li>
+	 * </ul>
+	 */
+	public static final EncryptionFormatCode ISO20038KeyWrap = new EncryptionFormatCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "ISO20038KeyWrap";
+			definition = "Format of a cryptographic key specified by the ISO20038 standard.";
+			owner_lazy = () -> com.tools20022.repository.codeset.EncryptionFormatCode.mmObject();
+			codeName = "I238";
+		}
+	};
 	final static private LinkedHashMap<String, EncryptionFormatCode> codesByName = new LinkedHashMap<>();
 
 	protected EncryptionFormatCode() {
@@ -146,13 +180,14 @@ public class EncryptionFormatCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("TR31");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EncryptionFormatCode";
 				definition = "Format of data before encryption, if the format is not plaintext or implicit.";
 				derivation_lazy = () -> Arrays.asList(EncryptionFormat1Code.mmObject());
-				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.EncryptionFormatCode.TR31, com.tools20022.repository.codeset.EncryptionFormatCode.TR34);
+				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.EncryptionFormatCode.TR31, com.tools20022.repository.codeset.EncryptionFormatCode.TR34,
+						com.tools20022.repository.codeset.EncryptionFormatCode.ISO20038KeyWrap);
 			}
 		});
 		return mmObject_lazy.get();
@@ -161,6 +196,7 @@ public class EncryptionFormatCode extends MMCode {
 	static {
 		codesByName.put(TR31.getCodeName().get(), TR31);
 		codesByName.put(TR34.getCodeName().get(), TR34);
+		codesByName.put(ISO20038KeyWrap.getCodeName().get(), ISO20038KeyWrap);
 	}
 
 	public static EncryptionFormatCode valueOf(String codeName) {

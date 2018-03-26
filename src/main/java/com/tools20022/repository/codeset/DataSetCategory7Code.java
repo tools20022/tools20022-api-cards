@@ -38,31 +38,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory7Code#ATMConfiguration
- * DataSetCategory7Code.mmATMConfiguration}</li>
+ * DataSetCategory7Code.ATMConfiguration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory7Code#ATMProtocol
- * DataSetCategory7Code.mmATMProtocol}</li>
+ * DataSetCategory7Code.ATMProtocol}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory7Code#ApplicationParameters
- * DataSetCategory7Code.mmApplicationParameters}</li>
+ * DataSetCategory7Code.ApplicationParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory7Code#CardApplication
- * DataSetCategory7Code.mmCardApplication}</li>
+ * DataSetCategory7Code.CardApplication}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory7Code#CardConfiguration
- * DataSetCategory7Code.mmCardConfiguration}</li>
+ * DataSetCategory7Code.CardConfiguration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory7Code#OfflineExchangeRate
- * DataSetCategory7Code.mmOfflineExchangeRate}</li>
+ * DataSetCategory7Code.OfflineExchangeRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory7Code#PreDefinedAmount
- * DataSetCategory7Code.mmPreDefinedAmount}</li>
+ * DataSetCategory7Code.PreDefinedAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory7Code#LocationConfiguration
- * DataSetCategory7Code.mmLocationConfiguration}</li>
+ * DataSetCategory7Code.LocationConfiguration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory7Code#MobileOperator
- * DataSetCategory7Code.mmMobileOperator}</li>
+ * DataSetCategory7Code.MobileOperator}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -71,8 +71,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -311,7 +311,7 @@ public class DataSetCategory7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DataSetCategory7Code";
 				definition = "Type of an ATM configuration.";

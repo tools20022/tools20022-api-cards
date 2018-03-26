@@ -27,9 +27,9 @@ import com.tools20022.repository.datatype.Max35Binary;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.NetworkAccess;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.NetworkParameters4;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +71,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -87,15 +87,16 @@ import javax.xml.bind.annotation.XmlType;
  * NetworkParameters3}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "NetworkParameters5", propOrder = {"address", "userName", "accessCode", "serverCertificate", "serverCertificateIdentifier", "clientCertificate", "securityProfile"})
 public class NetworkParameters5 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.msg.NetworkParameters4> address;
+	@XmlElement(name = "Adr", required = true)
+	protected List<NetworkParameters4> address;
 	/**
-	 * Network addresses of the host.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -124,9 +125,9 @@ public class NetworkParameters5 {
 	 * NetworkParameters3.mmAddress}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAddress = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<NetworkParameters5, List<NetworkParameters4>> mmAddress = new MMMessageAssociationEnd<NetworkParameters5, List<NetworkParameters4>>() {
 		{
-			componentContext_lazy = () -> NetworkParameters5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NetworkParameters5.mmObject();
 			isDerived = false;
 			xmlTag = "Adr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -135,13 +136,24 @@ public class NetworkParameters5 {
 			previousVersion_lazy = () -> NetworkParameters3.mmAddress;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.NetworkParameters4.mmObject();
+			type_lazy = () -> NetworkParameters4.mmObject();
+		}
+
+		@Override
+		public List<NetworkParameters4> getValue(NetworkParameters5 obj) {
+			return obj.getAddress();
+		}
+
+		@Override
+		public void setValue(NetworkParameters5 obj, List<NetworkParameters4> value) {
+			obj.setAddress(value);
 		}
 	};
+	@XmlElement(name = "UsrNm")
 	protected Max35Text userName;
 	/**
-	 * User name identifying the client.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -176,10 +188,10 @@ public class NetworkParameters5 {
 	 * NetworkParameters3.mmUserName}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUserName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NetworkParameters5, Optional<Max35Text>> mmUserName = new MMMessageAttribute<NetworkParameters5, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> NetworkAccess.mmUserName;
-			componentContext_lazy = () -> NetworkParameters5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NetworkParameters5.mmObject();
 			isDerived = false;
 			xmlTag = "UsrNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -190,11 +202,22 @@ public class NetworkParameters5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(NetworkParameters5 obj) {
+			return obj.getUserName();
+		}
+
+		@Override
+		public void setValue(NetworkParameters5 obj, Optional<Max35Text> value) {
+			obj.setUserName(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AccsCd")
 	protected Max35Binary accessCode;
 	/**
-	 * Password authenticating the client.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -229,10 +252,10 @@ public class NetworkParameters5 {
 	 * NetworkParameters3.mmAccessCode}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccessCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NetworkParameters5, Optional<Max35Binary>> mmAccessCode = new MMMessageAttribute<NetworkParameters5, Optional<Max35Binary>>() {
 		{
 			businessElementTrace_lazy = () -> NetworkAccess.mmAccessCode;
-			componentContext_lazy = () -> NetworkParameters5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NetworkParameters5.mmObject();
 			isDerived = false;
 			xmlTag = "AccsCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -243,11 +266,22 @@ public class NetworkParameters5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Binary.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Binary> getValue(NetworkParameters5 obj) {
+			return obj.getAccessCode();
+		}
+
+		@Override
+		public void setValue(NetworkParameters5 obj, Optional<Max35Binary> value) {
+			obj.setAccessCode(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SvrCert")
 	protected List<Max10KBinary> serverCertificate;
 	/**
-	 * X.509 Certificate required to authenticate the server.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -278,9 +312,9 @@ public class NetworkParameters5 {
 	 * NetworkParameters3.mmServerCertificate}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmServerCertificate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NetworkParameters5, List<Max10KBinary>> mmServerCertificate = new MMMessageAttribute<NetworkParameters5, List<Max10KBinary>>() {
 		{
-			componentContext_lazy = () -> NetworkParameters5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NetworkParameters5.mmObject();
 			isDerived = false;
 			xmlTag = "SvrCert";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -290,12 +324,22 @@ public class NetworkParameters5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max10KBinary.mmObject();
 		}
+
+		@Override
+		public List<Max10KBinary> getValue(NetworkParameters5 obj) {
+			return obj.getServerCertificate();
+		}
+
+		@Override
+		public void setValue(NetworkParameters5 obj, List<Max10KBinary> value) {
+			obj.setServerCertificate(value);
+		}
 	};
+	@XmlElement(name = "SvrCertIdr")
 	protected List<Max140Binary> serverCertificateIdentifier;
 	/**
-	 * Identification of the X.509 Certificates required to authenticate the
-	 * server, for instance a digest of the certificate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -328,9 +372,9 @@ public class NetworkParameters5 {
 	 * NetworkParameters3.mmServerCertificateIdentifier}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmServerCertificateIdentifier = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NetworkParameters5, List<Max140Binary>> mmServerCertificateIdentifier = new MMMessageAttribute<NetworkParameters5, List<Max140Binary>>() {
 		{
-			componentContext_lazy = () -> NetworkParameters5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NetworkParameters5.mmObject();
 			isDerived = false;
 			xmlTag = "SvrCertIdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -340,11 +384,22 @@ public class NetworkParameters5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Binary.mmObject();
 		}
+
+		@Override
+		public List<Max140Binary> getValue(NetworkParameters5 obj) {
+			return obj.getServerCertificateIdentifier();
+		}
+
+		@Override
+		public void setValue(NetworkParameters5 obj, List<Max140Binary> value) {
+			obj.setServerCertificateIdentifier(value);
+		}
 	};
+	@XmlElement(name = "ClntCert")
 	protected List<Max10KBinary> clientCertificate;
 	/**
-	 * X.509 Certificate required to authenticate the client.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -370,9 +425,9 @@ public class NetworkParameters5 {
 	 * definition} = "X.509 Certificate required to authenticate the client."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmClientCertificate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NetworkParameters5, List<Max10KBinary>> mmClientCertificate = new MMMessageAttribute<NetworkParameters5, List<Max10KBinary>>() {
 		{
-			componentContext_lazy = () -> NetworkParameters5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NetworkParameters5.mmObject();
 			isDerived = false;
 			xmlTag = "ClntCert";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -381,11 +436,22 @@ public class NetworkParameters5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max10KBinary.mmObject();
 		}
+
+		@Override
+		public List<Max10KBinary> getValue(NetworkParameters5 obj) {
+			return obj.getClientCertificate();
+		}
+
+		@Override
+		public void setValue(NetworkParameters5 obj, List<Max10KBinary> value) {
+			obj.setClientCertificate(value);
+		}
 	};
+	@XmlElement(name = "SctyPrfl")
 	protected Max35Text securityProfile;
 	/**
-	 * Identification of the set of security elements to access the host.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -411,9 +477,9 @@ public class NetworkParameters5 {
 	 * "Identification of the set of security elements to access the host."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecurityProfile = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NetworkParameters5, Optional<Max35Text>> mmSecurityProfile = new MMMessageAttribute<NetworkParameters5, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> NetworkParameters5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NetworkParameters5.mmObject();
 			isDerived = false;
 			xmlTag = "SctyPrfl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -423,15 +489,26 @@ public class NetworkParameters5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(NetworkParameters5 obj) {
+			return obj.getSecurityProfile();
+		}
+
+		@Override
+		public void setValue(NetworkParameters5 obj, Optional<Max35Text> value) {
+			obj.setSecurityProfile(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(NetworkParameters5.mmAddress, NetworkParameters5.mmUserName, NetworkParameters5.mmAccessCode, NetworkParameters5.mmServerCertificate,
-						NetworkParameters5.mmServerCertificateIdentifier, NetworkParameters5.mmClientCertificate, NetworkParameters5.mmSecurityProfile);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.NetworkParameters5.mmAddress, com.tools20022.repository.msg.NetworkParameters5.mmUserName,
+						com.tools20022.repository.msg.NetworkParameters5.mmAccessCode, com.tools20022.repository.msg.NetworkParameters5.mmServerCertificate, com.tools20022.repository.msg.NetworkParameters5.mmServerCertificateIdentifier,
+						com.tools20022.repository.msg.NetworkParameters5.mmClientCertificate, com.tools20022.repository.msg.NetworkParameters5.mmSecurityProfile);
 				trace_lazy = () -> NetworkAccess.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NetworkParameters5";
 				definition = "Parameters to communicate with a host.";
@@ -441,66 +518,66 @@ public class NetworkParameters5 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Adr", required = true)
 	public List<NetworkParameters4> getAddress() {
-		return address;
+		return address == null ? address = new ArrayList<>() : address;
 	}
 
-	public void setAddress(List<com.tools20022.repository.msg.NetworkParameters4> address) {
-		this.address = address;
+	public NetworkParameters5 setAddress(List<NetworkParameters4> address) {
+		this.address = Objects.requireNonNull(address);
+		return this;
 	}
 
-	@XmlElement(name = "UsrNm")
-	public Max35Text getUserName() {
-		return userName;
+	public Optional<Max35Text> getUserName() {
+		return userName == null ? Optional.empty() : Optional.of(userName);
 	}
 
-	public void setUserName(Max35Text userName) {
+	public NetworkParameters5 setUserName(Max35Text userName) {
 		this.userName = userName;
+		return this;
 	}
 
-	@XmlElement(name = "AccsCd")
-	public Max35Binary getAccessCode() {
-		return accessCode;
+	public Optional<Max35Binary> getAccessCode() {
+		return accessCode == null ? Optional.empty() : Optional.of(accessCode);
 	}
 
-	public void setAccessCode(Max35Binary accessCode) {
+	public NetworkParameters5 setAccessCode(Max35Binary accessCode) {
 		this.accessCode = accessCode;
+		return this;
 	}
 
-	@XmlElement(name = "SvrCert")
 	public List<Max10KBinary> getServerCertificate() {
-		return serverCertificate;
+		return serverCertificate == null ? serverCertificate = new ArrayList<>() : serverCertificate;
 	}
 
-	public void setServerCertificate(List<Max10KBinary> serverCertificate) {
-		this.serverCertificate = serverCertificate;
+	public NetworkParameters5 setServerCertificate(List<Max10KBinary> serverCertificate) {
+		this.serverCertificate = Objects.requireNonNull(serverCertificate);
+		return this;
 	}
 
-	@XmlElement(name = "SvrCertIdr")
 	public List<Max140Binary> getServerCertificateIdentifier() {
-		return serverCertificateIdentifier;
+		return serverCertificateIdentifier == null ? serverCertificateIdentifier = new ArrayList<>() : serverCertificateIdentifier;
 	}
 
-	public void setServerCertificateIdentifier(List<Max140Binary> serverCertificateIdentifier) {
-		this.serverCertificateIdentifier = serverCertificateIdentifier;
+	public NetworkParameters5 setServerCertificateIdentifier(List<Max140Binary> serverCertificateIdentifier) {
+		this.serverCertificateIdentifier = Objects.requireNonNull(serverCertificateIdentifier);
+		return this;
 	}
 
-	@XmlElement(name = "ClntCert")
 	public List<Max10KBinary> getClientCertificate() {
-		return clientCertificate;
+		return clientCertificate == null ? clientCertificate = new ArrayList<>() : clientCertificate;
 	}
 
-	public void setClientCertificate(List<Max10KBinary> clientCertificate) {
-		this.clientCertificate = clientCertificate;
+	public NetworkParameters5 setClientCertificate(List<Max10KBinary> clientCertificate) {
+		this.clientCertificate = Objects.requireNonNull(clientCertificate);
+		return this;
 	}
 
-	@XmlElement(name = "SctyPrfl")
-	public Max35Text getSecurityProfile() {
-		return securityProfile;
+	public Optional<Max35Text> getSecurityProfile() {
+		return securityProfile == null ? Optional.empty() : Optional.of(securityProfile);
 	}
 
-	public void setSecurityProfile(Max35Text securityProfile) {
+	public NetworkParameters5 setSecurityProfile(Max35Text securityProfile) {
 		this.securityProfile = securityProfile;
+		return this;
 	}
 }

@@ -27,9 +27,8 @@ import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.entity.Charges;
 import com.tools20022.repository.entity.Instalment;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -81,8 +80,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -93,15 +92,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Financial loan (instalment) or a recurring transaction."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RecurringTransaction2", propOrder = {"instalmentPlan", "planIdentification", "sequenceNumber", "periodUnit", "instalmentPeriod", "totalNumberOfPayments", "firstPaymentDate", "totalAmount", "firstAmount", "charges"})
 public class RecurringTransaction2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "InstlmtPlan")
 	protected List<InstalmentPlan1Code> instalmentPlan;
 	/**
-	 * Type of instalment plan.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -132,10 +132,10 @@ public class RecurringTransaction2 {
 	 * definition} = "Type of instalment plan."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInstalmentPlan = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RecurringTransaction2, List<InstalmentPlan1Code>> mmInstalmentPlan = new MMMessageAttribute<RecurringTransaction2, List<InstalmentPlan1Code>>() {
 		{
 			businessElementTrace_lazy = () -> Instalment.mmInstalmentPlanType;
-			componentContext_lazy = () -> RecurringTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RecurringTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "InstlmtPlan";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -144,11 +144,22 @@ public class RecurringTransaction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> InstalmentPlan1Code.mmObject();
 		}
+
+		@Override
+		public List<InstalmentPlan1Code> getValue(RecurringTransaction2 obj) {
+			return obj.getInstalmentPlan();
+		}
+
+		@Override
+		public void setValue(RecurringTransaction2 obj, List<InstalmentPlan1Code> value) {
+			obj.setInstalmentPlan(value);
+		}
 	};
+	@XmlElement(name = "PlanId")
 	protected Max35Text planIdentification;
 	/**
-	 * Identification of the instalment plan.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -173,9 +184,9 @@ public class RecurringTransaction2 {
 	 * definition} = "Identification of the instalment plan."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPlanIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RecurringTransaction2, Optional<Max35Text>> mmPlanIdentification = new MMMessageAttribute<RecurringTransaction2, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> RecurringTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RecurringTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "PlanId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -185,12 +196,22 @@ public class RecurringTransaction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(RecurringTransaction2 obj) {
+			return obj.getPlanIdentification();
+		}
+
+		@Override
+		public void setValue(RecurringTransaction2 obj, Optional<Max35Text> value) {
+			obj.setPlanIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SeqNb")
 	protected Number sequenceNumber;
 	/**
-	 * Indicates the recurring/instalment occurrence of the transaction (1 = 1st
-	 * instalment, 2 = 2nd instalment, etc.).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -217,9 +238,9 @@ public class RecurringTransaction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSequenceNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RecurringTransaction2, Optional<Number>> mmSequenceNumber = new MMMessageAttribute<RecurringTransaction2, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> RecurringTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RecurringTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "SeqNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -229,11 +250,22 @@ public class RecurringTransaction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(RecurringTransaction2 obj) {
+			return obj.getSequenceNumber();
+		}
+
+		@Override
+		public void setValue(RecurringTransaction2 obj, Optional<Number> value) {
+			obj.setSequenceNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PrdUnit")
 	protected Frequency3Code periodUnit;
 	/**
-	 * Period unit between consecutive payments (for example day, month, year).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -266,10 +298,10 @@ public class RecurringTransaction2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPeriodUnit = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RecurringTransaction2, Optional<Frequency3Code>> mmPeriodUnit = new MMMessageAttribute<RecurringTransaction2, Optional<Frequency3Code>>() {
 		{
 			businessElementTrace_lazy = () -> Instalment.mmPeriodUnit;
-			componentContext_lazy = () -> RecurringTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RecurringTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "PrdUnit";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -279,11 +311,22 @@ public class RecurringTransaction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Frequency3Code.mmObject();
 		}
+
+		@Override
+		public Optional<Frequency3Code> getValue(RecurringTransaction2 obj) {
+			return obj.getPeriodUnit();
+		}
+
+		@Override
+		public void setValue(RecurringTransaction2 obj, Optional<Frequency3Code> value) {
+			obj.setPeriodUnit(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "InstlmtPrd")
 	protected Number instalmentPeriod;
 	/**
-	 * Number of period units between consecutive payments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -313,10 +356,10 @@ public class RecurringTransaction2 {
 	 * definition} = "Number of period units between consecutive payments."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmInstalmentPeriod = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RecurringTransaction2, Optional<Number>> mmInstalmentPeriod = new MMMessageAttribute<RecurringTransaction2, Optional<Number>>() {
 		{
 			businessElementTrace_lazy = () -> Instalment.mmNumberOfUnits;
-			componentContext_lazy = () -> RecurringTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RecurringTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "InstlmtPrd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -326,11 +369,22 @@ public class RecurringTransaction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(RecurringTransaction2 obj) {
+			return obj.getInstalmentPeriod();
+		}
+
+		@Override
+		public void setValue(RecurringTransaction2 obj, Optional<Number> value) {
+			obj.setInstalmentPeriod(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TtlNbOfPmts")
 	protected Number totalNumberOfPayments;
 	/**
-	 * Total number of instalment payments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -360,10 +414,10 @@ public class RecurringTransaction2 {
 	 * definition} = "Total number of instalment payments."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalNumberOfPayments = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RecurringTransaction2, Optional<Number>> mmTotalNumberOfPayments = new MMMessageAttribute<RecurringTransaction2, Optional<Number>>() {
 		{
 			businessElementTrace_lazy = () -> Instalment.mmTotalNumberOfInstalment;
-			componentContext_lazy = () -> RecurringTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RecurringTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "TtlNbOfPmts";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -373,11 +427,22 @@ public class RecurringTransaction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(RecurringTransaction2 obj) {
+			return obj.getTotalNumberOfPayments();
+		}
+
+		@Override
+		public void setValue(RecurringTransaction2 obj, Optional<Number> value) {
+			obj.setTotalNumberOfPayments(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FrstPmtDt")
 	protected ISODate firstPaymentDate;
 	/**
-	 * Date of the first payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -407,10 +472,10 @@ public class RecurringTransaction2 {
 	 * definition} = "Date of the first payment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFirstPaymentDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RecurringTransaction2, Optional<ISODate>> mmFirstPaymentDate = new MMMessageAttribute<RecurringTransaction2, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Instalment.mmFirstPaymentDate;
-			componentContext_lazy = () -> RecurringTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RecurringTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "FrstPmtDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -420,11 +485,22 @@ public class RecurringTransaction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(RecurringTransaction2 obj) {
+			return obj.getFirstPaymentDate();
+		}
+
+		@Override
+		public void setValue(RecurringTransaction2 obj, Optional<ISODate> value) {
+			obj.setFirstPaymentDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TtlAmt")
 	protected CurrencyAndAmount totalAmount;
 	/**
-	 * Cumulative amount of all the instalments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -450,9 +526,9 @@ public class RecurringTransaction2 {
 	 * definition} = "Cumulative amount of all the instalments."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTotalAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RecurringTransaction2, Optional<CurrencyAndAmount>> mmTotalAmount = new MMMessageAttribute<RecurringTransaction2, Optional<CurrencyAndAmount>>() {
 		{
-			componentContext_lazy = () -> RecurringTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RecurringTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "TtlAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -462,11 +538,22 @@ public class RecurringTransaction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<CurrencyAndAmount> getValue(RecurringTransaction2 obj) {
+			return obj.getTotalAmount();
+		}
+
+		@Override
+		public void setValue(RecurringTransaction2 obj, Optional<CurrencyAndAmount> value) {
+			obj.setTotalAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "FrstAmt")
 	protected ImpliedCurrencyAndAmount firstAmount;
 	/**
-	 * Amount of the first payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -497,10 +584,10 @@ public class RecurringTransaction2 {
 	 * definition} = "Amount of the first payment."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFirstAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RecurringTransaction2, Optional<ImpliedCurrencyAndAmount>> mmFirstAmount = new MMMessageAttribute<RecurringTransaction2, Optional<ImpliedCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> Instalment.mmFirstPaymentAmount;
-			componentContext_lazy = () -> RecurringTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RecurringTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "FrstAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -510,11 +597,22 @@ public class RecurringTransaction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ImpliedCurrencyAndAmount> getValue(RecurringTransaction2 obj) {
+			return obj.getFirstAmount();
+		}
+
+		@Override
+		public void setValue(RecurringTransaction2 obj, Optional<ImpliedCurrencyAndAmount> value) {
+			obj.setFirstAmount(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Chrgs")
 	protected ImpliedCurrencyAndAmount charges;
 	/**
-	 * Charges related to the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -544,10 +642,10 @@ public class RecurringTransaction2 {
 	 * definition} = "Charges related to the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCharges = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RecurringTransaction2, Optional<ImpliedCurrencyAndAmount>> mmCharges = new MMMessageAttribute<RecurringTransaction2, Optional<ImpliedCurrencyAndAmount>>() {
 		{
 			businessComponentTrace_lazy = () -> Charges.mmObject();
-			componentContext_lazy = () -> RecurringTransaction2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RecurringTransaction2.mmObject();
 			isDerived = false;
 			xmlTag = "Chrgs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -557,16 +655,27 @@ public class RecurringTransaction2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ImpliedCurrencyAndAmount> getValue(RecurringTransaction2 obj) {
+			return obj.getCharges();
+		}
+
+		@Override
+		public void setValue(RecurringTransaction2 obj, Optional<ImpliedCurrencyAndAmount> value) {
+			obj.setCharges(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RecurringTransaction2.mmInstalmentPlan, RecurringTransaction2.mmPlanIdentification, RecurringTransaction2.mmSequenceNumber, RecurringTransaction2.mmPeriodUnit,
-						RecurringTransaction2.mmInstalmentPeriod, RecurringTransaction2.mmTotalNumberOfPayments, RecurringTransaction2.mmFirstPaymentDate, RecurringTransaction2.mmTotalAmount, RecurringTransaction2.mmFirstAmount,
-						RecurringTransaction2.mmCharges);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RecurringTransaction2.mmInstalmentPlan, com.tools20022.repository.msg.RecurringTransaction2.mmPlanIdentification,
+						com.tools20022.repository.msg.RecurringTransaction2.mmSequenceNumber, com.tools20022.repository.msg.RecurringTransaction2.mmPeriodUnit, com.tools20022.repository.msg.RecurringTransaction2.mmInstalmentPeriod,
+						com.tools20022.repository.msg.RecurringTransaction2.mmTotalNumberOfPayments, com.tools20022.repository.msg.RecurringTransaction2.mmFirstPaymentDate, com.tools20022.repository.msg.RecurringTransaction2.mmTotalAmount,
+						com.tools20022.repository.msg.RecurringTransaction2.mmFirstAmount, com.tools20022.repository.msg.RecurringTransaction2.mmCharges);
 				trace_lazy = () -> Instalment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RecurringTransaction2";
 				definition = "Financial loan (instalment) or a recurring transaction.";
@@ -575,93 +684,93 @@ public class RecurringTransaction2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "InstlmtPlan")
 	public List<InstalmentPlan1Code> getInstalmentPlan() {
-		return instalmentPlan;
+		return instalmentPlan == null ? instalmentPlan = new ArrayList<>() : instalmentPlan;
 	}
 
-	public void setInstalmentPlan(List<InstalmentPlan1Code> instalmentPlan) {
-		this.instalmentPlan = instalmentPlan;
+	public RecurringTransaction2 setInstalmentPlan(List<InstalmentPlan1Code> instalmentPlan) {
+		this.instalmentPlan = Objects.requireNonNull(instalmentPlan);
+		return this;
 	}
 
-	@XmlElement(name = "PlanId")
-	public Max35Text getPlanIdentification() {
-		return planIdentification;
+	public Optional<Max35Text> getPlanIdentification() {
+		return planIdentification == null ? Optional.empty() : Optional.of(planIdentification);
 	}
 
-	public void setPlanIdentification(Max35Text planIdentification) {
+	public RecurringTransaction2 setPlanIdentification(Max35Text planIdentification) {
 		this.planIdentification = planIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "SeqNb")
-	public Number getSequenceNumber() {
-		return sequenceNumber;
+	public Optional<Number> getSequenceNumber() {
+		return sequenceNumber == null ? Optional.empty() : Optional.of(sequenceNumber);
 	}
 
-	public void setSequenceNumber(Number sequenceNumber) {
+	public RecurringTransaction2 setSequenceNumber(Number sequenceNumber) {
 		this.sequenceNumber = sequenceNumber;
+		return this;
 	}
 
-	@XmlElement(name = "PrdUnit")
-	public Frequency3Code getPeriodUnit() {
-		return periodUnit;
+	public Optional<Frequency3Code> getPeriodUnit() {
+		return periodUnit == null ? Optional.empty() : Optional.of(periodUnit);
 	}
 
-	public void setPeriodUnit(Frequency3Code periodUnit) {
+	public RecurringTransaction2 setPeriodUnit(Frequency3Code periodUnit) {
 		this.periodUnit = periodUnit;
+		return this;
 	}
 
-	@XmlElement(name = "InstlmtPrd")
-	public Number getInstalmentPeriod() {
-		return instalmentPeriod;
+	public Optional<Number> getInstalmentPeriod() {
+		return instalmentPeriod == null ? Optional.empty() : Optional.of(instalmentPeriod);
 	}
 
-	public void setInstalmentPeriod(Number instalmentPeriod) {
+	public RecurringTransaction2 setInstalmentPeriod(Number instalmentPeriod) {
 		this.instalmentPeriod = instalmentPeriod;
+		return this;
 	}
 
-	@XmlElement(name = "TtlNbOfPmts")
-	public Number getTotalNumberOfPayments() {
-		return totalNumberOfPayments;
+	public Optional<Number> getTotalNumberOfPayments() {
+		return totalNumberOfPayments == null ? Optional.empty() : Optional.of(totalNumberOfPayments);
 	}
 
-	public void setTotalNumberOfPayments(Number totalNumberOfPayments) {
+	public RecurringTransaction2 setTotalNumberOfPayments(Number totalNumberOfPayments) {
 		this.totalNumberOfPayments = totalNumberOfPayments;
+		return this;
 	}
 
-	@XmlElement(name = "FrstPmtDt")
-	public ISODate getFirstPaymentDate() {
-		return firstPaymentDate;
+	public Optional<ISODate> getFirstPaymentDate() {
+		return firstPaymentDate == null ? Optional.empty() : Optional.of(firstPaymentDate);
 	}
 
-	public void setFirstPaymentDate(ISODate firstPaymentDate) {
+	public RecurringTransaction2 setFirstPaymentDate(ISODate firstPaymentDate) {
 		this.firstPaymentDate = firstPaymentDate;
+		return this;
 	}
 
-	@XmlElement(name = "TtlAmt")
-	public CurrencyAndAmount getTotalAmount() {
-		return totalAmount;
+	public Optional<CurrencyAndAmount> getTotalAmount() {
+		return totalAmount == null ? Optional.empty() : Optional.of(totalAmount);
 	}
 
-	public void setTotalAmount(CurrencyAndAmount totalAmount) {
+	public RecurringTransaction2 setTotalAmount(CurrencyAndAmount totalAmount) {
 		this.totalAmount = totalAmount;
+		return this;
 	}
 
-	@XmlElement(name = "FrstAmt")
-	public ImpliedCurrencyAndAmount getFirstAmount() {
-		return firstAmount;
+	public Optional<ImpliedCurrencyAndAmount> getFirstAmount() {
+		return firstAmount == null ? Optional.empty() : Optional.of(firstAmount);
 	}
 
-	public void setFirstAmount(ImpliedCurrencyAndAmount firstAmount) {
+	public RecurringTransaction2 setFirstAmount(ImpliedCurrencyAndAmount firstAmount) {
 		this.firstAmount = firstAmount;
+		return this;
 	}
 
-	@XmlElement(name = "Chrgs")
-	public ImpliedCurrencyAndAmount getCharges() {
-		return charges;
+	public Optional<ImpliedCurrencyAndAmount> getCharges() {
+		return charges == null ? Optional.empty() : Optional.of(charges);
 	}
 
-	public void setCharges(ImpliedCurrencyAndAmount charges) {
+	public RecurringTransaction2 setCharges(ImpliedCurrencyAndAmount charges) {
 		this.charges = charges;
+		return this;
 	}
 }

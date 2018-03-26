@@ -29,9 +29,10 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Min3Max4Text;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.CardPaymentContext24;
+import com.tools20022.repository.msg.CardPaymentEnvironment58;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -73,8 +74,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -85,16 +86,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Data common to all transactions of a data set."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CommonData6", propOrder = {"environment", "context", "transactionType", "additionalService", "serviceAttribute", "merchantCategoryCode", "reconciliationIdentification", "currency"})
 public class CommonData6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Envt")
 	protected CardPaymentEnvironment58 environment;
 	/**
-	 * Data related to the environment of the transaction, common to a set of
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -124,10 +125,10 @@ public class CommonData6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEnvironment = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CommonData6, Optional<CardPaymentEnvironment58>> mmEnvironment = new MMMessageAssociationEnd<CommonData6, Optional<CardPaymentEnvironment58>>() {
 		{
 			businessComponentTrace_lazy = () -> CardPayment.mmObject();
-			componentContext_lazy = () -> CommonData6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CommonData6.mmObject();
 			isDerived = false;
 			xmlTag = "Envt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -136,14 +137,24 @@ public class CommonData6 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CardPaymentEnvironment58.mmObject();
+			type_lazy = () -> CardPaymentEnvironment58.mmObject();
+		}
+
+		@Override
+		public Optional<CardPaymentEnvironment58> getValue(CommonData6 obj) {
+			return obj.getEnvironment();
+		}
+
+		@Override
+		public void setValue(CommonData6 obj, Optional<CardPaymentEnvironment58> value) {
+			obj.setEnvironment(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "Cntxt")
 	protected CardPaymentContext24 context;
 	/**
-	 * Data related to the context of the transaction, common to a set of
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -173,10 +184,10 @@ public class CommonData6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmContext = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CommonData6, Optional<CardPaymentContext24>> mmContext = new MMMessageAssociationEnd<CommonData6, Optional<CardPaymentContext24>>() {
 		{
 			businessElementTrace_lazy = () -> CardPayment.mmCardPaymentAcquiring;
-			componentContext_lazy = () -> CommonData6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CommonData6.mmObject();
 			isDerived = false;
 			xmlTag = "Cntxt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -185,14 +196,24 @@ public class CommonData6 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CardPaymentContext24.mmObject();
+			type_lazy = () -> CardPaymentContext24.mmObject();
+		}
+
+		@Override
+		public Optional<CardPaymentContext24> getValue(CommonData6 obj) {
+			return obj.getContext();
+		}
+
+		@Override
+		public void setValue(CommonData6 obj, Optional<CardPaymentContext24> value) {
+			obj.setContext(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "TxTp")
 	protected CardPaymentServiceType5Code transactionType;
 	/**
-	 * Type of transaction being undertaken for the main service, common to a
-	 * set of transaction..
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -220,28 +241,39 @@ public class CommonData6 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Type of transaction being undertaken for the main service, common to a set of transaction.."
+	 * "Type of transaction being undertaken for the main service, common to a set of transaction."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CommonData6, Optional<CardPaymentServiceType5Code>> mmTransactionType = new MMMessageAttribute<CommonData6, Optional<CardPaymentServiceType5Code>>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmCardPaymentService;
-			componentContext_lazy = () -> CommonData6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CommonData6.mmObject();
 			isDerived = false;
 			xmlTag = "TxTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TransactionType";
-			definition = "Type of transaction being undertaken for the main service, common to a set of transaction..";
+			definition = "Type of transaction being undertaken for the main service, common to a set of transaction.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> CardPaymentServiceType5Code.mmObject();
 		}
+
+		@Override
+		public Optional<CardPaymentServiceType5Code> getValue(CommonData6 obj) {
+			return obj.getTransactionType();
+		}
+
+		@Override
+		public void setValue(CommonData6 obj, Optional<CardPaymentServiceType5Code> value) {
+			obj.setTransactionType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AddtlSvc")
 	protected List<CardPaymentServiceType9Code> additionalService;
 	/**
-	 * Service in addition to the main service.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -271,10 +303,10 @@ public class CommonData6 {
 	 * definition} = "Service in addition to the main service."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalService = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CommonData6, List<CardPaymentServiceType9Code>> mmAdditionalService = new MMMessageAttribute<CommonData6, List<CardPaymentServiceType9Code>>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmCardPaymentService;
-			componentContext_lazy = () -> CommonData6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CommonData6.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlSvc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -283,11 +315,22 @@ public class CommonData6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> CardPaymentServiceType9Code.mmObject();
 		}
+
+		@Override
+		public List<CardPaymentServiceType9Code> getValue(CommonData6 obj) {
+			return obj.getAdditionalService();
+		}
+
+		@Override
+		public void setValue(CommonData6 obj, List<CardPaymentServiceType9Code> value) {
+			obj.setAdditionalService(value);
+		}
 	};
+	@XmlElement(name = "SvcAttr")
 	protected CardPaymentServiceType3Code serviceAttribute;
 	/**
-	 * Additional attribute of the service type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -317,10 +360,10 @@ public class CommonData6 {
 	 * definition} = "Additional attribute of the service type."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmServiceAttribute = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CommonData6, Optional<CardPaymentServiceType3Code>> mmServiceAttribute = new MMMessageAttribute<CommonData6, Optional<CardPaymentServiceType3Code>>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmCardPaymentService;
-			componentContext_lazy = () -> CommonData6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CommonData6.mmObject();
 			isDerived = false;
 			xmlTag = "SvcAttr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -330,12 +373,22 @@ public class CommonData6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> CardPaymentServiceType3Code.mmObject();
 		}
+
+		@Override
+		public Optional<CardPaymentServiceType3Code> getValue(CommonData6 obj) {
+			return obj.getServiceAttribute();
+		}
+
+		@Override
+		public void setValue(CommonData6 obj, Optional<CardPaymentServiceType3Code> value) {
+			obj.setServiceAttribute(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MrchntCtgyCd")
 	protected Min3Max4Text merchantCategoryCode;
 	/**
-	 * Category code conform to ISO 18245, related to the type of services or
-	 * goods the merchant provides for the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -367,10 +420,10 @@ public class CommonData6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMerchantCategoryCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CommonData6, Optional<Min3Max4Text>> mmMerchantCategoryCode = new MMMessageAttribute<CommonData6, Optional<Min3Max4Text>>() {
 		{
 			businessElementTrace_lazy = () -> MerchantRole.mmMerchantCategoryCode;
-			componentContext_lazy = () -> CommonData6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CommonData6.mmObject();
 			isDerived = false;
 			xmlTag = "MrchntCtgyCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -380,14 +433,22 @@ public class CommonData6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Min3Max4Text.mmObject();
 		}
+
+		@Override
+		public Optional<Min3Max4Text> getValue(CommonData6 obj) {
+			return obj.getMerchantCategoryCode();
+		}
+
+		@Override
+		public void setValue(CommonData6 obj, Optional<Min3Max4Text> value) {
+			obj.setMerchantCategoryCode(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RcncltnId")
 	protected Max35Text reconciliationIdentification;
 	/**
-	 * Unique identification of the reconciliation period between the acceptor
-	 * and the acquirer. This identification might be linked to the
-	 * identification of the settlement for further verification by the
-	 * merchant.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -418,10 +479,10 @@ public class CommonData6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReconciliationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CommonData6, Optional<Max35Text>> mmReconciliationIdentification = new MMMessageAttribute<CommonData6, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> ReconciliationTransaction.mmReconciliationIdentification;
-			componentContext_lazy = () -> CommonData6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CommonData6.mmObject();
 			isDerived = false;
 			xmlTag = "RcncltnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -431,11 +492,22 @@ public class CommonData6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(CommonData6 obj) {
+			return obj.getReconciliationIdentification();
+		}
+
+		@Override
+		public void setValue(CommonData6 obj, Optional<Max35Text> value) {
+			obj.setReconciliationIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Ccy")
 	protected CurrencyCode currency;
 	/**
-	 * Currency associated with the set of transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -464,10 +536,10 @@ public class CommonData6 {
 	 * definition} = "Currency associated with the set of transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CommonData6, Optional<CurrencyCode>> mmCurrency = new MMMessageAttribute<CommonData6, Optional<CurrencyCode>>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmCurrencyOfTransfer;
-			componentContext_lazy = () -> CommonData6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CommonData6.mmObject();
 			isDerived = false;
 			xmlTag = "Ccy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -477,15 +549,26 @@ public class CommonData6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
+
+		@Override
+		public Optional<CurrencyCode> getValue(CommonData6 obj) {
+			return obj.getCurrency();
+		}
+
+		@Override
+		public void setValue(CommonData6 obj, Optional<CurrencyCode> value) {
+			obj.setCurrency(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CommonData6.mmEnvironment, CommonData6.mmContext, CommonData6.mmTransactionType, CommonData6.mmAdditionalService, CommonData6.mmServiceAttribute, CommonData6.mmMerchantCategoryCode,
-						CommonData6.mmReconciliationIdentification, CommonData6.mmCurrency);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CommonData6.mmEnvironment, com.tools20022.repository.msg.CommonData6.mmContext, com.tools20022.repository.msg.CommonData6.mmTransactionType,
+						com.tools20022.repository.msg.CommonData6.mmAdditionalService, com.tools20022.repository.msg.CommonData6.mmServiceAttribute, com.tools20022.repository.msg.CommonData6.mmMerchantCategoryCode,
+						com.tools20022.repository.msg.CommonData6.mmReconciliationIdentification, com.tools20022.repository.msg.CommonData6.mmCurrency);
 				trace_lazy = () -> CardPayment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CommonData6";
 				definition = "Data common to all transactions of a data set.";
@@ -494,75 +577,75 @@ public class CommonData6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Envt")
-	public CardPaymentEnvironment58 getEnvironment() {
-		return environment;
+	public Optional<CardPaymentEnvironment58> getEnvironment() {
+		return environment == null ? Optional.empty() : Optional.of(environment);
 	}
 
-	public void setEnvironment(com.tools20022.repository.msg.CardPaymentEnvironment58 environment) {
+	public CommonData6 setEnvironment(CardPaymentEnvironment58 environment) {
 		this.environment = environment;
+		return this;
 	}
 
-	@XmlElement(name = "Cntxt")
-	public CardPaymentContext24 getContext() {
-		return context;
+	public Optional<CardPaymentContext24> getContext() {
+		return context == null ? Optional.empty() : Optional.of(context);
 	}
 
-	public void setContext(com.tools20022.repository.msg.CardPaymentContext24 context) {
+	public CommonData6 setContext(CardPaymentContext24 context) {
 		this.context = context;
+		return this;
 	}
 
-	@XmlElement(name = "TxTp")
-	public CardPaymentServiceType5Code getTransactionType() {
-		return transactionType;
+	public Optional<CardPaymentServiceType5Code> getTransactionType() {
+		return transactionType == null ? Optional.empty() : Optional.of(transactionType);
 	}
 
-	public void setTransactionType(CardPaymentServiceType5Code transactionType) {
+	public CommonData6 setTransactionType(CardPaymentServiceType5Code transactionType) {
 		this.transactionType = transactionType;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlSvc")
 	public List<CardPaymentServiceType9Code> getAdditionalService() {
-		return additionalService;
+		return additionalService == null ? additionalService = new ArrayList<>() : additionalService;
 	}
 
-	public void setAdditionalService(List<CardPaymentServiceType9Code> additionalService) {
-		this.additionalService = additionalService;
+	public CommonData6 setAdditionalService(List<CardPaymentServiceType9Code> additionalService) {
+		this.additionalService = Objects.requireNonNull(additionalService);
+		return this;
 	}
 
-	@XmlElement(name = "SvcAttr")
-	public CardPaymentServiceType3Code getServiceAttribute() {
-		return serviceAttribute;
+	public Optional<CardPaymentServiceType3Code> getServiceAttribute() {
+		return serviceAttribute == null ? Optional.empty() : Optional.of(serviceAttribute);
 	}
 
-	public void setServiceAttribute(CardPaymentServiceType3Code serviceAttribute) {
+	public CommonData6 setServiceAttribute(CardPaymentServiceType3Code serviceAttribute) {
 		this.serviceAttribute = serviceAttribute;
+		return this;
 	}
 
-	@XmlElement(name = "MrchntCtgyCd")
-	public Min3Max4Text getMerchantCategoryCode() {
-		return merchantCategoryCode;
+	public Optional<Min3Max4Text> getMerchantCategoryCode() {
+		return merchantCategoryCode == null ? Optional.empty() : Optional.of(merchantCategoryCode);
 	}
 
-	public void setMerchantCategoryCode(Min3Max4Text merchantCategoryCode) {
+	public CommonData6 setMerchantCategoryCode(Min3Max4Text merchantCategoryCode) {
 		this.merchantCategoryCode = merchantCategoryCode;
+		return this;
 	}
 
-	@XmlElement(name = "RcncltnId")
-	public Max35Text getReconciliationIdentification() {
-		return reconciliationIdentification;
+	public Optional<Max35Text> getReconciliationIdentification() {
+		return reconciliationIdentification == null ? Optional.empty() : Optional.of(reconciliationIdentification);
 	}
 
-	public void setReconciliationIdentification(Max35Text reconciliationIdentification) {
+	public CommonData6 setReconciliationIdentification(Max35Text reconciliationIdentification) {
 		this.reconciliationIdentification = reconciliationIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "Ccy")
-	public CurrencyCode getCurrency() {
-		return currency;
+	public Optional<CurrencyCode> getCurrency() {
+		return currency == null ? Optional.empty() : Optional.of(currency);
 	}
 
-	public void setCurrency(CurrencyCode currency) {
+	public CommonData6 setCurrency(CurrencyCode currency) {
 		this.currency = currency;
+		return this;
 	}
 }

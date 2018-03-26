@@ -17,19 +17,18 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.OtherSemanticMarkup;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.LegalStructureCode;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max350Text;
 import com.tools20022.repository.datatype.Max35Text;
-import com.tools20022.repository.entity.Party;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Organised structure that is set up for a particular purpose. For example, a
@@ -163,8 +162,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -182,8 +181,8 @@ public class Organisation extends Party {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text purpose;
 	/**
-	 * Purpose of the organisation, eg, charity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -195,6 +194,17 @@ public class Organisation extends Party {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.Organisation Organisation}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=SampleData, SampleData=<?xml version="1.0"
+	 * encoding="UTF-8"?> <InstanceInfo> <key KeyValue="Sample1"/> <key
+	 * KeyValue="Sample2"/> <key KeyValue="Sample3"/> <key KeyValue="Sample4"/>
+	 * <key KeyValue="Sample5"/> <key KeyValue="Sample6"/> <key
+	 * KeyValue="Sample7"/> <key KeyValue="Sample8"/> <key KeyValue="Sample9"/>
+	 * <key KeyValue="Sample10"/> </InstanceInfo>
+	 * 
+	 * 
+	 * </li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -205,10 +215,17 @@ public class Organisation extends Party {
 	 * definition} = "Purpose of the organisation, eg, charity."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPurpose = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Organisation, Max35Text> mmPurpose = new MMBusinessAttribute<Organisation, Max35Text>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
+			semanticMarkup_lazy = () -> Arrays
+					.asList(new OtherSemanticMarkup(
+							this,
+							"SampleData",
+							new String[]{
+									"SampleData",
+									"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<InstanceInfo>\n<key KeyValue=\"Sample1\"/>\n<key KeyValue=\"Sample2\"/>\n<key KeyValue=\"Sample3\"/>\n<key KeyValue=\"Sample4\"/>\n<key KeyValue=\"Sample5\"/>\n<key KeyValue=\"Sample6\"/>\n<key KeyValue=\"Sample7\"/>\n<key KeyValue=\"Sample8\"/>\n<key KeyValue=\"Sample9\"/>\n<key KeyValue=\"Sample10\"/>\n</InstanceInfo>\n\n\n"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Purpose";
 			definition = "Purpose of the organisation, eg, charity.";
@@ -217,18 +234,20 @@ public class Organisation extends Party {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Organisation.class.getMethod("getPurpose", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Organisation obj) {
+			return obj.getPurpose();
+		}
+
+		@Override
+		public void setValue(Organisation obj, Max35Text value) {
+			obj.setPurpose(value);
 		}
 	};
 	protected ISODateTime registrationDate;
 	/**
-	 * Date and time at which a given organisation was officially registered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -239,6 +258,17 @@ public class Organisation extends Party {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.Organisation Organisation}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=SampleData, SampleData=<?xml version="1.0"
+	 * encoding="UTF-8"?> <InstanceInfo> <key KeyValue="Sample1"/> <key
+	 * KeyValue="Sample2"/> <key KeyValue="Sample3"/> <key KeyValue="Sample4"/>
+	 * <key KeyValue="Sample5"/> <key KeyValue="Sample6"/> <key
+	 * KeyValue="Sample7"/> <key KeyValue="Sample8"/> <key KeyValue="Sample9"/>
+	 * <key KeyValue="Sample10"/> </InstanceInfo>
+	 * 
+	 * 
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -251,10 +281,17 @@ public class Organisation extends Party {
 	 * "Date and time at which a given organisation was officially registered."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRegistrationDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Organisation, ISODateTime> mmRegistrationDate = new MMBusinessAttribute<Organisation, ISODateTime>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
+			semanticMarkup_lazy = () -> Arrays
+					.asList(new OtherSemanticMarkup(
+							this,
+							"SampleData",
+							new String[]{
+									"SampleData",
+									"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<InstanceInfo>\n<key KeyValue=\"Sample1\"/>\n<key KeyValue=\"Sample2\"/>\n<key KeyValue=\"Sample3\"/>\n<key KeyValue=\"Sample4\"/>\n<key KeyValue=\"Sample5\"/>\n<key KeyValue=\"Sample6\"/>\n<key KeyValue=\"Sample7\"/>\n<key KeyValue=\"Sample8\"/>\n<key KeyValue=\"Sample9\"/>\n<key KeyValue=\"Sample10\"/>\n</InstanceInfo>\n\n\n"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RegistrationDate";
 			definition = "Date and time at which a given organisation was officially registered.";
@@ -263,19 +300,20 @@ public class Organisation extends Party {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Organisation.class.getMethod("getRegistrationDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Organisation obj) {
+			return obj.getRegistrationDate();
+		}
+
+		@Override
+		public void setValue(Organisation obj, ISODateTime value) {
+			obj.setRegistrationDate(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.OrganisationIdentification> organisationIdentification;
 	/**
-	 * Specific identification assigned to an organisation. It is derived from
-	 * the association between Party and PartyIdentification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -320,11 +358,11 @@ public class Organisation extends Party {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOrganisationIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, List<OrganisationIdentification>> mmOrganisationIdentification = new MMBusinessAssociationEnd<Organisation, List<OrganisationIdentification>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(BranchAndFinancialInstitutionIdentification5.mmFinancialInstitutionIdentification, BranchAndFinancialInstitutionIdentification5.mmBranchIdentification);
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrganisationIdentification";
 			definition = "Specific identification assigned to an organisation. It is derived from the association between Party and PartyIdentification.";
@@ -333,11 +371,21 @@ public class Organisation extends Party {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 		}
+
+		@Override
+		public List<OrganisationIdentification> getValue(Organisation obj) {
+			return obj.getOrganisationIdentification();
+		}
+
+		@Override
+		public void setValue(Organisation obj, List<OrganisationIdentification> value) {
+			obj.setOrganisationIdentification(value);
+		}
 	};
 	protected Organisation parentOrganisation;
 	/**
-	 * Organisation which is divided in branches.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -367,24 +415,34 @@ public class Organisation extends Party {
 	 * definition} = "Organisation which is divided in branches."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmParentOrganisation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, Organisation> mmParentOrganisation = new MMBusinessAssociationEnd<Organisation, Organisation>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ParentOrganisation";
 			definition = "Organisation which is divided in branches.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Organisation.mmBranch;
+			opposite_lazy = () -> Organisation.mmBranch;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			type_lazy = () -> Organisation.mmObject();
+		}
+
+		@Override
+		public Organisation getValue(Organisation obj) {
+			return obj.getParentOrganisation();
+		}
+
+		@Override
+		public void setValue(Organisation obj, Organisation value) {
+			obj.setParentOrganisation(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Organisation> branch;
+	protected List<Organisation> branch;
 	/**
-	 * Specifies an organisation which is not a head office.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -414,23 +472,33 @@ public class Organisation extends Party {
 	 * definition} = "Specifies an organisation which is not a head office."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBranch = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, List<Organisation>> mmBranch = new MMBusinessAssociationEnd<Organisation, List<Organisation>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Branch";
 			definition = "Specifies an organisation which is not a head office.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Organisation.mmParentOrganisation;
+			opposite_lazy = () -> Organisation.mmParentOrganisation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			type_lazy = () -> Organisation.mmObject();
+		}
+
+		@Override
+		public List<Organisation> getValue(Organisation obj) {
+			return obj.getBranch();
+		}
+
+		@Override
+		public void setValue(Organisation obj, List<Organisation> value) {
+			obj.setBranch(value);
 		}
 	};
 	protected SecuritiesModification securitiesModification;
 	/**
-	 * Specifies the process which originates the changes to an organisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -462,10 +530,10 @@ public class Organisation extends Party {
 	 * "Specifies the process which originates the changes to an organisation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesModification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, com.tools20022.repository.entity.SecuritiesModification> mmSecuritiesModification = new MMBusinessAssociationEnd<Organisation, com.tools20022.repository.entity.SecuritiesModification>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecuritiesModification";
 			definition = "Specifies the process which originates the changes to an organisation.";
@@ -475,12 +543,21 @@ public class Organisation extends Party {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesModification.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesModification getValue(Organisation obj) {
+			return obj.getSecuritiesModification();
+		}
+
+		@Override
+		public void setValue(Organisation obj, com.tools20022.repository.entity.SecuritiesModification value) {
+			obj.setSecuritiesModification(value);
+		}
 	};
 	protected List<com.tools20022.repository.entity.Location> placeOfOperation;
 	/**
-	 * Place (including country) in which the organisation has its business
-	 * activity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -511,10 +588,10 @@ public class Organisation extends Party {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPlaceOfOperation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, List<Location>> mmPlaceOfOperation = new MMBusinessAssociationEnd<Organisation, List<Location>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfOperation";
 			definition = "Place (including country) in which the organisation has its business activity.";
@@ -523,11 +600,21 @@ public class Organisation extends Party {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 		}
+
+		@Override
+		public List<Location> getValue(Organisation obj) {
+			return obj.getPlaceOfOperation();
+		}
+
+		@Override
+		public void setValue(Organisation obj, List<Location> value) {
+			obj.setPlaceOfOperation(value);
+		}
 	};
 	protected Location placeOfRegistration;
 	/**
-	 * Place (including country) in which the organisation is registered.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -557,10 +644,10 @@ public class Organisation extends Party {
 	 * "Place (including country) in which the organisation is registered."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPlaceOfRegistration = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, Optional<Location>> mmPlaceOfRegistration = new MMBusinessAssociationEnd<Organisation, Optional<Location>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PlaceOfRegistration";
 			definition = "Place (including country) in which the organisation is registered.";
@@ -570,11 +657,21 @@ public class Organisation extends Party {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
 		}
+
+		@Override
+		public Optional<Location> getValue(Organisation obj) {
+			return obj.getPlaceOfRegistration();
+		}
+
+		@Override
+		public void setValue(Organisation obj, Optional<Location> value) {
+			obj.setPlaceOfRegistration(value.orElse(null));
+		}
 	};
 	protected Max350Text description;
 	/**
-	 * Description of an organisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -586,6 +683,17 @@ public class Organisation extends Party {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.Organisation Organisation}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=SampleData, SampleData=<?xml version="1.0"
+	 * encoding="UTF-8"?> <InstanceInfo> <key KeyValue="Sample1"/> <key
+	 * KeyValue="Sample2"/> <key KeyValue="Sample3"/> <key KeyValue="Sample4"/>
+	 * <key KeyValue="Sample5"/> <key KeyValue="Sample6"/> <key
+	 * KeyValue="Sample7"/> <key KeyValue="Sample8"/> <key KeyValue="Sample9"/>
+	 * <key KeyValue="Sample10"/> </InstanceInfo>
+	 * 
+	 * 
+	 * </li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -596,10 +704,17 @@ public class Organisation extends Party {
 	 * definition} = "Description of an organisation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDescription = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Organisation, Max350Text> mmDescription = new MMBusinessAttribute<Organisation, Max350Text>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
+			semanticMarkup_lazy = () -> Arrays
+					.asList(new OtherSemanticMarkup(
+							this,
+							"SampleData",
+							new String[]{
+									"SampleData",
+									"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<InstanceInfo>\n<key KeyValue=\"Sample1\"/>\n<key KeyValue=\"Sample2\"/>\n<key KeyValue=\"Sample3\"/>\n<key KeyValue=\"Sample4\"/>\n<key KeyValue=\"Sample5\"/>\n<key KeyValue=\"Sample6\"/>\n<key KeyValue=\"Sample7\"/>\n<key KeyValue=\"Sample8\"/>\n<key KeyValue=\"Sample9\"/>\n<key KeyValue=\"Sample10\"/>\n</InstanceInfo>\n\n\n"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Description";
 			definition = "Description of an organisation.";
@@ -608,18 +723,20 @@ public class Organisation extends Party {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Organisation.class.getMethod("getDescription", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max350Text getValue(Organisation obj) {
+			return obj.getDescription();
+		}
+
+		@Override
+		public void setValue(Organisation obj, Max350Text value) {
+			obj.setDescription(value);
 		}
 	};
 	protected LegalStructureCode legalStructure;
 	/**
-	 * Legal standing of the organisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -642,10 +759,10 @@ public class Organisation extends Party {
 	 * definition} = "Legal standing of the organisation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLegalStructure = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Organisation, LegalStructureCode> mmLegalStructure = new MMBusinessAttribute<Organisation, LegalStructureCode>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "LegalStructure";
 			definition = "Legal standing of the organisation.";
@@ -654,18 +771,20 @@ public class Organisation extends Party {
 			simpleType_lazy = () -> LegalStructureCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Organisation.class.getMethod("getLegalStructure", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public LegalStructureCode getValue(Organisation obj) {
+			return obj.getLegalStructure();
+		}
+
+		@Override
+		public void setValue(Organisation obj, LegalStructureCode value) {
+			obj.setLegalStructure(value);
 		}
 	};
 	protected Sector sector;
 	/**
-	 * Sector of business of the organisation, for example, pharmaceutical.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -695,10 +814,10 @@ public class Organisation extends Party {
 	 * "Sector of business of the organisation, for example, pharmaceutical."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSector = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, com.tools20022.repository.entity.Sector> mmSector = new MMBusinessAssociationEnd<Organisation, com.tools20022.repository.entity.Sector>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Sector";
 			definition = "Sector of business of the organisation, for example, pharmaceutical.";
@@ -708,12 +827,21 @@ public class Organisation extends Party {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Sector.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.Sector getValue(Organisation obj) {
+			return obj.getSector();
+		}
+
+		@Override
+		public void setValue(Organisation obj, com.tools20022.repository.entity.Sector value) {
+			obj.setSector(value);
+		}
 	};
 	protected BuyOrSellIndicationOfInterest relatedIndicationOfInterest;
 	/**
-	 * Indication of interest process for which a list of organisations is
-	 * specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -746,24 +874,34 @@ public class Organisation extends Party {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedIndicationOfInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, Optional<BuyOrSellIndicationOfInterest>> mmRelatedIndicationOfInterest = new MMBusinessAssociationEnd<Organisation, Optional<BuyOrSellIndicationOfInterest>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedIndicationOfInterest";
 			definition = "Indication of interest process for which a list of organisations is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmOrganisations;
+			opposite_lazy = () -> BuyOrSellIndicationOfInterest.mmOrganisations;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
+			type_lazy = () -> BuyOrSellIndicationOfInterest.mmObject();
+		}
+
+		@Override
+		public Optional<BuyOrSellIndicationOfInterest> getValue(Organisation obj) {
+			return obj.getRelatedIndicationOfInterest();
+		}
+
+		@Override
+		public void setValue(Organisation obj, Optional<BuyOrSellIndicationOfInterest> value) {
+			obj.setRelatedIndicationOfInterest(value.orElse(null));
 		}
 	};
 	protected OrganisationStrategy strategy;
 	/**
-	 * Strategy related to an organisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -794,24 +932,34 @@ public class Organisation extends Party {
 	 * definition} = "Strategy related to an organisation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmStrategy = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, Optional<OrganisationStrategy>> mmStrategy = new MMBusinessAssociationEnd<Organisation, Optional<OrganisationStrategy>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Strategy";
 			definition = "Strategy related to an organisation.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.OrganisationStrategy.mmOrganisation;
+			opposite_lazy = () -> OrganisationStrategy.mmOrganisation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.OrganisationStrategy.mmObject();
+			type_lazy = () -> OrganisationStrategy.mmObject();
+		}
+
+		@Override
+		public Optional<OrganisationStrategy> getValue(Organisation obj) {
+			return obj.getStrategy();
+		}
+
+		@Override
+		public void setValue(Organisation obj, Optional<OrganisationStrategy> value) {
+			obj.setStrategy(value.orElse(null));
 		}
 	};
 	protected OrganisationHierarchy organisationHierarchy;
 	/**
-	 * Description of the structure of a company.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -842,10 +990,10 @@ public class Organisation extends Party {
 	 * definition} = "Description of the structure of a company."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOrganisationHierarchy = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, com.tools20022.repository.entity.OrganisationHierarchy> mmOrganisationHierarchy = new MMBusinessAssociationEnd<Organisation, com.tools20022.repository.entity.OrganisationHierarchy>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrganisationHierarchy";
 			definition = "Description of the structure of a company.";
@@ -855,12 +1003,21 @@ public class Organisation extends Party {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.OrganisationHierarchy.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.OrganisationHierarchy getValue(Organisation obj) {
+			return obj.getOrganisationHierarchy();
+		}
+
+		@Override
+		public void setValue(Organisation obj, com.tools20022.repository.entity.OrganisationHierarchy value) {
+			obj.setOrganisationHierarchy(value);
+		}
 	};
 	protected RepresentativeOfficer representativeOfficer;
 	/**
-	 * Officer who has some rights to represent a given organisation. In account
-	 * management, it is the person to be contacted by the account servicer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -893,10 +1050,10 @@ public class Organisation extends Party {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRepresentativeOfficer = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Organisation, com.tools20022.repository.entity.RepresentativeOfficer> mmRepresentativeOfficer = new MMBusinessAssociationEnd<Organisation, com.tools20022.repository.entity.RepresentativeOfficer>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RepresentativeOfficer";
 			definition = "Officer who has some rights to represent a given organisation. In account management, it is the person to be contacted by the account servicer.";
@@ -906,11 +1063,21 @@ public class Organisation extends Party {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.RepresentativeOfficer.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.RepresentativeOfficer getValue(Organisation obj) {
+			return obj.getRepresentativeOfficer();
+		}
+
+		@Override
+		public void setValue(Organisation obj, com.tools20022.repository.entity.RepresentativeOfficer value) {
+			obj.setRepresentativeOfficer(value);
+		}
 	};
 	protected ISODate establishmentDate;
 	/**
-	 * Date when the organisation was established.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -932,10 +1099,10 @@ public class Organisation extends Party {
 	 * definition} = "Date when the organisation was established."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEstablishmentDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Organisation, ISODate> mmEstablishmentDate = new MMBusinessAttribute<Organisation, ISODate>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.Organisation.mmObject();
+			elementContext_lazy = () -> Organisation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EstablishmentDate";
 			definition = "Date when the organisation was established.";
@@ -944,36 +1111,34 @@ public class Organisation extends Party {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Organisation.class.getMethod("getEstablishmentDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(Organisation obj) {
+			return obj.getEstablishmentDate();
+		}
+
+		@Override
+		public void setValue(Organisation obj, ISODate value) {
+			obj.setEstablishmentDate(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Organisation";
 				definition = "Organised structure that is set up for a particular purpose. For example, a business, government body, department, charity, or financial institution.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Organisation.mmParentOrganisation, com.tools20022.repository.entity.Organisation.mmBranch,
-						com.tools20022.repository.entity.OrganisationIdentification.mmOrganisation, com.tools20022.repository.entity.Location.mmOperatingOrganisation, com.tools20022.repository.entity.Location.mmRegisteredOrganisation,
+				associationDomain_lazy = () -> Arrays.asList(Organisation.mmParentOrganisation, Organisation.mmBranch, com.tools20022.repository.entity.OrganisationIdentification.mmOrganisation,
+						com.tools20022.repository.entity.Location.mmOperatingOrganisation, com.tools20022.repository.entity.Location.mmRegisteredOrganisation,
 						com.tools20022.repository.entity.SecuritiesModification.mmNewOrganisationInformation, com.tools20022.repository.entity.Sector.mmOrganisation, com.tools20022.repository.entity.RepresentativeOfficer.mmOrganisation,
-						com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmOrganisations, com.tools20022.repository.entity.OrganisationStrategy.mmOrganisation,
-						com.tools20022.repository.entity.OrganisationHierarchy.mmOrganisation);
+						BuyOrSellIndicationOfInterest.mmOrganisations, OrganisationStrategy.mmOrganisation, com.tools20022.repository.entity.OrganisationHierarchy.mmOrganisation);
 				derivationElement_lazy = () -> Arrays.asList(TradeParty3.mmLegalOrganisation);
 				subType_lazy = () -> Arrays.asList(FinancialInstitution.mmObject());
 				superType_lazy = () -> Party.mmObject();
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Organisation.mmPurpose, com.tools20022.repository.entity.Organisation.mmRegistrationDate,
-						com.tools20022.repository.entity.Organisation.mmOrganisationIdentification, com.tools20022.repository.entity.Organisation.mmParentOrganisation, com.tools20022.repository.entity.Organisation.mmBranch,
-						com.tools20022.repository.entity.Organisation.mmSecuritiesModification, com.tools20022.repository.entity.Organisation.mmPlaceOfOperation, com.tools20022.repository.entity.Organisation.mmPlaceOfRegistration,
-						com.tools20022.repository.entity.Organisation.mmDescription, com.tools20022.repository.entity.Organisation.mmLegalStructure, com.tools20022.repository.entity.Organisation.mmSector,
-						com.tools20022.repository.entity.Organisation.mmRelatedIndicationOfInterest, com.tools20022.repository.entity.Organisation.mmStrategy, com.tools20022.repository.entity.Organisation.mmOrganisationHierarchy,
-						com.tools20022.repository.entity.Organisation.mmRepresentativeOfficer, com.tools20022.repository.entity.Organisation.mmEstablishmentDate);
+				element_lazy = () -> Arrays.asList(Organisation.mmPurpose, Organisation.mmRegistrationDate, Organisation.mmOrganisationIdentification, Organisation.mmParentOrganisation, Organisation.mmBranch,
+						Organisation.mmSecuritiesModification, Organisation.mmPlaceOfOperation, Organisation.mmPlaceOfRegistration, Organisation.mmDescription, Organisation.mmLegalStructure, Organisation.mmSector,
+						Organisation.mmRelatedIndicationOfInterest, Organisation.mmStrategy, Organisation.mmOrganisationHierarchy, Organisation.mmRepresentativeOfficer, Organisation.mmEstablishmentDate);
 				derivationComponent_lazy = () -> Arrays.asList(BranchAndFinancialInstitutionIdentification5.mmObject(), Organisation9.mmObject(), LegalOrganisation1.mmObject(), Organisation18.mmObject(), Organisation19.mmObject(),
 						Organisation25.mmObject(), Organisation26.mmObject());
 			}
@@ -990,127 +1155,143 @@ public class Organisation extends Party {
 		return purpose;
 	}
 
-	public void setPurpose(Max35Text purpose) {
-		this.purpose = purpose;
+	public Organisation setPurpose(Max35Text purpose) {
+		this.purpose = Objects.requireNonNull(purpose);
+		return this;
 	}
 
 	public ISODateTime getRegistrationDate() {
 		return registrationDate;
 	}
 
-	public void setRegistrationDate(ISODateTime registrationDate) {
-		this.registrationDate = registrationDate;
+	public Organisation setRegistrationDate(ISODateTime registrationDate) {
+		this.registrationDate = Objects.requireNonNull(registrationDate);
+		return this;
 	}
 
 	public List<OrganisationIdentification> getOrganisationIdentification() {
-		return organisationIdentification;
+		return organisationIdentification == null ? organisationIdentification = new ArrayList<>() : organisationIdentification;
 	}
 
-	public void setOrganisationIdentification(List<com.tools20022.repository.entity.OrganisationIdentification> organisationIdentification) {
-		this.organisationIdentification = organisationIdentification;
+	public Organisation setOrganisationIdentification(List<com.tools20022.repository.entity.OrganisationIdentification> organisationIdentification) {
+		this.organisationIdentification = Objects.requireNonNull(organisationIdentification);
+		return this;
 	}
 
 	public Organisation getParentOrganisation() {
 		return parentOrganisation;
 	}
 
-	public void setParentOrganisation(com.tools20022.repository.entity.Organisation parentOrganisation) {
-		this.parentOrganisation = parentOrganisation;
+	public Organisation setParentOrganisation(Organisation parentOrganisation) {
+		this.parentOrganisation = Objects.requireNonNull(parentOrganisation);
+		return this;
 	}
 
 	public List<Organisation> getBranch() {
-		return branch;
+		return branch == null ? branch = new ArrayList<>() : branch;
 	}
 
-	public void setBranch(List<com.tools20022.repository.entity.Organisation> branch) {
-		this.branch = branch;
+	public Organisation setBranch(List<Organisation> branch) {
+		this.branch = Objects.requireNonNull(branch);
+		return this;
 	}
 
 	public SecuritiesModification getSecuritiesModification() {
 		return securitiesModification;
 	}
 
-	public void setSecuritiesModification(com.tools20022.repository.entity.SecuritiesModification securitiesModification) {
-		this.securitiesModification = securitiesModification;
+	public Organisation setSecuritiesModification(com.tools20022.repository.entity.SecuritiesModification securitiesModification) {
+		this.securitiesModification = Objects.requireNonNull(securitiesModification);
+		return this;
 	}
 
 	public List<Location> getPlaceOfOperation() {
-		return placeOfOperation;
+		return placeOfOperation == null ? placeOfOperation = new ArrayList<>() : placeOfOperation;
 	}
 
-	public void setPlaceOfOperation(List<com.tools20022.repository.entity.Location> placeOfOperation) {
-		this.placeOfOperation = placeOfOperation;
+	public Organisation setPlaceOfOperation(List<com.tools20022.repository.entity.Location> placeOfOperation) {
+		this.placeOfOperation = Objects.requireNonNull(placeOfOperation);
+		return this;
 	}
 
-	public Location getPlaceOfRegistration() {
-		return placeOfRegistration;
+	public Optional<Location> getPlaceOfRegistration() {
+		return placeOfRegistration == null ? Optional.empty() : Optional.of(placeOfRegistration);
 	}
 
-	public void setPlaceOfRegistration(com.tools20022.repository.entity.Location placeOfRegistration) {
+	public Organisation setPlaceOfRegistration(com.tools20022.repository.entity.Location placeOfRegistration) {
 		this.placeOfRegistration = placeOfRegistration;
+		return this;
 	}
 
 	public Max350Text getDescription() {
 		return description;
 	}
 
-	public void setDescription(Max350Text description) {
-		this.description = description;
+	public Organisation setDescription(Max350Text description) {
+		this.description = Objects.requireNonNull(description);
+		return this;
 	}
 
 	public LegalStructureCode getLegalStructure() {
 		return legalStructure;
 	}
 
-	public void setLegalStructure(LegalStructureCode legalStructure) {
-		this.legalStructure = legalStructure;
+	public Organisation setLegalStructure(LegalStructureCode legalStructure) {
+		this.legalStructure = Objects.requireNonNull(legalStructure);
+		return this;
 	}
 
 	public Sector getSector() {
 		return sector;
 	}
 
-	public void setSector(com.tools20022.repository.entity.Sector sector) {
-		this.sector = sector;
+	public Organisation setSector(com.tools20022.repository.entity.Sector sector) {
+		this.sector = Objects.requireNonNull(sector);
+		return this;
 	}
 
-	public BuyOrSellIndicationOfInterest getRelatedIndicationOfInterest() {
-		return relatedIndicationOfInterest;
+	public Optional<BuyOrSellIndicationOfInterest> getRelatedIndicationOfInterest() {
+		return relatedIndicationOfInterest == null ? Optional.empty() : Optional.of(relatedIndicationOfInterest);
 	}
 
-	public void setRelatedIndicationOfInterest(com.tools20022.repository.entity.BuyOrSellIndicationOfInterest relatedIndicationOfInterest) {
+	public Organisation setRelatedIndicationOfInterest(BuyOrSellIndicationOfInterest relatedIndicationOfInterest) {
 		this.relatedIndicationOfInterest = relatedIndicationOfInterest;
+		return this;
 	}
 
-	public OrganisationStrategy getStrategy() {
-		return strategy;
+	public Optional<OrganisationStrategy> getStrategy() {
+		return strategy == null ? Optional.empty() : Optional.of(strategy);
 	}
 
-	public void setStrategy(com.tools20022.repository.entity.OrganisationStrategy strategy) {
+	public Organisation setStrategy(OrganisationStrategy strategy) {
 		this.strategy = strategy;
+		return this;
 	}
 
 	public OrganisationHierarchy getOrganisationHierarchy() {
 		return organisationHierarchy;
 	}
 
-	public void setOrganisationHierarchy(com.tools20022.repository.entity.OrganisationHierarchy organisationHierarchy) {
-		this.organisationHierarchy = organisationHierarchy;
+	public Organisation setOrganisationHierarchy(com.tools20022.repository.entity.OrganisationHierarchy organisationHierarchy) {
+		this.organisationHierarchy = Objects.requireNonNull(organisationHierarchy);
+		return this;
 	}
 
 	public RepresentativeOfficer getRepresentativeOfficer() {
 		return representativeOfficer;
 	}
 
-	public void setRepresentativeOfficer(com.tools20022.repository.entity.RepresentativeOfficer representativeOfficer) {
-		this.representativeOfficer = representativeOfficer;
+	public Organisation setRepresentativeOfficer(com.tools20022.repository.entity.RepresentativeOfficer representativeOfficer) {
+		this.representativeOfficer = Objects.requireNonNull(representativeOfficer);
+		return this;
 	}
 
 	public ISODate getEstablishmentDate() {
 		return establishmentDate;
 	}
 
-	public void setEstablishmentDate(ISODate establishmentDate) {
-		this.establishmentDate = establishmentDate;
+	public Organisation setEstablishmentDate(ISODate establishmentDate) {
+		this.establishmentDate = Objects.requireNonNull(establishmentDate);
+		return this;
 	}
 }

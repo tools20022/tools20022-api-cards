@@ -21,11 +21,13 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.entity.CorporateActionServicing;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Services which consists in notifying the investor or its agent of a meeting,
@@ -85,8 +87,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -102,10 +104,10 @@ import java.util.List;
 public class MeetingServicing extends CorporateActionServicing {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.Meeting> meetingSpecification;
+	protected List<Meeting> meetingSpecification;
 	/**
-	 * Meeting for which services are provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -135,7 +137,7 @@ public class MeetingServicing extends CorporateActionServicing {
 	 * definition} = "Meeting for which services are provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMeetingSpecification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MeetingServicing, List<Meeting>> mmMeetingSpecification = new MMBusinessAssociationEnd<MeetingServicing, List<Meeting>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
@@ -143,17 +145,25 @@ public class MeetingServicing extends CorporateActionServicing {
 			name = "MeetingSpecification";
 			definition = "Meeting for which services are provided.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.mmMeetingServicing;
+			opposite_lazy = () -> Meeting.mmMeetingServicing;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
+			type_lazy = () -> Meeting.mmObject();
+		}
+
+		@Override
+		public List<Meeting> getValue(MeetingServicing obj) {
+			return obj.getMeetingSpecification();
+		}
+
+		@Override
+		public void setValue(MeetingServicing obj, List<Meeting> value) {
+			obj.setMeetingSpecification(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.MeetingNotice> meetingNotice;
 	/**
-	 * Service which consists in notifying the investor of a meeting. It may
-	 * contain details of the meeting as defined by the agent in addition to the
-	 * details defined by the issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -186,7 +196,7 @@ public class MeetingServicing extends CorporateActionServicing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMeetingNotice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MeetingServicing, List<MeetingNotice>> mmMeetingNotice = new MMBusinessAssociationEnd<MeetingServicing, List<MeetingNotice>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
@@ -198,11 +208,21 @@ public class MeetingServicing extends CorporateActionServicing {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.MeetingNotice.mmObject();
 		}
+
+		@Override
+		public List<MeetingNotice> getValue(MeetingServicing obj) {
+			return obj.getMeetingNotice();
+		}
+
+		@Override
+		public void setValue(MeetingServicing obj, List<MeetingNotice> value) {
+			obj.setMeetingNotice(value);
+		}
 	};
 	protected List<com.tools20022.repository.entity.MeetingEntitlement> meetingEntitlement;
 	/**
-	 * Calculation of the entitlementbased on the balance in the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -234,7 +254,7 @@ public class MeetingServicing extends CorporateActionServicing {
 	 * "Calculation of the entitlementbased on the balance in the account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMeetingEntitlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MeetingServicing, List<MeetingEntitlement>> mmMeetingEntitlement = new MMBusinessAssociationEnd<MeetingServicing, List<MeetingEntitlement>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
@@ -246,12 +266,21 @@ public class MeetingServicing extends CorporateActionServicing {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.MeetingEntitlement.mmObject();
 		}
+
+		@Override
+		public List<MeetingEntitlement> getValue(MeetingServicing obj) {
+			return obj.getMeetingEntitlement();
+		}
+
+		@Override
+		public void setValue(MeetingServicing obj, List<MeetingEntitlement> value) {
+			obj.setMeetingEntitlement(value);
+		}
 	};
-	protected List<com.tools20022.repository.entity.InstructionForMeeting> meetingInstruction;
+	protected List<InstructionForMeeting> meetingInstruction;
 	/**
-	 * Service which consists in validating, calculating and transferring the
-	 * investor's instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -285,7 +314,7 @@ public class MeetingServicing extends CorporateActionServicing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMeetingInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MeetingServicing, List<InstructionForMeeting>> mmMeetingInstruction = new MMBusinessAssociationEnd<MeetingServicing, List<InstructionForMeeting>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
@@ -293,16 +322,25 @@ public class MeetingServicing extends CorporateActionServicing {
 			name = "MeetingInstruction";
 			definition = "Service which consists in validating, calculating and transferring the investor's instruction.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmRelatedServicing;
+			opposite_lazy = () -> InstructionForMeeting.mmRelatedServicing;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InstructionForMeeting.mmObject();
+			type_lazy = () -> InstructionForMeeting.mmObject();
+		}
+
+		@Override
+		public List<InstructionForMeeting> getValue(MeetingServicing obj) {
+			return obj.getMeetingInstruction();
+		}
+
+		@Override
+		public void setValue(MeetingServicing obj, List<InstructionForMeeting> value) {
+			obj.setMeetingInstruction(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.MeetingResultDissemination> meetingResultDissemination;
 	/**
-	 * Service which consists in distributing the results of the meeting to the
-	 * investor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -336,7 +374,7 @@ public class MeetingServicing extends CorporateActionServicing {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMeetingResultDissemination = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MeetingServicing, List<MeetingResultDissemination>> mmMeetingResultDissemination = new MMBusinessAssociationEnd<MeetingServicing, List<MeetingResultDissemination>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingServicing.mmObject();
@@ -348,18 +386,27 @@ public class MeetingServicing extends CorporateActionServicing {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.MeetingResultDissemination.mmObject();
 		}
+
+		@Override
+		public List<MeetingResultDissemination> getValue(MeetingServicing obj) {
+			return obj.getMeetingResultDissemination();
+		}
+
+		@Override
+		public void setValue(MeetingServicing obj, List<MeetingResultDissemination> value) {
+			obj.setMeetingResultDissemination(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingServicing";
 				definition = "Services which consists in notifying the investor or its agent of a meeting, in validating and relaying its instructions and in calculating its entitlement based on its holdings.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Meeting.mmMeetingServicing, com.tools20022.repository.entity.MeetingNotice.mmRelatedServicing,
-						com.tools20022.repository.entity.MeetingEntitlement.mmRelatedServicing, com.tools20022.repository.entity.InstructionForMeeting.mmRelatedServicing,
-						com.tools20022.repository.entity.MeetingResultDissemination.mmRelatedServicing);
+				associationDomain_lazy = () -> Arrays.asList(Meeting.mmMeetingServicing, com.tools20022.repository.entity.MeetingNotice.mmRelatedServicing, com.tools20022.repository.entity.MeetingEntitlement.mmRelatedServicing,
+						InstructionForMeeting.mmRelatedServicing, com.tools20022.repository.entity.MeetingResultDissemination.mmRelatedServicing);
 				superType_lazy = () -> CorporateActionServicing.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MeetingServicing.mmMeetingSpecification, com.tools20022.repository.entity.MeetingServicing.mmMeetingNotice,
 						com.tools20022.repository.entity.MeetingServicing.mmMeetingEntitlement, com.tools20022.repository.entity.MeetingServicing.mmMeetingInstruction,
@@ -375,42 +422,47 @@ public class MeetingServicing extends CorporateActionServicing {
 	}
 
 	public List<Meeting> getMeetingSpecification() {
-		return meetingSpecification;
+		return meetingSpecification == null ? meetingSpecification = new ArrayList<>() : meetingSpecification;
 	}
 
-	public void setMeetingSpecification(List<com.tools20022.repository.entity.Meeting> meetingSpecification) {
-		this.meetingSpecification = meetingSpecification;
+	public MeetingServicing setMeetingSpecification(List<Meeting> meetingSpecification) {
+		this.meetingSpecification = Objects.requireNonNull(meetingSpecification);
+		return this;
 	}
 
 	public List<MeetingNotice> getMeetingNotice() {
-		return meetingNotice;
+		return meetingNotice == null ? meetingNotice = new ArrayList<>() : meetingNotice;
 	}
 
-	public void setMeetingNotice(List<com.tools20022.repository.entity.MeetingNotice> meetingNotice) {
-		this.meetingNotice = meetingNotice;
+	public MeetingServicing setMeetingNotice(List<com.tools20022.repository.entity.MeetingNotice> meetingNotice) {
+		this.meetingNotice = Objects.requireNonNull(meetingNotice);
+		return this;
 	}
 
 	public List<MeetingEntitlement> getMeetingEntitlement() {
-		return meetingEntitlement;
+		return meetingEntitlement == null ? meetingEntitlement = new ArrayList<>() : meetingEntitlement;
 	}
 
-	public void setMeetingEntitlement(List<com.tools20022.repository.entity.MeetingEntitlement> meetingEntitlement) {
-		this.meetingEntitlement = meetingEntitlement;
+	public MeetingServicing setMeetingEntitlement(List<com.tools20022.repository.entity.MeetingEntitlement> meetingEntitlement) {
+		this.meetingEntitlement = Objects.requireNonNull(meetingEntitlement);
+		return this;
 	}
 
 	public List<InstructionForMeeting> getMeetingInstruction() {
-		return meetingInstruction;
+		return meetingInstruction == null ? meetingInstruction = new ArrayList<>() : meetingInstruction;
 	}
 
-	public void setMeetingInstruction(List<com.tools20022.repository.entity.InstructionForMeeting> meetingInstruction) {
-		this.meetingInstruction = meetingInstruction;
+	public MeetingServicing setMeetingInstruction(List<InstructionForMeeting> meetingInstruction) {
+		this.meetingInstruction = Objects.requireNonNull(meetingInstruction);
+		return this;
 	}
 
 	public List<MeetingResultDissemination> getMeetingResultDissemination() {
-		return meetingResultDissemination;
+		return meetingResultDissemination == null ? meetingResultDissemination = new ArrayList<>() : meetingResultDissemination;
 	}
 
-	public void setMeetingResultDissemination(List<com.tools20022.repository.entity.MeetingResultDissemination> meetingResultDissemination) {
-		this.meetingResultDissemination = meetingResultDissemination;
+	public MeetingServicing setMeetingResultDissemination(List<com.tools20022.repository.entity.MeetingResultDissemination> meetingResultDissemination) {
+		this.meetingResultDissemination = Objects.requireNonNull(meetingResultDissemination);
+		return this;
 	}
 }

@@ -27,6 +27,7 @@ import com.tools20022.repository.entity.ProductQuantity;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,15 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Specifies the quantity of a product in a trade transaction."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Quantity10", propOrder = {"unitOfMeasure", "value"})
 public class Quantity10 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "UnitOfMeasr", required = true)
 	protected UnitOfMeasure3Choice unitOfMeasure;
 	/**
-	 * Specifies a unit of measure with a code or free text.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -102,10 +104,10 @@ public class Quantity10 {
 	 * definition} = "Specifies a unit of measure with a code or free text."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmUnitOfMeasure = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Quantity10, UnitOfMeasure3Choice> mmUnitOfMeasure = new MMMessageAssociationEnd<Quantity10, UnitOfMeasure3Choice>() {
 		{
 			businessElementTrace_lazy = () -> ProductQuantity.mmUnitOfMeasure;
-			componentContext_lazy = () -> Quantity10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Quantity10.mmObject();
 			isDerived = false;
 			xmlTag = "UnitOfMeasr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -116,12 +118,22 @@ public class Quantity10 {
 			isComposite = true;
 			type_lazy = () -> UnitOfMeasure3Choice.mmObject();
 		}
+
+		@Override
+		public UnitOfMeasure3Choice getValue(Quantity10 obj) {
+			return obj.getUnitOfMeasure();
+		}
+
+		@Override
+		public void setValue(Quantity10 obj, UnitOfMeasure3Choice value) {
+			obj.setUnitOfMeasure(value);
+		}
 	};
+	@XmlElement(name = "Val", required = true)
 	protected DecimalNumber value;
 	/**
-	 * Quantity of a product on a line specified by a number. For example, 100
-	 * (kgs), 50 (pieces).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,10 +165,10 @@ public class Quantity10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmValue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Quantity10, DecimalNumber> mmValue = new MMMessageAttribute<Quantity10, DecimalNumber>() {
 		{
 			businessElementTrace_lazy = () -> ProductQuantity.mmValue;
-			componentContext_lazy = () -> Quantity10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Quantity10.mmObject();
 			isDerived = false;
 			xmlTag = "Val";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -166,14 +178,24 @@ public class Quantity10 {
 			minOccurs = 1;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		@Override
+		public DecimalNumber getValue(Quantity10 obj) {
+			return obj.getValue();
+		}
+
+		@Override
+		public void setValue(Quantity10 obj, DecimalNumber value) {
+			obj.setValue(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Quantity10.mmUnitOfMeasure, Quantity10.mmValue);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Quantity10.mmUnitOfMeasure, com.tools20022.repository.msg.Quantity10.mmValue);
 				trace_lazy = () -> ProductQuantity.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Quantity10";
 				definition = "Specifies the quantity of a product in a trade transaction.";
@@ -182,21 +204,21 @@ public class Quantity10 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "UnitOfMeasr", required = true)
 	public UnitOfMeasure3Choice getUnitOfMeasure() {
 		return unitOfMeasure;
 	}
 
-	public void setUnitOfMeasure(UnitOfMeasure3Choice unitOfMeasure) {
-		this.unitOfMeasure = unitOfMeasure;
+	public Quantity10 setUnitOfMeasure(UnitOfMeasure3Choice unitOfMeasure) {
+		this.unitOfMeasure = Objects.requireNonNull(unitOfMeasure);
+		return this;
 	}
 
-	@XmlElement(name = "Val", required = true)
 	public DecimalNumber getValue() {
 		return value;
 	}
 
-	public void setValue(DecimalNumber value) {
-		this.value = value;
+	public Quantity10 setValue(DecimalNumber value) {
+		this.value = Objects.requireNonNull(value);
+		return this;
 	}
 }

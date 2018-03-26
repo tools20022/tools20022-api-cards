@@ -38,28 +38,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason8Code#CardRetained
- * FailureReason8Code.mmCardRetained}</li>
+ * FailureReason8Code.CardRetained}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason8Code#CardCaptured
- * FailureReason8Code.mmCardCaptured}</li>
+ * FailureReason8Code.CardCaptured}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason8Code#CustomerCancel
- * FailureReason8Code.mmCustomerCancel}</li>
+ * FailureReason8Code.CustomerCancel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason8Code#ForgottenCard
- * FailureReason8Code.mmForgottenCard}</li>
+ * FailureReason8Code.ForgottenCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason8Code#Malfunction
- * FailureReason8Code.mmMalfunction}</li>
+ * FailureReason8Code.Malfunction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason8Code#SecurityError
- * FailureReason8Code.mmSecurityError}</li>
+ * FailureReason8Code.SecurityError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason8Code#SuspectedFraud
- * FailureReason8Code.mmSuspectedFraud}</li>
+ * FailureReason8Code.SuspectedFraud}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason8Code#UnableToCapture
- * FailureReason8Code.mmUnableToCapture}</li>
+ * FailureReason8Code.UnableToCapture}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -68,8 +68,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -284,7 +284,7 @@ public class FailureReason8Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FailureReason8Code";
 				definition = "Exception occurring outside the service.";

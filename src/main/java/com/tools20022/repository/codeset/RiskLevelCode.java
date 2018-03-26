@@ -37,18 +37,18 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.RiskLevelCode#High
- * RiskLevelCode.mmHigh}</li>
+ * RiskLevelCode.High}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RiskLevelCode#Medium
- * RiskLevelCode.mmMedium}</li>
+ * RiskLevelCode.Medium}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RiskLevelCode#Low
- * RiskLevelCode.mmLow}</li>
+ * RiskLevelCode.Low}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -100,7 +100,7 @@ public class RiskLevelCode extends MMCode {
 		}
 	};
 	/**
-	 * Medium.
+	 * Medium. .
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -117,14 +117,14 @@ public class RiskLevelCode extends MMCode {
 	 * name} = "Medium"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Medium.\t"</li>
+	 * definition} = "Medium.\t."</li>
 	 * </ul>
 	 */
 	public static final RiskLevelCode Medium = new RiskLevelCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Medium";
-			definition = "Medium.\t";
+			definition = "Medium.\t.";
 			owner_lazy = () -> com.tools20022.repository.codeset.RiskLevelCode.mmObject();
 			codeName = "MEDM";
 		}
@@ -167,7 +167,7 @@ public class RiskLevelCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("HIGH");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RiskLevelCode";

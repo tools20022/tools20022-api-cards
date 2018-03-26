@@ -26,9 +26,10 @@ import com.tools20022.repository.msg.ContentInformationType10;
 import com.tools20022.repository.msg.ContentInformationType15;
 import com.tools20022.repository.msg.Header20;
 import com.tools20022.repository.msg.HostToATMRequest1;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -78,16 +79,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "HostToATMRequestV01", propOrder = {"header", "protectedHostToATMRequest", "hostToATMRequest", "securityTrailer"})
 public class HostToATMRequestV01 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header20 header;
 	/**
-	 * Information related to the protocol management on a segment of the path
-	 * from the ATM to the acquirer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,7 +110,7 @@ public class HostToATMRequestV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<HostToATMRequestV01, Header20> mmHeader = new MMMessageBuildingBlock<HostToATMRequestV01, Header20>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,18 +121,21 @@ public class HostToATMRequestV01 {
 			complexType_lazy = () -> Header20.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return HostToATMRequestV01.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header20 getValue(HostToATMRequestV01 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(HostToATMRequestV01 obj, Header20 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "PrtctdHstToATMReq")
 	protected ContentInformationType10 protectedHostToATMRequest;
 	/**
-	 * Encrypted body of the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,7 +156,7 @@ public class HostToATMRequestV01 {
 	 * definition} = "Encrypted body of the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmProtectedHostToATMRequest = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<HostToATMRequestV01, Optional<ContentInformationType10>> mmProtectedHostToATMRequest = new MMMessageBuildingBlock<HostToATMRequestV01, Optional<ContentInformationType10>>() {
 		{
 			xmlTag = "PrtctdHstToATMReq";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,18 +167,21 @@ public class HostToATMRequestV01 {
 			complexType_lazy = () -> ContentInformationType10.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return HostToATMRequestV01.class.getMethod("getProtectedHostToATMRequest", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType10> getValue(HostToATMRequestV01 obj) {
+			return obj.getProtectedHostToATMRequest();
+		}
+
+		@Override
+		public void setValue(HostToATMRequestV01 obj, Optional<ContentInformationType10> value) {
+			obj.setProtectedHostToATMRequest(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "HstToATMReq")
 	protected HostToATMRequest1 hostToATMRequest;
 	/**
-	 * Information related to the request to an ATM to contact the ATM manager.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -197,7 +204,7 @@ public class HostToATMRequestV01 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHostToATMRequest = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<HostToATMRequestV01, Optional<HostToATMRequest1>> mmHostToATMRequest = new MMMessageBuildingBlock<HostToATMRequestV01, Optional<HostToATMRequest1>>() {
 		{
 			xmlTag = "HstToATMReq";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -208,18 +215,21 @@ public class HostToATMRequestV01 {
 			complexType_lazy = () -> HostToATMRequest1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return HostToATMRequestV01.class.getMethod("getHostToATMRequest", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<HostToATMRequest1> getValue(HostToATMRequestV01 obj) {
+			return obj.getHostToATMRequest();
+		}
+
+		@Override
+		public void setValue(HostToATMRequestV01 obj, Optional<HostToATMRequest1> value) {
+			obj.setHostToATMRequest(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SctyTrlr")
 	protected ContentInformationType15 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -240,7 +250,7 @@ public class HostToATMRequestV01 {
 	 * definition} = "Trailer of the message containing a MAC."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<HostToATMRequestV01, Optional<ContentInformationType15>> mmSecurityTrailer = new MMMessageBuildingBlock<HostToATMRequestV01, Optional<ContentInformationType15>>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -251,12 +261,14 @@ public class HostToATMRequestV01 {
 			complexType_lazy = () -> ContentInformationType15.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return HostToATMRequestV01.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType15> getValue(HostToATMRequestV01 obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(HostToATMRequestV01 obj, Optional<ContentInformationType15> value) {
+			obj.setSecurityTrailer(value.orElse(null));
 		}
 	};
 
@@ -289,43 +301,43 @@ public class HostToATMRequestV01 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header20 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header20 header) {
-		this.header = header;
+	public HostToATMRequestV01 setHeader(Header20 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "PrtctdHstToATMReq")
-	public ContentInformationType10 getProtectedHostToATMRequest() {
-		return protectedHostToATMRequest;
+	public Optional<ContentInformationType10> getProtectedHostToATMRequest() {
+		return protectedHostToATMRequest == null ? Optional.empty() : Optional.of(protectedHostToATMRequest);
 	}
 
-	public void setProtectedHostToATMRequest(ContentInformationType10 protectedHostToATMRequest) {
+	public HostToATMRequestV01 setProtectedHostToATMRequest(ContentInformationType10 protectedHostToATMRequest) {
 		this.protectedHostToATMRequest = protectedHostToATMRequest;
+		return this;
 	}
 
-	@XmlElement(name = "HstToATMReq")
-	public HostToATMRequest1 getHostToATMRequest() {
-		return hostToATMRequest;
+	public Optional<HostToATMRequest1> getHostToATMRequest() {
+		return hostToATMRequest == null ? Optional.empty() : Optional.of(hostToATMRequest);
 	}
 
-	public void setHostToATMRequest(HostToATMRequest1 hostToATMRequest) {
+	public HostToATMRequestV01 setHostToATMRequest(HostToATMRequest1 hostToATMRequest) {
 		this.hostToATMRequest = hostToATMRequest;
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr")
-	public ContentInformationType15 getSecurityTrailer() {
-		return securityTrailer;
+	public Optional<ContentInformationType15> getSecurityTrailer() {
+		return securityTrailer == null ? Optional.empty() : Optional.of(securityTrailer);
 	}
 
-	public void setSecurityTrailer(ContentInformationType15 securityTrailer) {
+	public HostToATMRequestV01 setSecurityTrailer(ContentInformationType15 securityTrailer) {
 		this.securityTrailer = securityTrailer;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:caam.007.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:caam.007.001.01")
 	static public class Document {
 		@XmlElement(name = "HstToATMReq", required = true)
 		public HostToATMRequestV01 messageBody;

@@ -28,6 +28,8 @@ import com.tools20022.repository.entity.CardPaymentAcquiring;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,8 +63,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,15 +81,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ActionMessage2", propOrder = {"messageDestination", "format", "messageContent", "messageContentSignature"})
 public class ActionMessage2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MsgDstn", required = true)
 	protected UserInterface4Code messageDestination;
 	/**
-	 * Destination of the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -125,10 +128,10 @@ public class ActionMessage2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMessageDestination = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ActionMessage2, UserInterface4Code> mmMessageDestination = new MMMessageAttribute<ActionMessage2, UserInterface4Code>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmPointOfInteraction;
-			componentContext_lazy = () -> ActionMessage2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ActionMessage2.mmObject();
 			isDerived = false;
 			xmlTag = "MsgDstn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -139,11 +142,22 @@ public class ActionMessage2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> UserInterface4Code.mmObject();
 		}
+
+		@Override
+		public UserInterface4Code getValue(ActionMessage2 obj) {
+			return obj.getMessageDestination();
+		}
+
+		@Override
+		public void setValue(ActionMessage2 obj, UserInterface4Code value) {
+			obj.setMessageDestination(value);
+		}
 	};
+	@XmlElement(name = "Frmt")
 	protected OutputFormat1Code format;
 	/**
-	 * Message format.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -175,9 +189,9 @@ public class ActionMessage2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFormat = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ActionMessage2, Optional<OutputFormat1Code>> mmFormat = new MMMessageAttribute<ActionMessage2, Optional<OutputFormat1Code>>() {
 		{
-			componentContext_lazy = () -> ActionMessage2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ActionMessage2.mmObject();
 			isDerived = false;
 			xmlTag = "Frmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -188,11 +202,22 @@ public class ActionMessage2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> OutputFormat1Code.mmObject();
 		}
+
+		@Override
+		public Optional<OutputFormat1Code> getValue(ActionMessage2 obj) {
+			return obj.getFormat();
+		}
+
+		@Override
+		public void setValue(ActionMessage2 obj, Optional<OutputFormat1Code> value) {
+			obj.setFormat(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MsgCntt", required = true)
 	protected Max20000Text messageContent;
 	/**
-	 * Content or reference of the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -229,10 +254,10 @@ public class ActionMessage2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMessageContent = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ActionMessage2, Max20000Text> mmMessageContent = new MMMessageAttribute<ActionMessage2, Max20000Text>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmActionMessage;
-			componentContext_lazy = () -> ActionMessage2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ActionMessage2.mmObject();
 			isDerived = false;
 			xmlTag = "MsgCntt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -243,11 +268,22 @@ public class ActionMessage2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max20000Text.mmObject();
 		}
+
+		@Override
+		public Max20000Text getValue(ActionMessage2 obj) {
+			return obj.getMessageContent();
+		}
+
+		@Override
+		public void setValue(ActionMessage2 obj, Max20000Text value) {
+			obj.setMessageContent(value);
+		}
 	};
+	@XmlElement(name = "MsgCnttSgntr")
 	protected Max140Binary messageContentSignature;
 	/**
-	 * Digital signature of the message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -272,9 +308,9 @@ public class ActionMessage2 {
 	 * definition} = "Digital signature of the message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMessageContentSignature = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ActionMessage2, Optional<Max140Binary>> mmMessageContentSignature = new MMMessageAttribute<ActionMessage2, Optional<Max140Binary>>() {
 		{
-			componentContext_lazy = () -> ActionMessage2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ActionMessage2.mmObject();
 			isDerived = false;
 			xmlTag = "MsgCnttSgntr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -284,14 +320,25 @@ public class ActionMessage2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Binary.mmObject();
 		}
+
+		@Override
+		public Optional<Max140Binary> getValue(ActionMessage2 obj) {
+			return obj.getMessageContentSignature();
+		}
+
+		@Override
+		public void setValue(ActionMessage2 obj, Optional<Max140Binary> value) {
+			obj.setMessageContentSignature(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ActionMessage2.mmMessageDestination, ActionMessage2.mmFormat, ActionMessage2.mmMessageContent, ActionMessage2.mmMessageContentSignature);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ActionMessage2.mmMessageDestination, com.tools20022.repository.msg.ActionMessage2.mmFormat,
+						com.tools20022.repository.msg.ActionMessage2.mmMessageContent, com.tools20022.repository.msg.ActionMessage2.mmMessageContentSignature);
 				trace_lazy = () -> CardPaymentAcquiring.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ActionMessage2";
 				definition = "Information to display, print or store.";
@@ -301,39 +348,39 @@ public class ActionMessage2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MsgDstn", required = true)
 	public UserInterface4Code getMessageDestination() {
 		return messageDestination;
 	}
 
-	public void setMessageDestination(UserInterface4Code messageDestination) {
-		this.messageDestination = messageDestination;
+	public ActionMessage2 setMessageDestination(UserInterface4Code messageDestination) {
+		this.messageDestination = Objects.requireNonNull(messageDestination);
+		return this;
 	}
 
-	@XmlElement(name = "Frmt")
-	public OutputFormat1Code getFormat() {
-		return format;
+	public Optional<OutputFormat1Code> getFormat() {
+		return format == null ? Optional.empty() : Optional.of(format);
 	}
 
-	public void setFormat(OutputFormat1Code format) {
+	public ActionMessage2 setFormat(OutputFormat1Code format) {
 		this.format = format;
+		return this;
 	}
 
-	@XmlElement(name = "MsgCntt", required = true)
 	public Max20000Text getMessageContent() {
 		return messageContent;
 	}
 
-	public void setMessageContent(Max20000Text messageContent) {
-		this.messageContent = messageContent;
+	public ActionMessage2 setMessageContent(Max20000Text messageContent) {
+		this.messageContent = Objects.requireNonNull(messageContent);
+		return this;
 	}
 
-	@XmlElement(name = "MsgCnttSgntr")
-	public Max140Binary getMessageContentSignature() {
-		return messageContentSignature;
+	public Optional<Max140Binary> getMessageContentSignature() {
+		return messageContentSignature == null ? Optional.empty() : Optional.of(messageContentSignature);
 	}
 
-	public void setMessageContentSignature(Max140Binary messageContentSignature) {
+	public ActionMessage2 setMessageContentSignature(Max140Binary messageContentSignature) {
 		this.messageContentSignature = messageContentSignature;
+		return this;
 	}
 }

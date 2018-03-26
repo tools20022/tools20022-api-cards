@@ -38,20 +38,20 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VerificationCode#TechnicalError
- * VerificationCode.mmTechnicalError}</li>
+ * VerificationCode.TechnicalError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VerificationCode#Successful
- * VerificationCode.mmSuccessful}</li>
+ * VerificationCode.Successful}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VerificationCode#PartialMatch
- * VerificationCode.mmPartialMatch}</li>
+ * VerificationCode.PartialMatch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.VerificationCode#NotPerformed
- * VerificationCode.mmNotPerformed}</li>
+ * VerificationCode.NotPerformed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.VerificationCode#Missing
- * VerificationCode.mmMissing}</li>
+ * VerificationCode.Missing}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.VerificationCode#Failed
- * VerificationCode.mmFailed}</li>
+ * VerificationCode.Failed}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -64,8 +64,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -270,7 +270,7 @@ public class VerificationCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "VerificationCode";
 				definition = "Result of a verification.";

@@ -37,48 +37,48 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.KeyUsageCode#Encryption
- * KeyUsageCode.mmEncryption}</li>
+ * KeyUsageCode.Encryption}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.KeyUsageCode#Decryption
- * KeyUsageCode.mmDecryption}</li>
+ * KeyUsageCode.Decryption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsageCode#DataEncryption
- * KeyUsageCode.mmDataEncryption}</li>
+ * KeyUsageCode.DataEncryption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsageCode#DataDecryption
- * KeyUsageCode.mmDataDecryption}</li>
+ * KeyUsageCode.DataDecryption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsageCode#TranslateOutput
- * KeyUsageCode.mmTranslateOutput}</li>
+ * KeyUsageCode.TranslateOutput}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsageCode#TranslateInput
- * KeyUsageCode.mmTranslateInput}</li>
+ * KeyUsageCode.TranslateInput}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsageCode#MessageAuthenticationCodeGeneration
- * KeyUsageCode.mmMessageAuthenticationCodeGeneration}</li>
+ * KeyUsageCode.MessageAuthenticationCodeGeneration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsageCode#MessageAuthenticationCodeVerification
- * KeyUsageCode.mmMessageAuthenticationCodeVerification}</li>
+ * KeyUsageCode.MessageAuthenticationCodeVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsageCode#SignatureGeneration
- * KeyUsageCode.mmSignatureGeneration}</li>
+ * KeyUsageCode.SignatureGeneration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsageCode#SignatureVerification
- * KeyUsageCode.mmSignatureVerification}</li>
+ * KeyUsageCode.SignatureVerification}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.KeyUsageCode#PINEncryption
- * KeyUsageCode.mmPINEncryption}</li>
+ * KeyUsageCode.PINEncryption}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.KeyUsageCode#PINDecryption
- * KeyUsageCode.mmPINDecryption}</li>
+ * KeyUsageCode.PINDecryption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.KeyUsageCode#PINVerification
- * KeyUsageCode.mmPINVerification}</li>
+ * KeyUsageCode.PINVerification}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.KeyUsageCode#KeyGeneration
- * KeyUsageCode.mmKeyGeneration}</li>
+ * KeyUsageCode.KeyGeneration}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.KeyUsageCode#KeyImport
- * KeyUsageCode.mmKeyImport}</li>
+ * KeyUsageCode.KeyImport}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.KeyUsageCode#KeyExport
- * KeyUsageCode.mmKeyExport}</li>
+ * KeyUsageCode.KeyExport}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.KeyUsageCode#KeyDerivation
- * KeyUsageCode.mmKeyDerivation}</li>
+ * KeyUsageCode.KeyDerivation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -91,8 +91,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -614,7 +614,7 @@ public class KeyUsageCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ENCR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "KeyUsageCode";

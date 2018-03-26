@@ -30,19 +30,19 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
- * Result of the performed service..
+ * Result of the performed service.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.Response4Code#Approved
- * Response4Code.mmApproved}</li>
+ * Response4Code.Approved}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Response4Code#Declined
- * Response4Code.mmDeclined}</li>
+ * Response4Code.Declined}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Response4Code#PartialApproved
- * Response4Code.mmPartialApproved}</li>
+ * Response4Code.PartialApproved}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -50,8 +50,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -59,7 +59,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "Response4Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Result of the performed service.."</li>
+ * definition} = "Result of the performed service."</li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -146,10 +146,10 @@ public class Response4Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Response4Code";
-				definition = "Result of the performed service..";
+				definition = "Result of the performed service.";
 				trace_lazy = () -> ResponseCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.Response4Code.Approved, com.tools20022.repository.codeset.Response4Code.Declined, com.tools20022.repository.codeset.Response4Code.PartialApproved);
 			}

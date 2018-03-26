@@ -22,8 +22,11 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.cain.NetworkManagementResponse;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CardTransaction12;
+import com.tools20022.repository.msg.CardTransactionEnvironment6;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +61,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,15 +74,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Information related to the response to the network management."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AcquirerNetworkManagementResponse1", propOrder = {"environment", "transaction"})
 public class AcquirerNetworkManagementResponse1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Envt", required = true)
 	protected CardTransactionEnvironment6 environment;
 	/**
-	 * Environment of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -104,9 +108,9 @@ public class AcquirerNetworkManagementResponse1 {
 	 * definition} = "Environment of the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEnvironment = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AcquirerNetworkManagementResponse1, CardTransactionEnvironment6> mmEnvironment = new MMMessageAssociationEnd<AcquirerNetworkManagementResponse1, CardTransactionEnvironment6>() {
 		{
-			componentContext_lazy = () -> AcquirerNetworkManagementResponse1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcquirerNetworkManagementResponse1.mmObject();
 			isDerived = false;
 			xmlTag = "Envt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -115,13 +119,24 @@ public class AcquirerNetworkManagementResponse1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CardTransactionEnvironment6.mmObject();
+			type_lazy = () -> CardTransactionEnvironment6.mmObject();
+		}
+
+		@Override
+		public CardTransactionEnvironment6 getValue(AcquirerNetworkManagementResponse1 obj) {
+			return obj.getEnvironment();
+		}
+
+		@Override
+		public void setValue(AcquirerNetworkManagementResponse1 obj, CardTransactionEnvironment6 value) {
+			obj.setEnvironment(value);
 		}
 	};
+	@XmlElement(name = "Tx", required = true)
 	protected CardTransaction12 transaction;
 	/**
-	 * Network management transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -145,9 +160,9 @@ public class AcquirerNetworkManagementResponse1 {
 	 * definition} = "Network management transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransaction = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AcquirerNetworkManagementResponse1, CardTransaction12> mmTransaction = new MMMessageAssociationEnd<AcquirerNetworkManagementResponse1, CardTransaction12>() {
 		{
-			componentContext_lazy = () -> AcquirerNetworkManagementResponse1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcquirerNetworkManagementResponse1.mmObject();
 			isDerived = false;
 			xmlTag = "Tx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -156,16 +171,26 @@ public class AcquirerNetworkManagementResponse1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CardTransaction12.mmObject();
+			type_lazy = () -> CardTransaction12.mmObject();
+		}
+
+		@Override
+		public CardTransaction12 getValue(AcquirerNetworkManagementResponse1 obj) {
+			return obj.getTransaction();
+		}
+
+		@Override
+		public void setValue(AcquirerNetworkManagementResponse1 obj, CardTransaction12 value) {
+			obj.setTransaction(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AcquirerNetworkManagementResponse1.mmEnvironment, AcquirerNetworkManagementResponse1.mmTransaction);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AcquirerNetworkManagementResponse1.mmEnvironment, com.tools20022.repository.msg.AcquirerNetworkManagementResponse1.mmTransaction);
 				messageBuildingBlock_lazy = () -> Arrays.asList(NetworkManagementResponse.mmNetworkManagementResponse);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AcquirerNetworkManagementResponse1";
 				definition = "Information related to the response to the network management.";
@@ -174,21 +199,21 @@ public class AcquirerNetworkManagementResponse1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Envt", required = true)
 	public CardTransactionEnvironment6 getEnvironment() {
 		return environment;
 	}
 
-	public void setEnvironment(com.tools20022.repository.msg.CardTransactionEnvironment6 environment) {
-		this.environment = environment;
+	public AcquirerNetworkManagementResponse1 setEnvironment(CardTransactionEnvironment6 environment) {
+		this.environment = Objects.requireNonNull(environment);
+		return this;
 	}
 
-	@XmlElement(name = "Tx", required = true)
 	public CardTransaction12 getTransaction() {
 		return transaction;
 	}
 
-	public void setTransaction(com.tools20022.repository.msg.CardTransaction12 transaction) {
-		this.transaction = transaction;
+	public AcquirerNetworkManagementResponse1 setTransaction(CardTransaction12 transaction) {
+		this.transaction = Objects.requireNonNull(transaction);
+		return this;
 	}
 }

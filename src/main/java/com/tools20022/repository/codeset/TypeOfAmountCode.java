@@ -37,90 +37,90 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Cashback
- * TypeOfAmountCode.mmCashback}</li>
+ * TypeOfAmountCode.Cashback}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Gratuity
- * TypeOfAmountCode.mmGratuity}</li>
+ * TypeOfAmountCode.Gratuity}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Fees
- * TypeOfAmountCode.mmFees}</li>
+ * TypeOfAmountCode.Fees}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Rebates
- * TypeOfAmountCode.mmRebates}</li>
+ * TypeOfAmountCode.Rebates}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#ValueAddedTax
- * TypeOfAmountCode.mmValueAddedTax}</li>
+ * TypeOfAmountCode.ValueAddedTax}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Actual
- * TypeOfAmountCode.mmActual}</li>
+ * TypeOfAmountCode.Actual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Replacement
- * TypeOfAmountCode.mmReplacement}</li>
+ * TypeOfAmountCode.Replacement}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Maximum
- * TypeOfAmountCode.mmMaximum}</li>
+ * TypeOfAmountCode.Maximum}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Default
- * TypeOfAmountCode.mmDefault}</li>
+ * TypeOfAmountCode.Default}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Estimated
- * TypeOfAmountCode.mmEstimated}</li>
+ * TypeOfAmountCode.Estimated}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Original
- * TypeOfAmountCode.mmOriginal}</li>
+ * TypeOfAmountCode.Original}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Surcharge
- * TypeOfAmountCode.mmSurcharge}</li>
+ * TypeOfAmountCode.Surcharge}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#ServiceFee
- * TypeOfAmountCode.mmServiceFee}</li>
+ * TypeOfAmountCode.ServiceFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#InterchangeFee
- * TypeOfAmountCode.mmInterchangeFee}</li>
+ * TypeOfAmountCode.InterchangeFee}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Discount
- * TypeOfAmountCode.mmDiscount}</li>
+ * TypeOfAmountCode.Discount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#ATMCommissionFee
- * TypeOfAmountCode.mmATMCommissionFee}</li>
+ * TypeOfAmountCode.ATMCommissionFee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#AuthorisedAmount
- * TypeOfAmountCode.mmAuthorisedAmount}</li>
+ * TypeOfAmountCode.AuthorisedAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#CardRemainingBalance
- * TypeOfAmountCode.mmCardRemainingBalance}</li>
+ * TypeOfAmountCode.CardRemainingBalance}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#MaximumAllowedAmount
- * TypeOfAmountCode.mmMaximumAllowedAmount}</li>
+ * TypeOfAmountCode.MaximumAllowedAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#MinimumAllowedAmount
- * TypeOfAmountCode.mmMinimumAllowedAmount}</li>
+ * TypeOfAmountCode.MinimumAllowedAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#RequestedAmount
- * TypeOfAmountCode.mmRequestedAmount}</li>
+ * TypeOfAmountCode.RequestedAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#IssuerFees
- * TypeOfAmountCode.mmIssuerFees}</li>
+ * TypeOfAmountCode.IssuerFees}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#IssuerCommission
- * TypeOfAmountCode.mmIssuerCommission}</li>
+ * TypeOfAmountCode.IssuerCommission}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#InterchangeFees
- * TypeOfAmountCode.mmInterchangeFees}</li>
+ * TypeOfAmountCode.InterchangeFees}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#ProcessingFees
- * TypeOfAmountCode.mmProcessingFees}</li>
+ * TypeOfAmountCode.ProcessingFees}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#CurrencyConversionFees
- * TypeOfAmountCode.mmCurrencyConversionFees}</li>
+ * TypeOfAmountCode.CurrencyConversionFees}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#InternationalServiceAssessmentFees
- * TypeOfAmountCode.mmInternationalServiceAssessmentFees}</li>
+ * TypeOfAmountCode.InternationalServiceAssessmentFees}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Commission
- * TypeOfAmountCode.mmCommission}</li>
+ * TypeOfAmountCode.Commission}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Donation
- * TypeOfAmountCode.mmDonation}</li>
+ * TypeOfAmountCode.Donation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Tax
- * TypeOfAmountCode.mmTax}</li>
+ * TypeOfAmountCode.Tax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Incremental
- * TypeOfAmountCode.mmIncremental}</li>
+ * TypeOfAmountCode.Incremental}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Decremental
- * TypeOfAmountCode.mmDecremental}</li>
+ * TypeOfAmountCode.Decremental}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmountCode#Reserved
- * TypeOfAmountCode.mmReserved}</li>
+ * TypeOfAmountCode.Reserved}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -141,8 +141,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -982,14 +982,14 @@ public class TypeOfAmountCode extends MMCode {
 	 * name} = "InternationalServiceAssessmentFees"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "International  service assessment fees."</li>
+	 * definition} = "International service assessment fees."</li>
 	 * </ul>
 	 */
 	public static final TypeOfAmountCode InternationalServiceAssessmentFees = new TypeOfAmountCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "InternationalServiceAssessmentFees";
-			definition = "International  service assessment fees.";
+			definition = "International service assessment fees.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TypeOfAmountCode.mmObject();
 			codeName = "FEEA";
 		}
@@ -1185,7 +1185,7 @@ public class TypeOfAmountCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CSHB");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeOfAmountCode";

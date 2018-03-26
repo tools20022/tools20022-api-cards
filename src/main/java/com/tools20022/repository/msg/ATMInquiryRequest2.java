@@ -22,8 +22,12 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.catp.ATMInquiryRequestV02;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ATMContext14;
+import com.tools20022.repository.msg.ATMEnvironment14;
+import com.tools20022.repository.msg.ATMTransaction29;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +64,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,15 +77,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ATMInquiryRequest2", propOrder = {"environment", "context", "transaction"})
 public class ATMInquiryRequest2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Envt", required = true)
 	protected ATMEnvironment14 environment;
 	/**
-	 * Environment in which the inquiry is performed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -105,9 +110,9 @@ public class ATMInquiryRequest2 {
 	 * definition} = "Environment in which the inquiry is performed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEnvironment = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMInquiryRequest2, ATMEnvironment14> mmEnvironment = new MMMessageAssociationEnd<ATMInquiryRequest2, ATMEnvironment14>() {
 		{
-			componentContext_lazy = () -> ATMInquiryRequest2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMInquiryRequest2.mmObject();
 			isDerived = false;
 			xmlTag = "Envt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -116,13 +121,24 @@ public class ATMInquiryRequest2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMEnvironment14.mmObject();
+			type_lazy = () -> ATMEnvironment14.mmObject();
+		}
+
+		@Override
+		public ATMEnvironment14 getValue(ATMInquiryRequest2 obj) {
+			return obj.getEnvironment();
+		}
+
+		@Override
+		public void setValue(ATMInquiryRequest2 obj, ATMEnvironment14 value) {
+			obj.setEnvironment(value);
 		}
 	};
+	@XmlElement(name = "Cntxt", required = true)
 	protected ATMContext14 context;
 	/**
-	 * Context in which the inquiry is performed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -146,9 +162,9 @@ public class ATMInquiryRequest2 {
 	 * definition} = "Context in which the inquiry is performed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmContext = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMInquiryRequest2, ATMContext14> mmContext = new MMMessageAssociationEnd<ATMInquiryRequest2, ATMContext14>() {
 		{
-			componentContext_lazy = () -> ATMInquiryRequest2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMInquiryRequest2.mmObject();
 			isDerived = false;
 			xmlTag = "Cntxt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -157,13 +173,24 @@ public class ATMInquiryRequest2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMContext14.mmObject();
+			type_lazy = () -> ATMContext14.mmObject();
+		}
+
+		@Override
+		public ATMContext14 getValue(ATMInquiryRequest2 obj) {
+			return obj.getContext();
+		}
+
+		@Override
+		public void setValue(ATMInquiryRequest2 obj, ATMContext14 value) {
+			obj.setContext(value);
 		}
 	};
+	@XmlElement(name = "Tx", required = true)
 	protected ATMTransaction29 transaction;
 	/**
-	 * Inquiry information for the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -187,9 +214,9 @@ public class ATMInquiryRequest2 {
 	 * definition} = "Inquiry information for the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransaction = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMInquiryRequest2, ATMTransaction29> mmTransaction = new MMMessageAssociationEnd<ATMInquiryRequest2, ATMTransaction29>() {
 		{
-			componentContext_lazy = () -> ATMInquiryRequest2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMInquiryRequest2.mmObject();
 			isDerived = false;
 			xmlTag = "Tx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -198,16 +225,27 @@ public class ATMInquiryRequest2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMTransaction29.mmObject();
+			type_lazy = () -> ATMTransaction29.mmObject();
+		}
+
+		@Override
+		public ATMTransaction29 getValue(ATMInquiryRequest2 obj) {
+			return obj.getTransaction();
+		}
+
+		@Override
+		public void setValue(ATMInquiryRequest2 obj, ATMTransaction29 value) {
+			obj.setTransaction(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ATMInquiryRequest2.mmEnvironment, ATMInquiryRequest2.mmContext, ATMInquiryRequest2.mmTransaction);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ATMInquiryRequest2.mmEnvironment, com.tools20022.repository.msg.ATMInquiryRequest2.mmContext,
+						com.tools20022.repository.msg.ATMInquiryRequest2.mmTransaction);
 				messageBuildingBlock_lazy = () -> Arrays.asList(ATMInquiryRequestV02.mmATMInquiryRequest);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMInquiryRequest2";
 				definition = "Information related to the request of an inquiry from an ATM.";
@@ -216,30 +254,30 @@ public class ATMInquiryRequest2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Envt", required = true)
 	public ATMEnvironment14 getEnvironment() {
 		return environment;
 	}
 
-	public void setEnvironment(com.tools20022.repository.msg.ATMEnvironment14 environment) {
-		this.environment = environment;
+	public ATMInquiryRequest2 setEnvironment(ATMEnvironment14 environment) {
+		this.environment = Objects.requireNonNull(environment);
+		return this;
 	}
 
-	@XmlElement(name = "Cntxt", required = true)
 	public ATMContext14 getContext() {
 		return context;
 	}
 
-	public void setContext(com.tools20022.repository.msg.ATMContext14 context) {
-		this.context = context;
+	public ATMInquiryRequest2 setContext(ATMContext14 context) {
+		this.context = Objects.requireNonNull(context);
+		return this;
 	}
 
-	@XmlElement(name = "Tx", required = true)
 	public ATMTransaction29 getTransaction() {
 		return transaction;
 	}
 
-	public void setTransaction(com.tools20022.repository.msg.ATMTransaction29 transaction) {
-		this.transaction = transaction;
+	public ATMInquiryRequest2 setTransaction(ATMTransaction29 transaction) {
+		this.transaction = Objects.requireNonNull(transaction);
+		return this;
 	}
 }

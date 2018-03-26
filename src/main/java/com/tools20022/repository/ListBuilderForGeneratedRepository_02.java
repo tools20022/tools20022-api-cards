@@ -317,7 +317,7 @@ class ListBuilderForGeneratedRepository_02 {
 		list.add((T) PendingSettlementStatusReasonCode.mmObject());
 		list.add((T) PaymentPurposeCode.mmObject());
 		list.add((T) Max20000Text.mmObject());
-		list.add((T) UnmatchedStatusReasonCode.mmObject());
+		list.add((T) TransferUnmatchedReasonCode.mmObject());
 		list.add((T) CancelledStatusReasonV2Code.mmObject());
 		list.add((T) PendingFailingReasonCode.mmObject());
 		list.add((T) Max15NumericText.mmObject());

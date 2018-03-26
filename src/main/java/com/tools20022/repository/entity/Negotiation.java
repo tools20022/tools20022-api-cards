@@ -20,11 +20,11 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.TradingMethodCode;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.*;
+import com.tools20022.repository.entity.System;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Decision making on the transfer of a financial instrument.
@@ -79,8 +79,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -96,8 +96,8 @@ public class Negotiation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected TradingMethodCode tradingMethod;
 	/**
-	 * Method used by the trading parties to negotiate and/or execute a deal.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,7 +121,7 @@ public class Negotiation {
 	 * "Method used by the trading parties to negotiate and/or execute a deal."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTradingMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Negotiation, TradingMethodCode> mmTradingMethod = new MMBusinessAttribute<Negotiation, TradingMethodCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
@@ -133,19 +133,20 @@ public class Negotiation {
 			simpleType_lazy = () -> TradingMethodCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Negotiation.class.getMethod("getTradingMethod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TradingMethodCode getValue(Negotiation obj) {
+			return obj.getTradingMethod();
+		}
+
+		@Override
+		public void setValue(Negotiation obj, TradingMethodCode value) {
+			obj.setTradingMethod(value);
 		}
 	};
 	protected Trade tradeExecution;
 	/**
-	 * Execution of a trade as a result of a successful negotiation between two
-	 * trading parties.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -176,7 +177,7 @@ public class Negotiation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTradeExecution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Negotiation, Trade> mmTradeExecution = new MMBusinessAssociationEnd<Negotiation, Trade>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
@@ -185,15 +186,25 @@ public class Negotiation {
 			definition = "Execution of a trade as a result of a successful negotiation between two trading parties.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Trade.mmRelatedNegotiation;
+			opposite_lazy = () -> Trade.mmRelatedNegotiation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
+			type_lazy = () -> Trade.mmObject();
+		}
+
+		@Override
+		public Trade getValue(Negotiation obj) {
+			return obj.getTradeExecution();
+		}
+
+		@Override
+		public void setValue(Negotiation obj, Trade value) {
+			obj.setTradeExecution(value);
 		}
 	};
 	protected System tradingSystem;
 	/**
-	 * Electronic system through which parties are able to negotiate trades.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -223,7 +234,7 @@ public class Negotiation {
 	 * "Electronic system through which parties are able to negotiate trades."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTradingSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Negotiation, Optional<System>> mmTradingSystem = new MMBusinessAssociationEnd<Negotiation, Optional<System>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
@@ -232,15 +243,25 @@ public class Negotiation {
 			definition = "Electronic system through which parties are able to negotiate trades.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.System.mmNegotiation;
+			opposite_lazy = () -> System.mmNegotiation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.System.mmObject();
+			type_lazy = () -> System.mmObject();
+		}
+
+		@Override
+		public Optional<System> getValue(Negotiation obj) {
+			return obj.getTradingSystem();
+		}
+
+		@Override
+		public void setValue(Negotiation obj, Optional<System> value) {
+			obj.setTradingSystem(value.orElse(null));
 		}
 	};
 	protected Max35Text negotiationIdentification;
 	/**
-	 * Reference of a negotiation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -262,7 +283,7 @@ public class Negotiation {
 	 * definition} = "Reference of a negotiation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNegotiationIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Negotiation, Max35Text> mmNegotiationIdentification = new MMBusinessAttribute<Negotiation, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
@@ -274,18 +295,20 @@ public class Negotiation {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Negotiation.class.getMethod("getNegotiationIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Negotiation obj) {
+			return obj.getNegotiationIdentification();
+		}
+
+		@Override
+		public void setValue(Negotiation obj, Max35Text value) {
+			obj.setNegotiationIdentification(value);
 		}
 	};
 	protected Quote quote;
 	/**
-	 * Quote details shown in a negotiation process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -314,7 +337,7 @@ public class Negotiation {
 	 * definition} = "Quote details shown in a negotiation process."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmQuote = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Negotiation, Quote> mmQuote = new MMBusinessAssociationEnd<Negotiation, Quote>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
@@ -323,15 +346,25 @@ public class Negotiation {
 			definition = "Quote details shown in a negotiation process.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Quote.mmRelatedNegotiation;
+			opposite_lazy = () -> Quote.mmRelatedNegotiation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
+			type_lazy = () -> Quote.mmObject();
+		}
+
+		@Override
+		public Quote getValue(Negotiation obj) {
+			return obj.getQuote();
+		}
+
+		@Override
+		public void setValue(Negotiation obj, Quote value) {
+			obj.setQuote(value);
 		}
 	};
 	protected BuyOrSellIndicationOfInterest indicationOfInterest;
 	/**
-	 * Indication of interest process which is the start of the negotiation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -363,7 +396,7 @@ public class Negotiation {
 	 * "Indication of interest process which is the start of the negotiation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIndicationOfInterest = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Negotiation, Optional<BuyOrSellIndicationOfInterest>> mmIndicationOfInterest = new MMBusinessAssociationEnd<Negotiation, Optional<BuyOrSellIndicationOfInterest>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
@@ -372,15 +405,25 @@ public class Negotiation {
 			definition = "Indication of interest process which is the start of the negotiation.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmNegotiationDetails;
+			opposite_lazy = () -> BuyOrSellIndicationOfInterest.mmNegotiationDetails;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmObject();
+			type_lazy = () -> BuyOrSellIndicationOfInterest.mmObject();
+		}
+
+		@Override
+		public Optional<BuyOrSellIndicationOfInterest> getValue(Negotiation obj) {
+			return obj.getIndicationOfInterest();
+		}
+
+		@Override
+		public void setValue(Negotiation obj, Optional<BuyOrSellIndicationOfInterest> value) {
+			obj.setIndicationOfInterest(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesOrder> securitiesOrder;
+	protected List<SecuritiesOrder> securitiesOrder;
 	/**
-	 * Result of a successful negotiation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -410,7 +453,7 @@ public class Negotiation {
 	 * definition} = "Result of a successful negotiation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Negotiation, List<SecuritiesOrder>> mmSecuritiesOrder = new MMBusinessAssociationEnd<Negotiation, List<SecuritiesOrder>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Negotiation.mmObject();
@@ -418,22 +461,30 @@ public class Negotiation {
 			name = "SecuritiesOrder";
 			definition = "Result of a successful negotiation.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmRelatedNegotiation;
+			opposite_lazy = () -> SecuritiesOrder.mmRelatedNegotiation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
+			type_lazy = () -> SecuritiesOrder.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesOrder> getValue(Negotiation obj) {
+			return obj.getSecuritiesOrder();
+		}
+
+		@Override
+		public void setValue(Negotiation obj, List<SecuritiesOrder> value) {
+			obj.setSecuritiesOrder(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Negotiation";
 				definition = "Decision making on the transfer of a financial instrument.";
-				associationDomain_lazy = () -> Arrays
-						.asList(com.tools20022.repository.entity.Trade.mmRelatedNegotiation, com.tools20022.repository.entity.System.mmNegotiation, com.tools20022.repository.entity.SecuritiesOrder.mmRelatedNegotiation,
-								com.tools20022.repository.entity.Quote.mmRelatedNegotiation, com.tools20022.repository.entity.BuyOrSellIndicationOfInterest.mmNegotiationDetails);
+				associationDomain_lazy = () -> Arrays.asList(Trade.mmRelatedNegotiation, System.mmNegotiation, SecuritiesOrder.mmRelatedNegotiation, Quote.mmRelatedNegotiation, BuyOrSellIndicationOfInterest.mmNegotiationDetails);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Negotiation.mmTradingMethod, com.tools20022.repository.entity.Negotiation.mmTradeExecution, com.tools20022.repository.entity.Negotiation.mmTradingSystem,
 						com.tools20022.repository.entity.Negotiation.mmNegotiationIdentification, com.tools20022.repository.entity.Negotiation.mmQuote, com.tools20022.repository.entity.Negotiation.mmIndicationOfInterest,
 						com.tools20022.repository.entity.Negotiation.mmSecuritiesOrder);
@@ -451,55 +502,62 @@ public class Negotiation {
 		return tradingMethod;
 	}
 
-	public void setTradingMethod(TradingMethodCode tradingMethod) {
-		this.tradingMethod = tradingMethod;
+	public Negotiation setTradingMethod(TradingMethodCode tradingMethod) {
+		this.tradingMethod = Objects.requireNonNull(tradingMethod);
+		return this;
 	}
 
 	public Trade getTradeExecution() {
 		return tradeExecution;
 	}
 
-	public void setTradeExecution(com.tools20022.repository.entity.Trade tradeExecution) {
-		this.tradeExecution = tradeExecution;
+	public Negotiation setTradeExecution(Trade tradeExecution) {
+		this.tradeExecution = Objects.requireNonNull(tradeExecution);
+		return this;
 	}
 
-	public System getTradingSystem() {
-		return tradingSystem;
+	public Optional<System> getTradingSystem() {
+		return tradingSystem == null ? Optional.empty() : Optional.of(tradingSystem);
 	}
 
-	public void setTradingSystem(com.tools20022.repository.entity.System tradingSystem) {
+	public Negotiation setTradingSystem(System tradingSystem) {
 		this.tradingSystem = tradingSystem;
+		return this;
 	}
 
 	public Max35Text getNegotiationIdentification() {
 		return negotiationIdentification;
 	}
 
-	public void setNegotiationIdentification(Max35Text negotiationIdentification) {
-		this.negotiationIdentification = negotiationIdentification;
+	public Negotiation setNegotiationIdentification(Max35Text negotiationIdentification) {
+		this.negotiationIdentification = Objects.requireNonNull(negotiationIdentification);
+		return this;
 	}
 
 	public Quote getQuote() {
 		return quote;
 	}
 
-	public void setQuote(com.tools20022.repository.entity.Quote quote) {
-		this.quote = quote;
+	public Negotiation setQuote(Quote quote) {
+		this.quote = Objects.requireNonNull(quote);
+		return this;
 	}
 
-	public BuyOrSellIndicationOfInterest getIndicationOfInterest() {
-		return indicationOfInterest;
+	public Optional<BuyOrSellIndicationOfInterest> getIndicationOfInterest() {
+		return indicationOfInterest == null ? Optional.empty() : Optional.of(indicationOfInterest);
 	}
 
-	public void setIndicationOfInterest(com.tools20022.repository.entity.BuyOrSellIndicationOfInterest indicationOfInterest) {
+	public Negotiation setIndicationOfInterest(BuyOrSellIndicationOfInterest indicationOfInterest) {
 		this.indicationOfInterest = indicationOfInterest;
+		return this;
 	}
 
 	public List<SecuritiesOrder> getSecuritiesOrder() {
-		return securitiesOrder;
+		return securitiesOrder == null ? securitiesOrder = new ArrayList<>() : securitiesOrder;
 	}
 
-	public void setSecuritiesOrder(List<com.tools20022.repository.entity.SecuritiesOrder> securitiesOrder) {
-		this.securitiesOrder = securitiesOrder;
+	public Negotiation setSecuritiesOrder(List<SecuritiesOrder> securitiesOrder) {
+		this.securitiesOrder = Objects.requireNonNull(securitiesOrder);
+		return this;
 	}
 }

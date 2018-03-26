@@ -23,8 +23,11 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.Algorithm8Code;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Parameter5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -50,8 +53,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,15 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Mask generator function cryptographic algorithm and parameters."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AlgorithmIdentification12", propOrder = {"algorithm", "parameter"})
 public class AlgorithmIdentification12 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Algo", required = true)
 	protected Algorithm8Code algorithm;
 	/**
-	 * Mask generator function cryptographic algorithm.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -97,9 +101,9 @@ public class AlgorithmIdentification12 {
 	 * definition} = "Mask generator function cryptographic algorithm."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAlgorithm = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AlgorithmIdentification12, Algorithm8Code> mmAlgorithm = new MMMessageAttribute<AlgorithmIdentification12, Algorithm8Code>() {
 		{
-			componentContext_lazy = () -> AlgorithmIdentification12.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AlgorithmIdentification12.mmObject();
 			isDerived = false;
 			xmlTag = "Algo";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -109,12 +113,22 @@ public class AlgorithmIdentification12 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Algorithm8Code.mmObject();
 		}
+
+		@Override
+		public Algorithm8Code getValue(AlgorithmIdentification12 obj) {
+			return obj.getAlgorithm();
+		}
+
+		@Override
+		public void setValue(AlgorithmIdentification12 obj, Algorithm8Code value) {
+			obj.setAlgorithm(value);
+		}
 	};
+	@XmlElement(name = "Param")
 	protected Parameter5 parameter;
 	/**
-	 * Parameters associated to the mask generator function cryptographic
-	 * algorithm
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -135,30 +149,40 @@ public class AlgorithmIdentification12 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Parameters associated to the mask generator function cryptographic algorithm"
+	 * "Parameters associated to the mask generator function cryptographic algorithm."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmParameter = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AlgorithmIdentification12, Optional<Parameter5>> mmParameter = new MMMessageAssociationEnd<AlgorithmIdentification12, Optional<Parameter5>>() {
 		{
-			componentContext_lazy = () -> AlgorithmIdentification12.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AlgorithmIdentification12.mmObject();
 			isDerived = false;
 			xmlTag = "Param";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Parameter";
-			definition = "Parameters associated to the mask generator function cryptographic algorithm";
+			definition = "Parameters associated to the mask generator function cryptographic algorithm.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Parameter5.mmObject();
+			type_lazy = () -> Parameter5.mmObject();
+		}
+
+		@Override
+		public Optional<Parameter5> getValue(AlgorithmIdentification12 obj) {
+			return obj.getParameter();
+		}
+
+		@Override
+		public void setValue(AlgorithmIdentification12 obj, Optional<Parameter5> value) {
+			obj.setParameter(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AlgorithmIdentification12.mmAlgorithm, AlgorithmIdentification12.mmParameter);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AlgorithmIdentification12.mmAlgorithm, com.tools20022.repository.msg.AlgorithmIdentification12.mmParameter);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AlgorithmIdentification12";
 				definition = "Mask generator function cryptographic algorithm and parameters.";
@@ -167,21 +191,21 @@ public class AlgorithmIdentification12 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Algo", required = true)
 	public Algorithm8Code getAlgorithm() {
 		return algorithm;
 	}
 
-	public void setAlgorithm(Algorithm8Code algorithm) {
-		this.algorithm = algorithm;
+	public AlgorithmIdentification12 setAlgorithm(Algorithm8Code algorithm) {
+		this.algorithm = Objects.requireNonNull(algorithm);
+		return this;
 	}
 
-	@XmlElement(name = "Param")
-	public Parameter5 getParameter() {
-		return parameter;
+	public Optional<Parameter5> getParameter() {
+		return parameter == null ? Optional.empty() : Optional.of(parameter);
 	}
 
-	public void setParameter(com.tools20022.repository.msg.Parameter5 parameter) {
+	public AlgorithmIdentification12 setParameter(Parameter5 parameter) {
 		this.parameter = parameter;
+		return this;
 	}
 }

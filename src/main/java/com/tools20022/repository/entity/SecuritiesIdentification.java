@@ -17,13 +17,16 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.*;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Unique and unambiguous identifier of a security, assigned under a formal or
@@ -138,8 +141,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -155,10 +158,10 @@ import java.util.List;
 public class SecuritiesIdentification {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.Security> identifiedSecurity;
+	protected List<Security> identifiedSecurity;
 	/**
-	 * Security for which an identification is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -188,23 +191,33 @@ public class SecuritiesIdentification {
 	 * definition} = "Security for which an identification is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIdentifiedSecurity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesIdentification, List<Security>> mmIdentifiedSecurity = new MMBusinessAssociationEnd<SecuritiesIdentification, List<Security>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IdentifiedSecurity";
 			definition = "Security for which an identification is provided.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Security.mmIdentification;
+			opposite_lazy = () -> Security.mmIdentification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Security.mmObject();
+			type_lazy = () -> Security.mmObject();
+		}
+
+		@Override
+		public List<Security> getValue(SecuritiesIdentification obj) {
+			return obj.getIdentifiedSecurity();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, List<Security> value) {
+			obj.setIdentifiedSecurity(value);
 		}
 	};
 	protected ISINOct2015Identifier securityIdentification;
 	/**
-	 * Identification of a security by an ISIN.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -228,10 +241,10 @@ public class SecuritiesIdentification {
 	 * definition} = "Identification of a security by an ISIN."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSecurityIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesIdentification, ISINOct2015Identifier> mmSecurityIdentification = new MMBusinessAttribute<SecuritiesIdentification, ISINOct2015Identifier>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SecurityIdentification";
 			definition = "Identification of a security by an ISIN.";
@@ -240,22 +253,20 @@ public class SecuritiesIdentification {
 			simpleType_lazy = () -> ISINOct2015Identifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesIdentification.class.getMethod("getSecurityIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISINOct2015Identifier getValue(SecuritiesIdentification obj) {
+			return obj.getSecurityIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, ISINOct2015Identifier value) {
+			obj.setSecurityIdentification(value);
 		}
 	};
 	protected RICIdentifier rIC;
 	/**
-	 * Reuters Identification Code (RIC). A numbering system used within the
-	 * Reuters system to identify instruments worldwide. The RIC contains an
-	 * X-character market specific code (can be the CUSIP or EPIC codes)
-	 * followed by a full stop, then the two-digit ISO country code, eg, IBM in
-	 * UK is IBM.UK.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -281,10 +292,10 @@ public class SecuritiesIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRIC = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesIdentification, RICIdentifier> mmRIC = new MMBusinessAttribute<SecuritiesIdentification, RICIdentifier>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RIC";
 			definition = "Reuters Identification Code (RIC). A numbering system used within the Reuters system to identify instruments worldwide. The RIC contains an X-character market specific code (can be the CUSIP or EPIC codes) followed by a full stop, then the two-digit ISO country code, eg, IBM in UK is IBM.UK.";
@@ -293,20 +304,20 @@ public class SecuritiesIdentification {
 			simpleType_lazy = () -> RICIdentifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesIdentification.class.getMethod("getRIC", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public RICIdentifier getValue(SecuritiesIdentification obj) {
+			return obj.getRIC();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, RICIdentifier value) {
+			obj.setRIC(value);
 		}
 	};
 	protected TickerIdentifier tickerSymbol;
 	/**
-	 * Letters that identify a stock traded on a stock exchange. The Ticker
-	 * Symbol is a short and convenient way of identifying a stock, eg, RTR.L
-	 * for Reuters quoted in London.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -332,10 +343,10 @@ public class SecuritiesIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTickerSymbol = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesIdentification, TickerIdentifier> mmTickerSymbol = new MMBusinessAttribute<SecuritiesIdentification, TickerIdentifier>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TickerSymbol";
 			definition = "Letters that identify a stock traded on a stock exchange. The Ticker Symbol is a short and convenient way of identifying a stock, eg, RTR.L for Reuters quoted in London.";
@@ -344,18 +355,20 @@ public class SecuritiesIdentification {
 			simpleType_lazy = () -> TickerIdentifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesIdentification.class.getMethod("getTickerSymbol", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TickerIdentifier getValue(SecuritiesIdentification obj) {
+			return obj.getTickerSymbol();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, TickerIdentifier value) {
+			obj.setTickerSymbol(value);
 		}
 	};
 	protected Bloomberg2Identifier bloomberg;
 	/**
-	 * Identifier of a security assigned by the Bloomberg organisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -380,10 +393,10 @@ public class SecuritiesIdentification {
 	 * "Identifier of a security assigned by the Bloomberg organisation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBloomberg = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesIdentification, Bloomberg2Identifier> mmBloomberg = new MMBusinessAttribute<SecuritiesIdentification, Bloomberg2Identifier>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Bloomberg";
 			definition = "Identifier of a security assigned by the Bloomberg organisation.";
@@ -392,18 +405,20 @@ public class SecuritiesIdentification {
 			simpleType_lazy = () -> Bloomberg2Identifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesIdentification.class.getMethod("getBloomberg", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Bloomberg2Identifier getValue(SecuritiesIdentification obj) {
+			return obj.getBloomberg();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, Bloomberg2Identifier value) {
+			obj.setBloomberg(value);
 		}
 	};
 	protected ConsolidatedTapeAssociationIdentifier cTA;
 	/**
-	 * Identifier of a security assigned by the Consolidated Tape Association.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -429,10 +444,10 @@ public class SecuritiesIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCTA = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesIdentification, ConsolidatedTapeAssociationIdentifier> mmCTA = new MMBusinessAttribute<SecuritiesIdentification, ConsolidatedTapeAssociationIdentifier>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CTA";
 			definition = "Identifier of a security assigned by the Consolidated Tape Association.";
@@ -441,19 +456,20 @@ public class SecuritiesIdentification {
 			simpleType_lazy = () -> ConsolidatedTapeAssociationIdentifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesIdentification.class.getMethod("getCTA", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ConsolidatedTapeAssociationIdentifier getValue(SecuritiesIdentification obj) {
+			return obj.getCTA();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, ConsolidatedTapeAssociationIdentifier value) {
+			obj.setCTA(value);
 		}
 	};
 	protected EuroclearClearstreamIdentifier common;
 	/**
-	 * Identifier of securities issued in Luxembourg. The common code is a
-	 * 9-digit code that replaces the CEDEL (Clearstream) and Euroclear codes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -479,10 +495,10 @@ public class SecuritiesIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCommon = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesIdentification, EuroclearClearstreamIdentifier> mmCommon = new MMBusinessAttribute<SecuritiesIdentification, EuroclearClearstreamIdentifier>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Common";
 			definition = "Identifier of securities issued in Luxembourg.  The common code is a 9-digit code that replaces the CEDEL (Clearstream) and Euroclear codes.";
@@ -491,18 +507,20 @@ public class SecuritiesIdentification {
 			simpleType_lazy = () -> EuroclearClearstreamIdentifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesIdentification.class.getMethod("getCommon", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public EuroclearClearstreamIdentifier getValue(SecuritiesIdentification obj) {
+			return obj.getCommon();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, EuroclearClearstreamIdentifier value) {
+			obj.setCommon(value);
 		}
 	};
 	protected LocalName name;
 	/**
-	 * Name of the financial instrument in free format text.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -523,6 +541,9 @@ public class SecuritiesIdentification {
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesIdentification
 	 * SecuritiesIdentification}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :70a::FIAN</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -533,26 +554,35 @@ public class SecuritiesIdentification {
 	 * definition} = "Name of the financial instrument in free format text."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmName = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesIdentification, LocalName> mmName = new MMBusinessAssociationEnd<SecuritiesIdentification, LocalName>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":70a::FIAN"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Name";
 			definition = "Name of the financial instrument in free format text.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.LocalName.mmRelatedSecurity;
+			opposite_lazy = () -> LocalName.mmRelatedSecurity;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.LocalName.mmObject();
+			type_lazy = () -> LocalName.mmObject();
+		}
+
+		@Override
+		public LocalName getValue(SecuritiesIdentification obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, LocalName value) {
+			obj.setName(value);
 		}
 	};
 	protected SEDOLIdentifier sEDOL;
 	/**
-	 * Stock Exchange Daily Official List (SEDOL) number. A code used by the
-	 * London Stock Exchange to identify foreign stocks, especially those that
-	 * aren't actively traded in the US and don't have a CUSIP number.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -578,10 +608,10 @@ public class SecuritiesIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSEDOL = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesIdentification, SEDOLIdentifier> mmSEDOL = new MMBusinessAttribute<SecuritiesIdentification, SEDOLIdentifier>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SEDOL";
 			definition = "Stock Exchange Daily Official List (SEDOL) number.  A code used by the London Stock Exchange to identify foreign stocks, especially those that aren't actively traded in the US and don't have a CUSIP number.";
@@ -590,22 +620,20 @@ public class SecuritiesIdentification {
 			simpleType_lazy = () -> SEDOLIdentifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesIdentification.class.getMethod("getSEDOL", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SEDOLIdentifier getValue(SecuritiesIdentification obj) {
+			return obj.getSEDOL();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, SEDOLIdentifier value) {
+			obj.setSEDOL(value);
 		}
 	};
 	protected CUSIPIdentifier cUSIP;
 	/**
-	 * Committee on Uniform Securities and Identification Procedures (CUSIP).
-	 * The standards body that created and maintains the securities
-	 * classification system in the US. The CUSIP is composed of a 9-character
-	 * number that uniquely identifies a particular security. Non-US securities
-	 * have a similar number called the CINS number.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -631,10 +659,10 @@ public class SecuritiesIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCUSIP = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesIdentification, CUSIPIdentifier> mmCUSIP = new MMBusinessAttribute<SecuritiesIdentification, CUSIPIdentifier>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CUSIP";
 			definition = "Committee on Uniform Securities and Identification Procedures (CUSIP). The standards body that created and maintains the securities classification system in the US. The CUSIP is composed of a 9-character number that uniquely identifies a particular security.  Non-US securities have a similar number called the CINS number.";
@@ -643,19 +671,20 @@ public class SecuritiesIdentification {
 			simpleType_lazy = () -> CUSIPIdentifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesIdentification.class.getMethod("getCUSIP", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CUSIPIdentifier getValue(SecuritiesIdentification obj) {
+			return obj.getCUSIP();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, CUSIPIdentifier value) {
+			obj.setCUSIP(value);
 		}
 	};
 	protected QUICKIdentifier qUICK;
 	/**
-	 * Identifier of a security assigned by the Japanese QUICK identification
-	 * scheme for financial instruments.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -681,10 +710,10 @@ public class SecuritiesIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmQUICK = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesIdentification, QUICKIdentifier> mmQUICK = new MMBusinessAttribute<SecuritiesIdentification, QUICKIdentifier>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "QUICK";
 			definition = "Identifier of a security assigned by the Japanese QUICK identification scheme for financial instruments.";
@@ -693,21 +722,20 @@ public class SecuritiesIdentification {
 			simpleType_lazy = () -> QUICKIdentifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesIdentification.class.getMethod("getQUICK", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public QUICKIdentifier getValue(SecuritiesIdentification obj) {
+			return obj.getQUICK();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, QUICKIdentifier value) {
+			obj.setQUICK(value);
 		}
 	};
 	protected WertpapierIdentifier wertpapier;
 	/**
-	 * Wertpapier Kenn-nummer. A number issued in Germany by the Wertpapier
-	 * Mitteilungen. The Wertpapier Kenn-nummer, sometimes called WPK, contains
-	 * 6-digits, but no check digit. There are different ranges of numbers
-	 * representing different classes of securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -733,10 +761,10 @@ public class SecuritiesIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmWertpapier = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesIdentification, WertpapierIdentifier> mmWertpapier = new MMBusinessAttribute<SecuritiesIdentification, WertpapierIdentifier>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Wertpapier";
 			definition = "Wertpapier Kenn-nummer.  A number issued in Germany by the Wertpapier Mitteilungen. The Wertpapier Kenn-nummer, sometimes called WPK, contains 6-digits, but no check digit. There are different ranges of numbers representing different classes of securities.";
@@ -745,18 +773,20 @@ public class SecuritiesIdentification {
 			simpleType_lazy = () -> WertpapierIdentifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesIdentification.class.getMethod("getWertpapier", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public WertpapierIdentifier getValue(SecuritiesIdentification obj) {
+			return obj.getWertpapier();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, WertpapierIdentifier value) {
+			obj.setWertpapier(value);
 		}
 	};
 	protected DutchIdentifier dutch;
 	/**
-	 * Identifier for Dutch securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -780,10 +810,10 @@ public class SecuritiesIdentification {
 	 * definition} = "Identifier for Dutch securities."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDutch = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesIdentification, DutchIdentifier> mmDutch = new MMBusinessAttribute<SecuritiesIdentification, DutchIdentifier>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Dutch";
 			definition = "Identifier for Dutch securities.";
@@ -792,19 +822,20 @@ public class SecuritiesIdentification {
 			simpleType_lazy = () -> DutchIdentifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesIdentification.class.getMethod("getDutch", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DutchIdentifier getValue(SecuritiesIdentification obj) {
+			return obj.getDutch();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, DutchIdentifier value) {
+			obj.setDutch(value);
 		}
 	};
 	protected ValorenIdentifier valoren;
 	/**
-	 * Identifier for Swiss securities assigned by Telekurs Financial, the Swiss
-	 * numbering agency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -830,10 +861,10 @@ public class SecuritiesIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmValoren = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesIdentification, ValorenIdentifier> mmValoren = new MMBusinessAttribute<SecuritiesIdentification, ValorenIdentifier>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Valoren";
 			definition = "Identifier for Swiss securities assigned by Telekurs Financial, the Swiss numbering agency.";
@@ -842,20 +873,20 @@ public class SecuritiesIdentification {
 			simpleType_lazy = () -> ValorenIdentifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesIdentification.class.getMethod("getValoren", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ValorenIdentifier getValue(SecuritiesIdentification obj) {
+			return obj.getValoren();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, ValorenIdentifier value) {
+			obj.setValoren(value);
 		}
 	};
 	protected SicovamIdentifier sicovam;
 	/**
-	 * Identifier for French securities assigned by the Societe
-	 * Interprofessionnelle Pour La Compensation des Valeurs Mobilieres in
-	 * France. The Sicovam is composed of 5-digits.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -881,10 +912,10 @@ public class SecuritiesIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSicovam = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesIdentification, SicovamIdentifier> mmSicovam = new MMBusinessAttribute<SecuritiesIdentification, SicovamIdentifier>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Sicovam";
 			definition = "Identifier for French securities assigned by the Societe Interprofessionnelle Pour La Compensation des Valeurs Mobilieres in France.  The Sicovam is composed of 5-digits.";
@@ -893,18 +924,20 @@ public class SecuritiesIdentification {
 			simpleType_lazy = () -> SicovamIdentifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesIdentification.class.getMethod("getSicovam", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SicovamIdentifier getValue(SecuritiesIdentification obj) {
+			return obj.getSicovam();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, SicovamIdentifier value) {
+			obj.setSicovam(value);
 		}
 	};
 	protected BelgianIdentifier belgian;
 	/**
-	 * Identifier for Belgian securities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -928,10 +961,10 @@ public class SecuritiesIdentification {
 	 * definition} = "Identifier for Belgian securities."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBelgian = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesIdentification, BelgianIdentifier> mmBelgian = new MMBusinessAttribute<SecuritiesIdentification, BelgianIdentifier>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Belgian";
 			definition = "Identifier for Belgian securities.";
@@ -940,18 +973,20 @@ public class SecuritiesIdentification {
 			simpleType_lazy = () -> BelgianIdentifier.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesIdentification.class.getMethod("getBelgian", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BelgianIdentifier getValue(SecuritiesIdentification obj) {
+			return obj.getBelgian();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, BelgianIdentifier value) {
+			obj.setBelgian(value);
 		}
 	};
 	protected Max35Text identificationSuffix;
 	/**
-	 * Identifies the suffix of the security identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -974,10 +1009,10 @@ public class SecuritiesIdentification {
 	 * definition} = "Identifies the suffix of the security identification."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIdentificationSuffix = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesIdentification, Max35Text> mmIdentificationSuffix = new MMBusinessAttribute<SecuritiesIdentification, Max35Text>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IdentificationSuffix";
 			definition = "Identifies the suffix of the security identification.";
@@ -986,19 +1021,20 @@ public class SecuritiesIdentification {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesIdentification.class.getMethod("getIdentificationSuffix", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecuritiesIdentification obj) {
+			return obj.getIdentificationSuffix();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, Max35Text value) {
+			obj.setIdentificationSuffix(value);
 		}
 	};
 	protected GenericIdentification genericIdentification;
 	/**
-	 * Proprietary identification of a security assigned by an institution or
-	 * organisation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1032,24 +1068,34 @@ public class SecuritiesIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmGenericIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesIdentification, GenericIdentification> mmGenericIdentification = new MMBusinessAssociationEnd<SecuritiesIdentification, GenericIdentification>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "GenericIdentification";
 			definition = "Proprietary identification of a security assigned by an institution or organisation.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmRelatedSecuritiesIdentification;
+			opposite_lazy = () -> GenericIdentification.mmRelatedSecuritiesIdentification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.GenericIdentification.mmObject();
+			type_lazy = () -> GenericIdentification.mmObject();
+		}
+
+		@Override
+		public GenericIdentification getValue(SecuritiesIdentification obj) {
+			return obj.getGenericIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, GenericIdentification value) {
+			obj.setGenericIdentification(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.DateTimePeriod> validityPeriod;
+	protected List<DateTimePeriod> validityPeriod;
 	/**
-	 * Specifies the period during which an identification is valid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1081,23 +1127,33 @@ public class SecuritiesIdentification {
 	 * "Specifies the period during which an identification is valid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmValidityPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesIdentification, List<DateTimePeriod>> mmValidityPeriod = new MMBusinessAssociationEnd<SecuritiesIdentification, List<DateTimePeriod>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ValidityPeriod";
 			definition = "Specifies the period during which an identification is valid.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmRelatedSecuritiesIdentification;
+			opposite_lazy = () -> DateTimePeriod.mmRelatedSecuritiesIdentification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public List<DateTimePeriod> getValue(SecuritiesIdentification obj) {
+			return obj.getValidityPeriod();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, List<DateTimePeriod> value) {
+			obj.setValidityPeriod(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.TradingMarket> applicableTradingMarket;
+	protected List<TradingMarket> applicableTradingMarket;
 	/**
-	 * Market(s) on which the trading identification is used.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1128,23 +1184,33 @@ public class SecuritiesIdentification {
 	 * definition} = "Market(s) on which the trading identification is used."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmApplicableTradingMarket = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesIdentification, List<TradingMarket>> mmApplicableTradingMarket = new MMBusinessAssociationEnd<SecuritiesIdentification, List<TradingMarket>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "ApplicableTradingMarket";
 			definition = "Market(s) on which the trading identification is used.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmListedSecurityTradingIdentification;
+			opposite_lazy = () -> TradingMarket.mmListedSecurityTradingIdentification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TradingMarket.mmObject();
+			type_lazy = () -> TradingMarket.mmObject();
+		}
+
+		@Override
+		public List<TradingMarket> getValue(SecuritiesIdentification obj) {
+			return obj.getApplicableTradingMarket();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, List<TradingMarket> value) {
+			obj.setApplicableTradingMarket(value);
 		}
 	};
 	protected SecuritiesIdentification primeIdentification;
 	/**
-	 * Specifies the main identification of a security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1176,25 +1242,34 @@ public class SecuritiesIdentification {
 	 * definition} = "Specifies the main identification of a security."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPrimeIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesIdentification, SecuritiesIdentification> mmPrimeIdentification = new MMBusinessAssociationEnd<SecuritiesIdentification, SecuritiesIdentification>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PrimeIdentification";
 			definition = "Specifies the main identification of a security.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmRelatedOtherIdentification;
+			opposite_lazy = () -> SecuritiesIdentification.mmRelatedOtherIdentification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			type_lazy = () -> SecuritiesIdentification.mmObject();
+		}
+
+		@Override
+		public SecuritiesIdentification getValue(SecuritiesIdentification obj) {
+			return obj.getPrimeIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, SecuritiesIdentification value) {
+			obj.setPrimeIdentification(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.SecuritiesIdentification> relatedOtherIdentification;
+	protected List<SecuritiesIdentification> relatedOtherIdentification;
 	/**
-	 * Alternate security identification(s) related to the security trading
-	 * identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1228,24 +1303,33 @@ public class SecuritiesIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedOtherIdentification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesIdentification, List<SecuritiesIdentification>> mmRelatedOtherIdentification = new MMBusinessAssociationEnd<SecuritiesIdentification, List<SecuritiesIdentification>>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "RelatedOtherIdentification";
 			definition = "Alternate security identification(s) related to the security trading identification.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmPrimeIdentification;
+			opposite_lazy = () -> SecuritiesIdentification.mmPrimeIdentification;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			type_lazy = () -> SecuritiesIdentification.mmObject();
+		}
+
+		@Override
+		public List<SecuritiesIdentification> getValue(SecuritiesIdentification obj) {
+			return obj.getRelatedOtherIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, List<SecuritiesIdentification> value) {
+			obj.setRelatedOtherIdentification(value);
 		}
 	};
 	protected Max70Text tradingIdentification;
 	/**
-	 * Security identifier specific to a trading market or markets, for example,
-	 * Ticker.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1270,10 +1354,10 @@ public class SecuritiesIdentification {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTradingIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesIdentification, Max70Text> mmTradingIdentification = new MMBusinessAttribute<SecuritiesIdentification, Max70Text>() {
 		{
 			isDerived = false;
-			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesIdentification.mmObject();
+			elementContext_lazy = () -> SecuritiesIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TradingIdentification";
 			definition = "Security identifier specific to a trading market or markets, for example, Ticker.";
@@ -1282,36 +1366,31 @@ public class SecuritiesIdentification {
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesIdentification.class.getMethod("getTradingIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max70Text getValue(SecuritiesIdentification obj) {
+			return obj.getTradingIdentification();
+		}
+
+		@Override
+		public void setValue(SecuritiesIdentification obj, Max70Text value) {
+			obj.setTradingIdentification(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesIdentification";
 				definition = "Unique and unambiguous identifier of a security, assigned under a formal or proprietary identification scheme.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Security.mmIdentification, com.tools20022.repository.entity.SecuritiesIdentification.mmPrimeIdentification,
-						com.tools20022.repository.entity.SecuritiesIdentification.mmRelatedOtherIdentification, com.tools20022.repository.entity.GenericIdentification.mmRelatedSecuritiesIdentification,
-						com.tools20022.repository.entity.LocalName.mmRelatedSecurity, com.tools20022.repository.entity.TradingMarket.mmListedSecurityTradingIdentification,
-						com.tools20022.repository.entity.DateTimePeriod.mmRelatedSecuritiesIdentification);
-				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesIdentification.mmIdentifiedSecurity, com.tools20022.repository.entity.SecuritiesIdentification.mmSecurityIdentification,
-						com.tools20022.repository.entity.SecuritiesIdentification.mmRIC, com.tools20022.repository.entity.SecuritiesIdentification.mmTickerSymbol, com.tools20022.repository.entity.SecuritiesIdentification.mmBloomberg,
-						com.tools20022.repository.entity.SecuritiesIdentification.mmCTA, com.tools20022.repository.entity.SecuritiesIdentification.mmCommon, com.tools20022.repository.entity.SecuritiesIdentification.mmName,
-						com.tools20022.repository.entity.SecuritiesIdentification.mmSEDOL, com.tools20022.repository.entity.SecuritiesIdentification.mmCUSIP, com.tools20022.repository.entity.SecuritiesIdentification.mmQUICK,
-						com.tools20022.repository.entity.SecuritiesIdentification.mmWertpapier, com.tools20022.repository.entity.SecuritiesIdentification.mmDutch, com.tools20022.repository.entity.SecuritiesIdentification.mmValoren,
-						com.tools20022.repository.entity.SecuritiesIdentification.mmSicovam, com.tools20022.repository.entity.SecuritiesIdentification.mmBelgian,
-						com.tools20022.repository.entity.SecuritiesIdentification.mmIdentificationSuffix, com.tools20022.repository.entity.SecuritiesIdentification.mmGenericIdentification,
-						com.tools20022.repository.entity.SecuritiesIdentification.mmValidityPeriod, com.tools20022.repository.entity.SecuritiesIdentification.mmApplicableTradingMarket,
-						com.tools20022.repository.entity.SecuritiesIdentification.mmPrimeIdentification, com.tools20022.repository.entity.SecuritiesIdentification.mmRelatedOtherIdentification,
-						com.tools20022.repository.entity.SecuritiesIdentification.mmTradingIdentification);
+				associationDomain_lazy = () -> Arrays.asList(Security.mmIdentification, SecuritiesIdentification.mmPrimeIdentification, SecuritiesIdentification.mmRelatedOtherIdentification,
+						GenericIdentification.mmRelatedSecuritiesIdentification, LocalName.mmRelatedSecurity, TradingMarket.mmListedSecurityTradingIdentification, DateTimePeriod.mmRelatedSecuritiesIdentification);
+				element_lazy = () -> Arrays.asList(SecuritiesIdentification.mmIdentifiedSecurity, SecuritiesIdentification.mmSecurityIdentification, SecuritiesIdentification.mmRIC, SecuritiesIdentification.mmTickerSymbol,
+						SecuritiesIdentification.mmBloomberg, SecuritiesIdentification.mmCTA, SecuritiesIdentification.mmCommon, SecuritiesIdentification.mmName, SecuritiesIdentification.mmSEDOL, SecuritiesIdentification.mmCUSIP,
+						SecuritiesIdentification.mmQUICK, SecuritiesIdentification.mmWertpapier, SecuritiesIdentification.mmDutch, SecuritiesIdentification.mmValoren, SecuritiesIdentification.mmSicovam, SecuritiesIdentification.mmBelgian,
+						SecuritiesIdentification.mmIdentificationSuffix, SecuritiesIdentification.mmGenericIdentification, SecuritiesIdentification.mmValidityPeriod, SecuritiesIdentification.mmApplicableTradingMarket,
+						SecuritiesIdentification.mmPrimeIdentification, SecuritiesIdentification.mmRelatedOtherIdentification, SecuritiesIdentification.mmTradingIdentification);
 			}
 
 			@Override
@@ -1323,186 +1402,209 @@ public class SecuritiesIdentification {
 	}
 
 	public List<Security> getIdentifiedSecurity() {
-		return identifiedSecurity;
+		return identifiedSecurity == null ? identifiedSecurity = new ArrayList<>() : identifiedSecurity;
 	}
 
-	public void setIdentifiedSecurity(List<com.tools20022.repository.entity.Security> identifiedSecurity) {
-		this.identifiedSecurity = identifiedSecurity;
+	public SecuritiesIdentification setIdentifiedSecurity(List<Security> identifiedSecurity) {
+		this.identifiedSecurity = Objects.requireNonNull(identifiedSecurity);
+		return this;
 	}
 
 	public ISINOct2015Identifier getSecurityIdentification() {
 		return securityIdentification;
 	}
 
-	public void setSecurityIdentification(ISINOct2015Identifier securityIdentification) {
-		this.securityIdentification = securityIdentification;
+	public SecuritiesIdentification setSecurityIdentification(ISINOct2015Identifier securityIdentification) {
+		this.securityIdentification = Objects.requireNonNull(securityIdentification);
+		return this;
 	}
 
 	public RICIdentifier getRIC() {
 		return rIC;
 	}
 
-	public void setRIC(RICIdentifier rIC) {
-		this.rIC = rIC;
+	public SecuritiesIdentification setRIC(RICIdentifier rIC) {
+		this.rIC = Objects.requireNonNull(rIC);
+		return this;
 	}
 
 	public TickerIdentifier getTickerSymbol() {
 		return tickerSymbol;
 	}
 
-	public void setTickerSymbol(TickerIdentifier tickerSymbol) {
-		this.tickerSymbol = tickerSymbol;
+	public SecuritiesIdentification setTickerSymbol(TickerIdentifier tickerSymbol) {
+		this.tickerSymbol = Objects.requireNonNull(tickerSymbol);
+		return this;
 	}
 
 	public Bloomberg2Identifier getBloomberg() {
 		return bloomberg;
 	}
 
-	public void setBloomberg(Bloomberg2Identifier bloomberg) {
-		this.bloomberg = bloomberg;
+	public SecuritiesIdentification setBloomberg(Bloomberg2Identifier bloomberg) {
+		this.bloomberg = Objects.requireNonNull(bloomberg);
+		return this;
 	}
 
 	public ConsolidatedTapeAssociationIdentifier getCTA() {
 		return cTA;
 	}
 
-	public void setCTA(ConsolidatedTapeAssociationIdentifier cTA) {
-		this.cTA = cTA;
+	public SecuritiesIdentification setCTA(ConsolidatedTapeAssociationIdentifier cTA) {
+		this.cTA = Objects.requireNonNull(cTA);
+		return this;
 	}
 
 	public EuroclearClearstreamIdentifier getCommon() {
 		return common;
 	}
 
-	public void setCommon(EuroclearClearstreamIdentifier common) {
-		this.common = common;
+	public SecuritiesIdentification setCommon(EuroclearClearstreamIdentifier common) {
+		this.common = Objects.requireNonNull(common);
+		return this;
 	}
 
 	public LocalName getName() {
 		return name;
 	}
 
-	public void setName(com.tools20022.repository.entity.LocalName name) {
-		this.name = name;
+	public SecuritiesIdentification setName(LocalName name) {
+		this.name = Objects.requireNonNull(name);
+		return this;
 	}
 
 	public SEDOLIdentifier getSEDOL() {
 		return sEDOL;
 	}
 
-	public void setSEDOL(SEDOLIdentifier sEDOL) {
-		this.sEDOL = sEDOL;
+	public SecuritiesIdentification setSEDOL(SEDOLIdentifier sEDOL) {
+		this.sEDOL = Objects.requireNonNull(sEDOL);
+		return this;
 	}
 
 	public CUSIPIdentifier getCUSIP() {
 		return cUSIP;
 	}
 
-	public void setCUSIP(CUSIPIdentifier cUSIP) {
-		this.cUSIP = cUSIP;
+	public SecuritiesIdentification setCUSIP(CUSIPIdentifier cUSIP) {
+		this.cUSIP = Objects.requireNonNull(cUSIP);
+		return this;
 	}
 
 	public QUICKIdentifier getQUICK() {
 		return qUICK;
 	}
 
-	public void setQUICK(QUICKIdentifier qUICK) {
-		this.qUICK = qUICK;
+	public SecuritiesIdentification setQUICK(QUICKIdentifier qUICK) {
+		this.qUICK = Objects.requireNonNull(qUICK);
+		return this;
 	}
 
 	public WertpapierIdentifier getWertpapier() {
 		return wertpapier;
 	}
 
-	public void setWertpapier(WertpapierIdentifier wertpapier) {
-		this.wertpapier = wertpapier;
+	public SecuritiesIdentification setWertpapier(WertpapierIdentifier wertpapier) {
+		this.wertpapier = Objects.requireNonNull(wertpapier);
+		return this;
 	}
 
 	public DutchIdentifier getDutch() {
 		return dutch;
 	}
 
-	public void setDutch(DutchIdentifier dutch) {
-		this.dutch = dutch;
+	public SecuritiesIdentification setDutch(DutchIdentifier dutch) {
+		this.dutch = Objects.requireNonNull(dutch);
+		return this;
 	}
 
 	public ValorenIdentifier getValoren() {
 		return valoren;
 	}
 
-	public void setValoren(ValorenIdentifier valoren) {
-		this.valoren = valoren;
+	public SecuritiesIdentification setValoren(ValorenIdentifier valoren) {
+		this.valoren = Objects.requireNonNull(valoren);
+		return this;
 	}
 
 	public SicovamIdentifier getSicovam() {
 		return sicovam;
 	}
 
-	public void setSicovam(SicovamIdentifier sicovam) {
-		this.sicovam = sicovam;
+	public SecuritiesIdentification setSicovam(SicovamIdentifier sicovam) {
+		this.sicovam = Objects.requireNonNull(sicovam);
+		return this;
 	}
 
 	public BelgianIdentifier getBelgian() {
 		return belgian;
 	}
 
-	public void setBelgian(BelgianIdentifier belgian) {
-		this.belgian = belgian;
+	public SecuritiesIdentification setBelgian(BelgianIdentifier belgian) {
+		this.belgian = Objects.requireNonNull(belgian);
+		return this;
 	}
 
 	public Max35Text getIdentificationSuffix() {
 		return identificationSuffix;
 	}
 
-	public void setIdentificationSuffix(Max35Text identificationSuffix) {
-		this.identificationSuffix = identificationSuffix;
+	public SecuritiesIdentification setIdentificationSuffix(Max35Text identificationSuffix) {
+		this.identificationSuffix = Objects.requireNonNull(identificationSuffix);
+		return this;
 	}
 
 	public GenericIdentification getGenericIdentification() {
 		return genericIdentification;
 	}
 
-	public void setGenericIdentification(com.tools20022.repository.entity.GenericIdentification genericIdentification) {
-		this.genericIdentification = genericIdentification;
+	public SecuritiesIdentification setGenericIdentification(GenericIdentification genericIdentification) {
+		this.genericIdentification = Objects.requireNonNull(genericIdentification);
+		return this;
 	}
 
 	public List<DateTimePeriod> getValidityPeriod() {
-		return validityPeriod;
+		return validityPeriod == null ? validityPeriod = new ArrayList<>() : validityPeriod;
 	}
 
-	public void setValidityPeriod(List<com.tools20022.repository.entity.DateTimePeriod> validityPeriod) {
-		this.validityPeriod = validityPeriod;
+	public SecuritiesIdentification setValidityPeriod(List<DateTimePeriod> validityPeriod) {
+		this.validityPeriod = Objects.requireNonNull(validityPeriod);
+		return this;
 	}
 
 	public List<TradingMarket> getApplicableTradingMarket() {
-		return applicableTradingMarket;
+		return applicableTradingMarket == null ? applicableTradingMarket = new ArrayList<>() : applicableTradingMarket;
 	}
 
-	public void setApplicableTradingMarket(List<com.tools20022.repository.entity.TradingMarket> applicableTradingMarket) {
-		this.applicableTradingMarket = applicableTradingMarket;
+	public SecuritiesIdentification setApplicableTradingMarket(List<TradingMarket> applicableTradingMarket) {
+		this.applicableTradingMarket = Objects.requireNonNull(applicableTradingMarket);
+		return this;
 	}
 
 	public SecuritiesIdentification getPrimeIdentification() {
 		return primeIdentification;
 	}
 
-	public void setPrimeIdentification(com.tools20022.repository.entity.SecuritiesIdentification primeIdentification) {
-		this.primeIdentification = primeIdentification;
+	public SecuritiesIdentification setPrimeIdentification(SecuritiesIdentification primeIdentification) {
+		this.primeIdentification = Objects.requireNonNull(primeIdentification);
+		return this;
 	}
 
 	public List<SecuritiesIdentification> getRelatedOtherIdentification() {
-		return relatedOtherIdentification;
+		return relatedOtherIdentification == null ? relatedOtherIdentification = new ArrayList<>() : relatedOtherIdentification;
 	}
 
-	public void setRelatedOtherIdentification(List<com.tools20022.repository.entity.SecuritiesIdentification> relatedOtherIdentification) {
-		this.relatedOtherIdentification = relatedOtherIdentification;
+	public SecuritiesIdentification setRelatedOtherIdentification(List<SecuritiesIdentification> relatedOtherIdentification) {
+		this.relatedOtherIdentification = Objects.requireNonNull(relatedOtherIdentification);
+		return this;
 	}
 
 	public Max70Text getTradingIdentification() {
 		return tradingIdentification;
 	}
 
-	public void setTradingIdentification(Max70Text tradingIdentification) {
-		this.tradingIdentification = tradingIdentification;
+	public SecuritiesIdentification setTradingIdentification(Max70Text tradingIdentification) {
+		this.tradingIdentification = Objects.requireNonNull(tradingIdentification);
+		return this;
 	}
 }

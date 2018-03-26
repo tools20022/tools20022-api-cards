@@ -38,31 +38,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMSecurityScheme1Code#ApplicationRemoteKeyLoading
- * ATMSecurityScheme1Code.mmApplicationRemoteKeyLoading}</li>
+ * ATMSecurityScheme1Code.ApplicationRemoteKeyLoading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMSecurityScheme1Code#CertificateRemoteKeyLoading
- * ATMSecurityScheme1Code.mmCertificateRemoteKeyLoading}</li>
+ * ATMSecurityScheme1Code.CertificateRemoteKeyLoading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMSecurityScheme1Code#FrenchRemoteKeyLoading
- * ATMSecurityScheme1Code.mmFrenchRemoteKeyLoading}</li>
+ * ATMSecurityScheme1Code.FrenchRemoteKeyLoading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMSecurityScheme1Code#GermanRemoteKeyLoading
- * ATMSecurityScheme1Code.mmGermanRemoteKeyLoading}</li>
+ * ATMSecurityScheme1Code.GermanRemoteKeyLoading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMSecurityScheme1Code#LuxemburgRemoteKeyLoading
- * ATMSecurityScheme1Code.mmLuxemburgRemoteKeyLoading}</li>
+ * ATMSecurityScheme1Code.LuxemburgRemoteKeyLoading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMSecurityScheme1Code#ManualKeyEntry
- * ATMSecurityScheme1Code.mmManualKeyEntry}</li>
+ * ATMSecurityScheme1Code.ManualKeyEntry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMSecurityScheme1Code#PKIKeyDownload
- * ATMSecurityScheme1Code.mmPKIKeyDownload}</li>
+ * ATMSecurityScheme1Code.PKIKeyDownload}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMSecurityScheme1Code#SignatureRemoteKeyLoading
- * ATMSecurityScheme1Code.mmSignatureRemoteKeyLoading}</li>
+ * ATMSecurityScheme1Code.SignatureRemoteKeyLoading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMSecurityScheme1Code#Unitialised
- * ATMSecurityScheme1Code.mmUnitialised}</li>
+ * ATMSecurityScheme1Code.Unitialised}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -71,8 +71,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -313,7 +313,7 @@ public class ATMSecurityScheme1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMSecurityScheme1Code";
 				definition = "Key exchange security scheme in activation on the ATM for the host manager.";

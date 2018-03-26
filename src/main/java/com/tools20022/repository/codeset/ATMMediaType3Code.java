@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMMediaType3Code#Counterfeit
- * ATMMediaType3Code.mmCounterfeit}</li>
+ * ATMMediaType3Code.Counterfeit}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMMediaType3Code#Fit
- * ATMMediaType3Code.mmFit}</li>
+ * ATMMediaType3Code.Fit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMMediaType3Code#FitAndUnfit
- * ATMMediaType3Code.mmFitAndUnfit}</li>
+ * ATMMediaType3Code.FitAndUnfit}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMMediaType3Code#Suspect
- * ATMMediaType3Code.mmSuspect}</li>
+ * ATMMediaType3Code.Suspect}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMMediaType3Code#Unfit
- * ATMMediaType3Code.mmUnfit}</li>
+ * ATMMediaType3Code.Unfit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMMediaType3Code#Unrecognised
- * ATMMediaType3Code.mmUnrecognised}</li>
+ * ATMMediaType3Code.Unrecognised}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -227,7 +227,7 @@ public class ATMMediaType3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMMediaType3Code";
 				definition = "Category of media items.";

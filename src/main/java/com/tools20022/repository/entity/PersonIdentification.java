@@ -17,17 +17,18 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.Party10Choice;
 import com.tools20022.repository.choice.PersonIdentificationSchemeName1Choice;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.PartyIdentificationInformation;
+import com.tools20022.repository.entity.Person;
+import com.tools20022.repository.entity.PersonName;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Unique and unambiguous way to identify a person.
@@ -113,8 +114,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -130,8 +131,8 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max35Text socialSecurityNumber;
 	/**
-	 * Number assigned by a social security agency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,6 +156,9 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * {@linkplain com.tools20022.repository.entity.PersonIdentification
 	 * PersonIdentification}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :95S::ALTE//SSNX</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -165,11 +169,12 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * definition} = "Number assigned by a social security agency."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSocialSecurityNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonIdentification, Max35Text> mmSocialSecurityNumber = new MMBusinessAttribute<PersonIdentification, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PersonIdentification7.mmSocialSecurityNumber, PersonIdentification11.mmSocialSecurityNumber);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95S::ALTE//SSNX"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SocialSecurityNumber";
 			definition = "Number assigned by a social security agency.";
@@ -178,18 +183,20 @@ public class PersonIdentification extends PartyIdentificationInformation {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonIdentification.class.getMethod("getSocialSecurityNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PersonIdentification obj) {
+			return obj.getSocialSecurityNumber();
+		}
+
+		@Override
+		public void setValue(PersonIdentification obj, Max35Text value) {
+			obj.setSocialSecurityNumber(value);
 		}
 	};
 	protected Person person;
 	/**
-	 * Person for which an identification is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -233,7 +240,7 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * definition} = "Person for which an identification is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPerson = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PersonIdentification, Optional<Person>> mmPerson = new MMBusinessAssociationEnd<PersonIdentification, Optional<Person>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PersonIdentification5.mmDateAndPlaceOfBirth, PersonIdentification7.mmDateAndPlaceOfBirth, PersonIdentification11.mmDateAndPlaceOfBirth);
 			isDerived = false;
@@ -247,13 +254,21 @@ public class PersonIdentification extends PartyIdentificationInformation {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Person.mmObject();
 		}
+
+		@Override
+		public Optional<Person> getValue(PersonIdentification obj) {
+			return obj.getPerson();
+		}
+
+		@Override
+		public void setValue(PersonIdentification obj, Optional<Person> value) {
+			obj.setPerson(value.orElse(null));
+		}
 	};
 	protected List<com.tools20022.repository.entity.PersonName> personName;
 	/**
-	 * Name by which a person is known and which is usually used to identify
-	 * that person. It is derived from PartyName (association between
-	 * PartyIdentificationInformation and PartyName).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -286,7 +301,7 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPersonName = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PersonIdentification, List<PersonName>> mmPersonName = new MMBusinessAssociationEnd<PersonIdentification, List<PersonName>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
@@ -298,11 +313,21 @@ public class PersonIdentification extends PartyIdentificationInformation {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PersonName.mmObject();
 		}
+
+		@Override
+		public List<PersonName> getValue(PersonIdentification obj) {
+			return obj.getPersonName();
+		}
+
+		@Override
+		public void setValue(PersonIdentification obj, List<PersonName> value) {
+			obj.setPersonName(value);
+		}
 	};
 	protected Max35Text driversLicenseNumber;
 	/**
-	 * Number assigned by a license authority to a driver's license.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -326,6 +351,9 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * {@linkplain com.tools20022.repository.entity.PersonIdentification
 	 * PersonIdentification}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :95S::ALTE//DRLC</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -337,11 +365,12 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * "Number assigned by a license authority to a driver's license."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDriversLicenseNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonIdentification, Max35Text> mmDriversLicenseNumber = new MMBusinessAttribute<PersonIdentification, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PersonIdentification7.mmDriversLicenseNumber, PersonIdentification11.mmDriverLicenseNumber);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95S::ALTE//DRLC"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "DriversLicenseNumber";
 			definition = "Number assigned by a license authority to a driver's license.";
@@ -350,18 +379,20 @@ public class PersonIdentification extends PartyIdentificationInformation {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonIdentification.class.getMethod("getDriversLicenseNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PersonIdentification obj) {
+			return obj.getDriversLicenseNumber();
+		}
+
+		@Override
+		public void setValue(PersonIdentification obj, Max35Text value) {
+			obj.setDriversLicenseNumber(value);
 		}
 	};
 	protected Max35Text alienRegistrationNumber;
 	/**
-	 * Number assigned by a government agency to identify foreign nationals.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -385,6 +416,9 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * {@linkplain com.tools20022.repository.entity.PersonIdentification
 	 * PersonIdentification}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :95S::ALTE//ARNU</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -396,11 +430,12 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * "Number assigned by a government agency to identify foreign nationals."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAlienRegistrationNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonIdentification, Max35Text> mmAlienRegistrationNumber = new MMBusinessAttribute<PersonIdentification, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PersonIdentification7.mmAlienRegistrationNumber, PersonIdentification11.mmAlienRegistrationNumber);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95S::ALTE//ARNU"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "AlienRegistrationNumber";
 			definition = "Number assigned by a government agency to identify foreign nationals.";
@@ -409,18 +444,20 @@ public class PersonIdentification extends PartyIdentificationInformation {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonIdentification.class.getMethod("getAlienRegistrationNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PersonIdentification obj) {
+			return obj.getAlienRegistrationNumber();
+		}
+
+		@Override
+		public void setValue(PersonIdentification obj, Max35Text value) {
+			obj.setAlienRegistrationNumber(value);
 		}
 	};
 	protected Max35Text passportNumber;
 	/**
-	 * Number assigned by a passport authority to a passport.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -444,6 +481,9 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * {@linkplain com.tools20022.repository.entity.PersonIdentification
 	 * PersonIdentification}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :95S::ALTE//CCPT</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -454,11 +494,12 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * definition} = "Number assigned by a passport authority to a passport."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPassportNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonIdentification, Max35Text> mmPassportNumber = new MMBusinessAttribute<PersonIdentification, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PersonIdentification7.mmPassportNumber, PersonIdentification11.mmPassportNumber);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95S::ALTE//CCPT"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "PassportNumber";
 			definition = "Number assigned by a passport authority to a passport.";
@@ -467,18 +508,20 @@ public class PersonIdentification extends PartyIdentificationInformation {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonIdentification.class.getMethod("getPassportNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PersonIdentification obj) {
+			return obj.getPassportNumber();
+		}
+
+		@Override
+		public void setValue(PersonIdentification obj, Max35Text value) {
+			obj.setPassportNumber(value);
 		}
 	};
 	protected Max35Text identityCardNumber;
 	/**
-	 * Number assigned by a national authority to an identity card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -513,7 +556,7 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * "Number assigned by a national authority to an identity card."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIdentityCardNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonIdentification, Max35Text> mmIdentityCardNumber = new MMBusinessAttribute<PersonIdentification, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PersonIdentification7.mmIdentityCardNumber, PersonIdentification11.mmIdentityCardNumber);
 			isDerived = false;
@@ -526,18 +569,20 @@ public class PersonIdentification extends PartyIdentificationInformation {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonIdentification.class.getMethod("getIdentityCardNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PersonIdentification obj) {
+			return obj.getIdentityCardNumber();
+		}
+
+		@Override
+		public void setValue(PersonIdentification obj, Max35Text value) {
+			obj.setIdentityCardNumber(value);
 		}
 	};
 	protected Max35Text employerIdentificationNumber;
 	/**
-	 * Number assigned to an employer by a registration authority.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -561,6 +606,9 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * {@linkplain com.tools20022.repository.entity.PersonIdentification
 	 * PersonIdentification}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :95S::ALTE//EINX</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -572,11 +620,12 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * "Number assigned to an employer by a registration authority."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEmployerIdentificationNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PersonIdentification, Max35Text> mmEmployerIdentificationNumber = new MMBusinessAttribute<PersonIdentification, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PersonIdentification7.mmEmployerIdentificationNumber, PersonIdentification11.mmEmployerIdentificationNumber);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95S::ALTE//EINX"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "EmployerIdentificationNumber";
 			definition = "Number assigned to an employer by a registration authority.";
@@ -585,19 +634,21 @@ public class PersonIdentification extends PartyIdentificationInformation {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PersonIdentification.class.getMethod("getEmployerIdentificationNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(PersonIdentification obj) {
+			return obj.getEmployerIdentificationNumber();
+		}
+
+		@Override
+		public void setValue(PersonIdentification obj, Max35Text value) {
+			obj.setEmployerIdentificationNumber(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PersonIdentification";
 				definition = "Unique and unambiguous way to identify a person.";
@@ -624,63 +675,71 @@ public class PersonIdentification extends PartyIdentificationInformation {
 		return socialSecurityNumber;
 	}
 
-	public void setSocialSecurityNumber(Max35Text socialSecurityNumber) {
-		this.socialSecurityNumber = socialSecurityNumber;
+	public PersonIdentification setSocialSecurityNumber(Max35Text socialSecurityNumber) {
+		this.socialSecurityNumber = Objects.requireNonNull(socialSecurityNumber);
+		return this;
 	}
 
-	public Person getPerson() {
-		return person;
+	public Optional<Person> getPerson() {
+		return person == null ? Optional.empty() : Optional.of(person);
 	}
 
-	public void setPerson(com.tools20022.repository.entity.Person person) {
+	public PersonIdentification setPerson(com.tools20022.repository.entity.Person person) {
 		this.person = person;
+		return this;
 	}
 
 	public List<PersonName> getPersonName() {
-		return personName;
+		return personName == null ? personName = new ArrayList<>() : personName;
 	}
 
-	public void setPersonName(List<com.tools20022.repository.entity.PersonName> personName) {
-		this.personName = personName;
+	public PersonIdentification setPersonName(List<com.tools20022.repository.entity.PersonName> personName) {
+		this.personName = Objects.requireNonNull(personName);
+		return this;
 	}
 
 	public Max35Text getDriversLicenseNumber() {
 		return driversLicenseNumber;
 	}
 
-	public void setDriversLicenseNumber(Max35Text driversLicenseNumber) {
-		this.driversLicenseNumber = driversLicenseNumber;
+	public PersonIdentification setDriversLicenseNumber(Max35Text driversLicenseNumber) {
+		this.driversLicenseNumber = Objects.requireNonNull(driversLicenseNumber);
+		return this;
 	}
 
 	public Max35Text getAlienRegistrationNumber() {
 		return alienRegistrationNumber;
 	}
 
-	public void setAlienRegistrationNumber(Max35Text alienRegistrationNumber) {
-		this.alienRegistrationNumber = alienRegistrationNumber;
+	public PersonIdentification setAlienRegistrationNumber(Max35Text alienRegistrationNumber) {
+		this.alienRegistrationNumber = Objects.requireNonNull(alienRegistrationNumber);
+		return this;
 	}
 
 	public Max35Text getPassportNumber() {
 		return passportNumber;
 	}
 
-	public void setPassportNumber(Max35Text passportNumber) {
-		this.passportNumber = passportNumber;
+	public PersonIdentification setPassportNumber(Max35Text passportNumber) {
+		this.passportNumber = Objects.requireNonNull(passportNumber);
+		return this;
 	}
 
 	public Max35Text getIdentityCardNumber() {
 		return identityCardNumber;
 	}
 
-	public void setIdentityCardNumber(Max35Text identityCardNumber) {
-		this.identityCardNumber = identityCardNumber;
+	public PersonIdentification setIdentityCardNumber(Max35Text identityCardNumber) {
+		this.identityCardNumber = Objects.requireNonNull(identityCardNumber);
+		return this;
 	}
 
 	public Max35Text getEmployerIdentificationNumber() {
 		return employerIdentificationNumber;
 	}
 
-	public void setEmployerIdentificationNumber(Max35Text employerIdentificationNumber) {
-		this.employerIdentificationNumber = employerIdentificationNumber;
+	public PersonIdentification setEmployerIdentificationNumber(Max35Text employerIdentificationNumber) {
+		this.employerIdentificationNumber = Objects.requireNonNull(employerIdentificationNumber);
+		return this;
 	}
 }

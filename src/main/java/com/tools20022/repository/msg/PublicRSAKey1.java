@@ -24,6 +24,7 @@ import com.tools20022.repository.datatype.Max5000Binary;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -47,8 +48,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,15 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PublicRSAKey1", propOrder = {"modulus", "exponent"})
 public class PublicRSAKey1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Mdlus", required = true)
 	protected Max5000Binary modulus;
 	/**
-	 * Modulus of the RSA key.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -98,9 +100,9 @@ public class PublicRSAKey1 {
 	 * definition} = "Modulus of the RSA key."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmModulus = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PublicRSAKey1, Max5000Binary> mmModulus = new MMMessageAttribute<PublicRSAKey1, Max5000Binary>() {
 		{
-			componentContext_lazy = () -> PublicRSAKey1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PublicRSAKey1.mmObject();
 			isDerived = false;
 			xmlTag = "Mdlus";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -110,11 +112,22 @@ public class PublicRSAKey1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max5000Binary.mmObject();
 		}
+
+		@Override
+		public Max5000Binary getValue(PublicRSAKey1 obj) {
+			return obj.getModulus();
+		}
+
+		@Override
+		public void setValue(PublicRSAKey1 obj, Max5000Binary value) {
+			obj.setModulus(value);
+		}
 	};
+	@XmlElement(name = "Expnt", required = true)
 	protected Max5000Binary exponent;
 	/**
-	 * Public exponent of the RSA key.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -139,9 +152,9 @@ public class PublicRSAKey1 {
 	 * definition} = "Public exponent of the RSA key."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExponent = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PublicRSAKey1, Max5000Binary> mmExponent = new MMMessageAttribute<PublicRSAKey1, Max5000Binary>() {
 		{
-			componentContext_lazy = () -> PublicRSAKey1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PublicRSAKey1.mmObject();
 			isDerived = false;
 			xmlTag = "Expnt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -151,13 +164,23 @@ public class PublicRSAKey1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max5000Binary.mmObject();
 		}
+
+		@Override
+		public Max5000Binary getValue(PublicRSAKey1 obj) {
+			return obj.getExponent();
+		}
+
+		@Override
+		public void setValue(PublicRSAKey1 obj, Max5000Binary value) {
+			obj.setExponent(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PublicRSAKey1.mmModulus, PublicRSAKey1.mmExponent);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PublicRSAKey1.mmModulus, com.tools20022.repository.msg.PublicRSAKey1.mmExponent);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PublicRSAKey1";
 				definition = "Value of the public component of a RSA key.";
@@ -167,21 +190,21 @@ public class PublicRSAKey1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Mdlus", required = true)
 	public Max5000Binary getModulus() {
 		return modulus;
 	}
 
-	public void setModulus(Max5000Binary modulus) {
-		this.modulus = modulus;
+	public PublicRSAKey1 setModulus(Max5000Binary modulus) {
+		this.modulus = Objects.requireNonNull(modulus);
+		return this;
 	}
 
-	@XmlElement(name = "Expnt", required = true)
 	public Max5000Binary getExponent() {
 		return exponent;
 	}
 
-	public void setExponent(Max5000Binary exponent) {
-		this.exponent = exponent;
+	public PublicRSAKey1 setExponent(Max5000Binary exponent) {
+		this.exponent = Objects.requireNonNull(exponent);
+		return this;
 	}
 }

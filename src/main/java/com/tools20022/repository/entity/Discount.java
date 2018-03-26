@@ -26,9 +26,9 @@ import com.tools20022.repository.codeset.DiscountTypeCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.entity.Adjustment;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Decrease of the value of goods and / or services by applying a discount rate
@@ -67,8 +67,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,9 +86,8 @@ public class Discount extends Adjustment {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyAndAmount discountAppliedAmount;
 	/**
-	 * Amount of money that results from the application of an agreed discount
-	 * to the amount due and payable to the creditor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,7 +112,7 @@ public class Discount extends Adjustment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDiscountAppliedAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Discount, CurrencyAndAmount> mmDiscountAppliedAmount = new MMBusinessAttribute<Discount, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Discount.mmObject();
@@ -125,18 +124,20 @@ public class Discount extends Adjustment {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Discount.class.getMethod("getDiscountAppliedAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Discount obj) {
+			return obj.getDiscountAppliedAmount();
+		}
+
+		@Override
+		public void setValue(Discount obj, CurrencyAndAmount value) {
+			obj.setDiscountAppliedAmount(value);
 		}
 	};
 	protected DiscountTypeCode discountType;
 	/**
-	 * Specifies the type of discount applied to the original amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -174,7 +175,7 @@ public class Discount extends Adjustment {
 	 * "Specifies the type of discount applied to the original amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDiscountType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Discount, DiscountTypeCode> mmDiscountType = new MMBusinessAttribute<Discount, DiscountTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(DiscountTypeFormat1Choice.mmCode, DiscountTypeFormat1Choice.mmProprietary, DiscountOrChargeType1Choice.mmDiscountType);
 			isDerived = false;
@@ -187,18 +188,20 @@ public class Discount extends Adjustment {
 			simpleType_lazy = () -> DiscountTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Discount.class.getMethod("getDiscountType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DiscountTypeCode getValue(Discount obj) {
+			return obj.getDiscountType();
+		}
+
+		@Override
+		public void setValue(Discount obj, DiscountTypeCode value) {
+			obj.setDiscountType(value);
 		}
 	};
 	protected CurrencyAndAmount discountBasisAmount;
 	/**
-	 * Amount used as a basis to calculate the discount amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -221,7 +224,7 @@ public class Discount extends Adjustment {
 	 * definition} = "Amount used as a basis to calculate the discount amount."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDiscountBasisAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Discount, CurrencyAndAmount> mmDiscountBasisAmount = new MMBusinessAttribute<Discount, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Discount.mmObject();
@@ -233,19 +236,21 @@ public class Discount extends Adjustment {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Discount.class.getMethod("getDiscountBasisAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Discount obj) {
+			return obj.getDiscountBasisAmount();
+		}
+
+		@Override
+		public void setValue(Discount obj, CurrencyAndAmount value) {
+			obj.setDiscountBasisAmount(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Discount";
 				definition = "Decrease of the value of goods and / or services by applying a discount rate to the original amount.";
@@ -267,23 +272,26 @@ public class Discount extends Adjustment {
 		return discountAppliedAmount;
 	}
 
-	public void setDiscountAppliedAmount(CurrencyAndAmount discountAppliedAmount) {
-		this.discountAppliedAmount = discountAppliedAmount;
+	public Discount setDiscountAppliedAmount(CurrencyAndAmount discountAppliedAmount) {
+		this.discountAppliedAmount = Objects.requireNonNull(discountAppliedAmount);
+		return this;
 	}
 
 	public DiscountTypeCode getDiscountType() {
 		return discountType;
 	}
 
-	public void setDiscountType(DiscountTypeCode discountType) {
-		this.discountType = discountType;
+	public Discount setDiscountType(DiscountTypeCode discountType) {
+		this.discountType = Objects.requireNonNull(discountType);
+		return this;
 	}
 
 	public CurrencyAndAmount getDiscountBasisAmount() {
 		return discountBasisAmount;
 	}
 
-	public void setDiscountBasisAmount(CurrencyAndAmount discountBasisAmount) {
-		this.discountBasisAmount = discountBasisAmount;
+	public Discount setDiscountBasisAmount(CurrencyAndAmount discountBasisAmount) {
+		this.discountBasisAmount = Objects.requireNonNull(discountBasisAmount);
+		return this;
 	}
 }

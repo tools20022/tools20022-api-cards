@@ -37,27 +37,27 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType15Code#Provincial
- * TaxType15Code.mmProvincial}</li>
+ * TaxType15Code.Provincial}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType15Code#NationalTax
- * TaxType15Code.mmNationalTax}</li>
+ * TaxType15Code.NationalTax}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType15Code#StateTax
- * TaxType15Code.mmStateTax}</li>
+ * TaxType15Code.StateTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType15Code#WithholdingTax
- * TaxType15Code.mmWithholdingTax}</li>
+ * TaxType15Code.WithholdingTax}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType15Code#StampDuty
- * TaxType15Code.mmStampDuty}</li>
+ * TaxType15Code.StampDuty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType15Code#ConsumptionTax
- * TaxType15Code.mmConsumptionTax}</li>
+ * TaxType15Code.ConsumptionTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType15Code#ValueAddedTax
- * TaxType15Code.mmValueAddedTax}</li>
+ * TaxType15Code.ValueAddedTax}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TaxType15Code#CustomsTax
- * TaxType15Code.mmCustomsTax}</li>
+ * TaxType15Code.CustomsTax}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TaxType15Code#ValueAddedTaxOfZeroRate
- * TaxType15Code.mmValueAddedTaxOfZeroRate}</li>
+ * TaxType15Code.ValueAddedTaxOfZeroRate}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -65,8 +65,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -311,7 +311,7 @@ public class TaxType15Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("PROV");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TaxType15Code";

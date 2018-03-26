@@ -21,10 +21,14 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.CardPaymentValidation;
 import com.tools20022.repository.entity.Evidence;
+import com.tools20022.repository.entity.SignatureCondition;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Additional security provision attached to a contract. A (numeric) signature
@@ -71,8 +75,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -90,8 +94,8 @@ public class Signature extends Evidence {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SignatureCondition conditions;
 	/**
-	 * Parameters related to the signature provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,7 +125,7 @@ public class Signature extends Evidence {
 	 * definition} = "Parameters related to the signature provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmConditions = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Signature, Optional<SignatureCondition>> mmConditions = new MMBusinessAssociationEnd<Signature, Optional<SignatureCondition>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Signature.mmObject();
@@ -130,15 +134,25 @@ public class Signature extends Evidence {
 			definition = "Parameters related to the signature provided.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SignatureCondition.mmSignature;
+			opposite_lazy = () -> SignatureCondition.mmSignature;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SignatureCondition.mmObject();
+			type_lazy = () -> SignatureCondition.mmObject();
+		}
+
+		@Override
+		public Optional<SignatureCondition> getValue(Signature obj) {
+			return obj.getConditions();
+		}
+
+		@Override
+		public void setValue(Signature obj, Optional<SignatureCondition> value) {
+			obj.setConditions(value.orElse(null));
 		}
 	};
 	protected CardPaymentValidation cardPaymentValidation;
 	/**
-	 * Validation of a payment by card for which a signeture is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -170,7 +184,7 @@ public class Signature extends Evidence {
 	 * "Validation of a payment by card for which a signeture is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCardPaymentValidation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Signature, com.tools20022.repository.entity.CardPaymentValidation> mmCardPaymentValidation = new MMBusinessAssociationEnd<Signature, com.tools20022.repository.entity.CardPaymentValidation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Signature.mmObject();
@@ -183,16 +197,26 @@ public class Signature extends Evidence {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.CardPaymentValidation getValue(Signature obj) {
+			return obj.getCardPaymentValidation();
+		}
+
+		@Override
+		public void setValue(Signature obj, com.tools20022.repository.entity.CardPaymentValidation value) {
+			obj.setCardPaymentValidation(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Signature";
 				definition = "Additional security provision attached to a contract. A (numeric) signature can be used as evidence of origin and integrity, i.e., authenticity of the signed data. A judge can accept this evidence as proof.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SignatureCondition.mmSignature, com.tools20022.repository.entity.CardPaymentValidation.mmSignature);
+				associationDomain_lazy = () -> Arrays.asList(SignatureCondition.mmSignature, com.tools20022.repository.entity.CardPaymentValidation.mmSignature);
 				subType_lazy = () -> Arrays.asList(ElectronicSignature.mmObject());
 				superType_lazy = () -> Evidence.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Signature.mmConditions, com.tools20022.repository.entity.Signature.mmCardPaymentValidation);
@@ -206,19 +230,21 @@ public class Signature extends Evidence {
 		return mmObject_lazy.get();
 	}
 
-	public SignatureCondition getConditions() {
-		return conditions;
+	public Optional<SignatureCondition> getConditions() {
+		return conditions == null ? Optional.empty() : Optional.of(conditions);
 	}
 
-	public void setConditions(com.tools20022.repository.entity.SignatureCondition conditions) {
+	public Signature setConditions(SignatureCondition conditions) {
 		this.conditions = conditions;
+		return this;
 	}
 
 	public CardPaymentValidation getCardPaymentValidation() {
 		return cardPaymentValidation;
 	}
 
-	public void setCardPaymentValidation(com.tools20022.repository.entity.CardPaymentValidation cardPaymentValidation) {
-		this.cardPaymentValidation = cardPaymentValidation;
+	public Signature setCardPaymentValidation(com.tools20022.repository.entity.CardPaymentValidation cardPaymentValidation) {
+		this.cardPaymentValidation = Objects.requireNonNull(cardPaymentValidation);
+		return this;
 	}
 }

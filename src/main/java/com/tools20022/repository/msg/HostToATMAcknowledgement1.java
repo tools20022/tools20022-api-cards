@@ -22,8 +22,10 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.caam.HostToATMAcknowledgementV01;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ATMEnvironment9;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "HostToATMAcknowledgement1", propOrder = "environment")
 public class HostToATMAcknowledgement1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Envt", required = true)
 	protected ATMEnvironment9 environment;
 	/**
-	 * Environment of the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -102,9 +105,9 @@ public class HostToATMAcknowledgement1 {
 	 * definition} = "Environment of the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEnvironment = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<HostToATMAcknowledgement1, ATMEnvironment9> mmEnvironment = new MMMessageAssociationEnd<HostToATMAcknowledgement1, ATMEnvironment9>() {
 		{
-			componentContext_lazy = () -> HostToATMAcknowledgement1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.HostToATMAcknowledgement1.mmObject();
 			isDerived = false;
 			xmlTag = "Envt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -113,16 +116,26 @@ public class HostToATMAcknowledgement1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMEnvironment9.mmObject();
+			type_lazy = () -> ATMEnvironment9.mmObject();
+		}
+
+		@Override
+		public ATMEnvironment9 getValue(HostToATMAcknowledgement1 obj) {
+			return obj.getEnvironment();
+		}
+
+		@Override
+		public void setValue(HostToATMAcknowledgement1 obj, ATMEnvironment9 value) {
+			obj.setEnvironment(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(HostToATMAcknowledgement1.mmEnvironment);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.HostToATMAcknowledgement1.mmEnvironment);
 				messageBuildingBlock_lazy = () -> Arrays.asList(HostToATMAcknowledgementV01.mmHostToATMAcknowledgement);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "HostToATMAcknowledgement1";
 				definition = "Information related to the acknowledgement from an ATM to contact the ATM manager.";
@@ -131,12 +144,12 @@ public class HostToATMAcknowledgement1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Envt", required = true)
 	public ATMEnvironment9 getEnvironment() {
 		return environment;
 	}
 
-	public void setEnvironment(com.tools20022.repository.msg.ATMEnvironment9 environment) {
-		this.environment = environment;
+	public HostToATMAcknowledgement1 setEnvironment(ATMEnvironment9 environment) {
+		this.environment = Objects.requireNonNull(environment);
+		return this;
 	}
 }

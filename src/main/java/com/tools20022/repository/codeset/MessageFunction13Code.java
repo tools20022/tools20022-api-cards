@@ -38,76 +38,76 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#AuthorisationRequest
- * MessageFunction13Code.mmAuthorisationRequest}</li>
+ * MessageFunction13Code.AuthorisationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#AuthorisationResponse
- * MessageFunction13Code.mmAuthorisationResponse}</li>
+ * MessageFunction13Code.AuthorisationResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#CancellationAdvice
- * MessageFunction13Code.mmCancellationAdvice}</li>
+ * MessageFunction13Code.CancellationAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#CancellationAdviceResponse
- * MessageFunction13Code.mmCancellationAdviceResponse}</li>
+ * MessageFunction13Code.CancellationAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#CancellationRequest
- * MessageFunction13Code.mmCancellationRequest}</li>
+ * MessageFunction13Code.CancellationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#CancellationResponse
- * MessageFunction13Code.mmCancellationResponse}</li>
+ * MessageFunction13Code.CancellationResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#CompletionAdvice
- * MessageFunction13Code.mmCompletionAdvice}</li>
+ * MessageFunction13Code.CompletionAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#CompletionAdviceResponse
- * MessageFunction13Code.mmCompletionAdviceResponse}</li>
+ * MessageFunction13Code.CompletionAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#CurrencyConversionAdvice
- * MessageFunction13Code.mmCurrencyConversionAdvice}</li>
+ * MessageFunction13Code.CurrencyConversionAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#CurrencyConversionAdviceResponse
- * MessageFunction13Code.mmCurrencyConversionAdviceResponse}</li>
+ * MessageFunction13Code.CurrencyConversionAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#CurrencyConversionRequest
- * MessageFunction13Code.mmCurrencyConversionRequest}</li>
+ * MessageFunction13Code.CurrencyConversionRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#CurrencyConversionResponse
- * MessageFunction13Code.mmCurrencyConversionResponse}</li>
+ * MessageFunction13Code.CurrencyConversionResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#DiagnosticRequest
- * MessageFunction13Code.mmDiagnosticRequest}</li>
+ * MessageFunction13Code.DiagnosticRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#DiagnosticResponse
- * MessageFunction13Code.mmDiagnosticResponse}</li>
+ * MessageFunction13Code.DiagnosticResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#FinancialAuthorisationRequest
- * MessageFunction13Code.mmFinancialAuthorisationRequest}</li>
+ * MessageFunction13Code.FinancialAuthorisationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#FinancialAuthorisationResponse
- * MessageFunction13Code.mmFinancialAuthorisationResponse}</li>
+ * MessageFunction13Code.FinancialAuthorisationResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#FinancialCompletionAdvice
- * MessageFunction13Code.mmFinancialCompletionAdvice}</li>
+ * MessageFunction13Code.FinancialCompletionAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#FinancialCompletionAdviceResponse
- * MessageFunction13Code.mmFinancialCompletionAdviceResponse}</li>
+ * MessageFunction13Code.FinancialCompletionAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#FinancialReversalAdvice
- * MessageFunction13Code.mmFinancialReversalAdvice}</li>
+ * MessageFunction13Code.FinancialReversalAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#FinancialReversalAdviceResponse
- * MessageFunction13Code.mmFinancialReversalAdviceResponse}</li>
+ * MessageFunction13Code.FinancialReversalAdviceResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#ReconciliationRequest
- * MessageFunction13Code.mmReconciliationRequest}</li>
+ * MessageFunction13Code.ReconciliationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#ReconciliationResponse
- * MessageFunction13Code.mmReconciliationResponse}</li>
+ * MessageFunction13Code.ReconciliationResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#ReversalAdvice
- * MessageFunction13Code.mmReversalAdvice}</li>
+ * MessageFunction13Code.ReversalAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction13Code#ReversalAdviceResponse
- * MessageFunction13Code.mmReversalAdviceResponse}</li>
+ * MessageFunction13Code.ReversalAdviceResponse}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -116,8 +116,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -716,7 +716,7 @@ public class MessageFunction13Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MessageFunction13Code";
 				definition = "Type of message supporting a service.";

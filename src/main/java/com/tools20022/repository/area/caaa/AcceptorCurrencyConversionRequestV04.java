@@ -21,13 +21,14 @@ import com.tools20022.metamodel.MMMessageBuildingBlock;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.AcceptortoAcquirerCardTransactionLatestVersion;
+import com.tools20022.repository.area.AcceptortoAcquirerCardTransactionPreviousVersion;
 import com.tools20022.repository.msg.AcceptorCurrencyConversionRequest4;
 import com.tools20022.repository.msg.ContentInformationType15;
 import com.tools20022.repository.msg.Header30;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -58,8 +59,8 @@ import javax.xml.bind.annotation.*;
  * xmlTag} = "AccptrCcyConvsReq"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageDefinition#getBusinessArea
  * businessArea} =
- * {@linkplain com.tools20022.repository.area.AcceptortoAcquirerCardTransactionLatestVersion
- * AcceptortoAcquirerCardTransactionLatestVersion}</li>
+ * {@linkplain com.tools20022.repository.area.AcceptortoAcquirerCardTransactionPreviousVersion
+ * AcceptortoAcquirerCardTransactionPreviousVersion}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code caaa.016.001.04}</li>
@@ -75,15 +76,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AcceptorCurrencyConversionRequestV04", propOrder = {"header", "currencyConversionRequest", "securityTrailer"})
 public class AcceptorCurrencyConversionRequestV04 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header30 header;
 	/**
-	 * Currency Conversion request message management information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -104,7 +106,7 @@ public class AcceptorCurrencyConversionRequestV04 {
 	 * "Currency Conversion request message management information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorCurrencyConversionRequestV04, Header30> mmHeader = new MMMessageBuildingBlock<AcceptorCurrencyConversionRequestV04, Header30>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -115,18 +117,21 @@ public class AcceptorCurrencyConversionRequestV04 {
 			complexType_lazy = () -> Header30.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorCurrencyConversionRequestV04.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header30 getValue(AcceptorCurrencyConversionRequestV04 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(AcceptorCurrencyConversionRequestV04 obj, Header30 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "CcyConvsReq", required = true)
 	protected AcceptorCurrencyConversionRequest4 currencyConversionRequest;
 	/**
-	 * Information related to the currency conversion request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -147,7 +152,7 @@ public class AcceptorCurrencyConversionRequestV04 {
 	 * definition} = "Information related to the currency conversion request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCurrencyConversionRequest = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorCurrencyConversionRequestV04, AcceptorCurrencyConversionRequest4> mmCurrencyConversionRequest = new MMMessageBuildingBlock<AcceptorCurrencyConversionRequestV04, AcceptorCurrencyConversionRequest4>() {
 		{
 			xmlTag = "CcyConvsReq";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -158,18 +163,21 @@ public class AcceptorCurrencyConversionRequestV04 {
 			complexType_lazy = () -> AcceptorCurrencyConversionRequest4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorCurrencyConversionRequestV04.class.getMethod("getCurrencyConversionRequest", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AcceptorCurrencyConversionRequest4 getValue(AcceptorCurrencyConversionRequestV04 obj) {
+			return obj.getCurrencyConversionRequest();
+		}
+
+		@Override
+		public void setValue(AcceptorCurrencyConversionRequestV04 obj, AcceptorCurrencyConversionRequest4 value) {
+			obj.setCurrencyConversionRequest(value);
 		}
 	};
+	@XmlElement(name = "SctyTrlr")
 	protected ContentInformationType15 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -190,7 +198,7 @@ public class AcceptorCurrencyConversionRequestV04 {
 	 * definition} = "Trailer of the message containing a MAC."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorCurrencyConversionRequestV04, Optional<ContentInformationType15>> mmSecurityTrailer = new MMMessageBuildingBlock<AcceptorCurrencyConversionRequestV04, Optional<ContentInformationType15>>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -201,12 +209,14 @@ public class AcceptorCurrencyConversionRequestV04 {
 			complexType_lazy = () -> ContentInformationType15.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorCurrencyConversionRequestV04.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType15> getValue(AcceptorCurrencyConversionRequestV04 obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(AcceptorCurrencyConversionRequestV04 obj, Optional<ContentInformationType15> value) {
+			obj.setSecurityTrailer(value.orElse(null));
 		}
 	};
 
@@ -218,7 +228,7 @@ public class AcceptorCurrencyConversionRequestV04 {
 				definition = "The AcceptorCurrencyConversionRequest message is sent by the card acceptor to the currency conversion service provider to request if the cardholder is able to pay in the currency of its card.\r\n";
 				rootElement = "Document";
 				xmlTag = "AccptrCcyConvsReq";
-				businessArea_lazy = () -> AcceptortoAcquirerCardTransactionLatestVersion.mmObject();
+				businessArea_lazy = () -> AcceptortoAcquirerCardTransactionPreviousVersion.mmObject();
 				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.caaa.AcceptorCurrencyConversionRequestV04.mmHeader,
 						com.tools20022.repository.area.caaa.AcceptorCurrencyConversionRequestV04.mmCurrencyConversionRequest, com.tools20022.repository.area.caaa.AcceptorCurrencyConversionRequestV04.mmSecurityTrailer);
 				messageDefinitionIdentifier_lazy = () -> new MMMessageDefinitionIdentifier() {
@@ -239,34 +249,34 @@ public class AcceptorCurrencyConversionRequestV04 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header30 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header30 header) {
-		this.header = header;
+	public AcceptorCurrencyConversionRequestV04 setHeader(Header30 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "CcyConvsReq", required = true)
 	public AcceptorCurrencyConversionRequest4 getCurrencyConversionRequest() {
 		return currencyConversionRequest;
 	}
 
-	public void setCurrencyConversionRequest(AcceptorCurrencyConversionRequest4 currencyConversionRequest) {
-		this.currencyConversionRequest = currencyConversionRequest;
+	public AcceptorCurrencyConversionRequestV04 setCurrencyConversionRequest(AcceptorCurrencyConversionRequest4 currencyConversionRequest) {
+		this.currencyConversionRequest = Objects.requireNonNull(currencyConversionRequest);
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr")
-	public ContentInformationType15 getSecurityTrailer() {
-		return securityTrailer;
+	public Optional<ContentInformationType15> getSecurityTrailer() {
+		return securityTrailer == null ? Optional.empty() : Optional.of(securityTrailer);
 	}
 
-	public void setSecurityTrailer(ContentInformationType15 securityTrailer) {
+	public AcceptorCurrencyConversionRequestV04 setSecurityTrailer(ContentInformationType15 securityTrailer) {
 		this.securityTrailer = securityTrailer;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:caaa.016.04.04")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:caaa.016.001.04")
 	static public class Document {
 		@XmlElement(name = "AccptrCcyConvsReq", required = true)
 		public AcceptorCurrencyConversionRequestV04 messageBody;

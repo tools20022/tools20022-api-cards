@@ -38,31 +38,33 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMSecuritySchemeCode#ApplicationRemoteKeyLoading
- * ATMSecuritySchemeCode.mmApplicationRemoteKeyLoading}</li>
+ * ATMSecuritySchemeCode.ApplicationRemoteKeyLoading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMSecuritySchemeCode#CertificateRemoteKeyLoading
- * ATMSecuritySchemeCode.mmCertificateRemoteKeyLoading}</li>
+ * ATMSecuritySchemeCode.CertificateRemoteKeyLoading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMSecuritySchemeCode#GermanRemoteKeyLoading
- * ATMSecuritySchemeCode.mmGermanRemoteKeyLoading}</li>
+ * ATMSecuritySchemeCode.GermanRemoteKeyLoading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMSecuritySchemeCode#FrenchRemoteKeyLoading
- * ATMSecuritySchemeCode.mmFrenchRemoteKeyLoading}</li>
+ * ATMSecuritySchemeCode.FrenchRemoteKeyLoading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMSecuritySchemeCode#LuxemburgRemoteKeyLoading
- * ATMSecuritySchemeCode.mmLuxemburgRemoteKeyLoading}</li>
+ * ATMSecuritySchemeCode.LuxemburgRemoteKeyLoading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMSecuritySchemeCode#ManualKeyEntry
- * ATMSecuritySchemeCode.mmManualKeyEntry}</li>
+ * ATMSecuritySchemeCode.ManualKeyEntry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMSecuritySchemeCode#PKIKeyDownload
- * ATMSecuritySchemeCode.mmPKIKeyDownload}</li>
+ * ATMSecuritySchemeCode.PKIKeyDownload}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMSecuritySchemeCode#SignatureRemoteKeyLoading
- * ATMSecuritySchemeCode.mmSignatureRemoteKeyLoading}</li>
+ * ATMSecuritySchemeCode.SignatureRemoteKeyLoading}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMSecuritySchemeCode#Unitialised
- * ATMSecuritySchemeCode.mmUnitialised}</li>
+ * ATMSecuritySchemeCode.Unitialised}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ATMSecuritySchemeCode#TR34
+ * ATMSecuritySchemeCode.TR34}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -77,8 +79,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -376,6 +378,39 @@ public class ATMSecuritySchemeCode extends MMCode {
 			codeName = "NONE";
 		}
 	};
+	/**
+	 * ANSI X9 TR34 2012 scheme for the distribution of the symmetric public
+	 * keys and the initial master key.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.ATMSecuritySchemeCode
+	 * ATMSecuritySchemeCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "TR34"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "TR34"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "ANSI X9 TR34 2012 scheme for the distribution of the symmetric public keys and the initial master key."
+	 * </li>
+	 * </ul>
+	 */
+	public static final ATMSecuritySchemeCode TR34 = new ATMSecuritySchemeCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "TR34";
+			definition = "ANSI X9 TR34 2012 scheme for the distribution of the symmetric public keys and the initial master key.";
+			owner_lazy = () -> com.tools20022.repository.codeset.ATMSecuritySchemeCode.mmObject();
+			codeName = "TR34";
+		}
+	};
 	final static private LinkedHashMap<String, ATMSecuritySchemeCode> codesByName = new LinkedHashMap<>();
 
 	protected ATMSecuritySchemeCode() {
@@ -384,7 +419,7 @@ public class ATMSecuritySchemeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMSecuritySchemeCode";
 				definition = "Key exchange security scheme on an ATM for the host manager.";
@@ -393,7 +428,7 @@ public class ATMSecuritySchemeCode extends MMCode {
 						com.tools20022.repository.codeset.ATMSecuritySchemeCode.GermanRemoteKeyLoading, com.tools20022.repository.codeset.ATMSecuritySchemeCode.FrenchRemoteKeyLoading,
 						com.tools20022.repository.codeset.ATMSecuritySchemeCode.LuxemburgRemoteKeyLoading, com.tools20022.repository.codeset.ATMSecuritySchemeCode.ManualKeyEntry,
 						com.tools20022.repository.codeset.ATMSecuritySchemeCode.PKIKeyDownload, com.tools20022.repository.codeset.ATMSecuritySchemeCode.SignatureRemoteKeyLoading,
-						com.tools20022.repository.codeset.ATMSecuritySchemeCode.Unitialised);
+						com.tools20022.repository.codeset.ATMSecuritySchemeCode.Unitialised, com.tools20022.repository.codeset.ATMSecuritySchemeCode.TR34);
 			}
 		});
 		return mmObject_lazy.get();
@@ -409,6 +444,7 @@ public class ATMSecuritySchemeCode extends MMCode {
 		codesByName.put(PKIKeyDownload.getCodeName().get(), PKIKeyDownload);
 		codesByName.put(SignatureRemoteKeyLoading.getCodeName().get(), SignatureRemoteKeyLoading);
 		codesByName.put(Unitialised.getCodeName().get(), Unitialised);
+		codesByName.put(TR34.getCodeName().get(), TR34);
 	}
 
 	public static ATMSecuritySchemeCode valueOf(String codeName) {

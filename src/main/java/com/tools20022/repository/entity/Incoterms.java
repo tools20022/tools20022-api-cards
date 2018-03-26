@@ -20,11 +20,14 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.Incoterms4Choice;
 import com.tools20022.repository.codeset.IncotermsCode;
+import com.tools20022.repository.entity.Location;
+import com.tools20022.repository.entity.Transport;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.Incoterms3;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * International commerce terms are a series of international sales terms,
@@ -76,8 +79,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -95,8 +98,8 @@ public class Incoterms {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Transport transport;
 	/**
-	 * Specifies the transport information to which the incoterms apply.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -127,7 +130,7 @@ public class Incoterms {
 	 * "Specifies the transport information to which the incoterms apply."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTransport = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Incoterms, Optional<Transport>> mmTransport = new MMBusinessAssociationEnd<Incoterms, Optional<Transport>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Incoterms.mmObject();
@@ -136,15 +139,25 @@ public class Incoterms {
 			definition = "Specifies the transport information to which the incoterms apply.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Transport.mmIncoterms;
+			opposite_lazy = () -> Transport.mmIncoterms;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
+			type_lazy = () -> Transport.mmObject();
+		}
+
+		@Override
+		public Optional<Transport> getValue(Incoterms obj) {
+			return obj.getTransport();
+		}
+
+		@Override
+		public void setValue(Incoterms obj, Optional<Transport> value) {
+			obj.setTransport(value.orElse(null));
 		}
 	};
 	protected IncotermsCode code;
 	/**
-	 * Specifies the applicable Incoterm by means of a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -179,7 +192,7 @@ public class Incoterms {
 	 * definition} = "Specifies the applicable Incoterm by means of a code."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCode = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Incoterms, IncotermsCode> mmCode = new MMBusinessAttribute<Incoterms, IncotermsCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Incoterms4Choice.mmCode, Incoterms4Choice.mmProprietary, Incoterms3.mmIncotermsCode);
 			isDerived = false;
@@ -192,18 +205,20 @@ public class Incoterms {
 			simpleType_lazy = () -> IncotermsCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Incoterms.class.getMethod("getCode", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public IncotermsCode getValue(Incoterms obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(Incoterms obj, IncotermsCode value) {
+			obj.setCode(value);
 		}
 	};
 	protected Location location;
 	/**
-	 * Location where the Incoterms are actioned.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -239,7 +254,7 @@ public class Incoterms {
 	 * definition} = "Location where the Incoterms are actioned."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmLocation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Incoterms, Location> mmLocation = new MMBusinessAssociationEnd<Incoterms, Location>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Incoterms3.mmLocation);
 			isDerived = false;
@@ -249,20 +264,30 @@ public class Incoterms {
 			definition = "Location where the Incoterms are actioned.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Location.mmIncoterms;
+			opposite_lazy = () -> Location.mmIncoterms;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
+			type_lazy = () -> Location.mmObject();
+		}
+
+		@Override
+		public Location getValue(Incoterms obj) {
+			return obj.getLocation();
+		}
+
+		@Override
+		public void setValue(Incoterms obj, Location value) {
+			obj.setLocation(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Incoterms";
 				definition = "International commerce terms are a series of international sales terms, published by International Chamber of Commerce (ICC) and widely used in international commercial transactions. These are accepted by governments, legal authorities and practitioners worldwide for the interpretation of most commonly used terms in international trade. Scope of this is limited to matters relating to rights and obligations of the parties to the contract of sale with respect to the delivery of goods sold. They are used to divide transaction costs and responsibilities between buyer and seller and reflect state-of-the-art transportation practices.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Location.mmIncoterms, com.tools20022.repository.entity.Transport.mmIncoterms);
+				associationDomain_lazy = () -> Arrays.asList(Location.mmIncoterms, Transport.mmIncoterms);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Incoterms.mmTransport, com.tools20022.repository.entity.Incoterms.mmCode, com.tools20022.repository.entity.Incoterms.mmLocation);
 				derivationComponent_lazy = () -> Arrays.asList(Incoterms4Choice.mmObject(), Incoterms3.mmObject());
 			}
@@ -275,27 +300,30 @@ public class Incoterms {
 		return mmObject_lazy.get();
 	}
 
-	public Transport getTransport() {
-		return transport;
+	public Optional<Transport> getTransport() {
+		return transport == null ? Optional.empty() : Optional.of(transport);
 	}
 
-	public void setTransport(com.tools20022.repository.entity.Transport transport) {
+	public Incoterms setTransport(Transport transport) {
 		this.transport = transport;
+		return this;
 	}
 
 	public IncotermsCode getCode() {
 		return code;
 	}
 
-	public void setCode(IncotermsCode code) {
-		this.code = code;
+	public Incoterms setCode(IncotermsCode code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
 	public Location getLocation() {
 		return location;
 	}
 
-	public void setLocation(com.tools20022.repository.entity.Location location) {
-		this.location = location;
+	public Incoterms setLocation(Location location) {
+		this.location = Objects.requireNonNull(location);
+		return this;
 	}
 }

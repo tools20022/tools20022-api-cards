@@ -21,9 +21,13 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.CorporateActionEvent;
+import com.tools20022.repository.entity.SecuritiesPricing;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Prices related to a corporate action.
@@ -61,6 +65,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.repository.entity.CorporateActionPrice#mmPricingCalculation
  * CorporateActionPrice.mmPricingCalculation}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionPrice#mmMinimumMultipleCashToInstruct
+ * CorporateActionPrice.mmMinimumMultipleCashToInstruct}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionPrice#mmMaximumCashToInstruct
+ * CorporateActionPrice.mmMaximumCashToInstruct}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.CorporateActionPrice#mmMinimumCashToInstruct
+ * CorporateActionPrice.mmMinimumCashToInstruct}</li>
  * </ul>
  * </li>
  * <li>
@@ -89,6 +102,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmRelatedCorporateActionPrice
  * SecuritiesPricing.mmRelatedCorporateActionPrice}</li>
  * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmMinimumCashToInstructRelatedEvent
+ * SecuritiesPricing.mmMinimumCashToInstructRelatedEvent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmMaximumCashToInstructRelatedEvent
+ * SecuritiesPricing.mmMaximumCashToInstructRelatedEvent}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmMinimumMultipleCashToInstructRelatedEvent
+ * SecuritiesPricing.mmMinimumMultipleCashToInstructRelatedEvent}</li>
+ * <li>
  * {@linkplain com.tools20022.repository.entity.CorporateActionEvent#mmCorporateActionPrice
  * CorporateActionEvent.mmCorporateActionPrice}</li>
  * </ul>
@@ -96,8 +118,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -113,8 +135,8 @@ public class CorporateActionPrice {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CorporateActionEvent corporateActionEvent;
 	/**
-	 * Corporate event for which a price is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,7 +168,7 @@ public class CorporateActionPrice {
 	 * definition} = "Corporate event for which a price is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCorporateActionEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionPrice, Optional<CorporateActionEvent>> mmCorporateActionEvent = new MMBusinessAssociationEnd<CorporateActionPrice, Optional<CorporateActionEvent>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
@@ -155,20 +177,25 @@ public class CorporateActionPrice {
 			definition = "Corporate event for which a price is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmCorporateActionPrice;
+			opposite_lazy = () -> CorporateActionEvent.mmCorporateActionPrice;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
+			type_lazy = () -> CorporateActionEvent.mmObject();
+		}
+
+		@Override
+		public Optional<CorporateActionEvent> getValue(CorporateActionPrice obj) {
+			return obj.getCorporateActionEvent();
+		}
+
+		@Override
+		public void setValue(CorporateActionPrice obj, Optional<CorporateActionEvent> value) {
+			obj.setCorporateActionEvent(value.orElse(null));
 		}
 	};
 	protected SecuritiesPricing corporateActionExercisePrice;
 	/**
-	 * 1. Price at which security will be purchased/sold if warrant is
-	 * exercised, either as an actual amount or a percentage.<br>
-	 * 2. Price at which a bond is converted to underlying security either as an
-	 * actual amount or a percentage.<br>
-	 * 3. Strike price of an option, represented either as an actual amount or a
-	 * percentage.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -201,7 +228,7 @@ public class CorporateActionPrice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCorporateActionExercisePrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing> mmCorporateActionExercisePrice = new MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
@@ -210,16 +237,25 @@ public class CorporateActionPrice {
 			definition = "1. Price at which security will be purchased/sold if warrant is exercised, either as an actual amount or a percentage.\r\n2. Price at which a bond is converted to underlying security either as an actual amount or a percentage.\r\n3. Strike price of an option, represented either as an actual amount or a percentage.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmExercisePriceRelatedEvent;
+			opposite_lazy = () -> SecuritiesPricing.mmExercisePriceRelatedEvent;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(CorporateActionPrice obj) {
+			return obj.getCorporateActionExercisePrice();
+		}
+
+		@Override
+		public void setValue(CorporateActionPrice obj, SecuritiesPricing value) {
+			obj.setCorporateActionExercisePrice(value);
 		}
 	};
 	protected SecuritiesPricing genericCashPriceReceivedPerProduct;
 	/**
-	 * Generic cash price received per product by the underlying security holder
-	 * either as a percentage or an amount, eg, redemption price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -252,7 +288,7 @@ public class CorporateActionPrice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmGenericCashPriceReceivedPerProduct = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing> mmGenericCashPriceReceivedPerProduct = new MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
@@ -261,17 +297,25 @@ public class CorporateActionPrice {
 			definition = "Generic cash price received per product by the underlying security holder either as a percentage or an amount, eg, redemption price.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmGenericCashPriceReceivedPerProductRelatedEvent;
+			opposite_lazy = () -> SecuritiesPricing.mmGenericCashPriceReceivedPerProductRelatedEvent;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(CorporateActionPrice obj) {
+			return obj.getGenericCashPriceReceivedPerProduct();
+		}
+
+		@Override
+		public void setValue(CorporateActionPrice obj, SecuritiesPricing value) {
+			obj.setGenericCashPriceReceivedPerProduct(value);
 		}
 	};
 	protected SecuritiesPricing genericCashPricePaidPerProduct;
 	/**
-	 * Amount included in the dividend/NAV that is identified as gains directly
-	 * or indirectly derived from interest payments within the scope of the EU
-	 * Savings directive.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -304,7 +348,7 @@ public class CorporateActionPrice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmGenericCashPricePaidPerProduct = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing> mmGenericCashPricePaidPerProduct = new MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
@@ -313,16 +357,25 @@ public class CorporateActionPrice {
 			definition = "Amount included in the dividend/NAV that is identified as gains directly or indirectly derived from interest payments within the scope of the EU Savings directive.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmGenericCashPricePaidPerProductRelatedEvent;
+			opposite_lazy = () -> SecuritiesPricing.mmGenericCashPricePaidPerProductRelatedEvent;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(CorporateActionPrice obj) {
+			return obj.getGenericCashPricePaidPerProduct();
+		}
+
+		@Override
+		public void setValue(CorporateActionPrice obj, SecuritiesPricing value) {
+			obj.setGenericCashPricePaidPerProduct(value);
 		}
 	};
 	protected SecuritiesPricing cashInLieuOfSharePrice;
 	/**
-	 * Cash disbursement in lieu of equities; usually in lieu of fractional
-	 * quantity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -355,7 +408,7 @@ public class CorporateActionPrice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashInLieuOfSharePrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing> mmCashInLieuOfSharePrice = new MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
@@ -364,16 +417,25 @@ public class CorporateActionPrice {
 			definition = "Cash disbursement in lieu of equities; usually in lieu of fractional quantity.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmCashInLieuOfSharePriceRelatedEvent;
+			opposite_lazy = () -> SecuritiesPricing.mmCashInLieuOfSharePriceRelatedEvent;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(CorporateActionPrice obj) {
+			return obj.getCashInLieuOfSharePrice();
+		}
+
+		@Override
+		public void setValue(CorporateActionPrice obj, SecuritiesPricing value) {
+			obj.setCashInLieuOfSharePrice(value);
 		}
 	};
 	protected SecuritiesPricing overSubscriptionDepositPrice;
 	/**
-	 * Amount of money required per over-subscribed equity as defined by the
-	 * issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -406,7 +468,7 @@ public class CorporateActionPrice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOverSubscriptionDepositPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing> mmOverSubscriptionDepositPrice = new MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
@@ -415,16 +477,25 @@ public class CorporateActionPrice {
 			definition = "Amount of money required per over-subscribed equity as defined by the issuer.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmOverSubscriptionDepositPriceRelatedEvent;
+			opposite_lazy = () -> SecuritiesPricing.mmOverSubscriptionDepositPriceRelatedEvent;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(CorporateActionPrice obj) {
+			return obj.getOverSubscriptionDepositPrice();
+		}
+
+		@Override
+		public void setValue(CorporateActionPrice obj, SecuritiesPricing value) {
+			obj.setOverSubscriptionDepositPrice(value);
 		}
 	};
 	protected SecuritiesPricing cashValueForTax;
 	/**
-	 * Cash value of resulting securities proceeds for tax calculation and/or
-	 * reporting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -457,7 +528,7 @@ public class CorporateActionPrice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashValueForTax = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing> mmCashValueForTax = new MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
@@ -466,15 +537,25 @@ public class CorporateActionPrice {
 			definition = "Cash value of resulting securities proceeds for tax calculation and/or reporting.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmCashValueForTaxRelatedEvent;
+			opposite_lazy = () -> SecuritiesPricing.mmCashValueForTaxRelatedEvent;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(CorporateActionPrice obj) {
+			return obj.getCashValueForTax();
+		}
+
+		@Override
+		public void setValue(CorporateActionPrice obj, SecuritiesPricing value) {
+			obj.setCashValueForTax(value);
 		}
 	};
 	protected SecuritiesPricing pricingCalculation;
 	/**
-	 * Specifies the parameters taken into account to calculate the price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -506,7 +587,7 @@ public class CorporateActionPrice {
 	 * "Specifies the parameters taken into account to calculate the price."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPricingCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing> mmPricingCalculation = new MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
@@ -515,28 +596,214 @@ public class CorporateActionPrice {
 			definition = "Specifies the parameters taken into account to calculate the price.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmRelatedCorporateActionPrice;
+			opposite_lazy = () -> SecuritiesPricing.mmRelatedCorporateActionPrice;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(CorporateActionPrice obj) {
+			return obj.getPricingCalculation();
+		}
+
+		@Override
+		public void setValue(CorporateActionPrice obj, SecuritiesPricing value) {
+			obj.setPricingCalculation(value);
+		}
+	};
+	protected SecuritiesPricing minimumMultipleCashToInstruct;
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
+	 * opposite} =
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmMinimumMultipleCashToInstructRelatedEvent
+	 * SecuritiesPricing.mmMinimumMultipleCashToInstructRelatedEvent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
+	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getType
+	 * type} = {@linkplain com.tools20022.repository.entity.SecuritiesPricing
+	 * SecuritiesPricing}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
+	 * elementContext} =
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionPrice
+	 * CorporateActionPrice}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "MinimumMultipleCashToInstruct"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Mimimum multiple of a cash amount that may be instructed."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing> mmMinimumMultipleCashToInstruct = new MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing>() {
+		{
+			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
+			registrationStatus = MMRegistrationStatus.REGISTERED;
+			name = "MinimumMultipleCashToInstruct";
+			definition = "Mimimum multiple of a cash amount that may be instructed.";
+			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> SecuritiesPricing.mmMinimumMultipleCashToInstructRelatedEvent;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(CorporateActionPrice obj) {
+			return obj.getMinimumMultipleCashToInstruct();
+		}
+
+		@Override
+		public void setValue(CorporateActionPrice obj, SecuritiesPricing value) {
+			obj.setMinimumMultipleCashToInstruct(value);
+		}
+	};
+	protected SecuritiesPricing maximumCashToInstruct;
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
+	 * opposite} =
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmMaximumCashToInstructRelatedEvent
+	 * SecuritiesPricing.mmMaximumCashToInstructRelatedEvent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
+	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getType
+	 * type} = {@linkplain com.tools20022.repository.entity.SecuritiesPricing
+	 * SecuritiesPricing}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
+	 * elementContext} =
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionPrice
+	 * CorporateActionPrice}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "MaximumCashToInstruct"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Maximum cash amount that may be instructed."</li>
+	 * </ul>
+	 */
+	public static final MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing> mmMaximumCashToInstruct = new MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing>() {
+		{
+			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
+			registrationStatus = MMRegistrationStatus.REGISTERED;
+			name = "MaximumCashToInstruct";
+			definition = "Maximum cash amount that may be instructed.";
+			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> SecuritiesPricing.mmMaximumCashToInstructRelatedEvent;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(CorporateActionPrice obj) {
+			return obj.getMaximumCashToInstruct();
+		}
+
+		@Override
+		public void setValue(CorporateActionPrice obj, SecuritiesPricing value) {
+			obj.setMaximumCashToInstruct(value);
+		}
+	};
+	protected SecuritiesPricing minimumCashToInstruct;
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getOpposite
+	 * opposite} =
+	 * {@linkplain com.tools20022.repository.entity.SecuritiesPricing#mmMinimumCashToInstructRelatedEvent
+	 * SecuritiesPricing.mmMinimumCashToInstructRelatedEvent}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getAggregation
+	 * aggregation} = com.tools20022.metamodel.MMAggregation.NONE</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getType
+	 * type} = {@linkplain com.tools20022.repository.entity.SecuritiesPricing
+	 * SecuritiesPricing}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
+	 * elementContext} =
+	 * {@linkplain com.tools20022.repository.entity.CorporateActionPrice
+	 * CorporateActionPrice}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "MinimumCashToInstruct"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Minimum cash amount that may be instructed."</li>
+	 * </ul>
+	 */
+	public static final MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing> mmMinimumCashToInstruct = new MMBusinessAssociationEnd<CorporateActionPrice, SecuritiesPricing>() {
+		{
+			isDerived = false;
+			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionPrice.mmObject();
+			registrationStatus = MMRegistrationStatus.REGISTERED;
+			name = "MinimumCashToInstruct";
+			definition = "Minimum cash amount that may be instructed.";
+			maxOccurs = 1;
+			minOccurs = 1;
+			opposite_lazy = () -> SecuritiesPricing.mmMinimumCashToInstructRelatedEvent;
+			aggregation = MMAggregation.NONE;
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(CorporateActionPrice obj) {
+			return obj.getMinimumCashToInstruct();
+		}
+
+		@Override
+		public void setValue(CorporateActionPrice obj, SecuritiesPricing value) {
+			obj.setMinimumCashToInstruct(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionPrice";
 				definition = "Prices related to a corporate action.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesPricing.mmExercisePriceRelatedEvent,
-						com.tools20022.repository.entity.SecuritiesPricing.mmGenericCashPriceReceivedPerProductRelatedEvent, com.tools20022.repository.entity.SecuritiesPricing.mmGenericCashPricePaidPerProductRelatedEvent,
-						com.tools20022.repository.entity.SecuritiesPricing.mmCashInLieuOfSharePriceRelatedEvent, com.tools20022.repository.entity.SecuritiesPricing.mmOverSubscriptionDepositPriceRelatedEvent,
-						com.tools20022.repository.entity.SecuritiesPricing.mmCashValueForTaxRelatedEvent, com.tools20022.repository.entity.SecuritiesPricing.mmRelatedCorporateActionPrice,
-						com.tools20022.repository.entity.CorporateActionEvent.mmCorporateActionPrice);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesPricing.mmExercisePriceRelatedEvent, SecuritiesPricing.mmGenericCashPriceReceivedPerProductRelatedEvent, SecuritiesPricing.mmGenericCashPricePaidPerProductRelatedEvent,
+						SecuritiesPricing.mmCashInLieuOfSharePriceRelatedEvent, SecuritiesPricing.mmOverSubscriptionDepositPriceRelatedEvent, SecuritiesPricing.mmCashValueForTaxRelatedEvent, SecuritiesPricing.mmRelatedCorporateActionPrice,
+						SecuritiesPricing.mmMinimumCashToInstructRelatedEvent, SecuritiesPricing.mmMaximumCashToInstructRelatedEvent, SecuritiesPricing.mmMinimumMultipleCashToInstructRelatedEvent,
+						CorporateActionEvent.mmCorporateActionPrice);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionPrice.mmCorporateActionEvent, com.tools20022.repository.entity.CorporateActionPrice.mmCorporateActionExercisePrice,
 						com.tools20022.repository.entity.CorporateActionPrice.mmGenericCashPriceReceivedPerProduct, com.tools20022.repository.entity.CorporateActionPrice.mmGenericCashPricePaidPerProduct,
 						com.tools20022.repository.entity.CorporateActionPrice.mmCashInLieuOfSharePrice, com.tools20022.repository.entity.CorporateActionPrice.mmOverSubscriptionDepositPrice,
-						com.tools20022.repository.entity.CorporateActionPrice.mmCashValueForTax, com.tools20022.repository.entity.CorporateActionPrice.mmPricingCalculation);
+						com.tools20022.repository.entity.CorporateActionPrice.mmCashValueForTax, com.tools20022.repository.entity.CorporateActionPrice.mmPricingCalculation,
+						com.tools20022.repository.entity.CorporateActionPrice.mmMinimumMultipleCashToInstruct, com.tools20022.repository.entity.CorporateActionPrice.mmMaximumCashToInstruct,
+						com.tools20022.repository.entity.CorporateActionPrice.mmMinimumCashToInstruct);
 			}
 
 			@Override
@@ -547,67 +814,102 @@ public class CorporateActionPrice {
 		return mmObject_lazy.get();
 	}
 
-	public CorporateActionEvent getCorporateActionEvent() {
-		return corporateActionEvent;
+	public Optional<CorporateActionEvent> getCorporateActionEvent() {
+		return corporateActionEvent == null ? Optional.empty() : Optional.of(corporateActionEvent);
 	}
 
-	public void setCorporateActionEvent(com.tools20022.repository.entity.CorporateActionEvent corporateActionEvent) {
+	public CorporateActionPrice setCorporateActionEvent(CorporateActionEvent corporateActionEvent) {
 		this.corporateActionEvent = corporateActionEvent;
+		return this;
 	}
 
 	public SecuritiesPricing getCorporateActionExercisePrice() {
 		return corporateActionExercisePrice;
 	}
 
-	public void setCorporateActionExercisePrice(com.tools20022.repository.entity.SecuritiesPricing corporateActionExercisePrice) {
-		this.corporateActionExercisePrice = corporateActionExercisePrice;
+	public CorporateActionPrice setCorporateActionExercisePrice(SecuritiesPricing corporateActionExercisePrice) {
+		this.corporateActionExercisePrice = Objects.requireNonNull(corporateActionExercisePrice);
+		return this;
 	}
 
 	public SecuritiesPricing getGenericCashPriceReceivedPerProduct() {
 		return genericCashPriceReceivedPerProduct;
 	}
 
-	public void setGenericCashPriceReceivedPerProduct(com.tools20022.repository.entity.SecuritiesPricing genericCashPriceReceivedPerProduct) {
-		this.genericCashPriceReceivedPerProduct = genericCashPriceReceivedPerProduct;
+	public CorporateActionPrice setGenericCashPriceReceivedPerProduct(SecuritiesPricing genericCashPriceReceivedPerProduct) {
+		this.genericCashPriceReceivedPerProduct = Objects.requireNonNull(genericCashPriceReceivedPerProduct);
+		return this;
 	}
 
 	public SecuritiesPricing getGenericCashPricePaidPerProduct() {
 		return genericCashPricePaidPerProduct;
 	}
 
-	public void setGenericCashPricePaidPerProduct(com.tools20022.repository.entity.SecuritiesPricing genericCashPricePaidPerProduct) {
-		this.genericCashPricePaidPerProduct = genericCashPricePaidPerProduct;
+	public CorporateActionPrice setGenericCashPricePaidPerProduct(SecuritiesPricing genericCashPricePaidPerProduct) {
+		this.genericCashPricePaidPerProduct = Objects.requireNonNull(genericCashPricePaidPerProduct);
+		return this;
 	}
 
 	public SecuritiesPricing getCashInLieuOfSharePrice() {
 		return cashInLieuOfSharePrice;
 	}
 
-	public void setCashInLieuOfSharePrice(com.tools20022.repository.entity.SecuritiesPricing cashInLieuOfSharePrice) {
-		this.cashInLieuOfSharePrice = cashInLieuOfSharePrice;
+	public CorporateActionPrice setCashInLieuOfSharePrice(SecuritiesPricing cashInLieuOfSharePrice) {
+		this.cashInLieuOfSharePrice = Objects.requireNonNull(cashInLieuOfSharePrice);
+		return this;
 	}
 
 	public SecuritiesPricing getOverSubscriptionDepositPrice() {
 		return overSubscriptionDepositPrice;
 	}
 
-	public void setOverSubscriptionDepositPrice(com.tools20022.repository.entity.SecuritiesPricing overSubscriptionDepositPrice) {
-		this.overSubscriptionDepositPrice = overSubscriptionDepositPrice;
+	public CorporateActionPrice setOverSubscriptionDepositPrice(SecuritiesPricing overSubscriptionDepositPrice) {
+		this.overSubscriptionDepositPrice = Objects.requireNonNull(overSubscriptionDepositPrice);
+		return this;
 	}
 
 	public SecuritiesPricing getCashValueForTax() {
 		return cashValueForTax;
 	}
 
-	public void setCashValueForTax(com.tools20022.repository.entity.SecuritiesPricing cashValueForTax) {
-		this.cashValueForTax = cashValueForTax;
+	public CorporateActionPrice setCashValueForTax(SecuritiesPricing cashValueForTax) {
+		this.cashValueForTax = Objects.requireNonNull(cashValueForTax);
+		return this;
 	}
 
 	public SecuritiesPricing getPricingCalculation() {
 		return pricingCalculation;
 	}
 
-	public void setPricingCalculation(com.tools20022.repository.entity.SecuritiesPricing pricingCalculation) {
-		this.pricingCalculation = pricingCalculation;
+	public CorporateActionPrice setPricingCalculation(SecuritiesPricing pricingCalculation) {
+		this.pricingCalculation = Objects.requireNonNull(pricingCalculation);
+		return this;
+	}
+
+	public SecuritiesPricing getMinimumMultipleCashToInstruct() {
+		return minimumMultipleCashToInstruct;
+	}
+
+	public CorporateActionPrice setMinimumMultipleCashToInstruct(SecuritiesPricing minimumMultipleCashToInstruct) {
+		this.minimumMultipleCashToInstruct = Objects.requireNonNull(minimumMultipleCashToInstruct);
+		return this;
+	}
+
+	public SecuritiesPricing getMaximumCashToInstruct() {
+		return maximumCashToInstruct;
+	}
+
+	public CorporateActionPrice setMaximumCashToInstruct(SecuritiesPricing maximumCashToInstruct) {
+		this.maximumCashToInstruct = Objects.requireNonNull(maximumCashToInstruct);
+		return this;
+	}
+
+	public SecuritiesPricing getMinimumCashToInstruct() {
+		return minimumCashToInstruct;
+	}
+
+	public CorporateActionPrice setMinimumCashToInstruct(SecuritiesPricing minimumCashToInstruct) {
+		this.minimumCashToInstruct = Objects.requireNonNull(minimumCashToInstruct);
+		return this;
 	}
 }

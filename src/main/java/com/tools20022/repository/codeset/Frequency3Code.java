@@ -37,19 +37,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency3Code#Annual
- * Frequency3Code.mmAnnual}</li>
+ * Frequency3Code.Annual}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency3Code#Monthly
- * Frequency3Code.mmMonthly}</li>
+ * Frequency3Code.Monthly}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency3Code#Quarterly
- * Frequency3Code.mmQuarterly}</li>
+ * Frequency3Code.Quarterly}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency3Code#SemiAnnual
- * Frequency3Code.mmSemiAnnual}</li>
+ * Frequency3Code.SemiAnnual}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency3Code#Weekly
- * Frequency3Code.mmWeekly}</li>
+ * Frequency3Code.Weekly}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency3Code#Daily
- * Frequency3Code.mmDaily}</li>
+ * Frequency3Code.Daily}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Frequency3Code#TenDays
- * Frequency3Code.mmTenDays}</li>
+ * Frequency3Code.TenDays}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -57,8 +57,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -255,7 +255,7 @@ public class Frequency3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("YEAR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Frequency3Code";

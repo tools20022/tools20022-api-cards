@@ -22,9 +22,11 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.SettlementPartyRole;
+import com.tools20022.repository.entity.TreasuryTrade;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Role played by a party in the context of the settlement of a treasury trade.
@@ -60,8 +62,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,8 +81,8 @@ public class TreasurySettlementPartyRole extends SettlementPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected TreasuryTrade treasuryTrade;
 	/**
-	 * Identifies the treasury trade for which a party plays a settlement role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,7 +115,7 @@ public class TreasurySettlementPartyRole extends SettlementPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTreasuryTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<TreasurySettlementPartyRole, com.tools20022.repository.entity.TreasuryTrade> mmTreasuryTrade = new MMBusinessAssociationEnd<TreasurySettlementPartyRole, com.tools20022.repository.entity.TreasuryTrade>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TreasurySettlementPartyRole.mmObject();
@@ -126,12 +128,22 @@ public class TreasurySettlementPartyRole extends SettlementPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.TreasuryTrade.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.TreasuryTrade getValue(TreasurySettlementPartyRole obj) {
+			return obj.getTreasuryTrade();
+		}
+
+		@Override
+		public void setValue(TreasurySettlementPartyRole obj, com.tools20022.repository.entity.TreasuryTrade value) {
+			obj.setTreasuryTrade(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TreasurySettlementPartyRole";
 				definition = "Role played by a party in the context of the settlement of a treasury trade.";
@@ -152,7 +164,8 @@ public class TreasurySettlementPartyRole extends SettlementPartyRole {
 		return treasuryTrade;
 	}
 
-	public void setTreasuryTrade(com.tools20022.repository.entity.TreasuryTrade treasuryTrade) {
-		this.treasuryTrade = treasuryTrade;
+	public TreasurySettlementPartyRole setTreasuryTrade(com.tools20022.repository.entity.TreasuryTrade treasuryTrade) {
+		this.treasuryTrade = Objects.requireNonNull(treasuryTrade);
+		return this;
 	}
 }

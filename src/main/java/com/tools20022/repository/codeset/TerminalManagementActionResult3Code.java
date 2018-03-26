@@ -38,56 +38,56 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult3Code#AccessDenied
- * TerminalManagementActionResult3Code.mmAccessDenied}</li>
+ * TerminalManagementActionResult3Code.AccessDenied}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult3Code#ConnectionError
- * TerminalManagementActionResult3Code.mmConnectionError}</li>
+ * TerminalManagementActionResult3Code.ConnectionError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult3Code#FormatError
- * TerminalManagementActionResult3Code.mmFormatError}</li>
+ * TerminalManagementActionResult3Code.FormatError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult3Code#InvalidContent
- * TerminalManagementActionResult3Code.mmInvalidContent}</li>
+ * TerminalManagementActionResult3Code.InvalidContent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult3Code#LengthError
- * TerminalManagementActionResult3Code.mmLengthError}</li>
+ * TerminalManagementActionResult3Code.LengthError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult3Code#MemoryOverflow
- * TerminalManagementActionResult3Code.mmMemoryOverflow}</li>
+ * TerminalManagementActionResult3Code.MemoryOverflow}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult3Code#MissingFile
- * TerminalManagementActionResult3Code.mmMissingFile}</li>
+ * TerminalManagementActionResult3Code.MissingFile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult3Code#NotSupported
- * TerminalManagementActionResult3Code.mmNotSupported}</li>
+ * TerminalManagementActionResult3Code.NotSupported}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult3Code#SignatureError
- * TerminalManagementActionResult3Code.mmSignatureError}</li>
+ * TerminalManagementActionResult3Code.SignatureError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult3Code#Success
- * TerminalManagementActionResult3Code.mmSuccess}</li>
+ * TerminalManagementActionResult3Code.Success}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult3Code#SyntaxError
- * TerminalManagementActionResult3Code.mmSyntaxError}</li>
+ * TerminalManagementActionResult3Code.SyntaxError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult3Code#Timeout
- * TerminalManagementActionResult3Code.mmTimeout}</li>
+ * TerminalManagementActionResult3Code.Timeout}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult3Code#UnknownData
- * TerminalManagementActionResult3Code.mmUnknownData}</li>
+ * TerminalManagementActionResult3Code.UnknownData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult3Code#UnknownKeyReference
- * TerminalManagementActionResult3Code.mmUnknownKeyReference}</li>
+ * TerminalManagementActionResult3Code.UnknownKeyReference}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult3Code#InvalidDelegationProof
- * TerminalManagementActionResult3Code.mmInvalidDelegationProof}</li>
+ * TerminalManagementActionResult3Code.InvalidDelegationProof}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult3Code#InvalidDelegationInManagementPlan
- * TerminalManagementActionResult3Code.mmInvalidDelegationInManagementPlan}</li>
+ * TerminalManagementActionResult3Code.InvalidDelegationInManagementPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult3Code#DelegationParametersReceivedUnauthorized
- * TerminalManagementActionResult3Code.
- * mmDelegationParametersReceivedUnauthorized}</li>
+ * TerminalManagementActionResult3Code.DelegationParametersReceivedUnauthorized}
+ * </li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -96,8 +96,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -534,7 +534,7 @@ public class TerminalManagementActionResult3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACCD");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TerminalManagementActionResult3Code";

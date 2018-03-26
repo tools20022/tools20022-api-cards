@@ -17,6 +17,8 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -43,41 +45,41 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#FillOrKill
- * CustomerHandlingInstructionsCode.mmFillOrKill}</li>
+ * CustomerHandlingInstructionsCode.FillOrKill}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#ImmediateOrCancel
- * CustomerHandlingInstructionsCode.mmImmediateOrCancel}</li>
+ * CustomerHandlingInstructionsCode.ImmediateOrCancel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#AllOrNone
- * CustomerHandlingInstructionsCode.mmAllOrNone}</li>
+ * CustomerHandlingInstructionsCode.AllOrNone}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#Scale
- * CustomerHandlingInstructionsCode.mmScale}</li>
+ * CustomerHandlingInstructionsCode.Scale}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#Work
- * CustomerHandlingInstructionsCode.mmWork}</li>
+ * CustomerHandlingInstructionsCode.Work}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#AddOnOrder
- * CustomerHandlingInstructionsCode.mmAddOnOrder}</li>
+ * CustomerHandlingInstructionsCode.AddOnOrder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#ExchangeForPhysicalTransaction
- * CustomerHandlingInstructionsCode.mmExchangeForPhysicalTransaction}</li>
+ * CustomerHandlingInstructionsCode.ExchangeForPhysicalTransaction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#ImbalanceOnly
- * CustomerHandlingInstructionsCode.mmImbalanceOnly}</li>
+ * CustomerHandlingInstructionsCode.ImbalanceOnly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#Pegged
- * CustomerHandlingInstructionsCode.mmPegged}</li>
+ * CustomerHandlingInstructionsCode.Pegged}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CustomerHandlingInstructionsCode#NotHeld
- * CustomerHandlingInstructionsCode.mmNotHeld}</li>
+ * CustomerHandlingInstructionsCode.NotHeld}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -92,7 +94,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "CustomerHandlingInstructionsCode"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Codes that apply special information that the Broker / Dealer needs to report, as specified by the customer. Firms that are taking in orders manually but routing for execution electronically and for compliance reporting must capture the client's handling instructions.This is intended for reporting only ( OATS =  Order Audit Trail System - Phase III regulatory requirement)."
+ * "Codes that apply special information that the Broker / Dealer needs to report, as specified by the customer. Firms that are taking in orders manually but routing for execution electronically and for compliance reporting must capture the client's handling instructions.This is intended for reporting only ( OATS = Order Audit Trail System - Phase III regulatory requirement)."
  * </li>
  * </ul>
  */
@@ -112,6 +114,10 @@ public class CustomerHandlingInstructionsCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "FIKI"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TILI//FIKI, FIXSynonym: 50 value
+	 * 4</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -126,6 +132,7 @@ public class CustomerHandlingInstructionsCode extends MMCode {
 	 */
 	public static final CustomerHandlingInstructionsCode FillOrKill = new CustomerHandlingInstructionsCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TILI//FIKI"), new FIXSynonym(this, "50 value 4"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "FillOrKill";
 			definition = "Market or limit order that is to be executed in its entirety as soon as it is submitted; if not so executed, the order is to be cancelled.";
@@ -145,6 +152,10 @@ public class CustomerHandlingInstructionsCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "IOCA"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::TILI//IOCA, FIXSynonym: 59 value
+	 * 3</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
@@ -159,6 +170,7 @@ public class CustomerHandlingInstructionsCode extends MMCode {
 	 */
 	public static final CustomerHandlingInstructionsCode ImmediateOrCancel = new CustomerHandlingInstructionsCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::TILI//IOCA"), new FIXSynonym(this, "59 value 3"));
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ImmediateOrCancel";
 			definition = "Market or limit order to be executed in whole or in part as soon as it is submitted; any portion not so executed is to be cancelled.";
@@ -437,11 +449,11 @@ public class CustomerHandlingInstructionsCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FIKI");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CustomerHandlingInstructionsCode";
-				definition = "Codes that apply special information that the Broker / Dealer needs to report, as specified by the customer. Firms that are taking in orders manually but routing for execution electronically and for compliance reporting must capture the client's handling instructions.This is intended for reporting only ( OATS =  Order Audit Trail System - Phase III regulatory requirement).";
+				definition = "Codes that apply special information that the Broker / Dealer needs to report, as specified by the customer. Firms that are taking in orders manually but routing for execution electronically and for compliance reporting must capture the client's handling instructions.This is intended for reporting only ( OATS = Order Audit Trail System - Phase III regulatory requirement).";
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.FillOrKill, com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.ImmediateOrCancel,
 						com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.AllOrNone, com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.Scale,
 						com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.Work, com.tools20022.repository.codeset.CustomerHandlingInstructionsCode.AddOnOrder,

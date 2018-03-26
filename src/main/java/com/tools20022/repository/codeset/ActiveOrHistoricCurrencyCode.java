@@ -37,13 +37,24 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
+ * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
+ * {@linkplain com.tools20022.repository.codeset.ActiveOrHistoricCurrencyCode_BusinessCode
+ * ActiveOrHistoricCurrencyCode_BusinessCode}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMString#getPattern pattern} =
  * "[A-Z]{3,3}"</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintActiveOrHistoricCurrency#forActiveOrHistoricCurrencyCode
+ * ConstraintActiveOrHistoricCurrency.forActiveOrHistoricCurrencyCode}</li>
+ * </ul>
+ * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -74,11 +85,13 @@ public class ActiveOrHistoricCurrencyCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintActiveOrHistoricCurrency.forActiveOrHistoricCurrencyCode);
 				example = Arrays.asList("USD");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ActiveOrHistoricCurrencyCode";
 				definition = "A code allocated to a currency by a Maintenance Agency under an international identification scheme, as described in the latest edition of the international standard ISO 4217 \"Codes for the representation of currencies and funds\".";
+				trace_lazy = () -> ActiveOrHistoricCurrencyCode_BusinessCode.mmObject();
 				pattern = "[A-Z]{3,3}";
 			}
 		});

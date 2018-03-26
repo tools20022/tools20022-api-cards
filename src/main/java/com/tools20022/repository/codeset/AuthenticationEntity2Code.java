@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationEntity2Code#ICC
- * AuthenticationEntity2Code.mmICC}</li>
+ * AuthenticationEntity2Code.ICC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationEntity2Code#AuthorisedAgent
- * AuthenticationEntity2Code.mmAuthorisedAgent}</li>
+ * AuthenticationEntity2Code.AuthorisedAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationEntity2Code#Merchant
- * AuthenticationEntity2Code.mmMerchant}</li>
+ * AuthenticationEntity2Code.Merchant}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationEntity2Code#Acquirer
- * AuthenticationEntity2Code.mmAcquirer}</li>
+ * AuthenticationEntity2Code.Acquirer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationEntity2Code#Issuer
- * AuthenticationEntity2Code.mmIssuer}</li>
+ * AuthenticationEntity2Code.Issuer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationEntity2Code#Terminal
- * AuthenticationEntity2Code.mmTerminal}</li>
+ * AuthenticationEntity2Code.Terminal}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -236,7 +236,7 @@ public class AuthenticationEntity2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ICCD");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AuthenticationEntity2Code";

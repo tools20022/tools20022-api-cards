@@ -21,10 +21,12 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.CashAccount;
 import com.tools20022.repository.entity.UndertakingPartyRole;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 
 /**
  * Party that takes responsibility for indemnifying the issuer.
@@ -60,8 +62,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,10 +79,8 @@ public class UndertakingUltimateObligor extends UndertakingPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CashAccount cashAccount;
 	/**
-	 * Accounts nominated by the obligor for the settlement of the amount
-	 * claimed, or for the settlement of charges or to record the liability
-	 * amount related to the undertaking.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,7 +113,7 @@ public class UndertakingUltimateObligor extends UndertakingPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<UndertakingUltimateObligor, Optional<CashAccount>> mmCashAccount = new MMBusinessAssociationEnd<UndertakingUltimateObligor, Optional<CashAccount>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.UndertakingUltimateObligor.mmObject();
@@ -126,12 +126,22 @@ public class UndertakingUltimateObligor extends UndertakingPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 		}
+
+		@Override
+		public Optional<CashAccount> getValue(UndertakingUltimateObligor obj) {
+			return obj.getCashAccount();
+		}
+
+		@Override
+		public void setValue(UndertakingUltimateObligor obj, Optional<CashAccount> value) {
+			obj.setCashAccount(value.orElse(null));
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UndertakingUltimateObligor";
 				definition = "Party that takes responsibility for indemnifying the issuer.";
@@ -148,11 +158,12 @@ public class UndertakingUltimateObligor extends UndertakingPartyRole {
 		return mmObject_lazy.get();
 	}
 
-	public CashAccount getCashAccount() {
-		return cashAccount;
+	public Optional<CashAccount> getCashAccount() {
+		return cashAccount == null ? Optional.empty() : Optional.of(cashAccount);
 	}
 
-	public void setCashAccount(com.tools20022.repository.entity.CashAccount cashAccount) {
+	public UndertakingUltimateObligor setCashAccount(com.tools20022.repository.entity.CashAccount cashAccount) {
 		this.cashAccount = cashAccount;
+		return this;
 	}
 }

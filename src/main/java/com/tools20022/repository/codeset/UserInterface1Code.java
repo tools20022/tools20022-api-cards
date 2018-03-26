@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UserInterface1Code#CardholderDisplay
- * UserInterface1Code.mmCardholderDisplay}</li>
+ * UserInterface1Code.CardholderDisplay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UserInterface1Code#CardholderReceipt
- * UserInterface1Code.mmCardholderReceipt}</li>
+ * UserInterface1Code.CardholderReceipt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UserInterface1Code#MerchantDisplay
- * UserInterface1Code.mmMerchantDisplay}</li>
+ * UserInterface1Code.MerchantDisplay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UserInterface1Code#MerchantReceipt
- * UserInterface1Code.mmMerchantReceipt}</li>
+ * UserInterface1Code.MerchantReceipt}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -182,7 +182,7 @@ public class UserInterface1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CDSP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UserInterface1Code";

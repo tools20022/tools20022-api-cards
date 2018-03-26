@@ -25,9 +25,10 @@ import com.tools20022.repository.area.AcquirertoIssuerCardTransactionLatestVersi
 import com.tools20022.repository.msg.AcquirerNetworkManagementInitiation1;
 import com.tools20022.repository.msg.ContentInformationType15;
 import com.tools20022.repository.msg.Header17;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -75,15 +76,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "NetworkManagementInitiation", propOrder = {"header", "networkManagementInitiation", "securityTrailer"})
 public class NetworkManagementInitiation {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header17 header;
 	/**
-	 * Information related to the protocol management.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,7 +105,7 @@ public class NetworkManagementInitiation {
 	 * definition} = "Information related to the protocol management."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NetworkManagementInitiation, Header17> mmHeader = new MMMessageBuildingBlock<NetworkManagementInitiation, Header17>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,18 +116,21 @@ public class NetworkManagementInitiation {
 			complexType_lazy = () -> Header17.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetworkManagementInitiation.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header17 getValue(NetworkManagementInitiation obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(NetworkManagementInitiation obj, Header17 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "NtwkMgmtInitn", required = true)
 	protected AcquirerNetworkManagementInitiation1 networkManagementInitiation;
 	/**
-	 * Information related to the network management.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,7 +151,7 @@ public class NetworkManagementInitiation {
 	 * definition} = "Information related to the network management."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmNetworkManagementInitiation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NetworkManagementInitiation, AcquirerNetworkManagementInitiation1> mmNetworkManagementInitiation = new MMMessageBuildingBlock<NetworkManagementInitiation, AcquirerNetworkManagementInitiation1>() {
 		{
 			xmlTag = "NtwkMgmtInitn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -157,18 +162,21 @@ public class NetworkManagementInitiation {
 			complexType_lazy = () -> AcquirerNetworkManagementInitiation1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetworkManagementInitiation.class.getMethod("getNetworkManagementInitiation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AcquirerNetworkManagementInitiation1 getValue(NetworkManagementInitiation obj) {
+			return obj.getNetworkManagementInitiation();
+		}
+
+		@Override
+		public void setValue(NetworkManagementInitiation obj, AcquirerNetworkManagementInitiation1 value) {
+			obj.setNetworkManagementInitiation(value);
 		}
 	};
+	@XmlElement(name = "SctyTrlr")
 	protected ContentInformationType15 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -189,7 +197,7 @@ public class NetworkManagementInitiation {
 	 * definition} = "Trailer of the message containing a MAC."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<NetworkManagementInitiation, Optional<ContentInformationType15>> mmSecurityTrailer = new MMMessageBuildingBlock<NetworkManagementInitiation, Optional<ContentInformationType15>>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -200,12 +208,14 @@ public class NetworkManagementInitiation {
 			complexType_lazy = () -> ContentInformationType15.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return NetworkManagementInitiation.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType15> getValue(NetworkManagementInitiation obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(NetworkManagementInitiation obj, Optional<ContentInformationType15> value) {
+			obj.setSecurityTrailer(value.orElse(null));
 		}
 	};
 
@@ -238,34 +248,34 @@ public class NetworkManagementInitiation {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header17 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header17 header) {
-		this.header = header;
+	public NetworkManagementInitiation setHeader(Header17 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "NtwkMgmtInitn", required = true)
 	public AcquirerNetworkManagementInitiation1 getNetworkManagementInitiation() {
 		return networkManagementInitiation;
 	}
 
-	public void setNetworkManagementInitiation(AcquirerNetworkManagementInitiation1 networkManagementInitiation) {
-		this.networkManagementInitiation = networkManagementInitiation;
+	public NetworkManagementInitiation setNetworkManagementInitiation(AcquirerNetworkManagementInitiation1 networkManagementInitiation) {
+		this.networkManagementInitiation = Objects.requireNonNull(networkManagementInitiation);
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr")
-	public ContentInformationType15 getSecurityTrailer() {
-		return securityTrailer;
+	public Optional<ContentInformationType15> getSecurityTrailer() {
+		return securityTrailer == null ? Optional.empty() : Optional.of(securityTrailer);
 	}
 
-	public void setSecurityTrailer(ContentInformationType15 securityTrailer) {
+	public NetworkManagementInitiation setSecurityTrailer(ContentInformationType15 securityTrailer) {
 		this.securityTrailer = securityTrailer;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:cain.009.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:cain.009.001.01")
 	static public class Document {
 		@XmlElement(name = "NtwkMgmtInitn", required = true)
 		public NetworkManagementInitiation messageBody;

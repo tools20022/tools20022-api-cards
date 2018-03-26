@@ -18,11 +18,13 @@
 package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
-import com.tools20022.repository.datatype.ActiveCurrencyAndAmount;
+import com.tools20022.repository.datatype.CurrencyAndAmount;
+import com.tools20022.repository.entity.ExposureCalculation;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Amount applied as an add-on to the exposure usually intended to cover a
@@ -63,12 +65,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
- * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+ * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "IndependentAmount"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
@@ -82,8 +84,8 @@ public class IndependentAmount {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ExposureCalculation relatedRiskCalculation;
 	/**
-	 * Risk coverage for which an independent amount is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -115,7 +117,7 @@ public class IndependentAmount {
 	 * "Risk coverage for which an independent amount is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedRiskCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<IndependentAmount, Optional<ExposureCalculation>> mmRelatedRiskCalculation = new MMBusinessAssociationEnd<IndependentAmount, Optional<ExposureCalculation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.IndependentAmount.mmObject();
@@ -124,23 +126,32 @@ public class IndependentAmount {
 			definition = "Risk coverage for which an independent amount is provided.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmCurrentIndependentAmount;
+			opposite_lazy = () -> ExposureCalculation.mmCurrentIndependentAmount;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ExposureCalculation.mmObject();
+			type_lazy = () -> ExposureCalculation.mmObject();
+		}
+
+		@Override
+		public Optional<ExposureCalculation> getValue(IndependentAmount obj) {
+			return obj.getRelatedRiskCalculation();
+		}
+
+		@Override
+		public void setValue(IndependentAmount obj, Optional<ExposureCalculation> value) {
+			obj.setRelatedRiskCalculation(value.orElse(null));
 		}
 	};
-	protected ActiveCurrencyAndAmount independentAmountPerTrade;
+	protected CurrencyAndAmount independentAmountPerTrade;
 	/**
-	 * Independent amounts that are related to specific trades or groups of
-	 * trades.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.datatype.ActiveCurrencyAndAmount
-	 * ActiveCurrencyAndAmount}</li>
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
@@ -149,7 +160,7 @@ public class IndependentAmount {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "IndependentAmountPerTrade"</li>
 	 * <li>
@@ -159,39 +170,39 @@ public class IndependentAmount {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIndependentAmountPerTrade = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<IndependentAmount, CurrencyAndAmount> mmIndependentAmountPerTrade = new MMBusinessAttribute<IndependentAmount, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.IndependentAmount.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndependentAmountPerTrade";
 			definition = "Independent amounts that are related to specific trades or groups of trades.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IndependentAmount.class.getMethod("getIndependentAmountPerTrade", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(IndependentAmount obj) {
+			return obj.getIndependentAmountPerTrade();
+		}
+
+		@Override
+		public void setValue(IndependentAmount obj, CurrencyAndAmount value) {
+			obj.setIndependentAmountPerTrade(value);
 		}
 	};
-	protected ActiveCurrencyAndAmount independentAmountValueAtRisk;
+	protected CurrencyAndAmount independentAmountValueAtRisk;
 	/**
-	 * Portfolio level independent amount which reflects portfolio change over a
-	 * short time period using statistical techniques such as volatility and
-	 * risk factor correlations.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.datatype.ActiveCurrencyAndAmount
-	 * ActiveCurrencyAndAmount}</li>
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
@@ -200,7 +211,7 @@ public class IndependentAmount {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "IndependentAmountValueAtRisk"</li>
 	 * <li>
@@ -210,40 +221,39 @@ public class IndependentAmount {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIndependentAmountValueAtRisk = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<IndependentAmount, CurrencyAndAmount> mmIndependentAmountValueAtRisk = new MMBusinessAttribute<IndependentAmount, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.IndependentAmount.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndependentAmountValueAtRisk";
 			definition = "Portfolio level independent amount which reflects portfolio change over a short time period using statistical techniques such as volatility and risk factor correlations.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IndependentAmount.class.getMethod("getIndependentAmountValueAtRisk", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(IndependentAmount obj) {
+			return obj.getIndependentAmountValueAtRisk();
+		}
+
+		@Override
+		public void setValue(IndependentAmount obj, CurrencyAndAmount value) {
+			obj.setIndependentAmountValueAtRisk(value);
 		}
 	};
-	protected ActiveCurrencyAndAmount independentAmountNetOpenPosition;
+	protected CurrencyAndAmount independentAmountNetOpenPosition;
 	/**
-	 * Portfolio level independent amount related to FX net open position, i.e.
-	 * to the difference between assets and liabilities in a particular
-	 * currency. This may be measured on a per currency basis or the position of
-	 * all currencies when calculated in base currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} =
-	 * {@linkplain com.tools20022.repository.datatype.ActiveCurrencyAndAmount
-	 * ActiveCurrencyAndAmount}</li>
+	 * {@linkplain com.tools20022.repository.datatype.CurrencyAndAmount
+	 * CurrencyAndAmount}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
@@ -252,7 +262,7 @@ public class IndependentAmount {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "IndependentAmountNetOpenPosition"</li>
 	 * <li>
@@ -262,35 +272,37 @@ public class IndependentAmount {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIndependentAmountNetOpenPosition = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<IndependentAmount, CurrencyAndAmount> mmIndependentAmountNetOpenPosition = new MMBusinessAttribute<IndependentAmount, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.IndependentAmount.mmObject();
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IndependentAmountNetOpenPosition";
 			definition = "Portfolio level independent amount related to FX net open position, i.e. to the difference between assets and liabilities in a particular currency. This may be measured on a per currency basis or the position of all currencies when calculated in base currency.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			simpleType_lazy = () -> ActiveCurrencyAndAmount.mmObject();
+			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return IndependentAmount.class.getMethod("getIndependentAmountNetOpenPosition", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(IndependentAmount obj) {
+			return obj.getIndependentAmountNetOpenPosition();
+		}
+
+		@Override
+		public void setValue(IndependentAmount obj, CurrencyAndAmount value) {
+			obj.setIndependentAmountNetOpenPosition(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
-				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "IndependentAmount";
 				definition = "Amount applied as an add-on to the exposure usually intended to cover a possible increase in exposure before the next valuation date.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ExposureCalculation.mmCurrentIndependentAmount);
+				associationDomain_lazy = () -> Arrays.asList(ExposureCalculation.mmCurrentIndependentAmount);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.IndependentAmount.mmRelatedRiskCalculation, com.tools20022.repository.entity.IndependentAmount.mmIndependentAmountPerTrade,
 						com.tools20022.repository.entity.IndependentAmount.mmIndependentAmountValueAtRisk, com.tools20022.repository.entity.IndependentAmount.mmIndependentAmountNetOpenPosition);
 			}
@@ -303,35 +315,39 @@ public class IndependentAmount {
 		return mmObject_lazy.get();
 	}
 
-	public ExposureCalculation getRelatedRiskCalculation() {
-		return relatedRiskCalculation;
+	public Optional<ExposureCalculation> getRelatedRiskCalculation() {
+		return relatedRiskCalculation == null ? Optional.empty() : Optional.of(relatedRiskCalculation);
 	}
 
-	public void setRelatedRiskCalculation(com.tools20022.repository.entity.ExposureCalculation relatedRiskCalculation) {
+	public IndependentAmount setRelatedRiskCalculation(ExposureCalculation relatedRiskCalculation) {
 		this.relatedRiskCalculation = relatedRiskCalculation;
+		return this;
 	}
 
-	public ActiveCurrencyAndAmount getIndependentAmountPerTrade() {
+	public CurrencyAndAmount getIndependentAmountPerTrade() {
 		return independentAmountPerTrade;
 	}
 
-	public void setIndependentAmountPerTrade(ActiveCurrencyAndAmount independentAmountPerTrade) {
-		this.independentAmountPerTrade = independentAmountPerTrade;
+	public IndependentAmount setIndependentAmountPerTrade(CurrencyAndAmount independentAmountPerTrade) {
+		this.independentAmountPerTrade = Objects.requireNonNull(independentAmountPerTrade);
+		return this;
 	}
 
-	public ActiveCurrencyAndAmount getIndependentAmountValueAtRisk() {
+	public CurrencyAndAmount getIndependentAmountValueAtRisk() {
 		return independentAmountValueAtRisk;
 	}
 
-	public void setIndependentAmountValueAtRisk(ActiveCurrencyAndAmount independentAmountValueAtRisk) {
-		this.independentAmountValueAtRisk = independentAmountValueAtRisk;
+	public IndependentAmount setIndependentAmountValueAtRisk(CurrencyAndAmount independentAmountValueAtRisk) {
+		this.independentAmountValueAtRisk = Objects.requireNonNull(independentAmountValueAtRisk);
+		return this;
 	}
 
-	public ActiveCurrencyAndAmount getIndependentAmountNetOpenPosition() {
+	public CurrencyAndAmount getIndependentAmountNetOpenPosition() {
 		return independentAmountNetOpenPosition;
 	}
 
-	public void setIndependentAmountNetOpenPosition(ActiveCurrencyAndAmount independentAmountNetOpenPosition) {
-		this.independentAmountNetOpenPosition = independentAmountNetOpenPosition;
+	public IndependentAmount setIndependentAmountNetOpenPosition(CurrencyAndAmount independentAmountNetOpenPosition) {
+		this.independentAmountNetOpenPosition = Objects.requireNonNull(independentAmountNetOpenPosition);
+		return this;
 	}
 }

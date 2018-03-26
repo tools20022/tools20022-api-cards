@@ -22,15 +22,14 @@ import com.tools20022.repository.codeset.FreightChargesCode;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.Consignment4;
 import com.tools20022.repository.msg.LineItem16;
 import com.tools20022.repository.msg.TradeAgreement13;
 import com.tools20022.repository.msg.TransportMeans3;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Moving of goods or people from one place to another by vehicle.
@@ -138,8 +137,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -156,8 +155,8 @@ public class Transport {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Incoterms incoterms;
 	/**
-	 * Specifies the applicable Incoterm and associated location.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -198,7 +197,7 @@ public class Transport {
 	 * "Specifies the applicable Incoterm and associated location."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIncoterms = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Transport, Incoterms> mmIncoterms = new MMBusinessAssociationEnd<Transport, Incoterms>() {
 		{
 			derivation_lazy = () -> Arrays.asList(TradeAgreement13.mmIncoterms, LineItem16.mmIncoterms);
 			isDerived = false;
@@ -208,16 +207,25 @@ public class Transport {
 			definition = "Specifies the applicable Incoterm and associated location.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Incoterms.mmTransport;
+			opposite_lazy = () -> Incoterms.mmTransport;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Incoterms.mmObject();
+			type_lazy = () -> Incoterms.mmObject();
+		}
+
+		@Override
+		public Incoterms getValue(Transport obj) {
+			return obj.getIncoterms();
+		}
+
+		@Override
+		public void setValue(Transport obj, Incoterms value) {
+			obj.setIncoterms(value);
 		}
 	};
 	protected Max35Text identification;
 	/**
-	 * Unique identification of the means of transport, such as the
-	 * International Maritime Organization number of a vessel.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -249,7 +257,7 @@ public class Transport {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Transport, Max35Text> mmIdentification = new MMBusinessAttribute<Transport, Max35Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(TransportMeans3.mmIdentification);
 			isDerived = false;
@@ -262,18 +270,20 @@ public class Transport {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Transport.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(Transport obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(Transport obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 	protected Packaging packaging;
 	/**
-	 * Physical packaging of goods for transport.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -310,7 +320,7 @@ public class Transport {
 	 * definition} = "Physical packaging of goods for transport."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPackaging = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Transport, Packaging> mmPackaging = new MMBusinessAssociationEnd<Transport, Packaging>() {
 		{
 			derivation_lazy = () -> Arrays.asList(LineItem16.mmPackaging);
 			isDerived = false;
@@ -320,15 +330,25 @@ public class Transport {
 			definition = "Physical packaging of goods for transport.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Packaging.mmTransport;
+			opposite_lazy = () -> Packaging.mmTransport;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
+			type_lazy = () -> Packaging.mmObject();
+		}
+
+		@Override
+		public Packaging getValue(Transport obj) {
+			return obj.getPackaging();
+		}
+
+		@Override
+		public void setValue(Transport obj, Packaging value) {
+			obj.setPackaging(value);
 		}
 	};
 	protected ISODateTime arrivalDateTime;
 	/**
-	 * Date and time when the goods reach their destination..
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -358,7 +378,7 @@ public class Transport {
 	 * definition} = "Date and time when the goods reach their destination.."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmArrivalDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Transport, ISODateTime> mmArrivalDateTime = new MMBusinessAttribute<Transport, ISODateTime>() {
 		{
 			derivation_lazy = () -> Arrays.asList(LineItem16.mmDeliveryDateTime);
 			isDerived = false;
@@ -371,18 +391,20 @@ public class Transport {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Transport.class.getMethod("getArrivalDateTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Transport obj) {
+			return obj.getArrivalDateTime();
+		}
+
+		@Override
+		public void setValue(Transport obj, ISODateTime value) {
+			obj.setArrivalDateTime(value);
 		}
 	};
 	protected YesNoIndicator partialShipment;
 	/**
-	 * Indicates whether or not partial shipments are allowed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -405,7 +427,7 @@ public class Transport {
 	 * definition} = "Indicates whether or not partial shipments are allowed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPartialShipment = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Transport, YesNoIndicator> mmPartialShipment = new MMBusinessAttribute<Transport, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
@@ -417,18 +439,20 @@ public class Transport {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Transport.class.getMethod("getPartialShipment", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(Transport obj) {
+			return obj.getPartialShipment();
+		}
+
+		@Override
+		public void setValue(Transport obj, YesNoIndicator value) {
+			obj.setPartialShipment(value);
 		}
 	};
 	protected YesNoIndicator transShipment;
 	/**
-	 * Indicates whether or not transshipment of goods is allowed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -452,7 +476,7 @@ public class Transport {
 	 * "Indicates whether or not transshipment of goods is allowed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTransShipment = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Transport, YesNoIndicator> mmTransShipment = new MMBusinessAttribute<Transport, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
@@ -464,18 +488,20 @@ public class Transport {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Transport.class.getMethod("getTransShipment", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(Transport obj) {
+			return obj.getTransShipment();
+		}
+
+		@Override
+		public void setValue(Transport obj, YesNoIndicator value) {
+			obj.setTransShipment(value);
 		}
 	};
 	protected ProductDelivery productDelivery;
 	/**
-	 * Specifies the delivery parameters of a trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -505,7 +531,7 @@ public class Transport {
 	 * definition} = "Specifies the delivery parameters of a trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmProductDelivery = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Transport, Optional<ProductDelivery>> mmProductDelivery = new MMBusinessAssociationEnd<Transport, Optional<ProductDelivery>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
@@ -514,15 +540,25 @@ public class Transport {
 			definition = "Specifies the delivery parameters of a trade.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmRouting;
+			opposite_lazy = () -> ProductDelivery.mmRouting;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
+			type_lazy = () -> ProductDelivery.mmObject();
+		}
+
+		@Override
+		public Optional<ProductDelivery> getValue(Transport obj) {
+			return obj.getProductDelivery();
+		}
+
+		@Override
+		public void setValue(Transport obj, Optional<ProductDelivery> value) {
+			obj.setProductDelivery(value.orElse(null));
 		}
 	};
 	protected Location placeOfDeparture;
 	/**
-	 * Place from where the goods must leave.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -551,7 +587,7 @@ public class Transport {
 	 * definition} = "Place from where the goods must leave."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPlaceOfDeparture = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Transport, Location> mmPlaceOfDeparture = new MMBusinessAssociationEnd<Transport, Location>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
@@ -560,15 +596,25 @@ public class Transport {
 			definition = "Place from where the goods must leave.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Location.mmDepartureTransportParameters;
+			opposite_lazy = () -> Location.mmDepartureTransportParameters;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
+			type_lazy = () -> Location.mmObject();
+		}
+
+		@Override
+		public Location getValue(Transport obj) {
+			return obj.getPlaceOfDeparture();
+		}
+
+		@Override
+		public void setValue(Transport obj, Location value) {
+			obj.setPlaceOfDeparture(value);
 		}
 	};
 	protected Location placeOfDestination;
 	/**
-	 * Place where the goods must arrive.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -597,7 +643,7 @@ public class Transport {
 	 * definition} = "Place where the goods must arrive."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPlaceOfDestination = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Transport, Location> mmPlaceOfDestination = new MMBusinessAssociationEnd<Transport, Location>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
@@ -606,15 +652,25 @@ public class Transport {
 			definition = "Place where the goods must arrive.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Location.mmDestinationTransportParameters;
+			opposite_lazy = () -> Location.mmDestinationTransportParameters;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
+			type_lazy = () -> Location.mmObject();
+		}
+
+		@Override
+		public Location getValue(Transport obj) {
+			return obj.getPlaceOfDestination();
+		}
+
+		@Override
+		public void setValue(Transport obj, Location value) {
+			obj.setPlaceOfDestination(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Charges> transportCharges;
+	protected List<Charges> transportCharges;
 	/**
-	 * Charges related to the conveyance of goods.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -643,7 +699,7 @@ public class Transport {
 	 * definition} = "Charges related to the conveyance of goods."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTransportCharges = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Transport, List<Charges>> mmTransportCharges = new MMBusinessAssociationEnd<Transport, List<Charges>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
@@ -651,16 +707,25 @@ public class Transport {
 			name = "TransportCharges";
 			definition = "Charges related to the conveyance of goods.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Charges.mmTransport;
+			opposite_lazy = () -> Charges.mmTransport;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Charges.mmObject();
+			type_lazy = () -> Charges.mmObject();
+		}
+
+		@Override
+		public List<Charges> getValue(Transport obj) {
+			return obj.getTransportCharges();
+		}
+
+		@Override
+		public void setValue(Transport obj, List<Charges> value) {
+			obj.setTransportCharges(value);
 		}
 	};
 	protected FreightChargesCode freightChargesPrepaidOrCollect;
 	/**
-	 * Identifies whether the freight charges associated with the items are
-	 * "prepaid" or "collect".
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -685,7 +750,7 @@ public class Transport {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFreightChargesPrepaidOrCollect = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Transport, FreightChargesCode> mmFreightChargesPrepaidOrCollect = new MMBusinessAttribute<Transport, FreightChargesCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
@@ -697,19 +762,20 @@ public class Transport {
 			simpleType_lazy = () -> FreightChargesCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Transport.class.getMethod("getFreightChargesPrepaidOrCollect", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FreightChargesCode getValue(Transport obj) {
+			return obj.getFreightChargesPrepaidOrCollect();
+		}
+
+		@Override
+		public void setValue(Transport obj, FreightChargesCode value) {
+			obj.setFreightChargesPrepaidOrCollect(value);
 		}
 	};
 	protected ShipmentDateRange shipmentDates;
 	/**
-	 * Specifies the shipment date, the earliest shipment date and the latest
-	 * shipment date.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -741,7 +807,7 @@ public class Transport {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmShipmentDates = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Transport, ShipmentDateRange> mmShipmentDates = new MMBusinessAssociationEnd<Transport, ShipmentDateRange>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
@@ -750,15 +816,25 @@ public class Transport {
 			definition = "Specifies the shipment date, the earliest shipment date and the latest shipment date.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.ShipmentDateRange.mmRelatedTransport;
+			opposite_lazy = () -> ShipmentDateRange.mmRelatedTransport;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ShipmentDateRange.mmObject();
+			type_lazy = () -> ShipmentDateRange.mmObject();
+		}
+
+		@Override
+		public ShipmentDateRange getValue(Transport obj) {
+			return obj.getShipmentDates();
+		}
+
+		@Override
+		public void setValue(Transport obj, ShipmentDateRange value) {
+			obj.setShipmentDates(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Goods> transportedGoods;
+	protected List<Goods> transportedGoods;
 	/**
-	 * Goods that are transported.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -787,7 +863,7 @@ public class Transport {
 	 * definition} = "Goods that are transported."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTransportedGoods = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Transport, List<Goods>> mmTransportedGoods = new MMBusinessAssociationEnd<Transport, List<Goods>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
@@ -795,15 +871,25 @@ public class Transport {
 			name = "TransportedGoods";
 			definition = "Goods that are transported.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Goods.mmTransport;
+			opposite_lazy = () -> Goods.mmTransport;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Goods.mmObject();
+			type_lazy = () -> Goods.mmObject();
+		}
+
+		@Override
+		public List<Goods> getValue(Transport obj) {
+			return obj.getTransportedGoods();
+		}
+
+		@Override
+		public void setValue(Transport obj, List<Goods> value) {
+			obj.setTransportedGoods(value);
 		}
 	};
 	protected TransportPartyRole partyRole;
 	/**
-	 * Specifies each role linked to the transport of goods.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -833,7 +919,7 @@ public class Transport {
 	 * definition} = "Specifies each role linked to the transport of goods."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Transport, Optional<TransportPartyRole>> mmPartyRole = new MMBusinessAssociationEnd<Transport, Optional<TransportPartyRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
@@ -842,15 +928,25 @@ public class Transport {
 			definition = "Specifies each role linked to the transport of goods.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.TransportPartyRole.mmTransport;
+			opposite_lazy = () -> TransportPartyRole.mmTransport;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TransportPartyRole.mmObject();
+			type_lazy = () -> TransportPartyRole.mmObject();
+		}
+
+		@Override
+		public Optional<TransportPartyRole> getValue(Transport obj) {
+			return obj.getPartyRole();
+		}
+
+		@Override
+		public void setValue(Transport obj, Optional<TransportPartyRole> value) {
+			obj.setPartyRole(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.entity.Location> transitLocation;
+	protected List<Location> transitLocation;
 	/**
-	 * Place through which the goods are transiting.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -879,7 +975,7 @@ public class Transport {
 	 * definition} = "Place through which the goods are transiting."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTransitLocation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Transport, List<Location>> mmTransitLocation = new MMBusinessAssociationEnd<Transport, List<Location>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
@@ -887,16 +983,25 @@ public class Transport {
 			name = "TransitLocation";
 			definition = "Place through which the goods are transiting.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Location.mmRelatedTransport;
+			opposite_lazy = () -> Location.mmRelatedTransport;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Location.mmObject();
+			type_lazy = () -> Location.mmObject();
+		}
+
+		@Override
+		public List<Location> getValue(Transport obj) {
+			return obj.getTransitLocation();
+		}
+
+		@Override
+		public void setValue(Transport obj, List<Location> value) {
+			obj.setTransitLocation(value);
 		}
 	};
 	protected Document transportDocuments;
 	/**
-	 * Documents which may be required in relation with the transportation of
-	 * goods.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -927,7 +1032,7 @@ public class Transport {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTransportDocuments = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Transport, Document> mmTransportDocuments = new MMBusinessAssociationEnd<Transport, Document>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Transport.mmObject();
@@ -936,23 +1041,31 @@ public class Transport {
 			definition = "Documents which may be required in relation with the transportation of goods.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Document.mmTransport;
+			opposite_lazy = () -> Document.mmTransport;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
+			type_lazy = () -> Document.mmObject();
+		}
+
+		@Override
+		public Document getValue(Transport obj) {
+			return obj.getTransportDocuments();
+		}
+
+		@Override
+		public void setValue(Transport obj, Document value) {
+			obj.setTransportDocuments(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Transport";
 				definition = "Moving of goods or people from one place to another by vehicle.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Location.mmDepartureTransportParameters, com.tools20022.repository.entity.Location.mmDestinationTransportParameters,
-						com.tools20022.repository.entity.Location.mmRelatedTransport, com.tools20022.repository.entity.Document.mmTransport, com.tools20022.repository.entity.Charges.mmTransport,
-						com.tools20022.repository.entity.Incoterms.mmTransport, com.tools20022.repository.entity.Goods.mmTransport, com.tools20022.repository.entity.ProductDelivery.mmRouting,
-						com.tools20022.repository.entity.Packaging.mmTransport, com.tools20022.repository.entity.TransportPartyRole.mmTransport, com.tools20022.repository.entity.ShipmentDateRange.mmRelatedTransport);
+				associationDomain_lazy = () -> Arrays.asList(Location.mmDepartureTransportParameters, Location.mmDestinationTransportParameters, Location.mmRelatedTransport, Document.mmTransport, Charges.mmTransport, Incoterms.mmTransport,
+						Goods.mmTransport, ProductDelivery.mmRouting, Packaging.mmTransport, TransportPartyRole.mmTransport, ShipmentDateRange.mmRelatedTransport);
 				derivationElement_lazy = () -> Arrays.asList(TransportMeans3.mmModeCode, Consignment4.mmTransportMeans);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Transport.mmIncoterms, com.tools20022.repository.entity.Transport.mmIdentification, com.tools20022.repository.entity.Transport.mmPackaging,
 						com.tools20022.repository.entity.Transport.mmArrivalDateTime, com.tools20022.repository.entity.Transport.mmPartialShipment, com.tools20022.repository.entity.Transport.mmTransShipment,
@@ -975,127 +1088,143 @@ public class Transport {
 		return incoterms;
 	}
 
-	public void setIncoterms(com.tools20022.repository.entity.Incoterms incoterms) {
-		this.incoterms = incoterms;
+	public Transport setIncoterms(Incoterms incoterms) {
+		this.incoterms = Objects.requireNonNull(incoterms);
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public Transport setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public Packaging getPackaging() {
 		return packaging;
 	}
 
-	public void setPackaging(com.tools20022.repository.entity.Packaging packaging) {
-		this.packaging = packaging;
+	public Transport setPackaging(Packaging packaging) {
+		this.packaging = Objects.requireNonNull(packaging);
+		return this;
 	}
 
 	public ISODateTime getArrivalDateTime() {
 		return arrivalDateTime;
 	}
 
-	public void setArrivalDateTime(ISODateTime arrivalDateTime) {
-		this.arrivalDateTime = arrivalDateTime;
+	public Transport setArrivalDateTime(ISODateTime arrivalDateTime) {
+		this.arrivalDateTime = Objects.requireNonNull(arrivalDateTime);
+		return this;
 	}
 
 	public YesNoIndicator getPartialShipment() {
 		return partialShipment;
 	}
 
-	public void setPartialShipment(YesNoIndicator partialShipment) {
-		this.partialShipment = partialShipment;
+	public Transport setPartialShipment(YesNoIndicator partialShipment) {
+		this.partialShipment = Objects.requireNonNull(partialShipment);
+		return this;
 	}
 
 	public YesNoIndicator getTransShipment() {
 		return transShipment;
 	}
 
-	public void setTransShipment(YesNoIndicator transShipment) {
-		this.transShipment = transShipment;
+	public Transport setTransShipment(YesNoIndicator transShipment) {
+		this.transShipment = Objects.requireNonNull(transShipment);
+		return this;
 	}
 
-	public ProductDelivery getProductDelivery() {
-		return productDelivery;
+	public Optional<ProductDelivery> getProductDelivery() {
+		return productDelivery == null ? Optional.empty() : Optional.of(productDelivery);
 	}
 
-	public void setProductDelivery(com.tools20022.repository.entity.ProductDelivery productDelivery) {
+	public Transport setProductDelivery(ProductDelivery productDelivery) {
 		this.productDelivery = productDelivery;
+		return this;
 	}
 
 	public Location getPlaceOfDeparture() {
 		return placeOfDeparture;
 	}
 
-	public void setPlaceOfDeparture(com.tools20022.repository.entity.Location placeOfDeparture) {
-		this.placeOfDeparture = placeOfDeparture;
+	public Transport setPlaceOfDeparture(Location placeOfDeparture) {
+		this.placeOfDeparture = Objects.requireNonNull(placeOfDeparture);
+		return this;
 	}
 
 	public Location getPlaceOfDestination() {
 		return placeOfDestination;
 	}
 
-	public void setPlaceOfDestination(com.tools20022.repository.entity.Location placeOfDestination) {
-		this.placeOfDestination = placeOfDestination;
+	public Transport setPlaceOfDestination(Location placeOfDestination) {
+		this.placeOfDestination = Objects.requireNonNull(placeOfDestination);
+		return this;
 	}
 
 	public List<Charges> getTransportCharges() {
-		return transportCharges;
+		return transportCharges == null ? transportCharges = new ArrayList<>() : transportCharges;
 	}
 
-	public void setTransportCharges(List<com.tools20022.repository.entity.Charges> transportCharges) {
-		this.transportCharges = transportCharges;
+	public Transport setTransportCharges(List<Charges> transportCharges) {
+		this.transportCharges = Objects.requireNonNull(transportCharges);
+		return this;
 	}
 
 	public FreightChargesCode getFreightChargesPrepaidOrCollect() {
 		return freightChargesPrepaidOrCollect;
 	}
 
-	public void setFreightChargesPrepaidOrCollect(FreightChargesCode freightChargesPrepaidOrCollect) {
-		this.freightChargesPrepaidOrCollect = freightChargesPrepaidOrCollect;
+	public Transport setFreightChargesPrepaidOrCollect(FreightChargesCode freightChargesPrepaidOrCollect) {
+		this.freightChargesPrepaidOrCollect = Objects.requireNonNull(freightChargesPrepaidOrCollect);
+		return this;
 	}
 
 	public ShipmentDateRange getShipmentDates() {
 		return shipmentDates;
 	}
 
-	public void setShipmentDates(com.tools20022.repository.entity.ShipmentDateRange shipmentDates) {
-		this.shipmentDates = shipmentDates;
+	public Transport setShipmentDates(ShipmentDateRange shipmentDates) {
+		this.shipmentDates = Objects.requireNonNull(shipmentDates);
+		return this;
 	}
 
 	public List<Goods> getTransportedGoods() {
-		return transportedGoods;
+		return transportedGoods == null ? transportedGoods = new ArrayList<>() : transportedGoods;
 	}
 
-	public void setTransportedGoods(List<com.tools20022.repository.entity.Goods> transportedGoods) {
-		this.transportedGoods = transportedGoods;
+	public Transport setTransportedGoods(List<Goods> transportedGoods) {
+		this.transportedGoods = Objects.requireNonNull(transportedGoods);
+		return this;
 	}
 
-	public TransportPartyRole getPartyRole() {
-		return partyRole;
+	public Optional<TransportPartyRole> getPartyRole() {
+		return partyRole == null ? Optional.empty() : Optional.of(partyRole);
 	}
 
-	public void setPartyRole(com.tools20022.repository.entity.TransportPartyRole partyRole) {
+	public Transport setPartyRole(TransportPartyRole partyRole) {
 		this.partyRole = partyRole;
+		return this;
 	}
 
 	public List<Location> getTransitLocation() {
-		return transitLocation;
+		return transitLocation == null ? transitLocation = new ArrayList<>() : transitLocation;
 	}
 
-	public void setTransitLocation(List<com.tools20022.repository.entity.Location> transitLocation) {
-		this.transitLocation = transitLocation;
+	public Transport setTransitLocation(List<Location> transitLocation) {
+		this.transitLocation = Objects.requireNonNull(transitLocation);
+		return this;
 	}
 
 	public Document getTransportDocuments() {
 		return transportDocuments;
 	}
 
-	public void setTransportDocuments(com.tools20022.repository.entity.Document transportDocuments) {
-		this.transportDocuments = transportDocuments;
+	public Transport setTransportDocuments(Document transportDocuments) {
+		this.transportDocuments = Objects.requireNonNull(transportDocuments);
+		return this;
 	}
 }

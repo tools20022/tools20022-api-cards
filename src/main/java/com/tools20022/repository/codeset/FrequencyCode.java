@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -37,34 +38,41 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.FrequencyCode#Annual
- * FrequencyCode.mmAnnual}</li>
+ * FrequencyCode.Annual}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FrequencyCode#Monthly
- * FrequencyCode.mmMonthly}</li>
+ * FrequencyCode.Monthly}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FrequencyCode#Quarterly
- * FrequencyCode.mmQuarterly}</li>
+ * FrequencyCode.Quarterly}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FrequencyCode#SemiAnnual
- * FrequencyCode.mmSemiAnnual}</li>
+ * FrequencyCode.SemiAnnual}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FrequencyCode#Weekly
- * FrequencyCode.mmWeekly}</li>
+ * FrequencyCode.Weekly}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FrequencyCode#Daily
- * FrequencyCode.mmDaily}</li>
+ * FrequencyCode.Daily}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FrequencyCode#Adhoc
- * FrequencyCode.mmAdhoc}</li>
+ * FrequencyCode.Adhoc}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FrequencyCode#IntraDay
- * FrequencyCode.mmIntraDay}</li>
+ * FrequencyCode.IntraDay}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FrequencyCode#Overnight
- * FrequencyCode.mmOvernight}</li>
+ * FrequencyCode.Overnight}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FrequencyCode#TenDays
- * FrequencyCode.mmTenDays}</li>
+ * FrequencyCode.TenDays}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FrequencyCode#Fortnightly
- * FrequencyCode.mmFortnightly}</li>
+ * FrequencyCode.Fortnightly}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FrequencyCode#TriggeredByMovement
- * FrequencyCode.mmTriggeredByMovement}</li>
+ * FrequencyCode.TriggeredByMovement}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FrequencyCode#Never
- * FrequencyCode.mmNever}</li>
+ * FrequencyCode.Never}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FrequencyCode#Rate
- * FrequencyCode.mmRate}</li>
+ * FrequencyCode.Rate}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.FrequencyCode#OnCreditEvent
+ * FrequencyCode.OnCreditEvent}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.FrequencyCode#Upfront
+ * FrequencyCode.Upfront}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.FrequencyCode#OnExpiry
+ * FrequencyCode.OnExpiry}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -77,8 +85,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -110,6 +118,10 @@ public class FrequencyCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "YEAR"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PFRE//ANNU, ISO15022Synonym:
+	 * :22F::SFRE//YEAR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -122,6 +134,7 @@ public class FrequencyCode extends MMCode {
 	 */
 	public static final FrequencyCode Annual = new FrequencyCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PFRE//ANNU"), new ISO15022Synonym(this, ":22F::SFRE//YEAR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Annual";
 			definition = "Event takes place every year or once a year.";
@@ -140,6 +153,10 @@ public class FrequencyCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "MNTH"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PFRE//MNTH, ISO15022Synonym:
+	 * :22F::SFRE//MNTH</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -152,6 +169,7 @@ public class FrequencyCode extends MMCode {
 	 */
 	public static final FrequencyCode Monthly = new FrequencyCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PFRE//MNTH"), new ISO15022Synonym(this, ":22F::SFRE//MNTH"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Monthly";
 			definition = "Event takes place every month or once a month.";
@@ -170,6 +188,10 @@ public class FrequencyCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "QURT"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PFRE//QUTR, ISO15022Synonym:
+	 * :22F::SFRE//QUAR</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -183,6 +205,7 @@ public class FrequencyCode extends MMCode {
 	 */
 	public static final FrequencyCode Quarterly = new FrequencyCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PFRE//QUTR"), new ISO15022Synonym(this, ":22F::SFRE//QUAR"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Quarterly";
 			definition = "Event takes place every three months or four times a year.";
@@ -201,6 +224,9 @@ public class FrequencyCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "MIAN"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PFRE//SEMI</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -213,6 +239,7 @@ public class FrequencyCode extends MMCode {
 	 */
 	public static final FrequencyCode SemiAnnual = new FrequencyCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PFRE//SEMI"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SemiAnnual";
 			definition = "Event takes place every six months or two times a year.";
@@ -231,6 +258,10 @@ public class FrequencyCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "WEEK"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::PFRE//WEEK, ISO15022Synonym:
+	 * :22F::SFRE//WEEK</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -243,6 +274,7 @@ public class FrequencyCode extends MMCode {
 	 */
 	public static final FrequencyCode Weekly = new FrequencyCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::PFRE//WEEK"), new ISO15022Synonym(this, ":22F::SFRE//WEEK"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Weekly";
 			definition = "Event takes place once a week.";
@@ -261,6 +293,9 @@ public class FrequencyCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "DAIL"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::SFRE//DAIL</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -273,6 +308,7 @@ public class FrequencyCode extends MMCode {
 	 */
 	public static final FrequencyCode Daily = new FrequencyCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::SFRE//DAIL"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Daily";
 			definition = "Event takes place every day.";
@@ -291,6 +327,9 @@ public class FrequencyCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "ADHO"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::SFRE//ADHO</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -303,6 +342,7 @@ public class FrequencyCode extends MMCode {
 	 */
 	public static final FrequencyCode Adhoc = new FrequencyCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::SFRE//ADHO"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Adhoc";
 			definition = "Event takes place on request or as necessary.";
@@ -321,6 +361,9 @@ public class FrequencyCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "INDA"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::SFRE//INDA</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -333,6 +376,7 @@ public class FrequencyCode extends MMCode {
 	 */
 	public static final FrequencyCode IntraDay = new FrequencyCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::SFRE//INDA"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "IntraDay";
 			definition = "Event takes place several times a day.";
@@ -450,7 +494,7 @@ public class FrequencyCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Event takes place at the end of the day if there was a movement on the account, otherwise nothing is sent that day. "
+	 * "Event takes place at the end of the day if there was a movement on the account, otherwise nothing is sent that day."
 	 * </li>
 	 * </ul>
 	 */
@@ -458,7 +502,7 @@ public class FrequencyCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TriggeredByMovement";
-			definition = "Event takes place at the end of the day if there was a movement on the account, otherwise nothing is sent that day. ";
+			definition = "Event takes place at the end of the day if there was a movement on the account, otherwise nothing is sent that day.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FrequencyCode.mmObject();
 			codeName = "MOVE";
 		}
@@ -476,7 +520,7 @@ public class FrequencyCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "Never"</li>
 	 * <li>
@@ -486,7 +530,7 @@ public class FrequencyCode extends MMCode {
 	 */
 	public static final FrequencyCode Never = new FrequencyCode() {
 		{
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Never";
 			definition = "Event does never take place.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FrequencyCode.mmObject();
@@ -506,7 +550,7 @@ public class FrequencyCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "Rate"</li>
 	 * <li>
@@ -516,11 +560,103 @@ public class FrequencyCode extends MMCode {
 	 */
 	public static final FrequencyCode Rate = new FrequencyCode() {
 		{
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Rate";
 			definition = "Event takes place based on a change of a rate.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FrequencyCode.mmObject();
 			codeName = "RATE";
+		}
+	};
+	/**
+	 * Event occurs due to a credit event occurring for an issuer.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.FrequencyCode
+	 * FrequencyCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "CRED"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "OnCreditEvent"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Event occurs due to a credit event occurring for an issuer."</li>
+	 * </ul>
+	 */
+	public static final FrequencyCode OnCreditEvent = new FrequencyCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "OnCreditEvent";
+			definition = "Event occurs due to a credit event occurring for an issuer.";
+			owner_lazy = () -> com.tools20022.repository.codeset.FrequencyCode.mmObject();
+			codeName = "CRED";
+		}
+	};
+	/**
+	 * Event that takes place at the initiation of a trade or agreement.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.FrequencyCode
+	 * FrequencyCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "UPFR"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "Upfront"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Event that takes place at the initiation of a trade or agreement."</li>
+	 * </ul>
+	 */
+	public static final FrequencyCode Upfront = new FrequencyCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "Upfront";
+			definition = "Event that takes place at the initiation of a trade or agreement.";
+			owner_lazy = () -> com.tools20022.repository.codeset.FrequencyCode.mmObject();
+			codeName = "UPFR";
+		}
+	};
+	/**
+	 * Event occurs on expiry of a financial contract.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.FrequencyCode
+	 * FrequencyCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "EXPI"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "OnExpiry"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Event occurs on expiry of a financial contract."</li>
+	 * </ul>
+	 */
+	public static final FrequencyCode OnExpiry = new FrequencyCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "OnExpiry";
+			definition = "Event occurs on expiry of a financial contract.";
+			owner_lazy = () -> com.tools20022.repository.codeset.FrequencyCode.mmObject();
+			codeName = "EXPI";
 		}
 	};
 	final static private LinkedHashMap<String, FrequencyCode> codesByName = new LinkedHashMap<>();
@@ -531,7 +667,7 @@ public class FrequencyCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("YEAR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FrequencyCode";
@@ -541,7 +677,8 @@ public class FrequencyCode extends MMCode {
 						com.tools20022.repository.codeset.FrequencyCode.SemiAnnual, com.tools20022.repository.codeset.FrequencyCode.Weekly, com.tools20022.repository.codeset.FrequencyCode.Daily,
 						com.tools20022.repository.codeset.FrequencyCode.Adhoc, com.tools20022.repository.codeset.FrequencyCode.IntraDay, com.tools20022.repository.codeset.FrequencyCode.Overnight,
 						com.tools20022.repository.codeset.FrequencyCode.TenDays, com.tools20022.repository.codeset.FrequencyCode.Fortnightly, com.tools20022.repository.codeset.FrequencyCode.TriggeredByMovement,
-						com.tools20022.repository.codeset.FrequencyCode.Never, com.tools20022.repository.codeset.FrequencyCode.Rate);
+						com.tools20022.repository.codeset.FrequencyCode.Never, com.tools20022.repository.codeset.FrequencyCode.Rate, com.tools20022.repository.codeset.FrequencyCode.OnCreditEvent,
+						com.tools20022.repository.codeset.FrequencyCode.Upfront, com.tools20022.repository.codeset.FrequencyCode.OnExpiry);
 			}
 		});
 		return mmObject_lazy.get();
@@ -562,6 +699,9 @@ public class FrequencyCode extends MMCode {
 		codesByName.put(TriggeredByMovement.getCodeName().get(), TriggeredByMovement);
 		codesByName.put(Never.getCodeName().get(), Never);
 		codesByName.put(Rate.getCodeName().get(), Rate);
+		codesByName.put(OnCreditEvent.getCodeName().get(), OnCreditEvent);
+		codesByName.put(Upfront.getCodeName().get(), Upfront);
+		codesByName.put(OnExpiry.getCodeName().get(), OnExpiry);
 	}
 
 	public static FrequencyCode valueOf(String codeName) {

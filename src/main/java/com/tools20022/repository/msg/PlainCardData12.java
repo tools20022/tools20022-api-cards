@@ -27,6 +27,8 @@ import com.tools20022.repository.entity.PaymentCard;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -56,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,16 +74,16 @@ import javax.xml.bind.annotation.XmlType;
  * PlainCardData11}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "PlainCardData12", propOrder = {"PAN", "cardSequenceNumber", "expiryDate"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "PlainCardData12", propOrder = {"pAN", "cardSequenceNumber", "expiryDate"})
 public class PlainCardData12 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PAN", required = true)
 	protected Min8Max28NumericText pAN;
 	/**
-	 * Primary Account Number (PAN) of the card, or surrogate of the PAN by a
-	 * payment token.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -119,10 +121,10 @@ public class PlainCardData12 {
 	 * PlainCardData11.mmPAN}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPAN = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PlainCardData12, Min8Max28NumericText> mmPAN = new MMMessageAttribute<PlainCardData12, Min8Max28NumericText>() {
 		{
 			businessElementTrace_lazy = () -> PaymentCard.mmNumber;
-			componentContext_lazy = () -> PlainCardData12.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PlainCardData12.mmObject();
 			isDerived = false;
 			xmlTag = "PAN";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -133,12 +135,22 @@ public class PlainCardData12 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Min8Max28NumericText.mmObject();
 		}
+
+		@Override
+		public Min8Max28NumericText getValue(PlainCardData12 obj) {
+			return obj.getPAN();
+		}
+
+		@Override
+		public void setValue(PlainCardData12 obj, Min8Max28NumericText value) {
+			obj.setPAN(value);
+		}
 	};
+	@XmlElement(name = "CardSeqNb")
 	protected Min2Max3NumericText cardSequenceNumber;
 	/**
-	 * Identify a card or a payment token inside a set of cards with the same
-	 * PAN or token.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -176,10 +188,10 @@ public class PlainCardData12 {
 	 * PlainCardData11.mmCardSequenceNumber}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCardSequenceNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PlainCardData12, Optional<Min2Max3NumericText>> mmCardSequenceNumber = new MMMessageAttribute<PlainCardData12, Optional<Min2Max3NumericText>>() {
 		{
 			businessElementTrace_lazy = () -> PaymentCard.mmSequenceNumber;
-			componentContext_lazy = () -> PlainCardData12.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PlainCardData12.mmObject();
 			isDerived = false;
 			xmlTag = "CardSeqNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -190,12 +202,22 @@ public class PlainCardData12 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Min2Max3NumericText.mmObject();
 		}
+
+		@Override
+		public Optional<Min2Max3NumericText> getValue(PlainCardData12 obj) {
+			return obj.getCardSequenceNumber();
+		}
+
+		@Override
+		public void setValue(PlainCardData12 obj, Optional<Min2Max3NumericText> value) {
+			obj.setCardSequenceNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "XpryDt")
 	protected Max10Text expiryDate;
 	/**
-	 * Expiry date of the card or the payment token expressed either in the
-	 * YYYY-MM format, or in the YYYY-MM-DD format.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -231,10 +253,10 @@ public class PlainCardData12 {
 	 * PlainCardData11.mmExpiryDate}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmExpiryDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PlainCardData12, Optional<Max10Text>> mmExpiryDate = new MMMessageAttribute<PlainCardData12, Optional<Max10Text>>() {
 		{
 			businessComponentTrace_lazy = () -> PaymentCard.mmObject();
-			componentContext_lazy = () -> PlainCardData12.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PlainCardData12.mmObject();
 			isDerived = false;
 			xmlTag = "XpryDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -245,14 +267,24 @@ public class PlainCardData12 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max10Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max10Text> getValue(PlainCardData12 obj) {
+			return obj.getExpiryDate();
+		}
+
+		@Override
+		public void setValue(PlainCardData12 obj, Optional<Max10Text> value) {
+			obj.setExpiryDate(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PlainCardData12.mmPAN, PlainCardData12.mmCardSequenceNumber, PlainCardData12.mmExpiryDate);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PlainCardData12.mmPAN, com.tools20022.repository.msg.PlainCardData12.mmCardSequenceNumber, com.tools20022.repository.msg.PlainCardData12.mmExpiryDate);
 				trace_lazy = () -> PaymentCard.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PlainCardData12";
 				definition = "Sensible data associated with the payment card performing the transaction.";
@@ -262,30 +294,30 @@ public class PlainCardData12 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PAN", required = true)
 	public Min8Max28NumericText getPAN() {
 		return pAN;
 	}
 
-	public void setPAN(Min8Max28NumericText pAN) {
-		this.pAN = pAN;
+	public PlainCardData12 setPAN(Min8Max28NumericText pAN) {
+		this.pAN = Objects.requireNonNull(pAN);
+		return this;
 	}
 
-	@XmlElement(name = "CardSeqNb")
-	public Min2Max3NumericText getCardSequenceNumber() {
-		return cardSequenceNumber;
+	public Optional<Min2Max3NumericText> getCardSequenceNumber() {
+		return cardSequenceNumber == null ? Optional.empty() : Optional.of(cardSequenceNumber);
 	}
 
-	public void setCardSequenceNumber(Min2Max3NumericText cardSequenceNumber) {
+	public PlainCardData12 setCardSequenceNumber(Min2Max3NumericText cardSequenceNumber) {
 		this.cardSequenceNumber = cardSequenceNumber;
+		return this;
 	}
 
-	@XmlElement(name = "XpryDt")
-	public Max10Text getExpiryDate() {
-		return expiryDate;
+	public Optional<Max10Text> getExpiryDate() {
+		return expiryDate == null ? Optional.empty() : Optional.of(expiryDate);
 	}
 
-	public void setExpiryDate(Max10Text expiryDate) {
+	public PlainCardData12 setExpiryDate(Max10Text expiryDate) {
 		this.expiryDate = expiryDate;
+		return this;
 	}
 }

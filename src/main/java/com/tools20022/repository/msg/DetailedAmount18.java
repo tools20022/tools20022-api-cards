@@ -29,6 +29,8 @@ import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +62,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,15 +77,16 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.msg.DetailedAmount13 DetailedAmount13}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DetailedAmount18", propOrder = {"amount", "currency", "chargeAccountTo", "label"})
 public class DetailedAmount18 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Amt", required = true)
 	protected ImpliedCurrencyAndAmount amount;
 	/**
-	 * Amount value.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -119,10 +122,10 @@ public class DetailedAmount18 {
 	 * DetailedAmount13.mmAmount}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DetailedAmount18, ImpliedCurrencyAndAmount> mmAmount = new MMMessageAttribute<DetailedAmount18, ImpliedCurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmAmount;
-			componentContext_lazy = () -> DetailedAmount18.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DetailedAmount18.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -133,11 +136,22 @@ public class DetailedAmount18 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public ImpliedCurrencyAndAmount getValue(DetailedAmount18 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(DetailedAmount18 obj, ImpliedCurrencyAndAmount value) {
+			obj.setAmount(value);
+		}
 	};
+	@XmlElement(name = "Ccy")
 	protected ActiveCurrencyCode currency;
 	/**
-	 * Currency of the amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -173,10 +187,10 @@ public class DetailedAmount18 {
 	 * DetailedAmount13.mmCurrency}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DetailedAmount18, Optional<ActiveCurrencyCode>> mmCurrency = new MMMessageAttribute<DetailedAmount18, Optional<ActiveCurrencyCode>>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmCurrencyExchange;
-			componentContext_lazy = () -> DetailedAmount18.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DetailedAmount18.mmObject();
 			isDerived = false;
 			xmlTag = "Ccy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -187,11 +201,22 @@ public class DetailedAmount18 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyCode> getValue(DetailedAmount18 obj) {
+			return obj.getCurrency();
+		}
+
+		@Override
+		public void setValue(DetailedAmount18 obj, Optional<ActiveCurrencyCode> value) {
+			obj.setCurrency(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ChrgAcctTo")
 	protected TrueFalseIndicator chargeAccountTo;
 	/**
-	 * True if amount charged to the source account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -217,9 +242,9 @@ public class DetailedAmount18 {
 	 * definition} = "True if amount charged to the source account."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmChargeAccountTo = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DetailedAmount18, Optional<TrueFalseIndicator>> mmChargeAccountTo = new MMMessageAttribute<DetailedAmount18, Optional<TrueFalseIndicator>>() {
 		{
-			componentContext_lazy = () -> DetailedAmount18.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DetailedAmount18.mmObject();
 			isDerived = false;
 			xmlTag = "ChrgAcctTo";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -229,11 +254,22 @@ public class DetailedAmount18 {
 			minOccurs = 0;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<TrueFalseIndicator> getValue(DetailedAmount18 obj) {
+			return obj.getChargeAccountTo();
+		}
+
+		@Override
+		public void setValue(DetailedAmount18 obj, Optional<TrueFalseIndicator> value) {
+			obj.setChargeAccountTo(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Labl")
 	protected Max70Text label;
 	/**
-	 * Short description of the amount to display or print.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -263,9 +299,9 @@ public class DetailedAmount18 {
 	 * DetailedAmount13.mmLabel}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLabel = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DetailedAmount18, Optional<Max70Text>> mmLabel = new MMMessageAttribute<DetailedAmount18, Optional<Max70Text>>() {
 		{
-			componentContext_lazy = () -> DetailedAmount18.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DetailedAmount18.mmObject();
 			isDerived = false;
 			xmlTag = "Labl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -276,14 +312,25 @@ public class DetailedAmount18 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max70Text> getValue(DetailedAmount18 obj) {
+			return obj.getLabel();
+		}
+
+		@Override
+		public void setValue(DetailedAmount18 obj, Optional<Max70Text> value) {
+			obj.setLabel(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DetailedAmount18.mmAmount, DetailedAmount18.mmCurrency, DetailedAmount18.mmChargeAccountTo, DetailedAmount18.mmLabel);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DetailedAmount18.mmAmount, com.tools20022.repository.msg.DetailedAmount18.mmCurrency, com.tools20022.repository.msg.DetailedAmount18.mmChargeAccountTo,
+						com.tools20022.repository.msg.DetailedAmount18.mmLabel);
 				trace_lazy = () -> CardPayment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DetailedAmount18";
 				definition = "Withdrawal fees, accepted by the customer.";
@@ -293,39 +340,39 @@ public class DetailedAmount18 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Amt", required = true)
 	public ImpliedCurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(ImpliedCurrencyAndAmount amount) {
-		this.amount = amount;
+	public DetailedAmount18 setAmount(ImpliedCurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
-	@XmlElement(name = "Ccy")
-	public ActiveCurrencyCode getCurrency() {
-		return currency;
+	public Optional<ActiveCurrencyCode> getCurrency() {
+		return currency == null ? Optional.empty() : Optional.of(currency);
 	}
 
-	public void setCurrency(ActiveCurrencyCode currency) {
+	public DetailedAmount18 setCurrency(ActiveCurrencyCode currency) {
 		this.currency = currency;
+		return this;
 	}
 
-	@XmlElement(name = "ChrgAcctTo")
-	public TrueFalseIndicator getChargeAccountTo() {
-		return chargeAccountTo;
+	public Optional<TrueFalseIndicator> getChargeAccountTo() {
+		return chargeAccountTo == null ? Optional.empty() : Optional.of(chargeAccountTo);
 	}
 
-	public void setChargeAccountTo(TrueFalseIndicator chargeAccountTo) {
+	public DetailedAmount18 setChargeAccountTo(TrueFalseIndicator chargeAccountTo) {
 		this.chargeAccountTo = chargeAccountTo;
+		return this;
 	}
 
-	@XmlElement(name = "Labl")
-	public Max70Text getLabel() {
-		return label;
+	public Optional<Max70Text> getLabel() {
+		return label == null ? Optional.empty() : Optional.of(label);
 	}
 
-	public void setLabel(Max70Text label) {
+	public DetailedAmount18 setLabel(Max70Text label) {
 		this.label = label;
+		return this;
 	}
 }

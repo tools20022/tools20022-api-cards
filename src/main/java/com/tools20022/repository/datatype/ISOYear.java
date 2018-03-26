@@ -22,17 +22,21 @@ import com.tools20022.metamodel.MMYear;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 /**
- * Year represented by YYYY (ISO 8601)
+ * Year represented by YYYY (ISO 8601).
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -46,23 +50,47 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "ISOYear"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
- * definition} = "Year represented by YYYY (ISO 8601)"</li>
+ * definition} = "Year represented by YYYY (ISO 8601)."</li>
  * </ul>
  */
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType
 public class ISOYear {
 
 	final static private AtomicReference<MMYear> mmObject_lazy = new AtomicReference<>();
+	@XmlValue
+	protected String value;
 
 	final static public MMYear mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMYear() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("2000");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ISOYear";
-				definition = "Year represented by YYYY (ISO 8601)";
+				definition = "Year represented by YYYY (ISO 8601).";
 			}
 		});
 		return mmObject_lazy.get();
+	}
+
+	public ISOYear() {
+	}
+
+	public ISOYear(String value) {
+		this.value = value;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
+
+	@Override
+	public String toString() {
+		return value == null ? null : value.toString();
 	}
 }

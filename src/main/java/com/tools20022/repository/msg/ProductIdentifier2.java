@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.ProductIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,15 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Information used to identify a product."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ProductIdentifier2", propOrder = {"type", "identifier"})
 public class ProductIdentifier2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected ProductIdentifier2Code type;
 	/**
-	 * Specifies the type of product identifier by means of a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,10 +107,10 @@ public class ProductIdentifier2 {
 	 * "Specifies the type of product identifier by means of a code."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProductIdentifier2, ProductIdentifier2Code> mmType = new MMMessageAttribute<ProductIdentifier2, ProductIdentifier2Code>() {
 		{
 			businessElementTrace_lazy = () -> ProductIdentification.mmType;
-			componentContext_lazy = () -> ProductIdentifier2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ProductIdentifier2.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,11 +120,22 @@ public class ProductIdentifier2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ProductIdentifier2Code.mmObject();
 		}
+
+		@Override
+		public ProductIdentifier2Code getValue(ProductIdentifier2 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(ProductIdentifier2 obj, ProductIdentifier2Code value) {
+			obj.setType(value);
+		}
 	};
+	@XmlElement(name = "Idr", required = true)
 	protected Max35Text identifier;
 	/**
-	 * Specifies the product identifier.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,10 +165,10 @@ public class ProductIdentifier2 {
 	 * definition} = "Specifies the product identifier."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentifier = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ProductIdentifier2, Max35Text> mmIdentifier = new MMMessageAttribute<ProductIdentifier2, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> ProductIdentification.mmIdentifier;
-			componentContext_lazy = () -> ProductIdentifier2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ProductIdentifier2.mmObject();
 			isDerived = false;
 			xmlTag = "Idr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,14 +178,24 @@ public class ProductIdentifier2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(ProductIdentifier2 obj) {
+			return obj.getIdentifier();
+		}
+
+		@Override
+		public void setValue(ProductIdentifier2 obj, Max35Text value) {
+			obj.setIdentifier(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ProductIdentifier2.mmType, ProductIdentifier2.mmIdentifier);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ProductIdentifier2.mmType, com.tools20022.repository.msg.ProductIdentifier2.mmIdentifier);
 				trace_lazy = () -> ProductIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProductIdentifier2";
 				definition = "Information used to identify a product.";
@@ -181,21 +204,21 @@ public class ProductIdentifier2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public ProductIdentifier2Code getType() {
 		return type;
 	}
 
-	public void setType(ProductIdentifier2Code type) {
-		this.type = type;
+	public ProductIdentifier2 setType(ProductIdentifier2Code type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "Idr", required = true)
 	public Max35Text getIdentifier() {
 		return identifier;
 	}
 
-	public void setIdentifier(Max35Text identifier) {
-		this.identifier = identifier;
+	public ProductIdentifier2 setIdentifier(Max35Text identifier) {
+		this.identifier = Objects.requireNonNull(identifier);
+		return this;
 	}
 }

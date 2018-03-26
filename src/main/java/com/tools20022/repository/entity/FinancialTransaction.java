@@ -21,10 +21,13 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Process which includes the order, the execution, the settlement of trades in
@@ -86,8 +89,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -105,8 +108,8 @@ public class FinancialTransaction {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CorporateActionDistribution corporateActionDistribution;
 	/**
-	 * Distribution of the proceeds of a CA event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -138,7 +141,7 @@ public class FinancialTransaction {
 	 * definition} = "Distribution of the proceeds of a CA event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCorporateActionDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<FinancialTransaction, CorporateActionDistribution> mmCorporateActionDistribution = new MMBusinessAssociationEnd<FinancialTransaction, CorporateActionDistribution>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
@@ -147,16 +150,25 @@ public class FinancialTransaction {
 			definition = "Distribution of the proceeds of a CA event.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmFinancialTransaction;
+			opposite_lazy = () -> CorporateActionDistribution.mmFinancialTransaction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
+			type_lazy = () -> CorporateActionDistribution.mmObject();
+		}
+
+		@Override
+		public CorporateActionDistribution getValue(FinancialTransaction obj) {
+			return obj.getCorporateActionDistribution();
+		}
+
+		@Override
+		public void setValue(FinancialTransaction obj, CorporateActionDistribution value) {
+			obj.setCorporateActionDistribution(value);
 		}
 	};
 	protected InterestManagement interestManagement;
 	/**
-	 * Management of interest which consists into calculating the interest,
-	 * requesting its payment or distributing the interest proceeds.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -189,7 +201,7 @@ public class FinancialTransaction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInterestManagement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<FinancialTransaction, InterestManagement> mmInterestManagement = new MMBusinessAssociationEnd<FinancialTransaction, InterestManagement>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
@@ -198,15 +210,25 @@ public class FinancialTransaction {
 			definition = "Management of interest which consists into calculating the interest, requesting its payment or distributing the interest proceeds.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.InterestManagement.mmFinancialTransaction;
+			opposite_lazy = () -> InterestManagement.mmFinancialTransaction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InterestManagement.mmObject();
+			type_lazy = () -> InterestManagement.mmObject();
+		}
+
+		@Override
+		public InterestManagement getValue(FinancialTransaction obj) {
+			return obj.getInterestManagement();
+		}
+
+		@Override
+		public void setValue(FinancialTransaction obj, InterestManagement value) {
+			obj.setInterestManagement(value);
 		}
 	};
 	protected Trade trade;
 	/**
-	 * Agreement between two parties to buy and sell assets.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -236,7 +258,7 @@ public class FinancialTransaction {
 	 * definition} = "Agreement between two parties to buy and sell assets."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<FinancialTransaction, Trade> mmTrade = new MMBusinessAssociationEnd<FinancialTransaction, Trade>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
@@ -245,15 +267,25 @@ public class FinancialTransaction {
 			definition = "Agreement between two parties to buy and sell assets.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Trade.mmFinancialTransaction;
+			opposite_lazy = () -> Trade.mmFinancialTransaction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
+			type_lazy = () -> Trade.mmObject();
+		}
+
+		@Override
+		public Trade getValue(FinancialTransaction obj) {
+			return obj.getTrade();
+		}
+
+		@Override
+		public void setValue(FinancialTransaction obj, Trade value) {
+			obj.setTrade(value);
 		}
 	};
 	protected CollateralMovement collateralMovement;
 	/**
-	 * Collateral in or out as a result of collateral management.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -285,7 +317,7 @@ public class FinancialTransaction {
 	 * "Collateral in or out as a result of collateral management."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCollateralMovement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<FinancialTransaction, CollateralMovement> mmCollateralMovement = new MMBusinessAssociationEnd<FinancialTransaction, CollateralMovement>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
@@ -294,16 +326,25 @@ public class FinancialTransaction {
 			definition = "Collateral in or out as a result of collateral management.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmFinancialTransaction;
+			opposite_lazy = () -> CollateralMovement.mmFinancialTransaction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CollateralMovement.mmObject();
+			type_lazy = () -> CollateralMovement.mmObject();
+		}
+
+		@Override
+		public CollateralMovement getValue(FinancialTransaction obj) {
+			return obj.getCollateralMovement();
+		}
+
+		@Override
+		public void setValue(FinancialTransaction obj, CollateralMovement value) {
+			obj.setCollateralMovement(value);
 		}
 	};
 	protected BankingTransaction bankingTransaction;
 	/**
-	 * Transaction executed by the client of a financial institution from/to the
-	 * account serviced by the financial institution, such as mortgage payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -336,7 +377,7 @@ public class FinancialTransaction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBankingTransaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<FinancialTransaction, BankingTransaction> mmBankingTransaction = new MMBusinessAssociationEnd<FinancialTransaction, BankingTransaction>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
@@ -345,16 +386,25 @@ public class FinancialTransaction {
 			definition = "Transaction executed by the client of a financial institution from/to the account serviced by the financial institution, such as mortgage payment.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.BankingTransaction.mmFinancialTransaction;
+			opposite_lazy = () -> BankingTransaction.mmFinancialTransaction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.BankingTransaction.mmObject();
+			type_lazy = () -> BankingTransaction.mmObject();
+		}
+
+		@Override
+		public BankingTransaction getValue(FinancialTransaction obj) {
+			return obj.getBankingTransaction();
+		}
+
+		@Override
+		public void setValue(FinancialTransaction obj, BankingTransaction value) {
+			obj.setBankingTransaction(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.RegulatoryReport> regulatoryReport;
+	protected List<RegulatoryReport> regulatoryReport;
 	/**
-	 * Information related to a trade and that has to be reported to a
-	 * regulatory authority.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -387,7 +437,7 @@ public class FinancialTransaction {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRegulatoryReport = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<FinancialTransaction, List<RegulatoryReport>> mmRegulatoryReport = new MMBusinessAssociationEnd<FinancialTransaction, List<RegulatoryReport>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
@@ -395,22 +445,31 @@ public class FinancialTransaction {
 			name = "RegulatoryReport";
 			definition = "Information related to a trade and that has to be reported to a regulatory authority.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmReportedTransaction;
+			opposite_lazy = () -> RegulatoryReport.mmReportedTransaction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmObject();
+			type_lazy = () -> RegulatoryReport.mmObject();
+		}
+
+		@Override
+		public List<RegulatoryReport> getValue(FinancialTransaction obj) {
+			return obj.getRegulatoryReport();
+		}
+
+		@Override
+		public void setValue(FinancialTransaction obj, List<RegulatoryReport> value) {
+			obj.setRegulatoryReport(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialTransaction";
 				definition = "Process which includes the order, the execution, the settlement of trades in the financial domain.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Trade.mmFinancialTransaction, com.tools20022.repository.entity.CorporateActionDistribution.mmFinancialTransaction,
-						com.tools20022.repository.entity.RegulatoryReport.mmReportedTransaction, com.tools20022.repository.entity.CollateralMovement.mmFinancialTransaction,
-						com.tools20022.repository.entity.BankingTransaction.mmFinancialTransaction, com.tools20022.repository.entity.InterestManagement.mmFinancialTransaction);
+				associationDomain_lazy = () -> Arrays.asList(Trade.mmFinancialTransaction, CorporateActionDistribution.mmFinancialTransaction, RegulatoryReport.mmReportedTransaction, CollateralMovement.mmFinancialTransaction,
+						BankingTransaction.mmFinancialTransaction, InterestManagement.mmFinancialTransaction);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.FinancialTransaction.mmCorporateActionDistribution, com.tools20022.repository.entity.FinancialTransaction.mmInterestManagement,
 						com.tools20022.repository.entity.FinancialTransaction.mmTrade, com.tools20022.repository.entity.FinancialTransaction.mmCollateralMovement, com.tools20022.repository.entity.FinancialTransaction.mmBankingTransaction,
 						com.tools20022.repository.entity.FinancialTransaction.mmRegulatoryReport);
@@ -428,47 +487,53 @@ public class FinancialTransaction {
 		return corporateActionDistribution;
 	}
 
-	public void setCorporateActionDistribution(com.tools20022.repository.entity.CorporateActionDistribution corporateActionDistribution) {
-		this.corporateActionDistribution = corporateActionDistribution;
+	public FinancialTransaction setCorporateActionDistribution(CorporateActionDistribution corporateActionDistribution) {
+		this.corporateActionDistribution = Objects.requireNonNull(corporateActionDistribution);
+		return this;
 	}
 
 	public InterestManagement getInterestManagement() {
 		return interestManagement;
 	}
 
-	public void setInterestManagement(com.tools20022.repository.entity.InterestManagement interestManagement) {
-		this.interestManagement = interestManagement;
+	public FinancialTransaction setInterestManagement(InterestManagement interestManagement) {
+		this.interestManagement = Objects.requireNonNull(interestManagement);
+		return this;
 	}
 
 	public Trade getTrade() {
 		return trade;
 	}
 
-	public void setTrade(com.tools20022.repository.entity.Trade trade) {
-		this.trade = trade;
+	public FinancialTransaction setTrade(Trade trade) {
+		this.trade = Objects.requireNonNull(trade);
+		return this;
 	}
 
 	public CollateralMovement getCollateralMovement() {
 		return collateralMovement;
 	}
 
-	public void setCollateralMovement(com.tools20022.repository.entity.CollateralMovement collateralMovement) {
-		this.collateralMovement = collateralMovement;
+	public FinancialTransaction setCollateralMovement(CollateralMovement collateralMovement) {
+		this.collateralMovement = Objects.requireNonNull(collateralMovement);
+		return this;
 	}
 
 	public BankingTransaction getBankingTransaction() {
 		return bankingTransaction;
 	}
 
-	public void setBankingTransaction(com.tools20022.repository.entity.BankingTransaction bankingTransaction) {
-		this.bankingTransaction = bankingTransaction;
+	public FinancialTransaction setBankingTransaction(BankingTransaction bankingTransaction) {
+		this.bankingTransaction = Objects.requireNonNull(bankingTransaction);
+		return this;
 	}
 
 	public List<RegulatoryReport> getRegulatoryReport() {
-		return regulatoryReport;
+		return regulatoryReport == null ? regulatoryReport = new ArrayList<>() : regulatoryReport;
 	}
 
-	public void setRegulatoryReport(List<com.tools20022.repository.entity.RegulatoryReport> regulatoryReport) {
-		this.regulatoryReport = regulatoryReport;
+	public FinancialTransaction setRegulatoryReport(List<RegulatoryReport> regulatoryReport) {
+		this.regulatoryReport = Objects.requireNonNull(regulatoryReport);
+		return this;
 	}
 }

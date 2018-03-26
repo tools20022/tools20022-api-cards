@@ -452,8 +452,10 @@ class ListBuilderForGeneratedRepository_03 {
 		list.add((T) ATMOperationCode.mmObject());
 		list.add((T) ATMCounterType2Code.mmObject());
 		list.add((T) ATMOperation1Code.mmObject());
+		list.add((T) TradeConfirmationTypeCode.mmObject());
 		list.add((T) Response4Code.mmObject());
 		list.add((T) MessageFunction8Code.mmObject());
+		list.add((T) TaxRateMarkerCode.mmObject());
 		list.add((T) CivilStatusCode.mmObject());
 		list.add((T) ISINOct2015Identifier.mmObject());
 		list.add((T) CFIOct2015Identifier.mmObject());
@@ -514,7 +516,16 @@ class ListBuilderForGeneratedRepository_03 {
 		list.add((T) ActionType7Code.mmObject());
 		list.add((T) CurrencyConversionResponse3Code.mmObject());
 		list.add((T) AuthenticationResultCode.mmObject());
+		list.add((T) AuthenticationResult1Code.mmObject());
 		list.add((T) MessageFunction13Code.mmObject());
+		list.add((T) ActiveOrHistoricCurrencyCode_BusinessCode.mmObject());
+		list.add((T) ExternalClearingSystemIdentificationCode.mmObject());
+		list.add((T) ExternalFinancialInstitutionIdentificationCode.mmObject());
+		list.add((T) ExternalOrganisationIdentificationCode.mmObject());
+		list.add((T) ExternalPersonIdentificationCode.mmObject());
+		list.add((T) NamePrefixCode.mmObject());
+		list.add((T) ActiveCurrencyCode_BusinessCode.mmObject());
+		ListBuilderForGeneratedRepository_04.addElems(list);
 		return list;
 	}
 }

@@ -23,8 +23,12 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Acquirer7;
+import com.tools20022.repository.msg.AutomatedTellerMachine7;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,16 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Environment of the ATM."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "ATMEnvironment9", propOrder = {"acquirer", "ATMManagerIdentification", "ATM"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "ATMEnvironment9", propOrder = {"acquirer", "aTMManagerIdentification", "aTM"})
 public class ATMEnvironment9 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Acqrr")
 	protected Acquirer7 acquirer;
 	/**
-	 * Acquirer of the ATM transaction, in charge of the funds settlement with
-	 * the issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -97,9 +101,9 @@ public class ATMEnvironment9 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAcquirer = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMEnvironment9, Optional<Acquirer7>> mmAcquirer = new MMMessageAssociationEnd<ATMEnvironment9, Optional<Acquirer7>>() {
 		{
-			componentContext_lazy = () -> ATMEnvironment9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMEnvironment9.mmObject();
 			isDerived = false;
 			xmlTag = "Acqrr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -108,13 +112,24 @@ public class ATMEnvironment9 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Acquirer7.mmObject();
+			type_lazy = () -> Acquirer7.mmObject();
+		}
+
+		@Override
+		public Optional<Acquirer7> getValue(ATMEnvironment9 obj) {
+			return obj.getAcquirer();
+		}
+
+		@Override
+		public void setValue(ATMEnvironment9 obj, Optional<Acquirer7> value) {
+			obj.setAcquirer(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "ATMMgrId")
 	protected Max35Text aTMManagerIdentification;
 	/**
-	 * Identification of the ATM manager.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -139,9 +154,9 @@ public class ATMEnvironment9 {
 	 * definition} = "Identification of the ATM manager."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmATMManagerIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMEnvironment9, Optional<Max35Text>> mmATMManagerIdentification = new MMMessageAttribute<ATMEnvironment9, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> ATMEnvironment9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMEnvironment9.mmObject();
 			isDerived = false;
 			xmlTag = "ATMMgrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -151,11 +166,22 @@ public class ATMEnvironment9 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(ATMEnvironment9 obj) {
+			return obj.getATMManagerIdentification();
+		}
+
+		@Override
+		public void setValue(ATMEnvironment9 obj, Optional<Max35Text> value) {
+			obj.setATMManagerIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ATM", required = true)
 	protected AutomatedTellerMachine7 aTM;
 	/**
-	 * ATM information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -180,9 +206,9 @@ public class ATMEnvironment9 {
 	 * definition} = "ATM information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmATM = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMEnvironment9, AutomatedTellerMachine7> mmATM = new MMMessageAssociationEnd<ATMEnvironment9, AutomatedTellerMachine7>() {
 		{
-			componentContext_lazy = () -> ATMEnvironment9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMEnvironment9.mmObject();
 			isDerived = false;
 			xmlTag = "ATM";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -191,15 +217,26 @@ public class ATMEnvironment9 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AutomatedTellerMachine7.mmObject();
+			type_lazy = () -> AutomatedTellerMachine7.mmObject();
+		}
+
+		@Override
+		public AutomatedTellerMachine7 getValue(ATMEnvironment9 obj) {
+			return obj.getATM();
+		}
+
+		@Override
+		public void setValue(ATMEnvironment9 obj, AutomatedTellerMachine7 value) {
+			obj.setATM(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ATMEnvironment9.mmAcquirer, ATMEnvironment9.mmATMManagerIdentification, ATMEnvironment9.mmATM);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ATMEnvironment9.mmAcquirer, com.tools20022.repository.msg.ATMEnvironment9.mmATMManagerIdentification,
+						com.tools20022.repository.msg.ATMEnvironment9.mmATM);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMEnvironment9";
 				definition = "Environment of the ATM.";
@@ -208,30 +245,30 @@ public class ATMEnvironment9 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Acqrr")
-	public Acquirer7 getAcquirer() {
-		return acquirer;
+	public Optional<Acquirer7> getAcquirer() {
+		return acquirer == null ? Optional.empty() : Optional.of(acquirer);
 	}
 
-	public void setAcquirer(com.tools20022.repository.msg.Acquirer7 acquirer) {
+	public ATMEnvironment9 setAcquirer(Acquirer7 acquirer) {
 		this.acquirer = acquirer;
+		return this;
 	}
 
-	@XmlElement(name = "ATMMgrId")
-	public Max35Text getATMManagerIdentification() {
-		return aTMManagerIdentification;
+	public Optional<Max35Text> getATMManagerIdentification() {
+		return aTMManagerIdentification == null ? Optional.empty() : Optional.of(aTMManagerIdentification);
 	}
 
-	public void setATMManagerIdentification(Max35Text aTMManagerIdentification) {
+	public ATMEnvironment9 setATMManagerIdentification(Max35Text aTMManagerIdentification) {
 		this.aTMManagerIdentification = aTMManagerIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "ATM", required = true)
 	public AutomatedTellerMachine7 getATM() {
 		return aTM;
 	}
 
-	public void setATM(com.tools20022.repository.msg.AutomatedTellerMachine7 aTM) {
-		this.aTM = aTM;
+	public ATMEnvironment9 setATM(AutomatedTellerMachine7 aTM) {
+		this.aTM = Objects.requireNonNull(aTM);
+		return this;
 	}
 }

@@ -38,25 +38,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyType4Code#Application
- * CryptographicKeyType4Code.mmApplication}</li>
+ * CryptographicKeyType4Code.Application}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyType4Code#Data
- * CryptographicKeyType4Code.mmData}</li>
+ * CryptographicKeyType4Code.Data}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyType4Code#Dynamic
- * CryptographicKeyType4Code.mmDynamic}</li>
+ * CryptographicKeyType4Code.Dynamic}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyType4Code#KeyEncryption
- * CryptographicKeyType4Code.mmKeyEncryption}</li>
+ * CryptographicKeyType4Code.KeyEncryption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyType4Code#MAC
- * CryptographicKeyType4Code.mmMAC}</li>
+ * CryptographicKeyType4Code.MAC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyType4Code#PIN
- * CryptographicKeyType4Code.mmPIN}</li>
+ * CryptographicKeyType4Code.PIN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyType4Code#Working
- * CryptographicKeyType4Code.mmWorking}</li>
+ * CryptographicKeyType4Code.Working}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -65,8 +65,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -257,7 +257,7 @@ public class CryptographicKeyType4Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CryptographicKeyType4Code";
 				definition = "Category of the cryptographic key.";

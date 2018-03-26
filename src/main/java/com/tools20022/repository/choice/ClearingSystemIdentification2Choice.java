@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.CashClearingSystem;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,16 +67,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Choice of a clearing system identifier."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ClearingSystemIdentification2Choice", propOrder = {"code", "proprietary"})
 public class ClearingSystemIdentification2Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected ExternalClearingSystemIdentification1Code code;
 	/**
-	 * Identification of a clearing system, in a coded form as published in an
-	 * external list.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -108,10 +109,10 @@ public class ClearingSystemIdentification2Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ClearingSystemIdentification2Choice, ExternalClearingSystemIdentification1Code> mmCode = new MMMessageAttribute<ClearingSystemIdentification2Choice, ExternalClearingSystemIdentification1Code>() {
 		{
 			businessElementTrace_lazy = () -> CashClearingSystem.mmIdentification;
-			componentContext_lazy = () -> ClearingSystemIdentification2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ClearingSystemIdentification2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,12 +122,22 @@ public class ClearingSystemIdentification2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalClearingSystemIdentification1Code.mmObject();
 		}
+
+		@Override
+		public ExternalClearingSystemIdentification1Code getValue(ClearingSystemIdentification2Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(ClearingSystemIdentification2Choice obj, ExternalClearingSystemIdentification1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected Max35Text proprietary;
 	/**
-	 * Identification code for a clearing system, that has not yet been
-	 * identified in the list of clearing systems.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,10 +169,10 @@ public class ClearingSystemIdentification2Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ClearingSystemIdentification2Choice, Max35Text> mmProprietary = new MMMessageAttribute<ClearingSystemIdentification2Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> CashClearingSystem.mmIdentification;
-			componentContext_lazy = () -> ClearingSystemIdentification2Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.ClearingSystemIdentification2Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,14 +182,24 @@ public class ClearingSystemIdentification2Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(ClearingSystemIdentification2Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(ClearingSystemIdentification2Choice obj, Max35Text value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ClearingSystemIdentification2Choice.mmCode, ClearingSystemIdentification2Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.ClearingSystemIdentification2Choice.mmCode, com.tools20022.repository.choice.ClearingSystemIdentification2Choice.mmProprietary);
 				trace_lazy = () -> CashClearingSystem.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClearingSystemIdentification2Choice";
 				definition = "Choice of a clearing system identifier.";
@@ -187,21 +208,21 @@ public class ClearingSystemIdentification2Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public ExternalClearingSystemIdentification1Code getCode() {
 		return code;
 	}
 
-	public void setCode(ExternalClearingSystemIdentification1Code code) {
-		this.code = code;
+	public ClearingSystemIdentification2Choice setCode(ExternalClearingSystemIdentification1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public Max35Text getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(Max35Text proprietary) {
-		this.proprietary = proprietary;
+	public ClearingSystemIdentification2Choice setProprietary(Max35Text proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

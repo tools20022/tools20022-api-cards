@@ -20,11 +20,12 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Document;
+import com.tools20022.repository.entity.ElectronicSignature;
+import com.tools20022.repository.entity.NetworkAccess;
+import com.tools20022.repository.entity.SecurityCertificatePartyRole;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Certificate linked to a digital signature.
@@ -72,8 +73,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,8 +90,8 @@ public class SecurityCertificate extends Document {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ElectronicSignature electronicSignature;
 	/**
-	 * Additional security provisions, such as a digital signature.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -122,7 +123,7 @@ public class SecurityCertificate extends Document {
 	 * "Additional security provisions, such as a digital signature."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmElectronicSignature = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecurityCertificate, Optional<ElectronicSignature>> mmElectronicSignature = new MMBusinessAssociationEnd<SecurityCertificate, Optional<ElectronicSignature>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.mmObject();
@@ -135,11 +136,21 @@ public class SecurityCertificate extends Document {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.ElectronicSignature.mmObject();
 		}
+
+		@Override
+		public Optional<ElectronicSignature> getValue(SecurityCertificate obj) {
+			return obj.getElectronicSignature();
+		}
+
+		@Override
+		public void setValue(SecurityCertificate obj, Optional<ElectronicSignature> value) {
+			obj.setElectronicSignature(value.orElse(null));
+		}
 	};
 	protected List<com.tools20022.repository.entity.SecurityCertificatePartyRole> securityCertificatePartyRole;
 	/**
-	 * Role played by a party in the context of a security certificate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -172,7 +183,7 @@ public class SecurityCertificate extends Document {
 	 * "Role played by a party in the context of a security certificate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecurityCertificatePartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecurityCertificate, List<SecurityCertificatePartyRole>> mmSecurityCertificatePartyRole = new MMBusinessAssociationEnd<SecurityCertificate, List<SecurityCertificatePartyRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.mmObject();
@@ -184,11 +195,21 @@ public class SecurityCertificate extends Document {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecurityCertificatePartyRole.mmObject();
 		}
+
+		@Override
+		public List<SecurityCertificatePartyRole> getValue(SecurityCertificate obj) {
+			return obj.getSecurityCertificatePartyRole();
+		}
+
+		@Override
+		public void setValue(SecurityCertificate obj, List<SecurityCertificatePartyRole> value) {
+			obj.setSecurityCertificatePartyRole(value);
+		}
 	};
 	protected NetworkAccess networkAccess;
 	/**
-	 * Network access which uses a security certificate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -219,7 +240,7 @@ public class SecurityCertificate extends Document {
 	 * definition} = "Network access which uses a security certificate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNetworkAccess = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecurityCertificate, Optional<NetworkAccess>> mmNetworkAccess = new MMBusinessAssociationEnd<SecurityCertificate, Optional<NetworkAccess>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.mmObject();
@@ -232,11 +253,21 @@ public class SecurityCertificate extends Document {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.NetworkAccess.mmObject();
 		}
+
+		@Override
+		public Optional<NetworkAccess> getValue(SecurityCertificate obj) {
+			return obj.getNetworkAccess();
+		}
+
+		@Override
+		public void setValue(SecurityCertificate obj, Optional<NetworkAccess> value) {
+			obj.setNetworkAccess(value.orElse(null));
+		}
 	};
 	protected Max35Text certificateType;
 	/**
-	 * Type of the security certificate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -259,7 +290,7 @@ public class SecurityCertificate extends Document {
 	 * definition} = "Type of the security certificate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCertificateType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecurityCertificate, Max35Text> mmCertificateType = new MMBusinessAttribute<SecurityCertificate, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecurityCertificate.mmObject();
@@ -271,19 +302,21 @@ public class SecurityCertificate extends Document {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecurityCertificate.class.getMethod("getCertificateType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(SecurityCertificate obj) {
+			return obj.getCertificateType();
+		}
+
+		@Override
+		public void setValue(SecurityCertificate obj, Max35Text value) {
+			obj.setCertificateType(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecurityCertificate";
 				definition = "Certificate linked to a digital signature.";
@@ -302,35 +335,39 @@ public class SecurityCertificate extends Document {
 		return mmObject_lazy.get();
 	}
 
-	public ElectronicSignature getElectronicSignature() {
-		return electronicSignature;
+	public Optional<ElectronicSignature> getElectronicSignature() {
+		return electronicSignature == null ? Optional.empty() : Optional.of(electronicSignature);
 	}
 
-	public void setElectronicSignature(com.tools20022.repository.entity.ElectronicSignature electronicSignature) {
+	public SecurityCertificate setElectronicSignature(com.tools20022.repository.entity.ElectronicSignature electronicSignature) {
 		this.electronicSignature = electronicSignature;
+		return this;
 	}
 
 	public List<SecurityCertificatePartyRole> getSecurityCertificatePartyRole() {
-		return securityCertificatePartyRole;
+		return securityCertificatePartyRole == null ? securityCertificatePartyRole = new ArrayList<>() : securityCertificatePartyRole;
 	}
 
-	public void setSecurityCertificatePartyRole(List<com.tools20022.repository.entity.SecurityCertificatePartyRole> securityCertificatePartyRole) {
-		this.securityCertificatePartyRole = securityCertificatePartyRole;
+	public SecurityCertificate setSecurityCertificatePartyRole(List<com.tools20022.repository.entity.SecurityCertificatePartyRole> securityCertificatePartyRole) {
+		this.securityCertificatePartyRole = Objects.requireNonNull(securityCertificatePartyRole);
+		return this;
 	}
 
-	public NetworkAccess getNetworkAccess() {
-		return networkAccess;
+	public Optional<NetworkAccess> getNetworkAccess() {
+		return networkAccess == null ? Optional.empty() : Optional.of(networkAccess);
 	}
 
-	public void setNetworkAccess(com.tools20022.repository.entity.NetworkAccess networkAccess) {
+	public SecurityCertificate setNetworkAccess(com.tools20022.repository.entity.NetworkAccess networkAccess) {
 		this.networkAccess = networkAccess;
+		return this;
 	}
 
 	public Max35Text getCertificateType() {
 		return certificateType;
 	}
 
-	public void setCertificateType(Max35Text certificateType) {
-		this.certificateType = certificateType;
+	public SecurityCertificate setCertificateType(Max35Text certificateType) {
+		this.certificateType = Objects.requireNonNull(certificateType);
+		return this;
 	}
 }

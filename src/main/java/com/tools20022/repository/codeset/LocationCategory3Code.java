@@ -39,25 +39,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategory3Code#Indoor
- * LocationCategory3Code.mmIndoor}</li>
+ * LocationCategory3Code.Indoor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategory3Code#InsidePump
- * LocationCategory3Code.mmInsidePump}</li>
+ * LocationCategory3Code.InsidePump}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategory3Code#MultiplePOITerminal
- * LocationCategory3Code.mmMultiplePOITerminal}</li>
+ * LocationCategory3Code.MultiplePOITerminal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategory3Code#MultiplePump
- * LocationCategory3Code.mmMultiplePump}</li>
+ * LocationCategory3Code.MultiplePump}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategory3Code#MultipleSaleTerminal
- * LocationCategory3Code.mmMultipleSaleTerminal}</li>
+ * LocationCategory3Code.MultipleSaleTerminal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategory3Code#SingleSaleTerminal
- * LocationCategory3Code.mmSingleSaleTerminal}</li>
+ * LocationCategory3Code.SingleSaleTerminal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategory3Code#VendingMachine
- * LocationCategory3Code.mmVendingMachine}</li>
+ * LocationCategory3Code.VendingMachine}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -66,8 +66,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -260,7 +260,7 @@ public class LocationCategory3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LocationCategory3Code";
 				definition = "Indicates the type of integration of the POI terminal in the sale environment.";

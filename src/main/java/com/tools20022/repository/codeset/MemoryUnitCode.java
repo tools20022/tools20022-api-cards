@@ -37,19 +37,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.MemoryUnitCode#ExaByte
- * MemoryUnitCode.mmExaByte}</li>
+ * MemoryUnitCode.ExaByte}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MemoryUnitCode#PetaByte
- * MemoryUnitCode.mmPetaByte}</li>
+ * MemoryUnitCode.PetaByte}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MemoryUnitCode#TeraByte
- * MemoryUnitCode.mmTeraByte}</li>
+ * MemoryUnitCode.TeraByte}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MemoryUnitCode#GigaByte
- * MemoryUnitCode.mmGigaByte}</li>
+ * MemoryUnitCode.GigaByte}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MemoryUnitCode#MegaByte
- * MemoryUnitCode.mmMegaByte}</li>
+ * MemoryUnitCode.MegaByte}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MemoryUnitCode#KiloByte
- * MemoryUnitCode.mmKiloByte}</li>
+ * MemoryUnitCode.KiloByte}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MemoryUnitCode#Byte
- * MemoryUnitCode.mmByte}</li>
+ * MemoryUnitCode.Byte}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -302,7 +302,7 @@ public class MemoryUnitCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("EXAB");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MemoryUnitCode";

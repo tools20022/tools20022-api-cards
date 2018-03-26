@@ -38,17 +38,17 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FATCASourceStatusCode#Declared
- * FATCASourceStatusCode.mmDeclared}</li>
+ * FATCASourceStatusCode.Declared}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FATCASourceStatusCode#Calculated
- * FATCASourceStatusCode.mmCalculated}</li>
+ * FATCASourceStatusCode.Calculated}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -99,7 +99,7 @@ public class FATCASourceStatusCode extends MMCode {
 	};
 	/**
 	 * Source of the Foreign Account Tax Compliance Act (FATCA) status
-	 * calculated
+	 * calculated.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -117,7 +117,7 @@ public class FATCASourceStatusCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Source of the Foreign Account Tax Compliance Act (FATCA) status calculated"
+	 * "Source of the Foreign Account Tax Compliance Act (FATCA) status calculated."
 	 * </li>
 	 * </ul>
 	 */
@@ -125,7 +125,7 @@ public class FATCASourceStatusCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Calculated";
-			definition = "Source of the Foreign Account Tax Compliance Act (FATCA) status calculated";
+			definition = "Source of the Foreign Account Tax Compliance Act (FATCA) status calculated.";
 			owner_lazy = () -> com.tools20022.repository.codeset.FATCASourceStatusCode.mmObject();
 			codeName = "CALC";
 		}
@@ -138,7 +138,7 @@ public class FATCASourceStatusCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FATCASourceStatusCode";
 				definition = "Specifies the source of Foreign Account Tax Compliance Act (FATCA) status.";

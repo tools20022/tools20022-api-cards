@@ -19,10 +19,11 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.DateTimePeriod;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Relates a percentage to a period of time.
@@ -55,8 +56,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,8 +73,8 @@ public class PercentageAndPeriod {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected DateTimePeriod period;
 	/**
-	 * Period related to percentage.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -104,7 +105,7 @@ public class PercentageAndPeriod {
 	 * definition} = "Period related to percentage."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PercentageAndPeriod, DateTimePeriod> mmPeriod = new MMBusinessAssociationEnd<PercentageAndPeriod, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PercentageAndPeriod.mmObject();
@@ -113,15 +114,25 @@ public class PercentageAndPeriod {
 			definition = "Period related to percentage.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmPercentage;
+			opposite_lazy = () -> DateTimePeriod.mmPercentage;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(PercentageAndPeriod obj) {
+			return obj.getPeriod();
+		}
+
+		@Override
+		public void setValue(PercentageAndPeriod obj, DateTimePeriod value) {
+			obj.setPeriod(value);
 		}
 	};
 	protected PercentageRate percentage;
 	/**
-	 * Percentage rate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -145,7 +156,7 @@ public class PercentageAndPeriod {
 	 * definition} = "Percentage rate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPercentage = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PercentageAndPeriod, PercentageRate> mmPercentage = new MMBusinessAttribute<PercentageAndPeriod, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PercentageAndPeriod.mmObject();
@@ -157,23 +168,25 @@ public class PercentageAndPeriod {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PercentageAndPeriod.class.getMethod("getPercentage", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(PercentageAndPeriod obj) {
+			return obj.getPercentage();
+		}
+
+		@Override
+		public void setValue(PercentageAndPeriod obj, PercentageRate value) {
+			obj.setPercentage(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PercentageAndPeriod";
 				definition = "Relates a percentage to a period of time.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DateTimePeriod.mmPercentage);
+				associationDomain_lazy = () -> Arrays.asList(DateTimePeriod.mmPercentage);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PercentageAndPeriod.mmPeriod, com.tools20022.repository.entity.PercentageAndPeriod.mmPercentage);
 			}
 
@@ -189,15 +202,17 @@ public class PercentageAndPeriod {
 		return period;
 	}
 
-	public void setPeriod(com.tools20022.repository.entity.DateTimePeriod period) {
-		this.period = period;
+	public PercentageAndPeriod setPeriod(DateTimePeriod period) {
+		this.period = Objects.requireNonNull(period);
+		return this;
 	}
 
 	public PercentageRate getPercentage() {
 		return percentage;
 	}
 
-	public void setPercentage(PercentageRate percentage) {
-		this.percentage = percentage;
+	public PercentageAndPeriod setPercentage(PercentageRate percentage) {
+		this.percentage = Objects.requireNonNull(percentage);
+		return this;
 	}
 }

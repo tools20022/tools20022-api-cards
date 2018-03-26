@@ -23,8 +23,11 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.UnitOfMeasure4Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.String;
+import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Date;
+import java.util.function.Supplier;
 import java.util.LinkedHashMap;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -39,117 +42,117 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Kilogram
- * UnitOfMeasure4Code.mmKilogram}</li>
+ * UnitOfMeasure4Code.Kilogram}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Each
- * UnitOfMeasure4Code.mmEach}</li>
+ * UnitOfMeasure4Code.Each}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#GBTon
- * UnitOfMeasure4Code.mmGBTon}</li>
+ * UnitOfMeasure4Code.GBTon}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Metre
- * UnitOfMeasure4Code.mmMetre}</li>
+ * UnitOfMeasure4Code.Metre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Inch
- * UnitOfMeasure4Code.mmInch}</li>
+ * UnitOfMeasure4Code.Inch}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Yard
- * UnitOfMeasure4Code.mmYard}</li>
+ * UnitOfMeasure4Code.Yard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#GBGallon
- * UnitOfMeasure4Code.mmGBGallon}</li>
+ * UnitOfMeasure4Code.GBGallon}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Gram
- * UnitOfMeasure4Code.mmGram}</li>
+ * UnitOfMeasure4Code.Gram}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Centimetre
- * UnitOfMeasure4Code.mmCentimetre}</li>
+ * UnitOfMeasure4Code.Centimetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#SquareMetre
- * UnitOfMeasure4Code.mmSquareMetre}</li>
+ * UnitOfMeasure4Code.SquareMetre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Foot
- * UnitOfMeasure4Code.mmFoot}</li>
+ * UnitOfMeasure4Code.Foot}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Mile
- * UnitOfMeasure4Code.mmMile}</li>
+ * UnitOfMeasure4Code.Mile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#SquareInch
- * UnitOfMeasure4Code.mmSquareInch}</li>
+ * UnitOfMeasure4Code.SquareInch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#SquareFoot
- * UnitOfMeasure4Code.mmSquareFoot}</li>
+ * UnitOfMeasure4Code.SquareFoot}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#SquareMile
- * UnitOfMeasure4Code.mmSquareMile}</li>
+ * UnitOfMeasure4Code.SquareMile}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Ounce
- * UnitOfMeasure4Code.mmOunce}</li>
+ * UnitOfMeasure4Code.Ounce}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#GBPint
- * UnitOfMeasure4Code.mmGBPint}</li>
+ * UnitOfMeasure4Code.GBPint}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#USPint
- * UnitOfMeasure4Code.mmUSPint}</li>
+ * UnitOfMeasure4Code.USPint}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#GBQuart
- * UnitOfMeasure4Code.mmGBQuart}</li>
+ * UnitOfMeasure4Code.GBQuart}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#USQuart
- * UnitOfMeasure4Code.mmUSQuart}</li>
+ * UnitOfMeasure4Code.USQuart}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#USGallon
- * UnitOfMeasure4Code.mmUSGallon}</li>
+ * UnitOfMeasure4Code.USGallon}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Millimetre
- * UnitOfMeasure4Code.mmMillimetre}</li>
+ * UnitOfMeasure4Code.Millimetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Kilometre
- * UnitOfMeasure4Code.mmKilometre}</li>
+ * UnitOfMeasure4Code.Kilometre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#SquareYard
- * UnitOfMeasure4Code.mmSquareYard}</li>
+ * UnitOfMeasure4Code.SquareYard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#SquareMillimetre
- * UnitOfMeasure4Code.mmSquareMillimetre}</li>
+ * UnitOfMeasure4Code.SquareMillimetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#SquareCentimetre
- * UnitOfMeasure4Code.mmSquareCentimetre}</li>
+ * UnitOfMeasure4Code.SquareCentimetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#SquareKilometre
- * UnitOfMeasure4Code.mmSquareKilometre}</li>
+ * UnitOfMeasure4Code.SquareKilometre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#CubicMillimetre
- * UnitOfMeasure4Code.mmCubicMillimetre}</li>
+ * UnitOfMeasure4Code.CubicMillimetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Centilitre
- * UnitOfMeasure4Code.mmCentilitre}</li>
+ * UnitOfMeasure4Code.Centilitre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Litre
- * UnitOfMeasure4Code.mmLitre}</li>
+ * UnitOfMeasure4Code.Litre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Pound
- * UnitOfMeasure4Code.mmPound}</li>
+ * UnitOfMeasure4Code.Pound}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#USTon
- * UnitOfMeasure4Code.mmUSTon}</li>
+ * UnitOfMeasure4Code.USTon}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#USBarrel
- * UnitOfMeasure4Code.mmUSBarrel}</li>
+ * UnitOfMeasure4Code.USBarrel}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Box
- * UnitOfMeasure4Code.mmBox}</li>
+ * UnitOfMeasure4Code.Box}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Bottle
- * UnitOfMeasure4Code.mmBottle}</li>
+ * UnitOfMeasure4Code.Bottle}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Carton
- * UnitOfMeasure4Code.mmCarton}</li>
+ * UnitOfMeasure4Code.Carton}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Container
- * UnitOfMeasure4Code.mmContainer}</li>
+ * UnitOfMeasure4Code.Container}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Crate
- * UnitOfMeasure4Code.mmCrate}</li>
+ * UnitOfMeasure4Code.Crate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#CubicInch
- * UnitOfMeasure4Code.mmCubicInch}</li>
+ * UnitOfMeasure4Code.CubicInch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#CubicMeter
- * UnitOfMeasure4Code.mmCubicMeter}</li>
+ * UnitOfMeasure4Code.CubicMeter}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#GBFluidOunce
- * UnitOfMeasure4Code.mmGBFluidOunce}</li>
+ * UnitOfMeasure4Code.GBFluidOunce}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#USFluidOunce
- * UnitOfMeasure4Code.mmUSFluidOunce}</li>
+ * UnitOfMeasure4Code.USFluidOunce}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Bag
- * UnitOfMeasure4Code.mmBag}</li>
+ * UnitOfMeasure4Code.Bag}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#Bale
- * UnitOfMeasure4Code.mmBale}</li>
+ * UnitOfMeasure4Code.Bale}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure4Code#MetricTon
- * UnitOfMeasure4Code.mmMetricTon}</li>
+ * UnitOfMeasure4Code.MetricTon}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -158,8 +161,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -168,8 +171,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
- * registrationStatus} =
- * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+ * registrationStatus} = com.tools20022.metamodel.MMRegistrationStatus.OBSOLETE</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRemovalDate
+ * removalDate} = December 12, 2018</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "UnitOfMeasure4Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
@@ -1270,9 +1274,16 @@ public class UnitOfMeasure4Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("KGM");
-				registrationStatus = MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.OBSOLETE;
+				removalDate = ((Supplier<Date>) (() -> {
+					try {
+						return DateFormat.getDateInstance(java.text.DateFormat.LONG).parse("December 12, 2018");
+					} catch (Exception e) {
+						throw new RuntimeException(e);
+					}
+				})).get();
 				name = "UnitOfMeasure4Code";
 				definition = "Identifies the unit of measure by means of a code. The code is taken from UN/ECE Recommendation 20.";
 				trace_lazy = () -> UnitOfMeasure2Code.mmObject();

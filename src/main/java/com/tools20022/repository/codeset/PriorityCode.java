@@ -37,20 +37,20 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.PriorityCode#Urgent
- * PriorityCode.mmUrgent}</li>
+ * PriorityCode.Urgent}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PriorityCode#High
- * PriorityCode.mmHigh}</li>
+ * PriorityCode.High}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PriorityCode#Normal
- * PriorityCode.mmNormal}</li>
+ * PriorityCode.Normal}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PriorityCode#Low
- * PriorityCode.mmLow}</li>
+ * PriorityCode.Low}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -72,7 +72,7 @@ public class PriorityCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
-	 * Priority level is urgent (highest priority possible)
+	 * Priority level is urgent (highest priority possible).
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -88,14 +88,14 @@ public class PriorityCode extends MMCode {
 	 * name} = "Urgent"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Priority level is urgent (highest priority possible)"</li>
+	 * definition} = "Priority level is urgent (highest priority possible)."</li>
 	 * </ul>
 	 */
 	public static final PriorityCode Urgent = new PriorityCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Urgent";
-			definition = "Priority level is urgent (highest priority possible)";
+			definition = "Priority level is urgent (highest priority possible).";
 			owner_lazy = () -> com.tools20022.repository.codeset.PriorityCode.mmObject();
 			codeName = "URGT";
 		}
@@ -195,7 +195,7 @@ public class PriorityCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("URGT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PriorityCode";

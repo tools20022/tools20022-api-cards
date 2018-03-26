@@ -19,11 +19,15 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.*;
+import com.tools20022.repository.entity.InvestmentFundOrder;
+import com.tools20022.repository.entity.SecuritiesOrder;
+import com.tools20022.repository.entity.SecuritiesQuantity;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Status of a securities order or of the processing of a securities order.
@@ -98,8 +102,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -116,8 +120,8 @@ public class SecuritiesOrderStatus extends Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected RejectedConfirmationStatusReasonCode confirmationRejectedStatusReason;
 	/**
-	 * Specifies the reason for a confirmation rejected status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -141,7 +145,7 @@ public class SecuritiesOrderStatus extends Status {
 	 * definition} = "Specifies the reason for a confirmation rejected status."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmConfirmationRejectedStatusReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderStatus, RejectedConfirmationStatusReasonCode> mmConfirmationRejectedStatusReason = new MMBusinessAttribute<SecuritiesOrderStatus, RejectedConfirmationStatusReasonCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
@@ -153,18 +157,20 @@ public class SecuritiesOrderStatus extends Status {
 			simpleType_lazy = () -> RejectedConfirmationStatusReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderStatus.class.getMethod("getConfirmationRejectedStatusReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public RejectedConfirmationStatusReasonCode getValue(SecuritiesOrderStatus obj) {
+			return obj.getConfirmationRejectedStatusReason();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderStatus obj, RejectedConfirmationStatusReasonCode value) {
+			obj.setConfirmationRejectedStatusReason(value);
 		}
 	};
 	protected OrderConfirmationStatusCode confirmationStatus;
 	/**
-	 * Status of the confirmation of a status order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -188,7 +194,7 @@ public class SecuritiesOrderStatus extends Status {
 	 * definition} = "Status of the confirmation of a status order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmConfirmationStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderStatus, OrderConfirmationStatusCode> mmConfirmationStatus = new MMBusinessAttribute<SecuritiesOrderStatus, OrderConfirmationStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
@@ -200,18 +206,20 @@ public class SecuritiesOrderStatus extends Status {
 			simpleType_lazy = () -> OrderConfirmationStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderStatus.class.getMethod("getConfirmationStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public OrderConfirmationStatusCode getValue(SecuritiesOrderStatus obj) {
+			return obj.getConfirmationStatus();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderStatus obj, OrderConfirmationStatusCode value) {
+			obj.setConfirmationStatus(value);
 		}
 	};
 	protected OrderCancellationStatusCode cancellationStatus;
 	/**
-	 * Status of the cancellation of a securities order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -235,7 +243,7 @@ public class SecuritiesOrderStatus extends Status {
 	 * definition} = "Status of the cancellation of a securities order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCancellationStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderStatus, OrderCancellationStatusCode> mmCancellationStatus = new MMBusinessAttribute<SecuritiesOrderStatus, OrderCancellationStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
@@ -247,18 +255,20 @@ public class SecuritiesOrderStatus extends Status {
 			simpleType_lazy = () -> OrderCancellationStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderStatus.class.getMethod("getCancellationStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public OrderCancellationStatusCode getValue(SecuritiesOrderStatus obj) {
+			return obj.getCancellationStatus();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderStatus obj, OrderCancellationStatusCode value) {
+			obj.setCancellationStatus(value);
 		}
 	};
 	protected PartiallySettledStatusReasonCode partiallySettledStatusReason;
 	/**
-	 * Reason for the partially settled status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -282,7 +292,7 @@ public class SecuritiesOrderStatus extends Status {
 	 * definition} = "Reason for the partially settled status."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPartiallySettledStatusReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderStatus, PartiallySettledStatusReasonCode> mmPartiallySettledStatusReason = new MMBusinessAttribute<SecuritiesOrderStatus, PartiallySettledStatusReasonCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
@@ -294,18 +304,20 @@ public class SecuritiesOrderStatus extends Status {
 			simpleType_lazy = () -> PartiallySettledStatusReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderStatus.class.getMethod("getPartiallySettledStatusReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PartiallySettledStatusReasonCode getValue(SecuritiesOrderStatus obj) {
+			return obj.getPartiallySettledStatusReason();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderStatus obj, PartiallySettledStatusReasonCode value) {
+			obj.setPartiallySettledStatusReason(value);
 		}
 	};
 	protected SuspendedStatusReasonCode suspendedStatusReason;
 	/**
-	 * Reason for the suspended status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -329,7 +341,7 @@ public class SecuritiesOrderStatus extends Status {
 	 * definition} = "Reason for the suspended status."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSuspendedStatusReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderStatus, SuspendedStatusReasonCode> mmSuspendedStatusReason = new MMBusinessAttribute<SecuritiesOrderStatus, SuspendedStatusReasonCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
@@ -341,18 +353,20 @@ public class SecuritiesOrderStatus extends Status {
 			simpleType_lazy = () -> SuspendedStatusReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderStatus.class.getMethod("getSuspendedStatusReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SuspendedStatusReasonCode getValue(SecuritiesOrderStatus obj) {
+			return obj.getSuspendedStatusReason();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderStatus obj, SuspendedStatusReasonCode value) {
+			obj.setSuspendedStatusReason(value);
 		}
 	};
 	protected ListStatusTypeCode listOrderStatus;
 	/**
-	 * Specifies the status of a list order.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -376,7 +390,7 @@ public class SecuritiesOrderStatus extends Status {
 	 * definition} = "Specifies the status of a list order."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmListOrderStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderStatus, ListStatusTypeCode> mmListOrderStatus = new MMBusinessAttribute<SecuritiesOrderStatus, ListStatusTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
@@ -388,18 +402,20 @@ public class SecuritiesOrderStatus extends Status {
 			simpleType_lazy = () -> ListStatusTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderStatus.class.getMethod("getListOrderStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ListStatusTypeCode getValue(SecuritiesOrderStatus obj) {
+			return obj.getListOrderStatus();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderStatus obj, ListStatusTypeCode value) {
+			obj.setListOrderStatus(value);
 		}
 	};
 	protected SecuritiesOrder securitiesOrder;
 	/**
-	 * Order for which a status is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -430,7 +446,7 @@ public class SecuritiesOrderStatus extends Status {
 	 * definition} = "Order for which a status is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesOrderStatus, Optional<SecuritiesOrder>> mmSecuritiesOrder = new MMBusinessAssociationEnd<SecuritiesOrderStatus, Optional<SecuritiesOrder>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
@@ -443,11 +459,21 @@ public class SecuritiesOrderStatus extends Status {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
 		}
+
+		@Override
+		public Optional<SecuritiesOrder> getValue(SecuritiesOrderStatus obj) {
+			return obj.getSecuritiesOrder();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderStatus obj, Optional<SecuritiesOrder> value) {
+			obj.setSecuritiesOrder(value.orElse(null));
+		}
 	};
 	protected InvestmentFundOrder investmentFundOrder;
 	/**
-	 * Investment fund order for which a status is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -478,7 +504,7 @@ public class SecuritiesOrderStatus extends Status {
 	 * definition} = "Investment fund order for which a status is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentFundOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesOrderStatus, Optional<InvestmentFundOrder>> mmInvestmentFundOrder = new MMBusinessAssociationEnd<SecuritiesOrderStatus, Optional<InvestmentFundOrder>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
@@ -491,11 +517,21 @@ public class SecuritiesOrderStatus extends Status {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestmentFundOrder.mmObject();
 		}
+
+		@Override
+		public Optional<InvestmentFundOrder> getValue(SecuritiesOrderStatus obj) {
+			return obj.getInvestmentFundOrder();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderStatus obj, Optional<InvestmentFundOrder> value) {
+			obj.setInvestmentFundOrder(value.orElse(null));
+		}
 	};
 	protected SecuritiesQuantity cumulativeQuantity;
 	/**
-	 * Total quantity (for instance number of shares) filled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -526,7 +562,7 @@ public class SecuritiesOrderStatus extends Status {
 	 * definition} = "Total quantity (for instance number of shares) filled."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCumulativeQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesOrderStatus, SecuritiesQuantity> mmCumulativeQuantity = new MMBusinessAssociationEnd<SecuritiesOrderStatus, SecuritiesQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
@@ -535,15 +571,25 @@ public class SecuritiesOrderStatus extends Status {
 			definition = "Total quantity (for instance number of shares) filled.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmSecuritiesOrderStatus;
+			opposite_lazy = () -> SecuritiesQuantity.mmSecuritiesOrderStatus;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(SecuritiesOrderStatus obj) {
+			return obj.getCumulativeQuantity();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderStatus obj, SecuritiesQuantity value) {
+			obj.setCumulativeQuantity(value);
 		}
 	};
 	protected SecuritiesQuantity remainingQuantity;
 	/**
-	 * Quantity opened for further execution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -574,7 +620,7 @@ public class SecuritiesOrderStatus extends Status {
 	 * definition} = "Quantity opened for further execution."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRemainingQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesOrderStatus, SecuritiesQuantity> mmRemainingQuantity = new MMBusinessAssociationEnd<SecuritiesOrderStatus, SecuritiesQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
@@ -583,15 +629,25 @@ public class SecuritiesOrderStatus extends Status {
 			definition = "Quantity opened for further execution.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmRelatedOrderStatus;
+			opposite_lazy = () -> SecuritiesQuantity.mmRelatedOrderStatus;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(SecuritiesOrderStatus obj) {
+			return obj.getRemainingQuantity();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderStatus obj, SecuritiesQuantity value) {
+			obj.setRemainingQuantity(value);
 		}
 	};
 	protected ConditionallyAcceptedStatusReasonCode conditionallyAcceptedStatus;
 	/**
-	 * Reason for the conditionally accepted status.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -615,7 +671,7 @@ public class SecuritiesOrderStatus extends Status {
 	 * definition} = "Reason for the conditionally accepted status."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmConditionallyAcceptedStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderStatus, ConditionallyAcceptedStatusReasonCode> mmConditionallyAcceptedStatus = new MMBusinessAttribute<SecuritiesOrderStatus, ConditionallyAcceptedStatusReasonCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
@@ -627,18 +683,20 @@ public class SecuritiesOrderStatus extends Status {
 			simpleType_lazy = () -> ConditionallyAcceptedStatusReasonCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderStatus.class.getMethod("getConditionallyAcceptedStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ConditionallyAcceptedStatusReasonCode getValue(SecuritiesOrderStatus obj) {
+			return obj.getConditionallyAcceptedStatus();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderStatus obj, ConditionallyAcceptedStatusReasonCode value) {
+			obj.setConditionallyAcceptedStatus(value);
 		}
 	};
 	protected OrderStatusCode orderStatus;
 	/**
-	 * Indicates the status of an order at a specific point in time.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -663,7 +721,7 @@ public class SecuritiesOrderStatus extends Status {
 	 * "Indicates the status of an order at a specific point in time."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOrderStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesOrderStatus, OrderStatusCode> mmOrderStatus = new MMBusinessAttribute<SecuritiesOrderStatus, OrderStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesOrderStatus.mmObject();
@@ -675,24 +733,26 @@ public class SecuritiesOrderStatus extends Status {
 			simpleType_lazy = () -> OrderStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesOrderStatus.class.getMethod("getOrderStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public OrderStatusCode getValue(SecuritiesOrderStatus obj) {
+			return obj.getOrderStatus();
+		}
+
+		@Override
+		public void setValue(SecuritiesOrderStatus obj, OrderStatusCode value) {
+			obj.setOrderStatus(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesOrderStatus";
 				definition = "Status of a securities order or of the processing of a securities order.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundOrder.mmOrderStatus, com.tools20022.repository.entity.SecuritiesQuantity.mmRelatedOrderStatus,
-						com.tools20022.repository.entity.SecuritiesQuantity.mmSecuritiesOrderStatus, com.tools20022.repository.entity.SecuritiesOrder.mmStatus);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentFundOrder.mmOrderStatus, SecuritiesQuantity.mmRelatedOrderStatus, SecuritiesQuantity.mmSecuritiesOrderStatus,
+						com.tools20022.repository.entity.SecuritiesOrder.mmStatus);
 				superType_lazy = () -> Status.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesOrderStatus.mmConfirmationRejectedStatusReason, com.tools20022.repository.entity.SecuritiesOrderStatus.mmConfirmationStatus,
 						com.tools20022.repository.entity.SecuritiesOrderStatus.mmCancellationStatus, com.tools20022.repository.entity.SecuritiesOrderStatus.mmPartiallySettledStatusReason,
@@ -714,95 +774,107 @@ public class SecuritiesOrderStatus extends Status {
 		return confirmationRejectedStatusReason;
 	}
 
-	public void setConfirmationRejectedStatusReason(RejectedConfirmationStatusReasonCode confirmationRejectedStatusReason) {
-		this.confirmationRejectedStatusReason = confirmationRejectedStatusReason;
+	public SecuritiesOrderStatus setConfirmationRejectedStatusReason(RejectedConfirmationStatusReasonCode confirmationRejectedStatusReason) {
+		this.confirmationRejectedStatusReason = Objects.requireNonNull(confirmationRejectedStatusReason);
+		return this;
 	}
 
 	public OrderConfirmationStatusCode getConfirmationStatus() {
 		return confirmationStatus;
 	}
 
-	public void setConfirmationStatus(OrderConfirmationStatusCode confirmationStatus) {
-		this.confirmationStatus = confirmationStatus;
+	public SecuritiesOrderStatus setConfirmationStatus(OrderConfirmationStatusCode confirmationStatus) {
+		this.confirmationStatus = Objects.requireNonNull(confirmationStatus);
+		return this;
 	}
 
 	public OrderCancellationStatusCode getCancellationStatus() {
 		return cancellationStatus;
 	}
 
-	public void setCancellationStatus(OrderCancellationStatusCode cancellationStatus) {
-		this.cancellationStatus = cancellationStatus;
+	public SecuritiesOrderStatus setCancellationStatus(OrderCancellationStatusCode cancellationStatus) {
+		this.cancellationStatus = Objects.requireNonNull(cancellationStatus);
+		return this;
 	}
 
 	public PartiallySettledStatusReasonCode getPartiallySettledStatusReason() {
 		return partiallySettledStatusReason;
 	}
 
-	public void setPartiallySettledStatusReason(PartiallySettledStatusReasonCode partiallySettledStatusReason) {
-		this.partiallySettledStatusReason = partiallySettledStatusReason;
+	public SecuritiesOrderStatus setPartiallySettledStatusReason(PartiallySettledStatusReasonCode partiallySettledStatusReason) {
+		this.partiallySettledStatusReason = Objects.requireNonNull(partiallySettledStatusReason);
+		return this;
 	}
 
 	public SuspendedStatusReasonCode getSuspendedStatusReason() {
 		return suspendedStatusReason;
 	}
 
-	public void setSuspendedStatusReason(SuspendedStatusReasonCode suspendedStatusReason) {
-		this.suspendedStatusReason = suspendedStatusReason;
+	public SecuritiesOrderStatus setSuspendedStatusReason(SuspendedStatusReasonCode suspendedStatusReason) {
+		this.suspendedStatusReason = Objects.requireNonNull(suspendedStatusReason);
+		return this;
 	}
 
 	public ListStatusTypeCode getListOrderStatus() {
 		return listOrderStatus;
 	}
 
-	public void setListOrderStatus(ListStatusTypeCode listOrderStatus) {
-		this.listOrderStatus = listOrderStatus;
+	public SecuritiesOrderStatus setListOrderStatus(ListStatusTypeCode listOrderStatus) {
+		this.listOrderStatus = Objects.requireNonNull(listOrderStatus);
+		return this;
 	}
 
-	public SecuritiesOrder getSecuritiesOrder() {
-		return securitiesOrder;
+	public Optional<SecuritiesOrder> getSecuritiesOrder() {
+		return securitiesOrder == null ? Optional.empty() : Optional.of(securitiesOrder);
 	}
 
-	public void setSecuritiesOrder(com.tools20022.repository.entity.SecuritiesOrder securitiesOrder) {
+	public SecuritiesOrderStatus setSecuritiesOrder(com.tools20022.repository.entity.SecuritiesOrder securitiesOrder) {
 		this.securitiesOrder = securitiesOrder;
+		return this;
 	}
 
-	public InvestmentFundOrder getInvestmentFundOrder() {
-		return investmentFundOrder;
+	public Optional<InvestmentFundOrder> getInvestmentFundOrder() {
+		return investmentFundOrder == null ? Optional.empty() : Optional.of(investmentFundOrder);
 	}
 
-	public void setInvestmentFundOrder(com.tools20022.repository.entity.InvestmentFundOrder investmentFundOrder) {
+	public SecuritiesOrderStatus setInvestmentFundOrder(com.tools20022.repository.entity.InvestmentFundOrder investmentFundOrder) {
 		this.investmentFundOrder = investmentFundOrder;
+		return this;
 	}
 
 	public SecuritiesQuantity getCumulativeQuantity() {
 		return cumulativeQuantity;
 	}
 
-	public void setCumulativeQuantity(com.tools20022.repository.entity.SecuritiesQuantity cumulativeQuantity) {
-		this.cumulativeQuantity = cumulativeQuantity;
+	public SecuritiesOrderStatus setCumulativeQuantity(SecuritiesQuantity cumulativeQuantity) {
+		this.cumulativeQuantity = Objects.requireNonNull(cumulativeQuantity);
+		return this;
 	}
 
 	public SecuritiesQuantity getRemainingQuantity() {
 		return remainingQuantity;
 	}
 
-	public void setRemainingQuantity(com.tools20022.repository.entity.SecuritiesQuantity remainingQuantity) {
-		this.remainingQuantity = remainingQuantity;
+	public SecuritiesOrderStatus setRemainingQuantity(SecuritiesQuantity remainingQuantity) {
+		this.remainingQuantity = Objects.requireNonNull(remainingQuantity);
+		return this;
 	}
 
 	public ConditionallyAcceptedStatusReasonCode getConditionallyAcceptedStatus() {
 		return conditionallyAcceptedStatus;
 	}
 
-	public void setConditionallyAcceptedStatus(ConditionallyAcceptedStatusReasonCode conditionallyAcceptedStatus) {
-		this.conditionallyAcceptedStatus = conditionallyAcceptedStatus;
+	public SecuritiesOrderStatus setConditionallyAcceptedStatus(ConditionallyAcceptedStatusReasonCode conditionallyAcceptedStatus) {
+		this.conditionallyAcceptedStatus = Objects.requireNonNull(conditionallyAcceptedStatus);
+		return this;
 	}
 
 	public OrderStatusCode getOrderStatus() {
 		return orderStatus;
 	}
 
-	public void setOrderStatus(OrderStatusCode orderStatus) {
-		this.orderStatus = orderStatus;
+	public SecuritiesOrderStatus setOrderStatus(OrderStatusCode orderStatus) {
+		this.orderStatus = Objects.requireNonNull(orderStatus);
+		return this;
 	}
 }

@@ -39,20 +39,20 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EligibilityCode#EligibleCounterparty
- * EligibilityCode.mmEligibleCounterparty}</li>
+ * EligibilityCode.EligibleCounterparty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EligibilityCode#RetailClient
- * EligibilityCode.mmRetailClient}</li>
+ * EligibilityCode.RetailClient}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.EligibilityCode#ProfessionalClient
- * EligibilityCode.mmProfessionalClient}</li>
+ * EligibilityCode.ProfessionalClient}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -67,7 +67,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "EligibilityCode"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Identifies  the type of investor. The rules that apply to each type of client are different."
+ * "Identifies the type of investor. The rules that apply to each type of client are different."
  * </li>
  * </ul>
  */
@@ -180,11 +180,11 @@ public class EligibilityCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ELIG");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EligibilityCode";
-				definition = "Identifies  the type of investor. The rules that apply to each type of client are different.";
+				definition = "Identifies the type of investor. The rules that apply to each type of client are different.";
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.EligibilityCode.EligibleCounterparty, com.tools20022.repository.codeset.EligibilityCode.RetailClient,
 						com.tools20022.repository.codeset.EligibilityCode.ProfessionalClient);
 			}

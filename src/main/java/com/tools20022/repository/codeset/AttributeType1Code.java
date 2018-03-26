@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AttributeType1Code#CommonName
- * AttributeType1Code.mmCommonName}</li>
+ * AttributeType1Code.CommonName}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AttributeType1Code#Locality
- * AttributeType1Code.mmLocality}</li>
+ * AttributeType1Code.Locality}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AttributeType1Code#OrganisationName
- * AttributeType1Code.mmOrganisationName}</li>
+ * AttributeType1Code.OrganisationName}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AttributeType1Code#OrganisationUnitName
- * AttributeType1Code.mmOrganisationUnitName}</li>
+ * AttributeType1Code.OrganisationUnitName}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AttributeType1Code#CountryName
- * AttributeType1Code.mmCountryName}</li>
+ * AttributeType1Code.CountryName}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -209,7 +209,7 @@ public class AttributeType1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CNAT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AttributeType1Code";

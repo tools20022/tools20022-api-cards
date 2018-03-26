@@ -37,24 +37,24 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType12Code#Acquirer
- * PartyType12Code.mmAcquirer}</li>
+ * PartyType12Code.Acquirer}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType12Code#ATMManager
- * PartyType12Code.mmATMManager}</li>
+ * PartyType12Code.ATMManager}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType12Code#CardIssuerProcessor
- * PartyType12Code.mmCardIssuerProcessor}</li>
+ * PartyType12Code.CardIssuerProcessor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType12Code#DelegateIssuer
- * PartyType12Code.mmDelegateIssuer}</li>
+ * PartyType12Code.DelegateIssuer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType12Code#HostingEntity
- * PartyType12Code.mmHostingEntity}</li>
+ * PartyType12Code.HostingEntity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType12Code#IntermediaryAgent
- * PartyType12Code.mmIntermediaryAgent}</li>
+ * PartyType12Code.IntermediaryAgent}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType12Code#OriginatingATM
- * PartyType12Code.mmOriginatingATM}</li>
+ * PartyType12Code.OriginatingATM}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -254,7 +254,7 @@ public class PartyType12Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyType12Code";
 				definition = "Type of identified entity.";

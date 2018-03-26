@@ -38,97 +38,109 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#SoftwareModule
- * DataSetCategoryCode.mmSoftwareModule}</li>
+ * DataSetCategoryCode.SoftwareModule}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#VendorParameters
- * DataSetCategoryCode.mmVendorParameters}</li>
+ * DataSetCategoryCode.VendorParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#AcquirerParameters
- * DataSetCategoryCode.mmAcquirerParameters}</li>
+ * DataSetCategoryCode.AcquirerParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#ApplicationParameters
- * DataSetCategoryCode.mmApplicationParameters}</li>
+ * DataSetCategoryCode.ApplicationParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#MerchantParameters
- * DataSetCategoryCode.mmMerchantParameters}</li>
+ * DataSetCategoryCode.MerchantParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#BatchCapture
- * DataSetCategoryCode.mmBatchCapture}</li>
+ * DataSetCategoryCode.BatchCapture}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#CaptureResponse
- * DataSetCategoryCode.mmCaptureResponse}</li>
+ * DataSetCategoryCode.CaptureResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#StatusReport
- * DataSetCategoryCode.mmStatusReport}</li>
+ * DataSetCategoryCode.StatusReport}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#DelegationData
- * DataSetCategoryCode.mmDelegationData}</li>
+ * DataSetCategoryCode.DelegationData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#ManagementPlan
- * DataSetCategoryCode.mmManagementPlan}</li>
+ * DataSetCategoryCode.ManagementPlan}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#SecurityParameters
- * DataSetCategoryCode.mmSecurityParameters}</li>
+ * DataSetCategoryCode.SecurityParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#TerminalParameters
- * DataSetCategoryCode.mmTerminalParameters}</li>
+ * DataSetCategoryCode.TerminalParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#Parameters
- * DataSetCategoryCode.mmParameters}</li>
+ * DataSetCategoryCode.Parameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#MasterTerminalManager
- * DataSetCategoryCode.mmMasterTerminalManager}</li>
+ * DataSetCategoryCode.MasterTerminalManager}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#Monitoring
- * DataSetCategoryCode.mmMonitoring}</li>
+ * DataSetCategoryCode.Monitoring}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#AcquirerProtocolParameters
- * DataSetCategoryCode.mmAcquirerProtocolParameters}</li>
+ * DataSetCategoryCode.AcquirerProtocolParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#ApplicationParametersSubsetCreation
- * DataSetCategoryCode.mmApplicationParametersSubsetCreation}</li>
+ * DataSetCategoryCode.ApplicationParametersSubsetCreation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#KeyDownload
- * DataSetCategoryCode.mmKeyDownload}</li>
+ * DataSetCategoryCode.KeyDownload}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#KeyManagement
- * DataSetCategoryCode.mmKeyManagement}</li>
+ * DataSetCategoryCode.KeyManagement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#Reporting
- * DataSetCategoryCode.mmReporting}</li>
+ * DataSetCategoryCode.Reporting}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#TMSProtocolParameters
- * DataSetCategoryCode.mmTMSProtocolParameters}</li>
+ * DataSetCategoryCode.TMSProtocolParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#ATMProtocol
- * DataSetCategoryCode.mmATMProtocol}</li>
+ * DataSetCategoryCode.ATMProtocol}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#ATMConfiguration
- * DataSetCategoryCode.mmATMConfiguration}</li>
+ * DataSetCategoryCode.ATMConfiguration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#CardApplication
- * DataSetCategoryCode.mmCardApplication}</li>
+ * DataSetCategoryCode.CardApplication}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#CardConfiguration
- * DataSetCategoryCode.mmCardConfiguration}</li>
+ * DataSetCategoryCode.CardConfiguration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#OfflineExchangeRate
- * DataSetCategoryCode.mmOfflineExchangeRate}</li>
+ * DataSetCategoryCode.OfflineExchangeRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#PreDefinedAmount
- * DataSetCategoryCode.mmPreDefinedAmount}</li>
+ * DataSetCategoryCode.PreDefinedAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#LocationConfiguration
- * DataSetCategoryCode.mmLocationConfiguration}</li>
+ * DataSetCategoryCode.LocationConfiguration}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#MobileOperator
- * DataSetCategoryCode.mmMobileOperator}</li>
+ * DataSetCategoryCode.MobileOperator}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#ReconciliationError
- * DataSetCategoryCode.mmReconciliationError}</li>
+ * DataSetCategoryCode.ReconciliationError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#CertificateParameters
- * DataSetCategoryCode.mmCertificateParameters}</li>
+ * DataSetCategoryCode.CertificateParameters}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#CertificateManagementRequest
+ * DataSetCategoryCode.CertificateManagementRequest}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#LogFile
+ * DataSetCategoryCode.LogFile}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#SaleToPOIProtocolParameters
+ * DataSetCategoryCode.SaleToPOIProtocolParameters}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode#SaleComponent
+ * DataSetCategoryCode.SaleComponent}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -151,8 +163,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -1138,6 +1150,126 @@ public class DataSetCategoryCode extends MMCode {
 			codeName = "CRTF";
 		}
 	};
+	/**
+	 * Trigger for CertificateManagementRequest.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode
+	 * DataSetCategoryCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "CMRQ"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "CertificateManagementRequest"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Trigger for CertificateManagementRequest."</li>
+	 * </ul>
+	 */
+	public static final DataSetCategoryCode CertificateManagementRequest = new DataSetCategoryCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "CertificateManagementRequest";
+			definition = "Trigger for CertificateManagementRequest.";
+			owner_lazy = () -> com.tools20022.repository.codeset.DataSetCategoryCode.mmObject();
+			codeName = "CMRQ";
+		}
+	};
+	/**
+	 * Any repository used for recording log traces.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode
+	 * DataSetCategoryCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "LOGF"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "LogFile"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Any repository used for recording log traces."</li>
+	 * </ul>
+	 */
+	public static final DataSetCategoryCode LogFile = new DataSetCategoryCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "LogFile";
+			definition = "Any repository used for recording log traces.";
+			owner_lazy = () -> com.tools20022.repository.codeset.DataSetCategoryCode.mmObject();
+			codeName = "LOGF";
+		}
+	};
+	/**
+	 * Parameters related to the Sale to POI protocol.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode
+	 * DataSetCategoryCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "SAPR"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "SaleToPOIProtocolParameters"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Parameters related to the Sale to POI protocol."</li>
+	 * </ul>
+	 */
+	public static final DataSetCategoryCode SaleToPOIProtocolParameters = new DataSetCategoryCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "SaleToPOIProtocolParameters";
+			definition = "Parameters related to the Sale to POI protocol.";
+			owner_lazy = () -> com.tools20022.repository.codeset.DataSetCategoryCode.mmObject();
+			codeName = "SAPR";
+		}
+	};
+	/**
+	 * Component of the Sale system.
+	 * <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.DataSetCategoryCode
+	 * DataSetCategoryCode}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
+	 * "SACP"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "SaleComponent"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} = "Component of the Sale system."</li>
+	 * </ul>
+	 */
+	public static final DataSetCategoryCode SaleComponent = new DataSetCategoryCode() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "SaleComponent";
+			definition = "Component of the Sale system.";
+			owner_lazy = () -> com.tools20022.repository.codeset.DataSetCategoryCode.mmObject();
+			codeName = "SACP";
+		}
+	};
 	final static private LinkedHashMap<String, DataSetCategoryCode> codesByName = new LinkedHashMap<>();
 
 	protected DataSetCategoryCode() {
@@ -1146,7 +1278,7 @@ public class DataSetCategoryCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("SWPK");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DataSetCategoryCode";
@@ -1165,7 +1297,9 @@ public class DataSetCategoryCode extends MMCode {
 						com.tools20022.repository.codeset.DataSetCategoryCode.CardApplication, com.tools20022.repository.codeset.DataSetCategoryCode.CardConfiguration,
 						com.tools20022.repository.codeset.DataSetCategoryCode.OfflineExchangeRate, com.tools20022.repository.codeset.DataSetCategoryCode.PreDefinedAmount,
 						com.tools20022.repository.codeset.DataSetCategoryCode.LocationConfiguration, com.tools20022.repository.codeset.DataSetCategoryCode.MobileOperator,
-						com.tools20022.repository.codeset.DataSetCategoryCode.ReconciliationError, com.tools20022.repository.codeset.DataSetCategoryCode.CertificateParameters);
+						com.tools20022.repository.codeset.DataSetCategoryCode.ReconciliationError, com.tools20022.repository.codeset.DataSetCategoryCode.CertificateParameters,
+						com.tools20022.repository.codeset.DataSetCategoryCode.CertificateManagementRequest, com.tools20022.repository.codeset.DataSetCategoryCode.LogFile,
+						com.tools20022.repository.codeset.DataSetCategoryCode.SaleToPOIProtocolParameters, com.tools20022.repository.codeset.DataSetCategoryCode.SaleComponent);
 			}
 		});
 		return mmObject_lazy.get();
@@ -1203,6 +1337,10 @@ public class DataSetCategoryCode extends MMCode {
 		codesByName.put(MobileOperator.getCodeName().get(), MobileOperator);
 		codesByName.put(ReconciliationError.getCodeName().get(), ReconciliationError);
 		codesByName.put(CertificateParameters.getCodeName().get(), CertificateParameters);
+		codesByName.put(CertificateManagementRequest.getCodeName().get(), CertificateManagementRequest);
+		codesByName.put(LogFile.getCodeName().get(), LogFile);
+		codesByName.put(SaleToPOIProtocolParameters.getCodeName().get(), SaleToPOIProtocolParameters);
+		codesByName.put(SaleComponent.getCodeName().get(), SaleComponent);
 	}
 
 	public static DataSetCategoryCode valueOf(String codeName) {

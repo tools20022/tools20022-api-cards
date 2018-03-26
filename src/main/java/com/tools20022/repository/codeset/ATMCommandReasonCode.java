@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommandReasonCode#Diagnostic
- * ATMCommandReasonCode.mmDiagnostic}</li>
+ * ATMCommandReasonCode.Diagnostic}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommandReasonCode#Monitoring
- * ATMCommandReasonCode.mmMonitoring}</li>
+ * ATMCommandReasonCode.Monitoring}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommandReasonCode#SecurityError
- * ATMCommandReasonCode.mmSecurityError}</li>
+ * ATMCommandReasonCode.SecurityError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommandReasonCode#Synchronisation
- * ATMCommandReasonCode.mmSynchronisation}</li>
+ * ATMCommandReasonCode.Synchronisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCommandReasonCode#Update
- * ATMCommandReasonCode.mmUpdate}</li>
+ * ATMCommandReasonCode.Update}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -63,8 +63,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -238,7 +238,7 @@ public class ATMCommandReasonCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMCommandReasonCode";
 				definition = "Reason for sending or requesting a maintenance command.";

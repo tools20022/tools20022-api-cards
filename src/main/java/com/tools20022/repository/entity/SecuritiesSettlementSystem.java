@@ -21,10 +21,12 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.SecuritiesSettlementPartyRole;
 import com.tools20022.repository.entity.System;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 
 /**
  * Specifies the system used in a settlement process.
@@ -58,8 +60,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,8 +77,8 @@ public class SecuritiesSettlementSystem extends System {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesSettlementPartyRole settlementParty;
 	/**
-	 * Party which settles through a system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -108,7 +110,7 @@ public class SecuritiesSettlementSystem extends System {
 	 * definition} = "Party which settles through a system."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSettlementParty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesSettlementSystem, Optional<SecuritiesSettlementPartyRole>> mmSettlementParty = new MMBusinessAssociationEnd<SecuritiesSettlementSystem, Optional<SecuritiesSettlementPartyRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlementSystem.mmObject();
@@ -117,20 +119,30 @@ public class SecuritiesSettlementSystem extends System {
 			definition = "Party which settles through a system.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlementPartyRole.mmSecuritiesSettlementSystem;
+			opposite_lazy = () -> SecuritiesSettlementPartyRole.mmSecuritiesSettlementSystem;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlementPartyRole.mmObject();
+			type_lazy = () -> SecuritiesSettlementPartyRole.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesSettlementPartyRole> getValue(SecuritiesSettlementSystem obj) {
+			return obj.getSettlementParty();
+		}
+
+		@Override
+		public void setValue(SecuritiesSettlementSystem obj, Optional<SecuritiesSettlementPartyRole> value) {
+			obj.setSettlementParty(value.orElse(null));
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesSettlementSystem";
 				definition = "Specifies the system used in a settlement process.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesSettlementPartyRole.mmSecuritiesSettlementSystem);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesSettlementPartyRole.mmSecuritiesSettlementSystem);
 				superType_lazy = () -> System.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesSettlementSystem.mmSettlementParty);
 			}
@@ -143,11 +155,12 @@ public class SecuritiesSettlementSystem extends System {
 		return mmObject_lazy.get();
 	}
 
-	public SecuritiesSettlementPartyRole getSettlementParty() {
-		return settlementParty;
+	public Optional<SecuritiesSettlementPartyRole> getSettlementParty() {
+		return settlementParty == null ? Optional.empty() : Optional.of(settlementParty);
 	}
 
-	public void setSettlementParty(com.tools20022.repository.entity.SecuritiesSettlementPartyRole settlementParty) {
+	public SecuritiesSettlementSystem setSettlementParty(SecuritiesSettlementPartyRole settlementParty) {
 		this.settlementParty = settlementParty;
+		return this;
 	}
 }

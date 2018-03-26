@@ -25,9 +25,9 @@ import com.tools20022.repository.area.AcquirertoIssuerCardTransactionLatestVersi
 import com.tools20022.repository.msg.AcquirerKeyExchangeResponse1;
 import com.tools20022.repository.msg.ContentInformationType12;
 import com.tools20022.repository.msg.Header17;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -75,15 +75,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "KeyExchangeResponse", propOrder = {"header", "keyExchangeResponse", "securityTrailer"})
 public class KeyExchangeResponse {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header17 header;
 	/**
-	 * Information related to the protocol management.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,7 +104,7 @@ public class KeyExchangeResponse {
 	 * definition} = "Information related to the protocol management."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<KeyExchangeResponse, Header17> mmHeader = new MMMessageBuildingBlock<KeyExchangeResponse, Header17>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,18 +115,21 @@ public class KeyExchangeResponse {
 			complexType_lazy = () -> Header17.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return KeyExchangeResponse.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header17 getValue(KeyExchangeResponse obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(KeyExchangeResponse obj, Header17 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "KeyXchgRspn", required = true)
 	protected AcquirerKeyExchangeResponse1 keyExchangeResponse;
 	/**
-	 * Information related to the response to a key exchange.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,7 +150,7 @@ public class KeyExchangeResponse {
 	 * definition} = "Information related to the response to a key exchange."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmKeyExchangeResponse = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<KeyExchangeResponse, AcquirerKeyExchangeResponse1> mmKeyExchangeResponse = new MMMessageBuildingBlock<KeyExchangeResponse, AcquirerKeyExchangeResponse1>() {
 		{
 			xmlTag = "KeyXchgRspn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -157,18 +161,21 @@ public class KeyExchangeResponse {
 			complexType_lazy = () -> AcquirerKeyExchangeResponse1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return KeyExchangeResponse.class.getMethod("getKeyExchangeResponse", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AcquirerKeyExchangeResponse1 getValue(KeyExchangeResponse obj) {
+			return obj.getKeyExchangeResponse();
+		}
+
+		@Override
+		public void setValue(KeyExchangeResponse obj, AcquirerKeyExchangeResponse1 value) {
+			obj.setKeyExchangeResponse(value);
 		}
 	};
+	@XmlElement(name = "SctyTrlr", required = true)
 	protected ContentInformationType12 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC or a digital signature.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -190,7 +197,7 @@ public class KeyExchangeResponse {
 	 * "Trailer of the message containing a MAC or a digital signature."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<KeyExchangeResponse, ContentInformationType12> mmSecurityTrailer = new MMMessageBuildingBlock<KeyExchangeResponse, ContentInformationType12>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -201,12 +208,14 @@ public class KeyExchangeResponse {
 			complexType_lazy = () -> ContentInformationType12.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return KeyExchangeResponse.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ContentInformationType12 getValue(KeyExchangeResponse obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(KeyExchangeResponse obj, ContentInformationType12 value) {
+			obj.setSecurityTrailer(value);
 		}
 	};
 
@@ -239,34 +248,34 @@ public class KeyExchangeResponse {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header17 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header17 header) {
-		this.header = header;
+	public KeyExchangeResponse setHeader(Header17 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "KeyXchgRspn", required = true)
 	public AcquirerKeyExchangeResponse1 getKeyExchangeResponse() {
 		return keyExchangeResponse;
 	}
 
-	public void setKeyExchangeResponse(AcquirerKeyExchangeResponse1 keyExchangeResponse) {
-		this.keyExchangeResponse = keyExchangeResponse;
+	public KeyExchangeResponse setKeyExchangeResponse(AcquirerKeyExchangeResponse1 keyExchangeResponse) {
+		this.keyExchangeResponse = Objects.requireNonNull(keyExchangeResponse);
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr", required = true)
 	public ContentInformationType12 getSecurityTrailer() {
 		return securityTrailer;
 	}
 
-	public void setSecurityTrailer(ContentInformationType12 securityTrailer) {
-		this.securityTrailer = securityTrailer;
+	public KeyExchangeResponse setSecurityTrailer(ContentInformationType12 securityTrailer) {
+		this.securityTrailer = Objects.requireNonNull(securityTrailer);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:cain.012.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:cain.012.001.01")
 	static public class Document {
 		@XmlElement(name = "KeyXchgRspn", required = true)
 		public KeyExchangeResponse messageBody;

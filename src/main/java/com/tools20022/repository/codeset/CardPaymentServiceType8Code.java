@@ -38,58 +38,58 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType8Code#Aggregation
- * CardPaymentServiceType8Code.mmAggregation}</li>
+ * CardPaymentServiceType8Code.Aggregation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType8Code#CashBack
- * CardPaymentServiceType8Code.mmCashBack}</li>
+ * CardPaymentServiceType8Code.CashBack}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType8Code#ChosenWithdrawal
- * CardPaymentServiceType8Code.mmChosenWithdrawal}</li>
+ * CardPaymentServiceType8Code.ChosenWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType8Code#DCC
- * CardPaymentServiceType8Code.mmDCC}</li>
+ * CardPaymentServiceType8Code.DCC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType8Code#Gratuity
- * CardPaymentServiceType8Code.mmGratuity}</li>
+ * CardPaymentServiceType8Code.Gratuity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType8Code#AcceptorInstalment
- * CardPaymentServiceType8Code.mmAcceptorInstalment}</li>
+ * CardPaymentServiceType8Code.AcceptorInstalment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType8Code#IssuerInstalment
- * CardPaymentServiceType8Code.mmIssuerInstalment}</li>
+ * CardPaymentServiceType8Code.IssuerInstalment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType8Code#Loyalty
- * CardPaymentServiceType8Code.mmLoyalty}</li>
+ * CardPaymentServiceType8Code.Loyalty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType8Code#NoShow
- * CardPaymentServiceType8Code.mmNoShow}</li>
+ * CardPaymentServiceType8Code.NoShow}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType8Code#PreAuthorisedWithdrawal
- * CardPaymentServiceType8Code.mmPreAuthorisedWithdrawal}</li>
+ * CardPaymentServiceType8Code.PreAuthorisedWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType8Code#ProfileWithdrawal
- * CardPaymentServiceType8Code.mmProfileWithdrawal}</li>
+ * CardPaymentServiceType8Code.ProfileWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType8Code#PurchaseCorporate
- * CardPaymentServiceType8Code.mmPurchaseCorporate}</li>
+ * CardPaymentServiceType8Code.PurchaseCorporate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType8Code#RecurringPayment
- * CardPaymentServiceType8Code.mmRecurringPayment}</li>
+ * CardPaymentServiceType8Code.RecurringPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType8Code#SolicitedAvailableFunds
- * CardPaymentServiceType8Code.mmSolicitedAvailableFunds}</li>
+ * CardPaymentServiceType8Code.SolicitedAvailableFunds}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType8Code#StandardWithdrawal
- * CardPaymentServiceType8Code.mmStandardWithdrawal}</li>
+ * CardPaymentServiceType8Code.StandardWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType8Code#VoiceAuthorisation
- * CardPaymentServiceType8Code.mmVoiceAuthorisation}</li>
+ * CardPaymentServiceType8Code.VoiceAuthorisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType8Code#NonRefundable
- * CardPaymentServiceType8Code.mmNonRefundable}</li>
+ * CardPaymentServiceType8Code.NonRefundable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType8Code#Instant
- * CardPaymentServiceType8Code.mmInstant}</li>
+ * CardPaymentServiceType8Code.Instant}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -98,8 +98,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -554,7 +554,7 @@ public class CardPaymentServiceType8Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPaymentServiceType8Code";
 				definition = "Main card service transaction.";

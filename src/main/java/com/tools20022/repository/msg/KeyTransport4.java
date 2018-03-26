@@ -25,8 +25,11 @@ import com.tools20022.repository.choice.Recipient5Choice;
 import com.tools20022.repository.datatype.Max5000Binary;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.AlgorithmIdentification11;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +60,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,15 +74,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "KeyTransport4", propOrder = {"version", "recipientIdentification", "keyEncryptionAlgorithm", "encryptedKey"})
 public class KeyTransport4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Vrsn")
 	protected Number version;
 	/**
-	 * Version of the data structure.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,9 +107,9 @@ public class KeyTransport4 {
 	 * definition} = "Version of the data structure."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVersion = new MMMessageAttribute() {
+	public static final MMMessageAttribute<KeyTransport4, Optional<Number>> mmVersion = new MMMessageAttribute<KeyTransport4, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> KeyTransport4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.KeyTransport4.mmObject();
 			isDerived = false;
 			xmlTag = "Vrsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -115,11 +119,22 @@ public class KeyTransport4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(KeyTransport4 obj) {
+			return obj.getVersion();
+		}
+
+		@Override
+		public void setValue(KeyTransport4 obj, Optional<Number> value) {
+			obj.setVersion(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RcptId", required = true)
 	protected Recipient5Choice recipientIdentification;
 	/**
-	 * Identification of a cryptographic asymmetric key for the recipient.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -143,9 +158,9 @@ public class KeyTransport4 {
 	 * "Identification of a cryptographic asymmetric key for the recipient."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmRecipientIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<KeyTransport4, Recipient5Choice> mmRecipientIdentification = new MMMessageAssociationEnd<KeyTransport4, Recipient5Choice>() {
 		{
-			componentContext_lazy = () -> KeyTransport4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.KeyTransport4.mmObject();
 			isDerived = false;
 			xmlTag = "RcptId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -156,11 +171,22 @@ public class KeyTransport4 {
 			isComposite = true;
 			type_lazy = () -> Recipient5Choice.mmObject();
 		}
+
+		@Override
+		public Recipient5Choice getValue(KeyTransport4 obj) {
+			return obj.getRecipientIdentification();
+		}
+
+		@Override
+		public void setValue(KeyTransport4 obj, Recipient5Choice value) {
+			obj.setRecipientIdentification(value);
+		}
 	};
+	@XmlElement(name = "KeyNcrptnAlgo", required = true)
 	protected AlgorithmIdentification11 keyEncryptionAlgorithm;
 	/**
-	 * Algorithm to encrypt the key encryption key (KEK).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -184,9 +210,9 @@ public class KeyTransport4 {
 	 * definition} = "Algorithm to encrypt the key encryption key (KEK)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmKeyEncryptionAlgorithm = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<KeyTransport4, AlgorithmIdentification11> mmKeyEncryptionAlgorithm = new MMMessageAssociationEnd<KeyTransport4, AlgorithmIdentification11>() {
 		{
-			componentContext_lazy = () -> KeyTransport4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.KeyTransport4.mmObject();
 			isDerived = false;
 			xmlTag = "KeyNcrptnAlgo";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -195,13 +221,24 @@ public class KeyTransport4 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.AlgorithmIdentification11.mmObject();
+			type_lazy = () -> AlgorithmIdentification11.mmObject();
+		}
+
+		@Override
+		public AlgorithmIdentification11 getValue(KeyTransport4 obj) {
+			return obj.getKeyEncryptionAlgorithm();
+		}
+
+		@Override
+		public void setValue(KeyTransport4 obj, AlgorithmIdentification11 value) {
+			obj.setKeyEncryptionAlgorithm(value);
 		}
 	};
+	@XmlElement(name = "NcrptdKey", required = true)
 	protected Max5000Binary encryptedKey;
 	/**
-	 * Encrypted key encryption key (KEK).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -226,9 +263,9 @@ public class KeyTransport4 {
 	 * definition} = "Encrypted key encryption key (KEK)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmEncryptedKey = new MMMessageAttribute() {
+	public static final MMMessageAttribute<KeyTransport4, Max5000Binary> mmEncryptedKey = new MMMessageAttribute<KeyTransport4, Max5000Binary>() {
 		{
-			componentContext_lazy = () -> KeyTransport4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.KeyTransport4.mmObject();
 			isDerived = false;
 			xmlTag = "NcrptdKey";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -238,13 +275,24 @@ public class KeyTransport4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max5000Binary.mmObject();
 		}
+
+		@Override
+		public Max5000Binary getValue(KeyTransport4 obj) {
+			return obj.getEncryptedKey();
+		}
+
+		@Override
+		public void setValue(KeyTransport4 obj, Max5000Binary value) {
+			obj.setEncryptedKey(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(KeyTransport4.mmVersion, KeyTransport4.mmRecipientIdentification, KeyTransport4.mmKeyEncryptionAlgorithm, KeyTransport4.mmEncryptedKey);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.KeyTransport4.mmVersion, com.tools20022.repository.msg.KeyTransport4.mmRecipientIdentification,
+						com.tools20022.repository.msg.KeyTransport4.mmKeyEncryptionAlgorithm, com.tools20022.repository.msg.KeyTransport4.mmEncryptedKey);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "KeyTransport4";
 				definition = "Key encryption key (KEK), encrypted with a previously distributed asymmetric public key.";
@@ -253,39 +301,39 @@ public class KeyTransport4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Vrsn")
-	public Number getVersion() {
-		return version;
+	public Optional<Number> getVersion() {
+		return version == null ? Optional.empty() : Optional.of(version);
 	}
 
-	public void setVersion(Number version) {
+	public KeyTransport4 setVersion(Number version) {
 		this.version = version;
+		return this;
 	}
 
-	@XmlElement(name = "RcptId", required = true)
 	public Recipient5Choice getRecipientIdentification() {
 		return recipientIdentification;
 	}
 
-	public void setRecipientIdentification(Recipient5Choice recipientIdentification) {
-		this.recipientIdentification = recipientIdentification;
+	public KeyTransport4 setRecipientIdentification(Recipient5Choice recipientIdentification) {
+		this.recipientIdentification = Objects.requireNonNull(recipientIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "KeyNcrptnAlgo", required = true)
 	public AlgorithmIdentification11 getKeyEncryptionAlgorithm() {
 		return keyEncryptionAlgorithm;
 	}
 
-	public void setKeyEncryptionAlgorithm(com.tools20022.repository.msg.AlgorithmIdentification11 keyEncryptionAlgorithm) {
-		this.keyEncryptionAlgorithm = keyEncryptionAlgorithm;
+	public KeyTransport4 setKeyEncryptionAlgorithm(AlgorithmIdentification11 keyEncryptionAlgorithm) {
+		this.keyEncryptionAlgorithm = Objects.requireNonNull(keyEncryptionAlgorithm);
+		return this;
 	}
 
-	@XmlElement(name = "NcrptdKey", required = true)
 	public Max5000Binary getEncryptedKey() {
 		return encryptedKey;
 	}
 
-	public void setEncryptedKey(Max5000Binary encryptedKey) {
-		this.encryptedKey = encryptedKey;
+	public KeyTransport4 setEncryptedKey(Max5000Binary encryptedKey) {
+		this.encryptedKey = Objects.requireNonNull(encryptedKey);
+		return this;
 	}
 }

@@ -26,9 +26,8 @@ import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.datatype.Min5Max16Binary;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -64,8 +63,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -81,15 +80,16 @@ import javax.xml.bind.annotation.XmlType;
  * KEKIdentifier2}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "KEKIdentifier5", propOrder = {"keyIdentification", "keyVersion", "sequenceNumber", "derivationIdentification", "type", "function"})
 public class KEKIdentifier5 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "KeyId", required = true)
 	protected Max140Text keyIdentification;
 	/**
-	 * Identification of the cryptographic key.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -118,9 +118,9 @@ public class KEKIdentifier5 {
 	 * KEKIdentifier2.mmKeyIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmKeyIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<KEKIdentifier5, Max140Text> mmKeyIdentification = new MMMessageAttribute<KEKIdentifier5, Max140Text>() {
 		{
-			componentContext_lazy = () -> KEKIdentifier5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.KEKIdentifier5.mmObject();
 			isDerived = false;
 			xmlTag = "KeyId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -131,11 +131,22 @@ public class KEKIdentifier5 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Max140Text getValue(KEKIdentifier5 obj) {
+			return obj.getKeyIdentification();
+		}
+
+		@Override
+		public void setValue(KEKIdentifier5 obj, Max140Text value) {
+			obj.setKeyIdentification(value);
+		}
 	};
+	@XmlElement(name = "KeyVrsn", required = true)
 	protected Max140Text keyVersion;
 	/**
-	 * Version of the cryptographic key.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -164,9 +175,9 @@ public class KEKIdentifier5 {
 	 * KEKIdentifier2.mmKeyVersion}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmKeyVersion = new MMMessageAttribute() {
+	public static final MMMessageAttribute<KEKIdentifier5, Max140Text> mmKeyVersion = new MMMessageAttribute<KEKIdentifier5, Max140Text>() {
 		{
-			componentContext_lazy = () -> KEKIdentifier5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.KEKIdentifier5.mmObject();
 			isDerived = false;
 			xmlTag = "KeyVrsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -177,11 +188,22 @@ public class KEKIdentifier5 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Max140Text getValue(KEKIdentifier5 obj) {
+			return obj.getKeyVersion();
+		}
+
+		@Override
+		public void setValue(KEKIdentifier5 obj, Max140Text value) {
+			obj.setKeyVersion(value);
+		}
 	};
+	@XmlElement(name = "SeqNb")
 	protected Number sequenceNumber;
 	/**
-	 * Number of usages of the cryptographic key.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -210,9 +232,9 @@ public class KEKIdentifier5 {
 	 * KEKIdentifier2.mmSequenceNumber}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSequenceNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<KEKIdentifier5, Optional<Number>> mmSequenceNumber = new MMMessageAttribute<KEKIdentifier5, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> KEKIdentifier5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.KEKIdentifier5.mmObject();
 			isDerived = false;
 			xmlTag = "SeqNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -223,12 +245,22 @@ public class KEKIdentifier5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(KEKIdentifier5 obj) {
+			return obj.getSequenceNumber();
+		}
+
+		@Override
+		public void setValue(KEKIdentifier5 obj, Optional<Number> value) {
+			obj.setSequenceNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DerivtnId")
 	protected Min5Max16Binary derivationIdentification;
 	/**
-	 * Identification used for derivation of a unique key from a master key
-	 * provided for the data protection.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -260,9 +292,9 @@ public class KEKIdentifier5 {
 	 * KEKIdentifier2.mmDerivationIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDerivationIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<KEKIdentifier5, Optional<Min5Max16Binary>> mmDerivationIdentification = new MMMessageAttribute<KEKIdentifier5, Optional<Min5Max16Binary>>() {
 		{
-			componentContext_lazy = () -> KEKIdentifier5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.KEKIdentifier5.mmObject();
 			isDerived = false;
 			xmlTag = "DerivtnId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -273,11 +305,22 @@ public class KEKIdentifier5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Min5Max16Binary.mmObject();
 		}
+
+		@Override
+		public Optional<Min5Max16Binary> getValue(KEKIdentifier5 obj) {
+			return obj.getDerivationIdentification();
+		}
+
+		@Override
+		public void setValue(KEKIdentifier5 obj, Optional<Min5Max16Binary> value) {
+			obj.setDerivationIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Tp")
 	protected CryptographicKeyType3Code type;
 	/**
-	 * Type of algorithm used by the cryptographic key.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -302,9 +345,9 @@ public class KEKIdentifier5 {
 	 * definition} = "Type of algorithm used by the cryptographic key."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<KEKIdentifier5, Optional<CryptographicKeyType3Code>> mmType = new MMMessageAttribute<KEKIdentifier5, Optional<CryptographicKeyType3Code>>() {
 		{
-			componentContext_lazy = () -> KEKIdentifier5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.KEKIdentifier5.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -314,11 +357,22 @@ public class KEKIdentifier5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> CryptographicKeyType3Code.mmObject();
 		}
+
+		@Override
+		public Optional<CryptographicKeyType3Code> getValue(KEKIdentifier5 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(KEKIdentifier5 obj, Optional<CryptographicKeyType3Code> value) {
+			obj.setType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Fctn")
 	protected List<KeyUsage1Code> function;
 	/**
-	 * Allowed usage of the key.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -343,9 +397,9 @@ public class KEKIdentifier5 {
 	 * definition} = "Allowed usage of the key."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFunction = new MMMessageAttribute() {
+	public static final MMMessageAttribute<KEKIdentifier5, List<KeyUsage1Code>> mmFunction = new MMMessageAttribute<KEKIdentifier5, List<KeyUsage1Code>>() {
 		{
-			componentContext_lazy = () -> KEKIdentifier5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.KEKIdentifier5.mmObject();
 			isDerived = false;
 			xmlTag = "Fctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -354,14 +408,25 @@ public class KEKIdentifier5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> KeyUsage1Code.mmObject();
 		}
+
+		@Override
+		public List<KeyUsage1Code> getValue(KEKIdentifier5 obj) {
+			return obj.getFunction();
+		}
+
+		@Override
+		public void setValue(KEKIdentifier5 obj, List<KeyUsage1Code> value) {
+			obj.setFunction(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(KEKIdentifier5.mmKeyIdentification, KEKIdentifier5.mmKeyVersion, KEKIdentifier5.mmSequenceNumber, KEKIdentifier5.mmDerivationIdentification, KEKIdentifier5.mmType,
-						KEKIdentifier5.mmFunction);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.KEKIdentifier5.mmKeyIdentification, com.tools20022.repository.msg.KEKIdentifier5.mmKeyVersion,
+						com.tools20022.repository.msg.KEKIdentifier5.mmSequenceNumber, com.tools20022.repository.msg.KEKIdentifier5.mmDerivationIdentification, com.tools20022.repository.msg.KEKIdentifier5.mmType,
+						com.tools20022.repository.msg.KEKIdentifier5.mmFunction);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "KEKIdentifier5";
 				definition = "Identification of a key encryption key (KEK), using previously distributed symmetric key.";
@@ -371,57 +436,57 @@ public class KEKIdentifier5 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "KeyId", required = true)
 	public Max140Text getKeyIdentification() {
 		return keyIdentification;
 	}
 
-	public void setKeyIdentification(Max140Text keyIdentification) {
-		this.keyIdentification = keyIdentification;
+	public KEKIdentifier5 setKeyIdentification(Max140Text keyIdentification) {
+		this.keyIdentification = Objects.requireNonNull(keyIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "KeyVrsn", required = true)
 	public Max140Text getKeyVersion() {
 		return keyVersion;
 	}
 
-	public void setKeyVersion(Max140Text keyVersion) {
-		this.keyVersion = keyVersion;
+	public KEKIdentifier5 setKeyVersion(Max140Text keyVersion) {
+		this.keyVersion = Objects.requireNonNull(keyVersion);
+		return this;
 	}
 
-	@XmlElement(name = "SeqNb")
-	public Number getSequenceNumber() {
-		return sequenceNumber;
+	public Optional<Number> getSequenceNumber() {
+		return sequenceNumber == null ? Optional.empty() : Optional.of(sequenceNumber);
 	}
 
-	public void setSequenceNumber(Number sequenceNumber) {
+	public KEKIdentifier5 setSequenceNumber(Number sequenceNumber) {
 		this.sequenceNumber = sequenceNumber;
+		return this;
 	}
 
-	@XmlElement(name = "DerivtnId")
-	public Min5Max16Binary getDerivationIdentification() {
-		return derivationIdentification;
+	public Optional<Min5Max16Binary> getDerivationIdentification() {
+		return derivationIdentification == null ? Optional.empty() : Optional.of(derivationIdentification);
 	}
 
-	public void setDerivationIdentification(Min5Max16Binary derivationIdentification) {
+	public KEKIdentifier5 setDerivationIdentification(Min5Max16Binary derivationIdentification) {
 		this.derivationIdentification = derivationIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "Tp")
-	public CryptographicKeyType3Code getType() {
-		return type;
+	public Optional<CryptographicKeyType3Code> getType() {
+		return type == null ? Optional.empty() : Optional.of(type);
 	}
 
-	public void setType(CryptographicKeyType3Code type) {
+	public KEKIdentifier5 setType(CryptographicKeyType3Code type) {
 		this.type = type;
+		return this;
 	}
 
-	@XmlElement(name = "Fctn")
 	public List<KeyUsage1Code> getFunction() {
-		return function;
+		return function == null ? function = new ArrayList<>() : function;
 	}
 
-	public void setFunction(List<KeyUsage1Code> function) {
-		this.function = function;
+	public KEKIdentifier5 setFunction(List<KeyUsage1Code> function) {
+		this.function = Objects.requireNonNull(function);
+		return this;
 	}
 }

@@ -25,8 +25,10 @@ import com.tools20022.repository.area.caam.*;
 import com.tools20022.repository.area.catp.*;
 import com.tools20022.repository.codeset.ContentType2Code;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.EnvelopedData4;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -145,8 +147,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -158,15 +160,16 @@ import javax.xml.bind.annotation.XmlType;
  * "General cryptographic message syntax (CMS) containing encrypted data."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ContentInformationType10", propOrder = {"contentType", "envelopedData"})
 public class ContentInformationType10 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CnttTp", required = true)
 	protected ContentType2Code contentType;
 	/**
-	 * Type of data protection.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -192,9 +195,9 @@ public class ContentInformationType10 {
 	 * definition} = "Type of data protection."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmContentType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ContentInformationType10, ContentType2Code> mmContentType = new MMMessageAttribute<ContentInformationType10, ContentType2Code>() {
 		{
-			componentContext_lazy = () -> ContentInformationType10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContentInformationType10.mmObject();
 			isDerived = false;
 			xmlTag = "CnttTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -204,12 +207,22 @@ public class ContentInformationType10 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ContentType2Code.mmObject();
 		}
+
+		@Override
+		public ContentType2Code getValue(ContentInformationType10 obj) {
+			return obj.getContentType();
+		}
+
+		@Override
+		public void setValue(ContentInformationType10 obj, ContentType2Code value) {
+			obj.setContentType(value);
+		}
 	};
+	@XmlElement(name = "EnvlpdData", required = true)
 	protected EnvelopedData4 envelopedData;
 	/**
-	 * Data protection by encryption or by a digital envelope, with an
-	 * encryption key.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -235,9 +248,9 @@ public class ContentInformationType10 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEnvelopedData = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ContentInformationType10, EnvelopedData4> mmEnvelopedData = new MMMessageAssociationEnd<ContentInformationType10, EnvelopedData4>() {
 		{
-			componentContext_lazy = () -> ContentInformationType10.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ContentInformationType10.mmObject();
 			isDerived = false;
 			xmlTag = "EnvlpdData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -246,14 +259,24 @@ public class ContentInformationType10 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.EnvelopedData4.mmObject();
+			type_lazy = () -> EnvelopedData4.mmObject();
+		}
+
+		@Override
+		public EnvelopedData4 getValue(ContentInformationType10 obj) {
+			return obj.getEnvelopedData();
+		}
+
+		@Override
+		public void setValue(ContentInformationType10 obj, EnvelopedData4 value) {
+			obj.setEnvelopedData(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ContentInformationType10.mmContentType, ContentInformationType10.mmEnvelopedData);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ContentInformationType10.mmContentType, com.tools20022.repository.msg.ContentInformationType10.mmEnvelopedData);
 				messageBuildingBlock_lazy = () -> Arrays.asList(HostToATMAcknowledgementV01.mmProtectedHostToATMAcknowledgement, HostToATMRequestV01.mmProtectedHostToATMRequest,
 						ATMExceptionAcknowledgementV01.mmProtectedATMExceptionAcknowledgement, ATMWithdrawalRequestV02.mmProtectedATMWithdrawalRequest, ATMExceptionAdviceV01.mmProtectedATMExceptionAdvice,
 						ATMDeviceControlV02.mmProtectedATMDeviceControl, ATMReconciliationAdviceV02.mmProtectedATMReconciliationAdvice, ATMReconciliationAcknowledgementV02.mmProtectedATMReconciliationAcknowledgement,
@@ -264,7 +287,7 @@ public class ContentInformationType10 {
 						ATMWithdrawalCompletionAcknowledgementV02.mmProtectedATMWithdrawalCompletionAcknowledgement, ATMPINManagementResponseV02.mmProtectedATMPINManagementResponse,
 						ATMDepositCompletionAdviceV01.mmProtectedATMDepositCompletionAdvice, ATMInquiryRequestV02.mmProtectedATMInquiryRequest, ATMCompletionAcknowledgementV02.mmProtectedATMCompletionAcknowledgement,
 						ATMCompletionAdviceV02.mmProtectedATMCompletionAdvice, ATMTransferResponseV01.mmProtectedATMTransferResponse, ATMKeyDownloadResponseV02.mmProtectedATMKeyDownloadResponse);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ContentInformationType10";
 				definition = "General cryptographic message syntax (CMS) containing encrypted data.";
@@ -273,21 +296,21 @@ public class ContentInformationType10 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CnttTp", required = true)
 	public ContentType2Code getContentType() {
 		return contentType;
 	}
 
-	public void setContentType(ContentType2Code contentType) {
-		this.contentType = contentType;
+	public ContentInformationType10 setContentType(ContentType2Code contentType) {
+		this.contentType = Objects.requireNonNull(contentType);
+		return this;
 	}
 
-	@XmlElement(name = "EnvlpdData", required = true)
 	public EnvelopedData4 getEnvelopedData() {
 		return envelopedData;
 	}
 
-	public void setEnvelopedData(com.tools20022.repository.msg.EnvelopedData4 envelopedData) {
-		this.envelopedData = envelopedData;
+	public ContentInformationType10 setEnvelopedData(EnvelopedData4 envelopedData) {
+		this.envelopedData = Objects.requireNonNull(envelopedData);
+		return this;
 	}
 }

@@ -73,8 +73,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelCatalogueEntry#getBusinessProcessCatalogue
  * businessProcessCatalogue} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmcatalogue
- * GeneratedRepository.mmcatalogue}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#catalogue
+ * GeneratedRepository.catalogue}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -94,14 +94,14 @@ public class AcquirertoIssuerCardTransactionLatestVersion {
 	final static public MMBusinessArea mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessArea() {
 			{
-				businessProcessCatalogue_lazy = () -> GeneratedRepository.mmcatalogue;
+				businessProcessCatalogue_lazy = () -> GeneratedRepository.catalogue;
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "Acquirer to Issuer Card Transaction - Latest version - master";
 				definition = "Messages that support any card payment related transactions and services between a card transaction acquirer and a card issuer.";
-				code = "cain";
 				messageDefinition_lazy = () -> Arrays.asList(NetworkManagementResponse.mmObject(), AcquirerRejection.mmObject(), AcquirerFinancialResponse.mmObject(), AcquirerReversalInitiation.mmObject(), KeyExchangeResponse.mmObject(),
 						AcquirerAuthorisationInitiation.mmObject(), ReconciliationInitiation.mmObject(), AcquirerAuthorisationResponse.mmObject(), NetworkManagementInitiation.mmObject(), AcquirerReversalResponse.mmObject(),
 						KeyExchangeInitiation.mmObject(), ReconciliationResponse.mmObject(), AcquirerFinancialInitiation.mmObject());
+				code = "cain";
 			}
 		});
 		return mmObject_lazy.get();

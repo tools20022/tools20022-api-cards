@@ -21,11 +21,12 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.CommercialTrade;
 import com.tools20022.repository.entity.Obligation;
+import com.tools20022.repository.entity.ProductDelivery;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Obligation for the seller to deliver goods or services to the buyer.
@@ -66,8 +67,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,12 +83,10 @@ import java.util.List;
 public class ProductDeliveryObligation extends Obligation {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.ProductDelivery> productDeliveryOffset;
+	protected List<ProductDelivery> productDeliveryOffset;
 	/**
-	 * Fulfilment of a product delivery obligation through the delivery of goods
-	 * and services. It is derived from the association between Obligation and
-	 * Obligation fulfillment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -120,7 +119,7 @@ public class ProductDeliveryObligation extends Obligation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmProductDeliveryOffset = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ProductDeliveryObligation, List<ProductDelivery>> mmProductDeliveryOffset = new MMBusinessAssociationEnd<ProductDeliveryObligation, List<ProductDelivery>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDeliveryObligation.mmObject();
@@ -128,16 +127,25 @@ public class ProductDeliveryObligation extends Obligation {
 			name = "ProductDeliveryOffset";
 			definition = "Fulfilment of a product delivery obligation through the delivery of goods and services. It is derived from the association between Obligation and Obligation fulfillment.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObligation;
+			opposite_lazy = () -> ProductDelivery.mmObligation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
+			type_lazy = () -> ProductDelivery.mmObject();
+		}
+
+		@Override
+		public List<ProductDelivery> getValue(ProductDeliveryObligation obj) {
+			return obj.getProductDeliveryOffset();
+		}
+
+		@Override
+		public void setValue(ProductDeliveryObligation obj, List<ProductDelivery> value) {
+			obj.setProductDeliveryOffset(value);
 		}
 	};
 	protected CommercialTrade commercialTrade;
 	/**
-	 * Specifies the trade which originates the obligation to deliver a specific
-	 * product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -170,7 +178,7 @@ public class ProductDeliveryObligation extends Obligation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCommercialTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ProductDeliveryObligation, Optional<CommercialTrade>> mmCommercialTrade = new MMBusinessAssociationEnd<ProductDeliveryObligation, Optional<CommercialTrade>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDeliveryObligation.mmObject();
@@ -183,16 +191,26 @@ public class ProductDeliveryObligation extends Obligation {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CommercialTrade.mmObject();
 		}
+
+		@Override
+		public Optional<CommercialTrade> getValue(ProductDeliveryObligation obj) {
+			return obj.getCommercialTrade();
+		}
+
+		@Override
+		public void setValue(ProductDeliveryObligation obj, Optional<CommercialTrade> value) {
+			obj.setCommercialTrade(value.orElse(null));
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ProductDeliveryObligation";
 				definition = "Obligation for the seller  to deliver goods or services to the buyer.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CommercialTrade.mmProductDeliveryObligation, com.tools20022.repository.entity.ProductDelivery.mmObligation);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CommercialTrade.mmProductDeliveryObligation, ProductDelivery.mmObligation);
 				superType_lazy = () -> Obligation.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ProductDeliveryObligation.mmProductDeliveryOffset, com.tools20022.repository.entity.ProductDeliveryObligation.mmCommercialTrade);
 			}
@@ -206,18 +224,20 @@ public class ProductDeliveryObligation extends Obligation {
 	}
 
 	public List<ProductDelivery> getProductDeliveryOffset() {
-		return productDeliveryOffset;
+		return productDeliveryOffset == null ? productDeliveryOffset = new ArrayList<>() : productDeliveryOffset;
 	}
 
-	public void setProductDeliveryOffset(List<com.tools20022.repository.entity.ProductDelivery> productDeliveryOffset) {
-		this.productDeliveryOffset = productDeliveryOffset;
+	public ProductDeliveryObligation setProductDeliveryOffset(List<ProductDelivery> productDeliveryOffset) {
+		this.productDeliveryOffset = Objects.requireNonNull(productDeliveryOffset);
+		return this;
 	}
 
-	public CommercialTrade getCommercialTrade() {
-		return commercialTrade;
+	public Optional<CommercialTrade> getCommercialTrade() {
+		return commercialTrade == null ? Optional.empty() : Optional.of(commercialTrade);
 	}
 
-	public void setCommercialTrade(com.tools20022.repository.entity.CommercialTrade commercialTrade) {
+	public ProductDeliveryObligation setCommercialTrade(com.tools20022.repository.entity.CommercialTrade commercialTrade) {
 		this.commercialTrade = commercialTrade;
+		return this;
 	}
 }

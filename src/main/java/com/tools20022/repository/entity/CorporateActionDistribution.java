@@ -26,11 +26,10 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Distribution of the proceeds of a CA event.
@@ -124,8 +123,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -141,9 +140,8 @@ public class CorporateActionDistribution {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SecuritiesQuantity postingQuantity;
 	/**
-	 * Quantity of securities that have been posted (credit or debit) to the
-	 * account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -176,7 +174,7 @@ public class CorporateActionDistribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPostingQuantity = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionDistribution, SecuritiesQuantity> mmPostingQuantity = new MMBusinessAssociationEnd<CorporateActionDistribution, SecuritiesQuantity>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
@@ -185,15 +183,25 @@ public class CorporateActionDistribution {
 			definition = "Quantity of securities that have been posted (credit or debit) to the account.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmCorporateActionDistribution;
+			opposite_lazy = () -> SecuritiesQuantity.mmCorporateActionDistribution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesQuantity.mmObject();
+			type_lazy = () -> SecuritiesQuantity.mmObject();
+		}
+
+		@Override
+		public SecuritiesQuantity getValue(CorporateActionDistribution obj) {
+			return obj.getPostingQuantity();
+		}
+
+		@Override
+		public void setValue(CorporateActionDistribution obj, SecuritiesQuantity value) {
+			obj.setPostingQuantity(value);
 		}
 	};
 	protected ISODateTime postingDateTime;
 	/**
-	 * Date of the posting (credit or debit) to the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -216,7 +224,7 @@ public class CorporateActionDistribution {
 	 * definition} = "Date of the posting (credit or debit) to the account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPostingDateTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CorporateActionDistribution, ISODateTime> mmPostingDateTime = new MMBusinessAttribute<CorporateActionDistribution, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
@@ -228,19 +236,20 @@ public class CorporateActionDistribution {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionDistribution.class.getMethod("getPostingDateTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(CorporateActionDistribution obj) {
+			return obj.getPostingDateTime();
+		}
+
+		@Override
+		public void setValue(CorporateActionDistribution obj, ISODateTime value) {
+			obj.setPostingDateTime(value);
 		}
 	};
 	protected ISODate movementDate;
 	/**
-	 * Date/time at which the movement is due to take place (cash and/or
-	 * securities).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -265,7 +274,7 @@ public class CorporateActionDistribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMovementDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CorporateActionDistribution, ISODate> mmMovementDate = new MMBusinessAttribute<CorporateActionDistribution, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
@@ -277,18 +286,20 @@ public class CorporateActionDistribution {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionDistribution.class.getMethod("getMovementDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(CorporateActionDistribution obj) {
+			return obj.getMovementDate();
+		}
+
+		@Override
+		public void setValue(CorporateActionDistribution obj, ISODate value) {
+			obj.setMovementDate(value);
 		}
 	};
 	protected CurrencyAndAmount postingAmount;
 	/**
-	 * Amount of money that is to be/was posted to the account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -312,7 +323,7 @@ public class CorporateActionDistribution {
 	 * definition} = "Amount of money that is to be/was posted to the account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPostingAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CorporateActionDistribution, CurrencyAndAmount> mmPostingAmount = new MMBusinessAttribute<CorporateActionDistribution, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
@@ -324,18 +335,20 @@ public class CorporateActionDistribution {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionDistribution.class.getMethod("getPostingAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CorporateActionDistribution obj) {
+			return obj.getPostingAmount();
+		}
+
+		@Override
+		public void setValue(CorporateActionDistribution obj, CurrencyAndAmount value) {
+			obj.setPostingAmount(value);
 		}
 	};
 	protected TaxVoucher taxVoucher;
 	/**
-	 * Specifies tax vouchers in the framework of a corporate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -367,7 +380,7 @@ public class CorporateActionDistribution {
 	 * "Specifies tax vouchers in the framework of a corporate action event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTaxVoucher = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionDistribution, TaxVoucher> mmTaxVoucher = new MMBusinessAssociationEnd<CorporateActionDistribution, TaxVoucher>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
@@ -376,16 +389,25 @@ public class CorporateActionDistribution {
 			definition = "Specifies tax vouchers in the framework of a corporate action event.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmDistribution;
+			opposite_lazy = () -> TaxVoucher.mmDistribution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
+			type_lazy = () -> TaxVoucher.mmObject();
+		}
+
+		@Override
+		public TaxVoucher getValue(CorporateActionDistribution obj) {
+			return obj.getTaxVoucher();
+		}
+
+		@Override
+		public void setValue(CorporateActionDistribution obj, TaxVoucher value) {
+			obj.setTaxVoucher(value);
 		}
 	};
 	protected CorporateActionServicing relatedServicing;
 	/**
-	 * Process which groups the activities related to corporate action
-	 * servicing.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -419,7 +441,7 @@ public class CorporateActionDistribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedServicing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionDistribution, Optional<CorporateActionServicing>> mmRelatedServicing = new MMBusinessAssociationEnd<CorporateActionDistribution, Optional<CorporateActionServicing>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
@@ -428,15 +450,25 @@ public class CorporateActionDistribution {
 			definition = "Process which groups the activities related to corporate action servicing.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmCorporateActionDistribution;
+			opposite_lazy = () -> CorporateActionServicing.mmCorporateActionDistribution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CorporateActionServicing.mmObject();
+			type_lazy = () -> CorporateActionServicing.mmObject();
+		}
+
+		@Override
+		public Optional<CorporateActionServicing> getValue(CorporateActionDistribution obj) {
+			return obj.getRelatedServicing();
+		}
+
+		@Override
+		public void setValue(CorporateActionDistribution obj, Optional<CorporateActionServicing> value) {
+			obj.setRelatedServicing(value.orElse(null));
 		}
 	};
 	protected DistributionTypeCode orderType;
 	/**
-	 * Type of movement instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -460,7 +492,7 @@ public class CorporateActionDistribution {
 	 * definition} = "Type of movement instruction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmOrderType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CorporateActionDistribution, DistributionTypeCode> mmOrderType = new MMBusinessAttribute<CorporateActionDistribution, DistributionTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
@@ -472,18 +504,20 @@ public class CorporateActionDistribution {
 			simpleType_lazy = () -> DistributionTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionDistribution.class.getMethod("getOrderType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DistributionTypeCode getValue(CorporateActionDistribution obj) {
+			return obj.getOrderType();
+		}
+
+		@Override
+		public void setValue(CorporateActionDistribution obj, DistributionTypeCode value) {
+			obj.setOrderType(value);
 		}
 	};
 	protected DistributionInstructionTypeCode movementType;
 	/**
-	 * Type of movement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -507,7 +541,7 @@ public class CorporateActionDistribution {
 	 * definition} = "Type of movement."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMovementType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CorporateActionDistribution, DistributionInstructionTypeCode> mmMovementType = new MMBusinessAttribute<CorporateActionDistribution, DistributionInstructionTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
@@ -519,20 +553,20 @@ public class CorporateActionDistribution {
 			simpleType_lazy = () -> DistributionInstructionTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionDistribution.class.getMethod("getMovementType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DistributionInstructionTypeCode getValue(CorporateActionDistribution obj) {
+			return obj.getMovementType();
+		}
+
+		@Override
+		public void setValue(CorporateActionDistribution obj, DistributionInstructionTypeCode value) {
+			obj.setMovementType(value);
 		}
 	};
 	protected YesNoIndicator highPriorityIndicator;
 	/**
-	 * Indicates whether the movement is a high priority or not.<br>
-	 * Meaning when true: High priority<br>
-	 * Meaning when false: Standard
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -558,7 +592,7 @@ public class CorporateActionDistribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmHighPriorityIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CorporateActionDistribution, YesNoIndicator> mmHighPriorityIndicator = new MMBusinessAttribute<CorporateActionDistribution, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
@@ -570,18 +604,20 @@ public class CorporateActionDistribution {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionDistribution.class.getMethod("getHighPriorityIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(CorporateActionDistribution obj) {
+			return obj.getHighPriorityIndicator();
+		}
+
+		@Override
+		public void setValue(CorporateActionDistribution obj, YesNoIndicator value) {
+			obj.setHighPriorityIndicator(value);
 		}
 	};
 	protected ISODate requestedExecutionDate;
 	/**
-	 * Date at which the distribution movement must be executed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -605,7 +641,7 @@ public class CorporateActionDistribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRequestedExecutionDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CorporateActionDistribution, ISODate> mmRequestedExecutionDate = new MMBusinessAttribute<CorporateActionDistribution, ISODate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
@@ -617,18 +653,20 @@ public class CorporateActionDistribution {
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionDistribution.class.getMethod("getRequestedExecutionDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODate getValue(CorporateActionDistribution obj) {
+			return obj.getRequestedExecutionDate();
+		}
+
+		@Override
+		public void setValue(CorporateActionDistribution obj, ISODate value) {
+			obj.setRequestedExecutionDate(value);
 		}
 	};
 	protected RoundingDirectionCode fractionTreatment;
 	/**
-	 * Specifies the rounding direction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -652,7 +690,7 @@ public class CorporateActionDistribution {
 	 * definition} = "Specifies the rounding direction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFractionTreatment = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CorporateActionDistribution, RoundingDirectionCode> mmFractionTreatment = new MMBusinessAttribute<CorporateActionDistribution, RoundingDirectionCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
@@ -664,18 +702,20 @@ public class CorporateActionDistribution {
 			simpleType_lazy = () -> RoundingDirectionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionDistribution.class.getMethod("getFractionTreatment", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public RoundingDirectionCode getValue(CorporateActionDistribution obj) {
+			return obj.getFractionTreatment();
+		}
+
+		@Override
+		public void setValue(CorporateActionDistribution obj, RoundingDirectionCode value) {
+			obj.setFractionTreatment(value);
 		}
 	};
 	protected DebitCreditCode creditDebitIndicator;
 	/**
-	 * Specifies whether the posting amount is a debit or credit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -700,7 +740,7 @@ public class CorporateActionDistribution {
 	 * "Specifies whether the posting amount is a debit or credit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCreditDebitIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CorporateActionDistribution, DebitCreditCode> mmCreditDebitIndicator = new MMBusinessAttribute<CorporateActionDistribution, DebitCreditCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
@@ -712,18 +752,20 @@ public class CorporateActionDistribution {
 			simpleType_lazy = () -> DebitCreditCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionDistribution.class.getMethod("getCreditDebitIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DebitCreditCode getValue(CorporateActionDistribution obj) {
+			return obj.getCreditDebitIndicator();
+		}
+
+		@Override
+		public void setValue(CorporateActionDistribution obj, DebitCreditCode value) {
+			obj.setCreditDebitIndicator(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.CorporateActionOption> option;
+	protected List<CorporateActionOption> option;
 	/**
-	 * Option on which the distribution is based.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -755,7 +797,7 @@ public class CorporateActionDistribution {
 	 * definition} = "Option on which the distribution is based."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOption = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionDistribution, List<CorporateActionOption>> mmOption = new MMBusinessAssociationEnd<CorporateActionDistribution, List<CorporateActionOption>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
@@ -763,15 +805,25 @@ public class CorporateActionDistribution {
 			name = "Option";
 			definition = "Option on which the distribution is based.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmDistribution;
+			opposite_lazy = () -> CorporateActionOption.mmDistribution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CorporateActionOption.mmObject();
+			type_lazy = () -> CorporateActionOption.mmObject();
+		}
+
+		@Override
+		public List<CorporateActionOption> getValue(CorporateActionDistribution obj) {
+			return obj.getOption();
+		}
+
+		@Override
+		public void setValue(CorporateActionDistribution obj, List<CorporateActionOption> value) {
+			obj.setOption(value);
 		}
 	};
 	protected CurrencyAndAmount netAmount;
 	/**
-	 * Cash amount after any deductions and allowances have been made
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -796,7 +848,7 @@ public class CorporateActionDistribution {
 	 * "Cash amount after any deductions and allowances have been made"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNetAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CorporateActionDistribution, CurrencyAndAmount> mmNetAmount = new MMBusinessAttribute<CorporateActionDistribution, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
@@ -808,18 +860,20 @@ public class CorporateActionDistribution {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionDistribution.class.getMethod("getNetAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CorporateActionDistribution obj) {
+			return obj.getNetAmount();
+		}
+
+		@Override
+		public void setValue(CorporateActionDistribution obj, CurrencyAndAmount value) {
+			obj.setNetAmount(value);
 		}
 	};
 	protected CurrencyAndAmount grossAmount;
 	/**
-	 * Cash amount before any deductions and allowances have been made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -844,7 +898,7 @@ public class CorporateActionDistribution {
 	 * "Cash amount before any deductions and allowances have been made."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmGrossAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CorporateActionDistribution, CurrencyAndAmount> mmGrossAmount = new MMBusinessAttribute<CorporateActionDistribution, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
@@ -856,18 +910,20 @@ public class CorporateActionDistribution {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionDistribution.class.getMethod("getGrossAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CorporateActionDistribution obj) {
+			return obj.getGrossAmount();
+		}
+
+		@Override
+		public void setValue(CorporateActionDistribution obj, CurrencyAndAmount value) {
+			obj.setGrossAmount(value);
 		}
 	};
 	protected FinancialTransaction financialTransaction;
 	/**
-	 * Financial transaction to which the CA distribution belongs.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -900,7 +956,7 @@ public class CorporateActionDistribution {
 	 * "Financial transaction to which the CA distribution belongs."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmFinancialTransaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionDistribution, FinancialTransaction> mmFinancialTransaction = new MMBusinessAssociationEnd<CorporateActionDistribution, FinancialTransaction>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
@@ -909,16 +965,25 @@ public class CorporateActionDistribution {
 			definition = "Financial transaction to which the CA distribution belongs.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmCorporateActionDistribution;
+			opposite_lazy = () -> FinancialTransaction.mmCorporateActionDistribution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.FinancialTransaction.mmObject();
+			type_lazy = () -> FinancialTransaction.mmObject();
+		}
+
+		@Override
+		public FinancialTransaction getValue(CorporateActionDistribution obj) {
+			return obj.getFinancialTransaction();
+		}
+
+		@Override
+		public void setValue(CorporateActionDistribution obj, FinancialTransaction value) {
+			obj.setFinancialTransaction(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction> corporateActionProceedsDeliveryInstruction;
+	protected List<CorporateActionProceedsDeliveryInstruction> corporateActionProceedsDeliveryInstruction;
 	/**
-	 * Specifies the delivery instructions for the securities and cash proceeds
-	 * at any stage of the Corporate Action process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -952,7 +1017,7 @@ public class CorporateActionDistribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCorporateActionProceedsDeliveryInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionDistribution, List<CorporateActionProceedsDeliveryInstruction>> mmCorporateActionProceedsDeliveryInstruction = new MMBusinessAssociationEnd<CorporateActionDistribution, List<CorporateActionProceedsDeliveryInstruction>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionDistribution.mmObject();
@@ -960,22 +1025,31 @@ public class CorporateActionDistribution {
 			name = "CorporateActionProceedsDeliveryInstruction";
 			definition = "Specifies the delivery instructions for the securities and cash proceeds at any stage of the Corporate Action process.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmRelatedDistribution;
+			opposite_lazy = () -> CorporateActionProceedsDeliveryInstruction.mmRelatedDistribution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmObject();
+			type_lazy = () -> CorporateActionProceedsDeliveryInstruction.mmObject();
+		}
+
+		@Override
+		public List<CorporateActionProceedsDeliveryInstruction> getValue(CorporateActionDistribution obj) {
+			return obj.getCorporateActionProceedsDeliveryInstruction();
+		}
+
+		@Override
+		public void setValue(CorporateActionDistribution obj, List<CorporateActionProceedsDeliveryInstruction> value) {
+			obj.setCorporateActionProceedsDeliveryInstruction(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionDistribution";
 				definition = "Distribution of the proceeds of a CA event.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesQuantity.mmCorporateActionDistribution, com.tools20022.repository.entity.CorporateActionOption.mmDistribution,
-						com.tools20022.repository.entity.TaxVoucher.mmDistribution, com.tools20022.repository.entity.CorporateActionServicing.mmCorporateActionDistribution,
-						com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction.mmRelatedDistribution, com.tools20022.repository.entity.FinancialTransaction.mmCorporateActionDistribution);
+				associationDomain_lazy = () -> Arrays.asList(SecuritiesQuantity.mmCorporateActionDistribution, CorporateActionOption.mmDistribution, TaxVoucher.mmDistribution, CorporateActionServicing.mmCorporateActionDistribution,
+						CorporateActionProceedsDeliveryInstruction.mmRelatedDistribution, FinancialTransaction.mmCorporateActionDistribution);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionDistribution.mmPostingQuantity, com.tools20022.repository.entity.CorporateActionDistribution.mmPostingDateTime,
 						com.tools20022.repository.entity.CorporateActionDistribution.mmMovementDate, com.tools20022.repository.entity.CorporateActionDistribution.mmPostingAmount,
 						com.tools20022.repository.entity.CorporateActionDistribution.mmTaxVoucher, com.tools20022.repository.entity.CorporateActionDistribution.mmRelatedServicing,
@@ -999,135 +1073,152 @@ public class CorporateActionDistribution {
 		return postingQuantity;
 	}
 
-	public void setPostingQuantity(com.tools20022.repository.entity.SecuritiesQuantity postingQuantity) {
-		this.postingQuantity = postingQuantity;
+	public CorporateActionDistribution setPostingQuantity(SecuritiesQuantity postingQuantity) {
+		this.postingQuantity = Objects.requireNonNull(postingQuantity);
+		return this;
 	}
 
 	public ISODateTime getPostingDateTime() {
 		return postingDateTime;
 	}
 
-	public void setPostingDateTime(ISODateTime postingDateTime) {
-		this.postingDateTime = postingDateTime;
+	public CorporateActionDistribution setPostingDateTime(ISODateTime postingDateTime) {
+		this.postingDateTime = Objects.requireNonNull(postingDateTime);
+		return this;
 	}
 
 	public ISODate getMovementDate() {
 		return movementDate;
 	}
 
-	public void setMovementDate(ISODate movementDate) {
-		this.movementDate = movementDate;
+	public CorporateActionDistribution setMovementDate(ISODate movementDate) {
+		this.movementDate = Objects.requireNonNull(movementDate);
+		return this;
 	}
 
 	public CurrencyAndAmount getPostingAmount() {
 		return postingAmount;
 	}
 
-	public void setPostingAmount(CurrencyAndAmount postingAmount) {
-		this.postingAmount = postingAmount;
+	public CorporateActionDistribution setPostingAmount(CurrencyAndAmount postingAmount) {
+		this.postingAmount = Objects.requireNonNull(postingAmount);
+		return this;
 	}
 
 	public TaxVoucher getTaxVoucher() {
 		return taxVoucher;
 	}
 
-	public void setTaxVoucher(com.tools20022.repository.entity.TaxVoucher taxVoucher) {
-		this.taxVoucher = taxVoucher;
+	public CorporateActionDistribution setTaxVoucher(TaxVoucher taxVoucher) {
+		this.taxVoucher = Objects.requireNonNull(taxVoucher);
+		return this;
 	}
 
-	public CorporateActionServicing getRelatedServicing() {
-		return relatedServicing;
+	public Optional<CorporateActionServicing> getRelatedServicing() {
+		return relatedServicing == null ? Optional.empty() : Optional.of(relatedServicing);
 	}
 
-	public void setRelatedServicing(com.tools20022.repository.entity.CorporateActionServicing relatedServicing) {
+	public CorporateActionDistribution setRelatedServicing(CorporateActionServicing relatedServicing) {
 		this.relatedServicing = relatedServicing;
+		return this;
 	}
 
 	public DistributionTypeCode getOrderType() {
 		return orderType;
 	}
 
-	public void setOrderType(DistributionTypeCode orderType) {
-		this.orderType = orderType;
+	public CorporateActionDistribution setOrderType(DistributionTypeCode orderType) {
+		this.orderType = Objects.requireNonNull(orderType);
+		return this;
 	}
 
 	public DistributionInstructionTypeCode getMovementType() {
 		return movementType;
 	}
 
-	public void setMovementType(DistributionInstructionTypeCode movementType) {
-		this.movementType = movementType;
+	public CorporateActionDistribution setMovementType(DistributionInstructionTypeCode movementType) {
+		this.movementType = Objects.requireNonNull(movementType);
+		return this;
 	}
 
 	public YesNoIndicator getHighPriorityIndicator() {
 		return highPriorityIndicator;
 	}
 
-	public void setHighPriorityIndicator(YesNoIndicator highPriorityIndicator) {
-		this.highPriorityIndicator = highPriorityIndicator;
+	public CorporateActionDistribution setHighPriorityIndicator(YesNoIndicator highPriorityIndicator) {
+		this.highPriorityIndicator = Objects.requireNonNull(highPriorityIndicator);
+		return this;
 	}
 
 	public ISODate getRequestedExecutionDate() {
 		return requestedExecutionDate;
 	}
 
-	public void setRequestedExecutionDate(ISODate requestedExecutionDate) {
-		this.requestedExecutionDate = requestedExecutionDate;
+	public CorporateActionDistribution setRequestedExecutionDate(ISODate requestedExecutionDate) {
+		this.requestedExecutionDate = Objects.requireNonNull(requestedExecutionDate);
+		return this;
 	}
 
 	public RoundingDirectionCode getFractionTreatment() {
 		return fractionTreatment;
 	}
 
-	public void setFractionTreatment(RoundingDirectionCode fractionTreatment) {
-		this.fractionTreatment = fractionTreatment;
+	public CorporateActionDistribution setFractionTreatment(RoundingDirectionCode fractionTreatment) {
+		this.fractionTreatment = Objects.requireNonNull(fractionTreatment);
+		return this;
 	}
 
 	public DebitCreditCode getCreditDebitIndicator() {
 		return creditDebitIndicator;
 	}
 
-	public void setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
-		this.creditDebitIndicator = creditDebitIndicator;
+	public CorporateActionDistribution setCreditDebitIndicator(DebitCreditCode creditDebitIndicator) {
+		this.creditDebitIndicator = Objects.requireNonNull(creditDebitIndicator);
+		return this;
 	}
 
 	public List<CorporateActionOption> getOption() {
-		return option;
+		return option == null ? option = new ArrayList<>() : option;
 	}
 
-	public void setOption(List<com.tools20022.repository.entity.CorporateActionOption> option) {
-		this.option = option;
+	public CorporateActionDistribution setOption(List<CorporateActionOption> option) {
+		this.option = Objects.requireNonNull(option);
+		return this;
 	}
 
 	public CurrencyAndAmount getNetAmount() {
 		return netAmount;
 	}
 
-	public void setNetAmount(CurrencyAndAmount netAmount) {
-		this.netAmount = netAmount;
+	public CorporateActionDistribution setNetAmount(CurrencyAndAmount netAmount) {
+		this.netAmount = Objects.requireNonNull(netAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getGrossAmount() {
 		return grossAmount;
 	}
 
-	public void setGrossAmount(CurrencyAndAmount grossAmount) {
-		this.grossAmount = grossAmount;
+	public CorporateActionDistribution setGrossAmount(CurrencyAndAmount grossAmount) {
+		this.grossAmount = Objects.requireNonNull(grossAmount);
+		return this;
 	}
 
 	public FinancialTransaction getFinancialTransaction() {
 		return financialTransaction;
 	}
 
-	public void setFinancialTransaction(com.tools20022.repository.entity.FinancialTransaction financialTransaction) {
-		this.financialTransaction = financialTransaction;
+	public CorporateActionDistribution setFinancialTransaction(FinancialTransaction financialTransaction) {
+		this.financialTransaction = Objects.requireNonNull(financialTransaction);
+		return this;
 	}
 
 	public List<CorporateActionProceedsDeliveryInstruction> getCorporateActionProceedsDeliveryInstruction() {
-		return corporateActionProceedsDeliveryInstruction;
+		return corporateActionProceedsDeliveryInstruction == null ? corporateActionProceedsDeliveryInstruction = new ArrayList<>() : corporateActionProceedsDeliveryInstruction;
 	}
 
-	public void setCorporateActionProceedsDeliveryInstruction(List<com.tools20022.repository.entity.CorporateActionProceedsDeliveryInstruction> corporateActionProceedsDeliveryInstruction) {
-		this.corporateActionProceedsDeliveryInstruction = corporateActionProceedsDeliveryInstruction;
+	public CorporateActionDistribution setCorporateActionProceedsDeliveryInstruction(List<CorporateActionProceedsDeliveryInstruction> corporateActionProceedsDeliveryInstruction) {
+		this.corporateActionProceedsDeliveryInstruction = Objects.requireNonNull(corporateActionProceedsDeliveryInstruction);
+		return this;
 	}
 }

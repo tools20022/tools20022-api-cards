@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.codeset;
 
+import com.tools20022.metamodel.ext.OtherSemanticMarkup;
 import com.tools20022.metamodel.MMCode;
 import com.tools20022.metamodel.MMCodeSet;
 import com.tools20022.metamodel.MMRegistrationStatus;
@@ -38,24 +39,24 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AttributeTypeCode#CommonName
- * AttributeTypeCode.mmCommonName}</li>
+ * AttributeTypeCode.CommonName}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.AttributeTypeCode#Locality
- * AttributeTypeCode.mmLocality}</li>
+ * AttributeTypeCode.Locality}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AttributeTypeCode#OrganisationName
- * AttributeTypeCode.mmOrganisationName}</li>
+ * AttributeTypeCode.OrganisationName}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AttributeTypeCode#OrganisationUnitName
- * AttributeTypeCode.mmOrganisationUnitName}</li>
+ * AttributeTypeCode.OrganisationUnitName}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AttributeTypeCode#CountryName
- * AttributeTypeCode.mmCountryName}</li>
+ * AttributeTypeCode.CountryName}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AttributeTypeCode#EmailAddress
- * AttributeTypeCode.mmEmailAddress}</li>
+ * AttributeTypeCode.EmailAddress}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AttributeTypeCode#ChallengePassword
- * AttributeTypeCode.mmChallengePassword}</li>
+ * AttributeTypeCode.ChallengePassword}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -70,8 +71,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -103,6 +104,9 @@ public class AttributeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CNAT"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=Synonym, context=ASN.1, value=id-at-commonName</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -117,6 +121,7 @@ public class AttributeTypeCode extends MMCode {
 	 */
 	public static final AttributeTypeCode CommonName = new AttributeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "Synonym", new String[]{"context", "ASN.1"}, new String[]{"value", "id-at-commonName"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CommonName";
 			definition = "Common name of the attribute (ASN.1 Object Identifier: id-at-commonName).";
@@ -135,6 +140,9 @@ public class AttributeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "LATT"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=Synonym, context=ASN.1, value=id-at-localityName</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -149,6 +157,7 @@ public class AttributeTypeCode extends MMCode {
 	 */
 	public static final AttributeTypeCode Locality = new AttributeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "Synonym", new String[]{"context", "ASN.1"}, new String[]{"value", "id-at-localityName"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Locality";
 			definition = "Locality of the attribute (ASN.1 Object Identifier: id-at-localityName).";
@@ -168,6 +177,10 @@ public class AttributeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "OATT"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=Synonym, context=ASN.1,
+	 * value=id-at-organizationName</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -176,15 +189,16 @@ public class AttributeTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Organization name of the attribute  (ASN.1 Object Identifier: id-at-organizationName)."
+	 * "Organization name of the attribute (ASN.1 Object Identifier: id-at-organizationName)."
 	 * </li>
 	 * </ul>
 	 */
 	public static final AttributeTypeCode OrganisationName = new AttributeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "Synonym", new String[]{"context", "ASN.1"}, new String[]{"value", "id-at-organizationName"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrganisationName";
-			definition = "Organization name of the attribute  (ASN.1 Object Identifier: id-at-organizationName).";
+			definition = "Organization name of the attribute (ASN.1 Object Identifier: id-at-organizationName).";
 			owner_lazy = () -> com.tools20022.repository.codeset.AttributeTypeCode.mmObject();
 			codeName = "OATT";
 		}
@@ -201,6 +215,10 @@ public class AttributeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "OUAT"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=Synonym, context=ASN.1,
+	 * value=id-at-organizationalUnitName</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -215,6 +233,7 @@ public class AttributeTypeCode extends MMCode {
 	 */
 	public static final AttributeTypeCode OrganisationUnitName = new AttributeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "Synonym", new String[]{"context", "ASN.1"}, new String[]{"value", "id-at-organizationalUnitName"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "OrganisationUnitName";
 			definition = "Organization unit name of the attribute (ASN.1 Object Identifier: id-at-organizationalUnitName).";
@@ -234,6 +253,9 @@ public class AttributeTypeCode extends MMCode {
 	 * <li>{@linkplain com.tools20022.metamodel.MMCode#getCodeName codeName} =
 	 * "CATT"</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=Synonym, context=ASN.1, value=id-at-countryName</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -248,6 +270,7 @@ public class AttributeTypeCode extends MMCode {
 	 */
 	public static final AttributeTypeCode CountryName = new AttributeTypeCode() {
 		{
+			semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "Synonym", new String[]{"context", "ASN.1"}, new String[]{"value", "id-at-countryName"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CountryName";
 			definition = "Country name of the attribute (ASN.1 Object Identifier: id-at-countryName).";
@@ -286,7 +309,7 @@ public class AttributeTypeCode extends MMCode {
 		}
 	};
 	/**
-	 * Password by which an entity may request certificate revocation
+	 * Password by which an entity may request certificate revocation.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -304,14 +327,14 @@ public class AttributeTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Password by which an entity may request certificate revocation"</li>
+	 * "Password by which an entity may request certificate revocation."</li>
 	 * </ul>
 	 */
 	public static final AttributeTypeCode ChallengePassword = new AttributeTypeCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ChallengePassword";
-			definition = "Password by which an entity may request certificate revocation";
+			definition = "Password by which an entity may request certificate revocation.";
 			owner_lazy = () -> com.tools20022.repository.codeset.AttributeTypeCode.mmObject();
 			codeName = "CHLG";
 		}
@@ -324,7 +347,7 @@ public class AttributeTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CNAT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AttributeTypeCode";

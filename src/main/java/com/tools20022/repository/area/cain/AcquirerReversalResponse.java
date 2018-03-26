@@ -25,9 +25,10 @@ import com.tools20022.repository.area.AcquirertoIssuerCardTransactionLatestVersi
 import com.tools20022.repository.msg.AcquirerReversalResponse1;
 import com.tools20022.repository.msg.ContentInformationType15;
 import com.tools20022.repository.msg.Header18;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -74,15 +75,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AcquirerReversalResponse", propOrder = {"header", "reversalResponse", "securityTrailer"})
 public class AcquirerReversalResponse {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header18 header;
 	/**
-	 * Information related to the protocol management.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -102,7 +104,7 @@ public class AcquirerReversalResponse {
 	 * definition} = "Information related to the protocol management."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcquirerReversalResponse, Header18> mmHeader = new MMMessageBuildingBlock<AcquirerReversalResponse, Header18>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -113,18 +115,21 @@ public class AcquirerReversalResponse {
 			complexType_lazy = () -> Header18.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcquirerReversalResponse.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header18 getValue(AcquirerReversalResponse obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(AcquirerReversalResponse obj, Header18 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "RvslRspn", required = true)
 	protected AcquirerReversalResponse1 reversalResponse;
 	/**
-	 * Information related to the response of a reversal.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -145,7 +150,7 @@ public class AcquirerReversalResponse {
 	 * definition} = "Information related to the response of a reversal."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReversalResponse = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcquirerReversalResponse, AcquirerReversalResponse1> mmReversalResponse = new MMMessageBuildingBlock<AcquirerReversalResponse, AcquirerReversalResponse1>() {
 		{
 			xmlTag = "RvslRspn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -156,18 +161,21 @@ public class AcquirerReversalResponse {
 			complexType_lazy = () -> AcquirerReversalResponse1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcquirerReversalResponse.class.getMethod("getReversalResponse", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AcquirerReversalResponse1 getValue(AcquirerReversalResponse obj) {
+			return obj.getReversalResponse();
+		}
+
+		@Override
+		public void setValue(AcquirerReversalResponse obj, AcquirerReversalResponse1 value) {
+			obj.setReversalResponse(value);
 		}
 	};
+	@XmlElement(name = "SctyTrlr")
 	protected ContentInformationType15 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -188,7 +196,7 @@ public class AcquirerReversalResponse {
 	 * definition} = "Trailer of the message containing a MAC."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcquirerReversalResponse, Optional<ContentInformationType15>> mmSecurityTrailer = new MMMessageBuildingBlock<AcquirerReversalResponse, Optional<ContentInformationType15>>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -199,12 +207,14 @@ public class AcquirerReversalResponse {
 			complexType_lazy = () -> ContentInformationType15.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcquirerReversalResponse.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType15> getValue(AcquirerReversalResponse obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(AcquirerReversalResponse obj, Optional<ContentInformationType15> value) {
+			obj.setSecurityTrailer(value.orElse(null));
 		}
 	};
 
@@ -237,34 +247,34 @@ public class AcquirerReversalResponse {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header18 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header18 header) {
-		this.header = header;
+	public AcquirerReversalResponse setHeader(Header18 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "RvslRspn", required = true)
 	public AcquirerReversalResponse1 getReversalResponse() {
 		return reversalResponse;
 	}
 
-	public void setReversalResponse(AcquirerReversalResponse1 reversalResponse) {
-		this.reversalResponse = reversalResponse;
+	public AcquirerReversalResponse setReversalResponse(AcquirerReversalResponse1 reversalResponse) {
+		this.reversalResponse = Objects.requireNonNull(reversalResponse);
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr")
-	public ContentInformationType15 getSecurityTrailer() {
-		return securityTrailer;
+	public Optional<ContentInformationType15> getSecurityTrailer() {
+		return securityTrailer == null ? Optional.empty() : Optional.of(securityTrailer);
 	}
 
-	public void setSecurityTrailer(ContentInformationType15 securityTrailer) {
+	public AcquirerReversalResponse setSecurityTrailer(ContentInformationType15 securityTrailer) {
 		this.securityTrailer = securityTrailer;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:cain.006.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:cain.006.001.01")
 	static public class Document {
 		@XmlElement(name = "AcqrrRvslRspn", required = true)
 		public AcquirerReversalResponse messageBody;

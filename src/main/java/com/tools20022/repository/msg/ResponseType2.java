@@ -27,6 +27,8 @@ import com.tools20022.repository.entity.Response;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * ResponseType1}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ResponseType2", propOrder = {"result", "resultDetails", "additionalResultInformation"})
 public class ResponseType2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Rslt", required = true)
 	protected Response3Code result;
 	/**
-	 * Result of the request message or advice message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,10 +110,10 @@ public class ResponseType2 {
 	 * definition} = "Result of the request message or advice message."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmResult = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ResponseType2, Response3Code> mmResult = new MMMessageAttribute<ResponseType2, Response3Code>() {
 		{
 			businessComponentTrace_lazy = () -> Response.mmObject();
-			componentContext_lazy = () -> ResponseType2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ResponseType2.mmObject();
 			isDerived = false;
 			xmlTag = "Rslt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,11 +123,22 @@ public class ResponseType2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Response3Code.mmObject();
 		}
+
+		@Override
+		public Response3Code getValue(ResponseType2 obj) {
+			return obj.getResult();
+		}
+
+		@Override
+		public void setValue(ResponseType2 obj, Response3Code value) {
+			obj.setResult(value);
+		}
 	};
+	@XmlElement(name = "RsltDtls")
 	protected ResultDetail1Code resultDetails;
 	/**
-	 * Detail of the result.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -154,10 +168,10 @@ public class ResponseType2 {
 	 * definition} = "Detail of the result."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmResultDetails = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ResponseType2, Optional<ResultDetail1Code>> mmResultDetails = new MMMessageAttribute<ResponseType2, Optional<ResultDetail1Code>>() {
 		{
 			businessElementTrace_lazy = () -> Response.mmResponseReason;
-			componentContext_lazy = () -> ResponseType2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ResponseType2.mmObject();
 			isDerived = false;
 			xmlTag = "RsltDtls";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -167,11 +181,22 @@ public class ResponseType2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ResultDetail1Code.mmObject();
 		}
+
+		@Override
+		public Optional<ResultDetail1Code> getValue(ResponseType2 obj) {
+			return obj.getResultDetails();
+		}
+
+		@Override
+		public void setValue(ResponseType2 obj, Optional<ResultDetail1Code> value) {
+			obj.setResultDetails(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AddtlRsltInf")
 	protected Max140Text additionalResultInformation;
 	/**
-	 * Additional information to be logged for further examination.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -196,9 +221,9 @@ public class ResponseType2 {
 	 * "Additional information to be logged for further examination."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalResultInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ResponseType2, Optional<Max140Text>> mmAdditionalResultInformation = new MMMessageAttribute<ResponseType2, Optional<Max140Text>>() {
 		{
-			componentContext_lazy = () -> ResponseType2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ResponseType2.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlRsltInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -208,14 +233,25 @@ public class ResponseType2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max140Text> getValue(ResponseType2 obj) {
+			return obj.getAdditionalResultInformation();
+		}
+
+		@Override
+		public void setValue(ResponseType2 obj, Optional<Max140Text> value) {
+			obj.setAdditionalResultInformation(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ResponseType2.mmResult, ResponseType2.mmResultDetails, ResponseType2.mmAdditionalResultInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ResponseType2.mmResult, com.tools20022.repository.msg.ResponseType2.mmResultDetails,
+						com.tools20022.repository.msg.ResponseType2.mmAdditionalResultInformation);
 				trace_lazy = () -> Response.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ResponseType2";
 				definition = "Response of a requested service.";
@@ -225,30 +261,30 @@ public class ResponseType2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Rslt", required = true)
 	public Response3Code getResult() {
 		return result;
 	}
 
-	public void setResult(Response3Code result) {
-		this.result = result;
+	public ResponseType2 setResult(Response3Code result) {
+		this.result = Objects.requireNonNull(result);
+		return this;
 	}
 
-	@XmlElement(name = "RsltDtls")
-	public ResultDetail1Code getResultDetails() {
-		return resultDetails;
+	public Optional<ResultDetail1Code> getResultDetails() {
+		return resultDetails == null ? Optional.empty() : Optional.of(resultDetails);
 	}
 
-	public void setResultDetails(ResultDetail1Code resultDetails) {
+	public ResponseType2 setResultDetails(ResultDetail1Code resultDetails) {
 		this.resultDetails = resultDetails;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlRsltInf")
-	public Max140Text getAdditionalResultInformation() {
-		return additionalResultInformation;
+	public Optional<Max140Text> getAdditionalResultInformation() {
+		return additionalResultInformation == null ? Optional.empty() : Optional.of(additionalResultInformation);
 	}
 
-	public void setAdditionalResultInformation(Max140Text additionalResultInformation) {
+	public ResponseType2 setAdditionalResultInformation(Max140Text additionalResultInformation) {
 		this.additionalResultInformation = additionalResultInformation;
+		return this;
 	}
 }

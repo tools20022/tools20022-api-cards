@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TMSContactLevelCode#Critical
- * TMSContactLevelCode.mmCritical}</li>
+ * TMSContactLevelCode.Critical}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TMSContactLevelCode#AsSoonAsPossible
- * TMSContactLevelCode.mmAsSoonAsPossible}</li>
+ * TMSContactLevelCode.AsSoonAsPossible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TMSContactLevelCode#DateTime
- * TMSContactLevelCode.mmDateTime}</li>
+ * TMSContactLevelCode.DateTime}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TMSContactLevelCode#EndCustomerSession
- * TMSContactLevelCode.mmEndCustomerSession}</li>
+ * TMSContactLevelCode.EndCustomerSession}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -185,7 +185,7 @@ public class TMSContactLevelCode extends MMCode {
 		}
 	};
 	/**
-	 * After the end of the customer session
+	 * After the end of the customer session.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -202,14 +202,14 @@ public class TMSContactLevelCode extends MMCode {
 	 * name} = "EndCustomerSession"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "After the end of the customer session"</li>
+	 * definition} = "After the end of the customer session."</li>
 	 * </ul>
 	 */
 	public static final TMSContactLevelCode EndCustomerSession = new TMSContactLevelCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EndCustomerSession";
-			definition = "After the end of the customer session";
+			definition = "After the end of the customer session.";
 			owner_lazy = () -> com.tools20022.repository.codeset.TMSContactLevelCode.mmObject();
 			codeName = "ENCS";
 		}
@@ -222,7 +222,7 @@ public class TMSContactLevelCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("CRIT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TMSContactLevelCode";

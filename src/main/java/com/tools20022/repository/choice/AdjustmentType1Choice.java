@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.Adjustment;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,16 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AdjustmentType1Choice", propOrder = {"type", "otherAdjustmentType"})
 public class AdjustmentType1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected AdjustmentType2Code type;
 	/**
-	 * Specifies the type of adjustment applied to the amount of goods/services
-	 * by means of a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,10 +111,10 @@ public class AdjustmentType1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AdjustmentType1Choice, AdjustmentType2Code> mmType = new MMMessageAttribute<AdjustmentType1Choice, AdjustmentType2Code>() {
 		{
 			businessElementTrace_lazy = () -> Adjustment.mmType;
-			componentContext_lazy = () -> AdjustmentType1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AdjustmentType1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,11 +124,22 @@ public class AdjustmentType1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> AdjustmentType2Code.mmObject();
 		}
+
+		@Override
+		public AdjustmentType2Code getValue(AdjustmentType1Choice obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(AdjustmentType1Choice obj, AdjustmentType2Code value) {
+			obj.setType(value);
+		}
 	};
+	@XmlElement(name = "OthrAdjstmntTp", required = true)
 	protected Max35Text otherAdjustmentType;
 	/**
-	 * Specifies a type of adjustment not present in the code list.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,10 +170,10 @@ public class AdjustmentType1Choice {
 	 * "Specifies a type of adjustment not present in the code list."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOtherAdjustmentType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AdjustmentType1Choice, Max35Text> mmOtherAdjustmentType = new MMMessageAttribute<AdjustmentType1Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> Adjustment.mmType;
-			componentContext_lazy = () -> AdjustmentType1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.AdjustmentType1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "OthrAdjstmntTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -171,14 +183,24 @@ public class AdjustmentType1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(AdjustmentType1Choice obj) {
+			return obj.getOtherAdjustmentType();
+		}
+
+		@Override
+		public void setValue(AdjustmentType1Choice obj, Max35Text value) {
+			obj.setOtherAdjustmentType(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AdjustmentType1Choice.mmType, AdjustmentType1Choice.mmOtherAdjustmentType);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.AdjustmentType1Choice.mmType, com.tools20022.repository.choice.AdjustmentType1Choice.mmOtherAdjustmentType);
 				trace_lazy = () -> Adjustment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AdjustmentType1Choice";
 				definition = "Specifies the type of adjustment applied to the amount of goods/services by means of a code or free text.";
@@ -187,21 +209,21 @@ public class AdjustmentType1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public AdjustmentType2Code getType() {
 		return type;
 	}
 
-	public void setType(AdjustmentType2Code type) {
-		this.type = type;
+	public AdjustmentType1Choice setType(AdjustmentType2Code type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "OthrAdjstmntTp", required = true)
 	public Max35Text getOtherAdjustmentType() {
 		return otherAdjustmentType;
 	}
 
-	public void setOtherAdjustmentType(Max35Text otherAdjustmentType) {
-		this.otherAdjustmentType = otherAdjustmentType;
+	public AdjustmentType1Choice setOtherAdjustmentType(Max35Text otherAdjustmentType) {
+		this.otherAdjustmentType = Objects.requireNonNull(otherAdjustmentType);
+		return this;
 	}
 }

@@ -39,43 +39,43 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POICommunicationType2Code#Bluetooth
- * POICommunicationType2Code.mmBluetooth}</li>
+ * POICommunicationType2Code.Bluetooth}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POICommunicationType2Code#Ethernet
- * POICommunicationType2Code.mmEthernet}</li>
+ * POICommunicationType2Code.Ethernet}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POICommunicationType2Code#GPRS
- * POICommunicationType2Code.mmGPRS}</li>
+ * POICommunicationType2Code.GPRS}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POICommunicationType2Code#GSM
- * POICommunicationType2Code.mmGSM}</li>
+ * POICommunicationType2Code.GSM}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POICommunicationType2Code#PSTN
- * POICommunicationType2Code.mmPSTN}</li>
+ * POICommunicationType2Code.PSTN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POICommunicationType2Code#RS232
- * POICommunicationType2Code.mmRS232}</li>
+ * POICommunicationType2Code.RS232}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POICommunicationType2Code#USBDevice
- * POICommunicationType2Code.mmUSBDevice}</li>
+ * POICommunicationType2Code.USBDevice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POICommunicationType2Code#USBHost
- * POICommunicationType2Code.mmUSBHost}</li>
+ * POICommunicationType2Code.USBHost}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POICommunicationType2Code#Wifi
- * POICommunicationType2Code.mmWifi}</li>
+ * POICommunicationType2Code.Wifi}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POICommunicationType2Code#WirelessTechnology2G
- * POICommunicationType2Code.mmWirelessTechnology2G}</li>
+ * POICommunicationType2Code.WirelessTechnology2G}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POICommunicationType2Code#WirelessTechnology3G
- * POICommunicationType2Code.mmWirelessTechnology3G}</li>
+ * POICommunicationType2Code.WirelessTechnology3G}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POICommunicationType2Code#WirelessTechnology4G
- * POICommunicationType2Code.mmWirelessTechnology4G}</li>
+ * POICommunicationType2Code.WirelessTechnology4G}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POICommunicationType2Code#WirelessTechnology5G
- * POICommunicationType2Code.mmWirelessTechnology5G}</li>
+ * POICommunicationType2Code.WirelessTechnology5G}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -84,8 +84,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -428,7 +428,7 @@ public class POICommunicationType2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BLTH");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "POICommunicationType2Code";

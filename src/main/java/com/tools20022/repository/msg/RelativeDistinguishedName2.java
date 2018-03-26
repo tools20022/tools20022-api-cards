@@ -25,6 +25,7 @@ import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +52,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -69,15 +70,16 @@ import javax.xml.bind.annotation.XmlType;
  * RelativeDistinguishedName1}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "RelativeDistinguishedName2", propOrder = {"attributeType", "attributeValue"})
 public class RelativeDistinguishedName2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AttrTp", required = true)
 	protected AttributeType2Code attributeType;
 	/**
-	 * Type of attribute of a distinguished name (see X.500).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -108,9 +110,9 @@ public class RelativeDistinguishedName2 {
 	 * RelativeDistinguishedName1.mmAttributeType}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAttributeType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RelativeDistinguishedName2, AttributeType2Code> mmAttributeType = new MMMessageAttribute<RelativeDistinguishedName2, AttributeType2Code>() {
 		{
-			componentContext_lazy = () -> RelativeDistinguishedName2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RelativeDistinguishedName2.mmObject();
 			isDerived = false;
 			xmlTag = "AttrTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -121,11 +123,22 @@ public class RelativeDistinguishedName2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> AttributeType2Code.mmObject();
 		}
+
+		@Override
+		public AttributeType2Code getValue(RelativeDistinguishedName2 obj) {
+			return obj.getAttributeType();
+		}
+
+		@Override
+		public void setValue(RelativeDistinguishedName2 obj, AttributeType2Code value) {
+			obj.setAttributeType(value);
+		}
 	};
+	@XmlElement(name = "AttrVal", required = true)
 	protected Max140Text attributeValue;
 	/**
-	 * Value of the attribute of a distinguished name (see X.500).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,9 +169,9 @@ public class RelativeDistinguishedName2 {
 	 * RelativeDistinguishedName1.mmAttributeValue}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAttributeValue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<RelativeDistinguishedName2, Max140Text> mmAttributeValue = new MMMessageAttribute<RelativeDistinguishedName2, Max140Text>() {
 		{
-			componentContext_lazy = () -> RelativeDistinguishedName2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.RelativeDistinguishedName2.mmObject();
 			isDerived = false;
 			xmlTag = "AttrVal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,13 +182,23 @@ public class RelativeDistinguishedName2 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Max140Text getValue(RelativeDistinguishedName2 obj) {
+			return obj.getAttributeValue();
+		}
+
+		@Override
+		public void setValue(RelativeDistinguishedName2 obj, Max140Text value) {
+			obj.setAttributeValue(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(RelativeDistinguishedName2.mmAttributeType, RelativeDistinguishedName2.mmAttributeValue);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.RelativeDistinguishedName2.mmAttributeType, com.tools20022.repository.msg.RelativeDistinguishedName2.mmAttributeValue);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RelativeDistinguishedName2";
 				definition = "Attribute of the certificate service to be put in the certificate extensions, or to be used for the request.";
@@ -185,21 +208,21 @@ public class RelativeDistinguishedName2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AttrTp", required = true)
 	public AttributeType2Code getAttributeType() {
 		return attributeType;
 	}
 
-	public void setAttributeType(AttributeType2Code attributeType) {
-		this.attributeType = attributeType;
+	public RelativeDistinguishedName2 setAttributeType(AttributeType2Code attributeType) {
+		this.attributeType = Objects.requireNonNull(attributeType);
+		return this;
 	}
 
-	@XmlElement(name = "AttrVal", required = true)
 	public Max140Text getAttributeValue() {
 		return attributeValue;
 	}
 
-	public void setAttributeValue(Max140Text attributeValue) {
-		this.attributeValue = attributeValue;
+	public RelativeDistinguishedName2 setAttributeValue(Max140Text attributeValue) {
+		this.attributeValue = Objects.requireNonNull(attributeValue);
+		return this;
 	}
 }

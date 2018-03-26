@@ -38,37 +38,37 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponseCode#InvalidMerchant
- * CurrencyConversionResponseCode.mmInvalidMerchant}</li>
+ * CurrencyConversionResponseCode.InvalidMerchant}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponseCode#InvalidCard
- * CurrencyConversionResponseCode.mmInvalidCard}</li>
+ * CurrencyConversionResponseCode.InvalidCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponseCode#InvalidProduct
- * CurrencyConversionResponseCode.mmInvalidProduct}</li>
+ * CurrencyConversionResponseCode.InvalidProduct}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponseCode#NoRate
- * CurrencyConversionResponseCode.mmNoRate}</li>
+ * CurrencyConversionResponseCode.NoRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponseCode#Allowed
- * CurrencyConversionResponseCode.mmAllowed}</li>
+ * CurrencyConversionResponseCode.Allowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponseCode#Assumed
- * CurrencyConversionResponseCode.mmAssumed}</li>
+ * CurrencyConversionResponseCode.Assumed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponseCode#NotAvailable
- * CurrencyConversionResponseCode.mmNotAvailable}</li>
+ * CurrencyConversionResponseCode.NotAvailable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponseCode#InvalidATM
- * CurrencyConversionResponseCode.mmInvalidATM}</li>
+ * CurrencyConversionResponseCode.InvalidATM}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponseCode#InvalidATMManager
- * CurrencyConversionResponseCode.mmInvalidATMManager}</li>
+ * CurrencyConversionResponseCode.InvalidATMManager}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponseCode#Restriction
- * CurrencyConversionResponseCode.mmRestriction}</li>
+ * CurrencyConversionResponseCode.Restriction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponseCode#Catalogue
- * CurrencyConversionResponseCode.mmCatalogue}</li>
+ * CurrencyConversionResponseCode.Catalogue}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -85,8 +85,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -446,7 +446,7 @@ public class CurrencyConversionResponseCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CurrencyConversionResponseCode";
 				definition = "Result of a currency conversion request.";

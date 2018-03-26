@@ -20,10 +20,12 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.Max35Text;
+import com.tools20022.repository.entity.CashAccount;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Provides statistical information on the number of movements and their value
@@ -68,8 +70,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -87,9 +89,8 @@ public class AccountReportedMovement {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyAndAmount monthlyPaymentValue;
 	/**
-	 * Monthly average of the payment amounts (that is, payments going out) over
-	 * a year.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -115,7 +116,7 @@ public class AccountReportedMovement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMonthlyPaymentValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AccountReportedMovement, CurrencyAndAmount> mmMonthlyPaymentValue = new MMBusinessAttribute<AccountReportedMovement, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AccountReportedMovement.mmObject();
@@ -127,19 +128,20 @@ public class AccountReportedMovement {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountReportedMovement.class.getMethod("getMonthlyPaymentValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(AccountReportedMovement obj) {
+			return obj.getMonthlyPaymentValue();
+		}
+
+		@Override
+		public void setValue(AccountReportedMovement obj, CurrencyAndAmount value) {
+			obj.setMonthlyPaymentValue(value);
 		}
 	};
 	protected CurrencyAndAmount monthlyReceivedValue;
 	/**
-	 * Monthly average of the received amounts over a year (that is, payments
-	 * coming in).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -165,7 +167,7 @@ public class AccountReportedMovement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMonthlyReceivedValue = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AccountReportedMovement, CurrencyAndAmount> mmMonthlyReceivedValue = new MMBusinessAttribute<AccountReportedMovement, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AccountReportedMovement.mmObject();
@@ -177,19 +179,20 @@ public class AccountReportedMovement {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountReportedMovement.class.getMethod("getMonthlyReceivedValue", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(AccountReportedMovement obj) {
+			return obj.getMonthlyReceivedValue();
+		}
+
+		@Override
+		public void setValue(AccountReportedMovement obj, CurrencyAndAmount value) {
+			obj.setMonthlyReceivedValue(value);
 		}
 	};
 	protected Max35Text monthlyTransactionNumber;
 	/**
-	 * Monthly average of the number of payments (coming in and going out) over
-	 * a year.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -214,7 +217,7 @@ public class AccountReportedMovement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMonthlyTransactionNumber = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AccountReportedMovement, Max35Text> mmMonthlyTransactionNumber = new MMBusinessAttribute<AccountReportedMovement, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AccountReportedMovement.mmObject();
@@ -226,19 +229,20 @@ public class AccountReportedMovement {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountReportedMovement.class.getMethod("getMonthlyTransactionNumber", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(AccountReportedMovement obj) {
+			return obj.getMonthlyTransactionNumber();
+		}
+
+		@Override
+		public void setValue(AccountReportedMovement obj, Max35Text value) {
+			obj.setMonthlyTransactionNumber(value);
 		}
 	};
 	protected CurrencyAndAmount averageBalance;
 	/**
-	 * Sum of the end of day balances over a month divided by the number of
-	 * business days in the month.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -264,7 +268,7 @@ public class AccountReportedMovement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAverageBalance = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<AccountReportedMovement, CurrencyAndAmount> mmAverageBalance = new MMBusinessAttribute<AccountReportedMovement, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AccountReportedMovement.mmObject();
@@ -276,18 +280,20 @@ public class AccountReportedMovement {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AccountReportedMovement.class.getMethod("getAverageBalance", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(AccountReportedMovement obj) {
+			return obj.getAverageBalance();
+		}
+
+		@Override
+		public void setValue(AccountReportedMovement obj, CurrencyAndAmount value) {
+			obj.setAverageBalance(value);
 		}
 	};
 	protected CashAccount reportedCashAccount;
 	/**
-	 * Cash account for which reported movements are calculated.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -319,7 +325,7 @@ public class AccountReportedMovement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmReportedCashAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<AccountReportedMovement, Optional<CashAccount>> mmReportedCashAccount = new MMBusinessAssociationEnd<AccountReportedMovement, Optional<CashAccount>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AccountReportedMovement.mmObject();
@@ -328,20 +334,30 @@ public class AccountReportedMovement {
 			definition = "Cash account for which reported movements are calculated.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashAccount.mmReportedMovements;
+			opposite_lazy = () -> CashAccount.mmReportedMovements;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
+			type_lazy = () -> CashAccount.mmObject();
+		}
+
+		@Override
+		public Optional<CashAccount> getValue(AccountReportedMovement obj) {
+			return obj.getReportedCashAccount();
+		}
+
+		@Override
+		public void setValue(AccountReportedMovement obj, Optional<CashAccount> value) {
+			obj.setReportedCashAccount(value.orElse(null));
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountReportedMovement";
 				definition = "Provides statistical information on the number of movements and their value for a particular account.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccount.mmReportedMovements);
+				associationDomain_lazy = () -> Arrays.asList(CashAccount.mmReportedMovements);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AccountReportedMovement.mmMonthlyPaymentValue, com.tools20022.repository.entity.AccountReportedMovement.mmMonthlyReceivedValue,
 						com.tools20022.repository.entity.AccountReportedMovement.mmMonthlyTransactionNumber, com.tools20022.repository.entity.AccountReportedMovement.mmAverageBalance,
 						com.tools20022.repository.entity.AccountReportedMovement.mmReportedCashAccount);
@@ -359,39 +375,44 @@ public class AccountReportedMovement {
 		return monthlyPaymentValue;
 	}
 
-	public void setMonthlyPaymentValue(CurrencyAndAmount monthlyPaymentValue) {
-		this.monthlyPaymentValue = monthlyPaymentValue;
+	public AccountReportedMovement setMonthlyPaymentValue(CurrencyAndAmount monthlyPaymentValue) {
+		this.monthlyPaymentValue = Objects.requireNonNull(monthlyPaymentValue);
+		return this;
 	}
 
 	public CurrencyAndAmount getMonthlyReceivedValue() {
 		return monthlyReceivedValue;
 	}
 
-	public void setMonthlyReceivedValue(CurrencyAndAmount monthlyReceivedValue) {
-		this.monthlyReceivedValue = monthlyReceivedValue;
+	public AccountReportedMovement setMonthlyReceivedValue(CurrencyAndAmount monthlyReceivedValue) {
+		this.monthlyReceivedValue = Objects.requireNonNull(monthlyReceivedValue);
+		return this;
 	}
 
 	public Max35Text getMonthlyTransactionNumber() {
 		return monthlyTransactionNumber;
 	}
 
-	public void setMonthlyTransactionNumber(Max35Text monthlyTransactionNumber) {
-		this.monthlyTransactionNumber = monthlyTransactionNumber;
+	public AccountReportedMovement setMonthlyTransactionNumber(Max35Text monthlyTransactionNumber) {
+		this.monthlyTransactionNumber = Objects.requireNonNull(monthlyTransactionNumber);
+		return this;
 	}
 
 	public CurrencyAndAmount getAverageBalance() {
 		return averageBalance;
 	}
 
-	public void setAverageBalance(CurrencyAndAmount averageBalance) {
-		this.averageBalance = averageBalance;
+	public AccountReportedMovement setAverageBalance(CurrencyAndAmount averageBalance) {
+		this.averageBalance = Objects.requireNonNull(averageBalance);
+		return this;
 	}
 
-	public CashAccount getReportedCashAccount() {
-		return reportedCashAccount;
+	public Optional<CashAccount> getReportedCashAccount() {
+		return reportedCashAccount == null ? Optional.empty() : Optional.of(reportedCashAccount);
 	}
 
-	public void setReportedCashAccount(com.tools20022.repository.entity.CashAccount reportedCashAccount) {
+	public AccountReportedMovement setReportedCashAccount(CashAccount reportedCashAccount) {
 		this.reportedCashAccount = reportedCashAccount;
+		return this;
 	}
 }

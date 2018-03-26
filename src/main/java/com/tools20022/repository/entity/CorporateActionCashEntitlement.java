@@ -20,11 +20,13 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.entity.CorporateActionEntitlement;
+import com.tools20022.repository.entity.CurrencyExchange;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Rights for cash entitled to the account owner based on the terms of the
@@ -76,8 +78,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -95,8 +97,8 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyAndAmount grossCashAmount;
 	/**
-	 * Amount of money before any deductions and allowances have been made.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,7 +123,7 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 	 * "Amount of money before any deductions and allowances have been made."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmGrossCashAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CorporateActionCashEntitlement, CurrencyAndAmount> mmGrossCashAmount = new MMBusinessAttribute<CorporateActionCashEntitlement, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionCashEntitlement.mmObject();
@@ -133,19 +135,20 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionCashEntitlement.class.getMethod("getGrossCashAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CorporateActionCashEntitlement obj) {
+			return obj.getGrossCashAmount();
+		}
+
+		@Override
+		public void setValue(CorporateActionCashEntitlement obj, CurrencyAndAmount value) {
+			obj.setGrossCashAmount(value);
 		}
 	};
 	protected CurrencyAndAmount netCashAmount;
 	/**
-	 * Amount of money after deductions and allowances have been made, if any,
-	 * ie, the total amount +/- charges/fees.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -171,7 +174,7 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNetCashAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CorporateActionCashEntitlement, CurrencyAndAmount> mmNetCashAmount = new MMBusinessAttribute<CorporateActionCashEntitlement, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionCashEntitlement.mmObject();
@@ -183,18 +186,20 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionCashEntitlement.class.getMethod("getNetCashAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CorporateActionCashEntitlement obj) {
+			return obj.getNetCashAmount();
+		}
+
+		@Override
+		public void setValue(CorporateActionCashEntitlement obj, CurrencyAndAmount value) {
+			obj.setNetCashAmount(value);
 		}
 	};
 	protected CurrencyAndAmount cashInLieuOfShare;
 	/**
-	 * Cash disbursement in lieu of a fractional quantity of, eg, equity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -219,7 +224,7 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 	 * "Cash disbursement in lieu of a fractional quantity of, eg, equity."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCashInLieuOfShare = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CorporateActionCashEntitlement, CurrencyAndAmount> mmCashInLieuOfShare = new MMBusinessAttribute<CorporateActionCashEntitlement, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionCashEntitlement.mmObject();
@@ -231,18 +236,20 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionCashEntitlement.class.getMethod("getCashInLieuOfShare", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CorporateActionCashEntitlement obj) {
+			return obj.getCashInLieuOfShare();
+		}
+
+		@Override
+		public void setValue(CorporateActionCashEntitlement obj, CurrencyAndAmount value) {
+			obj.setCashInLieuOfShare(value);
 		}
 	};
 	protected CurrencyAndAmount capitalGain;
 	/**
-	 * Amount of money distributed as the result of a capital gain.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -267,7 +274,7 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 	 * "Amount of money distributed as the result of a capital gain."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCapitalGain = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CorporateActionCashEntitlement, CurrencyAndAmount> mmCapitalGain = new MMBusinessAttribute<CorporateActionCashEntitlement, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionCashEntitlement.mmObject();
@@ -279,20 +286,20 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionCashEntitlement.class.getMethod("getCapitalGain", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CorporateActionCashEntitlement obj) {
+			return obj.getCapitalGain();
+		}
+
+		@Override
+		public void setValue(CorporateActionCashEntitlement obj, CurrencyAndAmount value) {
+			obj.setCapitalGain(value);
 		}
 	};
 	protected CurrencyAndAmount entitledCashAmount;
 	/**
-	 * Cash amount based on terms of corporate action event and balance of
-	 * underlying securities, entitled to/from account owner (which may be
-	 * positive or negative).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -318,7 +325,7 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEntitledCashAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CorporateActionCashEntitlement, CurrencyAndAmount> mmEntitledCashAmount = new MMBusinessAttribute<CorporateActionCashEntitlement, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionCashEntitlement.mmObject();
@@ -330,19 +337,20 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CorporateActionCashEntitlement.class.getMethod("getEntitledCashAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CorporateActionCashEntitlement obj) {
+			return obj.getEntitledCashAmount();
+		}
+
+		@Override
+		public void setValue(CorporateActionCashEntitlement obj, CurrencyAndAmount value) {
+			obj.setEntitledCashAmount(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.CurrencyExchange> exchangeRate;
+	protected List<CurrencyExchange> exchangeRate;
 	/**
-	 * Specifies the exchange rate used to convert the cash entitlement value in
-	 * another currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -375,7 +383,7 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmExchangeRate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CorporateActionCashEntitlement, List<CurrencyExchange>> mmExchangeRate = new MMBusinessAssociationEnd<CorporateActionCashEntitlement, List<CurrencyExchange>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CorporateActionCashEntitlement.mmObject();
@@ -383,20 +391,30 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 			name = "ExchangeRate";
 			definition = "Specifies the exchange rate used to convert the cash entitlement value in another currency.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmCurrencyExchangeForCorporateActionCashEntitlement;
+			opposite_lazy = () -> CurrencyExchange.mmCurrencyExchangeForCorporateActionCashEntitlement;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
+			type_lazy = () -> CurrencyExchange.mmObject();
+		}
+
+		@Override
+		public List<CurrencyExchange> getValue(CorporateActionCashEntitlement obj) {
+			return obj.getExchangeRate();
+		}
+
+		@Override
+		public void setValue(CorporateActionCashEntitlement obj, List<CurrencyExchange> value) {
+			obj.setExchangeRate(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionCashEntitlement";
 				definition = "Rights for cash entitled to the account owner based on the terms of the corporate action event and the balance of underlying securities.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CurrencyExchange.mmCurrencyExchangeForCorporateActionCashEntitlement);
+				associationDomain_lazy = () -> Arrays.asList(CurrencyExchange.mmCurrencyExchangeForCorporateActionCashEntitlement);
 				superType_lazy = () -> CorporateActionEntitlement.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionCashEntitlement.mmGrossCashAmount, com.tools20022.repository.entity.CorporateActionCashEntitlement.mmNetCashAmount,
 						com.tools20022.repository.entity.CorporateActionCashEntitlement.mmCashInLieuOfShare, com.tools20022.repository.entity.CorporateActionCashEntitlement.mmCapitalGain,
@@ -415,47 +433,53 @@ public class CorporateActionCashEntitlement extends CorporateActionEntitlement {
 		return grossCashAmount;
 	}
 
-	public void setGrossCashAmount(CurrencyAndAmount grossCashAmount) {
-		this.grossCashAmount = grossCashAmount;
+	public CorporateActionCashEntitlement setGrossCashAmount(CurrencyAndAmount grossCashAmount) {
+		this.grossCashAmount = Objects.requireNonNull(grossCashAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getNetCashAmount() {
 		return netCashAmount;
 	}
 
-	public void setNetCashAmount(CurrencyAndAmount netCashAmount) {
-		this.netCashAmount = netCashAmount;
+	public CorporateActionCashEntitlement setNetCashAmount(CurrencyAndAmount netCashAmount) {
+		this.netCashAmount = Objects.requireNonNull(netCashAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getCashInLieuOfShare() {
 		return cashInLieuOfShare;
 	}
 
-	public void setCashInLieuOfShare(CurrencyAndAmount cashInLieuOfShare) {
-		this.cashInLieuOfShare = cashInLieuOfShare;
+	public CorporateActionCashEntitlement setCashInLieuOfShare(CurrencyAndAmount cashInLieuOfShare) {
+		this.cashInLieuOfShare = Objects.requireNonNull(cashInLieuOfShare);
+		return this;
 	}
 
 	public CurrencyAndAmount getCapitalGain() {
 		return capitalGain;
 	}
 
-	public void setCapitalGain(CurrencyAndAmount capitalGain) {
-		this.capitalGain = capitalGain;
+	public CorporateActionCashEntitlement setCapitalGain(CurrencyAndAmount capitalGain) {
+		this.capitalGain = Objects.requireNonNull(capitalGain);
+		return this;
 	}
 
 	public CurrencyAndAmount getEntitledCashAmount() {
 		return entitledCashAmount;
 	}
 
-	public void setEntitledCashAmount(CurrencyAndAmount entitledCashAmount) {
-		this.entitledCashAmount = entitledCashAmount;
+	public CorporateActionCashEntitlement setEntitledCashAmount(CurrencyAndAmount entitledCashAmount) {
+		this.entitledCashAmount = Objects.requireNonNull(entitledCashAmount);
+		return this;
 	}
 
 	public List<CurrencyExchange> getExchangeRate() {
-		return exchangeRate;
+		return exchangeRate == null ? exchangeRate = new ArrayList<>() : exchangeRate;
 	}
 
-	public void setExchangeRate(List<com.tools20022.repository.entity.CurrencyExchange> exchangeRate) {
-		this.exchangeRate = exchangeRate;
+	public CorporateActionCashEntitlement setExchangeRate(List<CurrencyExchange> exchangeRate) {
+		this.exchangeRate = Objects.requireNonNull(exchangeRate);
+		return this;
 	}
 }

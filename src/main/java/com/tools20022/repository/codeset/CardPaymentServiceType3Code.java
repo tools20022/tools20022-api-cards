@@ -39,22 +39,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType3Code#InitialReservation
- * CardPaymentServiceType3Code.mmInitialReservation}</li>
+ * CardPaymentServiceType3Code.InitialReservation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType3Code#UpdateReservation
- * CardPaymentServiceType3Code.mmUpdateReservation}</li>
+ * CardPaymentServiceType3Code.UpdateReservation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType3Code#PaymentReservation
- * CardPaymentServiceType3Code.mmPaymentReservation}</li>
+ * CardPaymentServiceType3Code.PaymentReservation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType3Code#AdditionalPayment
- * CardPaymentServiceType3Code.mmAdditionalPayment}</li>
+ * CardPaymentServiceType3Code.AdditionalPayment}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType3Code#FirstRecurring
- * CardPaymentServiceType3Code.mmFirstRecurring}</li>
+ * CardPaymentServiceType3Code.FirstRecurring}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType3Code#FollowingRecurring
- * CardPaymentServiceType3Code.mmFollowingRecurring}</li>
+ * CardPaymentServiceType3Code.FollowingRecurring}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -63,8 +63,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -239,7 +239,7 @@ public class CardPaymentServiceType3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("IRES");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPaymentServiceType3Code";

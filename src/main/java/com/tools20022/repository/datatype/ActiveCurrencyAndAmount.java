@@ -20,13 +20,11 @@ package com.tools20022.repository.datatype;
 import com.tools20022.metamodel.MMAmount;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.ActiveCurrencyCode;
-import com.tools20022.repository.datatype.ActiveCurrencyAndAmount.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
-import javax.xml.bind.annotation.adapters.XmlAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.*;
 
 /**
  * A number of monetary units specified in an active currency where the unit of
@@ -43,8 +41,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintCurrencyAmount#forActiveCurrencyAndAmount
+ * ConstraintCurrencyAmount.forActiveCurrencyAndAmount}</li>
+ * </ul>
+ * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -63,16 +69,21 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * </li>
  * </ul>
  */
-@XmlJavaTypeAdapter(InternalXmlAdapter.class)
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType
 public class ActiveCurrencyAndAmount {
 
 	final static private AtomicReference<MMAmount> mmObject_lazy = new AtomicReference<>();
-	protected BigDecimal value;
+	@XmlValue
+	protected BigDecimal amount;
+	@XmlAttribute(name = "ccy", required = true)
+	protected ActiveCurrencyCode currency;
 
 	final static public MMAmount mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMAmount() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintCurrencyAmount.forActiveCurrencyAndAmount);
 				example = Arrays.asList("6545.56");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ActiveCurrencyAndAmount";
@@ -86,23 +97,29 @@ public class ActiveCurrencyAndAmount {
 		return mmObject_lazy.get();
 	}
 
-	public ActiveCurrencyAndAmount(BigDecimal value) {
-		this.value = value;
+	public ActiveCurrencyAndAmount() {
 	}
 
-	public BigDecimal toBigDecimal() {
-		return value;
+	public ActiveCurrencyAndAmount(BigDecimal amount, ActiveCurrencyCode currency) {
+		this.amount = amount;
+		this.currency = currency;
 	}
 
-	protected static class InternalXmlAdapter extends XmlAdapter<BigDecimal, ActiveCurrencyAndAmount> {
-		@Override
-		public ActiveCurrencyAndAmount unmarshal(BigDecimal value) {
-			return new ActiveCurrencyAndAmount(value);
-		}
+	public BigDecimal getAmount() {
+		return amount;
+	}
 
-		@Override
-		public BigDecimal marshal(ActiveCurrencyAndAmount typedData) {
-			return typedData.value;
-		}
+	public ActiveCurrencyCode getCurrency() {
+		return currency;
+	}
+
+	public void setAmountAndCurrency(BigDecimal amount, ActiveCurrencyCode currency) {
+		this.amount = amount;
+		this.currency = currency;
+	}
+
+	@Override
+	public String toString() {
+		return amount + " " + currency;
 	}
 }

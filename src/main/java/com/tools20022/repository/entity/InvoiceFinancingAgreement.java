@@ -19,12 +19,10 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.*;
-import com.tools20022.repository.entity.Agreement;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Set of characteristics that unambiguously identify an invoice financing
@@ -107,8 +105,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -126,13 +124,8 @@ public class InvoiceFinancingAgreement extends Agreement {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Max128Text authorisation;
 	/**
-	 * User identification or any user key that allows to check if the financing
-	 * requestor is allowed to ask for invoice financing.<br>
-	 * Usage: the content is not of a technical nature, but reflects the
-	 * organisational structure at the requesting side. The authorisation
-	 * element can typically be used in case the financing requestor acts on
-	 * behalf of one or more suppliers.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,7 +150,7 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAuthorisation = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvoiceFinancingAgreement, Max128Text> mmAuthorisation = new MMBusinessAttribute<InvoiceFinancingAgreement, Max128Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
@@ -169,19 +162,20 @@ public class InvoiceFinancingAgreement extends Agreement {
 			simpleType_lazy = () -> Max128Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvoiceFinancingAgreement.class.getMethod("getAuthorisation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max128Text getValue(InvoiceFinancingAgreement obj) {
+			return obj.getAuthorisation();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingAgreement obj, Max128Text value) {
+			obj.setAuthorisation(value);
 		}
 	};
 	protected Max350Text financingMethod;
 	/**
-	 * Specifies the financing method related to invoice financing (eg
-	 * collection mandate).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -206,7 +200,7 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFinancingMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvoiceFinancingAgreement, Max350Text> mmFinancingMethod = new MMBusinessAttribute<InvoiceFinancingAgreement, Max350Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
@@ -218,19 +212,20 @@ public class InvoiceFinancingAgreement extends Agreement {
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvoiceFinancingAgreement.class.getMethod("getFinancingMethod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max350Text getValue(InvoiceFinancingAgreement obj) {
+			return obj.getFinancingMethod();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingAgreement obj, Max350Text value) {
+			obj.setFinancingMethod(value);
 		}
 	};
 	protected CurrencyAndAmount requestedAmount;
 	/**
-	 * Amount requested by the requestor party, related to a single invoice to
-	 * be financed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -256,7 +251,7 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRequestedAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvoiceFinancingAgreement, CurrencyAndAmount> mmRequestedAmount = new MMBusinessAttribute<InvoiceFinancingAgreement, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
@@ -268,19 +263,20 @@ public class InvoiceFinancingAgreement extends Agreement {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvoiceFinancingAgreement.class.getMethod("getRequestedAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(InvoiceFinancingAgreement obj) {
+			return obj.getRequestedAmount();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingAgreement obj, CurrencyAndAmount value) {
+			obj.setRequestedAmount(value);
 		}
 	};
 	protected PercentageRate requestedPercentage;
 	/**
-	 * Percentage of the amount requested by the requestor party, related to a
-	 * single invoice, to be financed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -306,7 +302,7 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRequestedPercentage = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvoiceFinancingAgreement, PercentageRate> mmRequestedPercentage = new MMBusinessAttribute<InvoiceFinancingAgreement, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
@@ -318,18 +314,20 @@ public class InvoiceFinancingAgreement extends Agreement {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvoiceFinancingAgreement.class.getMethod("getRequestedPercentage", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(InvoiceFinancingAgreement obj) {
+			return obj.getRequestedPercentage();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingAgreement obj, PercentageRate value) {
+			obj.setRequestedPercentage(value);
 		}
 	};
 	protected PercentageRate appliedPercentage;
 	/**
-	 * The percentage rate applied to calculate the amount financed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -354,7 +352,7 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 * "The percentage rate applied to calculate the amount financed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAppliedPercentage = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvoiceFinancingAgreement, PercentageRate> mmAppliedPercentage = new MMBusinessAttribute<InvoiceFinancingAgreement, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
@@ -366,19 +364,20 @@ public class InvoiceFinancingAgreement extends Agreement {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvoiceFinancingAgreement.class.getMethod("getAppliedPercentage", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(InvoiceFinancingAgreement obj) {
+			return obj.getAppliedPercentage();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingAgreement obj, PercentageRate value) {
+			obj.setAppliedPercentage(value);
 		}
 	};
 	protected CurrencyAndAmount financedAmount;
 	/**
-	 * Specifies the amount financed which is derived from the applied
-	 * percentage and the invoice amount..
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -404,7 +403,7 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFinancedAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvoiceFinancingAgreement, CurrencyAndAmount> mmFinancedAmount = new MMBusinessAttribute<InvoiceFinancingAgreement, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
@@ -416,18 +415,20 @@ public class InvoiceFinancingAgreement extends Agreement {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvoiceFinancingAgreement.class.getMethod("getFinancedAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(InvoiceFinancingAgreement obj) {
+			return obj.getFinancedAmount();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingAgreement obj, CurrencyAndAmount value) {
+			obj.setFinancedAmount(value);
 		}
 	};
 	protected Max35Text identification;
 	/**
-	 * Identifies unambiguously the financing transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -450,7 +451,7 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 * definition} = "Identifies unambiguously the financing transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIdentification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<InvoiceFinancingAgreement, Max35Text> mmIdentification = new MMBusinessAttribute<InvoiceFinancingAgreement, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
@@ -462,18 +463,20 @@ public class InvoiceFinancingAgreement extends Agreement {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return InvoiceFinancingAgreement.class.getMethod("getIdentification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(InvoiceFinancingAgreement obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingAgreement obj, Max35Text value) {
+			obj.setIdentification(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.InvoiceFinancingPartyRole> invoiceFinancingPartyRole;
 	/**
-	 * Role played by a party in the context of financing an invoice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -506,7 +509,7 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 * "Role played by a party in the context of financing an invoice."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvoiceFinancingPartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvoiceFinancingAgreement, List<InvoiceFinancingPartyRole>> mmInvoiceFinancingPartyRole = new MMBusinessAssociationEnd<InvoiceFinancingAgreement, List<InvoiceFinancingPartyRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
@@ -518,12 +521,21 @@ public class InvoiceFinancingAgreement extends Agreement {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingPartyRole.mmObject();
 		}
+
+		@Override
+		public List<InvoiceFinancingPartyRole> getValue(InvoiceFinancingAgreement obj) {
+			return obj.getInvoiceFinancingPartyRole();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingAgreement obj, List<InvoiceFinancingPartyRole> value) {
+			obj.setInvoiceFinancingPartyRole(value);
+		}
 	};
 	protected InvoiceFinancingStatus invoiceFinancingStatus;
 	/**
-	 * Status of the invoice financing transaction and of the different requests
-	 * linked to it.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -557,7 +569,7 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvoiceFinancingStatus = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvoiceFinancingAgreement, com.tools20022.repository.entity.InvoiceFinancingStatus> mmInvoiceFinancingStatus = new MMBusinessAssociationEnd<InvoiceFinancingAgreement, com.tools20022.repository.entity.InvoiceFinancingStatus>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
@@ -570,11 +582,21 @@ public class InvoiceFinancingAgreement extends Agreement {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingStatus.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.InvoiceFinancingStatus getValue(InvoiceFinancingAgreement obj) {
+			return obj.getInvoiceFinancingStatus();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingAgreement obj, com.tools20022.repository.entity.InvoiceFinancingStatus value) {
+			obj.setInvoiceFinancingStatus(value);
+		}
 	};
 	protected List<com.tools20022.repository.entity.Invoice> invoice;
 	/**
-	 * Invoice to which is referred financing request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -604,7 +626,7 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 * definition} = "Invoice to which is referred financing request."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvoice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvoiceFinancingAgreement, List<Invoice>> mmInvoice = new MMBusinessAssociationEnd<InvoiceFinancingAgreement, List<Invoice>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
@@ -616,12 +638,21 @@ public class InvoiceFinancingAgreement extends Agreement {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Invoice.mmObject();
 		}
+
+		@Override
+		public List<Invoice> getValue(InvoiceFinancingAgreement obj) {
+			return obj.getInvoice();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingAgreement obj, List<Invoice> value) {
+			obj.setInvoice(value);
+		}
 	};
 	protected CashEntry resultingCashEntry;
 	/**
-	 * Information related to the crediting of the amount financed, such as
-	 * dates, amount, charges...
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -654,7 +685,7 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmResultingCashEntry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvoiceFinancingAgreement, Optional<CashEntry>> mmResultingCashEntry = new MMBusinessAssociationEnd<InvoiceFinancingAgreement, Optional<CashEntry>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
@@ -663,15 +694,25 @@ public class InvoiceFinancingAgreement extends Agreement {
 			definition = "Information related to the crediting of the amount financed, such as dates, amount, charges...";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashEntry.mmRelatedInvoiceFinancingTransaction;
+			opposite_lazy = () -> CashEntry.mmRelatedInvoiceFinancingTransaction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
+			type_lazy = () -> CashEntry.mmObject();
+		}
+
+		@Override
+		public Optional<CashEntry> getValue(InvoiceFinancingAgreement obj) {
+			return obj.getResultingCashEntry();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingAgreement obj, Optional<CashEntry> value) {
+			obj.setResultingCashEntry(value.orElse(null));
 		}
 	};
 	protected List<com.tools20022.repository.entity.Assignment> assignment;
 	/**
-	 * Assignments resulting from an invoice financing agreement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -703,7 +744,7 @@ public class InvoiceFinancingAgreement extends Agreement {
 	 * "Assignments resulting from an invoice financing agreement."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAssignment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvoiceFinancingAgreement, List<Assignment>> mmAssignment = new MMBusinessAssociationEnd<InvoiceFinancingAgreement, List<Assignment>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
@@ -715,16 +756,26 @@ public class InvoiceFinancingAgreement extends Agreement {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Assignment.mmObject();
 		}
+
+		@Override
+		public List<Assignment> getValue(InvoiceFinancingAgreement obj) {
+			return obj.getAssignment();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingAgreement obj, List<Assignment> value) {
+			obj.setAssignment(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvoiceFinancingAgreement";
 				definition = "Set of characteristics that unambiguously identify an invoice financing agreement. An invoice financing agreement between a factor and its client allows to transfer a payment obligation that exists between the client and a third party from the client to the factor.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashEntry.mmRelatedInvoiceFinancingTransaction, com.tools20022.repository.entity.Invoice.mmInvoiceFinancingTransaction,
+				associationDomain_lazy = () -> Arrays.asList(CashEntry.mmRelatedInvoiceFinancingTransaction, com.tools20022.repository.entity.Invoice.mmInvoiceFinancingTransaction,
 						com.tools20022.repository.entity.InvoiceFinancingPartyRole.mmInvoiceFinancingTransaction, com.tools20022.repository.entity.InvoiceFinancingStatus.mmInvoiceFinancingTransaction,
 						com.tools20022.repository.entity.Assignment.mmFinancingAgreement);
 				superType_lazy = () -> Agreement.mmObject();
@@ -748,95 +799,107 @@ public class InvoiceFinancingAgreement extends Agreement {
 		return authorisation;
 	}
 
-	public void setAuthorisation(Max128Text authorisation) {
-		this.authorisation = authorisation;
+	public InvoiceFinancingAgreement setAuthorisation(Max128Text authorisation) {
+		this.authorisation = Objects.requireNonNull(authorisation);
+		return this;
 	}
 
 	public Max350Text getFinancingMethod() {
 		return financingMethod;
 	}
 
-	public void setFinancingMethod(Max350Text financingMethod) {
-		this.financingMethod = financingMethod;
+	public InvoiceFinancingAgreement setFinancingMethod(Max350Text financingMethod) {
+		this.financingMethod = Objects.requireNonNull(financingMethod);
+		return this;
 	}
 
 	public CurrencyAndAmount getRequestedAmount() {
 		return requestedAmount;
 	}
 
-	public void setRequestedAmount(CurrencyAndAmount requestedAmount) {
-		this.requestedAmount = requestedAmount;
+	public InvoiceFinancingAgreement setRequestedAmount(CurrencyAndAmount requestedAmount) {
+		this.requestedAmount = Objects.requireNonNull(requestedAmount);
+		return this;
 	}
 
 	public PercentageRate getRequestedPercentage() {
 		return requestedPercentage;
 	}
 
-	public void setRequestedPercentage(PercentageRate requestedPercentage) {
-		this.requestedPercentage = requestedPercentage;
+	public InvoiceFinancingAgreement setRequestedPercentage(PercentageRate requestedPercentage) {
+		this.requestedPercentage = Objects.requireNonNull(requestedPercentage);
+		return this;
 	}
 
 	public PercentageRate getAppliedPercentage() {
 		return appliedPercentage;
 	}
 
-	public void setAppliedPercentage(PercentageRate appliedPercentage) {
-		this.appliedPercentage = appliedPercentage;
+	public InvoiceFinancingAgreement setAppliedPercentage(PercentageRate appliedPercentage) {
+		this.appliedPercentage = Objects.requireNonNull(appliedPercentage);
+		return this;
 	}
 
 	public CurrencyAndAmount getFinancedAmount() {
 		return financedAmount;
 	}
 
-	public void setFinancedAmount(CurrencyAndAmount financedAmount) {
-		this.financedAmount = financedAmount;
+	public InvoiceFinancingAgreement setFinancedAmount(CurrencyAndAmount financedAmount) {
+		this.financedAmount = Objects.requireNonNull(financedAmount);
+		return this;
 	}
 
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public InvoiceFinancingAgreement setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
 	public List<InvoiceFinancingPartyRole> getInvoiceFinancingPartyRole() {
-		return invoiceFinancingPartyRole;
+		return invoiceFinancingPartyRole == null ? invoiceFinancingPartyRole = new ArrayList<>() : invoiceFinancingPartyRole;
 	}
 
-	public void setInvoiceFinancingPartyRole(List<com.tools20022.repository.entity.InvoiceFinancingPartyRole> invoiceFinancingPartyRole) {
-		this.invoiceFinancingPartyRole = invoiceFinancingPartyRole;
+	public InvoiceFinancingAgreement setInvoiceFinancingPartyRole(List<com.tools20022.repository.entity.InvoiceFinancingPartyRole> invoiceFinancingPartyRole) {
+		this.invoiceFinancingPartyRole = Objects.requireNonNull(invoiceFinancingPartyRole);
+		return this;
 	}
 
 	public InvoiceFinancingStatus getInvoiceFinancingStatus() {
 		return invoiceFinancingStatus;
 	}
 
-	public void setInvoiceFinancingStatus(com.tools20022.repository.entity.InvoiceFinancingStatus invoiceFinancingStatus) {
-		this.invoiceFinancingStatus = invoiceFinancingStatus;
+	public InvoiceFinancingAgreement setInvoiceFinancingStatus(com.tools20022.repository.entity.InvoiceFinancingStatus invoiceFinancingStatus) {
+		this.invoiceFinancingStatus = Objects.requireNonNull(invoiceFinancingStatus);
+		return this;
 	}
 
 	public List<Invoice> getInvoice() {
-		return invoice;
+		return invoice == null ? invoice = new ArrayList<>() : invoice;
 	}
 
-	public void setInvoice(List<com.tools20022.repository.entity.Invoice> invoice) {
-		this.invoice = invoice;
+	public InvoiceFinancingAgreement setInvoice(List<com.tools20022.repository.entity.Invoice> invoice) {
+		this.invoice = Objects.requireNonNull(invoice);
+		return this;
 	}
 
-	public CashEntry getResultingCashEntry() {
-		return resultingCashEntry;
+	public Optional<CashEntry> getResultingCashEntry() {
+		return resultingCashEntry == null ? Optional.empty() : Optional.of(resultingCashEntry);
 	}
 
-	public void setResultingCashEntry(com.tools20022.repository.entity.CashEntry resultingCashEntry) {
+	public InvoiceFinancingAgreement setResultingCashEntry(CashEntry resultingCashEntry) {
 		this.resultingCashEntry = resultingCashEntry;
+		return this;
 	}
 
 	public List<Assignment> getAssignment() {
-		return assignment;
+		return assignment == null ? assignment = new ArrayList<>() : assignment;
 	}
 
-	public void setAssignment(List<com.tools20022.repository.entity.Assignment> assignment) {
-		this.assignment = assignment;
+	public InvoiceFinancingAgreement setAssignment(List<com.tools20022.repository.entity.Assignment> assignment) {
+		this.assignment = Objects.requireNonNull(assignment);
+		return this;
 	}
 }

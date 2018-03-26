@@ -39,82 +39,82 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#AcquirerReconciliationAdvice
- * MessageFunction6Code.mmAcquirerReconciliationAdvice}</li>
+ * MessageFunction6Code.AcquirerReconciliationAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#AcquirerReconciliationNotification
- * MessageFunction6Code.mmAcquirerReconciliationNotification}</li>
+ * MessageFunction6Code.AcquirerReconciliationNotification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#AcquirerReconciliationRequest
- * MessageFunction6Code.mmAcquirerReconciliationRequest}</li>
+ * MessageFunction6Code.AcquirerReconciliationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#AcquirerReject
- * MessageFunction6Code.mmAcquirerReject}</li>
+ * MessageFunction6Code.AcquirerReject}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#AcquirerReversalAdvice
- * MessageFunction6Code.mmAcquirerReversalAdvice}</li>
+ * MessageFunction6Code.AcquirerReversalAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#AcquirerReversalNotification
- * MessageFunction6Code.mmAcquirerReversalNotification}</li>
+ * MessageFunction6Code.AcquirerReversalNotification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#AcquirerReversalRequest
- * MessageFunction6Code.mmAcquirerReversalRequest}</li>
+ * MessageFunction6Code.AcquirerReversalRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#AgentReconciliationAdvice
- * MessageFunction6Code.mmAgentReconciliationAdvice}</li>
+ * MessageFunction6Code.AgentReconciliationAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#AgentReconciliationNotification
- * MessageFunction6Code.mmAgentReconciliationNotification}</li>
+ * MessageFunction6Code.AgentReconciliationNotification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#AgentReconciliationRequest
- * MessageFunction6Code.mmAgentReconciliationRequest}</li>
+ * MessageFunction6Code.AgentReconciliationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#AgentReject
- * MessageFunction6Code.mmAgentReject}</li>
+ * MessageFunction6Code.AgentReject}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#AuthorisationAdvice
- * MessageFunction6Code.mmAuthorisationAdvice}</li>
+ * MessageFunction6Code.AuthorisationAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#AuthorisationNotification
- * MessageFunction6Code.mmAuthorisationNotification}</li>
+ * MessageFunction6Code.AuthorisationNotification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#AuthorisationRequest
- * MessageFunction6Code.mmAuthorisationRequest}</li>
+ * MessageFunction6Code.AuthorisationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#AuthorisationResponse
- * MessageFunction6Code.mmAuthorisationResponse}</li>
+ * MessageFunction6Code.AuthorisationResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#FinancialAdvice
- * MessageFunction6Code.mmFinancialAdvice}</li>
+ * MessageFunction6Code.FinancialAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#FinancialNotification
- * MessageFunction6Code.mmFinancialNotification}</li>
+ * MessageFunction6Code.FinancialNotification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#FinancialRequest
- * MessageFunction6Code.mmFinancialRequest}</li>
+ * MessageFunction6Code.FinancialRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#IssuerReconciliationAdvice
- * MessageFunction6Code.mmIssuerReconciliationAdvice}</li>
+ * MessageFunction6Code.IssuerReconciliationAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#IssuerReconciliationNotification
- * MessageFunction6Code.mmIssuerReconciliationNotification}</li>
+ * MessageFunction6Code.IssuerReconciliationNotification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#IssuerReconciliationRequest
- * MessageFunction6Code.mmIssuerReconciliationRequest}</li>
+ * MessageFunction6Code.IssuerReconciliationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#IssuerReject
- * MessageFunction6Code.mmIssuerReject}</li>
+ * MessageFunction6Code.IssuerReject}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#KeyExchangeAdvice
- * MessageFunction6Code.mmKeyExchangeAdvice}</li>
+ * MessageFunction6Code.KeyExchangeAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#KeyExchangeRequest
- * MessageFunction6Code.mmKeyExchangeRequest}</li>
+ * MessageFunction6Code.KeyExchangeRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#NetworkManagementAdvice
- * MessageFunction6Code.mmNetworkManagementAdvice}</li>
+ * MessageFunction6Code.NetworkManagementAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction6Code#NetworkManagementRequest
- * MessageFunction6Code.mmNetworkManagementRequest}</li>
+ * MessageFunction6Code.NetworkManagementRequest}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -123,8 +123,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -773,7 +773,7 @@ public class MessageFunction6Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MessageFunction6Code";
 				definition = "Identifies the type of process related to the message. It partially correspond to the message type identifier (MTI) of ISO 8583.";

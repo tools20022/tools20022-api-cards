@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType9Code#CustomerTransfer
- * ATMServiceType9Code.mmCustomerTransfer}</li>
+ * ATMServiceType9Code.CustomerTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType9Code#InterCustomerTransfer
- * ATMServiceType9Code.mmInterCustomerTransfer}</li>
+ * ATMServiceType9Code.InterCustomerTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType9Code#Payment
- * ATMServiceType9Code.mmPayment}</li>
+ * ATMServiceType9Code.Payment}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -53,8 +53,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -96,7 +96,7 @@ public class ATMServiceType9Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#CustomerTransfer
-	 * ATMServiceType10Code.mmCustomerTransfer}</li>
+	 * ATMServiceType10Code.CustomerTransfer}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -129,7 +129,7 @@ public class ATMServiceType9Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#InterCustomerTransfer
-	 * ATMServiceType10Code.mmInterCustomerTransfer}</li>
+	 * ATMServiceType10Code.InterCustomerTransfer}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -162,7 +162,7 @@ public class ATMServiceType9Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.ATMServiceType10Code#Payment
-	 * ATMServiceType10Code.mmPayment}</li>
+	 * ATMServiceType10Code.Payment}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -184,7 +184,7 @@ public class ATMServiceType9Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMServiceType9Code";
 				definition = "Describes the type of fund transfer selected by the customer or the ATM.";

@@ -23,9 +23,11 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.CertificateIssuer1;
+import com.tools20022.repository.msg.PublicRSAKey2;
+import com.tools20022.repository.msg.RelativeDistinguishedName2;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -57,8 +59,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,15 +75,16 @@ import javax.xml.bind.annotation.XmlType;
  * CertificationRequest1}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "CertificationRequest2", propOrder = {"version", "subjectName", "subjectPublicKeyInformation", "attribute"})
 public class CertificationRequest2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Vrsn")
 	protected Number version;
 	/**
-	 * Version of the certificate request information data structure.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -112,9 +115,9 @@ public class CertificationRequest2 {
 	 * CertificationRequest1.mmKeyIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVersion = new MMMessageAttribute() {
+	public static final MMMessageAttribute<CertificationRequest2, Optional<Number>> mmVersion = new MMMessageAttribute<CertificationRequest2, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> CertificationRequest2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CertificationRequest2.mmObject();
 			isDerived = false;
 			xmlTag = "Vrsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -125,12 +128,22 @@ public class CertificationRequest2 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(CertificationRequest2 obj) {
+			return obj.getVersion();
+		}
+
+		@Override
+		public void setValue(CertificationRequest2 obj, Optional<Number> value) {
+			obj.setVersion(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SbjtNm")
 	protected CertificateIssuer1 subjectName;
 	/**
-	 * Distinguished name of the certificate subject, the entity whose public
-	 * key is to be certified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -156,9 +169,9 @@ public class CertificationRequest2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSubjectName = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CertificationRequest2, Optional<CertificateIssuer1>> mmSubjectName = new MMMessageAssociationEnd<CertificationRequest2, Optional<CertificateIssuer1>>() {
 		{
-			componentContext_lazy = () -> CertificationRequest2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CertificationRequest2.mmObject();
 			isDerived = false;
 			xmlTag = "SbjtNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -167,13 +180,24 @@ public class CertificationRequest2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CertificateIssuer1.mmObject();
+			type_lazy = () -> CertificateIssuer1.mmObject();
+		}
+
+		@Override
+		public Optional<CertificateIssuer1> getValue(CertificationRequest2 obj) {
+			return obj.getSubjectName();
+		}
+
+		@Override
+		public void setValue(CertificationRequest2 obj, Optional<CertificateIssuer1> value) {
+			obj.setSubjectName(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SbjtPblcKeyInf", required = true)
 	protected PublicRSAKey2 subjectPublicKeyInformation;
 	/**
-	 * Information about the public key being certified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -197,9 +221,9 @@ public class CertificationRequest2 {
 	 * definition} = "Information about the public key being certified."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSubjectPublicKeyInformation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CertificationRequest2, PublicRSAKey2> mmSubjectPublicKeyInformation = new MMMessageAssociationEnd<CertificationRequest2, PublicRSAKey2>() {
 		{
-			componentContext_lazy = () -> CertificationRequest2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CertificationRequest2.mmObject();
 			isDerived = false;
 			xmlTag = "SbjtPblcKeyInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -208,14 +232,24 @@ public class CertificationRequest2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PublicRSAKey2.mmObject();
+			type_lazy = () -> PublicRSAKey2.mmObject();
+		}
+
+		@Override
+		public PublicRSAKey2 getValue(CertificationRequest2 obj) {
+			return obj.getSubjectPublicKeyInformation();
+		}
+
+		@Override
+		public void setValue(CertificationRequest2 obj, PublicRSAKey2 value) {
+			obj.setSubjectPublicKeyInformation(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.RelativeDistinguishedName2> attribute;
+	@XmlElement(name = "Attr", required = true)
+	protected List<RelativeDistinguishedName2> attribute;
 	/**
-	 * Attribute of the certificate service to be put in the certificate
-	 * extensions, or to be used for the request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -242,9 +276,9 @@ public class CertificationRequest2 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAttribute = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<CertificationRequest2, List<RelativeDistinguishedName2>> mmAttribute = new MMMessageAssociationEnd<CertificationRequest2, List<RelativeDistinguishedName2>>() {
 		{
-			componentContext_lazy = () -> CertificationRequest2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.CertificationRequest2.mmObject();
 			isDerived = false;
 			xmlTag = "Attr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -252,15 +286,26 @@ public class CertificationRequest2 {
 			definition = "Attribute of the certificate service to be put in the certificate extensions, or to be used for the request.";
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.RelativeDistinguishedName2.mmObject();
+			type_lazy = () -> RelativeDistinguishedName2.mmObject();
+		}
+
+		@Override
+		public List<RelativeDistinguishedName2> getValue(CertificationRequest2 obj) {
+			return obj.getAttribute();
+		}
+
+		@Override
+		public void setValue(CertificationRequest2 obj, List<RelativeDistinguishedName2> value) {
+			obj.setAttribute(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(CertificationRequest2.mmVersion, CertificationRequest2.mmSubjectName, CertificationRequest2.mmSubjectPublicKeyInformation, CertificationRequest2.mmAttribute);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.CertificationRequest2.mmVersion, com.tools20022.repository.msg.CertificationRequest2.mmSubjectName,
+						com.tools20022.repository.msg.CertificationRequest2.mmSubjectPublicKeyInformation, com.tools20022.repository.msg.CertificationRequest2.mmAttribute);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CertificationRequest2";
 				definition = "Information of the certificate to create.";
@@ -270,39 +315,39 @@ public class CertificationRequest2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Vrsn")
-	public Number getVersion() {
-		return version;
+	public Optional<Number> getVersion() {
+		return version == null ? Optional.empty() : Optional.of(version);
 	}
 
-	public void setVersion(Number version) {
+	public CertificationRequest2 setVersion(Number version) {
 		this.version = version;
+		return this;
 	}
 
-	@XmlElement(name = "SbjtNm")
-	public CertificateIssuer1 getSubjectName() {
-		return subjectName;
+	public Optional<CertificateIssuer1> getSubjectName() {
+		return subjectName == null ? Optional.empty() : Optional.of(subjectName);
 	}
 
-	public void setSubjectName(com.tools20022.repository.msg.CertificateIssuer1 subjectName) {
+	public CertificationRequest2 setSubjectName(CertificateIssuer1 subjectName) {
 		this.subjectName = subjectName;
+		return this;
 	}
 
-	@XmlElement(name = "SbjtPblcKeyInf", required = true)
 	public PublicRSAKey2 getSubjectPublicKeyInformation() {
 		return subjectPublicKeyInformation;
 	}
 
-	public void setSubjectPublicKeyInformation(com.tools20022.repository.msg.PublicRSAKey2 subjectPublicKeyInformation) {
-		this.subjectPublicKeyInformation = subjectPublicKeyInformation;
+	public CertificationRequest2 setSubjectPublicKeyInformation(PublicRSAKey2 subjectPublicKeyInformation) {
+		this.subjectPublicKeyInformation = Objects.requireNonNull(subjectPublicKeyInformation);
+		return this;
 	}
 
-	@XmlElement(name = "Attr", required = true)
 	public List<RelativeDistinguishedName2> getAttribute() {
-		return attribute;
+		return attribute == null ? attribute = new ArrayList<>() : attribute;
 	}
 
-	public void setAttribute(List<com.tools20022.repository.msg.RelativeDistinguishedName2> attribute) {
-		this.attribute = attribute;
+	public CertificationRequest2 setAttribute(List<RelativeDistinguishedName2> attribute) {
+		this.attribute = Objects.requireNonNull(attribute);
+		return this;
 	}
 }

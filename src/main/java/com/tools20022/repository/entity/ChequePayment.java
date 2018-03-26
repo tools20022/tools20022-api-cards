@@ -21,10 +21,13 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Cheque;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Payment made by drawing a cheque in order to settle a debt.
@@ -53,8 +56,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,11 +71,10 @@ import java.util.List;
 public class ChequePayment {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.Cheque> cheque;
+	protected List<Cheque> cheque;
 	/**
-	 * Specifies the characteristics of the cheque which was drawn to settle a
-	 * debt.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -104,7 +106,7 @@ public class ChequePayment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCheque = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ChequePayment, List<Cheque>> mmCheque = new MMBusinessAssociationEnd<ChequePayment, List<Cheque>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ChequePayment.mmObject();
@@ -112,20 +114,30 @@ public class ChequePayment {
 			name = "Cheque";
 			definition = "Specifies the characteristics of the cheque which was drawn to settle a debt.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Cheque.mmRelatedPayment;
+			opposite_lazy = () -> Cheque.mmRelatedPayment;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Cheque.mmObject();
+			type_lazy = () -> Cheque.mmObject();
+		}
+
+		@Override
+		public List<Cheque> getValue(ChequePayment obj) {
+			return obj.getCheque();
+		}
+
+		@Override
+		public void setValue(ChequePayment obj, List<Cheque> value) {
+			obj.setCheque(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ChequePayment";
 				definition = "Payment made by drawing a cheque in order to settle a debt.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Cheque.mmRelatedPayment);
+				associationDomain_lazy = () -> Arrays.asList(Cheque.mmRelatedPayment);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ChequePayment.mmCheque);
 			}
 
@@ -138,10 +150,11 @@ public class ChequePayment {
 	}
 
 	public List<Cheque> getCheque() {
-		return cheque;
+		return cheque == null ? cheque = new ArrayList<>() : cheque;
 	}
 
-	public void setCheque(List<com.tools20022.repository.entity.Cheque> cheque) {
-		this.cheque = cheque;
+	public ChequePayment setCheque(List<Cheque> cheque) {
+		this.cheque = Objects.requireNonNull(cheque);
+		return this;
 	}
 }

@@ -38,65 +38,65 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipTypeCode#JointAccountWithSurvivorshipRights
- * AccountOwnershipTypeCode.mmJointAccountWithSurvivorshipRights}</li>
+ * AccountOwnershipTypeCode.JointAccountWithSurvivorshipRights}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipTypeCode#JointAccountInCommon
- * AccountOwnershipTypeCode.mmJointAccountInCommon}</li>
+ * AccountOwnershipTypeCode.JointAccountInCommon}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipTypeCode#CustodialAccount
- * AccountOwnershipTypeCode.mmCustodialAccount}</li>
+ * AccountOwnershipTypeCode.CustodialAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipTypeCode#SingleOwnerAccount
- * AccountOwnershipTypeCode.mmSingleOwnerAccount}</li>
+ * AccountOwnershipTypeCode.SingleOwnerAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipTypeCode#JointAccount
- * AccountOwnershipTypeCode.mmJointAccount}</li>
+ * AccountOwnershipTypeCode.JointAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipTypeCode#Corporation
- * AccountOwnershipTypeCode.mmCorporation}</li>
+ * AccountOwnershipTypeCode.Corporation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipTypeCode#FormalPartnership
- * AccountOwnershipTypeCode.mmFormalPartnership}</li>
+ * AccountOwnershipTypeCode.FormalPartnership}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipTypeCode#FormalTrust
- * AccountOwnershipTypeCode.mmFormalTrust}</li>
+ * AccountOwnershipTypeCode.FormalTrust}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipTypeCode#Nominee
- * AccountOwnershipTypeCode.mmNominee}</li>
+ * AccountOwnershipTypeCode.Nominee}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipTypeCode#NonProfitOrganisation
- * AccountOwnershipTypeCode.mmNonProfitOrganisation}</li>
+ * AccountOwnershipTypeCode.NonProfitOrganisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipTypeCode#OtherNonIndividual
- * AccountOwnershipTypeCode.mmOtherNonIndividual}</li>
+ * AccountOwnershipTypeCode.OtherNonIndividual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipTypeCode#EUResidualEntity
- * AccountOwnershipTypeCode.mmEUResidualEntity}</li>
+ * AccountOwnershipTypeCode.EUResidualEntity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipTypeCode#GovernmentOrganisation
- * AccountOwnershipTypeCode.mmGovernmentOrganisation}</li>
+ * AccountOwnershipTypeCode.GovernmentOrganisation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipTypeCode#LimitedLiabilityCompany
- * AccountOwnershipTypeCode.mmLimitedLiabilityCompany}</li>
+ * AccountOwnershipTypeCode.LimitedLiabilityCompany}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipTypeCode#RegisteredInvestmentCompany
- * AccountOwnershipTypeCode.mmRegisteredInvestmentCompany}</li>
+ * AccountOwnershipTypeCode.RegisteredInvestmentCompany}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipTypeCode#Entrepreneurial
- * AccountOwnershipTypeCode.mmEntrepreneurial}</li>
+ * AccountOwnershipTypeCode.Entrepreneurial}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipTypeCode#Unincorporated
- * AccountOwnershipTypeCode.mmUnincorporated}</li>
+ * AccountOwnershipTypeCode.Unincorporated}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountOwnershipTypeCode#LimitedPartnership
- * AccountOwnershipTypeCode.mmLimitedPartnership}</li>
+ * AccountOwnershipTypeCode.LimitedPartnership}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -206,7 +206,7 @@ public class AccountOwnershipTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Minor's account, registered in the minor's name. Since the minor cannot legally own property,  the custodian of the account maintains control of the account."
+	 * "Minor's account, registered in the minor's name. Since the minor cannot legally own property, the custodian of the account maintains control of the account."
 	 * </li>
 	 * </ul>
 	 */
@@ -214,7 +214,7 @@ public class AccountOwnershipTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CustodialAccount";
-			definition = "Minor's account, registered in the minor's name. Since the minor cannot legally own property,  the custodian of the account maintains control of the account.";
+			definition = "Minor's account, registered in the minor's name. Since the minor cannot legally own property, the custodian of the account maintains control of the account.";
 			owner_lazy = () -> com.tools20022.repository.codeset.AccountOwnershipTypeCode.mmObject();
 			codeName = "CUST";
 		}
@@ -650,7 +650,7 @@ public class AccountOwnershipTypeCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Account owner is an unincorporated partnership or is of sole proprietorship. "
+	 * "Account owner is an unincorporated partnership or is of sole proprietorship."
 	 * </li>
 	 * </ul>
 	 */
@@ -658,7 +658,7 @@ public class AccountOwnershipTypeCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Unincorporated";
-			definition = "Account owner is an unincorporated partnership or is of sole proprietorship. ";
+			definition = "Account owner is an unincorporated partnership or is of sole proprietorship.";
 			owner_lazy = () -> com.tools20022.repository.codeset.AccountOwnershipTypeCode.mmObject();
 			codeName = "UNCO";
 		}
@@ -702,7 +702,7 @@ public class AccountOwnershipTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("JOIN");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountOwnershipTypeCode";

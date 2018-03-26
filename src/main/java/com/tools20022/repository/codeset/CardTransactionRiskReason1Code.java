@@ -38,64 +38,64 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#ApproveDeclinePattern
- * CardTransactionRiskReason1Code.mmApproveDeclinePattern}</li>
+ * CardTransactionRiskReason1Code.ApproveDeclinePattern}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#ApproveDeclineSequence
- * CardTransactionRiskReason1Code.mmApproveDeclineSequence}</li>
+ * CardTransactionRiskReason1Code.ApproveDeclineSequence}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#AuthorizationActivity
- * CardTransactionRiskReason1Code.mmAuthorizationActivity}</li>
+ * CardTransactionRiskReason1Code.AuthorizationActivity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#CompromisedCard
- * CardTransactionRiskReason1Code.mmCompromisedCard}</li>
+ * CardTransactionRiskReason1Code.CompromisedCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#EcommerceActivity
- * CardTransactionRiskReason1Code.mmEcommerceActivity}</li>
+ * CardTransactionRiskReason1Code.EcommerceActivity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#ExpiryDateMismatch
- * CardTransactionRiskReason1Code.mmExpiryDateMismatch}</li>
+ * CardTransactionRiskReason1Code.ExpiryDateMismatch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#ForeignActivity
- * CardTransactionRiskReason1Code.mmForeignActivity}</li>
+ * CardTransactionRiskReason1Code.ForeignActivity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#GeographicActivity
- * CardTransactionRiskReason1Code.mmGeographicActivity}</li>
+ * CardTransactionRiskReason1Code.GeographicActivity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#HighRiskMCC
- * CardTransactionRiskReason1Code.mmHighRiskMCC}</li>
+ * CardTransactionRiskReason1Code.HighRiskMCC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#ManualEntryActivity
- * CardTransactionRiskReason1Code.mmManualEntryActivity}</li>
+ * CardTransactionRiskReason1Code.ManualEntryActivity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#MerchantCategoryActivity
- * CardTransactionRiskReason1Code.mmMerchantCategoryActivity}</li>
+ * CardTransactionRiskReason1Code.MerchantCategoryActivity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#SuspiciousAmount
- * CardTransactionRiskReason1Code.mmSuspiciousAmount}</li>
+ * CardTransactionRiskReason1Code.SuspiciousAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#SuspiciousFraudulentCardholder
- * CardTransactionRiskReason1Code.mmSuspiciousFraudulentCardholder}</li>
+ * CardTransactionRiskReason1Code.SuspiciousFraudulentCardholder}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#SuspiciousFraudulentMerchant
- * CardTransactionRiskReason1Code.mmSuspiciousFraudulentMerchant}</li>
+ * CardTransactionRiskReason1Code.SuspiciousFraudulentMerchant}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#TransactionCumulativeAmount
- * CardTransactionRiskReason1Code.mmTransactionCumulativeAmount}</li>
+ * CardTransactionRiskReason1Code.TransactionCumulativeAmount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#TransactionNumber
- * CardTransactionRiskReason1Code.mmTransactionNumber}</li>
+ * CardTransactionRiskReason1Code.TransactionNumber}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#TransactionTime
- * CardTransactionRiskReason1Code.mmTransactionTime}</li>
+ * CardTransactionRiskReason1Code.TransactionTime}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#TransactionTimeIinterval
- * CardTransactionRiskReason1Code.mmTransactionTimeIinterval}</li>
+ * CardTransactionRiskReason1Code.TransactionTimeIinterval}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#TransactionType
- * CardTransactionRiskReason1Code.mmTransactionType}</li>
+ * CardTransactionRiskReason1Code.TransactionType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardTransactionRiskReason1Code#UnattendedActivity
- * CardTransactionRiskReason1Code.mmUnattendedActivity}</li>
+ * CardTransactionRiskReason1Code.UnattendedActivity}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -104,8 +104,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -609,7 +609,7 @@ public class CardTransactionRiskReason1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardTransactionRiskReason1Code";
 				definition = "Reason to indicate a certain level of risk for the transaction.";

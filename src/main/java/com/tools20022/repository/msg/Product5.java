@@ -30,6 +30,8 @@ import com.tools20022.repository.entity.ProductQuantity;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -62,8 +64,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,15 +79,16 @@ import javax.xml.bind.annotation.XmlType;
  * Product3}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Product5", propOrder = {"productCode", "additionalProductCode", "amountLimit", "quantityLimit", "unitOfMeasure"})
 public class Product5 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PdctCd", required = true)
 	protected Max70Text productCode;
 	/**
-	 * Product code of the item.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -119,10 +122,10 @@ public class Product5 {
 	 * Product3.mmProductCode}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProductCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Product5, Max70Text> mmProductCode = new MMMessageAttribute<Product5, Max70Text>() {
 		{
 			businessElementTrace_lazy = () -> ProductIdentification.mmIdentifier;
-			componentContext_lazy = () -> Product5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Product5.mmObject();
 			isDerived = false;
 			xmlTag = "PdctCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -133,11 +136,22 @@ public class Product5 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
+
+		@Override
+		public Max70Text getValue(Product5 obj) {
+			return obj.getProductCode();
+		}
+
+		@Override
+		public void setValue(Product5 obj, Max70Text value) {
+			obj.setProductCode(value);
+		}
 	};
+	@XmlElement(name = "AddtlPdctCd")
 	protected Max70Text additionalProductCode;
 	/**
-	 * Additional product code related to the product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -166,9 +180,9 @@ public class Product5 {
 	 * Product3.mmAdditionalProductCode}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalProductCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Product5, Optional<Max70Text>> mmAdditionalProductCode = new MMMessageAttribute<Product5, Optional<Max70Text>>() {
 		{
-			componentContext_lazy = () -> Product5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Product5.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlPdctCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -179,11 +193,22 @@ public class Product5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max70Text> getValue(Product5 obj) {
+			return obj.getAdditionalProductCode();
+		}
+
+		@Override
+		public void setValue(Product5 obj, Optional<Max70Text> value) {
+			obj.setAdditionalProductCode(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AmtLmt")
 	protected ImpliedCurrencyAndAmount amountLimit;
 	/**
-	 * Amount limit for the product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -213,9 +238,9 @@ public class Product5 {
 	 * Product3.mmProductAmount}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmountLimit = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Product5, Optional<ImpliedCurrencyAndAmount>> mmAmountLimit = new MMMessageAttribute<Product5, Optional<ImpliedCurrencyAndAmount>>() {
 		{
-			componentContext_lazy = () -> Product5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Product5.mmObject();
 			isDerived = false;
 			xmlTag = "AmtLmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -226,11 +251,22 @@ public class Product5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ImpliedCurrencyAndAmount> getValue(Product5 obj) {
+			return obj.getAmountLimit();
+		}
+
+		@Override
+		public void setValue(Product5 obj, Optional<ImpliedCurrencyAndAmount> value) {
+			obj.setAmountLimit(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "QtyLmt")
 	protected DecimalNumber quantityLimit;
 	/**
-	 * Quantity limit for the product.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -265,10 +301,10 @@ public class Product5 {
 	 * Product3.mmProductQuantity}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmQuantityLimit = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Product5, Optional<DecimalNumber>> mmQuantityLimit = new MMMessageAttribute<Product5, Optional<DecimalNumber>>() {
 		{
 			businessElementTrace_lazy = () -> ProductQuantity.mmValue;
-			componentContext_lazy = () -> Product5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Product5.mmObject();
 			isDerived = false;
 			xmlTag = "QtyLmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -279,11 +315,22 @@ public class Product5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(Product5 obj) {
+			return obj.getQuantityLimit();
+		}
+
+		@Override
+		public void setValue(Product5 obj, Optional<DecimalNumber> value) {
+			obj.setQuantityLimit(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "UnitOfMeasr")
 	protected UnitOfMeasure6Code unitOfMeasure;
 	/**
-	 * Unit of measure of the item purchased.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -318,10 +365,10 @@ public class Product5 {
 	 * Product3.mmUnitOfMeasure}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUnitOfMeasure = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Product5, Optional<UnitOfMeasure6Code>> mmUnitOfMeasure = new MMMessageAttribute<Product5, Optional<UnitOfMeasure6Code>>() {
 		{
 			businessElementTrace_lazy = () -> ProductQuantity.mmUnitOfMeasure;
-			componentContext_lazy = () -> Product5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Product5.mmObject();
 			isDerived = false;
 			xmlTag = "UnitOfMeasr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -332,14 +379,25 @@ public class Product5 {
 			minOccurs = 0;
 			simpleType_lazy = () -> UnitOfMeasure6Code.mmObject();
 		}
+
+		@Override
+		public Optional<UnitOfMeasure6Code> getValue(Product5 obj) {
+			return obj.getUnitOfMeasure();
+		}
+
+		@Override
+		public void setValue(Product5 obj, Optional<UnitOfMeasure6Code> value) {
+			obj.setUnitOfMeasure(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Product5.mmProductCode, Product5.mmAdditionalProductCode, Product5.mmAmountLimit, Product5.mmQuantityLimit, Product5.mmUnitOfMeasure);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Product5.mmProductCode, com.tools20022.repository.msg.Product5.mmAdditionalProductCode, com.tools20022.repository.msg.Product5.mmAmountLimit,
+						com.tools20022.repository.msg.Product5.mmQuantityLimit, com.tools20022.repository.msg.Product5.mmUnitOfMeasure);
 				trace_lazy = () -> Product.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Product5";
 				definition = "Product to purchase.";
@@ -349,48 +407,48 @@ public class Product5 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PdctCd", required = true)
 	public Max70Text getProductCode() {
 		return productCode;
 	}
 
-	public void setProductCode(Max70Text productCode) {
-		this.productCode = productCode;
+	public Product5 setProductCode(Max70Text productCode) {
+		this.productCode = Objects.requireNonNull(productCode);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlPdctCd")
-	public Max70Text getAdditionalProductCode() {
-		return additionalProductCode;
+	public Optional<Max70Text> getAdditionalProductCode() {
+		return additionalProductCode == null ? Optional.empty() : Optional.of(additionalProductCode);
 	}
 
-	public void setAdditionalProductCode(Max70Text additionalProductCode) {
+	public Product5 setAdditionalProductCode(Max70Text additionalProductCode) {
 		this.additionalProductCode = additionalProductCode;
+		return this;
 	}
 
-	@XmlElement(name = "AmtLmt")
-	public ImpliedCurrencyAndAmount getAmountLimit() {
-		return amountLimit;
+	public Optional<ImpliedCurrencyAndAmount> getAmountLimit() {
+		return amountLimit == null ? Optional.empty() : Optional.of(amountLimit);
 	}
 
-	public void setAmountLimit(ImpliedCurrencyAndAmount amountLimit) {
+	public Product5 setAmountLimit(ImpliedCurrencyAndAmount amountLimit) {
 		this.amountLimit = amountLimit;
+		return this;
 	}
 
-	@XmlElement(name = "QtyLmt")
-	public DecimalNumber getQuantityLimit() {
-		return quantityLimit;
+	public Optional<DecimalNumber> getQuantityLimit() {
+		return quantityLimit == null ? Optional.empty() : Optional.of(quantityLimit);
 	}
 
-	public void setQuantityLimit(DecimalNumber quantityLimit) {
+	public Product5 setQuantityLimit(DecimalNumber quantityLimit) {
 		this.quantityLimit = quantityLimit;
+		return this;
 	}
 
-	@XmlElement(name = "UnitOfMeasr")
-	public UnitOfMeasure6Code getUnitOfMeasure() {
-		return unitOfMeasure;
+	public Optional<UnitOfMeasure6Code> getUnitOfMeasure() {
+		return unitOfMeasure == null ? Optional.empty() : Optional.of(unitOfMeasure);
 	}
 
-	public void setUnitOfMeasure(UnitOfMeasure6Code unitOfMeasure) {
+	public Product5 setUnitOfMeasure(UnitOfMeasure6Code unitOfMeasure) {
 		this.unitOfMeasure = unitOfMeasure;
+		return this;
 	}
 }

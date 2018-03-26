@@ -33,6 +33,8 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.other.SignatureEnvelope;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -96,8 +98,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -106,21 +108,21 @@ import javax.xml.bind.annotation.XmlType;
  * "BusinessApplicationHeader1"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Specifies the Business Application Header of the Business Message.\r\nCan be used when replying to a query;  can also be used when canceling or amending."
+ * "Specifies the Business Application Header of the Business Message.\r\nCan be used when replying to a query; can also be used when canceling or amending."
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "BusinessApplicationHeader1", propOrder = {"characterSet", "from", "to", "businessMessageIdentifier", "messageDefinitionIdentifier", "businessService", "creationDate", "copyDuplicate", "possibleDuplicate", "priority",
 		"signature"})
 public class BusinessApplicationHeader1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CharSet")
 	protected UnicodeChartsCode characterSet;
 	/**
-	 * Contains the character set of the text-based elements used in the
-	 * Business Message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,9 +150,9 @@ public class BusinessApplicationHeader1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCharacterSet = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BusinessApplicationHeader1, Optional<UnicodeChartsCode>> mmCharacterSet = new MMMessageAttribute<BusinessApplicationHeader1, Optional<UnicodeChartsCode>>() {
 		{
-			componentContext_lazy = () -> BusinessApplicationHeader1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BusinessApplicationHeader1.mmObject();
 			isDerived = false;
 			xmlTag = "CharSet";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -160,16 +162,22 @@ public class BusinessApplicationHeader1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> UnicodeChartsCode.mmObject();
 		}
+
+		@Override
+		public Optional<UnicodeChartsCode> getValue(BusinessApplicationHeader1 obj) {
+			return obj.getCharacterSet();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeader1 obj, Optional<UnicodeChartsCode> value) {
+			obj.setCharacterSet(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Fr", required = true)
 	protected Party9Choice from;
 	/**
-	 * The sending MessagingEndpoint that has created this Business Message for
-	 * the receiving MessagingEndpoint that will process this Business Message.<br>
-	 * <br>
-	 * Note the sending MessagingEndpoint might be different from the sending
-	 * address potentially contained in the transport header (as defined in the
-	 * transport layer).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -195,9 +203,9 @@ public class BusinessApplicationHeader1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmFrom = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BusinessApplicationHeader1, Party9Choice> mmFrom = new MMMessageAssociationEnd<BusinessApplicationHeader1, Party9Choice>() {
 		{
-			componentContext_lazy = () -> BusinessApplicationHeader1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BusinessApplicationHeader1.mmObject();
 			isDerived = false;
 			xmlTag = "Fr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -208,16 +216,22 @@ public class BusinessApplicationHeader1 {
 			isComposite = true;
 			type_lazy = () -> Party9Choice.mmObject();
 		}
+
+		@Override
+		public Party9Choice getValue(BusinessApplicationHeader1 obj) {
+			return obj.getFrom();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeader1 obj, Party9Choice value) {
+			obj.setFrom(value);
+		}
 	};
+	@XmlElement(name = "To", required = true)
 	protected Party9Choice to;
 	/**
-	 * The MessagingEndpoint designated by the sending MessagingEndpoint to be
-	 * the recipient who will ultimately process this Business Message.<br>
-	 * <br>
-	 * Note the receiving MessagingEndpoint might be different from the
-	 * receiving address potentially contained in the transport header (as
-	 * defined in the transport layer).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -243,9 +257,9 @@ public class BusinessApplicationHeader1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTo = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BusinessApplicationHeader1, Party9Choice> mmTo = new MMMessageAssociationEnd<BusinessApplicationHeader1, Party9Choice>() {
 		{
-			componentContext_lazy = () -> BusinessApplicationHeader1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BusinessApplicationHeader1.mmObject();
 			isDerived = false;
 			xmlTag = "To";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -256,12 +270,22 @@ public class BusinessApplicationHeader1 {
 			isComposite = true;
 			type_lazy = () -> Party9Choice.mmObject();
 		}
+
+		@Override
+		public Party9Choice getValue(BusinessApplicationHeader1 obj) {
+			return obj.getTo();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeader1 obj, Party9Choice value) {
+			obj.setTo(value);
+		}
 	};
+	@XmlElement(name = "BizMsgIdr", required = true)
 	protected Max35Text businessMessageIdentifier;
 	/**
-	 * Unambiguously identifies the Business Message to the MessagingEndpoint
-	 * that has created the Business Message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -288,9 +312,9 @@ public class BusinessApplicationHeader1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBusinessMessageIdentifier = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BusinessApplicationHeader1, Max35Text> mmBusinessMessageIdentifier = new MMMessageAttribute<BusinessApplicationHeader1, Max35Text>() {
 		{
-			componentContext_lazy = () -> BusinessApplicationHeader1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BusinessApplicationHeader1.mmObject();
 			isDerived = false;
 			xmlTag = "BizMsgIdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -300,14 +324,22 @@ public class BusinessApplicationHeader1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(BusinessApplicationHeader1 obj) {
+			return obj.getBusinessMessageIdentifier();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeader1 obj, Max35Text value) {
+			obj.setBusinessMessageIdentifier(value);
+		}
 	};
+	@XmlElement(name = "MsgDefIdr", required = true)
 	protected Max35Text messageDefinitionIdentifier;
 	/**
-	 * Contains the MessageIdentifier that defines the BusinessMessage.<br>
-	 * It must contain a MessageIdentifier published on the ISO 20022 website.<br>
-	 * <br>
-	 * example camt.001.001.03
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -330,31 +362,38 @@ public class BusinessApplicationHeader1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Contains the MessageIdentifier that defines the BusinessMessage.\r\nIt must contain a MessageIdentifier published on the ISO 20022 website.\r\n\r\nexample\tcamt.001.001.03"
+	 * "Contains the MessageIdentifier that defines the BusinessMessage.\r\nIt must contain a MessageIdentifier published on the ISO 20022 website.\r\n\r\nexample\tcamt.001.001.03."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMessageDefinitionIdentifier = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BusinessApplicationHeader1, Max35Text> mmMessageDefinitionIdentifier = new MMMessageAttribute<BusinessApplicationHeader1, Max35Text>() {
 		{
-			componentContext_lazy = () -> BusinessApplicationHeader1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BusinessApplicationHeader1.mmObject();
 			isDerived = false;
 			xmlTag = "MsgDefIdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MessageDefinitionIdentifier";
-			definition = "Contains the MessageIdentifier that defines the BusinessMessage.\r\nIt must contain a MessageIdentifier published on the ISO 20022 website.\r\n\r\nexample\tcamt.001.001.03";
+			definition = "Contains the MessageIdentifier that defines the BusinessMessage.\r\nIt must contain a MessageIdentifier published on the ISO 20022 website.\r\n\r\nexample\tcamt.001.001.03.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(BusinessApplicationHeader1 obj) {
+			return obj.getMessageDefinitionIdentifier();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeader1 obj, Max35Text value) {
+			obj.setMessageDefinitionIdentifier(value);
+		}
 	};
+	@XmlElement(name = "BizSvc")
 	protected Max35Text businessService;
 	/**
-	 * Specifies the business service agreed between the two MessagingEndpoints
-	 * under which rules this Business Message is exchanged.<br>
-	 * To be used when there is a choice of processing services or processing
-	 * service levels.<br>
-	 * Example: E&amp;I
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -377,28 +416,38 @@ public class BusinessApplicationHeader1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Specifies the business service agreed between the two MessagingEndpoints under which rules this Business Message is exchanged.\r\n To be used when there is a choice of processing services or processing service levels.\r\nExample: E&amp;I"
+	 * "Specifies the business service agreed between the two MessagingEndpoints under which rules this Business Message is exchanged.\r\n To be used when there is a choice of processing services or processing service levels.\r\nExample: E&amp;I."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmBusinessService = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BusinessApplicationHeader1, Optional<Max35Text>> mmBusinessService = new MMMessageAttribute<BusinessApplicationHeader1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> BusinessApplicationHeader1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BusinessApplicationHeader1.mmObject();
 			isDerived = false;
 			xmlTag = "BizSvc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BusinessService";
-			definition = "Specifies the business service agreed between the two MessagingEndpoints under which rules this Business Message is exchanged.\r\n To be used when there is a choice of processing services or processing service levels.\r\nExample: E&I";
+			definition = "Specifies the business service agreed between the two MessagingEndpoints under which rules this Business Message is exchanged.\r\n To be used when there is a choice of processing services or processing service levels.\r\nExample: E&I.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(BusinessApplicationHeader1 obj) {
+			return obj.getBusinessService();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeader1 obj, Optional<Max35Text> value) {
+			obj.setBusinessService(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CreDt", required = true)
 	protected ISONormalisedDateTime creationDate;
 	/**
-	 * Date and time when this Business Message (header) was created.<br>
-	 * Note Times must be normalized, using the "Z" annotation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -422,28 +471,38 @@ public class BusinessApplicationHeader1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Date and time when this Business Message (header) was created.\r\nNote    Times must be normalized, using the \"Z\" annotation."
+	 * "Date and time when this Business Message (header) was created.\r\nNote Times must be normalized, using the \"Z\" annotation."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCreationDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BusinessApplicationHeader1, ISONormalisedDateTime> mmCreationDate = new MMMessageAttribute<BusinessApplicationHeader1, ISONormalisedDateTime>() {
 		{
-			componentContext_lazy = () -> BusinessApplicationHeader1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BusinessApplicationHeader1.mmObject();
 			isDerived = false;
 			xmlTag = "CreDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CreationDate";
-			definition = "Date and time when this Business Message (header) was created.\r\nNote    Times must be normalized, using the \"Z\" annotation.";
+			definition = "Date and time when this Business Message (header) was created.\r\nNote Times must be normalized, using the \"Z\" annotation.";
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ISONormalisedDateTime.mmObject();
 		}
+
+		@Override
+		public ISONormalisedDateTime getValue(BusinessApplicationHeader1 obj) {
+			return obj.getCreationDate();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeader1 obj, ISONormalisedDateTime value) {
+			obj.setCreationDate(value);
+		}
 	};
+	@XmlElement(name = "CpyDplct")
 	protected CopyDuplicate1Code copyDuplicate;
 	/**
-	 * Indicates whether the message is a Copy, a Duplicate or a copy of a
-	 * duplicate of a previously sent ISO 20022 Message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -471,9 +530,9 @@ public class BusinessApplicationHeader1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCopyDuplicate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BusinessApplicationHeader1, Optional<CopyDuplicate1Code>> mmCopyDuplicate = new MMMessageAttribute<BusinessApplicationHeader1, Optional<CopyDuplicate1Code>>() {
 		{
-			componentContext_lazy = () -> BusinessApplicationHeader1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BusinessApplicationHeader1.mmObject();
 			isDerived = false;
 			xmlTag = "CpyDplct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -483,23 +542,22 @@ public class BusinessApplicationHeader1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> CopyDuplicate1Code.mmObject();
 		}
+
+		@Override
+		public Optional<CopyDuplicate1Code> getValue(BusinessApplicationHeader1 obj) {
+			return obj.getCopyDuplicate();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeader1 obj, Optional<CopyDuplicate1Code> value) {
+			obj.setCopyDuplicate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PssblDplct")
 	protected YesNoIndicator possibleDuplicate;
 	/**
-	 * Flag indicating if the Business Message exchanged between the
-	 * MessagingEndpoints is possibly a duplicate. <br>
-	 * If the receiving MessagingEndpoint did not receive the original, then
-	 * this Business Message should be processed as if it were the original. <br>
-	 * <br>
-	 * If the receiving MessagingEndpoint did receive the original, then it
-	 * should perform necessary actions to avoid processing this Business
-	 * Message again.<br>
-	 * <br>
-	 * This will guarantee business idempotent behaviour.<br>
-	 * <br>
-	 * NOTE: this is named "PossResend" in FIX - this is an application level
-	 * resend not a network level retransmission
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -523,28 +581,38 @@ public class BusinessApplicationHeader1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Flag indicating if the Business Message exchanged between the MessagingEndpoints is possibly a duplicate. \r\nIf the receiving MessagingEndpoint  did not receive the original, then this Business Message should be processed as if it were the original. \r\n\r\nIf the receiving MessagingEndpoint did receive the original, then it should perform necessary actions to avoid processing this Business Message again.\r\n\r\nThis will guarantee business idempotent behaviour.\r\n\r\nNOTE: this is named \"PossResend\" in FIX - this is an application level resend not a network level retransmission"
+	 * "Flag indicating if the Business Message exchanged between the MessagingEndpoints is possibly a duplicate. \r\nIf the receiving MessagingEndpoint did not receive the original, then this Business Message should be processed as if it were the original. \r\n\r\nIf the receiving MessagingEndpoint did receive the original, then it should perform necessary actions to avoid processing this Business Message again.\r\n\r\nThis will guarantee business idempotent behaviour.\r\n\r\nNOTE: this is named \"PossResend\" in FIX - this is an application level resend not a network level retransmission."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPossibleDuplicate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BusinessApplicationHeader1, Optional<YesNoIndicator>> mmPossibleDuplicate = new MMMessageAttribute<BusinessApplicationHeader1, Optional<YesNoIndicator>>() {
 		{
-			componentContext_lazy = () -> BusinessApplicationHeader1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BusinessApplicationHeader1.mmObject();
 			isDerived = false;
 			xmlTag = "PssblDplct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PossibleDuplicate";
-			definition = "Flag indicating if the Business Message exchanged between the MessagingEndpoints is possibly a duplicate. \r\nIf the receiving MessagingEndpoint  did not receive the original, then this Business Message should be processed as if it were the original. \r\n\r\nIf the receiving MessagingEndpoint did receive the original, then it should perform necessary actions to avoid processing this Business Message again.\r\n\r\nThis will guarantee business idempotent behaviour.\r\n\r\nNOTE: this is named \"PossResend\" in FIX - this is an application level resend not a network level retransmission";
+			definition = "Flag indicating if the Business Message exchanged between the MessagingEndpoints is possibly a duplicate. \r\nIf the receiving MessagingEndpoint did not receive the original, then this Business Message should be processed as if it were the original. \r\n\r\nIf the receiving MessagingEndpoint did receive the original, then it should perform necessary actions to avoid processing this Business Message again.\r\n\r\nThis will guarantee business idempotent behaviour.\r\n\r\nNOTE: this is named \"PossResend\" in FIX - this is an application level resend not a network level retransmission.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<YesNoIndicator> getValue(BusinessApplicationHeader1 obj) {
+			return obj.getPossibleDuplicate();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeader1 obj, Optional<YesNoIndicator> value) {
+			obj.setPossibleDuplicate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Prty")
 	protected BusinessMessagePriorityCode priority;
 	/**
-	 * Relative indication of the processing precedence of the message over a
-	 * (set of) Business Messages with assigned priorities.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -572,9 +640,9 @@ public class BusinessApplicationHeader1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPriority = new MMMessageAttribute() {
+	public static final MMMessageAttribute<BusinessApplicationHeader1, Optional<BusinessMessagePriorityCode>> mmPriority = new MMMessageAttribute<BusinessApplicationHeader1, Optional<BusinessMessagePriorityCode>>() {
 		{
-			componentContext_lazy = () -> BusinessApplicationHeader1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BusinessApplicationHeader1.mmObject();
 			isDerived = false;
 			xmlTag = "Prty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -584,12 +652,22 @@ public class BusinessApplicationHeader1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> BusinessMessagePriorityCode.mmObject();
 		}
+
+		@Override
+		public Optional<BusinessMessagePriorityCode> getValue(BusinessApplicationHeader1 obj) {
+			return obj.getPriority();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeader1 obj, Optional<BusinessMessagePriorityCode> value) {
+			obj.setPriority(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Sgntr")
 	protected SignatureEnvelope signature;
 	/**
-	 * Contains the digital signature of the Business Entity authorised to sign
-	 * this Business Message.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -615,9 +693,9 @@ public class BusinessApplicationHeader1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSignature = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<BusinessApplicationHeader1, Optional<SignatureEnvelope>> mmSignature = new MMMessageAssociationEnd<BusinessApplicationHeader1, Optional<SignatureEnvelope>>() {
 		{
-			componentContext_lazy = () -> BusinessApplicationHeader1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.BusinessApplicationHeader1.mmObject();
 			isDerived = false;
 			xmlTag = "Sgntr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -628,120 +706,133 @@ public class BusinessApplicationHeader1 {
 			isComposite = true;
 			type_lazy = () -> SignatureEnvelope.mmObject();
 		}
+
+		@Override
+		public Optional<SignatureEnvelope> getValue(BusinessApplicationHeader1 obj) {
+			return obj.getSignature();
+		}
+
+		@Override
+		public void setValue(BusinessApplicationHeader1 obj, Optional<SignatureEnvelope> value) {
+			obj.setSignature(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(BusinessApplicationHeader1.mmCharacterSet, BusinessApplicationHeader1.mmFrom, BusinessApplicationHeader1.mmTo, BusinessApplicationHeader1.mmBusinessMessageIdentifier,
-						BusinessApplicationHeader1.mmMessageDefinitionIdentifier, BusinessApplicationHeader1.mmBusinessService, BusinessApplicationHeader1.mmCreationDate, BusinessApplicationHeader1.mmCopyDuplicate,
-						BusinessApplicationHeader1.mmPossibleDuplicate, BusinessApplicationHeader1.mmPriority, BusinessApplicationHeader1.mmSignature);
+				messageElement_lazy = () -> Arrays
+						.asList(com.tools20022.repository.msg.BusinessApplicationHeader1.mmCharacterSet, com.tools20022.repository.msg.BusinessApplicationHeader1.mmFrom, com.tools20022.repository.msg.BusinessApplicationHeader1.mmTo,
+								com.tools20022.repository.msg.BusinessApplicationHeader1.mmBusinessMessageIdentifier, com.tools20022.repository.msg.BusinessApplicationHeader1.mmMessageDefinitionIdentifier,
+								com.tools20022.repository.msg.BusinessApplicationHeader1.mmBusinessService, com.tools20022.repository.msg.BusinessApplicationHeader1.mmCreationDate,
+								com.tools20022.repository.msg.BusinessApplicationHeader1.mmCopyDuplicate, com.tools20022.repository.msg.BusinessApplicationHeader1.mmPossibleDuplicate,
+								com.tools20022.repository.msg.BusinessApplicationHeader1.mmPriority, com.tools20022.repository.msg.BusinessApplicationHeader1.mmSignature);
 				messageBuildingBlock_lazy = () -> Arrays.asList(BusinessApplicationHeaderV01.mmRelated);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BusinessApplicationHeader1";
-				definition = "Specifies the Business Application Header of the Business Message.\r\nCan be used when replying to a query;  can also be used when canceling or amending.";
+				definition = "Specifies the Business Application Header of the Business Message.\r\nCan be used when replying to a query; can also be used when canceling or amending.";
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CharSet")
-	public UnicodeChartsCode getCharacterSet() {
-		return characterSet;
+	public Optional<UnicodeChartsCode> getCharacterSet() {
+		return characterSet == null ? Optional.empty() : Optional.of(characterSet);
 	}
 
-	public void setCharacterSet(UnicodeChartsCode characterSet) {
+	public BusinessApplicationHeader1 setCharacterSet(UnicodeChartsCode characterSet) {
 		this.characterSet = characterSet;
+		return this;
 	}
 
-	@XmlElement(name = "Fr", required = true)
 	public Party9Choice getFrom() {
 		return from;
 	}
 
-	public void setFrom(Party9Choice from) {
-		this.from = from;
+	public BusinessApplicationHeader1 setFrom(Party9Choice from) {
+		this.from = Objects.requireNonNull(from);
+		return this;
 	}
 
-	@XmlElement(name = "To", required = true)
 	public Party9Choice getTo() {
 		return to;
 	}
 
-	public void setTo(Party9Choice to) {
-		this.to = to;
+	public BusinessApplicationHeader1 setTo(Party9Choice to) {
+		this.to = Objects.requireNonNull(to);
+		return this;
 	}
 
-	@XmlElement(name = "BizMsgIdr", required = true)
 	public Max35Text getBusinessMessageIdentifier() {
 		return businessMessageIdentifier;
 	}
 
-	public void setBusinessMessageIdentifier(Max35Text businessMessageIdentifier) {
-		this.businessMessageIdentifier = businessMessageIdentifier;
+	public BusinessApplicationHeader1 setBusinessMessageIdentifier(Max35Text businessMessageIdentifier) {
+		this.businessMessageIdentifier = Objects.requireNonNull(businessMessageIdentifier);
+		return this;
 	}
 
-	@XmlElement(name = "MsgDefIdr", required = true)
 	public Max35Text getMessageDefinitionIdentifier() {
 		return messageDefinitionIdentifier;
 	}
 
-	public void setMessageDefinitionIdentifier(Max35Text messageDefinitionIdentifier) {
-		this.messageDefinitionIdentifier = messageDefinitionIdentifier;
+	public BusinessApplicationHeader1 setMessageDefinitionIdentifier(Max35Text messageDefinitionIdentifier) {
+		this.messageDefinitionIdentifier = Objects.requireNonNull(messageDefinitionIdentifier);
+		return this;
 	}
 
-	@XmlElement(name = "BizSvc")
-	public Max35Text getBusinessService() {
-		return businessService;
+	public Optional<Max35Text> getBusinessService() {
+		return businessService == null ? Optional.empty() : Optional.of(businessService);
 	}
 
-	public void setBusinessService(Max35Text businessService) {
+	public BusinessApplicationHeader1 setBusinessService(Max35Text businessService) {
 		this.businessService = businessService;
+		return this;
 	}
 
-	@XmlElement(name = "CreDt", required = true)
 	public ISONormalisedDateTime getCreationDate() {
 		return creationDate;
 	}
 
-	public void setCreationDate(ISONormalisedDateTime creationDate) {
-		this.creationDate = creationDate;
+	public BusinessApplicationHeader1 setCreationDate(ISONormalisedDateTime creationDate) {
+		this.creationDate = Objects.requireNonNull(creationDate);
+		return this;
 	}
 
-	@XmlElement(name = "CpyDplct")
-	public CopyDuplicate1Code getCopyDuplicate() {
-		return copyDuplicate;
+	public Optional<CopyDuplicate1Code> getCopyDuplicate() {
+		return copyDuplicate == null ? Optional.empty() : Optional.of(copyDuplicate);
 	}
 
-	public void setCopyDuplicate(CopyDuplicate1Code copyDuplicate) {
+	public BusinessApplicationHeader1 setCopyDuplicate(CopyDuplicate1Code copyDuplicate) {
 		this.copyDuplicate = copyDuplicate;
+		return this;
 	}
 
-	@XmlElement(name = "PssblDplct")
-	public YesNoIndicator getPossibleDuplicate() {
-		return possibleDuplicate;
+	public Optional<YesNoIndicator> getPossibleDuplicate() {
+		return possibleDuplicate == null ? Optional.empty() : Optional.of(possibleDuplicate);
 	}
 
-	public void setPossibleDuplicate(YesNoIndicator possibleDuplicate) {
+	public BusinessApplicationHeader1 setPossibleDuplicate(YesNoIndicator possibleDuplicate) {
 		this.possibleDuplicate = possibleDuplicate;
+		return this;
 	}
 
-	@XmlElement(name = "Prty")
-	public BusinessMessagePriorityCode getPriority() {
-		return priority;
+	public Optional<BusinessMessagePriorityCode> getPriority() {
+		return priority == null ? Optional.empty() : Optional.of(priority);
 	}
 
-	public void setPriority(BusinessMessagePriorityCode priority) {
+	public BusinessApplicationHeader1 setPriority(BusinessMessagePriorityCode priority) {
 		this.priority = priority;
+		return this;
 	}
 
-	@XmlElement(name = "Sgntr")
-	public SignatureEnvelope getSignature() {
-		return signature;
+	public Optional<SignatureEnvelope> getSignature() {
+		return signature == null ? Optional.empty() : Optional.of(signature);
 	}
 
-	public void setSignature(SignatureEnvelope signature) {
+	public BusinessApplicationHeader1 setSignature(SignatureEnvelope signature) {
 		this.signature = signature;
+		return this;
 	}
 }

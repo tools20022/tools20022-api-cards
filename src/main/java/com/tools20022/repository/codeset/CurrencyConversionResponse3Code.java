@@ -38,31 +38,31 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponse3Code#Allowed
- * CurrencyConversionResponse3Code.mmAllowed}</li>
+ * CurrencyConversionResponse3Code.Allowed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponse3Code#Assumed
- * CurrencyConversionResponse3Code.mmAssumed}</li>
+ * CurrencyConversionResponse3Code.Assumed}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponse3Code#InvalidCard
- * CurrencyConversionResponse3Code.mmInvalidCard}</li>
+ * CurrencyConversionResponse3Code.InvalidCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponse3Code#InvalidMerchant
- * CurrencyConversionResponse3Code.mmInvalidMerchant}</li>
+ * CurrencyConversionResponse3Code.InvalidMerchant}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponse3Code#InvalidProduct
- * CurrencyConversionResponse3Code.mmInvalidProduct}</li>
+ * CurrencyConversionResponse3Code.InvalidProduct}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponse3Code#NoRate
- * CurrencyConversionResponse3Code.mmNoRate}</li>
+ * CurrencyConversionResponse3Code.NoRate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponse3Code#NotAvailable
- * CurrencyConversionResponse3Code.mmNotAvailable}</li>
+ * CurrencyConversionResponse3Code.NotAvailable}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponse3Code#Restriction
- * CurrencyConversionResponse3Code.mmRestriction}</li>
+ * CurrencyConversionResponse3Code.Restriction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CurrencyConversionResponse3Code#Catalogue
- * CurrencyConversionResponse3Code.mmCatalogue}</li>
+ * CurrencyConversionResponse3Code.Catalogue}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -71,8 +71,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -311,7 +311,7 @@ public class CurrencyConversionResponse3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CurrencyConversionResponse3Code";
 				definition = "Result of a requested currency conversion.";

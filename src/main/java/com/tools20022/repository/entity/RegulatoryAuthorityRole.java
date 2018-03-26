@@ -21,10 +21,14 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Country;
+import com.tools20022.repository.entity.RegulatoryReport;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Entity requiring the regulatory reporting information.
@@ -64,8 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -81,8 +85,8 @@ public class RegulatoryAuthorityRole extends Role {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected RegulatoryReport regulatoryReport;
 	/**
-	 * Report which was requested by the regulatory authority.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,7 +117,7 @@ public class RegulatoryAuthorityRole extends Role {
 	 * definition} = "Report which was requested by the regulatory authority."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRegulatoryReport = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegulatoryAuthorityRole, Optional<RegulatoryReport>> mmRegulatoryReport = new MMBusinessAssociationEnd<RegulatoryAuthorityRole, Optional<RegulatoryReport>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryAuthorityRole.mmObject();
@@ -126,11 +130,21 @@ public class RegulatoryAuthorityRole extends Role {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.RegulatoryReport.mmObject();
 		}
+
+		@Override
+		public Optional<RegulatoryReport> getValue(RegulatoryAuthorityRole obj) {
+			return obj.getRegulatoryReport();
+		}
+
+		@Override
+		public void setValue(RegulatoryAuthorityRole obj, Optional<RegulatoryReport> value) {
+			obj.setRegulatoryReport(value.orElse(null));
+		}
 	};
 	protected Country country;
 	/**
-	 * Country for which the regulatory authority operates.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -160,7 +174,7 @@ public class RegulatoryAuthorityRole extends Role {
 	 * definition} = "Country for which the regulatory authority operates."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCountry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RegulatoryAuthorityRole, com.tools20022.repository.entity.Country> mmCountry = new MMBusinessAssociationEnd<RegulatoryAuthorityRole, com.tools20022.repository.entity.Country>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RegulatoryAuthorityRole.mmObject();
@@ -173,12 +187,22 @@ public class RegulatoryAuthorityRole extends Role {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.Country getValue(RegulatoryAuthorityRole obj) {
+			return obj.getCountry();
+		}
+
+		@Override
+		public void setValue(RegulatoryAuthorityRole obj, com.tools20022.repository.entity.Country value) {
+			obj.setCountry(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RegulatoryAuthorityRole";
 				definition = "Entity requiring the regulatory reporting information.";
@@ -195,19 +219,21 @@ public class RegulatoryAuthorityRole extends Role {
 		return mmObject_lazy.get();
 	}
 
-	public RegulatoryReport getRegulatoryReport() {
-		return regulatoryReport;
+	public Optional<RegulatoryReport> getRegulatoryReport() {
+		return regulatoryReport == null ? Optional.empty() : Optional.of(regulatoryReport);
 	}
 
-	public void setRegulatoryReport(com.tools20022.repository.entity.RegulatoryReport regulatoryReport) {
+	public RegulatoryAuthorityRole setRegulatoryReport(com.tools20022.repository.entity.RegulatoryReport regulatoryReport) {
 		this.regulatoryReport = regulatoryReport;
+		return this;
 	}
 
 	public Country getCountry() {
 		return country;
 	}
 
-	public void setCountry(com.tools20022.repository.entity.Country country) {
-		this.country = country;
+	public RegulatoryAuthorityRole setCountry(com.tools20022.repository.entity.Country country) {
+		this.country = Objects.requireNonNull(country);
+		return this;
 	}
 }

@@ -19,12 +19,16 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.CashEntry;
+import com.tools20022.repository.entity.CashSettlement;
 import com.tools20022.repository.entity.CreditInstrument;
+import com.tools20022.repository.entity.FundsCashFlow;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Movement of cash between two accounts. One account is debited and the other
@@ -87,8 +91,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -106,10 +110,8 @@ public class BookEntry extends CreditInstrument {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.CashEntry> cashEntry;
 	/**
-	 * Specifies the amount transferred on the account. An account entry may
-	 * result in several cash entries for instance net amount (credited) and
-	 * charges (debited).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -141,7 +143,7 @@ public class BookEntry extends CreditInstrument {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashEntry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BookEntry, List<CashEntry>> mmCashEntry = new MMBusinessAssociationEnd<BookEntry, List<CashEntry>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
@@ -153,11 +155,21 @@ public class BookEntry extends CreditInstrument {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 		}
+
+		@Override
+		public List<CashEntry> getValue(BookEntry obj) {
+			return obj.getCashEntry();
+		}
+
+		@Override
+		public void setValue(BookEntry obj, List<CashEntry> value) {
+			obj.setCashEntry(value);
+		}
 	};
 	protected List<com.tools20022.repository.entity.CashEntry> debitEntry;
 	/**
-	 * Specifies the debit entry resuling from a settlement instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -188,7 +200,7 @@ public class BookEntry extends CreditInstrument {
 	 * "Specifies the debit entry resuling from a settlement instruction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDebitEntry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BookEntry, List<CashEntry>> mmDebitEntry = new MMBusinessAssociationEnd<BookEntry, List<CashEntry>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
@@ -200,11 +212,21 @@ public class BookEntry extends CreditInstrument {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 		}
+
+		@Override
+		public List<CashEntry> getValue(BookEntry obj) {
+			return obj.getDebitEntry();
+		}
+
+		@Override
+		public void setValue(BookEntry obj, List<CashEntry> value) {
+			obj.setDebitEntry(value);
+		}
 	};
 	protected List<com.tools20022.repository.entity.CashEntry> creditEntry;
 	/**
-	 * Specifies the credit entry resuling from a settlement instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -235,7 +257,7 @@ public class BookEntry extends CreditInstrument {
 	 * "Specifies the credit entry resuling from a settlement instruction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCreditEntry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BookEntry, List<CashEntry>> mmCreditEntry = new MMBusinessAssociationEnd<BookEntry, List<CashEntry>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
@@ -247,13 +269,21 @@ public class BookEntry extends CreditInstrument {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
 		}
+
+		@Override
+		public List<CashEntry> getValue(BookEntry obj) {
+			return obj.getCreditEntry();
+		}
+
+		@Override
+		public void setValue(BookEntry obj, List<CashEntry> value) {
+			obj.setCreditEntry(value);
+		}
 	};
 	protected YesNoIndicator transferAdvice;
 	/**
-	 * Indicates that when an amount of money has been transferred in the books
-	 * of the account servicer, an advice should be sent back to the account
-	 * owner.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -278,7 +308,7 @@ public class BookEntry extends CreditInstrument {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTransferAdvice = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<BookEntry, YesNoIndicator> mmTransferAdvice = new MMBusinessAttribute<BookEntry, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
@@ -290,18 +320,20 @@ public class BookEntry extends CreditInstrument {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return BookEntry.class.getMethod("getTransferAdvice", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(BookEntry obj) {
+			return obj.getTransferAdvice();
+		}
+
+		@Override
+		public void setValue(BookEntry obj, YesNoIndicator value) {
+			obj.setTransferAdvice(value);
 		}
 	};
 	protected FundsCashFlow fundSubscriptionCashInFlow;
 	/**
-	 * Amount of money received from investors as a result of a subscription.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -332,7 +364,7 @@ public class BookEntry extends CreditInstrument {
 	 * "Amount of money received from investors as a result of a subscription."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmFundSubscriptionCashInFlow = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BookEntry, FundsCashFlow> mmFundSubscriptionCashInFlow = new MMBusinessAssociationEnd<BookEntry, FundsCashFlow>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
@@ -341,15 +373,25 @@ public class BookEntry extends CreditInstrument {
 			definition = "Amount of money received from investors as a result of a subscription.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmFundSubscriptionAccountEntry;
+			opposite_lazy = () -> FundsCashFlow.mmFundSubscriptionAccountEntry;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
+			type_lazy = () -> FundsCashFlow.mmObject();
+		}
+
+		@Override
+		public FundsCashFlow getValue(BookEntry obj) {
+			return obj.getFundSubscriptionCashInFlow();
+		}
+
+		@Override
+		public void setValue(BookEntry obj, FundsCashFlow value) {
+			obj.setFundSubscriptionCashInFlow(value);
 		}
 	};
 	protected FundsCashFlow fundRedemptionCashOutFlow;
 	/**
-	 * Amount of money paid to investors as a result of a redemption.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -380,7 +422,7 @@ public class BookEntry extends CreditInstrument {
 	 * "Amount of money paid to investors as a result of a redemption."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmFundRedemptionCashOutFlow = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BookEntry, FundsCashFlow> mmFundRedemptionCashOutFlow = new MMBusinessAssociationEnd<BookEntry, FundsCashFlow>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
@@ -389,15 +431,25 @@ public class BookEntry extends CreditInstrument {
 			definition = "Amount of money paid to investors as a result of a redemption.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmFundRedemptionAccountEntry;
+			opposite_lazy = () -> FundsCashFlow.mmFundRedemptionAccountEntry;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.FundsCashFlow.mmObject();
+			type_lazy = () -> FundsCashFlow.mmObject();
+		}
+
+		@Override
+		public FundsCashFlow getValue(BookEntry obj) {
+			return obj.getFundRedemptionCashOutFlow();
+		}
+
+		@Override
+		public void setValue(BookEntry obj, FundsCashFlow value) {
+			obj.setFundRedemptionCashOutFlow(value);
 		}
 	};
 	protected CashSettlement relatedSettlementInstruction;
 	/**
-	 * Related settlement instruction wich is the source of the book entry.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -428,7 +480,7 @@ public class BookEntry extends CreditInstrument {
 	 * "Related settlement instruction wich is the source of the book entry."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSettlementInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BookEntry, CashSettlement> mmRelatedSettlementInstruction = new MMBusinessAssociationEnd<BookEntry, CashSettlement>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BookEntry.mmObject();
@@ -437,22 +489,31 @@ public class BookEntry extends CreditInstrument {
 			definition = "Related settlement instruction wich is the source of the book entry.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmBookEntry;
+			opposite_lazy = () -> CashSettlement.mmBookEntry;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
+			type_lazy = () -> CashSettlement.mmObject();
+		}
+
+		@Override
+		public CashSettlement getValue(BookEntry obj) {
+			return obj.getRelatedSettlementInstruction();
+		}
+
+		@Override
+		public void setValue(BookEntry obj, CashSettlement value) {
+			obj.setRelatedSettlementInstruction(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BookEntry";
 				definition = "Movement of cash between two accounts. One account is debited and the other account is credited.";
 				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashEntry.mmRelatedBookEntry, com.tools20022.repository.entity.CashEntry.mmDebitRelatedBookEntry,
-						com.tools20022.repository.entity.CashEntry.mmCreditRelatedBookEntry, com.tools20022.repository.entity.CashSettlement.mmBookEntry, com.tools20022.repository.entity.FundsCashFlow.mmFundSubscriptionAccountEntry,
-						com.tools20022.repository.entity.FundsCashFlow.mmFundRedemptionAccountEntry);
+						com.tools20022.repository.entity.CashEntry.mmCreditRelatedBookEntry, CashSettlement.mmBookEntry, FundsCashFlow.mmFundSubscriptionAccountEntry, FundsCashFlow.mmFundRedemptionAccountEntry);
 				superType_lazy = () -> CreditInstrument.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.BookEntry.mmCashEntry, com.tools20022.repository.entity.BookEntry.mmDebitEntry, com.tools20022.repository.entity.BookEntry.mmCreditEntry,
 						com.tools20022.repository.entity.BookEntry.mmTransferAdvice, com.tools20022.repository.entity.BookEntry.mmFundSubscriptionCashInFlow, com.tools20022.repository.entity.BookEntry.mmFundRedemptionCashOutFlow,
@@ -468,58 +529,65 @@ public class BookEntry extends CreditInstrument {
 	}
 
 	public List<CashEntry> getCashEntry() {
-		return cashEntry;
+		return cashEntry == null ? cashEntry = new ArrayList<>() : cashEntry;
 	}
 
-	public void setCashEntry(List<com.tools20022.repository.entity.CashEntry> cashEntry) {
-		this.cashEntry = cashEntry;
+	public BookEntry setCashEntry(List<com.tools20022.repository.entity.CashEntry> cashEntry) {
+		this.cashEntry = Objects.requireNonNull(cashEntry);
+		return this;
 	}
 
 	public List<CashEntry> getDebitEntry() {
-		return debitEntry;
+		return debitEntry == null ? debitEntry = new ArrayList<>() : debitEntry;
 	}
 
-	public void setDebitEntry(List<com.tools20022.repository.entity.CashEntry> debitEntry) {
-		this.debitEntry = debitEntry;
+	public BookEntry setDebitEntry(List<com.tools20022.repository.entity.CashEntry> debitEntry) {
+		this.debitEntry = Objects.requireNonNull(debitEntry);
+		return this;
 	}
 
 	public List<CashEntry> getCreditEntry() {
-		return creditEntry;
+		return creditEntry == null ? creditEntry = new ArrayList<>() : creditEntry;
 	}
 
-	public void setCreditEntry(List<com.tools20022.repository.entity.CashEntry> creditEntry) {
-		this.creditEntry = creditEntry;
+	public BookEntry setCreditEntry(List<com.tools20022.repository.entity.CashEntry> creditEntry) {
+		this.creditEntry = Objects.requireNonNull(creditEntry);
+		return this;
 	}
 
 	public YesNoIndicator getTransferAdvice() {
 		return transferAdvice;
 	}
 
-	public void setTransferAdvice(YesNoIndicator transferAdvice) {
-		this.transferAdvice = transferAdvice;
+	public BookEntry setTransferAdvice(YesNoIndicator transferAdvice) {
+		this.transferAdvice = Objects.requireNonNull(transferAdvice);
+		return this;
 	}
 
 	public FundsCashFlow getFundSubscriptionCashInFlow() {
 		return fundSubscriptionCashInFlow;
 	}
 
-	public void setFundSubscriptionCashInFlow(com.tools20022.repository.entity.FundsCashFlow fundSubscriptionCashInFlow) {
-		this.fundSubscriptionCashInFlow = fundSubscriptionCashInFlow;
+	public BookEntry setFundSubscriptionCashInFlow(FundsCashFlow fundSubscriptionCashInFlow) {
+		this.fundSubscriptionCashInFlow = Objects.requireNonNull(fundSubscriptionCashInFlow);
+		return this;
 	}
 
 	public FundsCashFlow getFundRedemptionCashOutFlow() {
 		return fundRedemptionCashOutFlow;
 	}
 
-	public void setFundRedemptionCashOutFlow(com.tools20022.repository.entity.FundsCashFlow fundRedemptionCashOutFlow) {
-		this.fundRedemptionCashOutFlow = fundRedemptionCashOutFlow;
+	public BookEntry setFundRedemptionCashOutFlow(FundsCashFlow fundRedemptionCashOutFlow) {
+		this.fundRedemptionCashOutFlow = Objects.requireNonNull(fundRedemptionCashOutFlow);
+		return this;
 	}
 
 	public CashSettlement getRelatedSettlementInstruction() {
 		return relatedSettlementInstruction;
 	}
 
-	public void setRelatedSettlementInstruction(com.tools20022.repository.entity.CashSettlement relatedSettlementInstruction) {
-		this.relatedSettlementInstruction = relatedSettlementInstruction;
+	public BookEntry setRelatedSettlementInstruction(CashSettlement relatedSettlementInstruction) {
+		this.relatedSettlementInstruction = Objects.requireNonNull(relatedSettlementInstruction);
+		return this;
 	}
 }

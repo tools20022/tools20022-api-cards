@@ -20,12 +20,15 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.PaymentTypeCode;
 import com.tools20022.repository.datatype.*;
+import com.tools20022.repository.entity.CurrencyExchange;
 import com.tools20022.repository.entity.Distribution;
+import com.tools20022.repository.entity.SecuritiesAndCashDistribution;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Distribution of cash pay-out.
@@ -97,8 +100,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -112,10 +115,10 @@ import java.util.List;
 public class CashDistribution extends Distribution {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.CurrencyExchange> distributionCurrencyExchangeInformation;
+	protected List<CurrencyExchange> distributionCurrencyExchangeInformation;
 	/**
-	 * Detailed information about the currency exchange in a distribution event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,7 +151,7 @@ public class CashDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDistributionCurrencyExchangeInformation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CashDistribution, List<CurrencyExchange>> mmDistributionCurrencyExchangeInformation = new MMBusinessAssociationEnd<CashDistribution, List<CurrencyExchange>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
@@ -156,15 +159,25 @@ public class CashDistribution extends Distribution {
 			name = "DistributionCurrencyExchangeInformation";
 			definition = "Detailed information about the currency exchange in a distribution event.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmCurrencyExchangeForCashDistribution;
+			opposite_lazy = () -> CurrencyExchange.mmCurrencyExchangeForCashDistribution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
+			type_lazy = () -> CurrencyExchange.mmObject();
+		}
+
+		@Override
+		public List<CurrencyExchange> getValue(CashDistribution obj) {
+			return obj.getDistributionCurrencyExchangeInformation();
+		}
+
+		@Override
+		public void setValue(CashDistribution obj, List<CurrencyExchange> value) {
+			obj.setDistributionCurrencyExchangeInformation(value);
 		}
 	};
 	protected SecuritiesAndCashDistribution securitiesAndCashDistribution;
 	/**
-	 * Distribution for which the cash distribution elements are provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -197,7 +210,7 @@ public class CashDistribution extends Distribution {
 	 * "Distribution for which the cash distribution elements are provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesAndCashDistribution = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CashDistribution, com.tools20022.repository.entity.SecuritiesAndCashDistribution> mmSecuritiesAndCashDistribution = new MMBusinessAssociationEnd<CashDistribution, com.tools20022.repository.entity.SecuritiesAndCashDistribution>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
@@ -210,12 +223,21 @@ public class CashDistribution extends Distribution {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAndCashDistribution.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesAndCashDistribution getValue(CashDistribution obj) {
+			return obj.getSecuritiesAndCashDistribution();
+		}
+
+		@Override
+		public void setValue(CashDistribution obj, com.tools20022.repository.entity.SecuritiesAndCashDistribution value) {
+			obj.setSecuritiesAndCashDistribution(value);
+		}
 	};
 	protected BaseOneRate amortisedRate;
 	/**
-	 * Rate that will be applicable as of the next factor date and defines the
-	 * outstanding principal of the factored security.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -240,7 +262,7 @@ public class CashDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAmortisedRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashDistribution, BaseOneRate> mmAmortisedRate = new MMBusinessAttribute<CashDistribution, BaseOneRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
@@ -252,19 +274,20 @@ public class CashDistribution extends Distribution {
 			simpleType_lazy = () -> BaseOneRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashDistribution.class.getMethod("getAmortisedRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BaseOneRate getValue(CashDistribution obj) {
+			return obj.getAmortisedRate();
+		}
+
+		@Override
+		public void setValue(CashDistribution obj, BaseOneRate value) {
+			obj.setAmortisedRate(value);
 		}
 	};
 	protected PercentageRate rate;
 	/**
-	 * Amount of cash, expressed as a percentage, disbursed per financial
-	 * instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -290,7 +313,7 @@ public class CashDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashDistribution, PercentageRate> mmRate = new MMBusinessAttribute<CashDistribution, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
@@ -302,18 +325,20 @@ public class CashDistribution extends Distribution {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashDistribution.class.getMethod("getRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(CashDistribution obj) {
+			return obj.getRate();
+		}
+
+		@Override
+		public void setValue(CashDistribution obj, PercentageRate value) {
+			obj.setRate(value);
 		}
 	};
 	protected PercentageRate cashIndemnityRate;
 	/**
-	 * Ratio of compensation for damage/loss versus value of insured entity
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -338,7 +363,7 @@ public class CashDistribution extends Distribution {
 	 * "Ratio of compensation for damage/loss versus value of insured entity"</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCashIndemnityRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashDistribution, PercentageRate> mmCashIndemnityRate = new MMBusinessAttribute<CashDistribution, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
@@ -350,19 +375,20 @@ public class CashDistribution extends Distribution {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashDistribution.class.getMethod("getCashIndemnityRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(CashDistribution obj) {
+			return obj.getCashIndemnityRate();
+		}
+
+		@Override
+		public void setValue(CashDistribution obj, PercentageRate value) {
+			obj.setCashIndemnityRate(value);
 		}
 	};
 	protected YesNoIndicator dividendReinvestmentIndicator;
 	/**
-	 * Indicates whether a cash dividend can be rolled over into shares of the
-	 * issuing company.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -388,7 +414,7 @@ public class CashDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDividendReinvestmentIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashDistribution, YesNoIndicator> mmDividendReinvestmentIndicator = new MMBusinessAttribute<CashDistribution, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
@@ -400,19 +426,20 @@ public class CashDistribution extends Distribution {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashDistribution.class.getMethod("getDividendReinvestmentIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(CashDistribution obj) {
+			return obj.getDividendReinvestmentIndicator();
+		}
+
+		@Override
+		public void setValue(CashDistribution obj, YesNoIndicator value) {
+			obj.setDividendReinvestmentIndicator(value);
 		}
 	};
 	protected CurrencyAndAmount interestAmount;
 	/**
-	 * Amount of interest paid to the principal amount of the financial
-	 * instrument for a specific period of time.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -438,7 +465,7 @@ public class CashDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInterestAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashDistribution, CurrencyAndAmount> mmInterestAmount = new MMBusinessAttribute<CashDistribution, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
@@ -450,19 +477,20 @@ public class CashDistribution extends Distribution {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashDistribution.class.getMethod("getInterestAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CashDistribution obj) {
+			return obj.getInterestAmount();
+		}
+
+		@Override
+		public void setValue(CashDistribution obj, CurrencyAndAmount value) {
+			obj.setInterestAmount(value);
 		}
 	};
 	protected PercentageRate interestRate;
 	/**
-	 * Ratio of the amount of interest paid to the principal amount of the
-	 * financial instrument for a specific period of time.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -488,7 +516,7 @@ public class CashDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInterestRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashDistribution, PercentageRate> mmInterestRate = new MMBusinessAttribute<CashDistribution, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
@@ -500,19 +528,20 @@ public class CashDistribution extends Distribution {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashDistribution.class.getMethod("getInterestRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(CashDistribution obj) {
+			return obj.getInterestRate();
+		}
+
+		@Override
+		public void setValue(CashDistribution obj, PercentageRate value) {
+			obj.setInterestRate(value);
 		}
 	};
 	protected YesNoIndicator loyaltyPremiumIndicator;
 	/**
-	 * Indicates whether dividends, in addition to regular dividends, are
-	 * payable to loyal (time, size, amount) investors.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -538,7 +567,7 @@ public class CashDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLoyaltyPremiumIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashDistribution, YesNoIndicator> mmLoyaltyPremiumIndicator = new MMBusinessAttribute<CashDistribution, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
@@ -550,19 +579,20 @@ public class CashDistribution extends Distribution {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashDistribution.class.getMethod("getLoyaltyPremiumIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(CashDistribution obj) {
+			return obj.getLoyaltyPremiumIndicator();
+		}
+
+		@Override
+		public void setValue(CashDistribution obj, YesNoIndicator value) {
+			obj.setLoyaltyPremiumIndicator(value);
 		}
 	};
 	protected PaymentTypeCode paymentType;
 	/**
-	 * Provides information about the whether the payment will be before or
-	 * after tax.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -588,7 +618,7 @@ public class CashDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPaymentType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashDistribution, PaymentTypeCode> mmPaymentType = new MMBusinessAttribute<CashDistribution, PaymentTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
@@ -600,19 +630,20 @@ public class CashDistribution extends Distribution {
 			simpleType_lazy = () -> PaymentTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashDistribution.class.getMethod("getPaymentType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PaymentTypeCode getValue(CashDistribution obj) {
+			return obj.getPaymentType();
+		}
+
+		@Override
+		public void setValue(CashDistribution obj, PaymentTypeCode value) {
+			obj.setPaymentType(value);
 		}
 	};
 	protected ISODateTime selectionDate;
 	/**
-	 * Date/time at which securities are selected for redemption prior to
-	 * maturity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -637,7 +668,7 @@ public class CashDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSelectionDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashDistribution, ISODateTime> mmSelectionDate = new MMBusinessAttribute<CashDistribution, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
@@ -649,19 +680,20 @@ public class CashDistribution extends Distribution {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashDistribution.class.getMethod("getSelectionDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(CashDistribution obj) {
+			return obj.getSelectionDate();
+		}
+
+		@Override
+		public void setValue(CashDistribution obj, ISODateTime value) {
+			obj.setSelectionDate(value);
 		}
 	};
 	protected PercentageRate cashDistributionRate;
 	/**
-	 * Amount, expressed as a percentage, of cash disbursed per financial
-	 * instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -687,7 +719,7 @@ public class CashDistribution extends Distribution {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCashDistributionRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashDistribution, PercentageRate> mmCashDistributionRate = new MMBusinessAttribute<CashDistribution, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
@@ -699,18 +731,20 @@ public class CashDistribution extends Distribution {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashDistribution.class.getMethod("getCashDistributionRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(CashDistribution obj) {
+			return obj.getCashDistributionRate();
+		}
+
+		@Override
+		public void setValue(CashDistribution obj, PercentageRate value) {
+			obj.setCashDistributionRate(value);
 		}
 	};
 	protected CurrencyAndAmount cashDistributionAmount;
 	/**
-	 * Amount of cash disbursed per financial instrument.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -734,7 +768,7 @@ public class CashDistribution extends Distribution {
 	 * definition} = "Amount of cash disbursed per financial instrument."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCashDistributionAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashDistribution, CurrencyAndAmount> mmCashDistributionAmount = new MMBusinessAttribute<CashDistribution, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashDistribution.mmObject();
@@ -746,23 +780,25 @@ public class CashDistribution extends Distribution {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashDistribution.class.getMethod("getCashDistributionAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CashDistribution obj) {
+			return obj.getCashDistributionAmount();
+		}
+
+		@Override
+		public void setValue(CashDistribution obj, CurrencyAndAmount value) {
+			obj.setCashDistributionAmount(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashDistribution";
 				definition = "Distribution of cash pay-out.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CurrencyExchange.mmCurrencyExchangeForCashDistribution, com.tools20022.repository.entity.SecuritiesAndCashDistribution.mmCashDistribution);
+				associationDomain_lazy = () -> Arrays.asList(CurrencyExchange.mmCurrencyExchangeForCashDistribution, com.tools20022.repository.entity.SecuritiesAndCashDistribution.mmCashDistribution);
 				superType_lazy = () -> Distribution.mmObject();
 				element_lazy = () -> Arrays
 						.asList(com.tools20022.repository.entity.CashDistribution.mmDistributionCurrencyExchangeInformation, com.tools20022.repository.entity.CashDistribution.mmSecuritiesAndCashDistribution,
@@ -782,106 +818,119 @@ public class CashDistribution extends Distribution {
 	}
 
 	public List<CurrencyExchange> getDistributionCurrencyExchangeInformation() {
-		return distributionCurrencyExchangeInformation;
+		return distributionCurrencyExchangeInformation == null ? distributionCurrencyExchangeInformation = new ArrayList<>() : distributionCurrencyExchangeInformation;
 	}
 
-	public void setDistributionCurrencyExchangeInformation(List<com.tools20022.repository.entity.CurrencyExchange> distributionCurrencyExchangeInformation) {
-		this.distributionCurrencyExchangeInformation = distributionCurrencyExchangeInformation;
+	public CashDistribution setDistributionCurrencyExchangeInformation(List<CurrencyExchange> distributionCurrencyExchangeInformation) {
+		this.distributionCurrencyExchangeInformation = Objects.requireNonNull(distributionCurrencyExchangeInformation);
+		return this;
 	}
 
 	public SecuritiesAndCashDistribution getSecuritiesAndCashDistribution() {
 		return securitiesAndCashDistribution;
 	}
 
-	public void setSecuritiesAndCashDistribution(com.tools20022.repository.entity.SecuritiesAndCashDistribution securitiesAndCashDistribution) {
-		this.securitiesAndCashDistribution = securitiesAndCashDistribution;
+	public CashDistribution setSecuritiesAndCashDistribution(com.tools20022.repository.entity.SecuritiesAndCashDistribution securitiesAndCashDistribution) {
+		this.securitiesAndCashDistribution = Objects.requireNonNull(securitiesAndCashDistribution);
+		return this;
 	}
 
 	public BaseOneRate getAmortisedRate() {
 		return amortisedRate;
 	}
 
-	public void setAmortisedRate(BaseOneRate amortisedRate) {
-		this.amortisedRate = amortisedRate;
+	public CashDistribution setAmortisedRate(BaseOneRate amortisedRate) {
+		this.amortisedRate = Objects.requireNonNull(amortisedRate);
+		return this;
 	}
 
 	public PercentageRate getRate() {
 		return rate;
 	}
 
-	public void setRate(PercentageRate rate) {
-		this.rate = rate;
+	public CashDistribution setRate(PercentageRate rate) {
+		this.rate = Objects.requireNonNull(rate);
+		return this;
 	}
 
 	public PercentageRate getCashIndemnityRate() {
 		return cashIndemnityRate;
 	}
 
-	public void setCashIndemnityRate(PercentageRate cashIndemnityRate) {
-		this.cashIndemnityRate = cashIndemnityRate;
+	public CashDistribution setCashIndemnityRate(PercentageRate cashIndemnityRate) {
+		this.cashIndemnityRate = Objects.requireNonNull(cashIndemnityRate);
+		return this;
 	}
 
 	public YesNoIndicator getDividendReinvestmentIndicator() {
 		return dividendReinvestmentIndicator;
 	}
 
-	public void setDividendReinvestmentIndicator(YesNoIndicator dividendReinvestmentIndicator) {
-		this.dividendReinvestmentIndicator = dividendReinvestmentIndicator;
+	public CashDistribution setDividendReinvestmentIndicator(YesNoIndicator dividendReinvestmentIndicator) {
+		this.dividendReinvestmentIndicator = Objects.requireNonNull(dividendReinvestmentIndicator);
+		return this;
 	}
 
 	public CurrencyAndAmount getInterestAmount() {
 		return interestAmount;
 	}
 
-	public void setInterestAmount(CurrencyAndAmount interestAmount) {
-		this.interestAmount = interestAmount;
+	public CashDistribution setInterestAmount(CurrencyAndAmount interestAmount) {
+		this.interestAmount = Objects.requireNonNull(interestAmount);
+		return this;
 	}
 
 	public PercentageRate getInterestRate() {
 		return interestRate;
 	}
 
-	public void setInterestRate(PercentageRate interestRate) {
-		this.interestRate = interestRate;
+	public CashDistribution setInterestRate(PercentageRate interestRate) {
+		this.interestRate = Objects.requireNonNull(interestRate);
+		return this;
 	}
 
 	public YesNoIndicator getLoyaltyPremiumIndicator() {
 		return loyaltyPremiumIndicator;
 	}
 
-	public void setLoyaltyPremiumIndicator(YesNoIndicator loyaltyPremiumIndicator) {
-		this.loyaltyPremiumIndicator = loyaltyPremiumIndicator;
+	public CashDistribution setLoyaltyPremiumIndicator(YesNoIndicator loyaltyPremiumIndicator) {
+		this.loyaltyPremiumIndicator = Objects.requireNonNull(loyaltyPremiumIndicator);
+		return this;
 	}
 
 	public PaymentTypeCode getPaymentType() {
 		return paymentType;
 	}
 
-	public void setPaymentType(PaymentTypeCode paymentType) {
-		this.paymentType = paymentType;
+	public CashDistribution setPaymentType(PaymentTypeCode paymentType) {
+		this.paymentType = Objects.requireNonNull(paymentType);
+		return this;
 	}
 
 	public ISODateTime getSelectionDate() {
 		return selectionDate;
 	}
 
-	public void setSelectionDate(ISODateTime selectionDate) {
-		this.selectionDate = selectionDate;
+	public CashDistribution setSelectionDate(ISODateTime selectionDate) {
+		this.selectionDate = Objects.requireNonNull(selectionDate);
+		return this;
 	}
 
 	public PercentageRate getCashDistributionRate() {
 		return cashDistributionRate;
 	}
 
-	public void setCashDistributionRate(PercentageRate cashDistributionRate) {
-		this.cashDistributionRate = cashDistributionRate;
+	public CashDistribution setCashDistributionRate(PercentageRate cashDistributionRate) {
+		this.cashDistributionRate = Objects.requireNonNull(cashDistributionRate);
+		return this;
 	}
 
 	public CurrencyAndAmount getCashDistributionAmount() {
 		return cashDistributionAmount;
 	}
 
-	public void setCashDistributionAmount(CurrencyAndAmount cashDistributionAmount) {
-		this.cashDistributionAmount = cashDistributionAmount;
+	public CashDistribution setCashDistributionAmount(CurrencyAndAmount cashDistributionAmount) {
+		this.cashDistributionAmount = Objects.requireNonNull(cashDistributionAmount);
+		return this;
 	}
 }

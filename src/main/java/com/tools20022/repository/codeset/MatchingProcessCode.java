@@ -38,17 +38,17 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MatchingProcessCode#Unmatch
- * MatchingProcessCode.mmUnmatch}</li>
+ * MatchingProcessCode.Unmatch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MatchingProcessCode#ResumeMatching
- * MatchingProcessCode.mmResumeMatching}</li>
+ * MatchingProcessCode.ResumeMatching}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -71,7 +71,7 @@ public class MatchingProcessCode extends MMCode {
 
 	final static private AtomicReference<MMCodeSet> mmObject_lazy = new AtomicReference<>();
 	/**
-	 * The referrenced transaction is requested to be unmatched.
+	 * The referenced transaction is requested to be unmatched.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -88,21 +88,20 @@ public class MatchingProcessCode extends MMCode {
 	 * name} = "Unmatch"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "The referrenced transaction is requested to be unmatched."
-	 * </li>
+	 * definition} = "The referenced transaction is requested to be unmatched."</li>
 	 * </ul>
 	 */
 	public static final MatchingProcessCode Unmatch = new MatchingProcessCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Unmatch";
-			definition = "The referrenced transaction is requested to be unmatched.";
+			definition = "The referenced transaction is requested to be unmatched.";
 			owner_lazy = () -> com.tools20022.repository.codeset.MatchingProcessCode.mmObject();
 			codeName = "UNMT";
 		}
 	};
 	/**
-	 * Matching process is to be resumed for the referrenced transaction.
+	 * Matching process is to be resumed for the referenced transaction.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -120,14 +119,14 @@ public class MatchingProcessCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Matching process is to be resumed for the referrenced transaction."</li>
+	 * "Matching process is to be resumed for the referenced transaction."</li>
 	 * </ul>
 	 */
 	public static final MatchingProcessCode ResumeMatching = new MatchingProcessCode() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ResumeMatching";
-			definition = "Matching process is to be resumed for the referrenced transaction.";
+			definition = "Matching process is to be resumed for the referenced transaction.";
 			owner_lazy = () -> com.tools20022.repository.codeset.MatchingProcessCode.mmObject();
 			codeName = "MTRE";
 		}
@@ -140,7 +139,7 @@ public class MatchingProcessCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("UNMT");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MatchingProcessCode";

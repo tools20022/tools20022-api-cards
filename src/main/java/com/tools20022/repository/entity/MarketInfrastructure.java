@@ -21,11 +21,14 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.AccountLink;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Multilateral system among participating institutions, including the operator
@@ -60,8 +63,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,8 +82,8 @@ public class MarketInfrastructure extends Role {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.AccountLink> accountLink;
 	/**
-	 * Defines the link between the accounts held with a market infrastructure.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,7 +116,7 @@ public class MarketInfrastructure extends Role {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAccountLink = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MarketInfrastructure, List<AccountLink>> mmAccountLink = new MMBusinessAssociationEnd<MarketInfrastructure, List<AccountLink>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MarketInfrastructure.mmObject();
@@ -125,12 +128,22 @@ public class MarketInfrastructure extends Role {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.AccountLink.mmObject();
 		}
+
+		@Override
+		public List<AccountLink> getValue(MarketInfrastructure obj) {
+			return obj.getAccountLink();
+		}
+
+		@Override
+		public void setValue(MarketInfrastructure obj, List<AccountLink> value) {
+			obj.setAccountLink(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MarketInfrastructure";
 				definition = "Multilateral system among participating institutions, including the operator of the system, used for the purposes of clearing, settling, or recording payments, securities, derivatives or other financial transactions.";
@@ -148,10 +161,11 @@ public class MarketInfrastructure extends Role {
 	}
 
 	public List<AccountLink> getAccountLink() {
-		return accountLink;
+		return accountLink == null ? accountLink = new ArrayList<>() : accountLink;
 	}
 
-	public void setAccountLink(List<com.tools20022.repository.entity.AccountLink> accountLink) {
-		this.accountLink = accountLink;
+	public MarketInfrastructure setAccountLink(List<com.tools20022.repository.entity.AccountLink> accountLink) {
+		this.accountLink = Objects.requireNonNull(accountLink);
+		return this;
 	}
 }

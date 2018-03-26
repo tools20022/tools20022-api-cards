@@ -28,6 +28,7 @@ import com.tools20022.repository.entity.Charges;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,15 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Amount of money associated with a service."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ChargesDetails4", propOrder = {"chargesType", "amount"})
 public class ChargesDetails4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ChrgsTp", required = true)
 	protected ChargesType1Choice chargesType;
 	/**
-	 * Specifies the type of charges as a code or free text.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -102,10 +104,10 @@ public class ChargesDetails4 {
 	 * definition} = "Specifies the type of charges as a code or free text."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmChargesType = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ChargesDetails4, ChargesType1Choice> mmChargesType = new MMMessageAssociationEnd<ChargesDetails4, ChargesType1Choice>() {
 		{
 			businessElementTrace_lazy = () -> Charges.mmChargeType;
-			componentContext_lazy = () -> ChargesDetails4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ChargesDetails4.mmObject();
 			isDerived = false;
 			xmlTag = "ChrgsTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -116,11 +118,22 @@ public class ChargesDetails4 {
 			isComposite = true;
 			type_lazy = () -> ChargesType1Choice.mmObject();
 		}
+
+		@Override
+		public ChargesType1Choice getValue(ChargesDetails4 obj) {
+			return obj.getChargesType();
+		}
+
+		@Override
+		public void setValue(ChargesDetails4 obj, ChargesType1Choice value) {
+			obj.setChargesType(value);
+		}
 	};
+	@XmlElement(name = "Amt", required = true)
 	protected CurrencyAndAmount amount;
 	/**
-	 * Amount of money asked or paid for the charge.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -151,10 +164,10 @@ public class ChargesDetails4 {
 	 * definition} = "Amount of money asked or paid for the charge."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ChargesDetails4, CurrencyAndAmount> mmAmount = new MMMessageAttribute<ChargesDetails4, CurrencyAndAmount>() {
 		{
 			businessElementTrace_lazy = () -> Adjustment.mmAmount;
-			componentContext_lazy = () -> ChargesDetails4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ChargesDetails4.mmObject();
 			isDerived = false;
 			xmlTag = "Amt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -164,14 +177,24 @@ public class ChargesDetails4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public CurrencyAndAmount getValue(ChargesDetails4 obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(ChargesDetails4 obj, CurrencyAndAmount value) {
+			obj.setAmount(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ChargesDetails4.mmChargesType, ChargesDetails4.mmAmount);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ChargesDetails4.mmChargesType, com.tools20022.repository.msg.ChargesDetails4.mmAmount);
 				trace_lazy = () -> Charges.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ChargesDetails4";
 				definition = "Amount of money associated with a service.";
@@ -180,21 +203,21 @@ public class ChargesDetails4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ChrgsTp", required = true)
 	public ChargesType1Choice getChargesType() {
 		return chargesType;
 	}
 
-	public void setChargesType(ChargesType1Choice chargesType) {
-		this.chargesType = chargesType;
+	public ChargesDetails4 setChargesType(ChargesType1Choice chargesType) {
+		this.chargesType = Objects.requireNonNull(chargesType);
+		return this;
 	}
 
-	@XmlElement(name = "Amt", required = true)
 	public CurrencyAndAmount getAmount() {
 		return amount;
 	}
 
-	public void setAmount(CurrencyAndAmount amount) {
-		this.amount = amount;
+	public ChargesDetails4 setAmount(CurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 }

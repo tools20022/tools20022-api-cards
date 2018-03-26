@@ -21,10 +21,16 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Account;
+import com.tools20022.repository.entity.Document;
+import com.tools20022.repository.entity.System;
+import com.tools20022.repository.entity.Trade;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Process of matching different documents submitted by parties to a trade.
@@ -73,8 +79,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,10 +95,10 @@ import java.util.List;
 public class Reconciliation {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.System> system;
+	protected List<System> system;
 	/**
-	 * System which provides the reconciliation process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -122,7 +128,7 @@ public class Reconciliation {
 	 * definition} = "System which provides the reconciliation process."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Reconciliation, List<System>> mmSystem = new MMBusinessAssociationEnd<Reconciliation, List<System>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Reconciliation.mmObject();
@@ -130,15 +136,25 @@ public class Reconciliation {
 			name = "System";
 			definition = "System which provides the reconciliation process.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.System.mmReconciliation;
+			opposite_lazy = () -> System.mmReconciliation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.System.mmObject();
+			type_lazy = () -> System.mmObject();
+		}
+
+		@Override
+		public List<System> getValue(Reconciliation obj) {
+			return obj.getSystem();
+		}
+
+		@Override
+		public void setValue(Reconciliation obj, List<System> value) {
+			obj.setSystem(value);
 		}
 	};
 	protected Document document;
 	/**
-	 * Document submitted in a reconciliation process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -168,7 +184,7 @@ public class Reconciliation {
 	 * definition} = "Document submitted in a reconciliation process."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDocument = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Reconciliation, Document> mmDocument = new MMBusinessAssociationEnd<Reconciliation, Document>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Reconciliation.mmObject();
@@ -177,15 +193,25 @@ public class Reconciliation {
 			definition = "Document submitted in a reconciliation process.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Document.mmReconciliation;
+			opposite_lazy = () -> Document.mmReconciliation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
+			type_lazy = () -> Document.mmObject();
+		}
+
+		@Override
+		public Document getValue(Reconciliation obj) {
+			return obj.getDocument();
+		}
+
+		@Override
+		public void setValue(Reconciliation obj, Document value) {
+			obj.setDocument(value);
 		}
 	};
 	protected Trade reconciledTrades;
 	/**
-	 * Trades which are reconciled with entries in an account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -215,7 +241,7 @@ public class Reconciliation {
 	 * definition} = "Trades which are reconciled with entries in an account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmReconciledTrades = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Reconciliation, Trade> mmReconciledTrades = new MMBusinessAssociationEnd<Reconciliation, Trade>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Reconciliation.mmObject();
@@ -224,15 +250,25 @@ public class Reconciliation {
 			definition = "Trades which are reconciled with entries in an account.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Trade.mmReconciliation;
+			opposite_lazy = () -> Trade.mmReconciliation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
+			type_lazy = () -> Trade.mmObject();
+		}
+
+		@Override
+		public Trade getValue(Reconciliation obj) {
+			return obj.getReconciledTrades();
+		}
+
+		@Override
+		public void setValue(Reconciliation obj, Trade value) {
+			obj.setReconciledTrades(value);
 		}
 	};
 	protected Account account;
 	/**
-	 * Account for which a reconciliation process is performed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -262,7 +298,7 @@ public class Reconciliation {
 	 * definition} = "Account for which a reconciliation process is performed."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Reconciliation, Account> mmAccount = new MMBusinessAssociationEnd<Reconciliation, Account>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Reconciliation.mmObject();
@@ -271,21 +307,30 @@ public class Reconciliation {
 			definition = "Account for which a reconciliation process is performed.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Account.mmReconciliation;
+			opposite_lazy = () -> Account.mmReconciliation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Account.mmObject();
+			type_lazy = () -> Account.mmObject();
+		}
+
+		@Override
+		public Account getValue(Reconciliation obj) {
+			return obj.getAccount();
+		}
+
+		@Override
+		public void setValue(Reconciliation obj, Account value) {
+			obj.setAccount(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Reconciliation";
 				definition = "Process of matching different documents submitted by parties to a trade.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Account.mmReconciliation, com.tools20022.repository.entity.Trade.mmReconciliation, com.tools20022.repository.entity.Document.mmReconciliation,
-						com.tools20022.repository.entity.System.mmReconciliation);
+				associationDomain_lazy = () -> Arrays.asList(Account.mmReconciliation, Trade.mmReconciliation, Document.mmReconciliation, System.mmReconciliation);
 				subType_lazy = () -> Arrays.asList(ReconciliationTransaction.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Reconciliation.mmSystem, com.tools20022.repository.entity.Reconciliation.mmDocument, com.tools20022.repository.entity.Reconciliation.mmReconciledTrades,
 						com.tools20022.repository.entity.Reconciliation.mmAccount);
@@ -300,34 +345,38 @@ public class Reconciliation {
 	}
 
 	public List<System> getSystem() {
-		return system;
+		return system == null ? system = new ArrayList<>() : system;
 	}
 
-	public void setSystem(List<com.tools20022.repository.entity.System> system) {
-		this.system = system;
+	public Reconciliation setSystem(List<System> system) {
+		this.system = Objects.requireNonNull(system);
+		return this;
 	}
 
 	public Document getDocument() {
 		return document;
 	}
 
-	public void setDocument(com.tools20022.repository.entity.Document document) {
-		this.document = document;
+	public Reconciliation setDocument(Document document) {
+		this.document = Objects.requireNonNull(document);
+		return this;
 	}
 
 	public Trade getReconciledTrades() {
 		return reconciledTrades;
 	}
 
-	public void setReconciledTrades(com.tools20022.repository.entity.Trade reconciledTrades) {
-		this.reconciledTrades = reconciledTrades;
+	public Reconciliation setReconciledTrades(Trade reconciledTrades) {
+		this.reconciledTrades = Objects.requireNonNull(reconciledTrades);
+		return this;
 	}
 
 	public Account getAccount() {
 		return account;
 	}
 
-	public void setAccount(com.tools20022.repository.entity.Account account) {
-		this.account = account;
+	public Reconciliation setAccount(Account account) {
+		this.account = Objects.requireNonNull(account);
+		return this;
 	}
 }

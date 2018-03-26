@@ -27,6 +27,8 @@ import com.tools20022.repository.entity.CardPaymentAcquiring;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -55,8 +57,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,26 +67,27 @@ import javax.xml.bind.annotation.XmlType;
  * "ActionMessage3"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Information to log."</li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} = {@linkplain com.tools20022.repository.msg.ActionMessage2
- * ActionMessage2}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
  * nextVersions} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.msg.ActionMessage4 ActionMessage4}</li>
  * </ul>
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+ * previousVersion} = {@linkplain com.tools20022.repository.msg.ActionMessage2
+ * ActionMessage2}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ActionMessage3", propOrder = {"destination", "format", "content"})
 public class ActionMessage3 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Dstn", required = true)
 	protected UserInterface3Code destination;
 	/**
-	 * Destination of the information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -119,10 +122,10 @@ public class ActionMessage3 {
 	 * ActionMessage2.mmMessageDestination}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDestination = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ActionMessage3, UserInterface3Code> mmDestination = new MMMessageAttribute<ActionMessage3, UserInterface3Code>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmPointOfInteraction;
-			componentContext_lazy = () -> ActionMessage3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ActionMessage3.mmObject();
 			isDerived = false;
 			xmlTag = "Dstn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -133,11 +136,22 @@ public class ActionMessage3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> UserInterface3Code.mmObject();
 		}
+
+		@Override
+		public UserInterface3Code getValue(ActionMessage3 obj) {
+			return obj.getDestination();
+		}
+
+		@Override
+		public void setValue(ActionMessage3 obj, UserInterface3Code value) {
+			obj.setDestination(value);
+		}
 	};
+	@XmlElement(name = "Frmt")
 	protected OutputFormat1Code format;
 	/**
-	 * Format of the content.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -160,11 +174,6 @@ public class ActionMessage3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Format of the content."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.ActionMessage2#mmFormat
-	 * ActionMessage2.mmFormat}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -172,11 +181,16 @@ public class ActionMessage3 {
 	 * ActionMessage4.mmFormat}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.ActionMessage2#mmFormat
+	 * ActionMessage2.mmFormat}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmFormat = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ActionMessage3, Optional<OutputFormat1Code>> mmFormat = new MMMessageAttribute<ActionMessage3, Optional<OutputFormat1Code>>() {
 		{
-			componentContext_lazy = () -> ActionMessage3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ActionMessage3.mmObject();
 			isDerived = false;
 			xmlTag = "Frmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -188,11 +202,22 @@ public class ActionMessage3 {
 			minOccurs = 0;
 			simpleType_lazy = () -> OutputFormat1Code.mmObject();
 		}
+
+		@Override
+		public Optional<OutputFormat1Code> getValue(ActionMessage3 obj) {
+			return obj.getFormat();
+		}
+
+		@Override
+		public void setValue(ActionMessage3 obj, Optional<OutputFormat1Code> value) {
+			obj.setFormat(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Cntt", required = true)
 	protected Max20000Text content;
 	/**
-	 * Content of the information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -220,11 +245,6 @@ public class ActionMessage3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Content of the information."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.ActionMessage2#mmMessageContent
-	 * ActionMessage2.mmMessageContent}</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
 	 * nextVersions} =
 	 * <ul>
@@ -232,12 +252,17 @@ public class ActionMessage3 {
 	 * ActionMessage4.mmMessage}</li>
 	 * </ul>
 	 * </li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
+	 * previousVersion} =
+	 * {@linkplain com.tools20022.repository.msg.ActionMessage2#mmMessageContent
+	 * ActionMessage2.mmMessageContent}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmContent = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ActionMessage3, Max20000Text> mmContent = new MMMessageAttribute<ActionMessage3, Max20000Text>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentAcquiring.mmActionMessage;
-			componentContext_lazy = () -> ActionMessage3.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ActionMessage3.mmObject();
 			isDerived = false;
 			xmlTag = "Cntt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -249,14 +274,24 @@ public class ActionMessage3 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max20000Text.mmObject();
 		}
+
+		@Override
+		public Max20000Text getValue(ActionMessage3 obj) {
+			return obj.getContent();
+		}
+
+		@Override
+		public void setValue(ActionMessage3 obj, Max20000Text value) {
+			obj.setContent(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ActionMessage3.mmDestination, ActionMessage3.mmFormat, ActionMessage3.mmContent);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ActionMessage3.mmDestination, com.tools20022.repository.msg.ActionMessage3.mmFormat, com.tools20022.repository.msg.ActionMessage3.mmContent);
 				trace_lazy = () -> CardPaymentAcquiring.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ActionMessage3";
 				definition = "Information to log.";
@@ -267,30 +302,30 @@ public class ActionMessage3 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Dstn", required = true)
 	public UserInterface3Code getDestination() {
 		return destination;
 	}
 
-	public void setDestination(UserInterface3Code destination) {
-		this.destination = destination;
+	public ActionMessage3 setDestination(UserInterface3Code destination) {
+		this.destination = Objects.requireNonNull(destination);
+		return this;
 	}
 
-	@XmlElement(name = "Frmt")
-	public OutputFormat1Code getFormat() {
-		return format;
+	public Optional<OutputFormat1Code> getFormat() {
+		return format == null ? Optional.empty() : Optional.of(format);
 	}
 
-	public void setFormat(OutputFormat1Code format) {
+	public ActionMessage3 setFormat(OutputFormat1Code format) {
 		this.format = format;
+		return this;
 	}
 
-	@XmlElement(name = "Cntt", required = true)
 	public Max20000Text getContent() {
 		return content;
 	}
 
-	public void setContent(Max20000Text content) {
-		this.content = content;
+	public ActionMessage3 setContent(Max20000Text content) {
+		this.content = Objects.requireNonNull(content);
+		return this;
 	}
 }

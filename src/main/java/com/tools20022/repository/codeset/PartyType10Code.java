@@ -37,30 +37,30 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType10Code#Acceptor
- * PartyType10Code.mmAcceptor}</li>
+ * PartyType10Code.Acceptor}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType10Code#Acquirer
- * PartyType10Code.mmAcquirer}</li>
+ * PartyType10Code.Acquirer}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType10Code#ATMManager
- * PartyType10Code.mmATMManager}</li>
+ * PartyType10Code.ATMManager}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType10Code#CardIssuer
- * PartyType10Code.mmCardIssuer}</li>
+ * PartyType10Code.CardIssuer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType10Code#DelegateIssuer
- * PartyType10Code.mmDelegateIssuer}</li>
+ * PartyType10Code.DelegateIssuer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType10Code#HostingEntity
- * PartyType10Code.mmHostingEntity}</li>
+ * PartyType10Code.HostingEntity}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType10Code#IntermediaryAgent
- * PartyType10Code.mmIntermediaryAgent}</li>
+ * PartyType10Code.IntermediaryAgent}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType10Code#Merchant
- * PartyType10Code.mmMerchant}</li>
+ * PartyType10Code.Merchant}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType10Code#OriginatingATM
- * PartyType10Code.mmOriginatingATM}</li>
+ * PartyType10Code.OriginatingATM}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType10Code#OriginatingPOI
- * PartyType10Code.mmOriginatingPOI}</li>
+ * PartyType10Code.OriginatingPOI}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -68,8 +68,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -332,7 +332,7 @@ public class PartyType10Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyType10Code";
 				definition = "Type of identified entity.";

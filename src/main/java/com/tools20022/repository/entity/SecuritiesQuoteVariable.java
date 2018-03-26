@@ -17,16 +17,23 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
+import com.tools20022.metamodel.ext.OtherSemanticMarkup;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.LegSwapTypeCode;
 import com.tools20022.repository.codeset.PriceValueTypeCode;
 import com.tools20022.repository.codeset.QualifierCode;
 import com.tools20022.repository.codeset.QuoteTypeCode;
+import com.tools20022.repository.entity.Commission;
+import com.tools20022.repository.entity.Quote;
+import com.tools20022.repository.entity.SecuritiesOrder;
+import com.tools20022.repository.entity.TradingSession;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Proposition of price for a financial instrument.
@@ -103,8 +110,12 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+ * semanticMarkup} = type=BusinessComment, BusinessComment=Price at which a
+ * financial instrument is bid or offered. Proposition of a price.</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -120,8 +131,8 @@ public class SecuritiesQuoteVariable {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected QualifierCode qualifier;
 	/**
-	 * Qualifies the use of the quote.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -145,7 +156,7 @@ public class SecuritiesQuoteVariable {
 	 * definition} = "Qualifies the use of the quote."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmQualifier = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesQuoteVariable, QualifierCode> mmQualifier = new MMBusinessAttribute<SecuritiesQuoteVariable, QualifierCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
@@ -157,19 +168,20 @@ public class SecuritiesQuoteVariable {
 			simpleType_lazy = () -> QualifierCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesQuoteVariable.class.getMethod("getQualifier", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public QualifierCode getValue(SecuritiesQuoteVariable obj) {
+			return obj.getQualifier();
+		}
+
+		@Override
+		public void setValue(SecuritiesQuoteVariable obj, QualifierCode value) {
+			obj.setQualifier(value);
 		}
 	};
 	protected QuoteTypeCode type;
 	/**
-	 * Indicates the scenario in which the quote is (requested to be) used (ie,
-	 * indicative, firm, restricted tradeable or counter).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -183,6 +195,9 @@ public class SecuritiesQuoteVariable {
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesQuoteVariable
 	 * SecuritiesQuoteVariable}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 537</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -195,10 +210,11 @@ public class SecuritiesQuoteVariable {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesQuoteVariable, QuoteTypeCode> mmType = new MMBusinessAttribute<SecuritiesQuoteVariable, QuoteTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "537"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Type";
 			definition = "Indicates the scenario in which the quote is (requested to be) used (ie, indicative, firm, restricted tradeable or counter).";
@@ -207,18 +223,20 @@ public class SecuritiesQuoteVariable {
 			simpleType_lazy = () -> QuoteTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesQuoteVariable.class.getMethod("getType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public QuoteTypeCode getValue(SecuritiesQuoteVariable obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(SecuritiesQuoteVariable obj, QuoteTypeCode value) {
+			obj.setType(value);
 		}
 	};
 	protected TradingSession quoteTradingSession;
 	/**
-	 * Details of a specific trading session associated with a quote.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -250,7 +268,7 @@ public class SecuritiesQuoteVariable {
 	 * "Details of a specific trading session associated with a quote."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmQuoteTradingSession = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesQuoteVariable, TradingSession> mmQuoteTradingSession = new MMBusinessAssociationEnd<SecuritiesQuoteVariable, TradingSession>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
@@ -259,16 +277,25 @@ public class SecuritiesQuoteVariable {
 			definition = "Details of a specific trading session associated with a quote.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.TradingSession.mmQuote;
+			opposite_lazy = () -> TradingSession.mmQuote;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TradingSession.mmObject();
+			type_lazy = () -> TradingSession.mmObject();
+		}
+
+		@Override
+		public TradingSession getValue(SecuritiesQuoteVariable obj) {
+			return obj.getQuoteTradingSession();
+		}
+
+		@Override
+		public void setValue(SecuritiesQuoteVariable obj, TradingSession value) {
+			obj.setQuoteTradingSession(value);
 		}
 	};
 	protected LegSwapTypeCode legSwapType;
 	/**
-	 * Indicates that the sell-side is requested to calculate the quantity based
-	 * on the opposite leg and is used instead of giving a quantity.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -294,7 +321,7 @@ public class SecuritiesQuoteVariable {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmLegSwapType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesQuoteVariable, LegSwapTypeCode> mmLegSwapType = new MMBusinessAttribute<SecuritiesQuoteVariable, LegSwapTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
@@ -306,19 +333,20 @@ public class SecuritiesQuoteVariable {
 			simpleType_lazy = () -> LegSwapTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesQuoteVariable.class.getMethod("getLegSwapType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public LegSwapTypeCode getValue(SecuritiesQuoteVariable obj) {
+			return obj.getLegSwapType();
+		}
+
+		@Override
+		public void setValue(SecuritiesQuoteVariable obj, LegSwapTypeCode value) {
+			obj.setLegSwapType(value);
 		}
 	};
 	protected PriceValueTypeCode priceType;
 	/**
-	 * Initiator can specify the price type the quote needs to be quoted at. If
-	 * not specified, the respondent has option to specify how quote is quoted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -344,7 +372,7 @@ public class SecuritiesQuoteVariable {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPriceType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesQuoteVariable, PriceValueTypeCode> mmPriceType = new MMBusinessAttribute<SecuritiesQuoteVariable, PriceValueTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
@@ -356,19 +384,20 @@ public class SecuritiesQuoteVariable {
 			simpleType_lazy = () -> PriceValueTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesQuoteVariable.class.getMethod("getPriceType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PriceValueTypeCode getValue(SecuritiesQuoteVariable obj) {
+			return obj.getPriceType();
+		}
+
+		@Override
+		public void setValue(SecuritiesQuoteVariable obj, PriceValueTypeCode value) {
+			obj.setPriceType(value);
 		}
 	};
 	protected Quote midSide;
 	/**
-	 * Indicates that the quote details are indicated as a mid of a security,
-	 * commodity, currency (an average of the offer and the bid).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -400,7 +429,7 @@ public class SecuritiesQuoteVariable {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMidSide = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesQuoteVariable, Quote> mmMidSide = new MMBusinessAssociationEnd<SecuritiesQuoteVariable, Quote>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
@@ -409,16 +438,25 @@ public class SecuritiesQuoteVariable {
 			definition = "Indicates that the quote details are indicated as a mid of a security, commodity, currency (an average of the offer and the bid).";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Quote.mmMidSideQuoteVariable;
+			opposite_lazy = () -> Quote.mmMidSideQuoteVariable;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
+			type_lazy = () -> Quote.mmObject();
+		}
+
+		@Override
+		public Quote getValue(SecuritiesQuoteVariable obj) {
+			return obj.getMidSide();
+		}
+
+		@Override
+		public void setValue(SecuritiesQuoteVariable obj, Quote value) {
+			obj.setMidSide(value);
 		}
 	};
 	protected Quote bidSide;
 	/**
-	 * Indicates that the quote details are indicated as a bid of a security,
-	 * commodity, currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -450,7 +488,7 @@ public class SecuritiesQuoteVariable {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmBidSide = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesQuoteVariable, Quote> mmBidSide = new MMBusinessAssociationEnd<SecuritiesQuoteVariable, Quote>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
@@ -459,16 +497,25 @@ public class SecuritiesQuoteVariable {
 			definition = "Indicates that the quote details are indicated as a bid of a security, commodity, currency.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Quote.mmBidSideQuoteVariable;
+			opposite_lazy = () -> Quote.mmBidSideQuoteVariable;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
+			type_lazy = () -> Quote.mmObject();
+		}
+
+		@Override
+		public Quote getValue(SecuritiesQuoteVariable obj) {
+			return obj.getBidSide();
+		}
+
+		@Override
+		public void setValue(SecuritiesQuoteVariable obj, Quote value) {
+			obj.setBidSide(value);
 		}
 	};
 	protected Quote offerSide;
 	/**
-	 * Indicates that the quote details are indicated as an offer of a security,
-	 * commodity, currency.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -500,7 +547,7 @@ public class SecuritiesQuoteVariable {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOfferSide = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesQuoteVariable, Quote> mmOfferSide = new MMBusinessAssociationEnd<SecuritiesQuoteVariable, Quote>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
@@ -509,15 +556,25 @@ public class SecuritiesQuoteVariable {
 			definition = "Indicates that the quote details are indicated as an offer of a security, commodity, currency.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Quote.mmOfferSideQuoteVariable;
+			opposite_lazy = () -> Quote.mmOfferSideQuoteVariable;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
+			type_lazy = () -> Quote.mmObject();
+		}
+
+		@Override
+		public Quote getValue(SecuritiesQuoteVariable obj) {
+			return obj.getOfferSide();
+		}
+
+		@Override
+		public void setValue(SecuritiesQuoteVariable obj, Quote value) {
+			obj.setOfferSide(value);
 		}
 	};
 	protected Quote relatedQuote;
 	/**
-	 * Quote parameters related to a security quote.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -547,7 +604,7 @@ public class SecuritiesQuoteVariable {
 	 * definition} = "Quote parameters related to a security quote."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedQuote = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesQuoteVariable, Quote> mmRelatedQuote = new MMBusinessAssociationEnd<SecuritiesQuoteVariable, Quote>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
@@ -556,16 +613,25 @@ public class SecuritiesQuoteVariable {
 			definition = "Quote parameters related to a security quote.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Quote.mmSecurityQuoteVariable;
+			opposite_lazy = () -> Quote.mmSecurityQuoteVariable;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Quote.mmObject();
+			type_lazy = () -> Quote.mmObject();
+		}
+
+		@Override
+		public Quote getValue(SecuritiesQuoteVariable obj) {
+			return obj.getRelatedQuote();
+		}
+
+		@Override
+		public void setValue(SecuritiesQuoteVariable obj, Quote value) {
+			obj.setRelatedQuote(value);
 		}
 	};
 	protected SecuritiesOrder securitiesOrder;
 	/**
-	 * Preliminary information on conditions of the order, specified in the
-	 * quote (request).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -598,7 +664,7 @@ public class SecuritiesQuoteVariable {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesQuoteVariable, SecuritiesOrder> mmSecuritiesOrder = new MMBusinessAssociationEnd<SecuritiesQuoteVariable, SecuritiesOrder>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
@@ -607,15 +673,25 @@ public class SecuritiesQuoteVariable {
 			definition = "Preliminary information on conditions of the order, specified in the quote (request).";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmQuote;
+			opposite_lazy = () -> SecuritiesOrder.mmQuote;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
+			type_lazy = () -> SecuritiesOrder.mmObject();
+		}
+
+		@Override
+		public SecuritiesOrder getValue(SecuritiesQuoteVariable obj) {
+			return obj.getSecuritiesOrder();
+		}
+
+		@Override
+		public void setValue(SecuritiesQuoteVariable obj, SecuritiesOrder value) {
+			obj.setSecuritiesOrder(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Commission> commission;
+	protected List<Commission> commission;
 	/**
-	 * Commission associated with a quote.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -646,7 +722,7 @@ public class SecuritiesQuoteVariable {
 	 * definition} = "Commission associated with a quote."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCommission = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesQuoteVariable, List<Commission>> mmCommission = new MMBusinessAssociationEnd<SecuritiesQuoteVariable, List<Commission>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesQuoteVariable.mmObject();
@@ -654,22 +730,32 @@ public class SecuritiesQuoteVariable {
 			name = "Commission";
 			definition = "Commission associated with a quote.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Commission.mmRelatedQuote;
+			opposite_lazy = () -> Commission.mmRelatedQuote;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
+			type_lazy = () -> Commission.mmObject();
+		}
+
+		@Override
+		public List<Commission> getValue(SecuritiesQuoteVariable obj) {
+			return obj.getCommission();
+		}
+
+		@Override
+		public void setValue(SecuritiesQuoteVariable obj, List<Commission> value) {
+			obj.setCommission(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "BusinessComment", new String[]{"BusinessComment", "Price at which a financial instrument is bid or offered. Proposition of a price."}));
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesQuoteVariable";
 				definition = "Proposition of price for a financial instrument.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Commission.mmRelatedQuote, com.tools20022.repository.entity.SecuritiesOrder.mmQuote, com.tools20022.repository.entity.TradingSession.mmQuote,
-						com.tools20022.repository.entity.Quote.mmMidSideQuoteVariable, com.tools20022.repository.entity.Quote.mmBidSideQuoteVariable, com.tools20022.repository.entity.Quote.mmOfferSideQuoteVariable,
-						com.tools20022.repository.entity.Quote.mmSecurityQuoteVariable);
+				associationDomain_lazy = () -> Arrays.asList(Commission.mmRelatedQuote, SecuritiesOrder.mmQuote, TradingSession.mmQuote, Quote.mmMidSideQuoteVariable, Quote.mmBidSideQuoteVariable, Quote.mmOfferSideQuoteVariable,
+						Quote.mmSecurityQuoteVariable);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SecuritiesQuoteVariable.mmQualifier, com.tools20022.repository.entity.SecuritiesQuoteVariable.mmType,
 						com.tools20022.repository.entity.SecuritiesQuoteVariable.mmQuoteTradingSession, com.tools20022.repository.entity.SecuritiesQuoteVariable.mmLegSwapType,
 						com.tools20022.repository.entity.SecuritiesQuoteVariable.mmPriceType, com.tools20022.repository.entity.SecuritiesQuoteVariable.mmMidSide, com.tools20022.repository.entity.SecuritiesQuoteVariable.mmBidSide,
@@ -689,87 +775,98 @@ public class SecuritiesQuoteVariable {
 		return qualifier;
 	}
 
-	public void setQualifier(QualifierCode qualifier) {
-		this.qualifier = qualifier;
+	public SecuritiesQuoteVariable setQualifier(QualifierCode qualifier) {
+		this.qualifier = Objects.requireNonNull(qualifier);
+		return this;
 	}
 
 	public QuoteTypeCode getType() {
 		return type;
 	}
 
-	public void setType(QuoteTypeCode type) {
-		this.type = type;
+	public SecuritiesQuoteVariable setType(QuoteTypeCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public TradingSession getQuoteTradingSession() {
 		return quoteTradingSession;
 	}
 
-	public void setQuoteTradingSession(com.tools20022.repository.entity.TradingSession quoteTradingSession) {
-		this.quoteTradingSession = quoteTradingSession;
+	public SecuritiesQuoteVariable setQuoteTradingSession(TradingSession quoteTradingSession) {
+		this.quoteTradingSession = Objects.requireNonNull(quoteTradingSession);
+		return this;
 	}
 
 	public LegSwapTypeCode getLegSwapType() {
 		return legSwapType;
 	}
 
-	public void setLegSwapType(LegSwapTypeCode legSwapType) {
-		this.legSwapType = legSwapType;
+	public SecuritiesQuoteVariable setLegSwapType(LegSwapTypeCode legSwapType) {
+		this.legSwapType = Objects.requireNonNull(legSwapType);
+		return this;
 	}
 
 	public PriceValueTypeCode getPriceType() {
 		return priceType;
 	}
 
-	public void setPriceType(PriceValueTypeCode priceType) {
-		this.priceType = priceType;
+	public SecuritiesQuoteVariable setPriceType(PriceValueTypeCode priceType) {
+		this.priceType = Objects.requireNonNull(priceType);
+		return this;
 	}
 
 	public Quote getMidSide() {
 		return midSide;
 	}
 
-	public void setMidSide(com.tools20022.repository.entity.Quote midSide) {
-		this.midSide = midSide;
+	public SecuritiesQuoteVariable setMidSide(Quote midSide) {
+		this.midSide = Objects.requireNonNull(midSide);
+		return this;
 	}
 
 	public Quote getBidSide() {
 		return bidSide;
 	}
 
-	public void setBidSide(com.tools20022.repository.entity.Quote bidSide) {
-		this.bidSide = bidSide;
+	public SecuritiesQuoteVariable setBidSide(Quote bidSide) {
+		this.bidSide = Objects.requireNonNull(bidSide);
+		return this;
 	}
 
 	public Quote getOfferSide() {
 		return offerSide;
 	}
 
-	public void setOfferSide(com.tools20022.repository.entity.Quote offerSide) {
-		this.offerSide = offerSide;
+	public SecuritiesQuoteVariable setOfferSide(Quote offerSide) {
+		this.offerSide = Objects.requireNonNull(offerSide);
+		return this;
 	}
 
 	public Quote getRelatedQuote() {
 		return relatedQuote;
 	}
 
-	public void setRelatedQuote(com.tools20022.repository.entity.Quote relatedQuote) {
-		this.relatedQuote = relatedQuote;
+	public SecuritiesQuoteVariable setRelatedQuote(Quote relatedQuote) {
+		this.relatedQuote = Objects.requireNonNull(relatedQuote);
+		return this;
 	}
 
 	public SecuritiesOrder getSecuritiesOrder() {
 		return securitiesOrder;
 	}
 
-	public void setSecuritiesOrder(com.tools20022.repository.entity.SecuritiesOrder securitiesOrder) {
-		this.securitiesOrder = securitiesOrder;
+	public SecuritiesQuoteVariable setSecuritiesOrder(SecuritiesOrder securitiesOrder) {
+		this.securitiesOrder = Objects.requireNonNull(securitiesOrder);
+		return this;
 	}
 
 	public List<Commission> getCommission() {
-		return commission;
+		return commission == null ? commission = new ArrayList<>() : commission;
 	}
 
-	public void setCommission(List<com.tools20022.repository.entity.Commission> commission) {
-		this.commission = commission;
+	public SecuritiesQuoteVariable setCommission(List<Commission> commission) {
+		this.commission = Objects.requireNonNull(commission);
+		return this;
 	}
 }

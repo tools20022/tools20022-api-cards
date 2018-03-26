@@ -23,8 +23,11 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.Algorithm12Code;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.Parameter7;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,15 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AlgorithmIdentification15", propOrder = {"algorithm", "parameter"})
 public class AlgorithmIdentification15 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Algo", required = true)
 	protected Algorithm12Code algorithm;
 	/**
-	 * Identification of the MAC algorithm.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -99,9 +103,9 @@ public class AlgorithmIdentification15 {
 	 * definition} = "Identification of the MAC algorithm."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAlgorithm = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AlgorithmIdentification15, Algorithm12Code> mmAlgorithm = new MMMessageAttribute<AlgorithmIdentification15, Algorithm12Code>() {
 		{
-			componentContext_lazy = () -> AlgorithmIdentification15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AlgorithmIdentification15.mmObject();
 			isDerived = false;
 			xmlTag = "Algo";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -111,11 +115,22 @@ public class AlgorithmIdentification15 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Algorithm12Code.mmObject();
 		}
+
+		@Override
+		public Algorithm12Code getValue(AlgorithmIdentification15 obj) {
+			return obj.getAlgorithm();
+		}
+
+		@Override
+		public void setValue(AlgorithmIdentification15 obj, Algorithm12Code value) {
+			obj.setAlgorithm(value);
+		}
 	};
+	@XmlElement(name = "Param")
 	protected Parameter7 parameter;
 	/**
-	 * Parameters associated to the MAC algorithm.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -138,9 +153,9 @@ public class AlgorithmIdentification15 {
 	 * definition} = "Parameters associated to the MAC algorithm."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmParameter = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AlgorithmIdentification15, Optional<Parameter7>> mmParameter = new MMMessageAssociationEnd<AlgorithmIdentification15, Optional<Parameter7>>() {
 		{
-			componentContext_lazy = () -> AlgorithmIdentification15.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AlgorithmIdentification15.mmObject();
 			isDerived = false;
 			xmlTag = "Param";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -149,15 +164,25 @@ public class AlgorithmIdentification15 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Parameter7.mmObject();
+			type_lazy = () -> Parameter7.mmObject();
+		}
+
+		@Override
+		public Optional<Parameter7> getValue(AlgorithmIdentification15 obj) {
+			return obj.getParameter();
+		}
+
+		@Override
+		public void setValue(AlgorithmIdentification15 obj, Optional<Parameter7> value) {
+			obj.setParameter(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AlgorithmIdentification15.mmAlgorithm, AlgorithmIdentification15.mmParameter);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AlgorithmIdentification15.mmAlgorithm, com.tools20022.repository.msg.AlgorithmIdentification15.mmParameter);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AlgorithmIdentification15";
 				definition = "Identification of a cryptographic algorithm and parameters for the MAC computation.";
@@ -166,21 +191,21 @@ public class AlgorithmIdentification15 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Algo", required = true)
 	public Algorithm12Code getAlgorithm() {
 		return algorithm;
 	}
 
-	public void setAlgorithm(Algorithm12Code algorithm) {
-		this.algorithm = algorithm;
+	public AlgorithmIdentification15 setAlgorithm(Algorithm12Code algorithm) {
+		this.algorithm = Objects.requireNonNull(algorithm);
+		return this;
 	}
 
-	@XmlElement(name = "Param")
-	public Parameter7 getParameter() {
-		return parameter;
+	public Optional<Parameter7> getParameter() {
+		return parameter == null ? Optional.empty() : Optional.of(parameter);
 	}
 
-	public void setParameter(com.tools20022.repository.msg.Parameter7 parameter) {
+	public AlgorithmIdentification15 setParameter(Parameter7 parameter) {
 		this.parameter = parameter;
+		return this;
 	}
 }

@@ -37,20 +37,20 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType9Code#Acquirer
- * PartyType9Code.mmAcquirer}</li>
+ * PartyType9Code.Acquirer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType9Code#AcquirerProcessor
- * PartyType9Code.mmAcquirerProcessor}</li>
+ * PartyType9Code.AcquirerProcessor}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType9Code#CardIssuer
- * PartyType9Code.mmCardIssuer}</li>
+ * PartyType9Code.CardIssuer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType9Code#CardIssuerProcessor
- * PartyType9Code.mmCardIssuerProcessor}</li>
+ * PartyType9Code.CardIssuerProcessor}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.PartyType9Code#CardScheme
- * PartyType9Code.mmCardScheme}</li>
+ * PartyType9Code.CardScheme}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.PartyType9Code#CardSchemeProcessor
- * PartyType9Code.mmCardSchemeProcessor}</li>
+ * PartyType9Code.CardSchemeProcessor}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -58,8 +58,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -226,7 +226,7 @@ public class PartyType9Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PartyType9Code";
 				definition = "Type of entity.";

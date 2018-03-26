@@ -24,8 +24,12 @@ import com.tools20022.repository.area.catm.ManagementPlanReplacementV06;
 import com.tools20022.repository.entity.SystemIdentification;
 import com.tools20022.repository.entity.TerminalManagementAction;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.GenericIdentification71;
+import com.tools20022.repository.msg.TerminalManagementDataSet22;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -67,8 +71,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -81,15 +85,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "ManagementPlan6", propOrder = {"POIIdentification", "terminalManagerIdentification", "dataSet"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "ManagementPlan6", propOrder = {"pOIIdentification", "terminalManagerIdentification", "dataSet"})
 public class ManagementPlan6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "POIId")
 	protected GenericIdentification71 pOIIdentification;
 	/**
-	 * Identification of the point of interaction (POI) for terminal management.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -121,10 +126,10 @@ public class ManagementPlan6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmPOIIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ManagementPlan6, Optional<GenericIdentification71>> mmPOIIdentification = new MMMessageAssociationEnd<ManagementPlan6, Optional<GenericIdentification71>>() {
 		{
 			businessElementTrace_lazy = () -> SystemIdentification.mmIdentification;
-			componentContext_lazy = () -> ManagementPlan6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ManagementPlan6.mmObject();
 			isDerived = false;
 			xmlTag = "POIId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -133,14 +138,24 @@ public class ManagementPlan6 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.GenericIdentification71.mmObject();
+			type_lazy = () -> GenericIdentification71.mmObject();
+		}
+
+		@Override
+		public Optional<GenericIdentification71> getValue(ManagementPlan6 obj) {
+			return obj.getPOIIdentification();
+		}
+
+		@Override
+		public void setValue(ManagementPlan6 obj, Optional<GenericIdentification71> value) {
+			obj.setPOIIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "TermnlMgrId", required = true)
 	protected GenericIdentification71 terminalManagerIdentification;
 	/**
-	 * Identification of the terminal management system (TMS) sending the
-	 * management plan.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -172,10 +187,10 @@ public class ManagementPlan6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTerminalManagerIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ManagementPlan6, GenericIdentification71> mmTerminalManagerIdentification = new MMMessageAssociationEnd<ManagementPlan6, GenericIdentification71>() {
 		{
 			businessElementTrace_lazy = () -> SystemIdentification.mmIdentification;
-			componentContext_lazy = () -> ManagementPlan6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ManagementPlan6.mmObject();
 			isDerived = false;
 			xmlTag = "TermnlMgrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -184,14 +199,24 @@ public class ManagementPlan6 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.GenericIdentification71.mmObject();
+			type_lazy = () -> GenericIdentification71.mmObject();
+		}
+
+		@Override
+		public GenericIdentification71 getValue(ManagementPlan6 obj) {
+			return obj.getTerminalManagerIdentification();
+		}
+
+		@Override
+		public void setValue(ManagementPlan6 obj, GenericIdentification71 value) {
+			obj.setTerminalManagerIdentification(value);
 		}
 	};
+	@XmlElement(name = "DataSet", required = true)
 	protected TerminalManagementDataSet22 dataSet;
 	/**
-	 * Data set related to the sequence of actions to be performed by a point of
-	 * interaction (POI).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -223,10 +248,10 @@ public class ManagementPlan6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDataSet = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ManagementPlan6, TerminalManagementDataSet22> mmDataSet = new MMMessageAssociationEnd<ManagementPlan6, TerminalManagementDataSet22>() {
 		{
 			businessComponentTrace_lazy = () -> TerminalManagementAction.mmObject();
-			componentContext_lazy = () -> ManagementPlan6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ManagementPlan6.mmObject();
 			isDerived = false;
 			xmlTag = "DataSet";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -235,17 +260,28 @@ public class ManagementPlan6 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TerminalManagementDataSet22.mmObject();
+			type_lazy = () -> TerminalManagementDataSet22.mmObject();
+		}
+
+		@Override
+		public TerminalManagementDataSet22 getValue(ManagementPlan6 obj) {
+			return obj.getDataSet();
+		}
+
+		@Override
+		public void setValue(ManagementPlan6 obj, TerminalManagementDataSet22 value) {
+			obj.setDataSet(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ManagementPlan6.mmPOIIdentification, ManagementPlan6.mmTerminalManagerIdentification, ManagementPlan6.mmDataSet);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ManagementPlan6.mmPOIIdentification, com.tools20022.repository.msg.ManagementPlan6.mmTerminalManagerIdentification,
+						com.tools20022.repository.msg.ManagementPlan6.mmDataSet);
 				messageBuildingBlock_lazy = () -> Arrays.asList(ManagementPlanReplacementV06.mmManagementPlan);
 				trace_lazy = () -> TerminalManagementAction.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ManagementPlan6";
 				definition = "Sequence of terminal management actions to be performed by a point of interaction (POI).";
@@ -254,30 +290,30 @@ public class ManagementPlan6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "POIId")
-	public GenericIdentification71 getPOIIdentification() {
-		return pOIIdentification;
+	public Optional<GenericIdentification71> getPOIIdentification() {
+		return pOIIdentification == null ? Optional.empty() : Optional.of(pOIIdentification);
 	}
 
-	public void setPOIIdentification(com.tools20022.repository.msg.GenericIdentification71 pOIIdentification) {
+	public ManagementPlan6 setPOIIdentification(GenericIdentification71 pOIIdentification) {
 		this.pOIIdentification = pOIIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "TermnlMgrId", required = true)
 	public GenericIdentification71 getTerminalManagerIdentification() {
 		return terminalManagerIdentification;
 	}
 
-	public void setTerminalManagerIdentification(com.tools20022.repository.msg.GenericIdentification71 terminalManagerIdentification) {
-		this.terminalManagerIdentification = terminalManagerIdentification;
+	public ManagementPlan6 setTerminalManagerIdentification(GenericIdentification71 terminalManagerIdentification) {
+		this.terminalManagerIdentification = Objects.requireNonNull(terminalManagerIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "DataSet", required = true)
 	public TerminalManagementDataSet22 getDataSet() {
 		return dataSet;
 	}
 
-	public void setDataSet(com.tools20022.repository.msg.TerminalManagementDataSet22 dataSet) {
-		this.dataSet = dataSet;
+	public ManagementPlan6 setDataSet(TerminalManagementDataSet22 dataSet) {
+		this.dataSet = Objects.requireNonNull(dataSet);
+		return this;
 	}
 }

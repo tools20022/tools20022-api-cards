@@ -39,27 +39,27 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectReason2Code#UnableToProcess
- * RejectReason2Code.mmUnableToProcess}</li>
+ * RejectReason2Code.UnableToProcess}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectReason2Code#InvalidMessage
- * RejectReason2Code.mmInvalidMessage}</li>
+ * RejectReason2Code.InvalidMessage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectReason2Code#ParsingError
- * RejectReason2Code.mmParsingError}</li>
+ * RejectReason2Code.ParsingError}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.RejectReason2Code#Security
- * RejectReason2Code.mmSecurity}</li>
+ * RejectReason2Code.Security}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectReason2Code#InitiatingParty
- * RejectReason2Code.mmInitiatingParty}</li>
+ * RejectReason2Code.InitiatingParty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectReason2Code#RecipientParty
- * RejectReason2Code.mmRecipientParty}</li>
+ * RejectReason2Code.RecipientParty}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectReason2Code#ProtocolVersion
- * RejectReason2Code.mmProtocolVersion}</li>
+ * RejectReason2Code.ProtocolVersion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.RejectReason2Code#MessageType
- * RejectReason2Code.mmMessageType}</li>
+ * RejectReason2Code.MessageType}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -68,8 +68,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -114,7 +114,7 @@ public class RejectReason2Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.RejectReason1Code#UnableToProcess
-	 * RejectReason1Code.mmUnableToProcess}</li>
+	 * RejectReason1Code.UnableToProcess}</li>
 	 * </ul>
 	 */
 	public static final RejectReason2Code UnableToProcess = new RejectReason2Code() {
@@ -144,7 +144,7 @@ public class RejectReason2Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.RejectReason1Code#InvalidMessage
-	 * RejectReason1Code.mmInvalidMessage}</li>
+	 * RejectReason1Code.InvalidMessage}</li>
 	 * </ul>
 	 */
 	public static final RejectReason2Code InvalidMessage = new RejectReason2Code() {
@@ -174,7 +174,7 @@ public class RejectReason2Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.RejectReason1Code#ParsingError
-	 * RejectReason1Code.mmParsingError}</li>
+	 * RejectReason1Code.ParsingError}</li>
 	 * </ul>
 	 */
 	public static final RejectReason2Code ParsingError = new RejectReason2Code() {
@@ -204,7 +204,7 @@ public class RejectReason2Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.RejectReason1Code#Security
-	 * RejectReason1Code.mmSecurity}</li>
+	 * RejectReason1Code.Security}</li>
 	 * </ul>
 	 */
 	public static final RejectReason2Code Security = new RejectReason2Code() {
@@ -234,7 +234,7 @@ public class RejectReason2Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.RejectReason1Code#InitiatingParty
-	 * RejectReason1Code.mmInitiatingParty}</li>
+	 * RejectReason1Code.InitiatingParty}</li>
 	 * </ul>
 	 */
 	public static final RejectReason2Code InitiatingParty = new RejectReason2Code() {
@@ -264,7 +264,7 @@ public class RejectReason2Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.RejectReason1Code#RecipientParty
-	 * RejectReason1Code.mmRecipientParty}</li>
+	 * RejectReason1Code.RecipientParty}</li>
 	 * </ul>
 	 */
 	public static final RejectReason2Code RecipientParty = new RejectReason2Code() {
@@ -294,7 +294,7 @@ public class RejectReason2Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.RejectReason1Code#ProtocolVersion
-	 * RejectReason1Code.mmProtocolVersion}</li>
+	 * RejectReason1Code.ProtocolVersion}</li>
 	 * </ul>
 	 */
 	public static final RejectReason2Code ProtocolVersion = new RejectReason2Code() {
@@ -324,7 +324,7 @@ public class RejectReason2Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.RejectReason1Code#MessageType
-	 * RejectReason1Code.mmMessageType}</li>
+	 * RejectReason1Code.MessageType}</li>
 	 * </ul>
 	 */
 	public static final RejectReason2Code MessageType = new RejectReason2Code() {
@@ -344,7 +344,7 @@ public class RejectReason2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("UNPR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RejectReason2Code";

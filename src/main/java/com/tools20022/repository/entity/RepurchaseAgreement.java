@@ -21,10 +21,12 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.PaymentObligation;
 import com.tools20022.repository.entity.SecuritiesFinancing;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Sale of securities together with an agreement for the seller to buy back the
@@ -63,8 +65,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,8 +84,8 @@ public class RepurchaseAgreement extends SecuritiesFinancing {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected PaymentObligation paymentObligation;
 	/**
-	 * Obligation covered by a repurchase agreement.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -114,7 +116,7 @@ public class RepurchaseAgreement extends SecuritiesFinancing {
 	 * definition} = "Obligation covered by a repurchase agreement."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPaymentObligation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<RepurchaseAgreement, com.tools20022.repository.entity.PaymentObligation> mmPaymentObligation = new MMBusinessAssociationEnd<RepurchaseAgreement, com.tools20022.repository.entity.PaymentObligation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.RepurchaseAgreement.mmObject();
@@ -127,12 +129,22 @@ public class RepurchaseAgreement extends SecuritiesFinancing {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.PaymentObligation getValue(RepurchaseAgreement obj) {
+			return obj.getPaymentObligation();
+		}
+
+		@Override
+		public void setValue(RepurchaseAgreement obj, com.tools20022.repository.entity.PaymentObligation value) {
+			obj.setPaymentObligation(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "RepurchaseAgreement";
 				definition = "Sale of securities together with an agreement for the seller to buy back the securities at a later date.\r\nA repo is equivalent to a spot sale combined with a forward contract.\r\nFor the seller of the security it is a repo; for the buyer of the security it is a reverse repurchase agreement. ";
@@ -153,7 +165,8 @@ public class RepurchaseAgreement extends SecuritiesFinancing {
 		return paymentObligation;
 	}
 
-	public void setPaymentObligation(com.tools20022.repository.entity.PaymentObligation paymentObligation) {
-		this.paymentObligation = paymentObligation;
+	public RepurchaseAgreement setPaymentObligation(com.tools20022.repository.entity.PaymentObligation paymentObligation) {
+		this.paymentObligation = Objects.requireNonNull(paymentObligation);
+		return this;
 	}
 }

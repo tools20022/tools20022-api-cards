@@ -27,9 +27,10 @@ import com.tools20022.repository.datatype.Max256Text;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.Max70Text;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.ClockSynchronisation1;
+import com.tools20022.repository.msg.LocalDateTime1;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -70,8 +71,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,15 +84,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Manufacturer configuration parameters of the point of interaction (POI)."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PaymentTerminalParameters4", propOrder = {"actionType", "vendorIdentification", "version", "clockSynchronisation", "timeZoneLine", "localDateTime", "otherParameters"})
 public class PaymentTerminalParameters4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ActnTp", required = true)
 	protected TerminalManagementAction3Code actionType;
 	/**
-	 * Type of action for the configuration parameters.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -117,9 +119,9 @@ public class PaymentTerminalParameters4 {
 	 * definition} = "Type of action for the configuration parameters."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmActionType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentTerminalParameters4, TerminalManagementAction3Code> mmActionType = new MMMessageAttribute<PaymentTerminalParameters4, TerminalManagementAction3Code>() {
 		{
-			componentContext_lazy = () -> PaymentTerminalParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentTerminalParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "ActnTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -129,12 +131,22 @@ public class PaymentTerminalParameters4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> TerminalManagementAction3Code.mmObject();
 		}
+
+		@Override
+		public TerminalManagementAction3Code getValue(PaymentTerminalParameters4 obj) {
+			return obj.getActionType();
+		}
+
+		@Override
+		public void setValue(PaymentTerminalParameters4 obj, TerminalManagementAction3Code value) {
+			obj.setActionType(value);
+		}
 	};
+	@XmlElement(name = "VndrId")
 	protected Max35Text vendorIdentification;
 	/**
-	 * Identification of the vendor for the MTM, if the POI manages various
-	 * subsets of terminal parameters.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -161,9 +173,9 @@ public class PaymentTerminalParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVendorIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentTerminalParameters4, Optional<Max35Text>> mmVendorIdentification = new MMMessageAttribute<PaymentTerminalParameters4, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> PaymentTerminalParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentTerminalParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "VndrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -173,11 +185,22 @@ public class PaymentTerminalParameters4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(PaymentTerminalParameters4 obj) {
+			return obj.getVendorIdentification();
+		}
+
+		@Override
+		public void setValue(PaymentTerminalParameters4 obj, Optional<Max35Text> value) {
+			obj.setVendorIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Vrsn")
 	protected Max256Text version;
 	/**
-	 * Version of the terminal parameters.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -202,9 +225,9 @@ public class PaymentTerminalParameters4 {
 	 * definition} = "Version of the terminal parameters."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVersion = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentTerminalParameters4, Optional<Max256Text>> mmVersion = new MMMessageAttribute<PaymentTerminalParameters4, Optional<Max256Text>>() {
 		{
-			componentContext_lazy = () -> PaymentTerminalParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentTerminalParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "Vrsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -214,12 +237,22 @@ public class PaymentTerminalParameters4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max256Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max256Text> getValue(PaymentTerminalParameters4 obj) {
+			return obj.getVersion();
+		}
+
+		@Override
+		public void setValue(PaymentTerminalParameters4 obj, Optional<Max256Text> value) {
+			obj.setVersion(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ClckSynctn")
 	protected ClockSynchronisation1 clockSynchronisation;
 	/**
-	 * Parameters to synchronise the real time clock of the POI (Point Of
-	 * Interaction).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -245,9 +278,9 @@ public class PaymentTerminalParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmClockSynchronisation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PaymentTerminalParameters4, Optional<ClockSynchronisation1>> mmClockSynchronisation = new MMMessageAssociationEnd<PaymentTerminalParameters4, Optional<ClockSynchronisation1>>() {
 		{
-			componentContext_lazy = () -> PaymentTerminalParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentTerminalParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "ClckSynctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -256,15 +289,24 @@ public class PaymentTerminalParameters4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ClockSynchronisation1.mmObject();
+			type_lazy = () -> ClockSynchronisation1.mmObject();
+		}
+
+		@Override
+		public Optional<ClockSynchronisation1> getValue(PaymentTerminalParameters4 obj) {
+			return obj.getClockSynchronisation();
+		}
+
+		@Override
+		public void setValue(PaymentTerminalParameters4 obj, Optional<ClockSynchronisation1> value) {
+			obj.setClockSynchronisation(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "TmZoneLine")
 	protected List<Max70Text> timeZoneLine;
 	/**
-	 * Time zone line to update in the time zone data base subset stored in the
-	 * POI (Point Of Interaction). The format of the line is conform to the IANA
-	 * (Internet Assigned Number Authority) time zone data base.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -291,9 +333,9 @@ public class PaymentTerminalParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTimeZoneLine = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentTerminalParameters4, List<Max70Text>> mmTimeZoneLine = new MMMessageAttribute<PaymentTerminalParameters4, List<Max70Text>>() {
 		{
-			componentContext_lazy = () -> PaymentTerminalParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentTerminalParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "TmZoneLine";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -302,11 +344,22 @@ public class PaymentTerminalParameters4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
+
+		@Override
+		public List<Max70Text> getValue(PaymentTerminalParameters4 obj) {
+			return obj.getTimeZoneLine();
+		}
+
+		@Override
+		public void setValue(PaymentTerminalParameters4 obj, List<Max70Text> value) {
+			obj.setTimeZoneLine(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.LocalDateTime1> localDateTime;
+	@XmlElement(name = "LclDtTm")
+	protected List<LocalDateTime1> localDateTime;
 	/**
-	 * Local time offset to UTC (Coordinated Universal Time).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -330,9 +383,9 @@ public class PaymentTerminalParameters4 {
 	 * definition} = "Local time offset to UTC (Coordinated Universal Time)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmLocalDateTime = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PaymentTerminalParameters4, List<LocalDateTime1>> mmLocalDateTime = new MMMessageAssociationEnd<PaymentTerminalParameters4, List<LocalDateTime1>>() {
 		{
-			componentContext_lazy = () -> PaymentTerminalParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentTerminalParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "LclDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -340,13 +393,24 @@ public class PaymentTerminalParameters4 {
 			definition = "Local time offset to UTC (Coordinated Universal Time).";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.LocalDateTime1.mmObject();
+			type_lazy = () -> LocalDateTime1.mmObject();
+		}
+
+		@Override
+		public List<LocalDateTime1> getValue(PaymentTerminalParameters4 obj) {
+			return obj.getLocalDateTime();
+		}
+
+		@Override
+		public void setValue(PaymentTerminalParameters4 obj, List<LocalDateTime1> value) {
+			obj.setLocalDateTime(value);
 		}
 	};
+	@XmlElement(name = "OthrParams")
 	protected Max10000Binary otherParameters;
 	/**
-	 * Others manufacturer configuration parameters of the point of interaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -374,9 +438,9 @@ public class PaymentTerminalParameters4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOtherParameters = new MMMessageAttribute() {
+	public static final MMMessageAttribute<PaymentTerminalParameters4, Optional<Max10000Binary>> mmOtherParameters = new MMMessageAttribute<PaymentTerminalParameters4, Optional<Max10000Binary>>() {
 		{
-			componentContext_lazy = () -> PaymentTerminalParameters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PaymentTerminalParameters4.mmObject();
 			isDerived = false;
 			xmlTag = "OthrParams";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -386,14 +450,26 @@ public class PaymentTerminalParameters4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max10000Binary.mmObject();
 		}
+
+		@Override
+		public Optional<Max10000Binary> getValue(PaymentTerminalParameters4 obj) {
+			return obj.getOtherParameters();
+		}
+
+		@Override
+		public void setValue(PaymentTerminalParameters4 obj, Optional<Max10000Binary> value) {
+			obj.setOtherParameters(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PaymentTerminalParameters4.mmActionType, PaymentTerminalParameters4.mmVendorIdentification, PaymentTerminalParameters4.mmVersion, PaymentTerminalParameters4.mmClockSynchronisation,
-						PaymentTerminalParameters4.mmTimeZoneLine, PaymentTerminalParameters4.mmLocalDateTime, PaymentTerminalParameters4.mmOtherParameters);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PaymentTerminalParameters4.mmActionType, com.tools20022.repository.msg.PaymentTerminalParameters4.mmVendorIdentification,
+						com.tools20022.repository.msg.PaymentTerminalParameters4.mmVersion, com.tools20022.repository.msg.PaymentTerminalParameters4.mmClockSynchronisation,
+						com.tools20022.repository.msg.PaymentTerminalParameters4.mmTimeZoneLine, com.tools20022.repository.msg.PaymentTerminalParameters4.mmLocalDateTime,
+						com.tools20022.repository.msg.PaymentTerminalParameters4.mmOtherParameters);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentTerminalParameters4";
 				definition = "Manufacturer configuration parameters of the point of interaction (POI).";
@@ -402,66 +478,66 @@ public class PaymentTerminalParameters4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ActnTp", required = true)
 	public TerminalManagementAction3Code getActionType() {
 		return actionType;
 	}
 
-	public void setActionType(TerminalManagementAction3Code actionType) {
-		this.actionType = actionType;
+	public PaymentTerminalParameters4 setActionType(TerminalManagementAction3Code actionType) {
+		this.actionType = Objects.requireNonNull(actionType);
+		return this;
 	}
 
-	@XmlElement(name = "VndrId")
-	public Max35Text getVendorIdentification() {
-		return vendorIdentification;
+	public Optional<Max35Text> getVendorIdentification() {
+		return vendorIdentification == null ? Optional.empty() : Optional.of(vendorIdentification);
 	}
 
-	public void setVendorIdentification(Max35Text vendorIdentification) {
+	public PaymentTerminalParameters4 setVendorIdentification(Max35Text vendorIdentification) {
 		this.vendorIdentification = vendorIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "Vrsn")
-	public Max256Text getVersion() {
-		return version;
+	public Optional<Max256Text> getVersion() {
+		return version == null ? Optional.empty() : Optional.of(version);
 	}
 
-	public void setVersion(Max256Text version) {
+	public PaymentTerminalParameters4 setVersion(Max256Text version) {
 		this.version = version;
+		return this;
 	}
 
-	@XmlElement(name = "ClckSynctn")
-	public ClockSynchronisation1 getClockSynchronisation() {
-		return clockSynchronisation;
+	public Optional<ClockSynchronisation1> getClockSynchronisation() {
+		return clockSynchronisation == null ? Optional.empty() : Optional.of(clockSynchronisation);
 	}
 
-	public void setClockSynchronisation(com.tools20022.repository.msg.ClockSynchronisation1 clockSynchronisation) {
+	public PaymentTerminalParameters4 setClockSynchronisation(ClockSynchronisation1 clockSynchronisation) {
 		this.clockSynchronisation = clockSynchronisation;
+		return this;
 	}
 
-	@XmlElement(name = "TmZoneLine")
 	public List<Max70Text> getTimeZoneLine() {
-		return timeZoneLine;
+		return timeZoneLine == null ? timeZoneLine = new ArrayList<>() : timeZoneLine;
 	}
 
-	public void setTimeZoneLine(List<Max70Text> timeZoneLine) {
-		this.timeZoneLine = timeZoneLine;
+	public PaymentTerminalParameters4 setTimeZoneLine(List<Max70Text> timeZoneLine) {
+		this.timeZoneLine = Objects.requireNonNull(timeZoneLine);
+		return this;
 	}
 
-	@XmlElement(name = "LclDtTm")
 	public List<LocalDateTime1> getLocalDateTime() {
-		return localDateTime;
+		return localDateTime == null ? localDateTime = new ArrayList<>() : localDateTime;
 	}
 
-	public void setLocalDateTime(List<com.tools20022.repository.msg.LocalDateTime1> localDateTime) {
-		this.localDateTime = localDateTime;
+	public PaymentTerminalParameters4 setLocalDateTime(List<LocalDateTime1> localDateTime) {
+		this.localDateTime = Objects.requireNonNull(localDateTime);
+		return this;
 	}
 
-	@XmlElement(name = "OthrParams")
-	public Max10000Binary getOtherParameters() {
-		return otherParameters;
+	public Optional<Max10000Binary> getOtherParameters() {
+		return otherParameters == null ? Optional.empty() : Optional.of(otherParameters);
 	}
 
-	public void setOtherParameters(Max10000Binary otherParameters) {
+	public PaymentTerminalParameters4 setOtherParameters(Max10000Binary otherParameters) {
 		this.otherParameters = otherParameters;
+		return this;
 	}
 }

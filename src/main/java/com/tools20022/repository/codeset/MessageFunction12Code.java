@@ -38,43 +38,43 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction12Code#FinancialAuthorisationRequest
- * MessageFunction12Code.mmFinancialAuthorisationRequest}</li>
+ * MessageFunction12Code.FinancialAuthorisationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction12Code#CancellationRequest
- * MessageFunction12Code.mmCancellationRequest}</li>
+ * MessageFunction12Code.CancellationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction12Code#CompletionAdvice
- * MessageFunction12Code.mmCompletionAdvice}</li>
+ * MessageFunction12Code.CompletionAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction12Code#DiagnosticRequest
- * MessageFunction12Code.mmDiagnosticRequest}</li>
+ * MessageFunction12Code.DiagnosticRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction12Code#ReconciliationRequest
- * MessageFunction12Code.mmReconciliationRequest}</li>
+ * MessageFunction12Code.ReconciliationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction12Code#CancellationAdvice
- * MessageFunction12Code.mmCancellationAdvice}</li>
+ * MessageFunction12Code.CancellationAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction12Code#BatchTransfer
- * MessageFunction12Code.mmBatchTransfer}</li>
+ * MessageFunction12Code.BatchTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction12Code#FinancialReversalAdvice
- * MessageFunction12Code.mmFinancialReversalAdvice}</li>
+ * MessageFunction12Code.FinancialReversalAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction12Code#AuthorisationRequest
- * MessageFunction12Code.mmAuthorisationRequest}</li>
+ * MessageFunction12Code.AuthorisationRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction12Code#FinancialCompletionAdvice
- * MessageFunction12Code.mmFinancialCompletionAdvice}</li>
+ * MessageFunction12Code.FinancialCompletionAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction12Code#CurrencyConversionRequest
- * MessageFunction12Code.mmCurrencyConversionRequest}</li>
+ * MessageFunction12Code.CurrencyConversionRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction12Code#ReversalAdvice
- * MessageFunction12Code.mmReversalAdvice}</li>
+ * MessageFunction12Code.ReversalAdvice}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageFunction12Code#CurrencyConversionAdviceResponse
- * MessageFunction12Code.mmCurrencyConversionAdviceResponse}</li>
+ * MessageFunction12Code.CurrencyConversionAdviceResponse}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -83,8 +83,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -425,7 +425,7 @@ public class MessageFunction12Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("FAUQ");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MessageFunction12Code";

@@ -38,89 +38,89 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#MuniAAA
- * BenchmarkCurveNameCode.mmMuniAAA}</li>
+ * BenchmarkCurveNameCode.MuniAAA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#FutureSWAP
- * BenchmarkCurveNameCode.mmFutureSWAP}</li>
+ * BenchmarkCurveNameCode.FutureSWAP}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#LIBID
- * BenchmarkCurveNameCode.mmLIBID}</li>
+ * BenchmarkCurveNameCode.LIBID}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#LIBOR
- * BenchmarkCurveNameCode.mmLIBOR}</li>
+ * BenchmarkCurveNameCode.LIBOR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#SWAP
- * BenchmarkCurveNameCode.mmSWAP}</li>
+ * BenchmarkCurveNameCode.SWAP}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#Treasury
- * BenchmarkCurveNameCode.mmTreasury}</li>
+ * BenchmarkCurveNameCode.Treasury}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#Euribor
- * BenchmarkCurveNameCode.mmEuribor}</li>
+ * BenchmarkCurveNameCode.Euribor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#Pfandbriefe
- * BenchmarkCurveNameCode.mmPfandbriefe}</li>
+ * BenchmarkCurveNameCode.Pfandbriefe}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#EONIA
- * BenchmarkCurveNameCode.mmEONIA}</li>
+ * BenchmarkCurveNameCode.EONIA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#EONIASwaps
- * BenchmarkCurveNameCode.mmEONIASwaps}</li>
+ * BenchmarkCurveNameCode.EONIASwaps}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#EURODOLLAR
- * BenchmarkCurveNameCode.mmEURODOLLAR}</li>
+ * BenchmarkCurveNameCode.EURODOLLAR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#EuroSwiss
- * BenchmarkCurveNameCode.mmEuroSwiss}</li>
+ * BenchmarkCurveNameCode.EuroSwiss}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#TIBOR
- * BenchmarkCurveNameCode.mmTIBOR}</li>
+ * BenchmarkCurveNameCode.TIBOR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#ISDAFIX
- * BenchmarkCurveNameCode.mmISDAFIX}</li>
+ * BenchmarkCurveNameCode.ISDAFIX}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#GCFRepo
- * BenchmarkCurveNameCode.mmGCFRepo}</li>
+ * BenchmarkCurveNameCode.GCFRepo}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#STIBOR
- * BenchmarkCurveNameCode.mmSTIBOR}</li>
+ * BenchmarkCurveNameCode.STIBOR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#BBSW
- * BenchmarkCurveNameCode.mmBBSW}</li>
+ * BenchmarkCurveNameCode.BBSW}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#JIBAR
- * BenchmarkCurveNameCode.mmJIBAR}</li>
+ * BenchmarkCurveNameCode.JIBAR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#BUBOR
- * BenchmarkCurveNameCode.mmBUBOR}</li>
+ * BenchmarkCurveNameCode.BUBOR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#CDOR
- * BenchmarkCurveNameCode.mmCDOR}</li>
+ * BenchmarkCurveNameCode.CDOR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#CIBOR
- * BenchmarkCurveNameCode.mmCIBOR}</li>
+ * BenchmarkCurveNameCode.CIBOR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#MOSPRIM
- * BenchmarkCurveNameCode.mmMOSPRIM}</li>
+ * BenchmarkCurveNameCode.MOSPRIM}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#NIBOR
- * BenchmarkCurveNameCode.mmNIBOR}</li>
+ * BenchmarkCurveNameCode.NIBOR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#PRIBOR
- * BenchmarkCurveNameCode.mmPRIBOR}</li>
+ * BenchmarkCurveNameCode.PRIBOR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#TELBOR
- * BenchmarkCurveNameCode.mmTELBOR}</li>
+ * BenchmarkCurveNameCode.TELBOR}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.BenchmarkCurveNameCode#WIBOR
- * BenchmarkCurveNameCode.mmWIBOR}</li>
+ * BenchmarkCurveNameCode.WIBOR}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -196,7 +196,7 @@ public class BenchmarkCurveNameCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Portion of a synthetic curve that is composed of Eurodollar or Treasury or similar Futures and Swap rates.  The term usually begins at 3 months to 2 years for the futures strip component with the Swaps filling in the points to 10 years and beyond."
+	 * "Portion of a synthetic curve that is composed of Eurodollar or Treasury or similar Futures and Swap rates. The term usually begins at 3 months to 2 years for the futures strip component with the Swaps filling in the points to 10 years and beyond."
 	 * </li>
 	 * </ul>
 	 */
@@ -204,7 +204,7 @@ public class BenchmarkCurveNameCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "FutureSWAP";
-			definition = "Portion of a synthetic curve that is composed of Eurodollar or Treasury or similar Futures and Swap rates.  The term usually begins at 3 months to 2 years for the futures strip component with the Swaps filling in the points to 10 years and beyond.";
+			definition = "Portion of a synthetic curve that is composed of Eurodollar or Treasury or similar Futures and Swap rates. The term usually begins at 3 months to 2 years for the futures strip component with the Swaps filling in the points to 10 years and beyond.";
 			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "FUSW";
 		}
@@ -336,7 +336,7 @@ public class BenchmarkCurveNameCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Treasury benchmark that comes in three types: the yield curve, the par curve, and the spot curve.  All curves also have a constituent time series."
+	 * "Treasury benchmark that comes in three types: the yield curve, the par curve, and the spot curve. All curves also have a constituent time series."
 	 * </li>
 	 * </ul>
 	 */
@@ -344,7 +344,7 @@ public class BenchmarkCurveNameCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Treasury";
-			definition = "Treasury benchmark that comes in three types: the yield curve, the par curve, and the spot curve.  All curves also have a constituent time series.";
+			definition = "Treasury benchmark that comes in three types: the yield curve, the par curve, and the spot curve. All curves also have a constituent time series.";
 			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "TREA";
 		}
@@ -412,7 +412,7 @@ public class BenchmarkCurveNameCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Pfandbriefe security is a collateralised bullet bond backed by either mortgage loans or loans to the public sector.  Pfandbriefe differ from traditional asset-backed securities in significant ways.  The most important difference is that Pfandbriefe carry no pre-payment risk since they remain on the balance sheet of the issuing institution.  Therefore, their spreads over sovereign bonds are attributable to liquidity and credit quality alone.  New indices have been created and existing indices have been modified in response to the growing importance of the Pfandbriefe market.  The Deutsche Borse has three synthetic indices called REX, JEX, and PEX.  The Pfandbriefe curve is used as a reference for credit as well as mortgage market."
+	 * "Pfandbriefe security is a collateralised bullet bond backed by either mortgage loans or loans to the public sector. Pfandbriefe differ from traditional asset-backed securities in significant ways. The most important difference is that Pfandbriefe carry no pre-payment risk since they remain on the balance sheet of the issuing institution. Therefore, their spreads over sovereign bonds are attributable to liquidity and credit quality alone. New indices have been created and existing indices have been modified in response to the growing importance of the Pfandbriefe market. The Deutsche Borse has three synthetic indices called REX, JEX, and PEX. The Pfandbriefe curve is used as a reference for credit as well as mortgage market."
 	 * </li>
 	 * </ul>
 	 */
@@ -420,7 +420,7 @@ public class BenchmarkCurveNameCode extends MMCode {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Pfandbriefe";
-			definition = "Pfandbriefe security is a collateralised bullet bond backed by either mortgage loans or loans to the public sector.  Pfandbriefe differ from traditional asset-backed securities in significant ways.  The most important difference is that Pfandbriefe carry no pre-payment risk since they remain on the balance sheet of the issuing institution.  Therefore, their spreads over sovereign bonds are attributable to liquidity and credit quality alone.  New indices have been created and existing indices have been modified in response to the growing importance of the Pfandbriefe market.  The Deutsche Borse has three synthetic indices called REX, JEX, and PEX.  The Pfandbriefe curve is used as a reference for credit as well as mortgage market.";
+			definition = "Pfandbriefe security is a collateralised bullet bond backed by either mortgage loans or loans to the public sector. Pfandbriefe differ from traditional asset-backed securities in significant ways. The most important difference is that Pfandbriefe carry no pre-payment risk since they remain on the balance sheet of the issuing institution. Therefore, their spreads over sovereign bonds are attributable to liquidity and credit quality alone. New indices have been created and existing indices have been modified in response to the growing importance of the Pfandbriefe market. The Deutsche Borse has three synthetic indices called REX, JEX, and PEX. The Pfandbriefe curve is used as a reference for credit as well as mortgage market.";
 			owner_lazy = () -> com.tools20022.repository.codeset.BenchmarkCurveNameCode.mmObject();
 			codeName = "PFAN";
 		}
@@ -986,7 +986,7 @@ public class BenchmarkCurveNameCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("MAAA");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BenchmarkCurveNameCode";

@@ -23,8 +23,11 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.UnitOfMeasure2Code.InternalXmlAdapter;
 import com.tools20022.repository.GeneratedRepository;
 import java.lang.String;
+import java.text.DateFormat;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Date;
+import java.util.function.Supplier;
 import java.util.LinkedHashMap;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -39,117 +42,117 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Kilogram
- * UnitOfMeasure2Code.mmKilogram}</li>
+ * UnitOfMeasure2Code.Kilogram}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Each
- * UnitOfMeasure2Code.mmEach}</li>
+ * UnitOfMeasure2Code.Each}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#GBTon
- * UnitOfMeasure2Code.mmGBTon}</li>
+ * UnitOfMeasure2Code.GBTon}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Metre
- * UnitOfMeasure2Code.mmMetre}</li>
+ * UnitOfMeasure2Code.Metre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Inch
- * UnitOfMeasure2Code.mmInch}</li>
+ * UnitOfMeasure2Code.Inch}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Yard
- * UnitOfMeasure2Code.mmYard}</li>
+ * UnitOfMeasure2Code.Yard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#GBGallon
- * UnitOfMeasure2Code.mmGBGallon}</li>
+ * UnitOfMeasure2Code.GBGallon}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Gram
- * UnitOfMeasure2Code.mmGram}</li>
+ * UnitOfMeasure2Code.Gram}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Centimetre
- * UnitOfMeasure2Code.mmCentimetre}</li>
+ * UnitOfMeasure2Code.Centimetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#SquareMetre
- * UnitOfMeasure2Code.mmSquareMetre}</li>
+ * UnitOfMeasure2Code.SquareMetre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Foot
- * UnitOfMeasure2Code.mmFoot}</li>
+ * UnitOfMeasure2Code.Foot}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Mile
- * UnitOfMeasure2Code.mmMile}</li>
+ * UnitOfMeasure2Code.Mile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#SquareInch
- * UnitOfMeasure2Code.mmSquareInch}</li>
+ * UnitOfMeasure2Code.SquareInch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#SquareFoot
- * UnitOfMeasure2Code.mmSquareFoot}</li>
+ * UnitOfMeasure2Code.SquareFoot}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#SquareMile
- * UnitOfMeasure2Code.mmSquareMile}</li>
+ * UnitOfMeasure2Code.SquareMile}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Ounce
- * UnitOfMeasure2Code.mmOunce}</li>
+ * UnitOfMeasure2Code.Ounce}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#GBPint
- * UnitOfMeasure2Code.mmGBPint}</li>
+ * UnitOfMeasure2Code.GBPint}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#USPint
- * UnitOfMeasure2Code.mmUSPint}</li>
+ * UnitOfMeasure2Code.USPint}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#GBQuart
- * UnitOfMeasure2Code.mmGBQuart}</li>
+ * UnitOfMeasure2Code.GBQuart}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#USQuart
- * UnitOfMeasure2Code.mmUSQuart}</li>
+ * UnitOfMeasure2Code.USQuart}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#USGallon
- * UnitOfMeasure2Code.mmUSGallon}</li>
+ * UnitOfMeasure2Code.USGallon}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Millimetre
- * UnitOfMeasure2Code.mmMillimetre}</li>
+ * UnitOfMeasure2Code.Millimetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Kilometre
- * UnitOfMeasure2Code.mmKilometre}</li>
+ * UnitOfMeasure2Code.Kilometre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#SquareYard
- * UnitOfMeasure2Code.mmSquareYard}</li>
+ * UnitOfMeasure2Code.SquareYard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#SquareMillimetre
- * UnitOfMeasure2Code.mmSquareMillimetre}</li>
+ * UnitOfMeasure2Code.SquareMillimetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#SquareCentimetre
- * UnitOfMeasure2Code.mmSquareCentimetre}</li>
+ * UnitOfMeasure2Code.SquareCentimetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#SquareKilometre
- * UnitOfMeasure2Code.mmSquareKilometre}</li>
+ * UnitOfMeasure2Code.SquareKilometre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#CubicMillimetre
- * UnitOfMeasure2Code.mmCubicMillimetre}</li>
+ * UnitOfMeasure2Code.CubicMillimetre}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Centilitre
- * UnitOfMeasure2Code.mmCentilitre}</li>
+ * UnitOfMeasure2Code.Centilitre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Litre
- * UnitOfMeasure2Code.mmLitre}</li>
+ * UnitOfMeasure2Code.Litre}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Pound
- * UnitOfMeasure2Code.mmPound}</li>
+ * UnitOfMeasure2Code.Pound}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#USTon
- * UnitOfMeasure2Code.mmUSTon}</li>
+ * UnitOfMeasure2Code.USTon}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#USBarrel
- * UnitOfMeasure2Code.mmUSBarrel}</li>
+ * UnitOfMeasure2Code.USBarrel}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Box
- * UnitOfMeasure2Code.mmBox}</li>
+ * UnitOfMeasure2Code.Box}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Bottle
- * UnitOfMeasure2Code.mmBottle}</li>
+ * UnitOfMeasure2Code.Bottle}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Carton
- * UnitOfMeasure2Code.mmCarton}</li>
+ * UnitOfMeasure2Code.Carton}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Container
- * UnitOfMeasure2Code.mmContainer}</li>
+ * UnitOfMeasure2Code.Container}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Crate
- * UnitOfMeasure2Code.mmCrate}</li>
+ * UnitOfMeasure2Code.Crate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#CubicInch
- * UnitOfMeasure2Code.mmCubicInch}</li>
+ * UnitOfMeasure2Code.CubicInch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#CubicMeter
- * UnitOfMeasure2Code.mmCubicMeter}</li>
+ * UnitOfMeasure2Code.CubicMeter}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#GBFluidOunce
- * UnitOfMeasure2Code.mmGBFluidOunce}</li>
+ * UnitOfMeasure2Code.GBFluidOunce}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#USFluidOunce
- * UnitOfMeasure2Code.mmUSFluidOunce}</li>
+ * UnitOfMeasure2Code.USFluidOunce}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Bag
- * UnitOfMeasure2Code.mmBag}</li>
+ * UnitOfMeasure2Code.Bag}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#Bale
- * UnitOfMeasure2Code.mmBale}</li>
+ * UnitOfMeasure2Code.Bale}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UnitOfMeasure2Code#MetricTon
- * UnitOfMeasure2Code.mmMetricTon}</li>
+ * UnitOfMeasure2Code.MetricTon}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -162,8 +165,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -172,8 +175,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
- * registrationStatus} =
- * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
+ * registrationStatus} = com.tools20022.metamodel.MMRegistrationStatus.OBSOLETE</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRemovalDate
+ * removalDate} = December 12, 2018</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName name} =
  * "UnitOfMeasure2Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
@@ -399,7 +403,7 @@ public class UnitOfMeasure2Code extends MMCode {
 		}
 	};
 	/**
-	 * Unit of measure that is equal to a 1,000th of a kilo.
+	 * Unit of measure that is equal to a 1, 000th of a kilo.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -416,14 +420,14 @@ public class UnitOfMeasure2Code extends MMCode {
 	 * name} = "Gram"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Unit of measure that is equal to a 1,000th of a kilo."</li>
+	 * definition} = "Unit of measure that is equal to a 1, 000th of a kilo."</li>
 	 * </ul>
 	 */
 	public static final UnitOfMeasure2Code Gram = new UnitOfMeasure2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Gram";
-			definition = "Unit of measure that is equal to a 1,000th of a kilo.";
+			definition = "Unit of measure that is equal to a 1, 000th of a kilo.";
 			owner_lazy = () -> com.tools20022.repository.codeset.UnitOfMeasure2Code.mmObject();
 			codeName = "GRM";
 		}
@@ -519,7 +523,7 @@ public class UnitOfMeasure2Code extends MMCode {
 		}
 	};
 	/**
-	 * Unit of length equal to 1,760 yards.
+	 * Unit of length equal to 1, 760 yards.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -536,14 +540,14 @@ public class UnitOfMeasure2Code extends MMCode {
 	 * name} = "Mile"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Unit of length equal to 1,760 yards."</li>
+	 * definition} = "Unit of length equal to 1, 760 yards."</li>
 	 * </ul>
 	 */
 	public static final UnitOfMeasure2Code Mile = new UnitOfMeasure2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Mile";
-			definition = "Unit of length equal to 1,760 yards.";
+			definition = "Unit of length equal to 1, 760 yards.";
 			owner_lazy = () -> com.tools20022.repository.codeset.UnitOfMeasure2Code.mmObject();
 			codeName = "1A";
 		}
@@ -849,7 +853,7 @@ public class UnitOfMeasure2Code extends MMCode {
 		}
 	};
 	/**
-	 * Unit of measure that is equal to 1,000 meters.
+	 * Unit of measure that is equal to 1, 000 meters.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -866,14 +870,14 @@ public class UnitOfMeasure2Code extends MMCode {
 	 * name} = "Kilometre"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Unit of measure that is equal to 1,000 meters."</li>
+	 * definition} = "Unit of measure that is equal to 1, 000 meters."</li>
 	 * </ul>
 	 */
 	public static final UnitOfMeasure2Code Kilometre = new UnitOfMeasure2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Kilometre";
-			definition = "Unit of measure that is equal to 1,000 meters.";
+			definition = "Unit of measure that is equal to 1, 000 meters.";
 			owner_lazy = () -> com.tools20022.repository.codeset.UnitOfMeasure2Code.mmObject();
 			codeName = "KTM";
 		}
@@ -1139,20 +1143,20 @@ public class UnitOfMeasure2Code extends MMCode {
 	 * name} = "USTon"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Measure of weight,  in the US 2000lb (short ton)."</li>
+	 * definition} = "Measure of weight, in the US 2000lb (short ton)."</li>
 	 * </ul>
 	 */
 	public static final UnitOfMeasure2Code USTon = new UnitOfMeasure2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "USTon";
-			definition = "Measure of weight,  in the US 2000lb (short ton).";
+			definition = "Measure of weight, in the US 2000lb (short ton).";
 			owner_lazy = () -> com.tools20022.repository.codeset.UnitOfMeasure2Code.mmObject();
 			codeName = "STN";
 		}
 	};
 	/**
-	 * Unit of volume equal to 158,9873 litre.
+	 * Unit of volume equal to 158, 9873 litre.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1169,14 +1173,14 @@ public class UnitOfMeasure2Code extends MMCode {
 	 * name} = "USBarrel"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Unit of volume equal to 158,9873 litre."</li>
+	 * definition} = "Unit of volume equal to 158, 9873 litre."</li>
 	 * </ul>
 	 */
 	public static final UnitOfMeasure2Code USBarrel = new UnitOfMeasure2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "USBarrel";
-			definition = "Unit of volume equal to 158,9873 litre.";
+			definition = "Unit of volume equal to 158, 9873 litre.";
 			owner_lazy = () -> com.tools20022.repository.codeset.UnitOfMeasure2Code.mmObject();
 			codeName = "BLL";
 		}
@@ -1393,7 +1397,7 @@ public class UnitOfMeasure2Code extends MMCode {
 		}
 	};
 	/**
-	 * Unit of volume equal to 2,841 306 centilitre.
+	 * Unit of volume equal to 2, 841 306 centilitre.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1410,20 +1414,20 @@ public class UnitOfMeasure2Code extends MMCode {
 	 * name} = "GBFluidOunce"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Unit of volume equal to 2,841 306 centilitre."</li>
+	 * definition} = "Unit of volume equal to 2, 841 306 centilitre."</li>
 	 * </ul>
 	 */
 	public static final UnitOfMeasure2Code GBFluidOunce = new UnitOfMeasure2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "GBFluidOunce";
-			definition = "Unit of volume equal to 2,841 306 centilitre.";
+			definition = "Unit of volume equal to 2, 841 306 centilitre.";
 			owner_lazy = () -> com.tools20022.repository.codeset.UnitOfMeasure2Code.mmObject();
 			codeName = "OZI";
 		}
 	};
 	/**
-	 * Unit of volume equal to 2,957 353 centilitre.
+	 * Unit of volume equal to 2, 957 353 centilitre.
 	 * <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
@@ -1440,14 +1444,14 @@ public class UnitOfMeasure2Code extends MMCode {
 	 * name} = "USFluidOunce"</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} = "Unit of volume equal to 2,957 353 centilitre."</li>
+	 * definition} = "Unit of volume equal to 2, 957 353 centilitre."</li>
 	 * </ul>
 	 */
 	public static final UnitOfMeasure2Code USFluidOunce = new UnitOfMeasure2Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "USFluidOunce";
-			definition = "Unit of volume equal to 2,957 353 centilitre.";
+			definition = "Unit of volume equal to 2, 957 353 centilitre.";
 			owner_lazy = () -> com.tools20022.repository.codeset.UnitOfMeasure2Code.mmObject();
 			codeName = "OZA";
 		}
@@ -1550,9 +1554,16 @@ public class UnitOfMeasure2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("KGM");
-				registrationStatus = MMRegistrationStatus.REGISTERED;
+				registrationStatus = MMRegistrationStatus.OBSOLETE;
+				removalDate = ((Supplier<Date>) (() -> {
+					try {
+						return DateFormat.getDateInstance(java.text.DateFormat.LONG).parse("December 12, 2018");
+					} catch (Exception e) {
+						throw new RuntimeException(e);
+					}
+				})).get();
 				name = "UnitOfMeasure2Code";
 				definition = "Identifies the unit of measure by means of a code. The code is taken from UN/ECE Recommendation 20.";
 				derivation_lazy = () -> Arrays.asList(UnitOfMeasure4Code.mmObject());

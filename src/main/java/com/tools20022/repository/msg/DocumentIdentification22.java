@@ -27,6 +27,8 @@ import com.tools20022.repository.entity.GenericIdentification;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +56,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Identifies a document by a unique identification and a date of issue."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "DocumentIdentification22", propOrder = {"identification", "dateOfIssue"})
 public class DocumentIdentification22 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected Max35Text identification;
 	/**
-	 * Identifies the document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,10 +108,10 @@ public class DocumentIdentification22 {
 	 * definition} = "Identifies the document."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentIdentification22, Max35Text> mmIdentification = new MMMessageAttribute<DocumentIdentification22, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> GenericIdentification.mmIdentification;
-			componentContext_lazy = () -> DocumentIdentification22.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentIdentification22.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,11 +121,22 @@ public class DocumentIdentification22 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(DocumentIdentification22 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(DocumentIdentification22 obj, Max35Text value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "DtOfIsse")
 	protected ISODate dateOfIssue;
 	/**
-	 * Date of issuance of the document.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,10 +166,10 @@ public class DocumentIdentification22 {
 	 * definition} = "Date of issuance of the document."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDateOfIssue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<DocumentIdentification22, Optional<ISODate>> mmDateOfIssue = new MMMessageAttribute<DocumentIdentification22, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Document.mmIssueDate;
-			componentContext_lazy = () -> DocumentIdentification22.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.DocumentIdentification22.mmObject();
 			isDerived = false;
 			xmlTag = "DtOfIsse";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,14 +179,24 @@ public class DocumentIdentification22 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(DocumentIdentification22 obj) {
+			return obj.getDateOfIssue();
+		}
+
+		@Override
+		public void setValue(DocumentIdentification22 obj, Optional<ISODate> value) {
+			obj.setDateOfIssue(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(DocumentIdentification22.mmIdentification, DocumentIdentification22.mmDateOfIssue);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.DocumentIdentification22.mmIdentification, com.tools20022.repository.msg.DocumentIdentification22.mmDateOfIssue);
 				trace_lazy = () -> Document.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DocumentIdentification22";
 				definition = "Identifies a document by a unique identification and a date of issue.";
@@ -181,21 +205,21 @@ public class DocumentIdentification22 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public DocumentIdentification22 setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "DtOfIsse")
-	public ISODate getDateOfIssue() {
-		return dateOfIssue;
+	public Optional<ISODate> getDateOfIssue() {
+		return dateOfIssue == null ? Optional.empty() : Optional.of(dateOfIssue);
 	}
 
-	public void setDateOfIssue(ISODate dateOfIssue) {
+	public DocumentIdentification22 setDateOfIssue(ISODate dateOfIssue) {
 		this.dateOfIssue = dateOfIssue;
+		return this;
 	}
 }

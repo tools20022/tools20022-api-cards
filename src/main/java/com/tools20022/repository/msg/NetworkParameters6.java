@@ -23,8 +23,10 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.NetworkType2Code;
 import com.tools20022.repository.entity.NetworkAccess;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.NetworkParameters5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +53,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * NetworkParameters3}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "NetworkParameters6", propOrder = {"type", "access"})
 public class NetworkParameters6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected NetworkType2Code type;
 	/**
-	 * Type of proxy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -101,9 +104,9 @@ public class NetworkParameters6 {
 	 * definition} = "Type of proxy."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NetworkParameters6, NetworkType2Code> mmType = new MMMessageAttribute<NetworkParameters6, NetworkType2Code>() {
 		{
-			componentContext_lazy = () -> NetworkParameters6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NetworkParameters6.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -113,11 +116,22 @@ public class NetworkParameters6 {
 			minOccurs = 1;
 			simpleType_lazy = () -> NetworkType2Code.mmObject();
 		}
+
+		@Override
+		public NetworkType2Code getValue(NetworkParameters6 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(NetworkParameters6 obj, NetworkType2Code value) {
+			obj.setType(value);
+		}
 	};
+	@XmlElement(name = "Accs", required = true)
 	protected NetworkParameters5 access;
 	/**
-	 * Access information to the proxy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,10 +167,10 @@ public class NetworkParameters6 {
 	 * NetworkParameters3.mmAccessCode}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAccess = new MMMessageAttribute() {
+	public static final MMMessageAttribute<NetworkParameters6, NetworkParameters5> mmAccess = new MMMessageAttribute<NetworkParameters6, NetworkParameters5>() {
 		{
 			businessElementTrace_lazy = () -> NetworkAccess.mmAccessCode;
-			componentContext_lazy = () -> NetworkParameters6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.NetworkParameters6.mmObject();
 			isDerived = false;
 			xmlTag = "Accs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,16 +179,26 @@ public class NetworkParameters6 {
 			previousVersion_lazy = () -> NetworkParameters3.mmAccessCode;
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.msg.NetworkParameters5.mmObject();
+			complexType_lazy = () -> NetworkParameters5.mmObject();
+		}
+
+		@Override
+		public NetworkParameters5 getValue(NetworkParameters6 obj) {
+			return obj.getAccess();
+		}
+
+		@Override
+		public void setValue(NetworkParameters6 obj, NetworkParameters5 value) {
+			obj.setAccess(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(NetworkParameters6.mmType, NetworkParameters6.mmAccess);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.NetworkParameters6.mmType, com.tools20022.repository.msg.NetworkParameters6.mmAccess);
 				trace_lazy = () -> NetworkAccess.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NetworkParameters6";
 				definition = "Parameters to communicate with a host.";
@@ -184,21 +208,21 @@ public class NetworkParameters6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public NetworkType2Code getType() {
 		return type;
 	}
 
-	public void setType(NetworkType2Code type) {
-		this.type = type;
+	public NetworkParameters6 setType(NetworkType2Code type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "Accs", required = true)
 	public NetworkParameters5 getAccess() {
 		return access;
 	}
 
-	public void setAccess(com.tools20022.repository.msg.NetworkParameters5 access) {
-		this.access = access;
+	public NetworkParameters6 setAccess(NetworkParameters5 access) {
+		this.access = Objects.requireNonNull(access);
+		return this;
 	}
 }

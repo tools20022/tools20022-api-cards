@@ -20,10 +20,11 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.Max15NumericText;
+import com.tools20022.repository.entity.BankingTransaction;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Amount of money representing a value paid by a debtor to an agent bank.
@@ -61,8 +62,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,9 +80,8 @@ public class CashDeposit {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyAndAmount noteDenomination;
 	/**
-	 * Specifies the note or coin denomination, including the currency, such as
-	 * a 50 euro note.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,7 +106,7 @@ public class CashDeposit {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNoteDenomination = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashDeposit, CurrencyAndAmount> mmNoteDenomination = new MMBusinessAttribute<CashDeposit, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashDeposit.mmObject();
@@ -118,18 +118,20 @@ public class CashDeposit {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashDeposit.class.getMethod("getNoteDenomination", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CashDeposit obj) {
+			return obj.getNoteDenomination();
+		}
+
+		@Override
+		public void setValue(CashDeposit obj, CurrencyAndAmount value) {
+			obj.setNoteDenomination(value);
 		}
 	};
 	protected Max15NumericText numberOfNotes;
 	/**
-	 * Specifies the number of notes of the same denomination in the deposit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,7 +155,7 @@ public class CashDeposit {
 	 * "Specifies the number of notes of the same denomination in the deposit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNumberOfNotes = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashDeposit, Max15NumericText> mmNumberOfNotes = new MMBusinessAttribute<CashDeposit, Max15NumericText>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashDeposit.mmObject();
@@ -165,19 +167,20 @@ public class CashDeposit {
 			simpleType_lazy = () -> Max15NumericText.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashDeposit.class.getMethod("getNumberOfNotes", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max15NumericText getValue(CashDeposit obj) {
+			return obj.getNumberOfNotes();
+		}
+
+		@Override
+		public void setValue(CashDeposit obj, Max15NumericText value) {
+			obj.setNumberOfNotes(value);
 		}
 	};
 	protected CurrencyAndAmount depositAmount;
 	/**
-	 * Specifies the total amount of money in the cash deposit, that is the note
-	 * denomination times the number of notes.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -202,7 +205,7 @@ public class CashDeposit {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDepositAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CashDeposit, CurrencyAndAmount> mmDepositAmount = new MMBusinessAttribute<CashDeposit, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashDeposit.mmObject();
@@ -214,18 +217,20 @@ public class CashDeposit {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CashDeposit.class.getMethod("getDepositAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(CashDeposit obj) {
+			return obj.getDepositAmount();
+		}
+
+		@Override
+		public void setValue(CashDeposit obj, CurrencyAndAmount value) {
+			obj.setDepositAmount(value);
 		}
 	};
 	protected BankingTransaction relatedBankingTransaction;
 	/**
-	 * Describes the type of transaction associated with a cash deposit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -256,7 +261,7 @@ public class CashDeposit {
 	 * "Describes the type of transaction associated with a cash deposit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedBankingTransaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CashDeposit, BankingTransaction> mmRelatedBankingTransaction = new MMBusinessAssociationEnd<CashDeposit, BankingTransaction>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashDeposit.mmObject();
@@ -265,20 +270,30 @@ public class CashDeposit {
 			definition = "Describes the type of transaction associated with a cash deposit.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.BankingTransaction.mmCashDeposit;
+			opposite_lazy = () -> BankingTransaction.mmCashDeposit;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.BankingTransaction.mmObject();
+			type_lazy = () -> BankingTransaction.mmObject();
+		}
+
+		@Override
+		public BankingTransaction getValue(CashDeposit obj) {
+			return obj.getRelatedBankingTransaction();
+		}
+
+		@Override
+		public void setValue(CashDeposit obj, BankingTransaction value) {
+			obj.setRelatedBankingTransaction(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CashDeposit";
 				definition = "Amount of money representing a value paid by a debtor to an agent bank.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.BankingTransaction.mmCashDeposit);
+				associationDomain_lazy = () -> Arrays.asList(BankingTransaction.mmCashDeposit);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashDeposit.mmNoteDenomination, com.tools20022.repository.entity.CashDeposit.mmNumberOfNotes, com.tools20022.repository.entity.CashDeposit.mmDepositAmount,
 						com.tools20022.repository.entity.CashDeposit.mmRelatedBankingTransaction);
 			}
@@ -295,31 +310,35 @@ public class CashDeposit {
 		return noteDenomination;
 	}
 
-	public void setNoteDenomination(CurrencyAndAmount noteDenomination) {
-		this.noteDenomination = noteDenomination;
+	public CashDeposit setNoteDenomination(CurrencyAndAmount noteDenomination) {
+		this.noteDenomination = Objects.requireNonNull(noteDenomination);
+		return this;
 	}
 
 	public Max15NumericText getNumberOfNotes() {
 		return numberOfNotes;
 	}
 
-	public void setNumberOfNotes(Max15NumericText numberOfNotes) {
-		this.numberOfNotes = numberOfNotes;
+	public CashDeposit setNumberOfNotes(Max15NumericText numberOfNotes) {
+		this.numberOfNotes = Objects.requireNonNull(numberOfNotes);
+		return this;
 	}
 
 	public CurrencyAndAmount getDepositAmount() {
 		return depositAmount;
 	}
 
-	public void setDepositAmount(CurrencyAndAmount depositAmount) {
-		this.depositAmount = depositAmount;
+	public CashDeposit setDepositAmount(CurrencyAndAmount depositAmount) {
+		this.depositAmount = Objects.requireNonNull(depositAmount);
+		return this;
 	}
 
 	public BankingTransaction getRelatedBankingTransaction() {
 		return relatedBankingTransaction;
 	}
 
-	public void setRelatedBankingTransaction(com.tools20022.repository.entity.BankingTransaction relatedBankingTransaction) {
-		this.relatedBankingTransaction = relatedBankingTransaction;
+	public CashDeposit setRelatedBankingTransaction(BankingTransaction relatedBankingTransaction) {
+		this.relatedBankingTransaction = Objects.requireNonNull(relatedBankingTransaction);
+		return this;
 	}
 }

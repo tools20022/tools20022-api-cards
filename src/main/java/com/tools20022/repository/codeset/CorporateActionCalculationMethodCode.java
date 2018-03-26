@@ -38,23 +38,23 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionCalculationMethodCode#ProRata
- * CorporateActionCalculationMethodCode.mmProRata}</li>
+ * CorporateActionCalculationMethodCode.ProRata}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionCalculationMethodCode#Lottery
- * CorporateActionCalculationMethodCode.mmLottery}</li>
+ * CorporateActionCalculationMethodCode.Lottery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionCalculationMethodCode#NominalReduction
- * CorporateActionCalculationMethodCode.mmNominalReduction}</li>
+ * CorporateActionCalculationMethodCode.NominalReduction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CorporateActionCalculationMethodCode#NoNominalReduction
- * CorporateActionCalculationMethodCode.mmNoNominalReduction}</li>
+ * CorporateActionCalculationMethodCode.NoNominalReduction}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -184,15 +184,14 @@ public class CorporateActionCalculationMethodCode extends MMCode {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Without  reduction of nominal (via pool factor) for partial redemption."
-	 * </li>
+	 * "Without reduction of nominal (via pool factor) for partial redemption."</li>
 	 * </ul>
 	 */
 	public static final CorporateActionCalculationMethodCode NoNominalReduction = new CorporateActionCalculationMethodCode() {
 		{
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NoNominalReduction";
-			definition = "Without  reduction of nominal (via pool factor) for partial redemption.";
+			definition = "Without reduction of nominal (via pool factor) for partial redemption.";
 			owner_lazy = () -> com.tools20022.repository.codeset.CorporateActionCalculationMethodCode.mmObject();
 			codeName = "NNOM";
 		}
@@ -205,7 +204,7 @@ public class CorporateActionCalculationMethodCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("PROR");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CorporateActionCalculationMethodCode";

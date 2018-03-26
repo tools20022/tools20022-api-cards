@@ -28,6 +28,7 @@ import com.tools20022.repository.entity.ATMTotal;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,8 +62,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,15 +74,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Current totals of the ATM."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "ATMTotals1", propOrder = {"mediaType", "currency", "ATMBalance", "ATMCurrent", "ATMBalanceNumber", "ATMCurrentNumber"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "ATMTotals1", propOrder = {"mediaType", "currency", "aTMBalance", "aTMCurrent", "aTMBalanceNumber", "aTMCurrentNumber"})
 public class ATMTotals1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "MdiaTp")
 	protected ATMMediaType1Code mediaType;
 	/**
-	 * Type of media inside the cassette.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -106,9 +108,9 @@ public class ATMTotals1 {
 	 * definition} = "Type of media inside the cassette."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMediaType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMTotals1, Optional<ATMMediaType1Code>> mmMediaType = new MMMessageAttribute<ATMTotals1, Optional<ATMMediaType1Code>>() {
 		{
-			componentContext_lazy = () -> ATMTotals1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMTotals1.mmObject();
 			isDerived = false;
 			xmlTag = "MdiaTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,11 +120,22 @@ public class ATMTotals1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ATMMediaType1Code.mmObject();
 		}
+
+		@Override
+		public Optional<ATMMediaType1Code> getValue(ATMTotals1 obj) {
+			return obj.getMediaType();
+		}
+
+		@Override
+		public void setValue(ATMTotals1 obj, Optional<ATMMediaType1Code> value) {
+			obj.setMediaType(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Ccy")
 	protected ActiveCurrencyCode currency;
 	/**
-	 * Currency of the totals.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,10 +165,10 @@ public class ATMTotals1 {
 	 * definition} = "Currency of the totals."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCurrency = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMTotals1, Optional<ActiveCurrencyCode>> mmCurrency = new MMMessageAttribute<ATMTotals1, Optional<ActiveCurrencyCode>>() {
 		{
 			businessElementTrace_lazy = () -> ATMTotal.mmCurrency;
-			componentContext_lazy = () -> ATMTotals1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMTotals1.mmObject();
 			isDerived = false;
 			xmlTag = "Ccy";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -165,12 +178,22 @@ public class ATMTotals1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
 		}
+
+		@Override
+		public Optional<ActiveCurrencyCode> getValue(ATMTotals1 obj) {
+			return obj.getCurrency();
+		}
+
+		@Override
+		public void setValue(ATMTotals1 obj, Optional<ActiveCurrencyCode> value) {
+			obj.setCurrency(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ATMBal")
 	protected ImpliedCurrencyAndAmount aTMBalance;
 	/**
-	 * Total balance of the ATM including reject cassette, but excluding the
-	 * retract cassette.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -202,10 +225,10 @@ public class ATMTotals1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmATMBalance = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMTotals1, Optional<ImpliedCurrencyAndAmount>> mmATMBalance = new MMMessageAttribute<ATMTotals1, Optional<ImpliedCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> ATMTotal.mmATMBalance;
-			componentContext_lazy = () -> ATMTotals1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMTotals1.mmObject();
 			isDerived = false;
 			xmlTag = "ATMBal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -215,11 +238,22 @@ public class ATMTotals1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ImpliedCurrencyAndAmount> getValue(ATMTotals1 obj) {
+			return obj.getATMBalance();
+		}
+
+		@Override
+		public void setValue(ATMTotals1 obj, Optional<ImpliedCurrencyAndAmount> value) {
+			obj.setATMBalance(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ATMCur")
 	protected ImpliedCurrencyAndAmount aTMCurrent;
 	/**
-	 * Available amount for dispense in the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -249,10 +283,10 @@ public class ATMTotals1 {
 	 * definition} = "Available amount for dispense in the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmATMCurrent = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMTotals1, Optional<ImpliedCurrencyAndAmount>> mmATMCurrent = new MMMessageAttribute<ATMTotals1, Optional<ImpliedCurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> ATMTotal.mmATMCurrent;
-			componentContext_lazy = () -> ATMTotals1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMTotals1.mmObject();
 			isDerived = false;
 			xmlTag = "ATMCur";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -262,11 +296,22 @@ public class ATMTotals1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ImpliedCurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public Optional<ImpliedCurrencyAndAmount> getValue(ATMTotals1 obj) {
+			return obj.getATMCurrent();
+		}
+
+		@Override
+		public void setValue(ATMTotals1 obj, Optional<ImpliedCurrencyAndAmount> value) {
+			obj.setATMCurrent(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ATMBalNb")
 	protected Number aTMBalanceNumber;
 	/**
-	 * Total number of units for non-valued media, including reject cassette.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -296,10 +341,10 @@ public class ATMTotals1 {
 	 * "Total number of units for non-valued media, including reject cassette."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmATMBalanceNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMTotals1, Optional<Number>> mmATMBalanceNumber = new MMMessageAttribute<ATMTotals1, Optional<Number>>() {
 		{
 			businessElementTrace_lazy = () -> ATMTotal.mmATMBalanceNumber;
-			componentContext_lazy = () -> ATMTotals1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMTotals1.mmObject();
 			isDerived = false;
 			xmlTag = "ATMBalNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -309,11 +354,22 @@ public class ATMTotals1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(ATMTotals1 obj) {
+			return obj.getATMBalanceNumber();
+		}
+
+		@Override
+		public void setValue(ATMTotals1 obj, Optional<Number> value) {
+			obj.setATMBalanceNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ATMCurNb")
 	protected Number aTMCurrentNumber;
 	/**
-	 * Total number of units for non-valued media, excluding reject cassette.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -343,10 +399,10 @@ public class ATMTotals1 {
 	 * "Total number of units for non-valued media, excluding reject cassette."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmATMCurrentNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMTotals1, Optional<Number>> mmATMCurrentNumber = new MMMessageAttribute<ATMTotals1, Optional<Number>>() {
 		{
 			businessElementTrace_lazy = () -> ATMTotal.mmATMCurrentNumber;
-			componentContext_lazy = () -> ATMTotals1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMTotals1.mmObject();
 			isDerived = false;
 			xmlTag = "ATMCurNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -356,14 +412,25 @@ public class ATMTotals1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(ATMTotals1 obj) {
+			return obj.getATMCurrentNumber();
+		}
+
+		@Override
+		public void setValue(ATMTotals1 obj, Optional<Number> value) {
+			obj.setATMCurrentNumber(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ATMTotals1.mmMediaType, ATMTotals1.mmCurrency, ATMTotals1.mmATMBalance, ATMTotals1.mmATMCurrent, ATMTotals1.mmATMBalanceNumber, ATMTotals1.mmATMCurrentNumber);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ATMTotals1.mmMediaType, com.tools20022.repository.msg.ATMTotals1.mmCurrency, com.tools20022.repository.msg.ATMTotals1.mmATMBalance,
+						com.tools20022.repository.msg.ATMTotals1.mmATMCurrent, com.tools20022.repository.msg.ATMTotals1.mmATMBalanceNumber, com.tools20022.repository.msg.ATMTotals1.mmATMCurrentNumber);
 				trace_lazy = () -> ATMTotal.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMTotals1";
 				definition = "Current totals of the ATM.";
@@ -372,57 +439,57 @@ public class ATMTotals1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "MdiaTp")
-	public ATMMediaType1Code getMediaType() {
-		return mediaType;
+	public Optional<ATMMediaType1Code> getMediaType() {
+		return mediaType == null ? Optional.empty() : Optional.of(mediaType);
 	}
 
-	public void setMediaType(ATMMediaType1Code mediaType) {
+	public ATMTotals1 setMediaType(ATMMediaType1Code mediaType) {
 		this.mediaType = mediaType;
+		return this;
 	}
 
-	@XmlElement(name = "Ccy")
-	public ActiveCurrencyCode getCurrency() {
-		return currency;
+	public Optional<ActiveCurrencyCode> getCurrency() {
+		return currency == null ? Optional.empty() : Optional.of(currency);
 	}
 
-	public void setCurrency(ActiveCurrencyCode currency) {
+	public ATMTotals1 setCurrency(ActiveCurrencyCode currency) {
 		this.currency = currency;
+		return this;
 	}
 
-	@XmlElement(name = "ATMBal")
-	public ImpliedCurrencyAndAmount getATMBalance() {
-		return aTMBalance;
+	public Optional<ImpliedCurrencyAndAmount> getATMBalance() {
+		return aTMBalance == null ? Optional.empty() : Optional.of(aTMBalance);
 	}
 
-	public void setATMBalance(ImpliedCurrencyAndAmount aTMBalance) {
+	public ATMTotals1 setATMBalance(ImpliedCurrencyAndAmount aTMBalance) {
 		this.aTMBalance = aTMBalance;
+		return this;
 	}
 
-	@XmlElement(name = "ATMCur")
-	public ImpliedCurrencyAndAmount getATMCurrent() {
-		return aTMCurrent;
+	public Optional<ImpliedCurrencyAndAmount> getATMCurrent() {
+		return aTMCurrent == null ? Optional.empty() : Optional.of(aTMCurrent);
 	}
 
-	public void setATMCurrent(ImpliedCurrencyAndAmount aTMCurrent) {
+	public ATMTotals1 setATMCurrent(ImpliedCurrencyAndAmount aTMCurrent) {
 		this.aTMCurrent = aTMCurrent;
+		return this;
 	}
 
-	@XmlElement(name = "ATMBalNb")
-	public Number getATMBalanceNumber() {
-		return aTMBalanceNumber;
+	public Optional<Number> getATMBalanceNumber() {
+		return aTMBalanceNumber == null ? Optional.empty() : Optional.of(aTMBalanceNumber);
 	}
 
-	public void setATMBalanceNumber(Number aTMBalanceNumber) {
+	public ATMTotals1 setATMBalanceNumber(Number aTMBalanceNumber) {
 		this.aTMBalanceNumber = aTMBalanceNumber;
+		return this;
 	}
 
-	@XmlElement(name = "ATMCurNb")
-	public Number getATMCurrentNumber() {
-		return aTMCurrentNumber;
+	public Optional<Number> getATMCurrentNumber() {
+		return aTMCurrentNumber == null ? Optional.empty() : Optional.of(aTMCurrentNumber);
 	}
 
-	public void setATMCurrentNumber(Number aTMCurrentNumber) {
+	public ATMTotals1 setATMCurrentNumber(Number aTMCurrentNumber) {
 		this.aTMCurrentNumber = aTMCurrentNumber;
+		return this;
 	}
 }

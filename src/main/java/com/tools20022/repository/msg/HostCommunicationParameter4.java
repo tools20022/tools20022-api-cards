@@ -26,9 +26,11 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.System;
 import com.tools20022.repository.entity.TerminalManagementSystem;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.KEKIdentifier5;
+import com.tools20022.repository.msg.NetworkParameters3;
+import com.tools20022.repository.msg.NetworkParameters5;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -67,8 +69,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -79,15 +81,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Configuration parameters to communicate with a host."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "HostCommunicationParameter4", propOrder = {"actionType", "hostIdentification", "address", "key", "networkServiceProvider"})
 public class HostCommunicationParameter4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ActnTp", required = true)
 	protected TerminalManagementAction3Code actionType;
 	/**
-	 * Type of action for the configuration parameters.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,9 +116,9 @@ public class HostCommunicationParameter4 {
 	 * definition} = "Type of action for the configuration parameters."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmActionType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<HostCommunicationParameter4, TerminalManagementAction3Code> mmActionType = new MMMessageAttribute<HostCommunicationParameter4, TerminalManagementAction3Code>() {
 		{
-			componentContext_lazy = () -> HostCommunicationParameter4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.HostCommunicationParameter4.mmObject();
 			isDerived = false;
 			xmlTag = "ActnTp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -125,11 +128,22 @@ public class HostCommunicationParameter4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> TerminalManagementAction3Code.mmObject();
 		}
+
+		@Override
+		public TerminalManagementAction3Code getValue(HostCommunicationParameter4 obj) {
+			return obj.getActionType();
+		}
+
+		@Override
+		public void setValue(HostCommunicationParameter4 obj, TerminalManagementAction3Code value) {
+			obj.setActionType(value);
+		}
 	};
+	@XmlElement(name = "HstId", required = true)
 	protected Max35Text hostIdentification;
 	/**
-	 * Identification of the host.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -159,10 +173,10 @@ public class HostCommunicationParameter4 {
 	 * definition} = "Identification of the host."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmHostIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<HostCommunicationParameter4, Max35Text> mmHostIdentification = new MMMessageAttribute<HostCommunicationParameter4, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> System.mmSystemIdentification;
-			componentContext_lazy = () -> HostCommunicationParameter4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.HostCommunicationParameter4.mmObject();
 			isDerived = false;
 			xmlTag = "HstId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -172,11 +186,22 @@ public class HostCommunicationParameter4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(HostCommunicationParameter4 obj) {
+			return obj.getHostIdentification();
+		}
+
+		@Override
+		public void setValue(HostCommunicationParameter4 obj, Max35Text value) {
+			obj.setHostIdentification(value);
+		}
 	};
+	@XmlElement(name = "Adr")
 	protected NetworkParameters3 address;
 	/**
-	 * Network parameters of the host.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -205,10 +230,10 @@ public class HostCommunicationParameter4 {
 	 * definition} = "Network parameters of the host."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAddress = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<HostCommunicationParameter4, Optional<NetworkParameters3>> mmAddress = new MMMessageAssociationEnd<HostCommunicationParameter4, Optional<NetworkParameters3>>() {
 		{
 			businessElementTrace_lazy = () -> TerminalManagementSystem.mmNetworkAccess;
-			componentContext_lazy = () -> HostCommunicationParameter4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.HostCommunicationParameter4.mmObject();
 			isDerived = false;
 			xmlTag = "Adr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -217,13 +242,24 @@ public class HostCommunicationParameter4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.NetworkParameters3.mmObject();
+			type_lazy = () -> NetworkParameters3.mmObject();
+		}
+
+		@Override
+		public Optional<NetworkParameters3> getValue(HostCommunicationParameter4 obj) {
+			return obj.getAddress();
+		}
+
+		@Override
+		public void setValue(HostCommunicationParameter4 obj, Optional<NetworkParameters3> value) {
+			obj.setAddress(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.msg.KEKIdentifier5> key;
+	@XmlElement(name = "Key")
+	protected List<KEKIdentifier5> key;
 	/**
-	 * Cryptographic key used to communicate with the host.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -247,9 +283,9 @@ public class HostCommunicationParameter4 {
 	 * definition} = "Cryptographic key used to communicate with the host."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmKey = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<HostCommunicationParameter4, List<KEKIdentifier5>> mmKey = new MMMessageAssociationEnd<HostCommunicationParameter4, List<KEKIdentifier5>>() {
 		{
-			componentContext_lazy = () -> HostCommunicationParameter4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.HostCommunicationParameter4.mmObject();
 			isDerived = false;
 			xmlTag = "Key";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -257,13 +293,24 @@ public class HostCommunicationParameter4 {
 			definition = "Cryptographic key used to communicate with the host.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.KEKIdentifier5.mmObject();
+			type_lazy = () -> KEKIdentifier5.mmObject();
+		}
+
+		@Override
+		public List<KEKIdentifier5> getValue(HostCommunicationParameter4 obj) {
+			return obj.getKey();
+		}
+
+		@Override
+		public void setValue(HostCommunicationParameter4 obj, List<KEKIdentifier5> value) {
+			obj.setKey(value);
 		}
 	};
+	@XmlElement(name = "NtwkSvcPrvdr")
 	protected NetworkParameters5 networkServiceProvider;
 	/**
-	 * Access information to reach an intermediate network service provider.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -288,9 +335,9 @@ public class HostCommunicationParameter4 {
 	 * "Access information to reach an intermediate network service provider."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmNetworkServiceProvider = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<HostCommunicationParameter4, Optional<NetworkParameters5>> mmNetworkServiceProvider = new MMMessageAssociationEnd<HostCommunicationParameter4, Optional<NetworkParameters5>>() {
 		{
-			componentContext_lazy = () -> HostCommunicationParameter4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.HostCommunicationParameter4.mmObject();
 			isDerived = false;
 			xmlTag = "NtwkSvcPrvdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -299,17 +346,28 @@ public class HostCommunicationParameter4 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.NetworkParameters5.mmObject();
+			type_lazy = () -> NetworkParameters5.mmObject();
+		}
+
+		@Override
+		public Optional<NetworkParameters5> getValue(HostCommunicationParameter4 obj) {
+			return obj.getNetworkServiceProvider();
+		}
+
+		@Override
+		public void setValue(HostCommunicationParameter4 obj, Optional<NetworkParameters5> value) {
+			obj.setNetworkServiceProvider(value.orElse(null));
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(HostCommunicationParameter4.mmActionType, HostCommunicationParameter4.mmHostIdentification, HostCommunicationParameter4.mmAddress, HostCommunicationParameter4.mmKey,
-						HostCommunicationParameter4.mmNetworkServiceProvider);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.HostCommunicationParameter4.mmActionType, com.tools20022.repository.msg.HostCommunicationParameter4.mmHostIdentification,
+						com.tools20022.repository.msg.HostCommunicationParameter4.mmAddress, com.tools20022.repository.msg.HostCommunicationParameter4.mmKey,
+						com.tools20022.repository.msg.HostCommunicationParameter4.mmNetworkServiceProvider);
 				trace_lazy = () -> TerminalManagementSystem.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "HostCommunicationParameter4";
 				definition = "Configuration parameters to communicate with a host.";
@@ -318,48 +376,48 @@ public class HostCommunicationParameter4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ActnTp", required = true)
 	public TerminalManagementAction3Code getActionType() {
 		return actionType;
 	}
 
-	public void setActionType(TerminalManagementAction3Code actionType) {
-		this.actionType = actionType;
+	public HostCommunicationParameter4 setActionType(TerminalManagementAction3Code actionType) {
+		this.actionType = Objects.requireNonNull(actionType);
+		return this;
 	}
 
-	@XmlElement(name = "HstId", required = true)
 	public Max35Text getHostIdentification() {
 		return hostIdentification;
 	}
 
-	public void setHostIdentification(Max35Text hostIdentification) {
-		this.hostIdentification = hostIdentification;
+	public HostCommunicationParameter4 setHostIdentification(Max35Text hostIdentification) {
+		this.hostIdentification = Objects.requireNonNull(hostIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Adr")
-	public NetworkParameters3 getAddress() {
-		return address;
+	public Optional<NetworkParameters3> getAddress() {
+		return address == null ? Optional.empty() : Optional.of(address);
 	}
 
-	public void setAddress(com.tools20022.repository.msg.NetworkParameters3 address) {
+	public HostCommunicationParameter4 setAddress(NetworkParameters3 address) {
 		this.address = address;
+		return this;
 	}
 
-	@XmlElement(name = "Key")
 	public List<KEKIdentifier5> getKey() {
-		return key;
+		return key == null ? key = new ArrayList<>() : key;
 	}
 
-	public void setKey(List<com.tools20022.repository.msg.KEKIdentifier5> key) {
-		this.key = key;
+	public HostCommunicationParameter4 setKey(List<KEKIdentifier5> key) {
+		this.key = Objects.requireNonNull(key);
+		return this;
 	}
 
-	@XmlElement(name = "NtwkSvcPrvdr")
-	public NetworkParameters5 getNetworkServiceProvider() {
-		return networkServiceProvider;
+	public Optional<NetworkParameters5> getNetworkServiceProvider() {
+		return networkServiceProvider == null ? Optional.empty() : Optional.of(networkServiceProvider);
 	}
 
-	public void setNetworkServiceProvider(com.tools20022.repository.msg.NetworkParameters5 networkServiceProvider) {
+	public HostCommunicationParameter4 setNetworkServiceProvider(NetworkParameters5 networkServiceProvider) {
 		this.networkServiceProvider = networkServiceProvider;
+		return this;
 	}
 }

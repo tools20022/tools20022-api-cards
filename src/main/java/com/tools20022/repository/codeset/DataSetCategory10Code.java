@@ -38,34 +38,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory10Code#AcquirerParameters
- * DataSetCategory10Code.mmAcquirerParameters}</li>
+ * DataSetCategory10Code.AcquirerParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory10Code#ApplicationParameters
- * DataSetCategory10Code.mmApplicationParameters}</li>
+ * DataSetCategory10Code.ApplicationParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory10Code#MasterTerminalManager
- * DataSetCategory10Code.mmMasterTerminalManager}</li>
+ * DataSetCategory10Code.MasterTerminalManager}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory10Code#MerchantParameters
- * DataSetCategory10Code.mmMerchantParameters}</li>
+ * DataSetCategory10Code.MerchantParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory10Code#Monitoring
- * DataSetCategory10Code.mmMonitoring}</li>
+ * DataSetCategory10Code.Monitoring}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory10Code#SecurityParameters
- * DataSetCategory10Code.mmSecurityParameters}</li>
+ * DataSetCategory10Code.SecurityParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory10Code#SoftwareModule
- * DataSetCategory10Code.mmSoftwareModule}</li>
+ * DataSetCategory10Code.SoftwareModule}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory10Code#TerminalParameters
- * DataSetCategory10Code.mmTerminalParameters}</li>
+ * DataSetCategory10Code.TerminalParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory10Code#CertificateParameters
- * DataSetCategory10Code.mmCertificateParameters}</li>
+ * DataSetCategory10Code.CertificateParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory10Code#TMSProtocolParameters
- * DataSetCategory10Code.mmTMSProtocolParameters}</li>
+ * DataSetCategory10Code.TMSProtocolParameters}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -74,8 +74,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -338,7 +338,7 @@ public class DataSetCategory10Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DataSetCategory10Code";
 				definition = "Maintenance services provided by a terminal manager.";

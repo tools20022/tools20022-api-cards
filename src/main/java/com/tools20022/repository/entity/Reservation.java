@@ -19,12 +19,16 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.ReservationTypeCode;
+import com.tools20022.repository.entity.AccountService;
+import com.tools20022.repository.entity.CashSettlement;
+import com.tools20022.repository.entity.IntraPositionTransfer;
 import com.tools20022.repository.entity.Limit;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Liquidity set aside by the payer for specific purposes.
@@ -72,8 +76,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -89,8 +93,8 @@ public class Reservation extends Limit {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ReservationTypeCode reservationType;
 	/**
-	 * Nature of the reservation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -113,7 +117,7 @@ public class Reservation extends Limit {
 	 * definition} = "Nature of the reservation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReservationType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Reservation, ReservationTypeCode> mmReservationType = new MMBusinessAttribute<Reservation, ReservationTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Reservation.mmObject();
@@ -125,18 +129,20 @@ public class Reservation extends Limit {
 			simpleType_lazy = () -> ReservationTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Reservation.class.getMethod("getReservationType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ReservationTypeCode getValue(Reservation obj) {
+			return obj.getReservationType();
+		}
+
+		@Override
+		public void setValue(Reservation obj, ReservationTypeCode value) {
+			obj.setReservationType(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.IntraPositionTransfer> relatedIntraPositionTransfer;
+	protected List<IntraPositionTransfer> relatedIntraPositionTransfer;
 	/**
-	 * Transfer process for which reservation information is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -168,7 +174,7 @@ public class Reservation extends Limit {
 	 * "Transfer process for which reservation information is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedIntraPositionTransfer = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Reservation, List<IntraPositionTransfer>> mmRelatedIntraPositionTransfer = new MMBusinessAssociationEnd<Reservation, List<IntraPositionTransfer>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Reservation.mmObject();
@@ -176,15 +182,25 @@ public class Reservation extends Limit {
 			name = "RelatedIntraPositionTransfer";
 			definition = "Transfer process for which reservation information is provided.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.IntraPositionTransfer.mmReservation;
+			opposite_lazy = () -> IntraPositionTransfer.mmReservation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.IntraPositionTransfer.mmObject();
+			type_lazy = () -> IntraPositionTransfer.mmObject();
+		}
+
+		@Override
+		public List<IntraPositionTransfer> getValue(Reservation obj) {
+			return obj.getRelatedIntraPositionTransfer();
+		}
+
+		@Override
+		public void setValue(Reservation obj, List<IntraPositionTransfer> value) {
+			obj.setRelatedIntraPositionTransfer(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.CashSettlement> settlementInstruction;
+	protected List<CashSettlement> settlementInstruction;
 	/**
-	 * Specifies the instruction which originated the reservation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -215,7 +231,7 @@ public class Reservation extends Limit {
 	 * "Specifies the instruction which originated the reservation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSettlementInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Reservation, List<CashSettlement>> mmSettlementInstruction = new MMBusinessAssociationEnd<Reservation, List<CashSettlement>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Reservation.mmObject();
@@ -223,15 +239,25 @@ public class Reservation extends Limit {
 			name = "SettlementInstruction";
 			definition = "Specifies the instruction which originated the reservation.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmReservation;
+			opposite_lazy = () -> CashSettlement.mmReservation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
+			type_lazy = () -> CashSettlement.mmObject();
+		}
+
+		@Override
+		public List<CashSettlement> getValue(Reservation obj) {
+			return obj.getSettlementInstruction();
+		}
+
+		@Override
+		public void setValue(Reservation obj, List<CashSettlement> value) {
+			obj.setSettlementInstruction(value);
 		}
 	};
 	protected AccountService accountService;
 	/**
-	 * Account services for which reservation information is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -262,7 +288,7 @@ public class Reservation extends Limit {
 	 * "Account services for which reservation information is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAccountService = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Reservation, com.tools20022.repository.entity.AccountService> mmAccountService = new MMBusinessAssociationEnd<Reservation, com.tools20022.repository.entity.AccountService>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Reservation.mmObject();
@@ -275,17 +301,26 @@ public class Reservation extends Limit {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.AccountService.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.AccountService getValue(Reservation obj) {
+			return obj.getAccountService();
+		}
+
+		@Override
+		public void setValue(Reservation obj, com.tools20022.repository.entity.AccountService value) {
+			obj.setAccountService(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Reservation";
 				definition = "Liquidity set aside by the payer for specific purposes.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AccountService.mmReservation, com.tools20022.repository.entity.CashSettlement.mmReservation,
-						com.tools20022.repository.entity.IntraPositionTransfer.mmReservation);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AccountService.mmReservation, CashSettlement.mmReservation, IntraPositionTransfer.mmReservation);
 				superType_lazy = () -> Limit.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Reservation.mmReservationType, com.tools20022.repository.entity.Reservation.mmRelatedIntraPositionTransfer,
 						com.tools20022.repository.entity.Reservation.mmSettlementInstruction, com.tools20022.repository.entity.Reservation.mmAccountService);
@@ -303,31 +338,35 @@ public class Reservation extends Limit {
 		return reservationType;
 	}
 
-	public void setReservationType(ReservationTypeCode reservationType) {
-		this.reservationType = reservationType;
+	public Reservation setReservationType(ReservationTypeCode reservationType) {
+		this.reservationType = Objects.requireNonNull(reservationType);
+		return this;
 	}
 
 	public List<IntraPositionTransfer> getRelatedIntraPositionTransfer() {
-		return relatedIntraPositionTransfer;
+		return relatedIntraPositionTransfer == null ? relatedIntraPositionTransfer = new ArrayList<>() : relatedIntraPositionTransfer;
 	}
 
-	public void setRelatedIntraPositionTransfer(List<com.tools20022.repository.entity.IntraPositionTransfer> relatedIntraPositionTransfer) {
-		this.relatedIntraPositionTransfer = relatedIntraPositionTransfer;
+	public Reservation setRelatedIntraPositionTransfer(List<IntraPositionTransfer> relatedIntraPositionTransfer) {
+		this.relatedIntraPositionTransfer = Objects.requireNonNull(relatedIntraPositionTransfer);
+		return this;
 	}
 
 	public List<CashSettlement> getSettlementInstruction() {
-		return settlementInstruction;
+		return settlementInstruction == null ? settlementInstruction = new ArrayList<>() : settlementInstruction;
 	}
 
-	public void setSettlementInstruction(List<com.tools20022.repository.entity.CashSettlement> settlementInstruction) {
-		this.settlementInstruction = settlementInstruction;
+	public Reservation setSettlementInstruction(List<CashSettlement> settlementInstruction) {
+		this.settlementInstruction = Objects.requireNonNull(settlementInstruction);
+		return this;
 	}
 
 	public AccountService getAccountService() {
 		return accountService;
 	}
 
-	public void setAccountService(com.tools20022.repository.entity.AccountService accountService) {
-		this.accountService = accountService;
+	public Reservation setAccountService(com.tools20022.repository.entity.AccountService accountService) {
+		this.accountService = Objects.requireNonNull(accountService);
+		return this;
 	}
 }

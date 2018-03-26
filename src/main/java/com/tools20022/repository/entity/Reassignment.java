@@ -19,11 +19,13 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CaseForwardingNotificationCode;
+import com.tools20022.repository.entity.InvestigationCase;
 import com.tools20022.repository.entity.InvestigationResolution;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Action that consists in forwarding an investigation case assignment to
@@ -62,8 +64,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -81,8 +83,8 @@ public class Reassignment extends InvestigationResolution {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CaseForwardingNotificationCode justification;
 	/**
-	 * Justification for the forward action.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,7 +107,7 @@ public class Reassignment extends InvestigationResolution {
 	 * definition} = "Justification for the forward action."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmJustification = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Reassignment, CaseForwardingNotificationCode> mmJustification = new MMBusinessAttribute<Reassignment, CaseForwardingNotificationCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Reassignment.mmObject();
@@ -117,18 +119,20 @@ public class Reassignment extends InvestigationResolution {
 			simpleType_lazy = () -> CaseForwardingNotificationCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Reassignment.class.getMethod("getJustification", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CaseForwardingNotificationCode getValue(Reassignment obj) {
+			return obj.getJustification();
+		}
+
+		@Override
+		public void setValue(Reassignment obj, CaseForwardingNotificationCode value) {
+			obj.setJustification(value);
 		}
 	};
 	protected InvestigationCase reassignedCase;
 	/**
-	 * Specifies the investigation case that is assigned.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,7 +162,7 @@ public class Reassignment extends InvestigationResolution {
 	 * definition} = "Specifies the investigation case that is assigned."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmReassignedCase = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Reassignment, Optional<InvestigationCase>> mmReassignedCase = new MMBusinessAssociationEnd<Reassignment, Optional<InvestigationCase>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Reassignment.mmObject();
@@ -171,12 +175,22 @@ public class Reassignment extends InvestigationResolution {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.InvestigationCase.mmObject();
 		}
+
+		@Override
+		public Optional<InvestigationCase> getValue(Reassignment obj) {
+			return obj.getReassignedCase();
+		}
+
+		@Override
+		public void setValue(Reassignment obj, Optional<InvestigationCase> value) {
+			obj.setReassignedCase(value.orElse(null));
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Reassignment";
 				definition = "Action that consists in forwarding an investigation case assignment to another party which becomes the new assignee.";
@@ -197,15 +211,17 @@ public class Reassignment extends InvestigationResolution {
 		return justification;
 	}
 
-	public void setJustification(CaseForwardingNotificationCode justification) {
-		this.justification = justification;
+	public Reassignment setJustification(CaseForwardingNotificationCode justification) {
+		this.justification = Objects.requireNonNull(justification);
+		return this;
 	}
 
-	public InvestigationCase getReassignedCase() {
-		return reassignedCase;
+	public Optional<InvestigationCase> getReassignedCase() {
+		return reassignedCase == null ? Optional.empty() : Optional.of(reassignedCase);
 	}
 
-	public void setReassignedCase(com.tools20022.repository.entity.InvestigationCase reassignedCase) {
+	public Reassignment setReassignedCase(com.tools20022.repository.entity.InvestigationCase reassignedCase) {
 		this.reassignedCase = reassignedCase;
+		return this;
 	}
 }

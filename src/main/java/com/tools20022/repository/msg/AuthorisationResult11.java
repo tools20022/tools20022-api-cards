@@ -25,8 +25,12 @@ import com.tools20022.repository.datatype.Min6Max8Text;
 import com.tools20022.repository.entity.CardPaymentValidation;
 import com.tools20022.repository.entity.PartyIdentificationInformation;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.GenericIdentification90;
+import com.tools20022.repository.msg.ResponseType5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +62,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -70,16 +74,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Outcome of the authorisation."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AuthorisationResult11", propOrder = {"authorisationEntity", "responseToAuthorisation", "authorisationCode"})
 public class AuthorisationResult11 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "AuthstnNtty")
 	protected GenericIdentification90 authorisationEntity;
 	/**
-	 * Type of party that has delivered or declined the card payment
-	 * authorisation (the party is not identified).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -111,10 +115,10 @@ public class AuthorisationResult11 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAuthorisationEntity = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AuthorisationResult11, Optional<GenericIdentification90>> mmAuthorisationEntity = new MMMessageAssociationEnd<AuthorisationResult11, Optional<GenericIdentification90>>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmOtherIdentification;
-			componentContext_lazy = () -> AuthorisationResult11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AuthorisationResult11.mmObject();
 			isDerived = false;
 			xmlTag = "AuthstnNtty";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,13 +127,24 @@ public class AuthorisationResult11 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.GenericIdentification90.mmObject();
+			type_lazy = () -> GenericIdentification90.mmObject();
+		}
+
+		@Override
+		public Optional<GenericIdentification90> getValue(AuthorisationResult11 obj) {
+			return obj.getAuthorisationEntity();
+		}
+
+		@Override
+		public void setValue(AuthorisationResult11 obj, Optional<GenericIdentification90> value) {
+			obj.setAuthorisationEntity(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "RspnToAuthstn", required = true)
 	protected ResponseType5 responseToAuthorisation;
 	/**
-	 * Response to an authorisation request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -158,10 +173,10 @@ public class AuthorisationResult11 {
 	 * definition} = "Response to an authorisation request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmResponseToAuthorisation = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AuthorisationResult11, ResponseType5> mmResponseToAuthorisation = new MMMessageAssociationEnd<AuthorisationResult11, ResponseType5>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentValidation.mmResponse;
-			componentContext_lazy = () -> AuthorisationResult11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AuthorisationResult11.mmObject();
 			isDerived = false;
 			xmlTag = "RspnToAuthstn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -170,13 +185,24 @@ public class AuthorisationResult11 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ResponseType5.mmObject();
+			type_lazy = () -> ResponseType5.mmObject();
+		}
+
+		@Override
+		public ResponseType5 getValue(AuthorisationResult11 obj) {
+			return obj.getResponseToAuthorisation();
+		}
+
+		@Override
+		public void setValue(AuthorisationResult11 obj, ResponseType5 value) {
+			obj.setResponseToAuthorisation(value);
 		}
 	};
+	@XmlElement(name = "AuthstnCd")
 	protected Min6Max8Text authorisationCode;
 	/**
-	 * Value assigned by the authorising party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,10 +233,10 @@ public class AuthorisationResult11 {
 	 * definition} = "Value assigned by the authorising party."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAuthorisationCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AuthorisationResult11, Optional<Min6Max8Text>> mmAuthorisationCode = new MMMessageAttribute<AuthorisationResult11, Optional<Min6Max8Text>>() {
 		{
 			businessElementTrace_lazy = () -> CardPaymentValidation.mmAuthorisationCode;
-			componentContext_lazy = () -> AuthorisationResult11.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AuthorisationResult11.mmObject();
 			isDerived = false;
 			xmlTag = "AuthstnCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -220,14 +246,25 @@ public class AuthorisationResult11 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Min6Max8Text.mmObject();
 		}
+
+		@Override
+		public Optional<Min6Max8Text> getValue(AuthorisationResult11 obj) {
+			return obj.getAuthorisationCode();
+		}
+
+		@Override
+		public void setValue(AuthorisationResult11 obj, Optional<Min6Max8Text> value) {
+			obj.setAuthorisationCode(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AuthorisationResult11.mmAuthorisationEntity, AuthorisationResult11.mmResponseToAuthorisation, AuthorisationResult11.mmAuthorisationCode);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AuthorisationResult11.mmAuthorisationEntity, com.tools20022.repository.msg.AuthorisationResult11.mmResponseToAuthorisation,
+						com.tools20022.repository.msg.AuthorisationResult11.mmAuthorisationCode);
 				trace_lazy = () -> CardPaymentValidation.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AuthorisationResult11";
 				definition = "Outcome of the authorisation.";
@@ -236,30 +273,30 @@ public class AuthorisationResult11 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "AuthstnNtty")
-	public GenericIdentification90 getAuthorisationEntity() {
-		return authorisationEntity;
+	public Optional<GenericIdentification90> getAuthorisationEntity() {
+		return authorisationEntity == null ? Optional.empty() : Optional.of(authorisationEntity);
 	}
 
-	public void setAuthorisationEntity(com.tools20022.repository.msg.GenericIdentification90 authorisationEntity) {
+	public AuthorisationResult11 setAuthorisationEntity(GenericIdentification90 authorisationEntity) {
 		this.authorisationEntity = authorisationEntity;
+		return this;
 	}
 
-	@XmlElement(name = "RspnToAuthstn", required = true)
 	public ResponseType5 getResponseToAuthorisation() {
 		return responseToAuthorisation;
 	}
 
-	public void setResponseToAuthorisation(com.tools20022.repository.msg.ResponseType5 responseToAuthorisation) {
-		this.responseToAuthorisation = responseToAuthorisation;
+	public AuthorisationResult11 setResponseToAuthorisation(ResponseType5 responseToAuthorisation) {
+		this.responseToAuthorisation = Objects.requireNonNull(responseToAuthorisation);
+		return this;
 	}
 
-	@XmlElement(name = "AuthstnCd")
-	public Min6Max8Text getAuthorisationCode() {
-		return authorisationCode;
+	public Optional<Min6Max8Text> getAuthorisationCode() {
+		return authorisationCode == null ? Optional.empty() : Optional.of(authorisationCode);
 	}
 
-	public void setAuthorisationCode(Min6Max8Text authorisationCode) {
+	public AuthorisationResult11 setAuthorisationCode(Min6Max8Text authorisationCode) {
 		this.authorisationCode = authorisationCode;
+		return this;
 	}
 }

@@ -21,11 +21,13 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.ExternalCode;
 import com.tools20022.repository.codeset.ExternalMandateReason1Code;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.Mandate;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies whether a mandate is accepted or rejected.
@@ -64,8 +66,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -81,8 +83,8 @@ public class MandateStatus extends Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected YesNoIndicator accepted;
 	/**
-	 * Indicates whether the mandate request was accepted or rejected.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,7 +109,7 @@ public class MandateStatus extends Status {
 	 * "Indicates whether the mandate request was accepted or rejected."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAccepted = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MandateStatus, YesNoIndicator> mmAccepted = new MMBusinessAttribute<MandateStatus, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MandateStatus.mmObject();
@@ -119,18 +121,20 @@ public class MandateStatus extends Status {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateStatus.class.getMethod("getAccepted", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(MandateStatus obj) {
+			return obj.getAccepted();
+		}
+
+		@Override
+		public void setValue(MandateStatus obj, YesNoIndicator value) {
+			obj.setAccepted(value);
 		}
 	};
 	protected ExternalCode rejectReason;
 	/**
-	 * Specifies the reason for the rejection of a mandate request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -154,7 +158,7 @@ public class MandateStatus extends Status {
 	 * "Specifies the reason for the rejection of a mandate request."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRejectReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MandateStatus, ExternalCode> mmRejectReason = new MMBusinessAttribute<MandateStatus, ExternalCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MandateStatus.mmObject();
@@ -166,18 +170,20 @@ public class MandateStatus extends Status {
 			simpleType_lazy = () -> ExternalCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateStatus.class.getMethod("getRejectReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ExternalCode getValue(MandateStatus obj) {
+			return obj.getRejectReason();
+		}
+
+		@Override
+		public void setValue(MandateStatus obj, ExternalCode value) {
+			obj.setRejectReason(value);
 		}
 	};
 	protected Mandate mandate;
 	/**
-	 * Mandate for which a status applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,7 +213,7 @@ public class MandateStatus extends Status {
 	 * definition} = "Mandate for which a status applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMandate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MandateStatus, Optional<Mandate>> mmMandate = new MMBusinessAssociationEnd<MandateStatus, Optional<Mandate>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MandateStatus.mmObject();
@@ -220,11 +226,21 @@ public class MandateStatus extends Status {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Mandate.mmObject();
 		}
+
+		@Override
+		public Optional<Mandate> getValue(MandateStatus obj) {
+			return obj.getMandate();
+		}
+
+		@Override
+		public void setValue(MandateStatus obj, Optional<Mandate> value) {
+			obj.setMandate(value.orElse(null));
+		}
 	};
 	protected ExternalMandateReason1Code mandateReason;
 	/**
-	 * Specifies the reason for the request or status of a mandate.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -249,7 +265,7 @@ public class MandateStatus extends Status {
 	 * "Specifies the reason for the request or status of a mandate."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMandateReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<MandateStatus, ExternalMandateReason1Code> mmMandateReason = new MMBusinessAttribute<MandateStatus, ExternalMandateReason1Code>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MandateStatus.mmObject();
@@ -261,19 +277,21 @@ public class MandateStatus extends Status {
 			simpleType_lazy = () -> ExternalMandateReason1Code.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return MandateStatus.class.getMethod("getMandateReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ExternalMandateReason1Code getValue(MandateStatus obj) {
+			return obj.getMandateReason();
+		}
+
+		@Override
+		public void setValue(MandateStatus obj, ExternalMandateReason1Code value) {
+			obj.setMandateReason(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MandateStatus";
 				definition = "Specifies whether a mandate is accepted or rejected.";
@@ -295,31 +313,35 @@ public class MandateStatus extends Status {
 		return accepted;
 	}
 
-	public void setAccepted(YesNoIndicator accepted) {
-		this.accepted = accepted;
+	public MandateStatus setAccepted(YesNoIndicator accepted) {
+		this.accepted = Objects.requireNonNull(accepted);
+		return this;
 	}
 
 	public ExternalCode getRejectReason() {
 		return rejectReason;
 	}
 
-	public void setRejectReason(ExternalCode rejectReason) {
-		this.rejectReason = rejectReason;
+	public MandateStatus setRejectReason(ExternalCode rejectReason) {
+		this.rejectReason = Objects.requireNonNull(rejectReason);
+		return this;
 	}
 
-	public Mandate getMandate() {
-		return mandate;
+	public Optional<Mandate> getMandate() {
+		return mandate == null ? Optional.empty() : Optional.of(mandate);
 	}
 
-	public void setMandate(com.tools20022.repository.entity.Mandate mandate) {
+	public MandateStatus setMandate(com.tools20022.repository.entity.Mandate mandate) {
 		this.mandate = mandate;
+		return this;
 	}
 
 	public ExternalMandateReason1Code getMandateReason() {
 		return mandateReason;
 	}
 
-	public void setMandateReason(ExternalMandateReason1Code mandateReason) {
-		this.mandateReason = mandateReason;
+	public MandateStatus setMandateReason(ExternalMandateReason1Code mandateReason) {
+		this.mandateReason = Objects.requireNonNull(mandateReason);
+		return this;
 	}
 }

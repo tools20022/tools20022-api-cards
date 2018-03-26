@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType4Code#CaptureCard
- * ActionType4Code.mmCaptureCard}</li>
+ * ActionType4Code.CaptureCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType4Code#IdentificationRequired
- * ActionType4Code.mmIdentificationRequired}</li>
+ * ActionType4Code.IdentificationRequired}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionType4Code#Referral
- * ActionType4Code.mmReferral}</li>
+ * ActionType4Code.Referral}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionType4Code#Approve
- * ActionType4Code.mmApprove}</li>
+ * ActionType4Code.Approve}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionType4Code#BlockCard
- * ActionType4Code.mmBlockCard}</li>
+ * ActionType4Code.BlockCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType4Code#NoReasonForDecline
- * ActionType4Code.mmNoReasonForDecline}</li>
+ * ActionType4Code.NoReasonForDecline}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -58,8 +58,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -226,7 +226,7 @@ public class ActionType4Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ActionType4Code";
 				definition = "Recommended action for the issuer.";

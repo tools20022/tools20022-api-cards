@@ -17,6 +17,7 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.AdjustmentType1Choice;
 import com.tools20022.repository.choice.DiscountOrChargeType1Choice;
@@ -27,12 +28,11 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.Max4AlphaNumericText;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.*;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Modification on the value of goods and / or services. For example: rebate,
@@ -152,8 +152,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -171,9 +171,8 @@ public class Adjustment {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyAndAmount amount;
 	/**
-	 * Amount of money that results from the application of an adjustment
-	 * (charges. fees, discount or allowance) to the amount due.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -215,7 +214,7 @@ public class Adjustment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Adjustment, CurrencyAndAmount> mmAmount = new MMBusinessAttribute<Adjustment, CurrencyAndAmount>() {
 		{
 			derivation_lazy = () -> Arrays.asList(LineItemMonetarySummation1.mmChargeTotalAmount, Adjustment6.mmAmount, ChargesDetails4.mmAmount, Commission19.mmAmount, LineItemAllowanceCharge2.mmActualAmount);
 			isDerived = false;
@@ -228,19 +227,20 @@ public class Adjustment {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Adjustment.class.getMethod("getAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Adjustment obj) {
+			return obj.getAmount();
+		}
+
+		@Override
+		public void setValue(Adjustment obj, CurrencyAndAmount value) {
+			obj.setAmount(value);
 		}
 	};
 	protected PercentageRate chargeRate;
 	/**
-	 * Rate used to calculate the amount of the adjustment, allowance, charge or
-	 * fee.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -273,7 +273,7 @@ public class Adjustment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmChargeRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Adjustment, PercentageRate> mmChargeRate = new MMBusinessAttribute<Adjustment, PercentageRate>() {
 		{
 			derivation_lazy = () -> Arrays.asList(LineItemAllowanceCharge2.mmCalculationPercent);
 			isDerived = false;
@@ -286,19 +286,20 @@ public class Adjustment {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Adjustment.class.getMethod("getChargeRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Adjustment obj) {
+			return obj.getChargeRate();
+		}
+
+		@Override
+		public void setValue(Adjustment obj, PercentageRate value) {
+			obj.setChargeRate(value);
 		}
 	};
 	protected TaxationBasisCode calculationMethod;
 	/**
-	 * Method used to calculate an adjustment (financial adjustment, charge or
-	 * allowance).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -310,6 +311,9 @@ public class Adjustment {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.Adjustment Adjustment}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22a::CATB</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -323,10 +327,11 @@ public class Adjustment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCalculationMethod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Adjustment, TaxationBasisCode> mmCalculationMethod = new MMBusinessAttribute<Adjustment, TaxationBasisCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22a::CATB"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "CalculationMethod";
 			definition = "Method used to calculate an adjustment (financial adjustment, charge or allowance).";
@@ -335,19 +340,20 @@ public class Adjustment {
 			simpleType_lazy = () -> TaxationBasisCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Adjustment.class.getMethod("getCalculationMethod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TaxationBasisCode getValue(Adjustment obj) {
+			return obj.getCalculationMethod();
+		}
+
+		@Override
+		public void setValue(Adjustment obj, TaxationBasisCode value) {
+			obj.setCalculationMethod(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Payment> payment;
+	protected List<Payment> payment;
 	/**
-	 * Specifies the payment resulting from charges due by one party to another
-	 * or the payment to which adjustements (for instance charges) are applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -378,7 +384,7 @@ public class Adjustment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Adjustment, List<Payment>> mmPayment = new MMBusinessAssociationEnd<Adjustment, List<Payment>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
@@ -386,16 +392,25 @@ public class Adjustment {
 			name = "Payment";
 			definition = "Specifies the payment resulting from charges due by one party to another or the payment to which adjustements (for instance charges) are applied.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Payment.mmAdjustments;
+			opposite_lazy = () -> Payment.mmAdjustments;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Payment.mmObject();
+			type_lazy = () -> Payment.mmObject();
+		}
+
+		@Override
+		public List<Payment> getValue(Adjustment obj) {
+			return obj.getPayment();
+		}
+
+		@Override
+		public void setValue(Adjustment obj, List<Payment> value) {
+			obj.setPayment(value);
 		}
 	};
 	protected AdjustmentDirectionCode direction;
 	/**
-	 * Specifies whether the adjustment must be subtracted or added to the total
-	 * amount.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -427,7 +442,7 @@ public class Adjustment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDirection = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Adjustment, AdjustmentDirectionCode> mmDirection = new MMBusinessAttribute<Adjustment, AdjustmentDirectionCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Adjustment6.mmDirection);
 			isDerived = false;
@@ -440,18 +455,20 @@ public class Adjustment {
 			simpleType_lazy = () -> AdjustmentDirectionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Adjustment.class.getMethod("getDirection", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AdjustmentDirectionCode getValue(Adjustment obj) {
+			return obj.getDirection();
+		}
+
+		@Override
+		public void setValue(Adjustment obj, AdjustmentDirectionCode value) {
+			obj.setDirection(value);
 		}
 	};
 	protected Max4AlphaNumericText reason;
 	/**
-	 * Reason for the amount adjustment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -482,7 +499,7 @@ public class Adjustment {
 	 * definition} = "Reason for the amount adjustment."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmReason = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Adjustment, Max4AlphaNumericText> mmReason = new MMBusinessAttribute<Adjustment, Max4AlphaNumericText>() {
 		{
 			derivation_lazy = () -> Arrays.asList(LineItemAllowanceCharge2.mmReason);
 			isDerived = false;
@@ -495,18 +512,20 @@ public class Adjustment {
 			simpleType_lazy = () -> Max4AlphaNumericText.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Adjustment.class.getMethod("getReason", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max4AlphaNumericText getValue(Adjustment obj) {
+			return obj.getReason();
+		}
+
+		@Override
+		public void setValue(Adjustment obj, Max4AlphaNumericText value) {
+			obj.setReason(value);
 		}
 	};
 	protected LineItem relatedLineItem;
 	/**
-	 * Specifies the line item on which a financial adjustment took place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -536,7 +555,7 @@ public class Adjustment {
 	 * "Specifies the line item on which a financial adjustment took place."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedLineItem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Adjustment, Optional<LineItem>> mmRelatedLineItem = new MMBusinessAssociationEnd<Adjustment, Optional<LineItem>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
@@ -545,17 +564,25 @@ public class Adjustment {
 			definition = "Specifies the line item on which a financial adjustment took place.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.LineItem.mmFinancialAdjustment;
+			opposite_lazy = () -> LineItem.mmFinancialAdjustment;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.LineItem.mmObject();
+			type_lazy = () -> LineItem.mmObject();
+		}
+
+		@Override
+		public Optional<LineItem> getValue(Adjustment obj) {
+			return obj.getRelatedLineItem();
+		}
+
+		@Override
+		public void setValue(Adjustment obj, Optional<LineItem> value) {
+			obj.setRelatedLineItem(value.orElse(null));
 		}
 	};
 	protected YesNoIndicator allowanceChargeIndicator;
 	/**
-	 * Indication of whether or not this allowance charge is a charge (Indicator
-	 * is Yes) that should be added or an allowance that should be subtracted
-	 * (Indicator is No).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -580,7 +607,7 @@ public class Adjustment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmAllowanceChargeIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Adjustment, YesNoIndicator> mmAllowanceChargeIndicator = new MMBusinessAttribute<Adjustment, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
@@ -592,18 +619,20 @@ public class Adjustment {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Adjustment.class.getMethod("getAllowanceChargeIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(Adjustment obj) {
+			return obj.getAllowanceChargeIndicator();
+		}
+
+		@Override
+		public void setValue(Adjustment obj, YesNoIndicator value) {
+			obj.setAllowanceChargeIndicator(value);
 		}
 	};
 	protected Price price;
 	/**
-	 * Specifies the price which is adjusted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -632,7 +661,7 @@ public class Adjustment {
 	 * definition} = "Specifies the price which is adjusted."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPrice = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Adjustment, Optional<Price>> mmPrice = new MMBusinessAssociationEnd<Adjustment, Optional<Price>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
@@ -641,15 +670,25 @@ public class Adjustment {
 			definition = "Specifies the price which is adjusted.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Price.mmPriceAdjustment;
+			opposite_lazy = () -> Price.mmPriceAdjustment;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
+			type_lazy = () -> Price.mmObject();
+		}
+
+		@Override
+		public Optional<Price> getValue(Adjustment obj) {
+			return obj.getPrice();
+		}
+
+		@Override
+		public void setValue(Adjustment obj, Optional<Price> value) {
+			obj.setPrice(value.orElse(null));
 		}
 	};
 	protected YesNoIndicator chargeIndicator;
 	/**
-	 * Indication of whether or not this allowance charge is a charge.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -681,7 +720,7 @@ public class Adjustment {
 	 * "Indication of whether or not this allowance charge is a charge."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmChargeIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Adjustment, Optional<YesNoIndicator>> mmChargeIndicator = new MMBusinessAttribute<Adjustment, Optional<YesNoIndicator>>() {
 		{
 			derivation_lazy = () -> Arrays.asList(LineItemAllowanceCharge2.mmChargeIndicator);
 			isDerived = false;
@@ -694,19 +733,20 @@ public class Adjustment {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Adjustment.class.getMethod("getChargeIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<YesNoIndicator> getValue(Adjustment obj) {
+			return obj.getChargeIndicator();
+		}
+
+		@Override
+		public void setValue(Adjustment obj, Optional<YesNoIndicator> value) {
+			obj.setChargeIndicator(value.orElse(null));
 		}
 	};
 	protected AdjustmentTypeCode type;
 	/**
-	 * Specifies the type of adjustment applied to the amount of goods/services
-	 * by means of a code.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -744,7 +784,7 @@ public class Adjustment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Adjustment, AdjustmentTypeCode> mmType = new MMBusinessAttribute<Adjustment, AdjustmentTypeCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(Adjustment6.mmType, AdjustmentType1Choice.mmType, AdjustmentType1Choice.mmOtherAdjustmentType);
 			isDerived = false;
@@ -757,18 +797,20 @@ public class Adjustment {
 			simpleType_lazy = () -> AdjustmentTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Adjustment.class.getMethod("getType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AdjustmentTypeCode getValue(Adjustment obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(Adjustment obj, AdjustmentTypeCode value) {
+			obj.setType(value);
 		}
 	};
 	protected CollateralManagement collateralManagement;
 	/**
-	 * Process which groups the activities related to collateral.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -800,7 +842,7 @@ public class Adjustment {
 	 * "Process which groups the activities related to collateral."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCollateralManagement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Adjustment, CollateralManagement> mmCollateralManagement = new MMBusinessAssociationEnd<Adjustment, CollateralManagement>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
@@ -809,15 +851,25 @@ public class Adjustment {
 			definition = "Process which groups the activities related to collateral.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmFeesAndCommissions;
+			opposite_lazy = () -> CollateralManagement.mmFeesAndCommissions;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmObject();
+			type_lazy = () -> CollateralManagement.mmObject();
+		}
+
+		@Override
+		public CollateralManagement getValue(Adjustment obj) {
+			return obj.getCollateralManagement();
+		}
+
+		@Override
+		public void setValue(Adjustment obj, CollateralManagement value) {
+			obj.setCollateralManagement(value);
 		}
 	};
 	protected Balance adjustedBalance;
 	/**
-	 * Balance for which adjustments are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -846,7 +898,7 @@ public class Adjustment {
 	 * definition} = "Balance for which adjustments are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAdjustedBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Adjustment, Balance> mmAdjustedBalance = new MMBusinessAssociationEnd<Adjustment, Balance>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
@@ -855,15 +907,25 @@ public class Adjustment {
 			definition = "Balance for which adjustments are specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Balance.mmAdjustment;
+			opposite_lazy = () -> Balance.mmAdjustment;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Balance.mmObject();
+			type_lazy = () -> Balance.mmObject();
+		}
+
+		@Override
+		public Balance getValue(Adjustment obj) {
+			return obj.getAdjustedBalance();
+		}
+
+		@Override
+		public void setValue(Adjustment obj, Balance value) {
+			obj.setAdjustedBalance(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.ChargePartyRole> chargesPartyRole;
+	protected List<ChargePartyRole> chargesPartyRole;
 	/**
-	 * Role played by a party in the context of charges due.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -893,7 +955,7 @@ public class Adjustment {
 	 * definition} = "Role played by a party in the context of charges due."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmChargesPartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Adjustment, List<ChargePartyRole>> mmChargesPartyRole = new MMBusinessAssociationEnd<Adjustment, List<ChargePartyRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
@@ -901,15 +963,25 @@ public class Adjustment {
 			name = "ChargesPartyRole";
 			definition = "Role played by a party in the context of charges due.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ChargePartyRole.mmAdjustment;
+			opposite_lazy = () -> ChargePartyRole.mmAdjustment;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ChargePartyRole.mmObject();
+			type_lazy = () -> ChargePartyRole.mmObject();
+		}
+
+		@Override
+		public List<ChargePartyRole> getValue(Adjustment obj) {
+			return obj.getChargesPartyRole();
+		}
+
+		@Override
+		public void setValue(Adjustment obj, List<ChargePartyRole> value) {
+			obj.setChargesPartyRole(value);
 		}
 	};
 	protected DateTimePeriod effectivePeriod;
 	/**
-	 * Period during which the adjustment is applicable.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -939,7 +1011,7 @@ public class Adjustment {
 	 * definition} = "Period during which the adjustment is applicable."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmEffectivePeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Adjustment, DateTimePeriod> mmEffectivePeriod = new MMBusinessAssociationEnd<Adjustment, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
@@ -948,16 +1020,25 @@ public class Adjustment {
 			definition = "Period during which the adjustment is applicable.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmRelatedAdjustment;
+			opposite_lazy = () -> DateTimePeriod.mmRelatedAdjustment;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(Adjustment obj) {
+			return obj.getEffectivePeriod();
+		}
+
+		@Override
+		public void setValue(Adjustment obj, DateTimePeriod value) {
+			obj.setEffectivePeriod(value);
 		}
 	};
 	protected CurrencyExchange currencyExchange;
 	/**
-	 * Currency exchange for which adjustments such as fees or commissions are
-	 * applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -989,7 +1070,7 @@ public class Adjustment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCurrencyExchange = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Adjustment, CurrencyExchange> mmCurrencyExchange = new MMBusinessAssociationEnd<Adjustment, CurrencyExchange>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
@@ -998,15 +1079,25 @@ public class Adjustment {
 			definition = "Currency exchange for which adjustments such as fees or commissions are applied.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmAdjustment;
+			opposite_lazy = () -> CurrencyExchange.mmAdjustment;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
+			type_lazy = () -> CurrencyExchange.mmObject();
+		}
+
+		@Override
+		public CurrencyExchange getValue(Adjustment obj) {
+			return obj.getCurrencyExchange();
+		}
+
+		@Override
+		public void setValue(Adjustment obj, CurrencyExchange value) {
+			obj.setCurrencyExchange(value);
 		}
 	};
 	protected SecuritiesOrder securitiesOrder;
 	/**
-	 * Order for which adjustments are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1036,7 +1127,7 @@ public class Adjustment {
 	 * definition} = "Order for which adjustments are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesOrder = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Adjustment, SecuritiesOrder> mmSecuritiesOrder = new MMBusinessAssociationEnd<Adjustment, SecuritiesOrder>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
@@ -1045,17 +1136,25 @@ public class Adjustment {
 			definition = "Order for which adjustments are specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmAdjustments;
+			opposite_lazy = () -> SecuritiesOrder.mmAdjustments;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesOrder.mmObject();
+			type_lazy = () -> SecuritiesOrder.mmObject();
+		}
+
+		@Override
+		public SecuritiesOrder getValue(Adjustment obj) {
+			return obj.getSecuritiesOrder();
+		}
+
+		@Override
+		public void setValue(Adjustment obj, SecuritiesOrder value) {
+			obj.setSecuritiesOrder(value);
 		}
 	};
 	protected Tax tax;
 	/**
-	 * Information on the calculation method resulting in the tax amount
-	 * included in the charge transfer. The tax is expressed as a fixed amount,
-	 * or as a percentage of the charge amount, upon which the tax is applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -1086,7 +1185,7 @@ public class Adjustment {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTax = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Adjustment, Optional<Tax>> mmTax = new MMBusinessAssociationEnd<Adjustment, Optional<Tax>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
@@ -1095,23 +1194,31 @@ public class Adjustment {
 			definition = "Information on the calculation method resulting in the tax amount included in the charge transfer. The tax is expressed as a fixed amount, or as a percentage of the charge amount, upon which the tax is applied.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Tax.mmAdjustment;
+			opposite_lazy = () -> Tax.mmAdjustment;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Tax.mmObject();
+			type_lazy = () -> Tax.mmObject();
+		}
+
+		@Override
+		public Optional<Tax> getValue(Adjustment obj) {
+			return obj.getTax();
+		}
+
+		@Override
+		public void setValue(Adjustment obj, Optional<Tax> value) {
+			obj.setTax(value.orElse(null));
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Adjustment";
 				definition = "Modification on the value of goods and / or services. For example: rebate, discount.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DateTimePeriod.mmRelatedAdjustment, com.tools20022.repository.entity.Tax.mmAdjustment, com.tools20022.repository.entity.Payment.mmAdjustments,
-						com.tools20022.repository.entity.Balance.mmAdjustment, com.tools20022.repository.entity.Price.mmPriceAdjustment, com.tools20022.repository.entity.CurrencyExchange.mmAdjustment,
-						com.tools20022.repository.entity.SecuritiesOrder.mmAdjustments, com.tools20022.repository.entity.ChargePartyRole.mmAdjustment, com.tools20022.repository.entity.LineItem.mmFinancialAdjustment,
-						com.tools20022.repository.entity.CollateralManagement.mmFeesAndCommissions);
+				associationDomain_lazy = () -> Arrays.asList(DateTimePeriod.mmRelatedAdjustment, Tax.mmAdjustment, Payment.mmAdjustments, Balance.mmAdjustment, Price.mmPriceAdjustment, CurrencyExchange.mmAdjustment,
+						SecuritiesOrder.mmAdjustments, ChargePartyRole.mmAdjustment, LineItem.mmFinancialAdjustment, CollateralManagement.mmFeesAndCommissions);
 				subType_lazy = () -> Arrays.asList(Commission.mmObject(), Charges.mmObject(), Discount.mmObject(), Allowance.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Adjustment.mmAmount, com.tools20022.repository.entity.Adjustment.mmChargeRate, com.tools20022.repository.entity.Adjustment.mmCalculationMethod,
 						com.tools20022.repository.entity.Adjustment.mmPayment, com.tools20022.repository.entity.Adjustment.mmDirection, com.tools20022.repository.entity.Adjustment.mmReason,
@@ -1134,143 +1241,161 @@ public class Adjustment {
 		return amount;
 	}
 
-	public void setAmount(CurrencyAndAmount amount) {
-		this.amount = amount;
+	public Adjustment setAmount(CurrencyAndAmount amount) {
+		this.amount = Objects.requireNonNull(amount);
+		return this;
 	}
 
 	public PercentageRate getChargeRate() {
 		return chargeRate;
 	}
 
-	public void setChargeRate(PercentageRate chargeRate) {
-		this.chargeRate = chargeRate;
+	public Adjustment setChargeRate(PercentageRate chargeRate) {
+		this.chargeRate = Objects.requireNonNull(chargeRate);
+		return this;
 	}
 
 	public TaxationBasisCode getCalculationMethod() {
 		return calculationMethod;
 	}
 
-	public void setCalculationMethod(TaxationBasisCode calculationMethod) {
-		this.calculationMethod = calculationMethod;
+	public Adjustment setCalculationMethod(TaxationBasisCode calculationMethod) {
+		this.calculationMethod = Objects.requireNonNull(calculationMethod);
+		return this;
 	}
 
 	public List<Payment> getPayment() {
-		return payment;
+		return payment == null ? payment = new ArrayList<>() : payment;
 	}
 
-	public void setPayment(List<com.tools20022.repository.entity.Payment> payment) {
-		this.payment = payment;
+	public Adjustment setPayment(List<Payment> payment) {
+		this.payment = Objects.requireNonNull(payment);
+		return this;
 	}
 
 	public AdjustmentDirectionCode getDirection() {
 		return direction;
 	}
 
-	public void setDirection(AdjustmentDirectionCode direction) {
-		this.direction = direction;
+	public Adjustment setDirection(AdjustmentDirectionCode direction) {
+		this.direction = Objects.requireNonNull(direction);
+		return this;
 	}
 
 	public Max4AlphaNumericText getReason() {
 		return reason;
 	}
 
-	public void setReason(Max4AlphaNumericText reason) {
-		this.reason = reason;
+	public Adjustment setReason(Max4AlphaNumericText reason) {
+		this.reason = Objects.requireNonNull(reason);
+		return this;
 	}
 
-	public LineItem getRelatedLineItem() {
-		return relatedLineItem;
+	public Optional<LineItem> getRelatedLineItem() {
+		return relatedLineItem == null ? Optional.empty() : Optional.of(relatedLineItem);
 	}
 
-	public void setRelatedLineItem(com.tools20022.repository.entity.LineItem relatedLineItem) {
+	public Adjustment setRelatedLineItem(LineItem relatedLineItem) {
 		this.relatedLineItem = relatedLineItem;
+		return this;
 	}
 
 	public YesNoIndicator getAllowanceChargeIndicator() {
 		return allowanceChargeIndicator;
 	}
 
-	public void setAllowanceChargeIndicator(YesNoIndicator allowanceChargeIndicator) {
-		this.allowanceChargeIndicator = allowanceChargeIndicator;
+	public Adjustment setAllowanceChargeIndicator(YesNoIndicator allowanceChargeIndicator) {
+		this.allowanceChargeIndicator = Objects.requireNonNull(allowanceChargeIndicator);
+		return this;
 	}
 
-	public Price getPrice() {
-		return price;
+	public Optional<Price> getPrice() {
+		return price == null ? Optional.empty() : Optional.of(price);
 	}
 
-	public void setPrice(com.tools20022.repository.entity.Price price) {
+	public Adjustment setPrice(Price price) {
 		this.price = price;
+		return this;
 	}
 
-	public YesNoIndicator getChargeIndicator() {
-		return chargeIndicator;
+	public Optional<YesNoIndicator> getChargeIndicator() {
+		return chargeIndicator == null ? Optional.empty() : Optional.of(chargeIndicator);
 	}
 
-	public void setChargeIndicator(YesNoIndicator chargeIndicator) {
+	public Adjustment setChargeIndicator(YesNoIndicator chargeIndicator) {
 		this.chargeIndicator = chargeIndicator;
+		return this;
 	}
 
 	public AdjustmentTypeCode getType() {
 		return type;
 	}
 
-	public void setType(AdjustmentTypeCode type) {
-		this.type = type;
+	public Adjustment setType(AdjustmentTypeCode type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
 	public CollateralManagement getCollateralManagement() {
 		return collateralManagement;
 	}
 
-	public void setCollateralManagement(com.tools20022.repository.entity.CollateralManagement collateralManagement) {
-		this.collateralManagement = collateralManagement;
+	public Adjustment setCollateralManagement(CollateralManagement collateralManagement) {
+		this.collateralManagement = Objects.requireNonNull(collateralManagement);
+		return this;
 	}
 
 	public Balance getAdjustedBalance() {
 		return adjustedBalance;
 	}
 
-	public void setAdjustedBalance(com.tools20022.repository.entity.Balance adjustedBalance) {
-		this.adjustedBalance = adjustedBalance;
+	public Adjustment setAdjustedBalance(Balance adjustedBalance) {
+		this.adjustedBalance = Objects.requireNonNull(adjustedBalance);
+		return this;
 	}
 
 	public List<ChargePartyRole> getChargesPartyRole() {
-		return chargesPartyRole;
+		return chargesPartyRole == null ? chargesPartyRole = new ArrayList<>() : chargesPartyRole;
 	}
 
-	public void setChargesPartyRole(List<com.tools20022.repository.entity.ChargePartyRole> chargesPartyRole) {
-		this.chargesPartyRole = chargesPartyRole;
+	public Adjustment setChargesPartyRole(List<ChargePartyRole> chargesPartyRole) {
+		this.chargesPartyRole = Objects.requireNonNull(chargesPartyRole);
+		return this;
 	}
 
 	public DateTimePeriod getEffectivePeriod() {
 		return effectivePeriod;
 	}
 
-	public void setEffectivePeriod(com.tools20022.repository.entity.DateTimePeriod effectivePeriod) {
-		this.effectivePeriod = effectivePeriod;
+	public Adjustment setEffectivePeriod(DateTimePeriod effectivePeriod) {
+		this.effectivePeriod = Objects.requireNonNull(effectivePeriod);
+		return this;
 	}
 
 	public CurrencyExchange getCurrencyExchange() {
 		return currencyExchange;
 	}
 
-	public void setCurrencyExchange(com.tools20022.repository.entity.CurrencyExchange currencyExchange) {
-		this.currencyExchange = currencyExchange;
+	public Adjustment setCurrencyExchange(CurrencyExchange currencyExchange) {
+		this.currencyExchange = Objects.requireNonNull(currencyExchange);
+		return this;
 	}
 
 	public SecuritiesOrder getSecuritiesOrder() {
 		return securitiesOrder;
 	}
 
-	public void setSecuritiesOrder(com.tools20022.repository.entity.SecuritiesOrder securitiesOrder) {
-		this.securitiesOrder = securitiesOrder;
+	public Adjustment setSecuritiesOrder(SecuritiesOrder securitiesOrder) {
+		this.securitiesOrder = Objects.requireNonNull(securitiesOrder);
+		return this;
 	}
 
-	public Tax getTax() {
-		return tax;
+	public Optional<Tax> getTax() {
+		return tax == null ? Optional.empty() : Optional.of(tax);
 	}
 
-	public void setTax(com.tools20022.repository.entity.Tax tax) {
+	public Adjustment setTax(Tax tax) {
 		this.tax = tax;
+		return this;
 	}
 }

@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyType3Code#AES128
- * CryptographicKeyType3Code.mmAES128}</li>
+ * CryptographicKeyType3Code.AES128}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyType3Code#DES112
- * CryptographicKeyType3Code.mmDES112}</li>
+ * CryptographicKeyType3Code.DES112}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyType3Code#DUKPT2009
- * CryptographicKeyType3Code.mmDUKPT2009}</li>
+ * CryptographicKeyType3Code.DUKPT2009}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyType3Code#AES192
- * CryptographicKeyType3Code.mmAES192}</li>
+ * CryptographicKeyType3Code.AES192}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyType3Code#AES256
- * CryptographicKeyType3Code.mmAES256}</li>
+ * CryptographicKeyType3Code.AES256}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyType3Code#DES168
- * CryptographicKeyType3Code.mmDES168}</li>
+ * CryptographicKeyType3Code.DES168}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -236,7 +236,7 @@ public class CryptographicKeyType3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AES2");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CryptographicKeyType3Code";

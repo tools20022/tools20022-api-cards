@@ -23,10 +23,14 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.Max2000Text;
 import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.DateTimePeriod;
+import com.tools20022.repository.entity.Portfolio;
+import com.tools20022.repository.entity.PortfolioStrategyDefinition;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Rough allocation of the portfolio.
@@ -99,8 +103,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -116,8 +120,8 @@ public class PortfolioStrategy {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Portfolio portfolio;
 	/**
-	 * Portfolio for which a strategy is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,7 +152,7 @@ public class PortfolioStrategy {
 	 * definition} = "Portfolio for which a strategy is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPortfolio = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PortfolioStrategy, Optional<Portfolio>> mmPortfolio = new MMBusinessAssociationEnd<PortfolioStrategy, Optional<Portfolio>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
@@ -157,15 +161,25 @@ public class PortfolioStrategy {
 			definition = "Portfolio for which a strategy is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Portfolio.mmStrategy;
+			opposite_lazy = () -> Portfolio.mmStrategy;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
+			type_lazy = () -> Portfolio.mmObject();
+		}
+
+		@Override
+		public Optional<Portfolio> getValue(PortfolioStrategy obj) {
+			return obj.getPortfolio();
+		}
+
+		@Override
+		public void setValue(PortfolioStrategy obj, Optional<Portfolio> value) {
+			obj.setPortfolio(value.orElse(null));
 		}
 	};
 	protected YesNoIndicator inclusionIndicator;
 	/**
-	 * Indicates whether the referred strategy is included.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -189,7 +203,7 @@ public class PortfolioStrategy {
 	 * definition} = "Indicates whether the referred strategy is included."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInclusionIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PortfolioStrategy, YesNoIndicator> mmInclusionIndicator = new MMBusinessAttribute<PortfolioStrategy, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
@@ -201,18 +215,20 @@ public class PortfolioStrategy {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PortfolioStrategy.class.getMethod("getInclusionIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(PortfolioStrategy obj) {
+			return obj.getInclusionIndicator();
+		}
+
+		@Override
+		public void setValue(PortfolioStrategy obj, YesNoIndicator value) {
+			obj.setInclusionIndicator(value);
 		}
 	};
 	protected CurrencyAndAmount minimumInvestmentAmount;
 	/**
-	 * Minimum amount that has to be invested in the specified strategy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -237,7 +253,7 @@ public class PortfolioStrategy {
 	 * "Minimum amount that has to be invested in the specified strategy."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMinimumInvestmentAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PortfolioStrategy, CurrencyAndAmount> mmMinimumInvestmentAmount = new MMBusinessAttribute<PortfolioStrategy, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
@@ -249,18 +265,20 @@ public class PortfolioStrategy {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PortfolioStrategy.class.getMethod("getMinimumInvestmentAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(PortfolioStrategy obj) {
+			return obj.getMinimumInvestmentAmount();
+		}
+
+		@Override
+		public void setValue(PortfolioStrategy obj, CurrencyAndAmount value) {
+			obj.setMinimumInvestmentAmount(value);
 		}
 	};
 	protected PercentageRate minimumInvestmentRate;
 	/**
-	 * Minimum percentage that has to be invested in the specified strategy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -285,7 +303,7 @@ public class PortfolioStrategy {
 	 * "Minimum percentage that has to be invested in the specified strategy."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMinimumInvestmentRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PortfolioStrategy, PercentageRate> mmMinimumInvestmentRate = new MMBusinessAttribute<PortfolioStrategy, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
@@ -297,18 +315,20 @@ public class PortfolioStrategy {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PortfolioStrategy.class.getMethod("getMinimumInvestmentRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(PortfolioStrategy obj) {
+			return obj.getMinimumInvestmentRate();
+		}
+
+		@Override
+		public void setValue(PortfolioStrategy obj, PercentageRate value) {
+			obj.setMinimumInvestmentRate(value);
 		}
 	};
 	protected CurrencyAndAmount maximumInvestmentAmount;
 	/**
-	 * Maximum amount that may be invested in the specified strategy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -333,7 +353,7 @@ public class PortfolioStrategy {
 	 * "Maximum amount that may be invested in the specified strategy."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMaximumInvestmentAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PortfolioStrategy, CurrencyAndAmount> mmMaximumInvestmentAmount = new MMBusinessAttribute<PortfolioStrategy, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
@@ -345,18 +365,20 @@ public class PortfolioStrategy {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PortfolioStrategy.class.getMethod("getMaximumInvestmentAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(PortfolioStrategy obj) {
+			return obj.getMaximumInvestmentAmount();
+		}
+
+		@Override
+		public void setValue(PortfolioStrategy obj, CurrencyAndAmount value) {
+			obj.setMaximumInvestmentAmount(value);
 		}
 	};
 	protected PercentageRate maximumInvestmentRate;
 	/**
-	 * Maximum percentage that may be invested in the specified strategy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -381,7 +403,7 @@ public class PortfolioStrategy {
 	 * "Maximum percentage that may be invested in the specified strategy."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMaximumInvestmentRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PortfolioStrategy, PercentageRate> mmMaximumInvestmentRate = new MMBusinessAttribute<PortfolioStrategy, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
@@ -393,18 +415,20 @@ public class PortfolioStrategy {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PortfolioStrategy.class.getMethod("getMaximumInvestmentRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(PortfolioStrategy obj) {
+			return obj.getMaximumInvestmentRate();
+		}
+
+		@Override
+		public void setValue(PortfolioStrategy obj, PercentageRate value) {
+			obj.setMaximumInvestmentRate(value);
 		}
 	};
 	protected DateTimePeriod effectivePeriod;
 	/**
-	 * Period during which the investment guideline is valid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -428,7 +452,7 @@ public class PortfolioStrategy {
 	 * definition} = "Period during which the investment guideline is valid."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEffectivePeriod = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PortfolioStrategy, DateTimePeriod> mmEffectivePeriod = new MMBusinessAttribute<PortfolioStrategy, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
@@ -437,22 +461,23 @@ public class PortfolioStrategy {
 			definition = "Period during which the investment guideline is valid.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			complexType_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			complexType_lazy = () -> DateTimePeriod.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PortfolioStrategy.class.getMethod("getEffectivePeriod", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DateTimePeriod getValue(PortfolioStrategy obj) {
+			return obj.getEffectivePeriod();
+		}
+
+		@Override
+		public void setValue(PortfolioStrategy obj, DateTimePeriod value) {
+			obj.setEffectivePeriod(value);
 		}
 	};
 	protected DistributionPolicyCode distributionPolicy;
 	/**
-	 * Income policy relating to the fund, ie, if income is paid out or retained
-	 * in the fund.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -478,7 +503,7 @@ public class PortfolioStrategy {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDistributionPolicy = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PortfolioStrategy, DistributionPolicyCode> mmDistributionPolicy = new MMBusinessAttribute<PortfolioStrategy, DistributionPolicyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
@@ -490,19 +515,20 @@ public class PortfolioStrategy {
 			simpleType_lazy = () -> DistributionPolicyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PortfolioStrategy.class.getMethod("getDistributionPolicy", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public DistributionPolicyCode getValue(PortfolioStrategy obj) {
+			return obj.getDistributionPolicy();
+		}
+
+		@Override
+		public void setValue(PortfolioStrategy obj, DistributionPolicyCode value) {
+			obj.setDistributionPolicy(value);
 		}
 	};
 	protected Max2000Text description;
 	/**
-	 * Free text description of the investment guideline, for example, rating
-	 * requirements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -527,7 +553,7 @@ public class PortfolioStrategy {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmDescription = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PortfolioStrategy, Max2000Text> mmDescription = new MMBusinessAttribute<PortfolioStrategy, Max2000Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
@@ -539,18 +565,20 @@ public class PortfolioStrategy {
 			simpleType_lazy = () -> Max2000Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PortfolioStrategy.class.getMethod("getDescription", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max2000Text getValue(PortfolioStrategy obj) {
+			return obj.getDescription();
+		}
+
+		@Override
+		public void setValue(PortfolioStrategy obj, Max2000Text value) {
+			obj.setDescription(value);
 		}
 	};
 	protected PortfolioStrategyDefinition definition;
 	/**
-	 * Definition of the portfolio strategy.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -582,7 +610,7 @@ public class PortfolioStrategy {
 	 * definition} = "Definition of the portfolio strategy."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDefinition = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PortfolioStrategy, PortfolioStrategyDefinition> mmDefinition = new MMBusinessAssociationEnd<PortfolioStrategy, PortfolioStrategyDefinition>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PortfolioStrategy.mmObject();
@@ -591,20 +619,30 @@ public class PortfolioStrategy {
 			definition = "Definition of the portfolio strategy.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.PortfolioStrategyDefinition.mmStrategy;
+			opposite_lazy = () -> PortfolioStrategyDefinition.mmStrategy;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PortfolioStrategyDefinition.mmObject();
+			type_lazy = () -> PortfolioStrategyDefinition.mmObject();
+		}
+
+		@Override
+		public PortfolioStrategyDefinition getValue(PortfolioStrategy obj) {
+			return obj.getDefinition();
+		}
+
+		@Override
+		public void setValue(PortfolioStrategy obj, PortfolioStrategyDefinition value) {
+			obj.setDefinition(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PortfolioStrategy";
 				definition = "Rough allocation of the portfolio.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Portfolio.mmStrategy, com.tools20022.repository.entity.PortfolioStrategyDefinition.mmStrategy);
+				associationDomain_lazy = () -> Arrays.asList(Portfolio.mmStrategy, PortfolioStrategyDefinition.mmStrategy);
 				subType_lazy = () -> Arrays.asList(JurisdictionStrategy.mmObject(), OrganisationStrategy.mmObject(), SectorStrategy.mmObject(), AssetClassStrategy.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PortfolioStrategy.mmPortfolio, com.tools20022.repository.entity.PortfolioStrategy.mmInclusionIndicator,
 						com.tools20022.repository.entity.PortfolioStrategy.mmMinimumInvestmentAmount, com.tools20022.repository.entity.PortfolioStrategy.mmMinimumInvestmentRate,
@@ -621,83 +659,93 @@ public class PortfolioStrategy {
 		return mmObject_lazy.get();
 	}
 
-	public Portfolio getPortfolio() {
-		return portfolio;
+	public Optional<Portfolio> getPortfolio() {
+		return portfolio == null ? Optional.empty() : Optional.of(portfolio);
 	}
 
-	public void setPortfolio(com.tools20022.repository.entity.Portfolio portfolio) {
+	public PortfolioStrategy setPortfolio(Portfolio portfolio) {
 		this.portfolio = portfolio;
+		return this;
 	}
 
 	public YesNoIndicator getInclusionIndicator() {
 		return inclusionIndicator;
 	}
 
-	public void setInclusionIndicator(YesNoIndicator inclusionIndicator) {
-		this.inclusionIndicator = inclusionIndicator;
+	public PortfolioStrategy setInclusionIndicator(YesNoIndicator inclusionIndicator) {
+		this.inclusionIndicator = Objects.requireNonNull(inclusionIndicator);
+		return this;
 	}
 
 	public CurrencyAndAmount getMinimumInvestmentAmount() {
 		return minimumInvestmentAmount;
 	}
 
-	public void setMinimumInvestmentAmount(CurrencyAndAmount minimumInvestmentAmount) {
-		this.minimumInvestmentAmount = minimumInvestmentAmount;
+	public PortfolioStrategy setMinimumInvestmentAmount(CurrencyAndAmount minimumInvestmentAmount) {
+		this.minimumInvestmentAmount = Objects.requireNonNull(minimumInvestmentAmount);
+		return this;
 	}
 
 	public PercentageRate getMinimumInvestmentRate() {
 		return minimumInvestmentRate;
 	}
 
-	public void setMinimumInvestmentRate(PercentageRate minimumInvestmentRate) {
-		this.minimumInvestmentRate = minimumInvestmentRate;
+	public PortfolioStrategy setMinimumInvestmentRate(PercentageRate minimumInvestmentRate) {
+		this.minimumInvestmentRate = Objects.requireNonNull(minimumInvestmentRate);
+		return this;
 	}
 
 	public CurrencyAndAmount getMaximumInvestmentAmount() {
 		return maximumInvestmentAmount;
 	}
 
-	public void setMaximumInvestmentAmount(CurrencyAndAmount maximumInvestmentAmount) {
-		this.maximumInvestmentAmount = maximumInvestmentAmount;
+	public PortfolioStrategy setMaximumInvestmentAmount(CurrencyAndAmount maximumInvestmentAmount) {
+		this.maximumInvestmentAmount = Objects.requireNonNull(maximumInvestmentAmount);
+		return this;
 	}
 
 	public PercentageRate getMaximumInvestmentRate() {
 		return maximumInvestmentRate;
 	}
 
-	public void setMaximumInvestmentRate(PercentageRate maximumInvestmentRate) {
-		this.maximumInvestmentRate = maximumInvestmentRate;
+	public PortfolioStrategy setMaximumInvestmentRate(PercentageRate maximumInvestmentRate) {
+		this.maximumInvestmentRate = Objects.requireNonNull(maximumInvestmentRate);
+		return this;
 	}
 
 	public DateTimePeriod getEffectivePeriod() {
 		return effectivePeriod;
 	}
 
-	public void setEffectivePeriod(com.tools20022.repository.entity.DateTimePeriod effectivePeriod) {
-		this.effectivePeriod = effectivePeriod;
+	public PortfolioStrategy setEffectivePeriod(DateTimePeriod effectivePeriod) {
+		this.effectivePeriod = Objects.requireNonNull(effectivePeriod);
+		return this;
 	}
 
 	public DistributionPolicyCode getDistributionPolicy() {
 		return distributionPolicy;
 	}
 
-	public void setDistributionPolicy(DistributionPolicyCode distributionPolicy) {
-		this.distributionPolicy = distributionPolicy;
+	public PortfolioStrategy setDistributionPolicy(DistributionPolicyCode distributionPolicy) {
+		this.distributionPolicy = Objects.requireNonNull(distributionPolicy);
+		return this;
 	}
 
 	public Max2000Text getDescription() {
 		return description;
 	}
 
-	public void setDescription(Max2000Text description) {
-		this.description = description;
+	public PortfolioStrategy setDescription(Max2000Text description) {
+		this.description = Objects.requireNonNull(description);
+		return this;
 	}
 
 	public PortfolioStrategyDefinition getDefinition() {
 		return definition;
 	}
 
-	public void setDefinition(com.tools20022.repository.entity.PortfolioStrategyDefinition definition) {
-		this.definition = definition;
+	public PortfolioStrategy setDefinition(PortfolioStrategyDefinition definition) {
+		this.definition = Objects.requireNonNull(definition);
+		return this;
 	}
 }

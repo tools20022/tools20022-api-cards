@@ -23,11 +23,10 @@ import com.tools20022.repository.codeset.InstrumentSubStructureTypeCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Tangible items of value to a business.
@@ -127,8 +126,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -144,10 +143,8 @@ public class Asset {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected ISODateTime expiryDate;
 	/**
-	 * Date on which an order, a privilege, an entitlement or an offer
-	 * terminates. For an interest bearing asset, it is the date/time at which
-	 * it becomes due and has to be repaid.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -171,7 +168,7 @@ public class Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmExpiryDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Asset, ISODateTime> mmExpiryDate = new MMBusinessAttribute<Asset, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
@@ -183,20 +180,20 @@ public class Asset {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Asset.class.getMethod("getExpiryDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Asset obj) {
+			return obj.getExpiryDate();
+		}
+
+		@Override
+		public void setValue(Asset obj, ISODateTime value) {
+			obj.setExpiryDate(value);
 		}
 	};
 	protected ISODateTime maturityDate;
 	/**
-	 * Planned date, at the time of issuance, on which an interest bearing
-	 * financial instrument becomes due and principal is repaid by the issuer to
-	 * the investor.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -220,7 +217,7 @@ public class Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMaturityDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Asset, ISODateTime> mmMaturityDate = new MMBusinessAttribute<Asset, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
@@ -232,19 +229,20 @@ public class Asset {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Asset.class.getMethod("getMaturityDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Asset obj) {
+			return obj.getMaturityDate();
+		}
+
+		@Override
+		public void setValue(Asset obj, ISODateTime value) {
+			obj.setMaturityDate(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Derivative> derivative;
+	protected List<Derivative> derivative;
 	/**
-	 * Specifies the parameters of a derivative instrument based on a specific
-	 * asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -276,7 +274,7 @@ public class Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDerivative = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Asset, List<Derivative>> mmDerivative = new MMBusinessAssociationEnd<Asset, List<Derivative>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
@@ -284,15 +282,25 @@ public class Asset {
 			name = "Derivative";
 			definition = "Specifies the parameters of a derivative instrument based on a specific asset.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Derivative.mmUnderlyingAsset;
+			opposite_lazy = () -> Derivative.mmUnderlyingAsset;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Derivative.mmObject();
+			type_lazy = () -> Derivative.mmObject();
+		}
+
+		@Override
+		public List<Derivative> getValue(Asset obj) {
+			return obj.getDerivative();
+		}
+
+		@Override
+		public void setValue(Asset obj, List<Derivative> value) {
+			obj.setDerivative(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.AssetHolding> assetValue;
+	protected List<AssetHolding> assetValue;
 	/**
-	 * Specifies the different values of an asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -322,7 +330,7 @@ public class Asset {
 	 * definition} = "Specifies the different values of an asset."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAssetValue = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Asset, List<AssetHolding>> mmAssetValue = new MMBusinessAssociationEnd<Asset, List<AssetHolding>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
@@ -330,15 +338,25 @@ public class Asset {
 			name = "AssetValue";
 			definition = "Specifies the different values of an asset.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmAsset;
+			opposite_lazy = () -> AssetHolding.mmAsset;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AssetHolding.mmObject();
+			type_lazy = () -> AssetHolding.mmObject();
+		}
+
+		@Override
+		public List<AssetHolding> getValue(Asset obj) {
+			return obj.getAssetValue();
+		}
+
+		@Override
+		public void setValue(Asset obj, List<AssetHolding> value) {
+			obj.setAssetValue(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.AssetClassification> assetClassification;
+	protected List<AssetClassification> assetClassification;
 	/**
-	 * Classification of the asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -368,7 +386,7 @@ public class Asset {
 	 * definition} = "Classification of the asset."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAssetClassification = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Asset, List<AssetClassification>> mmAssetClassification = new MMBusinessAssociationEnd<Asset, List<AssetClassification>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
@@ -376,15 +394,25 @@ public class Asset {
 			name = "AssetClassification";
 			definition = "Classification of the asset.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmAsset;
+			opposite_lazy = () -> AssetClassification.mmAsset;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AssetClassification.mmObject();
+			type_lazy = () -> AssetClassification.mmObject();
+		}
+
+		@Override
+		public List<AssetClassification> getValue(Asset obj) {
+			return obj.getAssetClassification();
+		}
+
+		@Override
+		public void setValue(Asset obj, List<AssetClassification> value) {
+			obj.setAssetClassification(value);
 		}
 	};
 	protected FinancialAssetTypeCategoryCode financialAssetCategory;
 	/**
-	 * Categorization of financial asset type.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -407,7 +435,7 @@ public class Asset {
 	 * definition} = "Categorization of financial asset type."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFinancialAssetCategory = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Asset, FinancialAssetTypeCategoryCode> mmFinancialAssetCategory = new MMBusinessAttribute<Asset, FinancialAssetTypeCategoryCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
@@ -419,18 +447,20 @@ public class Asset {
 			simpleType_lazy = () -> FinancialAssetTypeCategoryCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Asset.class.getMethod("getFinancialAssetCategory", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public FinancialAssetTypeCategoryCode getValue(Asset obj) {
+			return obj.getFinancialAssetCategory();
+		}
+
+		@Override
+		public void setValue(Asset obj, FinancialAssetTypeCategoryCode value) {
+			obj.setFinancialAssetCategory(value);
 		}
 	};
 	protected AssetPartyRole assetPartyRole;
 	/**
-	 * Party which plays a role for a specific asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -460,7 +490,7 @@ public class Asset {
 	 * definition} = "Party which plays a role for a specific asset."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAssetPartyRole = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Asset, Optional<AssetPartyRole>> mmAssetPartyRole = new MMBusinessAssociationEnd<Asset, Optional<AssetPartyRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
@@ -469,15 +499,25 @@ public class Asset {
 			definition = "Party which plays a role for a specific asset.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.AssetPartyRole.mmAsset;
+			opposite_lazy = () -> AssetPartyRole.mmAsset;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.AssetPartyRole.mmObject();
+			type_lazy = () -> AssetPartyRole.mmObject();
+		}
+
+		@Override
+		public Optional<AssetPartyRole> getValue(Asset obj) {
+			return obj.getAssetPartyRole();
+		}
+
+		@Override
+		public void setValue(Asset obj, Optional<AssetPartyRole> value) {
+			obj.setAssetPartyRole(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.entity.Issuance> issuance;
+	protected List<Issuance> issuance;
 	/**
-	 * Details regarding the issuance of an asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -506,7 +546,7 @@ public class Asset {
 	 * definition} = "Details regarding the issuance of an asset."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmIssuance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Asset, List<Issuance>> mmIssuance = new MMBusinessAssociationEnd<Asset, List<Issuance>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
@@ -514,15 +554,25 @@ public class Asset {
 			name = "Issuance";
 			definition = "Details regarding the issuance of an asset.";
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Issuance.mmIssuedAsset;
+			opposite_lazy = () -> Issuance.mmIssuedAsset;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Issuance.mmObject();
+			type_lazy = () -> Issuance.mmObject();
+		}
+
+		@Override
+		public List<Issuance> getValue(Asset obj) {
+			return obj.getIssuance();
+		}
+
+		@Override
+		public void setValue(Asset obj, List<Issuance> value) {
+			obj.setIssuance(value);
 		}
 	};
 	protected Portfolio portfolio;
 	/**
-	 * Asset which is part of a portfolio.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -552,7 +602,7 @@ public class Asset {
 	 * definition} = "Asset which is part of a portfolio."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPortfolio = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Asset, Optional<Portfolio>> mmPortfolio = new MMBusinessAssociationEnd<Asset, Optional<Portfolio>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
@@ -561,15 +611,25 @@ public class Asset {
 			definition = "Asset which is part of a portfolio.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Portfolio.mmAssetDescription;
+			opposite_lazy = () -> Portfolio.mmAssetDescription;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Portfolio.mmObject();
+			type_lazy = () -> Portfolio.mmObject();
+		}
+
+		@Override
+		public Optional<Portfolio> getValue(Asset obj) {
+			return obj.getPortfolio();
+		}
+
+		@Override
+		public void setValue(Asset obj, Optional<Portfolio> value) {
+			obj.setPortfolio(value.orElse(null));
 		}
 	};
 	protected CurrencyAndAmount investmentAmount;
 	/**
-	 * Invested amount of the portfolio asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -592,7 +652,7 @@ public class Asset {
 	 * definition} = "Invested amount of the portfolio asset."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInvestmentAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Asset, CurrencyAndAmount> mmInvestmentAmount = new MMBusinessAttribute<Asset, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
@@ -604,18 +664,20 @@ public class Asset {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Asset.class.getMethod("getInvestmentAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(Asset obj) {
+			return obj.getInvestmentAmount();
+		}
+
+		@Override
+		public void setValue(Asset obj, CurrencyAndAmount value) {
+			obj.setInvestmentAmount(value);
 		}
 	};
 	protected PercentageRate investmentRate;
 	/**
-	 * Invested percentage of the portfolio asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -638,7 +700,7 @@ public class Asset {
 	 * definition} = "Invested percentage of the portfolio asset."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInvestmentRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Asset, PercentageRate> mmInvestmentRate = new MMBusinessAttribute<Asset, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
@@ -650,18 +712,20 @@ public class Asset {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Asset.class.getMethod("getInvestmentRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(Asset obj) {
+			return obj.getInvestmentRate();
+		}
+
+		@Override
+		public void setValue(Asset obj, PercentageRate value) {
+			obj.setInvestmentRate(value);
 		}
 	};
 	protected ISODateTime effectiveDate;
 	/**
-	 * Cut off date/time for the information of the specified portfolio asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -685,7 +749,7 @@ public class Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmEffectiveDate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Asset, ISODateTime> mmEffectiveDate = new MMBusinessAttribute<Asset, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
@@ -697,18 +761,20 @@ public class Asset {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Asset.class.getMethod("getEffectiveDate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Asset obj) {
+			return obj.getEffectiveDate();
+		}
+
+		@Override
+		public void setValue(Asset obj, ISODateTime value) {
+			obj.setEffectiveDate(value);
 		}
 	};
 	protected InstrumentSubStructureTypeCode financialInstrumentSubStructure;
 	/**
-	 * Indicates the type of deal for structured finance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -731,7 +797,7 @@ public class Asset {
 	 * definition} = "Indicates the type of deal for structured finance."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFinancialInstrumentSubStructure = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Asset, InstrumentSubStructureTypeCode> mmFinancialInstrumentSubStructure = new MMBusinessAttribute<Asset, InstrumentSubStructureTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
@@ -743,18 +809,20 @@ public class Asset {
 			simpleType_lazy = () -> InstrumentSubStructureTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Asset.class.getMethod("getFinancialInstrumentSubStructure", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public InstrumentSubStructureTypeCode getValue(Asset obj) {
+			return obj.getFinancialInstrumentSubStructure();
+		}
+
+		@Override
+		public void setValue(Asset obj, InstrumentSubStructureTypeCode value) {
+			obj.setFinancialInstrumentSubStructure(value);
 		}
 	};
 	protected InvestmentPlan investmentPlan;
 	/**
-	 * Investment plan that invests in a specific asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -784,7 +852,7 @@ public class Asset {
 	 * definition} = "Investment plan that invests in a specific asset."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestmentPlan = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Asset, Optional<InvestmentPlan>> mmInvestmentPlan = new MMBusinessAssociationEnd<Asset, Optional<InvestmentPlan>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
@@ -793,15 +861,25 @@ public class Asset {
 			definition = "Investment plan that invests in a specific asset.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmAsset;
+			opposite_lazy = () -> InvestmentPlan.mmAsset;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentPlan.mmObject();
+			type_lazy = () -> InvestmentPlan.mmObject();
+		}
+
+		@Override
+		public Optional<InvestmentPlan> getValue(Asset obj) {
+			return obj.getInvestmentPlan();
+		}
+
+		@Override
+		public void setValue(Asset obj, Optional<InvestmentPlan> value) {
+			obj.setInvestmentPlan(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.entity.Trade> trade;
+	protected List<Trade> trade;
 	/**
-	 * Trade which which involves a specific asset.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -829,7 +907,7 @@ public class Asset {
 	 * definition} = "Trade which which involves a specific asset."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Asset, List<Trade>> mmTrade = new MMBusinessAssociationEnd<Asset, List<Trade>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
@@ -837,16 +915,25 @@ public class Asset {
 			name = "Trade";
 			definition = "Trade which which involves a specific asset.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Trade.mmAsset;
+			opposite_lazy = () -> Trade.mmAsset;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
+			type_lazy = () -> Trade.mmObject();
+		}
+
+		@Override
+		public List<Trade> getValue(Asset obj) {
+			return obj.getTrade();
+		}
+
+		@Override
+		public void setValue(Asset obj, List<Trade> value) {
+			obj.setTrade(value);
 		}
 	};
 	protected Tranche tranche;
 	/**
-	 * One of a number of related assets offered as part of the same
-	 * transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -876,7 +963,7 @@ public class Asset {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmTranche = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Asset, Tranche> mmTranche = new MMBusinessAssociationEnd<Asset, Tranche>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
@@ -885,15 +972,25 @@ public class Asset {
 			definition = "One of a number of related assets offered as part of the same transaction.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.Tranche.mmAsset;
+			opposite_lazy = () -> Tranche.mmAsset;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Tranche.mmObject();
+			type_lazy = () -> Tranche.mmObject();
+		}
+
+		@Override
+		public Tranche getValue(Asset obj) {
+			return obj.getTranche();
+		}
+
+		@Override
+		public void setValue(Asset obj, Tranche value) {
+			obj.setTranche(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Leg> legAdditionalInformation;
+	protected List<Leg> legAdditionalInformation;
 	/**
-	 * Provides details about the leg.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -922,7 +1019,7 @@ public class Asset {
 	 * definition} = "Provides details about the leg."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmLegAdditionalInformation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Asset, List<Leg>> mmLegAdditionalInformation = new MMBusinessAssociationEnd<Asset, List<Leg>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
@@ -930,15 +1027,25 @@ public class Asset {
 			name = "LegAdditionalInformation";
 			definition = "Provides details about the leg.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Leg.mmRelatedAsset;
+			opposite_lazy = () -> Leg.mmRelatedAsset;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Leg.mmObject();
+			type_lazy = () -> Leg.mmObject();
+		}
+
+		@Override
+		public List<Leg> getValue(Asset obj) {
+			return obj.getLegAdditionalInformation();
+		}
+
+		@Override
+		public void setValue(Asset obj, List<Leg> value) {
+			obj.setLegAdditionalInformation(value);
 		}
 	};
 	protected StandingSettlementInstruction standingSettlementInstruction;
 	/**
-	 * Standing settlement instruction for which an asset is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -970,7 +1077,7 @@ public class Asset {
 	 * "Standing settlement instruction for which an asset is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmStandingSettlementInstruction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Asset, StandingSettlementInstruction> mmStandingSettlementInstruction = new MMBusinessAssociationEnd<Asset, StandingSettlementInstruction>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Asset.mmObject();
@@ -979,24 +1086,32 @@ public class Asset {
 			definition = "Standing settlement instruction for which an asset is specified.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmAsset;
+			opposite_lazy = () -> StandingSettlementInstruction.mmAsset;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.StandingSettlementInstruction.mmObject();
+			type_lazy = () -> StandingSettlementInstruction.mmObject();
+		}
+
+		@Override
+		public StandingSettlementInstruction getValue(Asset obj) {
+			return obj.getStandingSettlementInstruction();
+		}
+
+		@Override
+		public void setValue(Asset obj, StandingSettlementInstruction value) {
+			obj.setStandingSettlementInstruction(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Asset";
 				definition = "Tangible items of value to a business.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Trade.mmAsset, com.tools20022.repository.entity.InvestmentPlan.mmAsset, com.tools20022.repository.entity.Portfolio.mmAssetDescription,
-						com.tools20022.repository.entity.AssetHolding.mmAsset, com.tools20022.repository.entity.AssetPartyRole.mmAsset, com.tools20022.repository.entity.AssetClassification.mmAsset,
-						com.tools20022.repository.entity.Derivative.mmUnderlyingAsset, com.tools20022.repository.entity.Issuance.mmIssuedAsset, com.tools20022.repository.entity.StandingSettlementInstruction.mmAsset,
-						com.tools20022.repository.entity.Leg.mmRelatedAsset, com.tools20022.repository.entity.Tranche.mmAsset);
-				subType_lazy = () -> Arrays.asList(Security.mmObject(), com.tools20022.repository.entity.Derivative.mmObject(), LetterOfCredit.mmObject(), Guarantee.mmObject());
+				associationDomain_lazy = () -> Arrays.asList(Trade.mmAsset, InvestmentPlan.mmAsset, Portfolio.mmAssetDescription, AssetHolding.mmAsset, AssetPartyRole.mmAsset, AssetClassification.mmAsset, Derivative.mmUnderlyingAsset,
+						Issuance.mmIssuedAsset, StandingSettlementInstruction.mmAsset, Leg.mmRelatedAsset, Tranche.mmAsset);
+				subType_lazy = () -> Arrays.asList(Security.mmObject(), Derivative.mmObject(), LetterOfCredit.mmObject(), Guarantee.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Asset.mmExpiryDate, com.tools20022.repository.entity.Asset.mmMaturityDate, com.tools20022.repository.entity.Asset.mmDerivative,
 						com.tools20022.repository.entity.Asset.mmAssetValue, com.tools20022.repository.entity.Asset.mmAssetClassification, com.tools20022.repository.entity.Asset.mmFinancialAssetCategory,
 						com.tools20022.repository.entity.Asset.mmAssetPartyRole, com.tools20022.repository.entity.Asset.mmIssuance, com.tools20022.repository.entity.Asset.mmPortfolio,
@@ -1017,143 +1132,161 @@ public class Asset {
 		return expiryDate;
 	}
 
-	public void setExpiryDate(ISODateTime expiryDate) {
-		this.expiryDate = expiryDate;
+	public Asset setExpiryDate(ISODateTime expiryDate) {
+		this.expiryDate = Objects.requireNonNull(expiryDate);
+		return this;
 	}
 
 	public ISODateTime getMaturityDate() {
 		return maturityDate;
 	}
 
-	public void setMaturityDate(ISODateTime maturityDate) {
-		this.maturityDate = maturityDate;
+	public Asset setMaturityDate(ISODateTime maturityDate) {
+		this.maturityDate = Objects.requireNonNull(maturityDate);
+		return this;
 	}
 
 	public List<Derivative> getDerivative() {
-		return derivative;
+		return derivative == null ? derivative = new ArrayList<>() : derivative;
 	}
 
-	public void setDerivative(List<com.tools20022.repository.entity.Derivative> derivative) {
-		this.derivative = derivative;
+	public Asset setDerivative(List<Derivative> derivative) {
+		this.derivative = Objects.requireNonNull(derivative);
+		return this;
 	}
 
 	public List<AssetHolding> getAssetValue() {
-		return assetValue;
+		return assetValue == null ? assetValue = new ArrayList<>() : assetValue;
 	}
 
-	public void setAssetValue(List<com.tools20022.repository.entity.AssetHolding> assetValue) {
-		this.assetValue = assetValue;
+	public Asset setAssetValue(List<AssetHolding> assetValue) {
+		this.assetValue = Objects.requireNonNull(assetValue);
+		return this;
 	}
 
 	public List<AssetClassification> getAssetClassification() {
-		return assetClassification;
+		return assetClassification == null ? assetClassification = new ArrayList<>() : assetClassification;
 	}
 
-	public void setAssetClassification(List<com.tools20022.repository.entity.AssetClassification> assetClassification) {
-		this.assetClassification = assetClassification;
+	public Asset setAssetClassification(List<AssetClassification> assetClassification) {
+		this.assetClassification = Objects.requireNonNull(assetClassification);
+		return this;
 	}
 
 	public FinancialAssetTypeCategoryCode getFinancialAssetCategory() {
 		return financialAssetCategory;
 	}
 
-	public void setFinancialAssetCategory(FinancialAssetTypeCategoryCode financialAssetCategory) {
-		this.financialAssetCategory = financialAssetCategory;
+	public Asset setFinancialAssetCategory(FinancialAssetTypeCategoryCode financialAssetCategory) {
+		this.financialAssetCategory = Objects.requireNonNull(financialAssetCategory);
+		return this;
 	}
 
-	public AssetPartyRole getAssetPartyRole() {
-		return assetPartyRole;
+	public Optional<AssetPartyRole> getAssetPartyRole() {
+		return assetPartyRole == null ? Optional.empty() : Optional.of(assetPartyRole);
 	}
 
-	public void setAssetPartyRole(com.tools20022.repository.entity.AssetPartyRole assetPartyRole) {
+	public Asset setAssetPartyRole(AssetPartyRole assetPartyRole) {
 		this.assetPartyRole = assetPartyRole;
+		return this;
 	}
 
 	public List<Issuance> getIssuance() {
-		return issuance;
+		return issuance == null ? issuance = new ArrayList<>() : issuance;
 	}
 
-	public void setIssuance(List<com.tools20022.repository.entity.Issuance> issuance) {
-		this.issuance = issuance;
+	public Asset setIssuance(List<Issuance> issuance) {
+		this.issuance = Objects.requireNonNull(issuance);
+		return this;
 	}
 
-	public Portfolio getPortfolio() {
-		return portfolio;
+	public Optional<Portfolio> getPortfolio() {
+		return portfolio == null ? Optional.empty() : Optional.of(portfolio);
 	}
 
-	public void setPortfolio(com.tools20022.repository.entity.Portfolio portfolio) {
+	public Asset setPortfolio(Portfolio portfolio) {
 		this.portfolio = portfolio;
+		return this;
 	}
 
 	public CurrencyAndAmount getInvestmentAmount() {
 		return investmentAmount;
 	}
 
-	public void setInvestmentAmount(CurrencyAndAmount investmentAmount) {
-		this.investmentAmount = investmentAmount;
+	public Asset setInvestmentAmount(CurrencyAndAmount investmentAmount) {
+		this.investmentAmount = Objects.requireNonNull(investmentAmount);
+		return this;
 	}
 
 	public PercentageRate getInvestmentRate() {
 		return investmentRate;
 	}
 
-	public void setInvestmentRate(PercentageRate investmentRate) {
-		this.investmentRate = investmentRate;
+	public Asset setInvestmentRate(PercentageRate investmentRate) {
+		this.investmentRate = Objects.requireNonNull(investmentRate);
+		return this;
 	}
 
 	public ISODateTime getEffectiveDate() {
 		return effectiveDate;
 	}
 
-	public void setEffectiveDate(ISODateTime effectiveDate) {
-		this.effectiveDate = effectiveDate;
+	public Asset setEffectiveDate(ISODateTime effectiveDate) {
+		this.effectiveDate = Objects.requireNonNull(effectiveDate);
+		return this;
 	}
 
 	public InstrumentSubStructureTypeCode getFinancialInstrumentSubStructure() {
 		return financialInstrumentSubStructure;
 	}
 
-	public void setFinancialInstrumentSubStructure(InstrumentSubStructureTypeCode financialInstrumentSubStructure) {
-		this.financialInstrumentSubStructure = financialInstrumentSubStructure;
+	public Asset setFinancialInstrumentSubStructure(InstrumentSubStructureTypeCode financialInstrumentSubStructure) {
+		this.financialInstrumentSubStructure = Objects.requireNonNull(financialInstrumentSubStructure);
+		return this;
 	}
 
-	public InvestmentPlan getInvestmentPlan() {
-		return investmentPlan;
+	public Optional<InvestmentPlan> getInvestmentPlan() {
+		return investmentPlan == null ? Optional.empty() : Optional.of(investmentPlan);
 	}
 
-	public void setInvestmentPlan(com.tools20022.repository.entity.InvestmentPlan investmentPlan) {
+	public Asset setInvestmentPlan(InvestmentPlan investmentPlan) {
 		this.investmentPlan = investmentPlan;
+		return this;
 	}
 
 	public List<Trade> getTrade() {
-		return trade;
+		return trade == null ? trade = new ArrayList<>() : trade;
 	}
 
-	public void setTrade(List<com.tools20022.repository.entity.Trade> trade) {
-		this.trade = trade;
+	public Asset setTrade(List<Trade> trade) {
+		this.trade = Objects.requireNonNull(trade);
+		return this;
 	}
 
 	public Tranche getTranche() {
 		return tranche;
 	}
 
-	public void setTranche(com.tools20022.repository.entity.Tranche tranche) {
-		this.tranche = tranche;
+	public Asset setTranche(Tranche tranche) {
+		this.tranche = Objects.requireNonNull(tranche);
+		return this;
 	}
 
 	public List<Leg> getLegAdditionalInformation() {
-		return legAdditionalInformation;
+		return legAdditionalInformation == null ? legAdditionalInformation = new ArrayList<>() : legAdditionalInformation;
 	}
 
-	public void setLegAdditionalInformation(List<com.tools20022.repository.entity.Leg> legAdditionalInformation) {
-		this.legAdditionalInformation = legAdditionalInformation;
+	public Asset setLegAdditionalInformation(List<Leg> legAdditionalInformation) {
+		this.legAdditionalInformation = Objects.requireNonNull(legAdditionalInformation);
+		return this;
 	}
 
 	public StandingSettlementInstruction getStandingSettlementInstruction() {
 		return standingSettlementInstruction;
 	}
 
-	public void setStandingSettlementInstruction(com.tools20022.repository.entity.StandingSettlementInstruction standingSettlementInstruction) {
-		this.standingSettlementInstruction = standingSettlementInstruction;
+	public Asset setStandingSettlementInstruction(StandingSettlementInstruction standingSettlementInstruction) {
+		this.standingSettlementInstruction = Objects.requireNonNull(standingSettlementInstruction);
+		return this;
 	}
 }

@@ -22,10 +22,13 @@ import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.CorporateActionPartyRole;
+import com.tools20022.repository.entity.Meeting;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Role played by a party in the context of a meeting.
@@ -67,8 +70,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,8 +87,8 @@ public class MeetingPartyRole extends CorporateActionPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.Meeting> meeting;
 	/**
-	 * Specifies the meeting for which a party plays a role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -115,7 +118,7 @@ public class MeetingPartyRole extends CorporateActionPartyRole {
 	 * definition} = "Specifies the meeting for which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMeeting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<MeetingPartyRole, List<Meeting>> mmMeeting = new MMBusinessAssociationEnd<MeetingPartyRole, List<Meeting>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MeetingPartyRole.mmObject();
@@ -127,12 +130,22 @@ public class MeetingPartyRole extends CorporateActionPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
 		}
+
+		@Override
+		public List<Meeting> getValue(MeetingPartyRole obj) {
+			return obj.getMeeting();
+		}
+
+		@Override
+		public void setValue(MeetingPartyRole obj, List<Meeting> value) {
+			obj.setMeeting(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MeetingPartyRole";
 				definition = "Role played by a party in the context of a meeting.";
@@ -151,10 +164,11 @@ public class MeetingPartyRole extends CorporateActionPartyRole {
 	}
 
 	public List<Meeting> getMeeting() {
-		return meeting;
+		return meeting == null ? meeting = new ArrayList<>() : meeting;
 	}
 
-	public void setMeeting(List<com.tools20022.repository.entity.Meeting> meeting) {
-		this.meeting = meeting;
+	public MeetingPartyRole setMeeting(List<com.tools20022.repository.entity.Meeting> meeting) {
+		this.meeting = Objects.requireNonNull(meeting);
+		return this;
 	}
 }

@@ -23,9 +23,10 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.PartyIdentificationInformation;
 import com.tools20022.repository.entity.PersonIdentification;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.DateAndPlaceOfBirth;
+import com.tools20022.repository.msg.GenericPersonIdentification1;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -53,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,15 +73,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "PersonIdentification5", propOrder = {"dateAndPlaceOfBirth", "other"})
 public class PersonIdentification5 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "DtAndPlcOfBirth")
 	protected DateAndPlaceOfBirth dateAndPlaceOfBirth;
 	/**
-	 * Date and place of birth of a person.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -117,10 +119,10 @@ public class PersonIdentification5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDateAndPlaceOfBirth = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PersonIdentification5, Optional<DateAndPlaceOfBirth>> mmDateAndPlaceOfBirth = new MMMessageAssociationEnd<PersonIdentification5, Optional<DateAndPlaceOfBirth>>() {
 		{
 			businessElementTrace_lazy = () -> PersonIdentification.mmPerson;
-			componentContext_lazy = () -> PersonIdentification5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PersonIdentification5.mmObject();
 			isDerived = false;
 			xmlTag = "DtAndPlcOfBirth";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -130,14 +132,24 @@ public class PersonIdentification5 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DateAndPlaceOfBirth.mmObject();
+			type_lazy = () -> DateAndPlaceOfBirth.mmObject();
+		}
+
+		@Override
+		public Optional<DateAndPlaceOfBirth> getValue(PersonIdentification5 obj) {
+			return obj.getDateAndPlaceOfBirth();
+		}
+
+		@Override
+		public void setValue(PersonIdentification5 obj, Optional<DateAndPlaceOfBirth> value) {
+			obj.setDateAndPlaceOfBirth(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.msg.GenericPersonIdentification1> other;
+	@XmlElement(name = "Othr")
+	protected List<GenericPersonIdentification1> other;
 	/**
-	 * Unique identification of a person, as assigned by an institution, using
-	 * an identification scheme.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -177,10 +189,10 @@ public class PersonIdentification5 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmOther = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<PersonIdentification5, List<GenericPersonIdentification1>> mmOther = new MMMessageAssociationEnd<PersonIdentification5, List<GenericPersonIdentification1>>() {
 		{
 			businessElementTrace_lazy = () -> PartyIdentificationInformation.mmOtherIdentification;
-			componentContext_lazy = () -> PersonIdentification5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.PersonIdentification5.mmObject();
 			isDerived = false;
 			xmlTag = "Othr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -189,16 +201,26 @@ public class PersonIdentification5 {
 			nextVersions_lazy = () -> Arrays.asList(PersonIdentification7.mmOther);
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.GenericPersonIdentification1.mmObject();
+			type_lazy = () -> GenericPersonIdentification1.mmObject();
+		}
+
+		@Override
+		public List<GenericPersonIdentification1> getValue(PersonIdentification5 obj) {
+			return obj.getOther();
+		}
+
+		@Override
+		public void setValue(PersonIdentification5 obj, List<GenericPersonIdentification1> value) {
+			obj.setOther(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(PersonIdentification5.mmDateAndPlaceOfBirth, PersonIdentification5.mmOther);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.PersonIdentification5.mmDateAndPlaceOfBirth, com.tools20022.repository.msg.PersonIdentification5.mmOther);
 				trace_lazy = () -> PersonIdentification.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PersonIdentification5";
 				definition = "Unique and unambiguous way to identify a person.";
@@ -208,21 +230,21 @@ public class PersonIdentification5 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "DtAndPlcOfBirth")
-	public DateAndPlaceOfBirth getDateAndPlaceOfBirth() {
-		return dateAndPlaceOfBirth;
+	public Optional<DateAndPlaceOfBirth> getDateAndPlaceOfBirth() {
+		return dateAndPlaceOfBirth == null ? Optional.empty() : Optional.of(dateAndPlaceOfBirth);
 	}
 
-	public void setDateAndPlaceOfBirth(com.tools20022.repository.msg.DateAndPlaceOfBirth dateAndPlaceOfBirth) {
+	public PersonIdentification5 setDateAndPlaceOfBirth(DateAndPlaceOfBirth dateAndPlaceOfBirth) {
 		this.dateAndPlaceOfBirth = dateAndPlaceOfBirth;
+		return this;
 	}
 
-	@XmlElement(name = "Othr")
 	public List<GenericPersonIdentification1> getOther() {
-		return other;
+		return other == null ? other = new ArrayList<>() : other;
 	}
 
-	public void setOther(List<com.tools20022.repository.msg.GenericPersonIdentification1> other) {
-		this.other = other;
+	public PersonIdentification5 setOther(List<GenericPersonIdentification1> other) {
+		this.other = Objects.requireNonNull(other);
+		return this;
 	}
 }

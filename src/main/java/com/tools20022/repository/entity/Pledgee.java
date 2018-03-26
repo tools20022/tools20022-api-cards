@@ -19,11 +19,13 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.PledgeeTypeCode;
+import com.tools20022.repository.entity.SecuritiesBalance;
 import com.tools20022.repository.entity.SecuritiesPartyRole;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Organisation used as the pledgee for the securities.
@@ -58,8 +60,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,8 +77,8 @@ public class Pledgee extends SecuritiesPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected PledgeeTypeCode pledgeeType;
 	/**
-	 * Specifies the type of pledgee.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -99,7 +101,7 @@ public class Pledgee extends SecuritiesPartyRole {
 	 * definition} = "Specifies the type of pledgee."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPledgeeType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Pledgee, PledgeeTypeCode> mmPledgeeType = new MMBusinessAttribute<Pledgee, PledgeeTypeCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Pledgee.mmObject();
@@ -111,18 +113,20 @@ public class Pledgee extends SecuritiesPartyRole {
 			simpleType_lazy = () -> PledgeeTypeCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Pledgee.class.getMethod("getPledgeeType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PledgeeTypeCode getValue(Pledgee obj) {
+			return obj.getPledgeeType();
+		}
+
+		@Override
+		public void setValue(Pledgee obj, PledgeeTypeCode value) {
+			obj.setPledgeeType(value);
 		}
 	};
 	protected SecuritiesBalance securitiesBalance;
 	/**
-	 * Balance which is held by a pledgee.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,7 +156,7 @@ public class Pledgee extends SecuritiesPartyRole {
 	 * definition} = "Balance which is held by a pledgee."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Pledgee, Optional<SecuritiesBalance>> mmSecuritiesBalance = new MMBusinessAssociationEnd<Pledgee, Optional<SecuritiesBalance>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Pledgee.mmObject();
@@ -165,12 +169,22 @@ public class Pledgee extends SecuritiesPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 		}
+
+		@Override
+		public Optional<SecuritiesBalance> getValue(Pledgee obj) {
+			return obj.getSecuritiesBalance();
+		}
+
+		@Override
+		public void setValue(Pledgee obj, Optional<SecuritiesBalance> value) {
+			obj.setSecuritiesBalance(value.orElse(null));
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Pledgee";
 				definition = "Organisation used as the pledgee for the securities.";
@@ -191,15 +205,17 @@ public class Pledgee extends SecuritiesPartyRole {
 		return pledgeeType;
 	}
 
-	public void setPledgeeType(PledgeeTypeCode pledgeeType) {
-		this.pledgeeType = pledgeeType;
+	public Pledgee setPledgeeType(PledgeeTypeCode pledgeeType) {
+		this.pledgeeType = Objects.requireNonNull(pledgeeType);
+		return this;
 	}
 
-	public SecuritiesBalance getSecuritiesBalance() {
-		return securitiesBalance;
+	public Optional<SecuritiesBalance> getSecuritiesBalance() {
+		return securitiesBalance == null ? Optional.empty() : Optional.of(securitiesBalance);
 	}
 
-	public void setSecuritiesBalance(com.tools20022.repository.entity.SecuritiesBalance securitiesBalance) {
+	public Pledgee setSecuritiesBalance(com.tools20022.repository.entity.SecuritiesBalance securitiesBalance) {
 		this.securitiesBalance = securitiesBalance;
+		return this;
 	}
 }

@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType10Code#CreateCertificate
- * CardPaymentServiceType10Code.mmCreateCertificate}</li>
+ * CardPaymentServiceType10Code.CreateCertificate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType10Code#RenewCerificate
- * CardPaymentServiceType10Code.mmRenewCerificate}</li>
+ * CardPaymentServiceType10Code.RenewCerificate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType10Code#RevokeCertificate
- * CardPaymentServiceType10Code.mmRevokeCertificate}</li>
+ * CardPaymentServiceType10Code.RevokeCertificate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType10Code#RemoveWhiteList
- * CardPaymentServiceType10Code.mmRemoveWhiteList}</li>
+ * CardPaymentServiceType10Code.RemoveWhiteList}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType10Code#AddWhiteList
- * CardPaymentServiceType10Code.mmAddWhiteList}</li>
+ * CardPaymentServiceType10Code.AddWhiteList}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -203,7 +203,7 @@ public class CardPaymentServiceType10Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPaymentServiceType10Code";
 				definition = "Requested certificate management service.";

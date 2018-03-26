@@ -21,11 +21,16 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.BankTransaction;
 import com.tools20022.repository.entity.CashAccountService;
+import com.tools20022.repository.entity.DateTimePeriod;
+import com.tools20022.repository.entity.OperationThreshold;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Operation on a bank account. It may be limited in time, amount or type of
@@ -72,8 +77,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -91,8 +96,8 @@ public class BankOperation extends CashAccountService {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected OperationThreshold operationThreshold;
 	/**
-	 * Threshold related to a bank account operation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -123,7 +128,7 @@ public class BankOperation extends CashAccountService {
 	 * definition} = "Threshold related to a bank account operation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOperationThreshold = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BankOperation, com.tools20022.repository.entity.OperationThreshold> mmOperationThreshold = new MMBusinessAssociationEnd<BankOperation, com.tools20022.repository.entity.OperationThreshold>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BankOperation.mmObject();
@@ -136,11 +141,21 @@ public class BankOperation extends CashAccountService {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.OperationThreshold.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.OperationThreshold getValue(BankOperation obj) {
+			return obj.getOperationThreshold();
+		}
+
+		@Override
+		public void setValue(BankOperation obj, com.tools20022.repository.entity.OperationThreshold value) {
+			obj.setOperationThreshold(value);
+		}
 	};
 	protected BankTransaction operationType;
 	/**
-	 * Specifies the type of the operation related to a bank account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -172,7 +187,7 @@ public class BankOperation extends CashAccountService {
 	 * "Specifies the type of the operation related to a bank account."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOperationType = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BankOperation, BankTransaction> mmOperationType = new MMBusinessAssociationEnd<BankOperation, BankTransaction>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BankOperation.mmObject();
@@ -181,16 +196,25 @@ public class BankOperation extends CashAccountService {
 			definition = "Specifies the type of the operation related to a bank account.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmBankOperation;
+			opposite_lazy = () -> BankTransaction.mmBankOperation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.BankTransaction.mmObject();
+			type_lazy = () -> BankTransaction.mmObject();
+		}
+
+		@Override
+		public BankTransaction getValue(BankOperation obj) {
+			return obj.getOperationType();
+		}
+
+		@Override
+		public void setValue(BankOperation obj, BankTransaction value) {
+			obj.setOperationType(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.DateTimePeriod> applicablePeriod;
+	protected List<DateTimePeriod> applicablePeriod;
 	/**
-	 * Specifies the period, for instance a number of days, for which the bank
-	 * operations are permitted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -223,7 +247,7 @@ public class BankOperation extends CashAccountService {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmApplicablePeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<BankOperation, List<DateTimePeriod>> mmApplicablePeriod = new MMBusinessAssociationEnd<BankOperation, List<DateTimePeriod>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.BankOperation.mmObject();
@@ -231,21 +255,30 @@ public class BankOperation extends CashAccountService {
 			name = "ApplicablePeriod";
 			definition = "Specifies the period, for instance a number of days, for which the bank operations are permitted. ";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmBankOperation;
+			opposite_lazy = () -> DateTimePeriod.mmBankOperation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public List<DateTimePeriod> getValue(BankOperation obj) {
+			return obj.getApplicablePeriod();
+		}
+
+		@Override
+		public void setValue(BankOperation obj, List<DateTimePeriod> value) {
+			obj.setApplicablePeriod(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "BankOperation";
 				definition = "Operation on a bank account. It may be limited in time, amount or type of operation.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.DateTimePeriod.mmBankOperation, com.tools20022.repository.entity.OperationThreshold.mmBankOperation,
-						com.tools20022.repository.entity.BankTransaction.mmBankOperation);
+				associationDomain_lazy = () -> Arrays.asList(DateTimePeriod.mmBankOperation, com.tools20022.repository.entity.OperationThreshold.mmBankOperation, BankTransaction.mmBankOperation);
 				superType_lazy = () -> CashAccountService.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.BankOperation.mmOperationThreshold, com.tools20022.repository.entity.BankOperation.mmOperationType,
 						com.tools20022.repository.entity.BankOperation.mmApplicablePeriod);
@@ -263,23 +296,26 @@ public class BankOperation extends CashAccountService {
 		return operationThreshold;
 	}
 
-	public void setOperationThreshold(com.tools20022.repository.entity.OperationThreshold operationThreshold) {
-		this.operationThreshold = operationThreshold;
+	public BankOperation setOperationThreshold(com.tools20022.repository.entity.OperationThreshold operationThreshold) {
+		this.operationThreshold = Objects.requireNonNull(operationThreshold);
+		return this;
 	}
 
 	public BankTransaction getOperationType() {
 		return operationType;
 	}
 
-	public void setOperationType(com.tools20022.repository.entity.BankTransaction operationType) {
-		this.operationType = operationType;
+	public BankOperation setOperationType(BankTransaction operationType) {
+		this.operationType = Objects.requireNonNull(operationType);
+		return this;
 	}
 
 	public List<DateTimePeriod> getApplicablePeriod() {
-		return applicablePeriod;
+		return applicablePeriod == null ? applicablePeriod = new ArrayList<>() : applicablePeriod;
 	}
 
-	public void setApplicablePeriod(List<com.tools20022.repository.entity.DateTimePeriod> applicablePeriod) {
-		this.applicablePeriod = applicablePeriod;
+	public BankOperation setApplicablePeriod(List<DateTimePeriod> applicablePeriod) {
+		this.applicablePeriod = Objects.requireNonNull(applicablePeriod);
+		return this;
 	}
 }

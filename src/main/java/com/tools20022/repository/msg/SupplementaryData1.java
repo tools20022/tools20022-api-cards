@@ -26,6 +26,8 @@ import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.other.SupplementaryDataEnvelope1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -51,8 +53,16 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintSupplementaryDataRule#forSupplementaryData1
+ * ConstraintSupplementaryDataRule.forSupplementaryData1}</li>
+ * </ul>
+ * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -65,17 +75,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "SupplementaryData1", propOrder = {"placeAndName", "envelope"})
 public class SupplementaryData1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "PlcAndNm")
 	protected Max350Text placeAndName;
 	/**
-	 * Unambiguous reference to the location where the supplementary data must
-	 * be inserted in the message instance.<br>
-	 * In the case of XML, this is expressed by a valid XPath.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -102,9 +111,9 @@ public class SupplementaryData1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPlaceAndName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<SupplementaryData1, Optional<Max350Text>> mmPlaceAndName = new MMMessageAttribute<SupplementaryData1, Optional<Max350Text>>() {
 		{
-			componentContext_lazy = () -> SupplementaryData1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupplementaryData1.mmObject();
 			isDerived = false;
 			xmlTag = "PlcAndNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,11 +123,22 @@ public class SupplementaryData1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max350Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max350Text> getValue(SupplementaryData1 obj) {
+			return obj.getPlaceAndName();
+		}
+
+		@Override
+		public void setValue(SupplementaryData1 obj, Optional<Max350Text> value) {
+			obj.setPlaceAndName(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Envlp", required = true)
 	protected SupplementaryDataEnvelope1 envelope;
 	/**
-	 * Technical element wrapping the supplementary data.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -143,9 +163,9 @@ public class SupplementaryData1 {
 	 * definition} = "Technical element wrapping the supplementary data."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEnvelope = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<SupplementaryData1, SupplementaryDataEnvelope1> mmEnvelope = new MMMessageAssociationEnd<SupplementaryData1, SupplementaryDataEnvelope1>() {
 		{
-			componentContext_lazy = () -> SupplementaryData1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.SupplementaryData1.mmObject();
 			isDerived = false;
 			xmlTag = "Envlp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -156,13 +176,24 @@ public class SupplementaryData1 {
 			isComposite = true;
 			type_lazy = () -> SupplementaryDataEnvelope1.mmObject();
 		}
+
+		@Override
+		public SupplementaryDataEnvelope1 getValue(SupplementaryData1 obj) {
+			return obj.getEnvelope();
+		}
+
+		@Override
+		public void setValue(SupplementaryData1 obj, SupplementaryDataEnvelope1 value) {
+			obj.setEnvelope(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(SupplementaryData1.mmPlaceAndName, SupplementaryData1.mmEnvelope);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.SupplementaryData1.mmPlaceAndName, com.tools20022.repository.msg.SupplementaryData1.mmEnvelope);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintSupplementaryDataRule.forSupplementaryData1);
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SupplementaryData1";
 				definition = "Additional information that can not be captured in the structured fields and/or any other specific block.";
@@ -171,21 +202,21 @@ public class SupplementaryData1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "PlcAndNm")
-	public Max350Text getPlaceAndName() {
-		return placeAndName;
+	public Optional<Max350Text> getPlaceAndName() {
+		return placeAndName == null ? Optional.empty() : Optional.of(placeAndName);
 	}
 
-	public void setPlaceAndName(Max350Text placeAndName) {
+	public SupplementaryData1 setPlaceAndName(Max350Text placeAndName) {
 		this.placeAndName = placeAndName;
+		return this;
 	}
 
-	@XmlElement(name = "Envlp", required = true)
 	public SupplementaryDataEnvelope1 getEnvelope() {
 		return envelope;
 	}
 
-	public void setEnvelope(SupplementaryDataEnvelope1 envelope) {
-		this.envelope = envelope;
+	public SupplementaryData1 setEnvelope(SupplementaryDataEnvelope1 envelope) {
+		this.envelope = Objects.requireNonNull(envelope);
+		return this;
 	}
 }

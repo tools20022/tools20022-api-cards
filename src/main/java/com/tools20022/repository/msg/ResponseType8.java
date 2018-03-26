@@ -25,6 +25,8 @@ import com.tools20022.repository.entity.Response;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -58,8 +60,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,15 +73,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Trace of response by the entities in the path from the issuer to the ATM."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ResponseType8", propOrder = {"responderIdentification", "codification", "response", "responseReason", "additionalResponseInformation"})
 public class ResponseType8 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "RspndrId", required = true)
 	protected Max35Text responderIdentification;
 	/**
-	 * Identification of the responder.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,9 +106,9 @@ public class ResponseType8 {
 	 * definition} = "Identification of the responder."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmResponderIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ResponseType8, Max35Text> mmResponderIdentification = new MMMessageAttribute<ResponseType8, Max35Text>() {
 		{
-			componentContext_lazy = () -> ResponseType8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ResponseType8.mmObject();
 			isDerived = false;
 			xmlTag = "RspndrId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -115,11 +118,22 @@ public class ResponseType8 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(ResponseType8 obj) {
+			return obj.getResponderIdentification();
+		}
+
+		@Override
+		public void setValue(ResponseType8 obj, Max35Text value) {
+			obj.setResponderIdentification(value);
+		}
 	};
+	@XmlElement(name = "Cdfctn")
 	protected Max35Text codification;
 	/**
-	 * Codification of the response (for instance ISO 8583, IFX).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -144,9 +158,9 @@ public class ResponseType8 {
 	 * "Codification of the response (for instance ISO 8583, IFX)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCodification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ResponseType8, Optional<Max35Text>> mmCodification = new MMMessageAttribute<ResponseType8, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> ResponseType8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ResponseType8.mmObject();
 			isDerived = false;
 			xmlTag = "Cdfctn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -156,11 +170,22 @@ public class ResponseType8 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(ResponseType8 obj) {
+			return obj.getCodification();
+		}
+
+		@Override
+		public void setValue(ResponseType8 obj, Optional<Max35Text> value) {
+			obj.setCodification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Rspn", required = true)
 	protected Max35Text response;
 	/**
-	 * Result of the request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -188,10 +213,10 @@ public class ResponseType8 {
 	 * definition} = "Result of the request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmResponse = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ResponseType8, Max35Text> mmResponse = new MMMessageAttribute<ResponseType8, Max35Text>() {
 		{
 			businessComponentTrace_lazy = () -> Response.mmObject();
-			componentContext_lazy = () -> ResponseType8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ResponseType8.mmObject();
 			isDerived = false;
 			xmlTag = "Rspn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -201,11 +226,22 @@ public class ResponseType8 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(ResponseType8 obj) {
+			return obj.getResponse();
+		}
+
+		@Override
+		public void setValue(ResponseType8 obj, Max35Text value) {
+			obj.setResponse(value);
+		}
 	};
+	@XmlElement(name = "RspnRsn")
 	protected Max35Text responseReason;
 	/**
-	 * Detail of the response.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -234,10 +270,10 @@ public class ResponseType8 {
 	 * definition} = "Detail of the response."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmResponseReason = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ResponseType8, Optional<Max35Text>> mmResponseReason = new MMMessageAttribute<ResponseType8, Optional<Max35Text>>() {
 		{
 			businessElementTrace_lazy = () -> Response.mmResponseReason;
-			componentContext_lazy = () -> ResponseType8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ResponseType8.mmObject();
 			isDerived = false;
 			xmlTag = "RspnRsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -247,11 +283,22 @@ public class ResponseType8 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(ResponseType8 obj) {
+			return obj.getResponseReason();
+		}
+
+		@Override
+		public void setValue(ResponseType8 obj, Optional<Max35Text> value) {
+			obj.setResponseReason(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "AddtlRspnInf")
 	protected Max35Text additionalResponseInformation;
 	/**
-	 * Additional information to be logged for further examination.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -276,9 +323,9 @@ public class ResponseType8 {
 	 * "Additional information to be logged for further examination."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalResponseInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ResponseType8, Optional<Max35Text>> mmAdditionalResponseInformation = new MMMessageAttribute<ResponseType8, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> ResponseType8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ResponseType8.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlRspnInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -288,14 +335,25 @@ public class ResponseType8 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(ResponseType8 obj) {
+			return obj.getAdditionalResponseInformation();
+		}
+
+		@Override
+		public void setValue(ResponseType8 obj, Optional<Max35Text> value) {
+			obj.setAdditionalResponseInformation(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ResponseType8.mmResponderIdentification, ResponseType8.mmCodification, ResponseType8.mmResponse, ResponseType8.mmResponseReason, ResponseType8.mmAdditionalResponseInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ResponseType8.mmResponderIdentification, com.tools20022.repository.msg.ResponseType8.mmCodification,
+						com.tools20022.repository.msg.ResponseType8.mmResponse, com.tools20022.repository.msg.ResponseType8.mmResponseReason, com.tools20022.repository.msg.ResponseType8.mmAdditionalResponseInformation);
 				trace_lazy = () -> Response.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ResponseType8";
 				definition = "Trace of response by the entities in the path from the issuer to the ATM.";
@@ -304,48 +362,48 @@ public class ResponseType8 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "RspndrId", required = true)
 	public Max35Text getResponderIdentification() {
 		return responderIdentification;
 	}
 
-	public void setResponderIdentification(Max35Text responderIdentification) {
-		this.responderIdentification = responderIdentification;
+	public ResponseType8 setResponderIdentification(Max35Text responderIdentification) {
+		this.responderIdentification = Objects.requireNonNull(responderIdentification);
+		return this;
 	}
 
-	@XmlElement(name = "Cdfctn")
-	public Max35Text getCodification() {
-		return codification;
+	public Optional<Max35Text> getCodification() {
+		return codification == null ? Optional.empty() : Optional.of(codification);
 	}
 
-	public void setCodification(Max35Text codification) {
+	public ResponseType8 setCodification(Max35Text codification) {
 		this.codification = codification;
+		return this;
 	}
 
-	@XmlElement(name = "Rspn", required = true)
 	public Max35Text getResponse() {
 		return response;
 	}
 
-	public void setResponse(Max35Text response) {
-		this.response = response;
+	public ResponseType8 setResponse(Max35Text response) {
+		this.response = Objects.requireNonNull(response);
+		return this;
 	}
 
-	@XmlElement(name = "RspnRsn")
-	public Max35Text getResponseReason() {
-		return responseReason;
+	public Optional<Max35Text> getResponseReason() {
+		return responseReason == null ? Optional.empty() : Optional.of(responseReason);
 	}
 
-	public void setResponseReason(Max35Text responseReason) {
+	public ResponseType8 setResponseReason(Max35Text responseReason) {
 		this.responseReason = responseReason;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlRspnInf")
-	public Max35Text getAdditionalResponseInformation() {
-		return additionalResponseInformation;
+	public Optional<Max35Text> getAdditionalResponseInformation() {
+		return additionalResponseInformation == null ? Optional.empty() : Optional.of(additionalResponseInformation);
 	}
 
-	public void setAdditionalResponseInformation(Max35Text additionalResponseInformation) {
+	public ResponseType8 setAdditionalResponseInformation(Max35Text additionalResponseInformation) {
 		this.additionalResponseInformation = additionalResponseInformation;
+		return this;
 	}
 }

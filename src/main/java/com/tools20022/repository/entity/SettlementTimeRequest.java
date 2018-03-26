@@ -19,10 +19,12 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ISODateTime;
+import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Provides information on the requested settlement time(s) of the payment
@@ -67,8 +69,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -86,8 +88,8 @@ public class SettlementTimeRequest {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Payment payment;
 	/**
-	 * Payment for which settlement times are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -117,7 +119,7 @@ public class SettlementTimeRequest {
 	 * definition} = "Payment for which settlement times are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPayment = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SettlementTimeRequest, Optional<Payment>> mmPayment = new MMBusinessAssociationEnd<SettlementTimeRequest, Optional<Payment>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SettlementTimeRequest.mmObject();
@@ -126,17 +128,25 @@ public class SettlementTimeRequest {
 			definition = "Payment for which settlement times are specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Payment.mmSettlementTimeRequest;
+			opposite_lazy = () -> Payment.mmSettlementTimeRequest;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Payment.mmObject();
+			type_lazy = () -> Payment.mmObject();
+		}
+
+		@Override
+		public Optional<Payment> getValue(SettlementTimeRequest obj) {
+			return obj.getPayment();
+		}
+
+		@Override
+		public void setValue(SettlementTimeRequest obj, Optional<Payment> value) {
+			obj.setPayment(value.orElse(null));
 		}
 	};
 	protected ISODateTime cLSTime;
 	/**
-	 * Time by which the amount of money must be credited, with confirmation, to
-	 * the CLS Bank's account at the central bank.<br>
-	 * Usage: Time must be expressed in Central European Time (CET).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -161,7 +171,7 @@ public class SettlementTimeRequest {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCLSTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SettlementTimeRequest, ISODateTime> mmCLSTime = new MMBusinessAttribute<SettlementTimeRequest, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SettlementTimeRequest.mmObject();
@@ -173,18 +183,20 @@ public class SettlementTimeRequest {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SettlementTimeRequest.class.getMethod("getCLSTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(SettlementTimeRequest obj) {
+			return obj.getCLSTime();
+		}
+
+		@Override
+		public void setValue(SettlementTimeRequest obj, ISODateTime value) {
+			obj.setCLSTime(value);
 		}
 	};
 	protected ISODateTime tillTime;
 	/**
-	 * Time until when the payment may be settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -207,7 +219,7 @@ public class SettlementTimeRequest {
 	 * definition} = "Time until when the payment may be settled."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTillTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SettlementTimeRequest, ISODateTime> mmTillTime = new MMBusinessAttribute<SettlementTimeRequest, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SettlementTimeRequest.mmObject();
@@ -219,18 +231,20 @@ public class SettlementTimeRequest {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SettlementTimeRequest.class.getMethod("getTillTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(SettlementTimeRequest obj) {
+			return obj.getTillTime();
+		}
+
+		@Override
+		public void setValue(SettlementTimeRequest obj, ISODateTime value) {
+			obj.setTillTime(value);
 		}
 	};
 	protected ISODateTime fromTime;
 	/**
-	 * Time as from when the payment may be settled.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -253,7 +267,7 @@ public class SettlementTimeRequest {
 	 * definition} = "Time as from when the payment may be settled."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmFromTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SettlementTimeRequest, ISODateTime> mmFromTime = new MMBusinessAttribute<SettlementTimeRequest, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SettlementTimeRequest.mmObject();
@@ -265,18 +279,20 @@ public class SettlementTimeRequest {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SettlementTimeRequest.class.getMethod("getFromTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(SettlementTimeRequest obj) {
+			return obj.getFromTime();
+		}
+
+		@Override
+		public void setValue(SettlementTimeRequest obj, ISODateTime value) {
+			obj.setFromTime(value);
 		}
 	};
 	protected ISODateTime rejectTime;
 	/**
-	 * Time by when the payment must be settled to avoid rejection.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -300,7 +316,7 @@ public class SettlementTimeRequest {
 	 * "Time by when the payment must be settled to avoid rejection."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmRejectTime = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SettlementTimeRequest, ISODateTime> mmRejectTime = new MMBusinessAttribute<SettlementTimeRequest, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SettlementTimeRequest.mmObject();
@@ -312,23 +328,25 @@ public class SettlementTimeRequest {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SettlementTimeRequest.class.getMethod("getRejectTime", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(SettlementTimeRequest obj) {
+			return obj.getRejectTime();
+		}
+
+		@Override
+		public void setValue(SettlementTimeRequest obj, ISODateTime value) {
+			obj.setRejectTime(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SettlementTimeRequest";
 				definition = "Provides information on the requested settlement time(s) of the payment instruction.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Payment.mmSettlementTimeRequest);
+				associationDomain_lazy = () -> Arrays.asList(Payment.mmSettlementTimeRequest);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SettlementTimeRequest.mmPayment, com.tools20022.repository.entity.SettlementTimeRequest.mmCLSTime,
 						com.tools20022.repository.entity.SettlementTimeRequest.mmTillTime, com.tools20022.repository.entity.SettlementTimeRequest.mmFromTime, com.tools20022.repository.entity.SettlementTimeRequest.mmRejectTime);
 			}
@@ -341,43 +359,48 @@ public class SettlementTimeRequest {
 		return mmObject_lazy.get();
 	}
 
-	public Payment getPayment() {
-		return payment;
+	public Optional<Payment> getPayment() {
+		return payment == null ? Optional.empty() : Optional.of(payment);
 	}
 
-	public void setPayment(com.tools20022.repository.entity.Payment payment) {
+	public SettlementTimeRequest setPayment(Payment payment) {
 		this.payment = payment;
+		return this;
 	}
 
 	public ISODateTime getCLSTime() {
 		return cLSTime;
 	}
 
-	public void setCLSTime(ISODateTime cLSTime) {
-		this.cLSTime = cLSTime;
+	public SettlementTimeRequest setCLSTime(ISODateTime cLSTime) {
+		this.cLSTime = Objects.requireNonNull(cLSTime);
+		return this;
 	}
 
 	public ISODateTime getTillTime() {
 		return tillTime;
 	}
 
-	public void setTillTime(ISODateTime tillTime) {
-		this.tillTime = tillTime;
+	public SettlementTimeRequest setTillTime(ISODateTime tillTime) {
+		this.tillTime = Objects.requireNonNull(tillTime);
+		return this;
 	}
 
 	public ISODateTime getFromTime() {
 		return fromTime;
 	}
 
-	public void setFromTime(ISODateTime fromTime) {
-		this.fromTime = fromTime;
+	public SettlementTimeRequest setFromTime(ISODateTime fromTime) {
+		this.fromTime = Objects.requireNonNull(fromTime);
+		return this;
 	}
 
 	public ISODateTime getRejectTime() {
 		return rejectTime;
 	}
 
-	public void setRejectTime(ISODateTime rejectTime) {
-		this.rejectTime = rejectTime;
+	public SettlementTimeRequest setRejectTime(ISODateTime rejectTime) {
+		this.rejectTime = Objects.requireNonNull(rejectTime);
+		return this;
 	}
 }

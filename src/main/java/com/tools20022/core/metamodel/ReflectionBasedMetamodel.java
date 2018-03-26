@@ -12,6 +12,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -30,7 +31,6 @@ public class ReflectionBasedMetamodel implements Metamodel {
 
 	private final LinkedHashMap<String, MMTypeImpl<?>> mmTypesByName = new LinkedHashMap<>();
 	private final LinkedHashMap<Class<? extends GeneratedMetamodelBean>, MMTypeImpl<?>> mmTypesByClass = new LinkedHashMap<>();
-	private final LinkedHashMap<MMTypeImpl<?>, Class<?>> classesBymmTypes = new LinkedHashMap<>();
 	private final LinkedHashMap<String, MMEnumImpl<?>> mmEnumsByName = new LinkedHashMap<>();
 	private final LinkedHashMap<Class<? extends Enum<?>>, MMEnumImpl<?>> mmEnumsByClass = new LinkedHashMap<>();
 
@@ -38,13 +38,13 @@ public class ReflectionBasedMetamodel implements Metamodel {
 	}
 
 	@Override
-	public Stream<? extends MetamodelType<? extends GeneratedMetamodelBean>> listTypes() {
-		return mmTypesByName.values().stream();
+	public List<? extends MetamodelType<? extends GeneratedMetamodelBean>> getAllTypes() {
+		return new ArrayList<>(mmTypesByName.values());
 	}
 
 	@Override
-	public Stream<? extends MMEnumImpl<?>> listEnums() {
-		return mmEnumsByName.values().stream();
+	public List<? extends MMEnumImpl<?>> getAllEnums() {
+		return new ArrayList<>(mmEnumsByName.values());
 	}
 
 	@Override
@@ -56,36 +56,18 @@ public class ReflectionBasedMetamodel implements Metamodel {
 	}
 
 	private <B extends GeneratedMetamodelBean> MMTypeImpl<B> getTypeImplByClass(Class<B> beanClass) {
-		Class<?> keyClass;
-		if( ! mmTypesByClass.containsKey(beanClass)) {
-			keyClass = beanClass.getSuperclass();
-		} else {
-			keyClass = beanClass;
+		for (Class<?> keyClass = beanClass; keyClass != null; keyClass = keyClass.getSuperclass()) {
+			@SuppressWarnings("unchecked")
+			MMTypeImpl<B> ret = (MMTypeImpl<B>) mmTypesByClass.get(keyClass);
+			if (ret != null)
+				return ret;
 		}
-		
-		@SuppressWarnings("unchecked")
-		MMTypeImpl<B> ret = (MMTypeImpl<B>) mmTypesByClass.get(keyClass);
-		if (ret == null)
-			throw new NoSuchElementException("No metatype for class " + beanClass);
-		return ret;
+		throw new NoSuchElementException("No metatype for class " + beanClass);
 	}
 
 	@Override
 	public <B extends GeneratedMetamodelBean> MetamodelType<B> getTypeByClass(Class<B> beanClass) {
 		return getTypeImplByClass(beanClass);
-	}
-
-	private <B extends GeneratedMetamodelBean> Class<B> getClassByType_(MetamodelType<B> mmType) {
-		@SuppressWarnings("unchecked")
-		Class<B> beanClass = (Class<B>) classesBymmTypes.get(mmType);
-		if (beanClass == null)
-			throw new NoSuchElementException("No class for metatype " + beanClass);
-		return beanClass;
-	}
-
-	@Override
-	public <B extends GeneratedMetamodelBean> Class<B> getClassByType(MetamodelType<B> mmType) {
-		return getClassByType_(mmType);
 	}
 
 	@Override
@@ -231,7 +213,6 @@ public class ReflectionBasedMetamodel implements Metamodel {
 				if (prevType != null)
 					throw new IllegalStateException(
 							"MMtype with bean class " + beanClass + " already added: " + prevType);
-				classesBymmTypes.putIfAbsent(this,beanClass);
 			}
 
 			for (Field f : this.beanClass.getDeclaredFields()) {
@@ -296,15 +277,16 @@ public class ReflectionBasedMetamodel implements Metamodel {
 
 		void initMembersClass() throws Exception {
 			for (Field f : beanClass.getDeclaredFields()) {
-				if (f.isSynthetic() || !Modifier.isStatic( f.getModifiers() ) || !Modifier.isFinal(f.getModifiers() ))
+				if (f.isSynthetic() || !Modifier.isStatic(f.getModifiers()) || !Modifier.isFinal(f.getModifiers()))
 					continue;
-				if ( ! f.getName().endsWith("Attribute"))
+				if (!f.getName().endsWith("Attribute"))
 					continue;
 				Object wrapper = f.get(null);
 				if (wrapper instanceof AttrWrapper) {
 					@SuppressWarnings("unchecked")
 					AttrWrapper<B, ?> attrWrapper = (AttrWrapper<B, ?>) wrapper;
-					MMAttributeImpl<B, ?> mmAttr = attrsByName.get(f.getName().substring(0, f.getName().length() - "Attribute".length()));
+					MMAttributeImpl<B, ?> mmAttr = attrsByName
+							.get(f.getName().substring(0, f.getName().length() - "Attribute".length()));
 					attrWrapper.setImpl((MetamodelAttribute<B, ?>) mmAttr);
 				} else if (wrapper instanceof ConstrWrapper) {
 					// TODO
@@ -475,14 +457,14 @@ public class ReflectionBasedMetamodel implements Metamodel {
 		public Method getGetterMethod() {
 			return getterMethod;
 		}
-		
+
 		@Override
 		public void set(GeneratedMetamodelBean repoObj, Object value) {
 			try {
 				Field field = null;
 				for (Class<?> declClass = repoObj.getClass(); field == null && declClass != null;) {
 					try {
-						String fieldName = name + (getReferencedType() != null && !isDerived() ? "_lazy":"");
+						String fieldName = name + (getReferencedType() != null && !isDerived() ? "_lazy" : "");
 						field = declClass.getDeclaredField(fieldName);
 					} catch (NoSuchFieldException nsfe) {
 						// No problem, continue with superclass
@@ -508,7 +490,7 @@ public class ReflectionBasedMetamodel implements Metamodel {
 		public String toString() {
 			return "[" + getClass().getSimpleName() + "]:" + metaType.getName() + "." + getName();
 		}
-		
+
 		@Override
 		public boolean isDerived() {
 			return getterMethod.getAnnotation(Derived.class) != null;
@@ -686,6 +668,9 @@ public class ReflectionBasedMetamodel implements Metamodel {
 
 	}
 
+	private static Set<String> NON_GETTER_METHOD_NAMES = new HashSet<>(
+			Arrays.asList("getContainer", "getValidator", "getValueAccessor", "getValueMutator", "getInstanceCreator"));
+
 	/**
 	 * @return the property name or <code>null</code> if the method isn't a getter
 	 */
@@ -694,7 +679,9 @@ public class ReflectionBasedMetamodel implements Metamodel {
 			return null;
 		if (Modifier.isStatic(getterMethod.getModifiers()))
 			return null;
-		if ("getContainer".equals(getterMethod.getName()))
+		if (NON_GETTER_METHOD_NAMES.contains(getterMethod.getName()))
+			return null;
+		if (getterMethod.getParameterTypes().length > 0)
 			return null;
 		String propName;
 		if (getterMethod.getName().startsWith("get")) {
@@ -738,15 +725,28 @@ public class ReflectionBasedMetamodel implements Metamodel {
 	private static ParsedType parseValueType(Type returnType) {
 		Class<?> baseClass;
 		Class<?> wrapperClass;
-		if (returnType instanceof ParameterizedType) {
-			wrapperClass = (Class<?>) ((ParameterizedType) returnType).getRawType();
-			if (((ParameterizedType) returnType).getActualTypeArguments().length != 1)
-				throw new RuntimeException("Illegal value type.");
-			baseClass = (Class<?>) ((ParameterizedType) returnType).getActualTypeArguments()[0];
-		} else {
-			wrapperClass = null;
-			baseClass = (Class<?>) returnType;
+		try {
+			if (returnType instanceof ParameterizedType) {
+				ParameterizedType pt1 = (ParameterizedType) returnType;
+				if (pt1.getActualTypeArguments().length != 1)
+					throw new RuntimeException("Illegal value type.");
+
+				wrapperClass = (Class<?>) pt1.getRawType();
+				Type baseType = pt1.getActualTypeArguments()[0];
+				if (baseType instanceof ParameterizedType) {
+					ParameterizedType pt2 = (ParameterizedType) baseType;
+					baseClass = (Class<?>) pt2.getRawType();
+				} else {
+					baseClass = (Class<?>) baseType;
+				}
+
+			} else {
+				wrapperClass = null;
+				baseClass = (Class<?>) returnType;
+			}
+			return new ParsedType(baseClass, wrapperClass);
+		} catch (Exception e) {
+			throw new RuntimeException( "Can't parse value type: " + returnType, e );
 		}
-		return new ParsedType(baseClass, wrapperClass);
 	}
 }

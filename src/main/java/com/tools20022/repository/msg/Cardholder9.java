@@ -29,9 +29,12 @@ import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.entity.Person;
 import com.tools20022.repository.entity.PersonName;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.CardholderAuthentication7;
+import com.tools20022.repository.msg.PersonIdentification7;
+import com.tools20022.repository.msg.PostalAddress18;
+import com.tools20022.repository.msg.TransactionVerificationResult4;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -71,8 +74,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,15 +86,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Data related to the cardholder."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Cardholder9", propOrder = {"identification", "name", "language", "billingAddress", "shippingAddress", "authentication", "transactionVerificationResult", "personalData"})
 public class Cardholder9 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id")
 	protected PersonIdentification7 identification;
 	/**
-	 * Identification of the cardholder involved in a transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -120,10 +124,10 @@ public class Cardholder9 {
 	 * "Identification of the cardholder involved in a transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Cardholder9, Optional<PersonIdentification7>> mmIdentification = new MMMessageAssociationEnd<Cardholder9, Optional<PersonIdentification7>>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> Cardholder9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Cardholder9.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -132,13 +136,24 @@ public class Cardholder9 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PersonIdentification7.mmObject();
+			type_lazy = () -> PersonIdentification7.mmObject();
+		}
+
+		@Override
+		public Optional<PersonIdentification7> getValue(Cardholder9 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(Cardholder9 obj, Optional<PersonIdentification7> value) {
+			obj.setIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "Nm")
 	protected Max45Text name;
 	/**
-	 * Cardholder name associated with the card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -167,10 +182,10 @@ public class Cardholder9 {
 	 * definition} = "Cardholder name associated with the card."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Cardholder9, Optional<Max45Text>> mmName = new MMMessageAttribute<Cardholder9, Optional<Max45Text>>() {
 		{
 			businessElementTrace_lazy = () -> PersonName.mmGivenName;
-			componentContext_lazy = () -> Cardholder9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Cardholder9.mmObject();
 			isDerived = false;
 			xmlTag = "Nm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -180,12 +195,22 @@ public class Cardholder9 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max45Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max45Text> getValue(Cardholder9 obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(Cardholder9 obj, Optional<Max45Text> value) {
+			obj.setName(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Lang")
 	protected LanguageCode language;
 	/**
-	 * Language selected for the cardholder interface during the transaction.<br>
-	 * Reference ISO 639-1 (alpha-2) et ISO 639-2 (alpha-3).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -216,10 +241,10 @@ public class Cardholder9 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmLanguage = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Cardholder9, Optional<LanguageCode>> mmLanguage = new MMMessageAttribute<Cardholder9, Optional<LanguageCode>>() {
 		{
 			businessElementTrace_lazy = () -> Person.mmLanguage;
-			componentContext_lazy = () -> Cardholder9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Cardholder9.mmObject();
 			isDerived = false;
 			xmlTag = "Lang";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -229,11 +254,22 @@ public class Cardholder9 {
 			minOccurs = 0;
 			simpleType_lazy = () -> LanguageCode.mmObject();
 		}
+
+		@Override
+		public Optional<LanguageCode> getValue(Cardholder9 obj) {
+			return obj.getLanguage();
+		}
+
+		@Override
+		public void setValue(Cardholder9 obj, Optional<LanguageCode> value) {
+			obj.setLanguage(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "BllgAdr")
 	protected PostalAddress18 billingAddress;
 	/**
-	 * Postal address of the owner of the payment card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -256,9 +292,9 @@ public class Cardholder9 {
 	 * definition} = "Postal address of the owner of the payment card."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmBillingAddress = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Cardholder9, Optional<PostalAddress18>> mmBillingAddress = new MMMessageAssociationEnd<Cardholder9, Optional<PostalAddress18>>() {
 		{
-			componentContext_lazy = () -> Cardholder9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Cardholder9.mmObject();
 			isDerived = false;
 			xmlTag = "BllgAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -267,13 +303,24 @@ public class Cardholder9 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PostalAddress18.mmObject();
+			type_lazy = () -> PostalAddress18.mmObject();
+		}
+
+		@Override
+		public Optional<PostalAddress18> getValue(Cardholder9 obj) {
+			return obj.getBillingAddress();
+		}
+
+		@Override
+		public void setValue(Cardholder9 obj, Optional<PostalAddress18> value) {
+			obj.setBillingAddress(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "ShppgAdr")
 	protected PostalAddress18 shippingAddress;
 	/**
-	 * Postal address for delivery of goods or services.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -296,9 +343,9 @@ public class Cardholder9 {
 	 * definition} = "Postal address for delivery of goods or services."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmShippingAddress = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Cardholder9, Optional<PostalAddress18>> mmShippingAddress = new MMMessageAssociationEnd<Cardholder9, Optional<PostalAddress18>>() {
 		{
-			componentContext_lazy = () -> Cardholder9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Cardholder9.mmObject();
 			isDerived = false;
 			xmlTag = "ShppgAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -307,14 +354,24 @@ public class Cardholder9 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PostalAddress18.mmObject();
+			type_lazy = () -> PostalAddress18.mmObject();
+		}
+
+		@Override
+		public Optional<PostalAddress18> getValue(Cardholder9 obj) {
+			return obj.getShippingAddress();
+		}
+
+		@Override
+		public void setValue(Cardholder9 obj, Optional<PostalAddress18> value) {
+			obj.setShippingAddress(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.msg.CardholderAuthentication7> authentication;
+	@XmlElement(name = "Authntcn")
+	protected List<CardholderAuthentication7> authentication;
 	/**
-	 * Method and data intended to be used for this transaction to authenticate
-	 * the cardholder and its card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -345,10 +402,10 @@ public class Cardholder9 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAuthentication = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Cardholder9, List<CardholderAuthentication7>> mmAuthentication = new MMMessageAssociationEnd<Cardholder9, List<CardholderAuthentication7>>() {
 		{
 			businessElementTrace_lazy = () -> CardholderRole.mmAuthentication;
-			componentContext_lazy = () -> Cardholder9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Cardholder9.mmObject();
 			isDerived = false;
 			xmlTag = "Authntcn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -356,13 +413,24 @@ public class Cardholder9 {
 			definition = "Method and data intended to be used for this transaction to authenticate the cardholder and its card.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CardholderAuthentication7.mmObject();
+			type_lazy = () -> CardholderAuthentication7.mmObject();
+		}
+
+		@Override
+		public List<CardholderAuthentication7> getValue(Cardholder9 obj) {
+			return obj.getAuthentication();
+		}
+
+		@Override
+		public void setValue(Cardholder9 obj, List<CardholderAuthentication7> value) {
+			obj.setAuthentication(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.TransactionVerificationResult4> transactionVerificationResult;
+	@XmlElement(name = "TxVrfctnRslt")
+	protected List<TransactionVerificationResult4> transactionVerificationResult;
 	/**
-	 * Result of performed verifications for the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -386,9 +454,9 @@ public class Cardholder9 {
 	 * definition} = "Result of performed verifications for the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransactionVerificationResult = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Cardholder9, List<TransactionVerificationResult4>> mmTransactionVerificationResult = new MMMessageAssociationEnd<Cardholder9, List<TransactionVerificationResult4>>() {
 		{
-			componentContext_lazy = () -> Cardholder9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Cardholder9.mmObject();
 			isDerived = false;
 			xmlTag = "TxVrfctnRslt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -396,13 +464,24 @@ public class Cardholder9 {
 			definition = "Result of performed verifications for the transaction.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TransactionVerificationResult4.mmObject();
+			type_lazy = () -> TransactionVerificationResult4.mmObject();
+		}
+
+		@Override
+		public List<TransactionVerificationResult4> getValue(Cardholder9 obj) {
+			return obj.getTransactionVerificationResult();
+		}
+
+		@Override
+		public void setValue(Cardholder9 obj, List<TransactionVerificationResult4> value) {
+			obj.setTransactionVerificationResult(value);
 		}
 	};
+	@XmlElement(name = "PrsnlData")
 	protected Max70Text personalData;
 	/**
-	 * Identifies personal data related to the cardholder.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -426,9 +505,9 @@ public class Cardholder9 {
 	 * definition} = "Identifies personal data related to the cardholder."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPersonalData = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Cardholder9, Optional<Max70Text>> mmPersonalData = new MMMessageAttribute<Cardholder9, Optional<Max70Text>>() {
 		{
-			componentContext_lazy = () -> Cardholder9.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Cardholder9.mmObject();
 			isDerived = false;
 			xmlTag = "PrsnlData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -438,15 +517,26 @@ public class Cardholder9 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max70Text> getValue(Cardholder9 obj) {
+			return obj.getPersonalData();
+		}
+
+		@Override
+		public void setValue(Cardholder9 obj, Optional<Max70Text> value) {
+			obj.setPersonalData(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Cardholder9.mmIdentification, Cardholder9.mmName, Cardholder9.mmLanguage, Cardholder9.mmBillingAddress, Cardholder9.mmShippingAddress, Cardholder9.mmAuthentication,
-						Cardholder9.mmTransactionVerificationResult, Cardholder9.mmPersonalData);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Cardholder9.mmIdentification, com.tools20022.repository.msg.Cardholder9.mmName, com.tools20022.repository.msg.Cardholder9.mmLanguage,
+						com.tools20022.repository.msg.Cardholder9.mmBillingAddress, com.tools20022.repository.msg.Cardholder9.mmShippingAddress, com.tools20022.repository.msg.Cardholder9.mmAuthentication,
+						com.tools20022.repository.msg.Cardholder9.mmTransactionVerificationResult, com.tools20022.repository.msg.Cardholder9.mmPersonalData);
 				trace_lazy = () -> CardholderRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Cardholder9";
 				definition = "Data related to the cardholder.";
@@ -455,75 +545,75 @@ public class Cardholder9 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id")
-	public PersonIdentification7 getIdentification() {
-		return identification;
+	public Optional<PersonIdentification7> getIdentification() {
+		return identification == null ? Optional.empty() : Optional.of(identification);
 	}
 
-	public void setIdentification(com.tools20022.repository.msg.PersonIdentification7 identification) {
+	public Cardholder9 setIdentification(PersonIdentification7 identification) {
 		this.identification = identification;
+		return this;
 	}
 
-	@XmlElement(name = "Nm")
-	public Max45Text getName() {
-		return name;
+	public Optional<Max45Text> getName() {
+		return name == null ? Optional.empty() : Optional.of(name);
 	}
 
-	public void setName(Max45Text name) {
+	public Cardholder9 setName(Max45Text name) {
 		this.name = name;
+		return this;
 	}
 
-	@XmlElement(name = "Lang")
-	public LanguageCode getLanguage() {
-		return language;
+	public Optional<LanguageCode> getLanguage() {
+		return language == null ? Optional.empty() : Optional.of(language);
 	}
 
-	public void setLanguage(LanguageCode language) {
+	public Cardholder9 setLanguage(LanguageCode language) {
 		this.language = language;
+		return this;
 	}
 
-	@XmlElement(name = "BllgAdr")
-	public PostalAddress18 getBillingAddress() {
-		return billingAddress;
+	public Optional<PostalAddress18> getBillingAddress() {
+		return billingAddress == null ? Optional.empty() : Optional.of(billingAddress);
 	}
 
-	public void setBillingAddress(com.tools20022.repository.msg.PostalAddress18 billingAddress) {
+	public Cardholder9 setBillingAddress(PostalAddress18 billingAddress) {
 		this.billingAddress = billingAddress;
+		return this;
 	}
 
-	@XmlElement(name = "ShppgAdr")
-	public PostalAddress18 getShippingAddress() {
-		return shippingAddress;
+	public Optional<PostalAddress18> getShippingAddress() {
+		return shippingAddress == null ? Optional.empty() : Optional.of(shippingAddress);
 	}
 
-	public void setShippingAddress(com.tools20022.repository.msg.PostalAddress18 shippingAddress) {
+	public Cardholder9 setShippingAddress(PostalAddress18 shippingAddress) {
 		this.shippingAddress = shippingAddress;
+		return this;
 	}
 
-	@XmlElement(name = "Authntcn")
 	public List<CardholderAuthentication7> getAuthentication() {
-		return authentication;
+		return authentication == null ? authentication = new ArrayList<>() : authentication;
 	}
 
-	public void setAuthentication(List<com.tools20022.repository.msg.CardholderAuthentication7> authentication) {
-		this.authentication = authentication;
+	public Cardholder9 setAuthentication(List<CardholderAuthentication7> authentication) {
+		this.authentication = Objects.requireNonNull(authentication);
+		return this;
 	}
 
-	@XmlElement(name = "TxVrfctnRslt")
 	public List<TransactionVerificationResult4> getTransactionVerificationResult() {
-		return transactionVerificationResult;
+		return transactionVerificationResult == null ? transactionVerificationResult = new ArrayList<>() : transactionVerificationResult;
 	}
 
-	public void setTransactionVerificationResult(List<com.tools20022.repository.msg.TransactionVerificationResult4> transactionVerificationResult) {
-		this.transactionVerificationResult = transactionVerificationResult;
+	public Cardholder9 setTransactionVerificationResult(List<TransactionVerificationResult4> transactionVerificationResult) {
+		this.transactionVerificationResult = Objects.requireNonNull(transactionVerificationResult);
+		return this;
 	}
 
-	@XmlElement(name = "PrsnlData")
-	public Max70Text getPersonalData() {
-		return personalData;
+	public Optional<Max70Text> getPersonalData() {
+		return personalData == null ? Optional.empty() : Optional.of(personalData);
 	}
 
-	public void setPersonalData(Max70Text personalData) {
+	public Cardholder9 setPersonalData(Max70Text personalData) {
 		this.personalData = personalData;
+		return this;
 	}
 }

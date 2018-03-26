@@ -37,37 +37,37 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionType7Code#Busy
- * ActionType7Code.mmBusy}</li>
+ * ActionType7Code.Busy}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType7Code#CaptureCard
- * ActionType7Code.mmCaptureCard}</li>
+ * ActionType7Code.CaptureCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType7Code#DisplayMessage
- * ActionType7Code.mmDisplayMessage}</li>
+ * ActionType7Code.DisplayMessage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType7Code#ForbidOverride
- * ActionType7Code.mmForbidOverride}</li>
+ * ActionType7Code.ForbidOverride}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType7Code#IdentificationRequired
- * ActionType7Code.mmIdentificationRequired}</li>
+ * ActionType7Code.IdentificationRequired}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionType7Code#PINLastTry
- * ActionType7Code.mmPINLastTry}</li>
+ * ActionType7Code.PINLastTry}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionType7Code#PINRetry
- * ActionType7Code.mmPINRetry}</li>
+ * ActionType7Code.PINRetry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType7Code#PrintMessage
- * ActionType7Code.mmPrintMessage}</li>
+ * ActionType7Code.PrintMessage}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ActionType7Code#Referral
- * ActionType7Code.mmReferral}</li>
+ * ActionType7Code.Referral}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType7Code#RequestData
- * ActionType7Code.mmRequestData}</li>
+ * ActionType7Code.RequestData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType7Code#AcceptCurrencyConversion
- * ActionType7Code.mmAcceptCurrencyConversion}</li>
+ * ActionType7Code.AcceptCurrencyConversion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ActionType7Code#FallForward
- * ActionType7Code.mmFallForward}</li>
+ * ActionType7Code.FallForward}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -75,8 +75,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -394,7 +394,7 @@ public class ActionType7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("BUSY");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ActionType7Code";

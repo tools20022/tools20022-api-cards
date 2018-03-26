@@ -19,10 +19,13 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.ISODateTime;
+import com.tools20022.repository.entity.CorporateActionEvent;
+import com.tools20022.repository.entity.Meeting;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Specifies the different deadlines available for the different processes
@@ -65,8 +68,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,8 +87,8 @@ public class Deadline {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CorporateActionEvent relatedCorporateActionEvent;
 	/**
-	 * Related corporate action event.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -116,7 +119,7 @@ public class Deadline {
 	 * definition} = "Related corporate action event."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedCorporateActionEvent = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Deadline, Optional<CorporateActionEvent>> mmRelatedCorporateActionEvent = new MMBusinessAssociationEnd<Deadline, Optional<CorporateActionEvent>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
@@ -125,16 +128,25 @@ public class Deadline {
 			definition = "Related corporate action event.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmDeadline;
+			opposite_lazy = () -> CorporateActionEvent.mmDeadline;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CorporateActionEvent.mmObject();
+			type_lazy = () -> CorporateActionEvent.mmObject();
+		}
+
+		@Override
+		public Optional<CorporateActionEvent> getValue(Deadline obj) {
+			return obj.getRelatedCorporateActionEvent();
+		}
+
+		@Override
+		public void setValue(Deadline obj, Optional<CorporateActionEvent> value) {
+			obj.setRelatedCorporateActionEvent(value.orElse(null));
 		}
 	};
 	protected ISODateTime marketDeadline;
 	/**
-	 * Date by which the action should have been completed. This deadline is set
-	 * by the issuer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -158,7 +170,7 @@ public class Deadline {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMarketDeadline = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Deadline, ISODateTime> mmMarketDeadline = new MMBusinessAttribute<Deadline, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
@@ -170,19 +182,20 @@ public class Deadline {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Deadline.class.getMethod("getMarketDeadline", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Deadline obj) {
+			return obj.getMarketDeadline();
+		}
+
+		@Override
+		public void setValue(Deadline obj, ISODateTime value) {
+			obj.setMarketDeadline(value);
 		}
 	};
 	protected ISODateTime intermediaryDeadline;
 	/**
-	 * Date by which the action should have been completed. This deadline is set
-	 * by an intermediary.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -206,7 +219,7 @@ public class Deadline {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmIntermediaryDeadline = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Deadline, ISODateTime> mmIntermediaryDeadline = new MMBusinessAttribute<Deadline, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
@@ -218,19 +231,20 @@ public class Deadline {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Deadline.class.getMethod("getIntermediaryDeadline", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Deadline obj) {
+			return obj.getIntermediaryDeadline();
+		}
+
+		@Override
+		public void setValue(Deadline obj, ISODateTime value) {
+			obj.setIntermediaryDeadline(value);
 		}
 	};
 	protected ISODateTime sTPDeadline;
 	/**
-	 * Date by which the action should have been completed. This deadline is set
-	 * by the issuer. (STP or Electronic mode)
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -254,7 +268,7 @@ public class Deadline {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSTPDeadline = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Deadline, ISODateTime> mmSTPDeadline = new MMBusinessAttribute<Deadline, ISODateTime>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
@@ -266,18 +280,20 @@ public class Deadline {
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Deadline.class.getMethod("getSTPDeadline", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public ISODateTime getValue(Deadline obj) {
+			return obj.getSTPDeadline();
+		}
+
+		@Override
+		public void setValue(Deadline obj, ISODateTime value) {
+			obj.setSTPDeadline(value);
 		}
 	};
 	protected Meeting relatedMeeting;
 	/**
-	 * Meeting for which deadlines are specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -306,7 +322,7 @@ public class Deadline {
 	 * definition} = "Meeting for which deadlines are specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedMeeting = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Deadline, Optional<Meeting>> mmRelatedMeeting = new MMBusinessAssociationEnd<Deadline, Optional<Meeting>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Deadline.mmObject();
@@ -315,20 +331,30 @@ public class Deadline {
 			definition = "Meeting for which deadlines are specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Meeting.mmDeadline;
+			opposite_lazy = () -> Meeting.mmDeadline;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Meeting.mmObject();
+			type_lazy = () -> Meeting.mmObject();
+		}
+
+		@Override
+		public Optional<Meeting> getValue(Deadline obj) {
+			return obj.getRelatedMeeting();
+		}
+
+		@Override
+		public void setValue(Deadline obj, Optional<Meeting> value) {
+			obj.setRelatedMeeting(value.orElse(null));
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Deadline";
 				definition = "Specifies the different deadlines available for the different processes related to corporate action processes.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CorporateActionEvent.mmDeadline, com.tools20022.repository.entity.Meeting.mmDeadline);
+				associationDomain_lazy = () -> Arrays.asList(CorporateActionEvent.mmDeadline, Meeting.mmDeadline);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Deadline.mmRelatedCorporateActionEvent, com.tools20022.repository.entity.Deadline.mmMarketDeadline,
 						com.tools20022.repository.entity.Deadline.mmIntermediaryDeadline, com.tools20022.repository.entity.Deadline.mmSTPDeadline, com.tools20022.repository.entity.Deadline.mmRelatedMeeting);
 			}
@@ -341,43 +367,48 @@ public class Deadline {
 		return mmObject_lazy.get();
 	}
 
-	public CorporateActionEvent getRelatedCorporateActionEvent() {
-		return relatedCorporateActionEvent;
+	public Optional<CorporateActionEvent> getRelatedCorporateActionEvent() {
+		return relatedCorporateActionEvent == null ? Optional.empty() : Optional.of(relatedCorporateActionEvent);
 	}
 
-	public void setRelatedCorporateActionEvent(com.tools20022.repository.entity.CorporateActionEvent relatedCorporateActionEvent) {
+	public Deadline setRelatedCorporateActionEvent(CorporateActionEvent relatedCorporateActionEvent) {
 		this.relatedCorporateActionEvent = relatedCorporateActionEvent;
+		return this;
 	}
 
 	public ISODateTime getMarketDeadline() {
 		return marketDeadline;
 	}
 
-	public void setMarketDeadline(ISODateTime marketDeadline) {
-		this.marketDeadline = marketDeadline;
+	public Deadline setMarketDeadline(ISODateTime marketDeadline) {
+		this.marketDeadline = Objects.requireNonNull(marketDeadline);
+		return this;
 	}
 
 	public ISODateTime getIntermediaryDeadline() {
 		return intermediaryDeadline;
 	}
 
-	public void setIntermediaryDeadline(ISODateTime intermediaryDeadline) {
-		this.intermediaryDeadline = intermediaryDeadline;
+	public Deadline setIntermediaryDeadline(ISODateTime intermediaryDeadline) {
+		this.intermediaryDeadline = Objects.requireNonNull(intermediaryDeadline);
+		return this;
 	}
 
 	public ISODateTime getSTPDeadline() {
 		return sTPDeadline;
 	}
 
-	public void setSTPDeadline(ISODateTime sTPDeadline) {
-		this.sTPDeadline = sTPDeadline;
+	public Deadline setSTPDeadline(ISODateTime sTPDeadline) {
+		this.sTPDeadline = Objects.requireNonNull(sTPDeadline);
+		return this;
 	}
 
-	public Meeting getRelatedMeeting() {
-		return relatedMeeting;
+	public Optional<Meeting> getRelatedMeeting() {
+		return relatedMeeting == null ? Optional.empty() : Optional.of(relatedMeeting);
 	}
 
-	public void setRelatedMeeting(com.tools20022.repository.entity.Meeting relatedMeeting) {
+	public Deadline setRelatedMeeting(Meeting relatedMeeting) {
 		this.relatedMeeting = relatedMeeting;
+		return this;
 	}
 }

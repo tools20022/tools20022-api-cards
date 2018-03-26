@@ -21,12 +21,10 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.DecimalNumber;
 import com.tools20022.repository.datatype.Max35Text;
-import com.tools20022.repository.entity.TreasuryTrade;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Agreement between two parties in which one party buys a currency and the
@@ -122,8 +120,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -141,9 +139,8 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyExchange agreedRate;
 	/**
-	 * Exchange rate between two currencies. The rate is agreed by the trading
-	 * parties during the negotiation process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -176,7 +173,7 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmAgreedRate = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ForeignExchangeTrade, CurrencyExchange> mmAgreedRate = new MMBusinessAssociationEnd<ForeignExchangeTrade, CurrencyExchange>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
@@ -185,15 +182,25 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 			definition = "Exchange rate between two currencies. The rate is agreed by the trading parties during the negotiation process.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmCurrencyExchangeForForeignExchangeTrade;
+			opposite_lazy = () -> CurrencyExchange.mmCurrencyExchangeForForeignExchangeTrade;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
+			type_lazy = () -> CurrencyExchange.mmObject();
+		}
+
+		@Override
+		public CurrencyExchange getValue(ForeignExchangeTrade obj) {
+			return obj.getAgreedRate();
+		}
+
+		@Override
+		public void setValue(ForeignExchangeTrade obj, CurrencyExchange value) {
+			obj.setAgreedRate(value);
 		}
 	};
 	protected Max35Text typeOfProduct;
 	/**
-	 * Specifies the type of trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -216,7 +223,7 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 * definition} = "Specifies the type of trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTypeOfProduct = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ForeignExchangeTrade, Max35Text> mmTypeOfProduct = new MMBusinessAttribute<ForeignExchangeTrade, Max35Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
@@ -228,18 +235,20 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ForeignExchangeTrade.class.getMethod("getTypeOfProduct", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max35Text getValue(ForeignExchangeTrade obj) {
+			return obj.getTypeOfProduct();
+		}
+
+		@Override
+		public void setValue(ForeignExchangeTrade obj, Max35Text value) {
+			obj.setTypeOfProduct(value);
 		}
 	};
 	protected CurrencyAndAmount buyAmount;
 	/**
-	 * Currency and amount bought in a foreign exchange trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -263,7 +272,7 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 * definition} = "Currency and amount bought in a foreign exchange trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmBuyAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ForeignExchangeTrade, CurrencyAndAmount> mmBuyAmount = new MMBusinessAttribute<ForeignExchangeTrade, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
@@ -275,18 +284,20 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ForeignExchangeTrade.class.getMethod("getBuyAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(ForeignExchangeTrade obj) {
+			return obj.getBuyAmount();
+		}
+
+		@Override
+		public void setValue(ForeignExchangeTrade obj, CurrencyAndAmount value) {
+			obj.setBuyAmount(value);
 		}
 	};
 	protected CurrencyAndAmount sellAmount;
 	/**
-	 * Currency and amount sold in a foreign exchange trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -310,7 +321,7 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 * definition} = "Currency and amount sold in a foreign exchange trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSellAmount = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ForeignExchangeTrade, CurrencyAndAmount> mmSellAmount = new MMBusinessAttribute<ForeignExchangeTrade, CurrencyAndAmount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
@@ -322,21 +333,20 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ForeignExchangeTrade.class.getMethod("getSellAmount", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyAndAmount getValue(ForeignExchangeTrade obj) {
+			return obj.getSellAmount();
+		}
+
+		@Override
+		public void setValue(ForeignExchangeTrade obj, CurrencyAndAmount value) {
+			obj.setSellAmount(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.PaymentObligation> resultingSettlement;
+	protected List<PaymentObligation> resultingSettlement;
 	/**
-	 * Payment of the settlement amount to the account(s) of the final
-	 * beneficiary. A payment may be settled gross, through split amounts at
-	 * several agents of the buyer, or netted with several other treasury
-	 * agreements.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -369,7 +379,7 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmResultingSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ForeignExchangeTrade, List<PaymentObligation>> mmResultingSettlement = new MMBusinessAssociationEnd<ForeignExchangeTrade, List<PaymentObligation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
@@ -377,15 +387,25 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 			name = "ResultingSettlement";
 			definition = "Payment of the settlement amount to the account(s) of the final beneficiary. A payment may be settled gross, through split amounts at several agents of the buyer, or netted with several other treasury agreements.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmExchangeRateInformation;
+			opposite_lazy = () -> PaymentObligation.mmExchangeRateInformation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentObligation.mmObject();
+			type_lazy = () -> PaymentObligation.mmObject();
+		}
+
+		@Override
+		public List<PaymentObligation> getValue(ForeignExchangeTrade obj) {
+			return obj.getResultingSettlement();
+		}
+
+		@Override
+		public void setValue(ForeignExchangeTrade obj, List<PaymentObligation> value) {
+			obj.setResultingSettlement(value);
 		}
 	};
 	protected SecuritiesSettlement currencyExchangeForSecuritiesSettlement;
 	/**
-	 * Securities settlement process for which a currency exchange is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -419,7 +439,7 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCurrencyExchangeForSecuritiesSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ForeignExchangeTrade, Optional<SecuritiesSettlement>> mmCurrencyExchangeForSecuritiesSettlement = new MMBusinessAssociationEnd<ForeignExchangeTrade, Optional<SecuritiesSettlement>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
@@ -428,15 +448,25 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 			definition = "Securities settlement process for which a currency exchange is provided.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmRelatedForeignExchangeOperation;
+			opposite_lazy = () -> SecuritiesSettlement.mmRelatedForeignExchangeOperation;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
+			type_lazy = () -> SecuritiesSettlement.mmObject();
+		}
+
+		@Override
+		public Optional<SecuritiesSettlement> getValue(ForeignExchangeTrade obj) {
+			return obj.getCurrencyExchangeForSecuritiesSettlement();
+		}
+
+		@Override
+		public void setValue(ForeignExchangeTrade obj, Optional<SecuritiesSettlement> value) {
+			obj.setCurrencyExchangeForSecuritiesSettlement(value.orElse(null));
 		}
 	};
 	protected NonDeliverableTrade openingLegRelatedNonDeliverableTrade;
 	/**
-	 * Non deliverable trade for which an opening closing leg is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -468,7 +498,7 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 * "Non deliverable trade for which an opening closing leg is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmOpeningLegRelatedNonDeliverableTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ForeignExchangeTrade, Optional<NonDeliverableTrade>> mmOpeningLegRelatedNonDeliverableTrade = new MMBusinessAssociationEnd<ForeignExchangeTrade, Optional<NonDeliverableTrade>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
@@ -477,15 +507,25 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 			definition = "Non deliverable trade for which an opening closing leg is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.NonDeliverableTrade.mmOpeningLeg;
+			opposite_lazy = () -> NonDeliverableTrade.mmOpeningLeg;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.NonDeliverableTrade.mmObject();
+			type_lazy = () -> NonDeliverableTrade.mmObject();
+		}
+
+		@Override
+		public Optional<NonDeliverableTrade> getValue(ForeignExchangeTrade obj) {
+			return obj.getOpeningLegRelatedNonDeliverableTrade();
+		}
+
+		@Override
+		public void setValue(ForeignExchangeTrade obj, Optional<NonDeliverableTrade> value) {
+			obj.setOpeningLegRelatedNonDeliverableTrade(value.orElse(null));
 		}
 	};
 	protected NonDeliverableTrade closingLegRelatedNonDeliverableTrade;
 	/**
-	 * Non deliverable trade for which a closing leg is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -517,7 +557,7 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 * "Non deliverable trade for which a closing leg is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmClosingLegRelatedNonDeliverableTrade = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ForeignExchangeTrade, Optional<NonDeliverableTrade>> mmClosingLegRelatedNonDeliverableTrade = new MMBusinessAssociationEnd<ForeignExchangeTrade, Optional<NonDeliverableTrade>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
@@ -526,15 +566,25 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 			definition = "Non deliverable trade for which a closing leg is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.NonDeliverableTrade.mmClosingLeg;
+			opposite_lazy = () -> NonDeliverableTrade.mmClosingLeg;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.NonDeliverableTrade.mmObject();
+			type_lazy = () -> NonDeliverableTrade.mmObject();
+		}
+
+		@Override
+		public Optional<NonDeliverableTrade> getValue(ForeignExchangeTrade obj) {
+			return obj.getClosingLegRelatedNonDeliverableTrade();
+		}
+
+		@Override
+		public void setValue(ForeignExchangeTrade obj, Optional<NonDeliverableTrade> value) {
+			obj.setClosingLegRelatedNonDeliverableTrade(value.orElse(null));
 		}
 	};
 	protected ForeignExchangeSwap relatedSwap;
 	/**
-	 * FX swap for which the FX trade is one leg.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -565,7 +615,7 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 * definition} = "FX swap for which the FX trade is one leg."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSwap = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ForeignExchangeTrade, Optional<ForeignExchangeSwap>> mmRelatedSwap = new MMBusinessAssociationEnd<ForeignExchangeTrade, Optional<ForeignExchangeSwap>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
@@ -574,15 +624,25 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 			definition = "FX swap for which the FX trade is one leg.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.ForeignExchangeSwap.mmSwapLeg;
+			opposite_lazy = () -> ForeignExchangeSwap.mmSwapLeg;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.ForeignExchangeSwap.mmObject();
+			type_lazy = () -> ForeignExchangeSwap.mmObject();
+		}
+
+		@Override
+		public Optional<ForeignExchangeSwap> getValue(ForeignExchangeTrade obj) {
+			return obj.getRelatedSwap();
+		}
+
+		@Override
+		public void setValue(ForeignExchangeTrade obj, Optional<ForeignExchangeSwap> value) {
+			obj.setRelatedSwap(value.orElse(null));
 		}
 	};
 	protected CurrencyOption relatedOption;
 	/**
-	 * Option which is executed by one (or more) FX trade.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -613,7 +673,7 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 * definition} = "Option which is executed by one (or more) FX trade."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedOption = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ForeignExchangeTrade, Optional<CurrencyOption>> mmRelatedOption = new MMBusinessAssociationEnd<ForeignExchangeTrade, Optional<CurrencyOption>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
@@ -622,15 +682,25 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 			definition = "Option which is executed by one (or more) FX trade.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CurrencyOption.mmExercisedOption;
+			opposite_lazy = () -> CurrencyOption.mmExercisedOption;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CurrencyOption.mmObject();
+			type_lazy = () -> CurrencyOption.mmObject();
+		}
+
+		@Override
+		public Optional<CurrencyOption> getValue(ForeignExchangeTrade obj) {
+			return obj.getRelatedOption();
+		}
+
+		@Override
+		public void setValue(ForeignExchangeTrade obj, Optional<CurrencyOption> value) {
+			obj.setRelatedOption(value.orElse(null));
 		}
 	};
 	protected TaxVoucher currencyExchangeForTaxVoucher;
 	/**
-	 * Tax voucher for which currency exchange information is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -662,7 +732,7 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 * "Tax voucher for which currency exchange information is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCurrencyExchangeForTaxVoucher = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ForeignExchangeTrade, Optional<TaxVoucher>> mmCurrencyExchangeForTaxVoucher = new MMBusinessAssociationEnd<ForeignExchangeTrade, Optional<TaxVoucher>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
@@ -671,17 +741,25 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 			definition = "Tax voucher for which currency exchange information is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmForeignExchangeTransaction;
+			opposite_lazy = () -> TaxVoucher.mmForeignExchangeTransaction;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.TaxVoucher.mmObject();
+			type_lazy = () -> TaxVoucher.mmObject();
+		}
+
+		@Override
+		public Optional<TaxVoucher> getValue(ForeignExchangeTrade obj) {
+			return obj.getCurrencyExchangeForTaxVoucher();
+		}
+
+		@Override
+		public void setValue(ForeignExchangeTrade obj, Optional<TaxVoucher> value) {
+			obj.setCurrencyExchangeForTaxVoucher(value.orElse(null));
 		}
 	};
 	protected DecimalNumber exchangeForwardPoint;
 	/**
-	 * Difference between the foreign exchange spot rate and the foreign
-	 * exchange forward rate expressed in basis points quoted in accordance with
-	 * the prevailing market conventions for the currency pair.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -707,7 +785,7 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmExchangeForwardPoint = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ForeignExchangeTrade, Optional<DecimalNumber>> mmExchangeForwardPoint = new MMBusinessAttribute<ForeignExchangeTrade, Optional<DecimalNumber>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ForeignExchangeTrade.mmObject();
@@ -719,27 +797,27 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ForeignExchangeTrade.class.getMethod("getExchangeForwardPoint", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<DecimalNumber> getValue(ForeignExchangeTrade obj) {
+			return obj.getExchangeForwardPoint();
+		}
+
+		@Override
+		public void setValue(ForeignExchangeTrade obj, Optional<DecimalNumber> value) {
+			obj.setExchangeForwardPoint(value.orElse(null));
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ForeignExchangeTrade";
 				definition = "Agreement between two parties in which one party buys a currency and the other party sells a different currency.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentObligation.mmExchangeRateInformation, com.tools20022.repository.entity.SecuritiesSettlement.mmRelatedForeignExchangeOperation,
-						com.tools20022.repository.entity.CurrencyExchange.mmCurrencyExchangeForForeignExchangeTrade, com.tools20022.repository.entity.TaxVoucher.mmForeignExchangeTransaction,
-						com.tools20022.repository.entity.ForeignExchangeSwap.mmSwapLeg, com.tools20022.repository.entity.NonDeliverableTrade.mmOpeningLeg, com.tools20022.repository.entity.NonDeliverableTrade.mmClosingLeg,
-						com.tools20022.repository.entity.CurrencyOption.mmExercisedOption);
-				subType_lazy = () -> Arrays.asList(com.tools20022.repository.entity.NonDeliverableTrade.mmObject());
+				associationDomain_lazy = () -> Arrays.asList(PaymentObligation.mmExchangeRateInformation, SecuritiesSettlement.mmRelatedForeignExchangeOperation, CurrencyExchange.mmCurrencyExchangeForForeignExchangeTrade,
+						TaxVoucher.mmForeignExchangeTransaction, ForeignExchangeSwap.mmSwapLeg, NonDeliverableTrade.mmOpeningLeg, NonDeliverableTrade.mmClosingLeg, CurrencyOption.mmExercisedOption);
+				subType_lazy = () -> Arrays.asList(NonDeliverableTrade.mmObject());
 				superType_lazy = () -> TreasuryTrade.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ForeignExchangeTrade.mmAgreedRate, com.tools20022.repository.entity.ForeignExchangeTrade.mmTypeOfProduct,
 						com.tools20022.repository.entity.ForeignExchangeTrade.mmBuyAmount, com.tools20022.repository.entity.ForeignExchangeTrade.mmSellAmount, com.tools20022.repository.entity.ForeignExchangeTrade.mmResultingSettlement,
@@ -761,95 +839,107 @@ public class ForeignExchangeTrade extends TreasuryTrade {
 		return agreedRate;
 	}
 
-	public void setAgreedRate(com.tools20022.repository.entity.CurrencyExchange agreedRate) {
-		this.agreedRate = agreedRate;
+	public ForeignExchangeTrade setAgreedRate(CurrencyExchange agreedRate) {
+		this.agreedRate = Objects.requireNonNull(agreedRate);
+		return this;
 	}
 
 	public Max35Text getTypeOfProduct() {
 		return typeOfProduct;
 	}
 
-	public void setTypeOfProduct(Max35Text typeOfProduct) {
-		this.typeOfProduct = typeOfProduct;
+	public ForeignExchangeTrade setTypeOfProduct(Max35Text typeOfProduct) {
+		this.typeOfProduct = Objects.requireNonNull(typeOfProduct);
+		return this;
 	}
 
 	public CurrencyAndAmount getBuyAmount() {
 		return buyAmount;
 	}
 
-	public void setBuyAmount(CurrencyAndAmount buyAmount) {
-		this.buyAmount = buyAmount;
+	public ForeignExchangeTrade setBuyAmount(CurrencyAndAmount buyAmount) {
+		this.buyAmount = Objects.requireNonNull(buyAmount);
+		return this;
 	}
 
 	public CurrencyAndAmount getSellAmount() {
 		return sellAmount;
 	}
 
-	public void setSellAmount(CurrencyAndAmount sellAmount) {
-		this.sellAmount = sellAmount;
+	public ForeignExchangeTrade setSellAmount(CurrencyAndAmount sellAmount) {
+		this.sellAmount = Objects.requireNonNull(sellAmount);
+		return this;
 	}
 
 	public List<PaymentObligation> getResultingSettlement() {
-		return resultingSettlement;
+		return resultingSettlement == null ? resultingSettlement = new ArrayList<>() : resultingSettlement;
 	}
 
-	public void setResultingSettlement(List<com.tools20022.repository.entity.PaymentObligation> resultingSettlement) {
-		this.resultingSettlement = resultingSettlement;
+	public ForeignExchangeTrade setResultingSettlement(List<PaymentObligation> resultingSettlement) {
+		this.resultingSettlement = Objects.requireNonNull(resultingSettlement);
+		return this;
 	}
 
-	public SecuritiesSettlement getCurrencyExchangeForSecuritiesSettlement() {
-		return currencyExchangeForSecuritiesSettlement;
+	public Optional<SecuritiesSettlement> getCurrencyExchangeForSecuritiesSettlement() {
+		return currencyExchangeForSecuritiesSettlement == null ? Optional.empty() : Optional.of(currencyExchangeForSecuritiesSettlement);
 	}
 
-	public void setCurrencyExchangeForSecuritiesSettlement(com.tools20022.repository.entity.SecuritiesSettlement currencyExchangeForSecuritiesSettlement) {
+	public ForeignExchangeTrade setCurrencyExchangeForSecuritiesSettlement(SecuritiesSettlement currencyExchangeForSecuritiesSettlement) {
 		this.currencyExchangeForSecuritiesSettlement = currencyExchangeForSecuritiesSettlement;
+		return this;
 	}
 
-	public NonDeliverableTrade getOpeningLegRelatedNonDeliverableTrade() {
-		return openingLegRelatedNonDeliverableTrade;
+	public Optional<NonDeliverableTrade> getOpeningLegRelatedNonDeliverableTrade() {
+		return openingLegRelatedNonDeliverableTrade == null ? Optional.empty() : Optional.of(openingLegRelatedNonDeliverableTrade);
 	}
 
-	public void setOpeningLegRelatedNonDeliverableTrade(com.tools20022.repository.entity.NonDeliverableTrade openingLegRelatedNonDeliverableTrade) {
+	public ForeignExchangeTrade setOpeningLegRelatedNonDeliverableTrade(NonDeliverableTrade openingLegRelatedNonDeliverableTrade) {
 		this.openingLegRelatedNonDeliverableTrade = openingLegRelatedNonDeliverableTrade;
+		return this;
 	}
 
-	public NonDeliverableTrade getClosingLegRelatedNonDeliverableTrade() {
-		return closingLegRelatedNonDeliverableTrade;
+	public Optional<NonDeliverableTrade> getClosingLegRelatedNonDeliverableTrade() {
+		return closingLegRelatedNonDeliverableTrade == null ? Optional.empty() : Optional.of(closingLegRelatedNonDeliverableTrade);
 	}
 
-	public void setClosingLegRelatedNonDeliverableTrade(com.tools20022.repository.entity.NonDeliverableTrade closingLegRelatedNonDeliverableTrade) {
+	public ForeignExchangeTrade setClosingLegRelatedNonDeliverableTrade(NonDeliverableTrade closingLegRelatedNonDeliverableTrade) {
 		this.closingLegRelatedNonDeliverableTrade = closingLegRelatedNonDeliverableTrade;
+		return this;
 	}
 
-	public ForeignExchangeSwap getRelatedSwap() {
-		return relatedSwap;
+	public Optional<ForeignExchangeSwap> getRelatedSwap() {
+		return relatedSwap == null ? Optional.empty() : Optional.of(relatedSwap);
 	}
 
-	public void setRelatedSwap(com.tools20022.repository.entity.ForeignExchangeSwap relatedSwap) {
+	public ForeignExchangeTrade setRelatedSwap(ForeignExchangeSwap relatedSwap) {
 		this.relatedSwap = relatedSwap;
+		return this;
 	}
 
-	public CurrencyOption getRelatedOption() {
-		return relatedOption;
+	public Optional<CurrencyOption> getRelatedOption() {
+		return relatedOption == null ? Optional.empty() : Optional.of(relatedOption);
 	}
 
-	public void setRelatedOption(com.tools20022.repository.entity.CurrencyOption relatedOption) {
+	public ForeignExchangeTrade setRelatedOption(CurrencyOption relatedOption) {
 		this.relatedOption = relatedOption;
+		return this;
 	}
 
-	public TaxVoucher getCurrencyExchangeForTaxVoucher() {
-		return currencyExchangeForTaxVoucher;
+	public Optional<TaxVoucher> getCurrencyExchangeForTaxVoucher() {
+		return currencyExchangeForTaxVoucher == null ? Optional.empty() : Optional.of(currencyExchangeForTaxVoucher);
 	}
 
-	public void setCurrencyExchangeForTaxVoucher(com.tools20022.repository.entity.TaxVoucher currencyExchangeForTaxVoucher) {
+	public ForeignExchangeTrade setCurrencyExchangeForTaxVoucher(TaxVoucher currencyExchangeForTaxVoucher) {
 		this.currencyExchangeForTaxVoucher = currencyExchangeForTaxVoucher;
+		return this;
 	}
 
-	public DecimalNumber getExchangeForwardPoint() {
-		return exchangeForwardPoint;
+	public Optional<DecimalNumber> getExchangeForwardPoint() {
+		return exchangeForwardPoint == null ? Optional.empty() : Optional.of(exchangeForwardPoint);
 	}
 
-	public void setExchangeForwardPoint(DecimalNumber exchangeForwardPoint) {
+	public ForeignExchangeTrade setExchangeForwardPoint(DecimalNumber exchangeForwardPoint) {
 		this.exchangeForwardPoint = exchangeForwardPoint;
+		return this;
 	}
 }

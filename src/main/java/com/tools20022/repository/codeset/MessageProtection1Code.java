@@ -38,16 +38,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageProtection1Code#EnvelopedMessage
- * MessageProtection1Code.mmEnvelopedMessage}</li>
+ * MessageProtection1Code.EnvelopedMessage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageProtection1Code#MACBody
- * MessageProtection1Code.mmMACBody}</li>
+ * MessageProtection1Code.MACBody}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageProtection1Code#MACMessage
- * MessageProtection1Code.mmMACMessage}</li>
+ * MessageProtection1Code.MACMessage}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.MessageProtection1Code#NoProtection
- * MessageProtection1Code.mmNoProtection}</li>
+ * MessageProtection1Code.NoProtection}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -176,7 +176,7 @@ public class MessageProtection1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MessageProtection1Code";
 				definition = "Mechanism used to protect the message of the ATM protocol.";

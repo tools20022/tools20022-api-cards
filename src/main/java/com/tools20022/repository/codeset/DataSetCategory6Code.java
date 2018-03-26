@@ -38,34 +38,34 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#AcquirerProtocolParameters
- * DataSetCategory6Code.mmAcquirerProtocolParameters}</li>
+ * DataSetCategory6Code.AcquirerProtocolParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#ApplicationParameters
- * DataSetCategory6Code.mmApplicationParameters}</li>
+ * DataSetCategory6Code.ApplicationParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#ApplicationParametersSubsetCreation
- * DataSetCategory6Code.mmApplicationParametersSubsetCreation}</li>
+ * DataSetCategory6Code.ApplicationParametersSubsetCreation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#KeyDownload
- * DataSetCategory6Code.mmKeyDownload}</li>
+ * DataSetCategory6Code.KeyDownload}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#KeyManagement
- * DataSetCategory6Code.mmKeyManagement}</li>
+ * DataSetCategory6Code.KeyManagement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#Reporting
- * DataSetCategory6Code.mmReporting}</li>
+ * DataSetCategory6Code.Reporting}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#SoftwareModule
- * DataSetCategory6Code.mmSoftwareModule}</li>
+ * DataSetCategory6Code.SoftwareModule}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#TMSProtocolParameters
- * DataSetCategory6Code.mmTMSProtocolParameters}</li>
+ * DataSetCategory6Code.TMSProtocolParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#MerchantParameters
- * DataSetCategory6Code.mmMerchantParameters}</li>
+ * DataSetCategory6Code.MerchantParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#TerminalParameters
- * DataSetCategory6Code.mmTerminalParameters}</li>
+ * DataSetCategory6Code.TerminalParameters}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -74,8 +74,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -116,7 +116,7 @@ public class DataSetCategory6Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#AcquirerProtocolParameters
-	 * DataSetCategory11Code.mmAcquirerProtocolParameters}</li>
+	 * DataSetCategory11Code.AcquirerProtocolParameters}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -149,7 +149,7 @@ public class DataSetCategory6Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#ApplicationParameters
-	 * DataSetCategory11Code.mmApplicationParameters}</li>
+	 * DataSetCategory11Code.ApplicationParameters}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -182,7 +182,7 @@ public class DataSetCategory6Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#ApplicationParametersSubsetCreation
-	 * DataSetCategory11Code.mmApplicationParametersSubsetCreation}</li>
+	 * DataSetCategory11Code.ApplicationParametersSubsetCreation}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -215,7 +215,7 @@ public class DataSetCategory6Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#KeyDownload
-	 * DataSetCategory11Code.mmKeyDownload}</li>
+	 * DataSetCategory11Code.KeyDownload}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -248,7 +248,7 @@ public class DataSetCategory6Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#KeyManagement
-	 * DataSetCategory11Code.mmKeyManagement}</li>
+	 * DataSetCategory11Code.KeyManagement}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -281,7 +281,7 @@ public class DataSetCategory6Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#Reporting
-	 * DataSetCategory11Code.mmReporting}</li>
+	 * DataSetCategory11Code.Reporting}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -314,7 +314,7 @@ public class DataSetCategory6Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#SoftwareModule
-	 * DataSetCategory11Code.mmSoftwareModule}</li>
+	 * DataSetCategory11Code.SoftwareModule}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -347,7 +347,7 @@ public class DataSetCategory6Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#TMSProtocolParameters
-	 * DataSetCategory11Code.mmTMSProtocolParameters}</li>
+	 * DataSetCategory11Code.TMSProtocolParameters}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -380,7 +380,7 @@ public class DataSetCategory6Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#MerchantParameters
-	 * DataSetCategory11Code.mmMerchantParameters}</li>
+	 * DataSetCategory11Code.MerchantParameters}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -413,7 +413,7 @@ public class DataSetCategory6Code extends MMCode {
 	 * <ul>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory11Code#TerminalParameters
-	 * DataSetCategory11Code.mmTerminalParameters}</li>
+	 * DataSetCategory11Code.TerminalParameters}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -435,7 +435,7 @@ public class DataSetCategory6Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DataSetCategory6Code";
 				definition = "Maintenance service to delegate.";

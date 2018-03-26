@@ -38,22 +38,22 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountChoiceMethod1Code#AccountSelected
- * AccountChoiceMethod1Code.mmAccountSelected}</li>
+ * AccountChoiceMethod1Code.AccountSelected}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountChoiceMethod1Code#Entered
- * AccountChoiceMethod1Code.mmEntered}</li>
+ * AccountChoiceMethod1Code.Entered}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountChoiceMethod1Code#ImplicitAccount
- * AccountChoiceMethod1Code.mmImplicitAccount}</li>
+ * AccountChoiceMethod1Code.ImplicitAccount}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountChoiceMethod1Code#ImplicitType
- * AccountChoiceMethod1Code.mmImplicitType}</li>
+ * AccountChoiceMethod1Code.ImplicitType}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountChoiceMethod1Code#NoSelection
- * AccountChoiceMethod1Code.mmNoSelection}</li>
+ * AccountChoiceMethod1Code.NoSelection}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AccountChoiceMethod1Code#TypeSelected
- * AccountChoiceMethod1Code.mmTypeSelected}</li>
+ * AccountChoiceMethod1Code.TypeSelected}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -62,8 +62,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -232,7 +232,7 @@ public class AccountChoiceMethod1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountChoiceMethod1Code";
 				definition = "Method used by the cardholder and the terminal for the choice of the account.";

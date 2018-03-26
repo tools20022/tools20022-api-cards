@@ -17,15 +17,19 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.SettlingCapacityCode;
 import com.tools20022.repository.codeset.TaxLiabilityCode;
+import com.tools20022.repository.entity.SecuritiesSettlement;
+import com.tools20022.repository.entity.SecuritiesSettlementSystem;
 import com.tools20022.repository.entity.SettlementPartyRole;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Role played by a party in the context of the settlement of securities.
@@ -80,8 +84,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -98,8 +102,8 @@ public class SecuritiesSettlementPartyRole extends SettlementPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.SecuritiesSettlement> securitiesSettlement;
 	/**
-	 * Specifies the settlement process in which a party plays a role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -132,7 +136,7 @@ public class SecuritiesSettlementPartyRole extends SettlementPartyRole {
 	 * "Specifies the settlement process in which a party plays a role."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesSettlementPartyRole, List<SecuritiesSettlement>> mmSecuritiesSettlement = new MMBusinessAssociationEnd<SecuritiesSettlementPartyRole, List<SecuritiesSettlement>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlementPartyRole.mmObject();
@@ -144,12 +148,21 @@ public class SecuritiesSettlementPartyRole extends SettlementPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 		}
+
+		@Override
+		public List<SecuritiesSettlement> getValue(SecuritiesSettlementPartyRole obj) {
+			return obj.getSecuritiesSettlement();
+		}
+
+		@Override
+		public void setValue(SecuritiesSettlementPartyRole obj, List<SecuritiesSettlement> value) {
+			obj.setSecuritiesSettlement(value);
+		}
 	};
 	protected List<com.tools20022.repository.entity.SecuritiesSettlementSystem> securitiesSettlementSystem;
 	/**
-	 * Specifies the system which may be used by a party in a settlement
-	 * process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -183,7 +196,7 @@ public class SecuritiesSettlementPartyRole extends SettlementPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesSettlementSystem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SecuritiesSettlementPartyRole, List<SecuritiesSettlementSystem>> mmSecuritiesSettlementSystem = new MMBusinessAssociationEnd<SecuritiesSettlementPartyRole, List<SecuritiesSettlementSystem>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlementPartyRole.mmObject();
@@ -195,11 +208,21 @@ public class SecuritiesSettlementPartyRole extends SettlementPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlementSystem.mmObject();
 		}
+
+		@Override
+		public List<SecuritiesSettlementSystem> getValue(SecuritiesSettlementPartyRole obj) {
+			return obj.getSecuritiesSettlementSystem();
+		}
+
+		@Override
+		public void setValue(SecuritiesSettlementPartyRole obj, List<SecuritiesSettlementSystem> value) {
+			obj.setSecuritiesSettlementSystem(value);
+		}
 	};
 	protected SettlingCapacityCode settlingCapacity;
 	/**
-	 * Role of a party in the settlement of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -213,6 +236,9 @@ public class SecuritiesSettlementPartyRole extends SettlementPartyRole {
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesSettlementPartyRole
 	 * SecuritiesSettlementPartyRole}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::TRCA</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -223,10 +249,11 @@ public class SecuritiesSettlementPartyRole extends SettlementPartyRole {
 	 * definition} = "Role of a party in the settlement of the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSettlingCapacity = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesSettlementPartyRole, SettlingCapacityCode> mmSettlingCapacity = new MMBusinessAttribute<SecuritiesSettlementPartyRole, SettlingCapacityCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlementPartyRole.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::TRCA"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "SettlingCapacity";
 			definition = "Role of a party in the settlement of the transaction.";
@@ -235,18 +262,20 @@ public class SecuritiesSettlementPartyRole extends SettlementPartyRole {
 			simpleType_lazy = () -> SettlingCapacityCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesSettlementPartyRole.class.getMethod("getSettlingCapacity", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SettlingCapacityCode getValue(SecuritiesSettlementPartyRole obj) {
+			return obj.getSettlingCapacity();
+		}
+
+		@Override
+		public void setValue(SecuritiesSettlementPartyRole obj, SettlingCapacityCode value) {
+			obj.setSettlingCapacity(value);
 		}
 	};
 	protected TaxLiabilityCode taxCapacity;
 	/**
-	 * Tax role capacity of the instructing party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -260,6 +289,9 @@ public class SecuritiesSettlementPartyRole extends SettlementPartyRole {
 	 * {@linkplain com.tools20022.repository.entity.SecuritiesSettlementPartyRole
 	 * SecuritiesSettlementPartyRole}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :22F::TCPI</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -270,10 +302,11 @@ public class SecuritiesSettlementPartyRole extends SettlementPartyRole {
 	 * definition} = "Tax role capacity of the instructing party."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmTaxCapacity = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SecuritiesSettlementPartyRole, TaxLiabilityCode> mmTaxCapacity = new MMBusinessAttribute<SecuritiesSettlementPartyRole, TaxLiabilityCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlementPartyRole.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":22F::TCPI"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "TaxCapacity";
 			definition = "Tax role capacity of the instructing party.";
@@ -282,19 +315,21 @@ public class SecuritiesSettlementPartyRole extends SettlementPartyRole {
 			simpleType_lazy = () -> TaxLiabilityCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SecuritiesSettlementPartyRole.class.getMethod("getTaxCapacity", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TaxLiabilityCode getValue(SecuritiesSettlementPartyRole obj) {
+			return obj.getTaxCapacity();
+		}
+
+		@Override
+		public void setValue(SecuritiesSettlementPartyRole obj, TaxLiabilityCode value) {
+			obj.setTaxCapacity(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SecuritiesSettlementPartyRole";
 				definition = "Role played by a party in the context of the settlement of securities.";
@@ -314,34 +349,38 @@ public class SecuritiesSettlementPartyRole extends SettlementPartyRole {
 	}
 
 	public List<SecuritiesSettlement> getSecuritiesSettlement() {
-		return securitiesSettlement;
+		return securitiesSettlement == null ? securitiesSettlement = new ArrayList<>() : securitiesSettlement;
 	}
 
-	public void setSecuritiesSettlement(List<com.tools20022.repository.entity.SecuritiesSettlement> securitiesSettlement) {
-		this.securitiesSettlement = securitiesSettlement;
+	public SecuritiesSettlementPartyRole setSecuritiesSettlement(List<com.tools20022.repository.entity.SecuritiesSettlement> securitiesSettlement) {
+		this.securitiesSettlement = Objects.requireNonNull(securitiesSettlement);
+		return this;
 	}
 
 	public List<SecuritiesSettlementSystem> getSecuritiesSettlementSystem() {
-		return securitiesSettlementSystem;
+		return securitiesSettlementSystem == null ? securitiesSettlementSystem = new ArrayList<>() : securitiesSettlementSystem;
 	}
 
-	public void setSecuritiesSettlementSystem(List<com.tools20022.repository.entity.SecuritiesSettlementSystem> securitiesSettlementSystem) {
-		this.securitiesSettlementSystem = securitiesSettlementSystem;
+	public SecuritiesSettlementPartyRole setSecuritiesSettlementSystem(List<com.tools20022.repository.entity.SecuritiesSettlementSystem> securitiesSettlementSystem) {
+		this.securitiesSettlementSystem = Objects.requireNonNull(securitiesSettlementSystem);
+		return this;
 	}
 
 	public SettlingCapacityCode getSettlingCapacity() {
 		return settlingCapacity;
 	}
 
-	public void setSettlingCapacity(SettlingCapacityCode settlingCapacity) {
-		this.settlingCapacity = settlingCapacity;
+	public SecuritiesSettlementPartyRole setSettlingCapacity(SettlingCapacityCode settlingCapacity) {
+		this.settlingCapacity = Objects.requireNonNull(settlingCapacity);
+		return this;
 	}
 
 	public TaxLiabilityCode getTaxCapacity() {
 		return taxCapacity;
 	}
 
-	public void setTaxCapacity(TaxLiabilityCode taxCapacity) {
-		this.taxCapacity = taxCapacity;
+	public SecuritiesSettlementPartyRole setTaxCapacity(TaxLiabilityCode taxCapacity) {
+		this.taxCapacity = Objects.requireNonNull(taxCapacity);
+		return this;
 	}
 }

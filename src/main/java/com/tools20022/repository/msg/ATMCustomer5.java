@@ -22,9 +22,10 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.CardholderRole;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.ATMCustomerProfile2;
+import com.tools20022.repository.msg.TransactionVerificationResult5;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -52,8 +53,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -64,15 +65,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Customer involved in a transaction."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ATMCustomer5", propOrder = {"profile", "authenticationResult"})
 public class ATMCustomer5 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Prfl")
 	protected ATMCustomerProfile2 profile;
 	/**
-	 * Profile of the customer selected to perform the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -96,9 +98,9 @@ public class ATMCustomer5 {
 	 * "Profile of the customer selected to perform the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmProfile = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMCustomer5, Optional<ATMCustomerProfile2>> mmProfile = new MMMessageAssociationEnd<ATMCustomer5, Optional<ATMCustomerProfile2>>() {
 		{
-			componentContext_lazy = () -> ATMCustomer5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMCustomer5.mmObject();
 			isDerived = false;
 			xmlTag = "Prfl";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -107,13 +109,24 @@ public class ATMCustomer5 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMCustomerProfile2.mmObject();
+			type_lazy = () -> ATMCustomerProfile2.mmObject();
+		}
+
+		@Override
+		public Optional<ATMCustomerProfile2> getValue(ATMCustomer5 obj) {
+			return obj.getProfile();
+		}
+
+		@Override
+		public void setValue(ATMCustomer5 obj, Optional<ATMCustomerProfile2> value) {
+			obj.setProfile(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.msg.TransactionVerificationResult5> authenticationResult;
+	@XmlElement(name = "AuthntcnRslt")
+	protected List<TransactionVerificationResult5> authenticationResult;
 	/**
-	 * Result of the customer authentication for this transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -138,9 +151,9 @@ public class ATMCustomer5 {
 	 * "Result of the customer authentication for this transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAuthenticationResult = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMCustomer5, List<TransactionVerificationResult5>> mmAuthenticationResult = new MMMessageAssociationEnd<ATMCustomer5, List<TransactionVerificationResult5>>() {
 		{
-			componentContext_lazy = () -> ATMCustomer5.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMCustomer5.mmObject();
 			isDerived = false;
 			xmlTag = "AuthntcnRslt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -148,16 +161,26 @@ public class ATMCustomer5 {
 			definition = "Result of the customer authentication for this transaction.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TransactionVerificationResult5.mmObject();
+			type_lazy = () -> TransactionVerificationResult5.mmObject();
+		}
+
+		@Override
+		public List<TransactionVerificationResult5> getValue(ATMCustomer5 obj) {
+			return obj.getAuthenticationResult();
+		}
+
+		@Override
+		public void setValue(ATMCustomer5 obj, List<TransactionVerificationResult5> value) {
+			obj.setAuthenticationResult(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ATMCustomer5.mmProfile, ATMCustomer5.mmAuthenticationResult);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ATMCustomer5.mmProfile, com.tools20022.repository.msg.ATMCustomer5.mmAuthenticationResult);
 				trace_lazy = () -> CardholderRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMCustomer5";
 				definition = "Customer involved in a transaction.";
@@ -166,21 +189,21 @@ public class ATMCustomer5 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Prfl")
-	public ATMCustomerProfile2 getProfile() {
-		return profile;
+	public Optional<ATMCustomerProfile2> getProfile() {
+		return profile == null ? Optional.empty() : Optional.of(profile);
 	}
 
-	public void setProfile(com.tools20022.repository.msg.ATMCustomerProfile2 profile) {
+	public ATMCustomer5 setProfile(ATMCustomerProfile2 profile) {
 		this.profile = profile;
+		return this;
 	}
 
-	@XmlElement(name = "AuthntcnRslt")
 	public List<TransactionVerificationResult5> getAuthenticationResult() {
-		return authenticationResult;
+		return authenticationResult == null ? authenticationResult = new ArrayList<>() : authenticationResult;
 	}
 
-	public void setAuthenticationResult(List<com.tools20022.repository.msg.TransactionVerificationResult5> authenticationResult) {
-		this.authenticationResult = authenticationResult;
+	public ATMCustomer5 setAuthenticationResult(List<TransactionVerificationResult5> authenticationResult) {
+		this.authenticationResult = Objects.requireNonNull(authenticationResult);
+		return this;
 	}
 }

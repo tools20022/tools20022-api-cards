@@ -19,11 +19,12 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.SafekeepingPlaceCode;
-import com.tools20022.repository.entity.SecuritiesPartyRole;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Organisation used as the safekeeping place for the securities.
@@ -78,8 +79,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -96,8 +97,8 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected SafekeepingPlaceCode safekeepingPlaceType;
 	/**
-	 * Place of safekeeping.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -121,7 +122,7 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * definition} = "Place of safekeeping."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmSafekeepingPlaceType = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<SafekeepingPlace, SafekeepingPlaceCode> mmSafekeepingPlaceType = new MMBusinessAttribute<SafekeepingPlace, SafekeepingPlaceCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
@@ -133,18 +134,20 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 			simpleType_lazy = () -> SafekeepingPlaceCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return SafekeepingPlace.class.getMethod("getSafekeepingPlaceType", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public SafekeepingPlaceCode getValue(SafekeepingPlace obj) {
+			return obj.getSafekeepingPlaceType();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlace obj, SafekeepingPlaceCode value) {
+			obj.setSafekeepingPlaceType(value);
 		}
 	};
 	protected Country country;
 	/**
-	 * Country where the financial instruments are/will be safekept.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -175,7 +178,7 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * "Country where the financial instruments are/will be safekept."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCountry = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SafekeepingPlace, com.tools20022.repository.entity.Country> mmCountry = new MMBusinessAssociationEnd<SafekeepingPlace, com.tools20022.repository.entity.Country>() {
 		{
 			isDerived = true;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
@@ -188,12 +191,21 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.Country getValue(SafekeepingPlace obj) {
+			return obj.getCountry();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlace obj, com.tools20022.repository.entity.Country value) {
+			obj.setCountry(value);
+		}
 	};
 	protected SecuritiesAccount relatedSecuritiesAccount;
 	/**
-	 * Account at the safekeeping place where financial instruments are
-	 * safekept.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -226,7 +238,7 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmRelatedSecuritiesAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SafekeepingPlace, com.tools20022.repository.entity.SecuritiesAccount> mmRelatedSecuritiesAccount = new MMBusinessAssociationEnd<SafekeepingPlace, com.tools20022.repository.entity.SecuritiesAccount>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
@@ -239,11 +251,21 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesAccount.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesAccount getValue(SafekeepingPlace obj) {
+			return obj.getRelatedSecuritiesAccount();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlace obj, com.tools20022.repository.entity.SecuritiesAccount value) {
+			obj.setRelatedSecuritiesAccount(value);
+		}
 	};
 	protected SecuritiesBalance securitiesBalance;
 	/**
-	 * Balance which is held at a safekeeping place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -274,7 +296,7 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * definition} = "Balance which is held at a safekeeping place."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesBalance = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SafekeepingPlace, Optional<SecuritiesBalance>> mmSecuritiesBalance = new MMBusinessAssociationEnd<SafekeepingPlace, Optional<SecuritiesBalance>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
@@ -287,11 +309,21 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesBalance.mmObject();
 		}
+
+		@Override
+		public Optional<SecuritiesBalance> getValue(SafekeepingPlace obj) {
+			return obj.getSecuritiesBalance();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlace obj, Optional<SecuritiesBalance> value) {
+			obj.setSecuritiesBalance(value.orElse(null));
+		}
 	};
 	protected SecuritiesSettlement securitiesSettlement;
 	/**
-	 * Specifies the settlement operation which uses the safekeeping place.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -324,7 +356,7 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 	 * "Specifies the settlement operation which uses the safekeeping place."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSecuritiesSettlement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<SafekeepingPlace, com.tools20022.repository.entity.SecuritiesSettlement> mmSecuritiesSettlement = new MMBusinessAssociationEnd<SafekeepingPlace, com.tools20022.repository.entity.SecuritiesSettlement>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SafekeepingPlace.mmObject();
@@ -337,12 +369,22 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.SecuritiesSettlement.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.SecuritiesSettlement getValue(SafekeepingPlace obj) {
+			return obj.getSecuritiesSettlement();
+		}
+
+		@Override
+		public void setValue(SafekeepingPlace obj, com.tools20022.repository.entity.SecuritiesSettlement value) {
+			obj.setSecuritiesSettlement(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SafekeepingPlace";
 				definition = "Organisation used as the safekeeping place for the securities.";
@@ -366,39 +408,44 @@ public class SafekeepingPlace extends SecuritiesPartyRole {
 		return safekeepingPlaceType;
 	}
 
-	public void setSafekeepingPlaceType(SafekeepingPlaceCode safekeepingPlaceType) {
-		this.safekeepingPlaceType = safekeepingPlaceType;
+	public SafekeepingPlace setSafekeepingPlaceType(SafekeepingPlaceCode safekeepingPlaceType) {
+		this.safekeepingPlaceType = Objects.requireNonNull(safekeepingPlaceType);
+		return this;
 	}
 
 	public Country getCountry() {
 		return country;
 	}
 
-	public void setCountry(com.tools20022.repository.entity.Country country) {
-		this.country = country;
+	public SafekeepingPlace setCountry(com.tools20022.repository.entity.Country country) {
+		this.country = Objects.requireNonNull(country);
+		return this;
 	}
 
 	public SecuritiesAccount getRelatedSecuritiesAccount() {
 		return relatedSecuritiesAccount;
 	}
 
-	public void setRelatedSecuritiesAccount(com.tools20022.repository.entity.SecuritiesAccount relatedSecuritiesAccount) {
-		this.relatedSecuritiesAccount = relatedSecuritiesAccount;
+	public SafekeepingPlace setRelatedSecuritiesAccount(com.tools20022.repository.entity.SecuritiesAccount relatedSecuritiesAccount) {
+		this.relatedSecuritiesAccount = Objects.requireNonNull(relatedSecuritiesAccount);
+		return this;
 	}
 
-	public SecuritiesBalance getSecuritiesBalance() {
-		return securitiesBalance;
+	public Optional<SecuritiesBalance> getSecuritiesBalance() {
+		return securitiesBalance == null ? Optional.empty() : Optional.of(securitiesBalance);
 	}
 
-	public void setSecuritiesBalance(com.tools20022.repository.entity.SecuritiesBalance securitiesBalance) {
+	public SafekeepingPlace setSecuritiesBalance(com.tools20022.repository.entity.SecuritiesBalance securitiesBalance) {
 		this.securitiesBalance = securitiesBalance;
+		return this;
 	}
 
 	public SecuritiesSettlement getSecuritiesSettlement() {
 		return securitiesSettlement;
 	}
 
-	public void setSecuritiesSettlement(com.tools20022.repository.entity.SecuritiesSettlement securitiesSettlement) {
-		this.securitiesSettlement = securitiesSettlement;
+	public SafekeepingPlace setSecuritiesSettlement(com.tools20022.repository.entity.SecuritiesSettlement securitiesSettlement) {
+		this.securitiesSettlement = Objects.requireNonNull(securitiesSettlement);
+		return this;
 	}
 }

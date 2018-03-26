@@ -27,9 +27,10 @@ import com.tools20022.repository.datatype.Max35NumericText;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.datatype.TrueFalseIndicator;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.PlainCardData17;
+import com.tools20022.repository.msg.Vehicle2;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -77,8 +78,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -95,16 +96,17 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Vehicle1", propOrder = {"vehicleNumber", "trailerNumber", "vehicleTag", "vehicleTagEntryMode", "unitNumber", "replacementCar", "odometer", "hubometer", "trailerHours", "referHours", "maintenanceIdentification",
 		"driverOrVehicleCard", "additionalVehicleData"})
 public class Vehicle1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "VhclNb")
 	protected Max35NumericText vehicleNumber;
 	/**
-	 * Number assigned to the vehicle for identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -129,9 +131,9 @@ public class Vehicle1 {
 	 * definition} = "Number assigned to the vehicle for identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVehicleNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Vehicle1, Optional<Max35NumericText>> mmVehicleNumber = new MMMessageAttribute<Vehicle1, Optional<Max35NumericText>>() {
 		{
-			componentContext_lazy = () -> Vehicle1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Vehicle1.mmObject();
 			isDerived = false;
 			xmlTag = "VhclNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -141,11 +143,22 @@ public class Vehicle1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35NumericText.mmObject();
 		}
+
+		@Override
+		public Optional<Max35NumericText> getValue(Vehicle1 obj) {
+			return obj.getVehicleNumber();
+		}
+
+		@Override
+		public void setValue(Vehicle1 obj, Optional<Max35NumericText> value) {
+			obj.setVehicleNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TrlrNb")
 	protected Max35NumericText trailerNumber;
 	/**
-	 * Number assigned to the vehicle trailer for identification.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -171,9 +184,9 @@ public class Vehicle1 {
 	 * "Number assigned to the vehicle trailer for identification."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTrailerNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Vehicle1, Optional<Max35NumericText>> mmTrailerNumber = new MMMessageAttribute<Vehicle1, Optional<Max35NumericText>>() {
 		{
-			componentContext_lazy = () -> Vehicle1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Vehicle1.mmObject();
 			isDerived = false;
 			xmlTag = "TrlrNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -183,11 +196,22 @@ public class Vehicle1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35NumericText.mmObject();
 		}
+
+		@Override
+		public Optional<Max35NumericText> getValue(Vehicle1 obj) {
+			return obj.getTrailerNumber();
+		}
+
+		@Override
+		public void setValue(Vehicle1 obj, Optional<Max35NumericText> value) {
+			obj.setTrailerNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "VhclTag")
 	protected Max35Text vehicleTag;
 	/**
-	 * Registration tag of the vehicle.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -211,9 +235,9 @@ public class Vehicle1 {
 	 * definition} = "Registration tag of the vehicle."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVehicleTag = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Vehicle1, Optional<Max35Text>> mmVehicleTag = new MMMessageAttribute<Vehicle1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> Vehicle1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Vehicle1.mmObject();
 			isDerived = false;
 			xmlTag = "VhclTag";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -223,11 +247,22 @@ public class Vehicle1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(Vehicle1 obj) {
+			return obj.getVehicleTag();
+		}
+
+		@Override
+		public void setValue(Vehicle1 obj, Optional<Max35Text> value) {
+			obj.setVehicleTag(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "VhclTagNtryMd")
 	protected CardDataReading5Code vehicleTagEntryMode;
 	/**
-	 * Entry mode of the registration tag.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -259,24 +294,35 @@ public class Vehicle1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmVehicleTagEntryMode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Vehicle1, Optional<CardDataReading5Code>> mmVehicleTagEntryMode = new MMMessageAttribute<Vehicle1, Optional<CardDataReading5Code>>() {
 		{
-			componentContext_lazy = () -> Vehicle1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Vehicle1.mmObject();
 			isDerived = false;
 			xmlTag = "VhclTagNtryMd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "VehicleTagEntryMode";
 			definition = "Entry mode of the registration tag.";
-			nextVersions_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Vehicle2.mmEntryMode);
+			nextVersions_lazy = () -> Arrays.asList(Vehicle2.mmEntryMode);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> CardDataReading5Code.mmObject();
 		}
+
+		@Override
+		public Optional<CardDataReading5Code> getValue(Vehicle1 obj) {
+			return obj.getVehicleTagEntryMode();
+		}
+
+		@Override
+		public void setValue(Vehicle1 obj, Optional<CardDataReading5Code> value) {
+			obj.setVehicleTagEntryMode(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "UnitNb")
 	protected Max35NumericText unitNumber;
 	/**
-	 * Identification of the vehicle in the fleet.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -301,9 +347,9 @@ public class Vehicle1 {
 	 * definition} = "Identification of the vehicle in the fleet."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmUnitNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Vehicle1, Optional<Max35NumericText>> mmUnitNumber = new MMMessageAttribute<Vehicle1, Optional<Max35NumericText>>() {
 		{
-			componentContext_lazy = () -> Vehicle1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Vehicle1.mmObject();
 			isDerived = false;
 			xmlTag = "UnitNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -313,11 +359,22 @@ public class Vehicle1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35NumericText.mmObject();
 		}
+
+		@Override
+		public Optional<Max35NumericText> getValue(Vehicle1 obj) {
+			return obj.getUnitNumber();
+		}
+
+		@Override
+		public void setValue(Vehicle1 obj, Optional<Max35NumericText> value) {
+			obj.setUnitNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RplcmntCar")
 	protected TrueFalseIndicator replacementCar;
 	/**
-	 * True if the car is a replacement car.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -342,9 +399,9 @@ public class Vehicle1 {
 	 * definition} = "True if the car is a replacement car."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReplacementCar = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Vehicle1, Optional<TrueFalseIndicator>> mmReplacementCar = new MMMessageAttribute<Vehicle1, Optional<TrueFalseIndicator>>() {
 		{
-			componentContext_lazy = () -> Vehicle1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Vehicle1.mmObject();
 			isDerived = false;
 			xmlTag = "RplcmntCar";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -354,11 +411,22 @@ public class Vehicle1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> TrueFalseIndicator.mmObject();
 		}
+
+		@Override
+		public Optional<TrueFalseIndicator> getValue(Vehicle1 obj) {
+			return obj.getReplacementCar();
+		}
+
+		@Override
+		public void setValue(Vehicle1 obj, Optional<TrueFalseIndicator> value) {
+			obj.setReplacementCar(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Odmtr")
 	protected DecimalNumber odometer;
 	/**
-	 * Odometer reading value indicating the distance travelled by the vehicle.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -385,9 +453,9 @@ public class Vehicle1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmOdometer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Vehicle1, Optional<DecimalNumber>> mmOdometer = new MMMessageAttribute<Vehicle1, Optional<DecimalNumber>>() {
 		{
-			componentContext_lazy = () -> Vehicle1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Vehicle1.mmObject();
 			isDerived = false;
 			xmlTag = "Odmtr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -397,11 +465,22 @@ public class Vehicle1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(Vehicle1 obj) {
+			return obj.getOdometer();
+		}
+
+		@Override
+		public void setValue(Vehicle1 obj, Optional<DecimalNumber> value) {
+			obj.setOdometer(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "Hbmtr")
 	protected DecimalNumber hubometer;
 	/**
-	 * Hubometer reading value indicating the distance travelled by the trailer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -428,9 +507,9 @@ public class Vehicle1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmHubometer = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Vehicle1, Optional<DecimalNumber>> mmHubometer = new MMMessageAttribute<Vehicle1, Optional<DecimalNumber>>() {
 		{
-			componentContext_lazy = () -> Vehicle1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Vehicle1.mmObject();
 			isDerived = false;
 			xmlTag = "Hbmtr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -440,11 +519,22 @@ public class Vehicle1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> DecimalNumber.mmObject();
 		}
+
+		@Override
+		public Optional<DecimalNumber> getValue(Vehicle1 obj) {
+			return obj.getHubometer();
+		}
+
+		@Override
+		public void setValue(Vehicle1 obj, Optional<DecimalNumber> value) {
+			obj.setHubometer(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TrlrHrs")
 	protected Max35Text trailerHours;
 	/**
-	 * Number of hours the trailer has been in operation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -468,9 +558,9 @@ public class Vehicle1 {
 	 * definition} = "Number of hours the trailer has been in operation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTrailerHours = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Vehicle1, Optional<Max35Text>> mmTrailerHours = new MMMessageAttribute<Vehicle1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> Vehicle1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Vehicle1.mmObject();
 			isDerived = false;
 			xmlTag = "TrlrHrs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -480,11 +570,22 @@ public class Vehicle1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(Vehicle1 obj) {
+			return obj.getTrailerHours();
+		}
+
+		@Override
+		public void setValue(Vehicle1 obj, Optional<Max35Text> value) {
+			obj.setTrailerHours(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RefrHrs")
 	protected Max35Text referHours;
 	/**
-	 * Number of hours the refer unit has been in operation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -508,9 +609,9 @@ public class Vehicle1 {
 	 * definition} = "Number of hours the refer unit has been in operation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReferHours = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Vehicle1, Optional<Max35Text>> mmReferHours = new MMMessageAttribute<Vehicle1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> Vehicle1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Vehicle1.mmObject();
 			isDerived = false;
 			xmlTag = "RefrHrs";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -520,11 +621,22 @@ public class Vehicle1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(Vehicle1 obj) {
+			return obj.getReferHours();
+		}
+
+		@Override
+		public void setValue(Vehicle1 obj, Optional<Max35Text> value) {
+			obj.setReferHours(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "MntncId")
 	protected Max35Text maintenanceIdentification;
 	/**
-	 * Identification assigned to the vehicle related to maintenance.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -549,9 +661,9 @@ public class Vehicle1 {
 	 * "Identification assigned to the vehicle related to maintenance."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmMaintenanceIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Vehicle1, Optional<Max35Text>> mmMaintenanceIdentification = new MMMessageAttribute<Vehicle1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> Vehicle1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Vehicle1.mmObject();
 			isDerived = false;
 			xmlTag = "MntncId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -561,11 +673,22 @@ public class Vehicle1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(Vehicle1 obj) {
+			return obj.getMaintenanceIdentification();
+		}
+
+		@Override
+		public void setValue(Vehicle1 obj, Optional<Max35Text> value) {
+			obj.setMaintenanceIdentification(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DrvrOrVhclCard")
 	protected PlainCardData17 driverOrVehicleCard;
 	/**
-	 * Second card presented for the payment transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -588,9 +711,9 @@ public class Vehicle1 {
 	 * definition} = "Second card presented for the payment transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmDriverOrVehicleCard = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Vehicle1, Optional<PlainCardData17>> mmDriverOrVehicleCard = new MMMessageAssociationEnd<Vehicle1, Optional<PlainCardData17>>() {
 		{
-			componentContext_lazy = () -> Vehicle1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Vehicle1.mmObject();
 			isDerived = false;
 			xmlTag = "DrvrOrVhclCard";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -599,13 +722,24 @@ public class Vehicle1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PlainCardData17.mmObject();
+			type_lazy = () -> PlainCardData17.mmObject();
+		}
+
+		@Override
+		public Optional<PlainCardData17> getValue(Vehicle1 obj) {
+			return obj.getDriverOrVehicleCard();
+		}
+
+		@Override
+		public void setValue(Vehicle1 obj, Optional<PlainCardData17> value) {
+			obj.setDriverOrVehicleCard(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.msg.Vehicle2> additionalVehicleData;
+	@XmlElement(name = "AddtlVhclData")
+	protected List<Vehicle2> additionalVehicleData;
 	/**
-	 * Additional information related to the vehicle.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -634,150 +768,162 @@ public class Vehicle1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAdditionalVehicleData = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<Vehicle1, List<Vehicle2>> mmAdditionalVehicleData = new MMMessageAssociationEnd<Vehicle1, List<Vehicle2>>() {
 		{
-			componentContext_lazy = () -> Vehicle1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Vehicle1.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlVhclData";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalVehicleData";
 			definition = "Additional information related to the vehicle.";
-			nextVersions_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Vehicle2.mmData);
+			nextVersions_lazy = () -> Arrays.asList(Vehicle2.mmData);
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.Vehicle2.mmObject();
+			type_lazy = () -> Vehicle2.mmObject();
+		}
+
+		@Override
+		public List<Vehicle2> getValue(Vehicle1 obj) {
+			return obj.getAdditionalVehicleData();
+		}
+
+		@Override
+		public void setValue(Vehicle1 obj, List<Vehicle2> value) {
+			obj.setAdditionalVehicleData(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Vehicle1.mmVehicleNumber, Vehicle1.mmTrailerNumber, Vehicle1.mmVehicleTag, Vehicle1.mmVehicleTagEntryMode, Vehicle1.mmUnitNumber, Vehicle1.mmReplacementCar, Vehicle1.mmOdometer,
-						Vehicle1.mmHubometer, Vehicle1.mmTrailerHours, Vehicle1.mmReferHours, Vehicle1.mmMaintenanceIdentification, Vehicle1.mmDriverOrVehicleCard, Vehicle1.mmAdditionalVehicleData);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Vehicle1.mmVehicleNumber, com.tools20022.repository.msg.Vehicle1.mmTrailerNumber, com.tools20022.repository.msg.Vehicle1.mmVehicleTag,
+						com.tools20022.repository.msg.Vehicle1.mmVehicleTagEntryMode, com.tools20022.repository.msg.Vehicle1.mmUnitNumber, com.tools20022.repository.msg.Vehicle1.mmReplacementCar,
+						com.tools20022.repository.msg.Vehicle1.mmOdometer, com.tools20022.repository.msg.Vehicle1.mmHubometer, com.tools20022.repository.msg.Vehicle1.mmTrailerHours, com.tools20022.repository.msg.Vehicle1.mmReferHours,
+						com.tools20022.repository.msg.Vehicle1.mmMaintenanceIdentification, com.tools20022.repository.msg.Vehicle1.mmDriverOrVehicleCard, com.tools20022.repository.msg.Vehicle1.mmAdditionalVehicleData);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Vehicle1";
 				definition = "Information related to a vehicle used during a transaction.";
-				nextVersions_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Vehicle2.mmObject());
+				nextVersions_lazy = () -> Arrays.asList(Vehicle2.mmObject());
 			}
 		});
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "VhclNb")
-	public Max35NumericText getVehicleNumber() {
-		return vehicleNumber;
+	public Optional<Max35NumericText> getVehicleNumber() {
+		return vehicleNumber == null ? Optional.empty() : Optional.of(vehicleNumber);
 	}
 
-	public void setVehicleNumber(Max35NumericText vehicleNumber) {
+	public Vehicle1 setVehicleNumber(Max35NumericText vehicleNumber) {
 		this.vehicleNumber = vehicleNumber;
+		return this;
 	}
 
-	@XmlElement(name = "TrlrNb")
-	public Max35NumericText getTrailerNumber() {
-		return trailerNumber;
+	public Optional<Max35NumericText> getTrailerNumber() {
+		return trailerNumber == null ? Optional.empty() : Optional.of(trailerNumber);
 	}
 
-	public void setTrailerNumber(Max35NumericText trailerNumber) {
+	public Vehicle1 setTrailerNumber(Max35NumericText trailerNumber) {
 		this.trailerNumber = trailerNumber;
+		return this;
 	}
 
-	@XmlElement(name = "VhclTag")
-	public Max35Text getVehicleTag() {
-		return vehicleTag;
+	public Optional<Max35Text> getVehicleTag() {
+		return vehicleTag == null ? Optional.empty() : Optional.of(vehicleTag);
 	}
 
-	public void setVehicleTag(Max35Text vehicleTag) {
+	public Vehicle1 setVehicleTag(Max35Text vehicleTag) {
 		this.vehicleTag = vehicleTag;
+		return this;
 	}
 
-	@XmlElement(name = "VhclTagNtryMd")
-	public CardDataReading5Code getVehicleTagEntryMode() {
-		return vehicleTagEntryMode;
+	public Optional<CardDataReading5Code> getVehicleTagEntryMode() {
+		return vehicleTagEntryMode == null ? Optional.empty() : Optional.of(vehicleTagEntryMode);
 	}
 
-	public void setVehicleTagEntryMode(CardDataReading5Code vehicleTagEntryMode) {
+	public Vehicle1 setVehicleTagEntryMode(CardDataReading5Code vehicleTagEntryMode) {
 		this.vehicleTagEntryMode = vehicleTagEntryMode;
+		return this;
 	}
 
-	@XmlElement(name = "UnitNb")
-	public Max35NumericText getUnitNumber() {
-		return unitNumber;
+	public Optional<Max35NumericText> getUnitNumber() {
+		return unitNumber == null ? Optional.empty() : Optional.of(unitNumber);
 	}
 
-	public void setUnitNumber(Max35NumericText unitNumber) {
+	public Vehicle1 setUnitNumber(Max35NumericText unitNumber) {
 		this.unitNumber = unitNumber;
+		return this;
 	}
 
-	@XmlElement(name = "RplcmntCar")
-	public TrueFalseIndicator getReplacementCar() {
-		return replacementCar;
+	public Optional<TrueFalseIndicator> getReplacementCar() {
+		return replacementCar == null ? Optional.empty() : Optional.of(replacementCar);
 	}
 
-	public void setReplacementCar(TrueFalseIndicator replacementCar) {
+	public Vehicle1 setReplacementCar(TrueFalseIndicator replacementCar) {
 		this.replacementCar = replacementCar;
+		return this;
 	}
 
-	@XmlElement(name = "Odmtr")
-	public DecimalNumber getOdometer() {
-		return odometer;
+	public Optional<DecimalNumber> getOdometer() {
+		return odometer == null ? Optional.empty() : Optional.of(odometer);
 	}
 
-	public void setOdometer(DecimalNumber odometer) {
+	public Vehicle1 setOdometer(DecimalNumber odometer) {
 		this.odometer = odometer;
+		return this;
 	}
 
-	@XmlElement(name = "Hbmtr")
-	public DecimalNumber getHubometer() {
-		return hubometer;
+	public Optional<DecimalNumber> getHubometer() {
+		return hubometer == null ? Optional.empty() : Optional.of(hubometer);
 	}
 
-	public void setHubometer(DecimalNumber hubometer) {
+	public Vehicle1 setHubometer(DecimalNumber hubometer) {
 		this.hubometer = hubometer;
+		return this;
 	}
 
-	@XmlElement(name = "TrlrHrs")
-	public Max35Text getTrailerHours() {
-		return trailerHours;
+	public Optional<Max35Text> getTrailerHours() {
+		return trailerHours == null ? Optional.empty() : Optional.of(trailerHours);
 	}
 
-	public void setTrailerHours(Max35Text trailerHours) {
+	public Vehicle1 setTrailerHours(Max35Text trailerHours) {
 		this.trailerHours = trailerHours;
+		return this;
 	}
 
-	@XmlElement(name = "RefrHrs")
-	public Max35Text getReferHours() {
-		return referHours;
+	public Optional<Max35Text> getReferHours() {
+		return referHours == null ? Optional.empty() : Optional.of(referHours);
 	}
 
-	public void setReferHours(Max35Text referHours) {
+	public Vehicle1 setReferHours(Max35Text referHours) {
 		this.referHours = referHours;
+		return this;
 	}
 
-	@XmlElement(name = "MntncId")
-	public Max35Text getMaintenanceIdentification() {
-		return maintenanceIdentification;
+	public Optional<Max35Text> getMaintenanceIdentification() {
+		return maintenanceIdentification == null ? Optional.empty() : Optional.of(maintenanceIdentification);
 	}
 
-	public void setMaintenanceIdentification(Max35Text maintenanceIdentification) {
+	public Vehicle1 setMaintenanceIdentification(Max35Text maintenanceIdentification) {
 		this.maintenanceIdentification = maintenanceIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "DrvrOrVhclCard")
-	public PlainCardData17 getDriverOrVehicleCard() {
-		return driverOrVehicleCard;
+	public Optional<PlainCardData17> getDriverOrVehicleCard() {
+		return driverOrVehicleCard == null ? Optional.empty() : Optional.of(driverOrVehicleCard);
 	}
 
-	public void setDriverOrVehicleCard(com.tools20022.repository.msg.PlainCardData17 driverOrVehicleCard) {
+	public Vehicle1 setDriverOrVehicleCard(PlainCardData17 driverOrVehicleCard) {
 		this.driverOrVehicleCard = driverOrVehicleCard;
+		return this;
 	}
 
-	@XmlElement(name = "AddtlVhclData")
 	public List<Vehicle2> getAdditionalVehicleData() {
-		return additionalVehicleData;
+		return additionalVehicleData == null ? additionalVehicleData = new ArrayList<>() : additionalVehicleData;
 	}
 
-	public void setAdditionalVehicleData(List<com.tools20022.repository.msg.Vehicle2> additionalVehicleData) {
-		this.additionalVehicleData = additionalVehicleData;
+	public Vehicle1 setAdditionalVehicleData(List<Vehicle2> additionalVehicleData) {
+		this.additionalVehicleData = Objects.requireNonNull(additionalVehicleData);
+		return this;
 	}
 }

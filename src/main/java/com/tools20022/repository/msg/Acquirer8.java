@@ -26,6 +26,8 @@ import com.tools20022.repository.entity.Party;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -52,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * Acquirer7}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "Acquirer8", propOrder = {"identification", "applicationVersion"})
 public class Acquirer8 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Id", required = true)
 	protected Max35Text identification;
 	/**
-	 * Identification of the ATM manager.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,10 +112,10 @@ public class Acquirer8 {
 	 * Acquirer7.mmAcquiringInstitution}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmIdentification = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Acquirer8, Max35Text> mmIdentification = new MMMessageAttribute<Acquirer8, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> Party.mmIdentification;
-			componentContext_lazy = () -> Acquirer8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Acquirer8.mmObject();
 			isDerived = false;
 			xmlTag = "Id";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,11 +126,22 @@ public class Acquirer8 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(Acquirer8 obj) {
+			return obj.getIdentification();
+		}
+
+		@Override
+		public void setValue(Acquirer8 obj, Max35Text value) {
+			obj.setIdentification(value);
+		}
 	};
+	@XmlElement(name = "ApplVrsn")
 	protected Max35Text applicationVersion;
 	/**
-	 * Software version of the application.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,9 +170,9 @@ public class Acquirer8 {
 	 * Acquirer7.mmBranch}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmApplicationVersion = new MMMessageAttribute() {
+	public static final MMMessageAttribute<Acquirer8, Optional<Max35Text>> mmApplicationVersion = new MMMessageAttribute<Acquirer8, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> Acquirer8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.Acquirer8.mmObject();
 			isDerived = false;
 			xmlTag = "ApplVrsn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,14 +183,24 @@ public class Acquirer8 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(Acquirer8 obj) {
+			return obj.getApplicationVersion();
+		}
+
+		@Override
+		public void setValue(Acquirer8 obj, Optional<Max35Text> value) {
+			obj.setApplicationVersion(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(Acquirer8.mmIdentification, Acquirer8.mmApplicationVersion);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Acquirer8.mmIdentification, com.tools20022.repository.msg.Acquirer8.mmApplicationVersion);
 				trace_lazy = () -> AcquirerRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Acquirer8";
 				definition = "Institution in charge of managing the ATM.";
@@ -186,21 +210,21 @@ public class Acquirer8 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Id", required = true)
 	public Max35Text getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(Max35Text identification) {
-		this.identification = identification;
+	public Acquirer8 setIdentification(Max35Text identification) {
+		this.identification = Objects.requireNonNull(identification);
+		return this;
 	}
 
-	@XmlElement(name = "ApplVrsn")
-	public Max35Text getApplicationVersion() {
-		return applicationVersion;
+	public Optional<Max35Text> getApplicationVersion() {
+		return applicationVersion == null ? Optional.empty() : Optional.of(applicationVersion);
 	}
 
-	public void setApplicationVersion(Max35Text applicationVersion) {
+	public Acquirer8 setApplicationVersion(Max35Text applicationVersion) {
 		this.applicationVersion = applicationVersion;
+		return this;
 	}
 }

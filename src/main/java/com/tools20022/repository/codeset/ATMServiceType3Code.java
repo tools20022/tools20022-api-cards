@@ -38,28 +38,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType3Code#AccountStatements
- * ATMServiceType3Code.mmAccountStatements}</li>
+ * ATMServiceType3Code.AccountStatements}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType3Code#CardVerification
- * ATMServiceType3Code.mmCardVerification}</li>
+ * ATMServiceType3Code.CardVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType3Code#DynamicCurrencyConversion
- * ATMServiceType3Code.mmDynamicCurrencyConversion}</li>
+ * ATMServiceType3Code.DynamicCurrencyConversion}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType3Code#ExchangeRateDeposit
- * ATMServiceType3Code.mmExchangeRateDeposit}</li>
+ * ATMServiceType3Code.ExchangeRateDeposit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType3Code#ExchangeRateWithdrawal
- * ATMServiceType3Code.mmExchangeRateWithdrawal}</li>
+ * ATMServiceType3Code.ExchangeRateWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType3Code#SelectEMVApplication
- * ATMServiceType3Code.mmSelectEMVApplication}</li>
+ * ATMServiceType3Code.SelectEMVApplication}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType3Code#CustomerProfile
- * ATMServiceType3Code.mmCustomerProfile}</li>
+ * ATMServiceType3Code.CustomerProfile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType3Code#BalanceInquiry
- * ATMServiceType3Code.mmBalanceInquiry}</li>
+ * ATMServiceType3Code.BalanceInquiry}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -68,8 +68,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -285,7 +285,7 @@ public class ATMServiceType3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMServiceType3Code";
 				definition = "Describes the type of inquiry selected by the customer or the ATM.";

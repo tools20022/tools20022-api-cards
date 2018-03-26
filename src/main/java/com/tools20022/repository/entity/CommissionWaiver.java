@@ -17,13 +17,16 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.WaivingInstructionCode;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.Commission;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Non-enforcement of the right to all or part of a commission by the party
@@ -64,8 +67,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -83,8 +86,8 @@ public class CommissionWaiver {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Commission commission;
 	/**
-	 * Commission to which the waiver applies.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -115,7 +118,7 @@ public class CommissionWaiver {
 	 * definition} = "Commission to which the waiver applies."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCommission = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<CommissionWaiver, Optional<Commission>> mmCommission = new MMBusinessAssociationEnd<CommissionWaiver, Optional<Commission>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CommissionWaiver.mmObject();
@@ -124,15 +127,25 @@ public class CommissionWaiver {
 			definition = "Commission to which the waiver applies.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Commission.mmCommissionWaiving;
+			opposite_lazy = () -> Commission.mmCommissionWaiving;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Commission.mmObject();
+			type_lazy = () -> Commission.mmObject();
+		}
+
+		@Override
+		public Optional<Commission> getValue(CommissionWaiver obj) {
+			return obj.getCommission();
+		}
+
+		@Override
+		public void setValue(CommissionWaiver obj, Optional<Commission> value) {
+			obj.setCommission(value.orElse(null));
 		}
 	};
 	protected WaivingInstructionCode instructionBasis;
 	/**
-	 * Form of the rebate, eg, cash.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -156,7 +169,7 @@ public class CommissionWaiver {
 	 * definition} = "Form of the rebate, eg, cash."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInstructionBasis = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CommissionWaiver, WaivingInstructionCode> mmInstructionBasis = new MMBusinessAttribute<CommissionWaiver, WaivingInstructionCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CommissionWaiver.mmObject();
@@ -168,19 +181,20 @@ public class CommissionWaiver {
 			simpleType_lazy = () -> WaivingInstructionCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CommissionWaiver.class.getMethod("getInstructionBasis", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public WaivingInstructionCode getValue(CommissionWaiver obj) {
+			return obj.getInstructionBasis();
+		}
+
+		@Override
+		public void setValue(CommissionWaiver obj, WaivingInstructionCode value) {
+			obj.setInstructionBasis(value);
 		}
 	};
 	protected PercentageRate waivedRate;
 	/**
-	 * Proportion of the commission that is waived, ie, if the commission is 5%
-	 * and half is waived, 2.5% should be stated in this field.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -193,6 +207,9 @@ public class CommissionWaiver {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.CommissionWaiver
 	 * CommissionWaiver}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :92A::COWA</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -206,10 +223,11 @@ public class CommissionWaiver {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmWaivedRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CommissionWaiver, PercentageRate> mmWaivedRate = new MMBusinessAttribute<CommissionWaiver, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CommissionWaiver.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":92A::COWA"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "WaivedRate";
 			definition = "Proportion of the commission that is waived, ie, if  the commission is 5% and half is waived, 2.5% should be stated in this field.";
@@ -218,18 +236,20 @@ public class CommissionWaiver {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CommissionWaiver.class.getMethod("getWaivedRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(CommissionWaiver obj) {
+			return obj.getWaivedRate();
+		}
+
+		@Override
+		public void setValue(CommissionWaiver obj, PercentageRate value) {
+			obj.setWaivedRate(value);
 		}
 	};
 	protected PercentageRate nonWaivedRate;
 	/**
-	 * New commission rate applied, after waiving.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -243,6 +263,9 @@ public class CommissionWaiver {
 	 * {@linkplain com.tools20022.repository.entity.CommissionWaiver
 	 * CommissionWaiver}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = ISO15022Synonym: :92A::CORA</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -253,10 +276,11 @@ public class CommissionWaiver {
 	 * definition} = "New commission rate applied, after waiving."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNonWaivedRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<CommissionWaiver, PercentageRate> mmNonWaivedRate = new MMBusinessAttribute<CommissionWaiver, PercentageRate>() {
 		{
 			isDerived = true;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CommissionWaiver.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":92A::CORA"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "NonWaivedRate";
 			definition = "New commission rate applied, after waiving.";
@@ -265,23 +289,25 @@ public class CommissionWaiver {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return CommissionWaiver.class.getMethod("getNonWaivedRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(CommissionWaiver obj) {
+			return obj.getNonWaivedRate();
+		}
+
+		@Override
+		public void setValue(CommissionWaiver obj, PercentageRate value) {
+			obj.setNonWaivedRate(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CommissionWaiver";
 				definition = "Non-enforcement of the right to all or part of a commission by the party entitled to the commission.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Commission.mmCommissionWaiving);
+				associationDomain_lazy = () -> Arrays.asList(Commission.mmCommissionWaiving);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CommissionWaiver.mmCommission, com.tools20022.repository.entity.CommissionWaiver.mmInstructionBasis,
 						com.tools20022.repository.entity.CommissionWaiver.mmWaivedRate, com.tools20022.repository.entity.CommissionWaiver.mmNonWaivedRate);
 			}
@@ -294,35 +320,39 @@ public class CommissionWaiver {
 		return mmObject_lazy.get();
 	}
 
-	public Commission getCommission() {
-		return commission;
+	public Optional<Commission> getCommission() {
+		return commission == null ? Optional.empty() : Optional.of(commission);
 	}
 
-	public void setCommission(com.tools20022.repository.entity.Commission commission) {
+	public CommissionWaiver setCommission(Commission commission) {
 		this.commission = commission;
+		return this;
 	}
 
 	public WaivingInstructionCode getInstructionBasis() {
 		return instructionBasis;
 	}
 
-	public void setInstructionBasis(WaivingInstructionCode instructionBasis) {
-		this.instructionBasis = instructionBasis;
+	public CommissionWaiver setInstructionBasis(WaivingInstructionCode instructionBasis) {
+		this.instructionBasis = Objects.requireNonNull(instructionBasis);
+		return this;
 	}
 
 	public PercentageRate getWaivedRate() {
 		return waivedRate;
 	}
 
-	public void setWaivedRate(PercentageRate waivedRate) {
-		this.waivedRate = waivedRate;
+	public CommissionWaiver setWaivedRate(PercentageRate waivedRate) {
+		this.waivedRate = Objects.requireNonNull(waivedRate);
+		return this;
 	}
 
 	public PercentageRate getNonWaivedRate() {
 		return nonWaivedRate;
 	}
 
-	public void setNonWaivedRate(PercentageRate nonWaivedRate) {
-		this.nonWaivedRate = nonWaivedRate;
+	public CommissionWaiver setNonWaivedRate(PercentageRate nonWaivedRate) {
+		this.nonWaivedRate = Objects.requireNonNull(nonWaivedRate);
+		return this;
 	}
 }

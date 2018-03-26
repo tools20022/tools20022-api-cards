@@ -26,6 +26,8 @@ import com.tools20022.repository.entity.PaymentCard;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -52,8 +54,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -64,15 +66,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Magnetic track or equivalent payment card data."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "TrackData1", propOrder = {"trackNumber", "trackValue"})
 public class TrackData1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TrckNb")
 	protected Exact1NumericText trackNumber;
 	/**
-	 * Track number of the card.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -97,9 +100,9 @@ public class TrackData1 {
 	 * definition} = "Track number of the card."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTrackNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TrackData1, Optional<Exact1NumericText>> mmTrackNumber = new MMMessageAttribute<TrackData1, Optional<Exact1NumericText>>() {
 		{
-			componentContext_lazy = () -> TrackData1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TrackData1.mmObject();
 			isDerived = false;
 			xmlTag = "TrckNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -109,11 +112,22 @@ public class TrackData1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Exact1NumericText.mmObject();
 		}
+
+		@Override
+		public Optional<Exact1NumericText> getValue(TrackData1 obj) {
+			return obj.getTrackNumber();
+		}
+
+		@Override
+		public void setValue(TrackData1 obj, Optional<Exact1NumericText> value) {
+			obj.setTrackNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TrckVal", required = true)
 	protected Max140Text trackValue;
 	/**
-	 * Card track content or equivalent.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -142,10 +156,10 @@ public class TrackData1 {
 	 * definition} = "Card track content or equivalent."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTrackValue = new MMMessageAttribute() {
+	public static final MMMessageAttribute<TrackData1, Max140Text> mmTrackValue = new MMMessageAttribute<TrackData1, Max140Text>() {
 		{
 			businessElementTrace_lazy = () -> PaymentCard.mmTrackValue;
-			componentContext_lazy = () -> TrackData1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.TrackData1.mmObject();
 			isDerived = false;
 			xmlTag = "TrckVal";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -155,14 +169,24 @@ public class TrackData1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Max140Text getValue(TrackData1 obj) {
+			return obj.getTrackValue();
+		}
+
+		@Override
+		public void setValue(TrackData1 obj, Max140Text value) {
+			obj.setTrackValue(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(TrackData1.mmTrackNumber, TrackData1.mmTrackValue);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.TrackData1.mmTrackNumber, com.tools20022.repository.msg.TrackData1.mmTrackValue);
 				trace_lazy = () -> PaymentCard.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TrackData1";
 				definition = "Magnetic track or equivalent payment card data.";
@@ -171,21 +195,21 @@ public class TrackData1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TrckNb")
-	public Exact1NumericText getTrackNumber() {
-		return trackNumber;
+	public Optional<Exact1NumericText> getTrackNumber() {
+		return trackNumber == null ? Optional.empty() : Optional.of(trackNumber);
 	}
 
-	public void setTrackNumber(Exact1NumericText trackNumber) {
+	public TrackData1 setTrackNumber(Exact1NumericText trackNumber) {
 		this.trackNumber = trackNumber;
+		return this;
 	}
 
-	@XmlElement(name = "TrckVal", required = true)
 	public Max140Text getTrackValue() {
 		return trackValue;
 	}
 
-	public void setTrackValue(Max140Text trackValue) {
-		this.trackValue = trackValue;
+	public TrackData1 setTrackValue(Max140Text trackValue) {
+		this.trackValue = Objects.requireNonNull(trackValue);
+		return this;
 	}
 }

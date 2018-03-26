@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * Location category of the place where the transaction is actually performed. <br>
- * It correspond partially to the ISO 8583:1993, field number 22-4.
+ * It correspond partially to the ISO 8583: 1993, field number 22-4.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
@@ -39,15 +39,15 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategory2Code#Aboard
- * LocationCategory2Code.mmAboard}</li>
+ * LocationCategory2Code.Aboard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategory2Code#Fixed
- * LocationCategory2Code.mmFixed}</li>
+ * LocationCategory2Code.Fixed}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.LocationCategory2Code#Home
- * LocationCategory2Code.mmHome}</li>
+ * LocationCategory2Code.Home}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.LocationCategory2Code#Nomadic
- * LocationCategory2Code.mmNomadic}</li>
+ * LocationCategory2Code.Nomadic}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -56,8 +56,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -66,7 +66,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "LocationCategory2Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Location category of the place where the transaction is actually performed. \r\nIt correspond partially to the ISO 8583:1993, field number 22-4."
+ * "Location category of the place where the transaction is actually performed. \r\nIt correspond partially to the ISO 8583: 1993, field number 22-4."
  * </li>
  * </ul>
  */
@@ -178,10 +178,10 @@ public class LocationCategory2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LocationCategory2Code";
-				definition = "Location category of the place where the transaction is actually performed. \r\nIt correspond partially to the ISO 8583:1993, field number 22-4.";
+				definition = "Location category of the place where the transaction is actually performed. \r\nIt correspond partially to the ISO 8583: 1993, field number 22-4.";
 				trace_lazy = () -> LocationCategoryCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.LocationCategory2Code.Aboard, com.tools20022.repository.codeset.LocationCategory2Code.Fixed, com.tools20022.repository.codeset.LocationCategory2Code.Home,
 						com.tools20022.repository.codeset.LocationCategory2Code.Nomadic);

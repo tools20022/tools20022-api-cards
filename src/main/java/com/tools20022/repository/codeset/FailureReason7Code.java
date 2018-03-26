@@ -38,60 +38,60 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason7Code#CardCaptured
- * FailureReason7Code.mmCardCaptured}</li>
+ * FailureReason7Code.CardCaptured}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason7Code#CardDeclined
- * FailureReason7Code.mmCardDeclined}</li>
+ * FailureReason7Code.CardDeclined}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason7Code#CardError
- * FailureReason7Code.mmCardError}</li>
+ * FailureReason7Code.CardError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason7Code#CustomerCancel
- * FailureReason7Code.mmCustomerCancel}</li>
+ * FailureReason7Code.CustomerCancel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason7Code#CustomerDecline
- * FailureReason7Code.mmCustomerDecline}</li>
+ * FailureReason7Code.CustomerDecline}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason7Code#ForgottenCard
- * FailureReason7Code.mmForgottenCard}</li>
+ * FailureReason7Code.ForgottenCard}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason7Code#FullfilmentError
- * FailureReason7Code.mmFullfilmentError}</li>
+ * FailureReason7Code.FullfilmentError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason7Code#Malfunction
- * FailureReason7Code.mmMalfunction}</li>
+ * FailureReason7Code.Malfunction}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason7Code#OnLineDeclined
- * FailureReason7Code.mmOnLineDeclined}</li>
+ * FailureReason7Code.OnLineDeclined}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason7Code#SecurityError
- * FailureReason7Code.mmSecurityError}</li>
+ * FailureReason7Code.SecurityError}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason7Code#SuspectedFraud
- * FailureReason7Code.mmSuspectedFraud}</li>
+ * FailureReason7Code.SuspectedFraud}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.FailureReason7Code#TimeOut
- * FailureReason7Code.mmTimeOut}</li>
+ * FailureReason7Code.TimeOut}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason7Code#TooLateResponse
- * FailureReason7Code.mmTooLateResponse}</li>
+ * FailureReason7Code.TooLateResponse}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason7Code#UnableToCapture
- * FailureReason7Code.mmUnableToCapture}</li>
+ * FailureReason7Code.UnableToCapture}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason7Code#UnableToComplete
- * FailureReason7Code.mmUnableToComplete}</li>
+ * FailureReason7Code.UnableToComplete}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason7Code#UnableToSend
- * FailureReason7Code.mmUnableToSend}</li>
+ * FailureReason7Code.UnableToSend}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason7Code#OutOfCustomerService
- * FailureReason7Code.mmOutOfCustomerService}</li>
+ * FailureReason7Code.OutOfCustomerService}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason7Code#CardRetained
- * FailureReason7Code.mmCardRetained}</li>
+ * FailureReason7Code.CardRetained}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.FailureReason7Code#CustomerTimeOut
- * FailureReason7Code.mmCustomerTimeOut}</li>
+ * FailureReason7Code.CustomerTimeOut}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -100,8 +100,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -581,7 +581,7 @@ public class FailureReason7Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FailureReason7Code";
 				definition = "Incident occurring during the processing of an ATM transaction.";

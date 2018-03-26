@@ -23,9 +23,10 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.codeset.Response2Code;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.ATMCommand7;
+import com.tools20022.repository.msg.TransactionIdentifier1;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -52,8 +53,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -67,15 +68,16 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.msg.ATMTransaction22 ATMTransaction22}</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ATMTransaction28", propOrder = {"transactionIdentification", "response", "command"})
 public class ATMTransaction28 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TxId")
 	protected TransactionIdentifier1 transactionIdentification;
 	/**
-	 * Identification of the transaction assigned by the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -104,9 +106,9 @@ public class ATMTransaction28 {
 	 * ATMTransaction22.mmTransactionIdentification}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransactionIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMTransaction28, Optional<TransactionIdentifier1>> mmTransactionIdentification = new MMMessageAssociationEnd<ATMTransaction28, Optional<TransactionIdentifier1>>() {
 		{
-			componentContext_lazy = () -> ATMTransaction28.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMTransaction28.mmObject();
 			isDerived = false;
 			xmlTag = "TxId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -116,13 +118,24 @@ public class ATMTransaction28 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TransactionIdentifier1.mmObject();
+			type_lazy = () -> TransactionIdentifier1.mmObject();
+		}
+
+		@Override
+		public Optional<TransactionIdentifier1> getValue(ATMTransaction28 obj) {
+			return obj.getTransactionIdentification();
+		}
+
+		@Override
+		public void setValue(ATMTransaction28 obj, Optional<TransactionIdentifier1> value) {
+			obj.setTransactionIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "Rspn", required = true)
 	protected Response2Code response;
 	/**
-	 * Response to the advice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -153,9 +166,9 @@ public class ATMTransaction28 {
 	 * ATMTransaction22.mmTransactionResponse}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmResponse = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMTransaction28, Response2Code> mmResponse = new MMMessageAttribute<ATMTransaction28, Response2Code>() {
 		{
-			componentContext_lazy = () -> ATMTransaction28.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMTransaction28.mmObject();
 			isDerived = false;
 			xmlTag = "Rspn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -166,11 +179,22 @@ public class ATMTransaction28 {
 			minOccurs = 1;
 			simpleType_lazy = () -> Response2Code.mmObject();
 		}
+
+		@Override
+		public Response2Code getValue(ATMTransaction28 obj) {
+			return obj.getResponse();
+		}
+
+		@Override
+		public void setValue(ATMTransaction28 obj, Response2Code value) {
+			obj.setResponse(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.ATMCommand7> command;
+	@XmlElement(name = "Cmd")
+	protected List<ATMCommand7> command;
 	/**
-	 * Maintenance command to perform on the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -199,9 +223,9 @@ public class ATMTransaction28 {
 	 * ATMTransaction22.mmCommand}</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCommand = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMTransaction28, List<ATMCommand7>> mmCommand = new MMMessageAssociationEnd<ATMTransaction28, List<ATMCommand7>>() {
 		{
-			componentContext_lazy = () -> ATMTransaction28.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMTransaction28.mmObject();
 			isDerived = false;
 			xmlTag = "Cmd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -210,15 +234,26 @@ public class ATMTransaction28 {
 			previousVersion_lazy = () -> ATMTransaction22.mmCommand;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMCommand7.mmObject();
+			type_lazy = () -> ATMCommand7.mmObject();
+		}
+
+		@Override
+		public List<ATMCommand7> getValue(ATMTransaction28 obj) {
+			return obj.getCommand();
+		}
+
+		@Override
+		public void setValue(ATMTransaction28 obj, List<ATMCommand7> value) {
+			obj.setCommand(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ATMTransaction28.mmTransactionIdentification, ATMTransaction28.mmResponse, ATMTransaction28.mmCommand);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ATMTransaction28.mmTransactionIdentification, com.tools20022.repository.msg.ATMTransaction28.mmResponse,
+						com.tools20022.repository.msg.ATMTransaction28.mmCommand);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMTransaction28";
 				definition = "Acknowledgement of the exception advice.";
@@ -228,30 +263,30 @@ public class ATMTransaction28 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TxId")
-	public TransactionIdentifier1 getTransactionIdentification() {
-		return transactionIdentification;
+	public Optional<TransactionIdentifier1> getTransactionIdentification() {
+		return transactionIdentification == null ? Optional.empty() : Optional.of(transactionIdentification);
 	}
 
-	public void setTransactionIdentification(com.tools20022.repository.msg.TransactionIdentifier1 transactionIdentification) {
+	public ATMTransaction28 setTransactionIdentification(TransactionIdentifier1 transactionIdentification) {
 		this.transactionIdentification = transactionIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "Rspn", required = true)
 	public Response2Code getResponse() {
 		return response;
 	}
 
-	public void setResponse(Response2Code response) {
-		this.response = response;
+	public ATMTransaction28 setResponse(Response2Code response) {
+		this.response = Objects.requireNonNull(response);
+		return this;
 	}
 
-	@XmlElement(name = "Cmd")
 	public List<ATMCommand7> getCommand() {
-		return command;
+		return command == null ? command = new ArrayList<>() : command;
 	}
 
-	public void setCommand(List<com.tools20022.repository.msg.ATMCommand7> command) {
-		this.command = command;
+	public ATMTransaction28 setCommand(List<ATMCommand7> command) {
+		this.command = Objects.requireNonNull(command);
+		return this;
 	}
 }

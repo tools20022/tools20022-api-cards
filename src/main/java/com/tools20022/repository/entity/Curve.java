@@ -17,14 +17,17 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.BenchmarkCurveNameCode;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.datatype.Max256Text;
+import com.tools20022.repository.entity.Spread;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Describes a benchmark curve.
@@ -58,8 +61,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -75,8 +78,8 @@ public class Curve {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyCode currency;
 	/**
-	 * Identifies the currency used for the benchmark curve.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -88,6 +91,9 @@ public class Curve {
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Curve
 	 * Curve}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 220</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -98,10 +104,11 @@ public class Curve {
 	 * definition} = "Identifies the currency used for the benchmark curve."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Curve, CurrencyCode> mmCurrency = new MMBusinessAttribute<Curve, CurrencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Curve.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "220"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Currency";
 			definition = "Identifies the currency used for the benchmark curve.";
@@ -110,18 +117,20 @@ public class Curve {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Curve.class.getMethod("getCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(Curve obj) {
+			return obj.getCurrency();
+		}
+
+		@Override
+		public void setValue(Curve obj, CurrencyCode value) {
+			obj.setCurrency(value);
 		}
 	};
 	protected BenchmarkCurveNameCode name;
 	/**
-	 * Identifies the name of the benchmark curve.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -134,6 +143,9 @@ public class Curve {
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Curve
 	 * Curve}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 221</li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -144,10 +156,11 @@ public class Curve {
 	 * definition} = "Identifies the name of the benchmark curve."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmName = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Curve, BenchmarkCurveNameCode> mmName = new MMBusinessAttribute<Curve, BenchmarkCurveNameCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Curve.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "221"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Name";
 			definition = "Identifies the name of the benchmark curve.";
@@ -156,19 +169,20 @@ public class Curve {
 			simpleType_lazy = () -> BenchmarkCurveNameCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Curve.class.getMethod("getName", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public BenchmarkCurveNameCode getValue(Curve obj) {
+			return obj.getName();
+		}
+
+		@Override
+		public void setValue(Curve obj, BenchmarkCurveNameCode value) {
+			obj.setName(value);
 		}
 	};
 	protected Max256Text point;
 	/**
-	 * Identifies a point on a benchmark curve. The point can be stated via a
-	 * combination of maturity month/year and coupon.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -179,6 +193,9 @@ public class Curve {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Curve
 	 * Curve}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = FIXSynonym: 222</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
@@ -192,10 +209,11 @@ public class Curve {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPoint = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<Curve, Max256Text> mmPoint = new MMBusinessAttribute<Curve, Max256Text>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Curve.mmObject();
+			semanticMarkup_lazy = () -> Arrays.asList(new FIXSynonym(this, "222"));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Point";
 			definition = "Identifies a point on a benchmark curve. The point can be stated via a combination of maturity month/year and coupon.";
@@ -204,18 +222,20 @@ public class Curve {
 			simpleType_lazy = () -> Max256Text.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return Curve.class.getMethod("getPoint", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Max256Text getValue(Curve obj) {
+			return obj.getPoint();
+		}
+
+		@Override
+		public void setValue(Curve obj, Max256Text value) {
+			obj.setPoint(value);
 		}
 	};
 	protected Spread spread;
 	/**
-	 * Spread for which a benchmark curve is specified.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -244,7 +264,7 @@ public class Curve {
 	 * definition} = "Spread for which a benchmark curve is specified."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmSpread = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<Curve, Optional<Spread>> mmSpread = new MMBusinessAssociationEnd<Curve, Optional<Spread>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Curve.mmObject();
@@ -253,20 +273,30 @@ public class Curve {
 			definition = "Spread for which a benchmark curve is specified.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Spread.mmBenchmarkCurve;
+			opposite_lazy = () -> Spread.mmBenchmarkCurve;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Spread.mmObject();
+			type_lazy = () -> Spread.mmObject();
+		}
+
+		@Override
+		public Optional<Spread> getValue(Curve obj) {
+			return obj.getSpread();
+		}
+
+		@Override
+		public void setValue(Curve obj, Optional<Spread> value) {
+			obj.setSpread(value.orElse(null));
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Curve";
 				definition = "Describes a benchmark curve.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Spread.mmBenchmarkCurve);
+				associationDomain_lazy = () -> Arrays.asList(Spread.mmBenchmarkCurve);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Curve.mmCurrency, com.tools20022.repository.entity.Curve.mmName, com.tools20022.repository.entity.Curve.mmPoint,
 						com.tools20022.repository.entity.Curve.mmSpread);
 			}
@@ -283,31 +313,35 @@ public class Curve {
 		return currency;
 	}
 
-	public void setCurrency(CurrencyCode currency) {
-		this.currency = currency;
+	public Curve setCurrency(CurrencyCode currency) {
+		this.currency = Objects.requireNonNull(currency);
+		return this;
 	}
 
 	public BenchmarkCurveNameCode getName() {
 		return name;
 	}
 
-	public void setName(BenchmarkCurveNameCode name) {
-		this.name = name;
+	public Curve setName(BenchmarkCurveNameCode name) {
+		this.name = Objects.requireNonNull(name);
+		return this;
 	}
 
 	public Max256Text getPoint() {
 		return point;
 	}
 
-	public void setPoint(Max256Text point) {
-		this.point = point;
+	public Curve setPoint(Max256Text point) {
+		this.point = Objects.requireNonNull(point);
+		return this;
 	}
 
-	public Spread getSpread() {
-		return spread;
+	public Optional<Spread> getSpread() {
+		return spread == null ? Optional.empty() : Optional.of(spread);
 	}
 
-	public void setSpread(com.tools20022.repository.entity.Spread spread) {
+	public Curve setSpread(Spread spread) {
 		this.spread = spread;
+		return this;
 	}
 }

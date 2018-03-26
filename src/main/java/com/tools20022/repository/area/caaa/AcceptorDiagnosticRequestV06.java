@@ -21,18 +21,19 @@ import com.tools20022.metamodel.MMMessageBuildingBlock;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.AcceptortoAcquirerCardTransactionLatestVersion;
+import com.tools20022.repository.area.AcceptortoAcquirerCardTransactionPreviousVersion;
 import com.tools20022.repository.msg.AcceptorDiagnosticRequest6;
 import com.tools20022.repository.msg.ContentInformationType15;
 import com.tools20022.repository.msg.Header30;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
  * The AcceptorDiagnosticRequest message is sent by an acceptor (or its agent)
- * to the acquirer (or its agent) , to check the end-to-end communication, to
+ * to the acquirer (or its agent), to check the end-to-end communication, to
  * test the availability of this acquirer, or to validate the security
  * environment.
  * <p>
@@ -59,8 +60,8 @@ import javax.xml.bind.annotation.*;
  * xmlTag} = "AccptrDgnstcReq"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageDefinition#getBusinessArea
  * businessArea} =
- * {@linkplain com.tools20022.repository.area.AcceptortoAcquirerCardTransactionLatestVersion
- * AcceptortoAcquirerCardTransactionLatestVersion}</li>
+ * {@linkplain com.tools20022.repository.area.AcceptortoAcquirerCardTransactionPreviousVersion
+ * AcceptortoAcquirerCardTransactionPreviousVersion}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code caaa.013.001.06}</li>
@@ -72,19 +73,20 @@ import javax.xml.bind.annotation.*;
  * "AcceptorDiagnosticRequestV06"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "The AcceptorDiagnosticRequest message is sent by an acceptor (or its agent) to the acquirer (or its agent) , to check the end-to-end communication, to test the availability of this acquirer, or to validate the security environment."
+ * "The AcceptorDiagnosticRequest message is sent by an acceptor (or its agent) to the acquirer (or its agent), to check the end-to-end communication, to test the availability of this acquirer, or to validate the security environment."
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AcceptorDiagnosticRequestV06", propOrder = {"header", "diagnosticRequest", "securityTrailer"})
 public class AcceptorDiagnosticRequestV06 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header30 header;
 	/**
-	 * Diagnostic request message management information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -104,7 +106,7 @@ public class AcceptorDiagnosticRequestV06 {
 	 * definition} = "Diagnostic request message management information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorDiagnosticRequestV06, Header30> mmHeader = new MMMessageBuildingBlock<AcceptorDiagnosticRequestV06, Header30>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -115,18 +117,21 @@ public class AcceptorDiagnosticRequestV06 {
 			complexType_lazy = () -> Header30.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorDiagnosticRequestV06.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header30 getValue(AcceptorDiagnosticRequestV06 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(AcceptorDiagnosticRequestV06 obj, Header30 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "DgnstcReq", required = true)
 	protected AcceptorDiagnosticRequest6 diagnosticRequest;
 	/**
-	 * Information related to the diagnostic request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -147,7 +152,7 @@ public class AcceptorDiagnosticRequestV06 {
 	 * definition} = "Information related to the diagnostic request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmDiagnosticRequest = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorDiagnosticRequestV06, AcceptorDiagnosticRequest6> mmDiagnosticRequest = new MMMessageBuildingBlock<AcceptorDiagnosticRequestV06, AcceptorDiagnosticRequest6>() {
 		{
 			xmlTag = "DgnstcReq";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -158,18 +163,21 @@ public class AcceptorDiagnosticRequestV06 {
 			complexType_lazy = () -> AcceptorDiagnosticRequest6.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorDiagnosticRequestV06.class.getMethod("getDiagnosticRequest", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AcceptorDiagnosticRequest6 getValue(AcceptorDiagnosticRequestV06 obj) {
+			return obj.getDiagnosticRequest();
+		}
+
+		@Override
+		public void setValue(AcceptorDiagnosticRequestV06 obj, AcceptorDiagnosticRequest6 value) {
+			obj.setDiagnosticRequest(value);
 		}
 	};
+	@XmlElement(name = "SctyTrlr")
 	protected ContentInformationType15 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -190,7 +198,7 @@ public class AcceptorDiagnosticRequestV06 {
 	 * definition} = "Trailer of the message containing a MAC."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorDiagnosticRequestV06, Optional<ContentInformationType15>> mmSecurityTrailer = new MMMessageBuildingBlock<AcceptorDiagnosticRequestV06, Optional<ContentInformationType15>>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -201,12 +209,14 @@ public class AcceptorDiagnosticRequestV06 {
 			complexType_lazy = () -> ContentInformationType15.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorDiagnosticRequestV06.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType15> getValue(AcceptorDiagnosticRequestV06 obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(AcceptorDiagnosticRequestV06 obj, Optional<ContentInformationType15> value) {
+			obj.setSecurityTrailer(value.orElse(null));
 		}
 	};
 
@@ -215,10 +225,10 @@ public class AcceptorDiagnosticRequestV06 {
 			{
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AcceptorDiagnosticRequestV06";
-				definition = "The AcceptorDiagnosticRequest message is sent by an acceptor (or its agent) to the acquirer (or its agent) , to check the end-to-end communication, to test the availability of this acquirer, or to validate the security environment.";
+				definition = "The AcceptorDiagnosticRequest message is sent by an acceptor (or its agent) to the acquirer (or its agent), to check the end-to-end communication, to test the availability of this acquirer, or to validate the security environment.";
 				rootElement = "Document";
 				xmlTag = "AccptrDgnstcReq";
-				businessArea_lazy = () -> AcceptortoAcquirerCardTransactionLatestVersion.mmObject();
+				businessArea_lazy = () -> AcceptortoAcquirerCardTransactionPreviousVersion.mmObject();
 				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.caaa.AcceptorDiagnosticRequestV06.mmHeader, com.tools20022.repository.area.caaa.AcceptorDiagnosticRequestV06.mmDiagnosticRequest,
 						com.tools20022.repository.area.caaa.AcceptorDiagnosticRequestV06.mmSecurityTrailer);
 				messageDefinitionIdentifier_lazy = () -> new MMMessageDefinitionIdentifier() {
@@ -239,34 +249,34 @@ public class AcceptorDiagnosticRequestV06 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header30 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header30 header) {
-		this.header = header;
+	public AcceptorDiagnosticRequestV06 setHeader(Header30 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "DgnstcReq", required = true)
 	public AcceptorDiagnosticRequest6 getDiagnosticRequest() {
 		return diagnosticRequest;
 	}
 
-	public void setDiagnosticRequest(AcceptorDiagnosticRequest6 diagnosticRequest) {
-		this.diagnosticRequest = diagnosticRequest;
+	public AcceptorDiagnosticRequestV06 setDiagnosticRequest(AcceptorDiagnosticRequest6 diagnosticRequest) {
+		this.diagnosticRequest = Objects.requireNonNull(diagnosticRequest);
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr")
-	public ContentInformationType15 getSecurityTrailer() {
-		return securityTrailer;
+	public Optional<ContentInformationType15> getSecurityTrailer() {
+		return securityTrailer == null ? Optional.empty() : Optional.of(securityTrailer);
 	}
 
-	public void setSecurityTrailer(ContentInformationType15 securityTrailer) {
+	public AcceptorDiagnosticRequestV06 setSecurityTrailer(ContentInformationType15 securityTrailer) {
 		this.securityTrailer = securityTrailer;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:caaa.013.06.06")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:caaa.013.001.06")
 	static public class Document {
 		@XmlElement(name = "AccptrDgnstcReq", required = true)
 		public AcceptorDiagnosticRequestV06 messageBody;

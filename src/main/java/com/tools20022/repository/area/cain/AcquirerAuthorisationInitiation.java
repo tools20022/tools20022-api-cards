@@ -25,9 +25,10 @@ import com.tools20022.repository.area.AcquirertoIssuerCardTransactionLatestVersi
 import com.tools20022.repository.msg.AcquirerAuthorisationInitiation1;
 import com.tools20022.repository.msg.ContentInformationType15;
 import com.tools20022.repository.msg.Header17;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -75,15 +76,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AcquirerAuthorisationInitiation", propOrder = {"header", "authorisationInitiation", "securityTrailer"})
 public class AcquirerAuthorisationInitiation {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header17 header;
 	/**
-	 * Information related to the protocol management.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,7 +105,7 @@ public class AcquirerAuthorisationInitiation {
 	 * definition} = "Information related to the protocol management."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcquirerAuthorisationInitiation, Header17> mmHeader = new MMMessageBuildingBlock<AcquirerAuthorisationInitiation, Header17>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -114,18 +116,21 @@ public class AcquirerAuthorisationInitiation {
 			complexType_lazy = () -> Header17.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcquirerAuthorisationInitiation.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header17 getValue(AcquirerAuthorisationInitiation obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(AcquirerAuthorisationInitiation obj, Header17 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "AuthstnInitn", required = true)
 	protected AcquirerAuthorisationInitiation1 authorisationInitiation;
 	/**
-	 * Information related to the authorisation initiation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -146,7 +151,7 @@ public class AcquirerAuthorisationInitiation {
 	 * definition} = "Information related to the authorisation initiation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmAuthorisationInitiation = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcquirerAuthorisationInitiation, AcquirerAuthorisationInitiation1> mmAuthorisationInitiation = new MMMessageBuildingBlock<AcquirerAuthorisationInitiation, AcquirerAuthorisationInitiation1>() {
 		{
 			xmlTag = "AuthstnInitn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -157,20 +162,21 @@ public class AcquirerAuthorisationInitiation {
 			complexType_lazy = () -> AcquirerAuthorisationInitiation1.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcquirerAuthorisationInitiation.class.getMethod("getAuthorisationInitiation", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AcquirerAuthorisationInitiation1 getValue(AcquirerAuthorisationInitiation obj) {
+			return obj.getAuthorisationInitiation();
+		}
+
+		@Override
+		public void setValue(AcquirerAuthorisationInitiation obj, AcquirerAuthorisationInitiation1 value) {
+			obj.setAuthorisationInitiation(value);
 		}
 	};
+	@XmlElement(name = "SctyTrlr")
 	protected ContentInformationType15 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC.<br>
-	 * It corresponds patially to ISO 8583 field number 53, completed by the
-	 * field number 64 or 128.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -193,7 +199,7 @@ public class AcquirerAuthorisationInitiation {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcquirerAuthorisationInitiation, Optional<ContentInformationType15>> mmSecurityTrailer = new MMMessageBuildingBlock<AcquirerAuthorisationInitiation, Optional<ContentInformationType15>>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -204,12 +210,14 @@ public class AcquirerAuthorisationInitiation {
 			complexType_lazy = () -> ContentInformationType15.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcquirerAuthorisationInitiation.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType15> getValue(AcquirerAuthorisationInitiation obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(AcquirerAuthorisationInitiation obj, Optional<ContentInformationType15> value) {
+			obj.setSecurityTrailer(value.orElse(null));
 		}
 	};
 
@@ -242,34 +250,34 @@ public class AcquirerAuthorisationInitiation {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header17 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header17 header) {
-		this.header = header;
+	public AcquirerAuthorisationInitiation setHeader(Header17 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "AuthstnInitn", required = true)
 	public AcquirerAuthorisationInitiation1 getAuthorisationInitiation() {
 		return authorisationInitiation;
 	}
 
-	public void setAuthorisationInitiation(AcquirerAuthorisationInitiation1 authorisationInitiation) {
-		this.authorisationInitiation = authorisationInitiation;
+	public AcquirerAuthorisationInitiation setAuthorisationInitiation(AcquirerAuthorisationInitiation1 authorisationInitiation) {
+		this.authorisationInitiation = Objects.requireNonNull(authorisationInitiation);
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr")
-	public ContentInformationType15 getSecurityTrailer() {
-		return securityTrailer;
+	public Optional<ContentInformationType15> getSecurityTrailer() {
+		return securityTrailer == null ? Optional.empty() : Optional.of(securityTrailer);
 	}
 
-	public void setSecurityTrailer(ContentInformationType15 securityTrailer) {
+	public AcquirerAuthorisationInitiation setSecurityTrailer(ContentInformationType15 securityTrailer) {
 		this.securityTrailer = securityTrailer;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:cain.001.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:cain.001.001.01")
 	static public class Document {
 		@XmlElement(name = "AcqrrAuthstnInitn", required = true)
 		public AcquirerAuthorisationInitiation messageBody;

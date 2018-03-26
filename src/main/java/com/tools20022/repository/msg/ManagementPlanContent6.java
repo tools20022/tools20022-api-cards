@@ -25,9 +25,9 @@ import com.tools20022.repository.datatype.Max10KBinary;
 import com.tools20022.repository.datatype.Max140Binary;
 import com.tools20022.repository.entity.TerminalManagementAction;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.TMSAction6;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -60,8 +60,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -72,15 +72,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Content of the management plan."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
-@XmlType(name = "ManagementPlanContent6", propOrder = {"TMChallenge", "keyEnciphermentCertificate", "action"})
+@XmlAccessorType(XmlAccessType.NONE)
+@XmlType(name = "ManagementPlanContent6", propOrder = {"tMChallenge", "keyEnciphermentCertificate", "action"})
 public class ManagementPlanContent6 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "TMChllng")
 	protected Max140Binary tMChallenge;
 	/**
-	 * Terminal manager challenge for cryptographic key injection.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,9 +108,9 @@ public class ManagementPlanContent6 {
 	 * "Terminal manager challenge for cryptographic key injection."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTMChallenge = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ManagementPlanContent6, Optional<Max140Binary>> mmTMChallenge = new MMMessageAttribute<ManagementPlanContent6, Optional<Max140Binary>>() {
 		{
-			componentContext_lazy = () -> ManagementPlanContent6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ManagementPlanContent6.mmObject();
 			isDerived = false;
 			xmlTag = "TMChllng";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -119,12 +120,22 @@ public class ManagementPlanContent6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Binary.mmObject();
 		}
+
+		@Override
+		public Optional<Max140Binary> getValue(ManagementPlanContent6 obj) {
+			return obj.getTMChallenge();
+		}
+
+		@Override
+		public void setValue(ManagementPlanContent6 obj, Optional<Max140Binary> value) {
+			obj.setTMChallenge(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "KeyNcphrmntCert")
 	protected List<Max10KBinary> keyEnciphermentCertificate;
 	/**
-	 * Certificate chain of an asymmetric encryption keys for the encryption of
-	 * temporary transport key of the key to inject.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -152,9 +163,9 @@ public class ManagementPlanContent6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmKeyEnciphermentCertificate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ManagementPlanContent6, List<Max10KBinary>> mmKeyEnciphermentCertificate = new MMMessageAttribute<ManagementPlanContent6, List<Max10KBinary>>() {
 		{
-			componentContext_lazy = () -> ManagementPlanContent6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ManagementPlanContent6.mmObject();
 			isDerived = false;
 			xmlTag = "KeyNcphrmntCert";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -163,12 +174,22 @@ public class ManagementPlanContent6 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max10KBinary.mmObject();
 		}
+
+		@Override
+		public List<Max10KBinary> getValue(ManagementPlanContent6 obj) {
+			return obj.getKeyEnciphermentCertificate();
+		}
+
+		@Override
+		public void setValue(ManagementPlanContent6 obj, List<Max10KBinary> value) {
+			obj.setKeyEnciphermentCertificate(value);
+		}
 	};
-	protected List<com.tools20022.repository.msg.TMSAction6> action;
+	@XmlElement(name = "Actn", required = true)
+	protected List<TMSAction6> action;
 	/**
-	 * Terminal management action to be performed by the point of interaction
-	 * (POI).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -193,9 +214,9 @@ public class ManagementPlanContent6 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmAction = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ManagementPlanContent6, List<TMSAction6>> mmAction = new MMMessageAssociationEnd<ManagementPlanContent6, List<TMSAction6>>() {
 		{
-			componentContext_lazy = () -> ManagementPlanContent6.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ManagementPlanContent6.mmObject();
 			isDerived = false;
 			xmlTag = "Actn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -203,16 +224,27 @@ public class ManagementPlanContent6 {
 			definition = "Terminal management action to be performed by the point of interaction (POI).";
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.TMSAction6.mmObject();
+			type_lazy = () -> TMSAction6.mmObject();
+		}
+
+		@Override
+		public List<TMSAction6> getValue(ManagementPlanContent6 obj) {
+			return obj.getAction();
+		}
+
+		@Override
+		public void setValue(ManagementPlanContent6 obj, List<TMSAction6> value) {
+			obj.setAction(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ManagementPlanContent6.mmTMChallenge, ManagementPlanContent6.mmKeyEnciphermentCertificate, ManagementPlanContent6.mmAction);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ManagementPlanContent6.mmTMChallenge, com.tools20022.repository.msg.ManagementPlanContent6.mmKeyEnciphermentCertificate,
+						com.tools20022.repository.msg.ManagementPlanContent6.mmAction);
 				trace_lazy = () -> TerminalManagementAction.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ManagementPlanContent6";
 				definition = "Content of the management plan.";
@@ -221,30 +253,30 @@ public class ManagementPlanContent6 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "TMChllng")
-	public Max140Binary getTMChallenge() {
-		return tMChallenge;
+	public Optional<Max140Binary> getTMChallenge() {
+		return tMChallenge == null ? Optional.empty() : Optional.of(tMChallenge);
 	}
 
-	public void setTMChallenge(Max140Binary tMChallenge) {
+	public ManagementPlanContent6 setTMChallenge(Max140Binary tMChallenge) {
 		this.tMChallenge = tMChallenge;
+		return this;
 	}
 
-	@XmlElement(name = "KeyNcphrmntCert")
 	public List<Max10KBinary> getKeyEnciphermentCertificate() {
-		return keyEnciphermentCertificate;
+		return keyEnciphermentCertificate == null ? keyEnciphermentCertificate = new ArrayList<>() : keyEnciphermentCertificate;
 	}
 
-	public void setKeyEnciphermentCertificate(List<Max10KBinary> keyEnciphermentCertificate) {
-		this.keyEnciphermentCertificate = keyEnciphermentCertificate;
+	public ManagementPlanContent6 setKeyEnciphermentCertificate(List<Max10KBinary> keyEnciphermentCertificate) {
+		this.keyEnciphermentCertificate = Objects.requireNonNull(keyEnciphermentCertificate);
+		return this;
 	}
 
-	@XmlElement(name = "Actn", required = true)
 	public List<TMSAction6> getAction() {
-		return action;
+		return action == null ? action = new ArrayList<>() : action;
 	}
 
-	public void setAction(List<com.tools20022.repository.msg.TMSAction6> action) {
-		this.action = action;
+	public ManagementPlanContent6 setAction(List<TMSAction6> action) {
+		this.action = Objects.requireNonNull(action);
+		return this;
 	}
 }

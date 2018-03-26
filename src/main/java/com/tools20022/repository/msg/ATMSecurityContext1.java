@@ -25,9 +25,10 @@ import com.tools20022.repository.codeset.ATMSecurityScheme1Code;
 import com.tools20022.repository.codeset.ATMSecurityScheme2Code;
 import com.tools20022.repository.datatype.Max140Binary;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.ATMSecurityDevice1;
+import com.tools20022.repository.msg.CryptographicKey7;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -61,8 +62,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -80,16 +81,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ATMSecurityContext1", propOrder = {"currentSecurityScheme", "securitySchemeCapabilities", "securityDevice", "key", "hostChallenge"})
 public class ATMSecurityContext1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "CurSctySchme", required = true)
 	protected ATMSecurityScheme1Code currentSecurityScheme;
 	/**
-	 * Key exchange security scheme in activation on the ATM for the host
-	 * manager.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -125,9 +126,9 @@ public class ATMSecurityContext1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCurrentSecurityScheme = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMSecurityContext1, ATMSecurityScheme1Code> mmCurrentSecurityScheme = new MMMessageAttribute<ATMSecurityContext1, ATMSecurityScheme1Code>() {
 		{
-			componentContext_lazy = () -> ATMSecurityContext1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMSecurityContext1.mmObject();
 			isDerived = false;
 			xmlTag = "CurSctySchme";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -138,12 +139,22 @@ public class ATMSecurityContext1 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ATMSecurityScheme1Code.mmObject();
 		}
+
+		@Override
+		public ATMSecurityScheme1Code getValue(ATMSecurityContext1 obj) {
+			return obj.getCurrentSecurityScheme();
+		}
+
+		@Override
+		public void setValue(ATMSecurityContext1 obj, ATMSecurityScheme1Code value) {
+			obj.setCurrentSecurityScheme(value);
+		}
 	};
+	@XmlElement(name = "SctySchmeCpblties")
 	protected List<ATMSecurityScheme2Code> securitySchemeCapabilities;
 	/**
-	 * Key exchange security schemes implemented in the hardware security module
-	 * of the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -171,9 +182,9 @@ public class ATMSecurityContext1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSecuritySchemeCapabilities = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMSecurityContext1, List<ATMSecurityScheme2Code>> mmSecuritySchemeCapabilities = new MMMessageAttribute<ATMSecurityContext1, List<ATMSecurityScheme2Code>>() {
 		{
-			componentContext_lazy = () -> ATMSecurityContext1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMSecurityContext1.mmObject();
 			isDerived = false;
 			xmlTag = "SctySchmeCpblties";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -182,11 +193,22 @@ public class ATMSecurityContext1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ATMSecurityScheme2Code.mmObject();
 		}
+
+		@Override
+		public List<ATMSecurityScheme2Code> getValue(ATMSecurityContext1 obj) {
+			return obj.getSecuritySchemeCapabilities();
+		}
+
+		@Override
+		public void setValue(ATMSecurityContext1 obj, List<ATMSecurityScheme2Code> value) {
+			obj.setSecuritySchemeCapabilities(value);
+		}
 	};
+	@XmlElement(name = "SctyDvc", required = true)
 	protected ATMSecurityDevice1 securityDevice;
 	/**
-	 * Hardware security module of the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -210,9 +232,9 @@ public class ATMSecurityContext1 {
 	 * definition} = "Hardware security module of the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSecurityDevice = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMSecurityContext1, ATMSecurityDevice1> mmSecurityDevice = new MMMessageAssociationEnd<ATMSecurityContext1, ATMSecurityDevice1>() {
 		{
-			componentContext_lazy = () -> ATMSecurityContext1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMSecurityContext1.mmObject();
 			isDerived = false;
 			xmlTag = "SctyDvc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -221,13 +243,24 @@ public class ATMSecurityContext1 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMSecurityDevice1.mmObject();
+			type_lazy = () -> ATMSecurityDevice1.mmObject();
+		}
+
+		@Override
+		public ATMSecurityDevice1 getValue(ATMSecurityContext1 obj) {
+			return obj.getSecurityDevice();
+		}
+
+		@Override
+		public void setValue(ATMSecurityContext1 obj, ATMSecurityDevice1 value) {
+			obj.setSecurityDevice(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.CryptographicKey7> key;
+	@XmlElement(name = "Key")
+	protected List<CryptographicKey7> key;
 	/**
-	 * Cryptographic keys stored in the hardware security module of the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -252,9 +285,9 @@ public class ATMSecurityContext1 {
 	 * "Cryptographic keys stored in the hardware security module of the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmKey = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMSecurityContext1, List<CryptographicKey7>> mmKey = new MMMessageAssociationEnd<ATMSecurityContext1, List<CryptographicKey7>>() {
 		{
-			componentContext_lazy = () -> ATMSecurityContext1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMSecurityContext1.mmObject();
 			isDerived = false;
 			xmlTag = "Key";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -262,13 +295,24 @@ public class ATMSecurityContext1 {
 			definition = "Cryptographic keys stored in the hardware security module of the ATM.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CryptographicKey7.mmObject();
+			type_lazy = () -> CryptographicKey7.mmObject();
+		}
+
+		@Override
+		public List<CryptographicKey7> getValue(ATMSecurityContext1 obj) {
+			return obj.getKey();
+		}
+
+		@Override
+		public void setValue(ATMSecurityContext1 obj, List<CryptographicKey7> value) {
+			obj.setKey(value);
 		}
 	};
+	@XmlElement(name = "HstChllng")
 	protected Max140Binary hostChallenge;
 	/**
-	 * Random value from the host provided during a previous exchange.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -295,9 +339,9 @@ public class ATMSecurityContext1 {
 	 * "Random value from the host provided during a previous exchange."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmHostChallenge = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMSecurityContext1, Optional<Max140Binary>> mmHostChallenge = new MMMessageAttribute<ATMSecurityContext1, Optional<Max140Binary>>() {
 		{
-			componentContext_lazy = () -> ATMSecurityContext1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMSecurityContext1.mmObject();
 			isDerived = false;
 			xmlTag = "HstChllng";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -307,14 +351,24 @@ public class ATMSecurityContext1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Binary.mmObject();
 		}
+
+		@Override
+		public Optional<Max140Binary> getValue(ATMSecurityContext1 obj) {
+			return obj.getHostChallenge();
+		}
+
+		@Override
+		public void setValue(ATMSecurityContext1 obj, Optional<Max140Binary> value) {
+			obj.setHostChallenge(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ATMSecurityContext1.mmCurrentSecurityScheme, ATMSecurityContext1.mmSecuritySchemeCapabilities, ATMSecurityContext1.mmSecurityDevice, ATMSecurityContext1.mmKey,
-						ATMSecurityContext1.mmHostChallenge);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ATMSecurityContext1.mmCurrentSecurityScheme, com.tools20022.repository.msg.ATMSecurityContext1.mmSecuritySchemeCapabilities,
+						com.tools20022.repository.msg.ATMSecurityContext1.mmSecurityDevice, com.tools20022.repository.msg.ATMSecurityContext1.mmKey, com.tools20022.repository.msg.ATMSecurityContext1.mmHostChallenge);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMSecurityContext1";
 				definition = "Information related to security commands.";
@@ -324,48 +378,48 @@ public class ATMSecurityContext1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "CurSctySchme", required = true)
 	public ATMSecurityScheme1Code getCurrentSecurityScheme() {
 		return currentSecurityScheme;
 	}
 
-	public void setCurrentSecurityScheme(ATMSecurityScheme1Code currentSecurityScheme) {
-		this.currentSecurityScheme = currentSecurityScheme;
+	public ATMSecurityContext1 setCurrentSecurityScheme(ATMSecurityScheme1Code currentSecurityScheme) {
+		this.currentSecurityScheme = Objects.requireNonNull(currentSecurityScheme);
+		return this;
 	}
 
-	@XmlElement(name = "SctySchmeCpblties")
 	public List<ATMSecurityScheme2Code> getSecuritySchemeCapabilities() {
-		return securitySchemeCapabilities;
+		return securitySchemeCapabilities == null ? securitySchemeCapabilities = new ArrayList<>() : securitySchemeCapabilities;
 	}
 
-	public void setSecuritySchemeCapabilities(List<ATMSecurityScheme2Code> securitySchemeCapabilities) {
-		this.securitySchemeCapabilities = securitySchemeCapabilities;
+	public ATMSecurityContext1 setSecuritySchemeCapabilities(List<ATMSecurityScheme2Code> securitySchemeCapabilities) {
+		this.securitySchemeCapabilities = Objects.requireNonNull(securitySchemeCapabilities);
+		return this;
 	}
 
-	@XmlElement(name = "SctyDvc", required = true)
 	public ATMSecurityDevice1 getSecurityDevice() {
 		return securityDevice;
 	}
 
-	public void setSecurityDevice(com.tools20022.repository.msg.ATMSecurityDevice1 securityDevice) {
-		this.securityDevice = securityDevice;
+	public ATMSecurityContext1 setSecurityDevice(ATMSecurityDevice1 securityDevice) {
+		this.securityDevice = Objects.requireNonNull(securityDevice);
+		return this;
 	}
 
-	@XmlElement(name = "Key")
 	public List<CryptographicKey7> getKey() {
-		return key;
+		return key == null ? key = new ArrayList<>() : key;
 	}
 
-	public void setKey(List<com.tools20022.repository.msg.CryptographicKey7> key) {
-		this.key = key;
+	public ATMSecurityContext1 setKey(List<CryptographicKey7> key) {
+		this.key = Objects.requireNonNull(key);
+		return this;
 	}
 
-	@XmlElement(name = "HstChllng")
-	public Max140Binary getHostChallenge() {
-		return hostChallenge;
+	public Optional<Max140Binary> getHostChallenge() {
+		return hostChallenge == null ? Optional.empty() : Optional.of(hostChallenge);
 	}
 
-	public void setHostChallenge(Max140Binary hostChallenge) {
+	public ATMSecurityContext1 setHostChallenge(Max140Binary hostChallenge) {
 		this.hostChallenge = hostChallenge;
+		return this;
 	}
 }

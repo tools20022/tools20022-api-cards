@@ -19,7 +19,7 @@ package com.tools20022.repository.area;
 
 import com.tools20022.metamodel.MMBusinessArea;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.catm.*;
+import com.tools20022.repository.area.catm.TerminalManagementRejectionV04;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -36,35 +36,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * messageDefinition} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.catm.MaintenanceDelegationResponseV02
- * MaintenanceDelegationResponseV02}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.catm.TerminalManagementRejectionV04
  * TerminalManagementRejectionV04}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.catm.CertificateManagementResponseV01
- * CertificateManagementResponseV01}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.catm.CertificateManagementRequestV01
- * CertificateManagementRequestV01}</li>
- * <li>{@linkplain com.tools20022.repository.area.catm.StatusReportV06
- * StatusReportV06}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.catm.AcceptorConfigurationUpdateV06
- * AcceptorConfigurationUpdateV06}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.catm.MaintenanceDelegationRequestV03
- * MaintenanceDelegationRequestV03}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.catm.ManagementPlanReplacementV06
- * ManagementPlanReplacementV06}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelCatalogueEntry#getBusinessProcessCatalogue
  * businessProcessCatalogue} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmcatalogue
- * GeneratedRepository.mmcatalogue}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#catalogue
+ * GeneratedRepository.catalogue}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,13 +64,12 @@ public class TerminalManagementLatestVersion {
 	final static public MMBusinessArea mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessArea() {
 			{
-				businessProcessCatalogue_lazy = () -> GeneratedRepository.mmcatalogue;
+				businessProcessCatalogue_lazy = () -> GeneratedRepository.catalogue;
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "Terminal Management - Latest version - master";
 				definition = "Messages that support any card related terminal management services between a Terminal Management System (TMS) and a Point of Interaction (POI) system.";
+				messageDefinition_lazy = () -> Arrays.asList(TerminalManagementRejectionV04.mmObject());
 				code = "catm";
-				messageDefinition_lazy = () -> Arrays.asList(MaintenanceDelegationResponseV02.mmObject(), TerminalManagementRejectionV04.mmObject(), CertificateManagementResponseV01.mmObject(), CertificateManagementRequestV01.mmObject(),
-						StatusReportV06.mmObject(), AcceptorConfigurationUpdateV06.mmObject(), MaintenanceDelegationRequestV03.mmObject(), ManagementPlanReplacementV06.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

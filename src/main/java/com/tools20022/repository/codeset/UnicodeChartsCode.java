@@ -31,15 +31,23 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  * codelist containing the names of the UNICODE code block name as specified on
- * http://unicode.org/Public/UNIDATA/Blocks.txt
+ * http://unicode.org/Public/UNIDATA/Blocks.txt.
  * <p>
  * <strong>Constant fields:</strong>
  * <ul>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getConstraint
+ * constraint} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.constraints.ConstraintValidationByTable#forUnicodeChartsCode
+ * ConstraintValidationByTable.forUnicodeChartsCode}</li>
+ * </ul>
+ * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -54,7 +62,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "UnicodeChartsCode"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "codelist containing the names of the UNICODE code block name as specified on http://unicode.org/Public/UNIDATA/Blocks.txt"
+ * "codelist containing the names of the UNICODE code block name as specified on http://unicode.org/Public/UNIDATA/Blocks.txt."
  * </li>
  * </ul>
  */
@@ -70,11 +78,12 @@ public class UnicodeChartsCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
+				constraint_lazy = () -> Arrays.asList(com.tools20022.repository.constraints.ConstraintValidationByTable.forUnicodeChartsCode);
 				example = Arrays.asList("basic latin");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnicodeChartsCode";
-				definition = "codelist containing the names of the UNICODE code block name as specified on http://unicode.org/Public/UNIDATA/Blocks.txt";
+				definition = "codelist containing the names of the UNICODE code block name as specified on http://unicode.org/Public/UNIDATA/Blocks.txt.";
 			}
 		});
 		return mmObject_lazy.get();

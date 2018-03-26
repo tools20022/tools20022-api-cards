@@ -21,13 +21,14 @@ import com.tools20022.metamodel.MMMessageBuildingBlock;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.AcceptortoAcquirerCardTransactionLatestVersion;
+import com.tools20022.repository.area.AcceptortoAcquirerCardTransactionPreviousVersion;
 import com.tools20022.repository.msg.AcceptorDiagnosticResponse4;
 import com.tools20022.repository.msg.ContentInformationType15;
 import com.tools20022.repository.msg.Header30;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -57,8 +58,8 @@ import javax.xml.bind.annotation.*;
  * xmlTag} = "AccptrDgnstcRspn"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageDefinition#getBusinessArea
  * businessArea} =
- * {@linkplain com.tools20022.repository.area.AcceptortoAcquirerCardTransactionLatestVersion
- * AcceptortoAcquirerCardTransactionLatestVersion}</li>
+ * {@linkplain com.tools20022.repository.area.AcceptortoAcquirerCardTransactionPreviousVersion
+ * AcceptortoAcquirerCardTransactionPreviousVersion}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code caaa.014.001.05}</li>
@@ -74,15 +75,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AcceptorDiagnosticResponseV05", propOrder = {"header", "diagnosticResponse", "securityTrailer"})
 public class AcceptorDiagnosticResponseV05 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header30 header;
 	/**
-	 * Diagnostic response message management information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -102,7 +104,7 @@ public class AcceptorDiagnosticResponseV05 {
 	 * definition} = "Diagnostic response message management information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorDiagnosticResponseV05, Header30> mmHeader = new MMMessageBuildingBlock<AcceptorDiagnosticResponseV05, Header30>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -113,18 +115,21 @@ public class AcceptorDiagnosticResponseV05 {
 			complexType_lazy = () -> Header30.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorDiagnosticResponseV05.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header30 getValue(AcceptorDiagnosticResponseV05 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(AcceptorDiagnosticResponseV05 obj, Header30 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "DgnstcRspn", required = true)
 	protected AcceptorDiagnosticResponse4 diagnosticResponse;
 	/**
-	 * Information related to the diagnostic response.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -145,7 +150,7 @@ public class AcceptorDiagnosticResponseV05 {
 	 * definition} = "Information related to the diagnostic response."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmDiagnosticResponse = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorDiagnosticResponseV05, AcceptorDiagnosticResponse4> mmDiagnosticResponse = new MMMessageBuildingBlock<AcceptorDiagnosticResponseV05, AcceptorDiagnosticResponse4>() {
 		{
 			xmlTag = "DgnstcRspn";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -156,18 +161,21 @@ public class AcceptorDiagnosticResponseV05 {
 			complexType_lazy = () -> AcceptorDiagnosticResponse4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorDiagnosticResponseV05.class.getMethod("getDiagnosticResponse", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AcceptorDiagnosticResponse4 getValue(AcceptorDiagnosticResponseV05 obj) {
+			return obj.getDiagnosticResponse();
+		}
+
+		@Override
+		public void setValue(AcceptorDiagnosticResponseV05 obj, AcceptorDiagnosticResponse4 value) {
+			obj.setDiagnosticResponse(value);
 		}
 	};
+	@XmlElement(name = "SctyTrlr")
 	protected ContentInformationType15 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -188,7 +196,7 @@ public class AcceptorDiagnosticResponseV05 {
 	 * definition} = "Trailer of the message containing a MAC."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorDiagnosticResponseV05, Optional<ContentInformationType15>> mmSecurityTrailer = new MMMessageBuildingBlock<AcceptorDiagnosticResponseV05, Optional<ContentInformationType15>>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -199,12 +207,14 @@ public class AcceptorDiagnosticResponseV05 {
 			complexType_lazy = () -> ContentInformationType15.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorDiagnosticResponseV05.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType15> getValue(AcceptorDiagnosticResponseV05 obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(AcceptorDiagnosticResponseV05 obj, Optional<ContentInformationType15> value) {
+			obj.setSecurityTrailer(value.orElse(null));
 		}
 	};
 
@@ -216,7 +226,7 @@ public class AcceptorDiagnosticResponseV05 {
 				definition = "The AcceptorDiagnosticResponse message is sent by the acquirer (or its agent) to provide to the acceptor the result of the diagnostic request.";
 				rootElement = "Document";
 				xmlTag = "AccptrDgnstcRspn";
-				businessArea_lazy = () -> AcceptortoAcquirerCardTransactionLatestVersion.mmObject();
+				businessArea_lazy = () -> AcceptortoAcquirerCardTransactionPreviousVersion.mmObject();
 				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.caaa.AcceptorDiagnosticResponseV05.mmHeader, com.tools20022.repository.area.caaa.AcceptorDiagnosticResponseV05.mmDiagnosticResponse,
 						com.tools20022.repository.area.caaa.AcceptorDiagnosticResponseV05.mmSecurityTrailer);
 				messageDefinitionIdentifier_lazy = () -> new MMMessageDefinitionIdentifier() {
@@ -237,34 +247,34 @@ public class AcceptorDiagnosticResponseV05 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header30 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header30 header) {
-		this.header = header;
+	public AcceptorDiagnosticResponseV05 setHeader(Header30 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "DgnstcRspn", required = true)
 	public AcceptorDiagnosticResponse4 getDiagnosticResponse() {
 		return diagnosticResponse;
 	}
 
-	public void setDiagnosticResponse(AcceptorDiagnosticResponse4 diagnosticResponse) {
-		this.diagnosticResponse = diagnosticResponse;
+	public AcceptorDiagnosticResponseV05 setDiagnosticResponse(AcceptorDiagnosticResponse4 diagnosticResponse) {
+		this.diagnosticResponse = Objects.requireNonNull(diagnosticResponse);
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr")
-	public ContentInformationType15 getSecurityTrailer() {
-		return securityTrailer;
+	public Optional<ContentInformationType15> getSecurityTrailer() {
+		return securityTrailer == null ? Optional.empty() : Optional.of(securityTrailer);
 	}
 
-	public void setSecurityTrailer(ContentInformationType15 securityTrailer) {
+	public AcceptorDiagnosticResponseV05 setSecurityTrailer(ContentInformationType15 securityTrailer) {
 		this.securityTrailer = securityTrailer;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:caaa.014.05.05")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:caaa.014.001.05")
 	static public class Document {
 		@XmlElement(name = "AccptrDgnstcRspn", required = true)
 		public AcceptorDiagnosticResponseV05 messageBody;

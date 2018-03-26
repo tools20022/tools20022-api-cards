@@ -21,11 +21,14 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.Goods;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Role played by a party in the context of handling goods.
@@ -56,8 +59,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -71,10 +74,10 @@ import java.util.List;
 public class GoodsPartyRole extends Role {
 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
-	protected List<com.tools20022.repository.entity.Goods> item;
+	protected List<Goods> item;
 	/**
-	 * Item produced by the manufacturer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -104,7 +107,7 @@ public class GoodsPartyRole extends Role {
 	 * definition} = "Item produced by the manufacturer."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmItem = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<GoodsPartyRole, List<Goods>> mmItem = new MMBusinessAssociationEnd<GoodsPartyRole, List<Goods>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.GoodsPartyRole.mmObject();
@@ -112,20 +115,30 @@ public class GoodsPartyRole extends Role {
 			name = "Item";
 			definition = "Item produced by the manufacturer.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Goods.mmPartyRole;
+			opposite_lazy = () -> Goods.mmPartyRole;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Goods.mmObject();
+			type_lazy = () -> Goods.mmObject();
+		}
+
+		@Override
+		public List<Goods> getValue(GoodsPartyRole obj) {
+			return obj.getItem();
+		}
+
+		@Override
+		public void setValue(GoodsPartyRole obj, List<Goods> value) {
+			obj.setItem(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "GoodsPartyRole";
 				definition = "Role played by a party in the context of handling goods.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Goods.mmPartyRole);
+				associationDomain_lazy = () -> Arrays.asList(Goods.mmPartyRole);
 				superType_lazy = () -> Role.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.GoodsPartyRole.mmItem);
 			}
@@ -139,10 +152,11 @@ public class GoodsPartyRole extends Role {
 	}
 
 	public List<Goods> getItem() {
-		return item;
+		return item == null ? item = new ArrayList<>() : item;
 	}
 
-	public void setItem(List<com.tools20022.repository.entity.Goods> item) {
-		this.item = item;
+	public GoodsPartyRole setItem(List<Goods> item) {
+		this.item = Objects.requireNonNull(item);
+		return this;
 	}
 }

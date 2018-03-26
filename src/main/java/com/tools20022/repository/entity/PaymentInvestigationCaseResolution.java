@@ -19,12 +19,10 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.InvestigationExecutionConfirmationCode;
-import com.tools20022.repository.entity.InvestigationResolution;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Specifies the status of an investigation case and the actions taken as a
@@ -100,8 +98,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -119,8 +117,8 @@ public class PaymentInvestigationCaseResolution extends InvestigationResolution 
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected InvestigationExecutionConfirmationCode investigationStatus;
 	/**
-	 * Status of the investigation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -144,7 +142,7 @@ public class PaymentInvestigationCaseResolution extends InvestigationResolution 
 	 * definition} = "Status of the investigation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmInvestigationStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<PaymentInvestigationCaseResolution, InvestigationExecutionConfirmationCode> mmInvestigationStatus = new MMBusinessAttribute<PaymentInvestigationCaseResolution, InvestigationExecutionConfirmationCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseResolution.mmObject();
@@ -156,20 +154,20 @@ public class PaymentInvestigationCaseResolution extends InvestigationResolution 
 			simpleType_lazy = () -> InvestigationExecutionConfirmationCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return PaymentInvestigationCaseResolution.class.getMethod("getInvestigationStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public InvestigationExecutionConfirmationCode getValue(PaymentInvestigationCaseResolution obj) {
+			return obj.getInvestigationStatus();
+		}
+
+		@Override
+		public void setValue(PaymentInvestigationCaseResolution obj, InvestigationExecutionConfirmationCode value) {
+			obj.setInvestigationStatus(value);
 		}
 	};
 	protected DebitAuthorisation debitAuthorisationConfirmation;
 	/**
-	 * Permission given by an account owner to debit its account as the result
-	 * of a cancelled payment. The authoriser is the party whose account was
-	 * credited as the result of a payment instruction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -202,7 +200,7 @@ public class PaymentInvestigationCaseResolution extends InvestigationResolution 
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDebitAuthorisationConfirmation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentInvestigationCaseResolution, Optional<DebitAuthorisation>> mmDebitAuthorisationConfirmation = new MMBusinessAssociationEnd<PaymentInvestigationCaseResolution, Optional<DebitAuthorisation>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseResolution.mmObject();
@@ -211,16 +209,25 @@ public class PaymentInvestigationCaseResolution extends InvestigationResolution 
 			definition = "Permission given by an account owner to debit its account as the result of a cancelled payment. The authoriser is the party whose account was credited as the result of a payment instruction.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.DebitAuthorisation.mmRelatedInvestigationCaseResolution;
+			opposite_lazy = () -> DebitAuthorisation.mmRelatedInvestigationCaseResolution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DebitAuthorisation.mmObject();
+			type_lazy = () -> DebitAuthorisation.mmObject();
+		}
+
+		@Override
+		public Optional<DebitAuthorisation> getValue(PaymentInvestigationCaseResolution obj) {
+			return obj.getDebitAuthorisationConfirmation();
+		}
+
+		@Override
+		public void setValue(PaymentInvestigationCaseResolution obj, Optional<DebitAuthorisation> value) {
+			obj.setDebitAuthorisationConfirmation(value.orElse(null));
 		}
 	};
 	protected CashSettlement coverCorrection;
 	/**
-	 * Elements provided to correct the cover instruction for the resolution of
-	 * the claim non receipt initiated case.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -253,7 +260,7 @@ public class PaymentInvestigationCaseResolution extends InvestigationResolution 
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCoverCorrection = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentInvestigationCaseResolution, Optional<CashSettlement>> mmCoverCorrection = new MMBusinessAssociationEnd<PaymentInvestigationCaseResolution, Optional<CashSettlement>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseResolution.mmObject();
@@ -262,16 +269,25 @@ public class PaymentInvestigationCaseResolution extends InvestigationResolution 
 			definition = "Elements provided to correct the cover instruction for the resolution of the claim non receipt initiated case.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmRelatedInvestigationCase;
+			opposite_lazy = () -> CashSettlement.mmRelatedInvestigationCase;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashSettlement.mmObject();
+			type_lazy = () -> CashSettlement.mmObject();
+		}
+
+		@Override
+		public Optional<CashSettlement> getValue(PaymentInvestigationCaseResolution obj) {
+			return obj.getCoverCorrection();
+		}
+
+		@Override
+		public void setValue(PaymentInvestigationCaseResolution obj, Optional<CashSettlement> value) {
+			obj.setCoverCorrection(value.orElse(null));
 		}
 	};
-	protected List<com.tools20022.repository.entity.CashEntry> entryCorrection;
+	protected List<CashEntry> entryCorrection;
 	/**
-	 * The case resolution leads to the correction of a cash entry into an
-	 * account.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -304,7 +320,7 @@ public class PaymentInvestigationCaseResolution extends InvestigationResolution 
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmEntryCorrection = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentInvestigationCaseResolution, List<CashEntry>> mmEntryCorrection = new MMBusinessAssociationEnd<PaymentInvestigationCaseResolution, List<CashEntry>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseResolution.mmObject();
@@ -312,15 +328,25 @@ public class PaymentInvestigationCaseResolution extends InvestigationResolution 
 			name = "EntryCorrection";
 			definition = "The case resolution leads to the correction of a cash entry into an account.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CashEntry.mmRelatedInvestigationCaseResolution;
+			opposite_lazy = () -> CashEntry.mmRelatedInvestigationCaseResolution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CashEntry.mmObject();
+			type_lazy = () -> CashEntry.mmObject();
+		}
+
+		@Override
+		public List<CashEntry> getValue(PaymentInvestigationCaseResolution obj) {
+			return obj.getEntryCorrection();
+		}
+
+		@Override
+		public void setValue(PaymentInvestigationCaseResolution obj, List<CashEntry> value) {
+			obj.setEntryCorrection(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.Payment> paymentCorrection;
+	protected List<Payment> paymentCorrection;
 	/**
-	 * The case resolution leads to the correction of a payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -351,7 +377,7 @@ public class PaymentInvestigationCaseResolution extends InvestigationResolution 
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPaymentCorrection = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentInvestigationCaseResolution, List<Payment>> mmPaymentCorrection = new MMBusinessAssociationEnd<PaymentInvestigationCaseResolution, List<Payment>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseResolution.mmObject();
@@ -359,15 +385,25 @@ public class PaymentInvestigationCaseResolution extends InvestigationResolution 
 			name = "PaymentCorrection";
 			definition = "The case resolution leads to the correction of a payment.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.Payment.mmRelatedInvestigationCaseResolution;
+			opposite_lazy = () -> Payment.mmRelatedInvestigationCaseResolution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.Payment.mmObject();
+			type_lazy = () -> Payment.mmObject();
+		}
+
+		@Override
+		public List<Payment> getValue(PaymentInvestigationCaseResolution obj) {
+			return obj.getPaymentCorrection();
+		}
+
+		@Override
+		public void setValue(PaymentInvestigationCaseResolution obj, List<Payment> value) {
+			obj.setPaymentCorrection(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.PaymentExecution> paymentExecutionCorrection;
+	protected List<PaymentExecution> paymentExecutionCorrection;
 	/**
-	 * The case resolution leads to the correction of a payment execution.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -399,7 +435,7 @@ public class PaymentInvestigationCaseResolution extends InvestigationResolution 
 	 * "The case resolution leads to the correction of a payment execution."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPaymentExecutionCorrection = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentInvestigationCaseResolution, List<PaymentExecution>> mmPaymentExecutionCorrection = new MMBusinessAssociationEnd<PaymentInvestigationCaseResolution, List<PaymentExecution>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseResolution.mmObject();
@@ -407,17 +443,25 @@ public class PaymentInvestigationCaseResolution extends InvestigationResolution 
 			name = "PaymentExecutionCorrection";
 			definition = "The case resolution leads to the correction of a payment execution.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentExecution.mmRelatedInvestigationCaseResolution;
+			opposite_lazy = () -> PaymentExecution.mmRelatedInvestigationCaseResolution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentExecution.mmObject();
+			type_lazy = () -> PaymentExecution.mmObject();
+		}
+
+		@Override
+		public List<PaymentExecution> getValue(PaymentInvestigationCaseResolution obj) {
+			return obj.getPaymentExecutionCorrection();
+		}
+
+		@Override
+		public void setValue(PaymentInvestigationCaseResolution obj, List<PaymentExecution> value) {
+			obj.setPaymentExecutionCorrection(value);
 		}
 	};
 	protected PaymentInvestigationCaseRejection investigationCaseRejection;
 	/**
-	 * Specifies the rejection of an activity linked to a payment. The rejected
-	 * activity may be the assignment of an investigation case, the cancellation
-	 * or the modification of a payment.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -451,7 +495,7 @@ public class PaymentInvestigationCaseResolution extends InvestigationResolution 
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvestigationCaseRejection = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentInvestigationCaseResolution, PaymentInvestigationCaseRejection> mmInvestigationCaseRejection = new MMBusinessAssociationEnd<PaymentInvestigationCaseResolution, PaymentInvestigationCaseRejection>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseResolution.mmObject();
@@ -460,16 +504,25 @@ public class PaymentInvestigationCaseResolution extends InvestigationResolution 
 			definition = "Specifies the rejection of an activity linked to a payment. The rejected activity may be the assignment of an investigation case, the cancellation or  the modification of a payment.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseRejection.mmRelatedInvestigationCaseResolution;
+			opposite_lazy = () -> PaymentInvestigationCaseRejection.mmRelatedInvestigationCaseResolution;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseRejection.mmObject();
+			type_lazy = () -> PaymentInvestigationCaseRejection.mmObject();
+		}
+
+		@Override
+		public PaymentInvestigationCaseRejection getValue(PaymentInvestigationCaseResolution obj) {
+			return obj.getInvestigationCaseRejection();
+		}
+
+		@Override
+		public void setValue(PaymentInvestigationCaseResolution obj, PaymentInvestigationCaseRejection value) {
+			obj.setInvestigationCaseRejection(value);
 		}
 	};
 	protected List<com.tools20022.repository.entity.DuplicateCase> duplicateCase;
 	/**
-	 * Outcome that results in closing a case as duplicate because the same
-	 * issue has been reported by another party.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -502,7 +555,7 @@ public class PaymentInvestigationCaseResolution extends InvestigationResolution 
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDuplicateCase = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<PaymentInvestigationCaseResolution, List<DuplicateCase>> mmDuplicateCase = new MMBusinessAssociationEnd<PaymentInvestigationCaseResolution, List<DuplicateCase>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PaymentInvestigationCaseResolution.mmObject();
@@ -514,18 +567,27 @@ public class PaymentInvestigationCaseResolution extends InvestigationResolution 
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.DuplicateCase.mmObject();
 		}
+
+		@Override
+		public List<DuplicateCase> getValue(PaymentInvestigationCaseResolution obj) {
+			return obj.getDuplicateCase();
+		}
+
+		@Override
+		public void setValue(PaymentInvestigationCaseResolution obj, List<DuplicateCase> value) {
+			obj.setDuplicateCase(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PaymentInvestigationCaseResolution";
 				definition = "Specifies the status of an investigation case and the actions taken as a result of this status.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Payment.mmRelatedInvestigationCaseResolution, com.tools20022.repository.entity.CashEntry.mmRelatedInvestigationCaseResolution,
-						com.tools20022.repository.entity.PaymentExecution.mmRelatedInvestigationCaseResolution, com.tools20022.repository.entity.CashSettlement.mmRelatedInvestigationCase,
-						com.tools20022.repository.entity.DebitAuthorisation.mmRelatedInvestigationCaseResolution, com.tools20022.repository.entity.PaymentInvestigationCaseRejection.mmRelatedInvestigationCaseResolution,
+				associationDomain_lazy = () -> Arrays.asList(Payment.mmRelatedInvestigationCaseResolution, CashEntry.mmRelatedInvestigationCaseResolution, PaymentExecution.mmRelatedInvestigationCaseResolution,
+						CashSettlement.mmRelatedInvestigationCase, DebitAuthorisation.mmRelatedInvestigationCaseResolution, PaymentInvestigationCaseRejection.mmRelatedInvestigationCaseResolution,
 						com.tools20022.repository.entity.DuplicateCase.mmRelatedCaseResolution);
 				superType_lazy = () -> InvestigationResolution.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentInvestigationCaseResolution.mmInvestigationStatus,
@@ -547,63 +609,71 @@ public class PaymentInvestigationCaseResolution extends InvestigationResolution 
 		return investigationStatus;
 	}
 
-	public void setInvestigationStatus(InvestigationExecutionConfirmationCode investigationStatus) {
-		this.investigationStatus = investigationStatus;
+	public PaymentInvestigationCaseResolution setInvestigationStatus(InvestigationExecutionConfirmationCode investigationStatus) {
+		this.investigationStatus = Objects.requireNonNull(investigationStatus);
+		return this;
 	}
 
-	public DebitAuthorisation getDebitAuthorisationConfirmation() {
-		return debitAuthorisationConfirmation;
+	public Optional<DebitAuthorisation> getDebitAuthorisationConfirmation() {
+		return debitAuthorisationConfirmation == null ? Optional.empty() : Optional.of(debitAuthorisationConfirmation);
 	}
 
-	public void setDebitAuthorisationConfirmation(com.tools20022.repository.entity.DebitAuthorisation debitAuthorisationConfirmation) {
+	public PaymentInvestigationCaseResolution setDebitAuthorisationConfirmation(DebitAuthorisation debitAuthorisationConfirmation) {
 		this.debitAuthorisationConfirmation = debitAuthorisationConfirmation;
+		return this;
 	}
 
-	public CashSettlement getCoverCorrection() {
-		return coverCorrection;
+	public Optional<CashSettlement> getCoverCorrection() {
+		return coverCorrection == null ? Optional.empty() : Optional.of(coverCorrection);
 	}
 
-	public void setCoverCorrection(com.tools20022.repository.entity.CashSettlement coverCorrection) {
+	public PaymentInvestigationCaseResolution setCoverCorrection(CashSettlement coverCorrection) {
 		this.coverCorrection = coverCorrection;
+		return this;
 	}
 
 	public List<CashEntry> getEntryCorrection() {
-		return entryCorrection;
+		return entryCorrection == null ? entryCorrection = new ArrayList<>() : entryCorrection;
 	}
 
-	public void setEntryCorrection(List<com.tools20022.repository.entity.CashEntry> entryCorrection) {
-		this.entryCorrection = entryCorrection;
+	public PaymentInvestigationCaseResolution setEntryCorrection(List<CashEntry> entryCorrection) {
+		this.entryCorrection = Objects.requireNonNull(entryCorrection);
+		return this;
 	}
 
 	public List<Payment> getPaymentCorrection() {
-		return paymentCorrection;
+		return paymentCorrection == null ? paymentCorrection = new ArrayList<>() : paymentCorrection;
 	}
 
-	public void setPaymentCorrection(List<com.tools20022.repository.entity.Payment> paymentCorrection) {
-		this.paymentCorrection = paymentCorrection;
+	public PaymentInvestigationCaseResolution setPaymentCorrection(List<Payment> paymentCorrection) {
+		this.paymentCorrection = Objects.requireNonNull(paymentCorrection);
+		return this;
 	}
 
 	public List<PaymentExecution> getPaymentExecutionCorrection() {
-		return paymentExecutionCorrection;
+		return paymentExecutionCorrection == null ? paymentExecutionCorrection = new ArrayList<>() : paymentExecutionCorrection;
 	}
 
-	public void setPaymentExecutionCorrection(List<com.tools20022.repository.entity.PaymentExecution> paymentExecutionCorrection) {
-		this.paymentExecutionCorrection = paymentExecutionCorrection;
+	public PaymentInvestigationCaseResolution setPaymentExecutionCorrection(List<PaymentExecution> paymentExecutionCorrection) {
+		this.paymentExecutionCorrection = Objects.requireNonNull(paymentExecutionCorrection);
+		return this;
 	}
 
 	public PaymentInvestigationCaseRejection getInvestigationCaseRejection() {
 		return investigationCaseRejection;
 	}
 
-	public void setInvestigationCaseRejection(com.tools20022.repository.entity.PaymentInvestigationCaseRejection investigationCaseRejection) {
-		this.investigationCaseRejection = investigationCaseRejection;
+	public PaymentInvestigationCaseResolution setInvestigationCaseRejection(PaymentInvestigationCaseRejection investigationCaseRejection) {
+		this.investigationCaseRejection = Objects.requireNonNull(investigationCaseRejection);
+		return this;
 	}
 
 	public List<DuplicateCase> getDuplicateCase() {
-		return duplicateCase;
+		return duplicateCase == null ? duplicateCase = new ArrayList<>() : duplicateCase;
 	}
 
-	public void setDuplicateCase(List<com.tools20022.repository.entity.DuplicateCase> duplicateCase) {
-		this.duplicateCase = duplicateCase;
+	public PaymentInvestigationCaseResolution setDuplicateCase(List<com.tools20022.repository.entity.DuplicateCase> duplicateCase) {
+		this.duplicateCase = Objects.requireNonNull(duplicateCase);
+		return this;
 	}
 }

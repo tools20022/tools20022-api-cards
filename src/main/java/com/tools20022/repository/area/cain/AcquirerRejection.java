@@ -24,9 +24,9 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.AcquirertoIssuerCardTransactionLatestVersion;
 import com.tools20022.repository.msg.AcceptorRejection4;
 import com.tools20022.repository.msg.Header19;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -70,15 +70,16 @@ import javax.xml.bind.annotation.*;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AcquirerRejection", propOrder = {"header", "reject"})
 public class AcquirerRejection {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header19 header;
 	/**
-	 * Information related to the protocol management.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -98,7 +99,7 @@ public class AcquirerRejection {
 	 * definition} = "Information related to the protocol management."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcquirerRejection, Header19> mmHeader = new MMMessageBuildingBlock<AcquirerRejection, Header19>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -109,18 +110,21 @@ public class AcquirerRejection {
 			complexType_lazy = () -> Header19.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcquirerRejection.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header19 getValue(AcquirerRejection obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(AcquirerRejection obj, Header19 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "Rjct", required = true)
 	protected AcceptorRejection4 reject;
 	/**
-	 * Information related to the reject.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -141,7 +145,7 @@ public class AcquirerRejection {
 	 * definition} = "Information related to the reject."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmReject = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcquirerRejection, AcceptorRejection4> mmReject = new MMMessageBuildingBlock<AcquirerRejection, AcceptorRejection4>() {
 		{
 			xmlTag = "Rjct";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -152,12 +156,14 @@ public class AcquirerRejection {
 			complexType_lazy = () -> AcceptorRejection4.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcquirerRejection.class.getMethod("getReject", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AcceptorRejection4 getValue(AcquirerRejection obj) {
+			return obj.getReject();
+		}
+
+		@Override
+		public void setValue(AcquirerRejection obj, AcceptorRejection4 value) {
+			obj.setReject(value);
 		}
 	};
 
@@ -189,25 +195,25 @@ public class AcquirerRejection {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header19 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header19 header) {
-		this.header = header;
+	public AcquirerRejection setHeader(Header19 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "Rjct", required = true)
 	public AcceptorRejection4 getReject() {
 		return reject;
 	}
 
-	public void setReject(AcceptorRejection4 reject) {
-		this.reject = reject;
+	public AcquirerRejection setReject(AcceptorRejection4 reject) {
+		this.reject = Objects.requireNonNull(reject);
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:cain.013.01.01")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:cain.013.001.01")
 	static public class Document {
 		@XmlElement(name = "AcqrrRjctn", required = true)
 		public AcquirerRejection messageBody;

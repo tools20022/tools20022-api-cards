@@ -26,8 +26,11 @@ import com.tools20022.repository.datatype.Max70Text;
 import com.tools20022.repository.datatype.Min2Max3AlphaText;
 import com.tools20022.repository.entity.CardholderRole;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.DateAndPlaceOfBirth;
+import com.tools20022.repository.msg.PostalAddress18;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -86,8 +89,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -99,16 +102,17 @@ import javax.xml.bind.annotation.XmlType;
  * "Information requested against money laundering for a transfer transaction."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AntiMoneyLaundering1", propOrder = {"senderName", "senderAddress", "senderNationalIdentifier", "nationalIdentifierCountry", "senderPassportNumber", "passportIssuingCountry", "senderTaxIdentifier", "taxCountry",
 		"senderCustomerIdentifier", "senderDateAndPlaceOfBirth", "receiverName", "transactionReference"})
 public class AntiMoneyLaundering1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "SndrNm")
 	protected Max70Text senderName;
 	/**
-	 * Name of the sender.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -133,9 +137,9 @@ public class AntiMoneyLaundering1 {
 	 * definition} = "Name of the sender."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSenderName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AntiMoneyLaundering1, Optional<Max70Text>> mmSenderName = new MMMessageAttribute<AntiMoneyLaundering1, Optional<Max70Text>>() {
 		{
-			componentContext_lazy = () -> AntiMoneyLaundering1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AntiMoneyLaundering1.mmObject();
 			isDerived = false;
 			xmlTag = "SndrNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -145,11 +149,22 @@ public class AntiMoneyLaundering1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max70Text> getValue(AntiMoneyLaundering1 obj) {
+			return obj.getSenderName();
+		}
+
+		@Override
+		public void setValue(AntiMoneyLaundering1 obj, Optional<Max70Text> value) {
+			obj.setSenderName(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SndrAdr")
 	protected PostalAddress18 senderAddress;
 	/**
-	 * Address of the sender.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -173,9 +188,9 @@ public class AntiMoneyLaundering1 {
 	 * definition} = "Address of the sender."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSenderAddress = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AntiMoneyLaundering1, Optional<PostalAddress18>> mmSenderAddress = new MMMessageAssociationEnd<AntiMoneyLaundering1, Optional<PostalAddress18>>() {
 		{
-			componentContext_lazy = () -> AntiMoneyLaundering1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AntiMoneyLaundering1.mmObject();
 			isDerived = false;
 			xmlTag = "SndrAdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -184,13 +199,24 @@ public class AntiMoneyLaundering1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.PostalAddress18.mmObject();
+			type_lazy = () -> PostalAddress18.mmObject();
+		}
+
+		@Override
+		public Optional<PostalAddress18> getValue(AntiMoneyLaundering1 obj) {
+			return obj.getSenderAddress();
+		}
+
+		@Override
+		public void setValue(AntiMoneyLaundering1 obj, Optional<PostalAddress18> value) {
+			obj.setSenderAddress(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "SndrNtlIdr")
 	protected Max35Text senderNationalIdentifier;
 	/**
-	 * National identifier number of the sender.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -215,9 +241,9 @@ public class AntiMoneyLaundering1 {
 	 * definition} = "National identifier number of the sender."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSenderNationalIdentifier = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AntiMoneyLaundering1, Optional<Max35Text>> mmSenderNationalIdentifier = new MMMessageAttribute<AntiMoneyLaundering1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> AntiMoneyLaundering1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AntiMoneyLaundering1.mmObject();
 			isDerived = false;
 			xmlTag = "SndrNtlIdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -227,11 +253,22 @@ public class AntiMoneyLaundering1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(AntiMoneyLaundering1 obj) {
+			return obj.getSenderNationalIdentifier();
+		}
+
+		@Override
+		public void setValue(AntiMoneyLaundering1 obj, Optional<Max35Text> value) {
+			obj.setSenderNationalIdentifier(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "NtlIdrCtry")
 	protected Min2Max3AlphaText nationalIdentifierCountry;
 	/**
-	 * Country of the national identifier (ISO 3166-1 alpha-2 or alpha-3).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -258,9 +295,9 @@ public class AntiMoneyLaundering1 {
 	 * "Country of the national identifier (ISO 3166-1 alpha-2 or alpha-3)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmNationalIdentifierCountry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AntiMoneyLaundering1, Optional<Min2Max3AlphaText>> mmNationalIdentifierCountry = new MMMessageAttribute<AntiMoneyLaundering1, Optional<Min2Max3AlphaText>>() {
 		{
-			componentContext_lazy = () -> AntiMoneyLaundering1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AntiMoneyLaundering1.mmObject();
 			isDerived = false;
 			xmlTag = "NtlIdrCtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -270,11 +307,22 @@ public class AntiMoneyLaundering1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Min2Max3AlphaText.mmObject();
 		}
+
+		@Override
+		public Optional<Min2Max3AlphaText> getValue(AntiMoneyLaundering1 obj) {
+			return obj.getNationalIdentifierCountry();
+		}
+
+		@Override
+		public void setValue(AntiMoneyLaundering1 obj, Optional<Min2Max3AlphaText> value) {
+			obj.setNationalIdentifierCountry(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SndrPsptNb")
 	protected Max35Text senderPassportNumber;
 	/**
-	 * Passport number of the sender.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -299,9 +347,9 @@ public class AntiMoneyLaundering1 {
 	 * definition} = "Passport number of the sender."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSenderPassportNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AntiMoneyLaundering1, Optional<Max35Text>> mmSenderPassportNumber = new MMMessageAttribute<AntiMoneyLaundering1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> AntiMoneyLaundering1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AntiMoneyLaundering1.mmObject();
 			isDerived = false;
 			xmlTag = "SndrPsptNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -311,11 +359,22 @@ public class AntiMoneyLaundering1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(AntiMoneyLaundering1 obj) {
+			return obj.getSenderPassportNumber();
+		}
+
+		@Override
+		public void setValue(AntiMoneyLaundering1 obj, Optional<Max35Text> value) {
+			obj.setSenderPassportNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PsptIssgCtry")
 	protected Min2Max3AlphaText passportIssuingCountry;
 	/**
-	 * Country issuing the passport (ISO 3166-1 alpha-2 or alpha-3).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -342,9 +401,9 @@ public class AntiMoneyLaundering1 {
 	 * "Country issuing the passport (ISO 3166-1 alpha-2 or alpha-3)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPassportIssuingCountry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AntiMoneyLaundering1, Optional<Min2Max3AlphaText>> mmPassportIssuingCountry = new MMMessageAttribute<AntiMoneyLaundering1, Optional<Min2Max3AlphaText>>() {
 		{
-			componentContext_lazy = () -> AntiMoneyLaundering1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AntiMoneyLaundering1.mmObject();
 			isDerived = false;
 			xmlTag = "PsptIssgCtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -354,11 +413,22 @@ public class AntiMoneyLaundering1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Min2Max3AlphaText.mmObject();
 		}
+
+		@Override
+		public Optional<Min2Max3AlphaText> getValue(AntiMoneyLaundering1 obj) {
+			return obj.getPassportIssuingCountry();
+		}
+
+		@Override
+		public void setValue(AntiMoneyLaundering1 obj, Optional<Min2Max3AlphaText> value) {
+			obj.setPassportIssuingCountry(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SndrTaxIdr")
 	protected Max35Text senderTaxIdentifier;
 	/**
-	 * Tax identifier of the sender.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -383,9 +453,9 @@ public class AntiMoneyLaundering1 {
 	 * definition} = "Tax identifier of the sender."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSenderTaxIdentifier = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AntiMoneyLaundering1, Optional<Max35Text>> mmSenderTaxIdentifier = new MMMessageAttribute<AntiMoneyLaundering1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> AntiMoneyLaundering1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AntiMoneyLaundering1.mmObject();
 			isDerived = false;
 			xmlTag = "SndrTaxIdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -395,11 +465,22 @@ public class AntiMoneyLaundering1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(AntiMoneyLaundering1 obj) {
+			return obj.getSenderTaxIdentifier();
+		}
+
+		@Override
+		public void setValue(AntiMoneyLaundering1 obj, Optional<Max35Text> value) {
+			obj.setSenderTaxIdentifier(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TaxCtry")
 	protected Min2Max3AlphaText taxCountry;
 	/**
-	 * Country of the tax (ISO 3166-1 alpha-2 or alpha-3).
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -425,9 +506,9 @@ public class AntiMoneyLaundering1 {
 	 * definition} = "Country of the tax (ISO 3166-1 alpha-2 or alpha-3)."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxCountry = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AntiMoneyLaundering1, Optional<Min2Max3AlphaText>> mmTaxCountry = new MMMessageAttribute<AntiMoneyLaundering1, Optional<Min2Max3AlphaText>>() {
 		{
-			componentContext_lazy = () -> AntiMoneyLaundering1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AntiMoneyLaundering1.mmObject();
 			isDerived = false;
 			xmlTag = "TaxCtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -437,11 +518,22 @@ public class AntiMoneyLaundering1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Min2Max3AlphaText.mmObject();
 		}
+
+		@Override
+		public Optional<Min2Max3AlphaText> getValue(AntiMoneyLaundering1 obj) {
+			return obj.getTaxCountry();
+		}
+
+		@Override
+		public void setValue(AntiMoneyLaundering1 obj, Optional<Min2Max3AlphaText> value) {
+			obj.setTaxCountry(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SndrCstmrIdr")
 	protected Max35Text senderCustomerIdentifier;
 	/**
-	 * Customer identifier of the sender.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -466,9 +558,9 @@ public class AntiMoneyLaundering1 {
 	 * definition} = "Customer identifier of the sender."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmSenderCustomerIdentifier = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AntiMoneyLaundering1, Optional<Max35Text>> mmSenderCustomerIdentifier = new MMMessageAttribute<AntiMoneyLaundering1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> AntiMoneyLaundering1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AntiMoneyLaundering1.mmObject();
 			isDerived = false;
 			xmlTag = "SndrCstmrIdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -478,11 +570,22 @@ public class AntiMoneyLaundering1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(AntiMoneyLaundering1 obj) {
+			return obj.getSenderCustomerIdentifier();
+		}
+
+		@Override
+		public void setValue(AntiMoneyLaundering1 obj, Optional<Max35Text> value) {
+			obj.setSenderCustomerIdentifier(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "SndrDtAndPlcOfBirth")
 	protected DateAndPlaceOfBirth senderDateAndPlaceOfBirth;
 	/**
-	 * Date and place of birth of the sender.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -506,9 +609,9 @@ public class AntiMoneyLaundering1 {
 	 * definition} = "Date and place of birth of the sender."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmSenderDateAndPlaceOfBirth = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AntiMoneyLaundering1, Optional<DateAndPlaceOfBirth>> mmSenderDateAndPlaceOfBirth = new MMMessageAssociationEnd<AntiMoneyLaundering1, Optional<DateAndPlaceOfBirth>>() {
 		{
-			componentContext_lazy = () -> AntiMoneyLaundering1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AntiMoneyLaundering1.mmObject();
 			isDerived = false;
 			xmlTag = "SndrDtAndPlcOfBirth";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -517,13 +620,24 @@ public class AntiMoneyLaundering1 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.DateAndPlaceOfBirth.mmObject();
+			type_lazy = () -> DateAndPlaceOfBirth.mmObject();
+		}
+
+		@Override
+		public Optional<DateAndPlaceOfBirth> getValue(AntiMoneyLaundering1 obj) {
+			return obj.getSenderDateAndPlaceOfBirth();
+		}
+
+		@Override
+		public void setValue(AntiMoneyLaundering1 obj, Optional<DateAndPlaceOfBirth> value) {
+			obj.setSenderDateAndPlaceOfBirth(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "RcvrNm")
 	protected Max70Text receiverName;
 	/**
-	 * Name of the receiver.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -548,9 +662,9 @@ public class AntiMoneyLaundering1 {
 	 * definition} = "Name of the receiver."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmReceiverName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AntiMoneyLaundering1, Optional<Max70Text>> mmReceiverName = new MMMessageAttribute<AntiMoneyLaundering1, Optional<Max70Text>>() {
 		{
-			componentContext_lazy = () -> AntiMoneyLaundering1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AntiMoneyLaundering1.mmObject();
 			isDerived = false;
 			xmlTag = "RcvrNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -560,11 +674,22 @@ public class AntiMoneyLaundering1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max70Text> getValue(AntiMoneyLaundering1 obj) {
+			return obj.getReceiverName();
+		}
+
+		@Override
+		public void setValue(AntiMoneyLaundering1 obj, Optional<Max70Text> value) {
+			obj.setReceiverName(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TxRef")
 	protected Max35Text transactionReference;
 	/**
-	 * Unique transaction reference number for sender and the receiver.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -590,9 +715,9 @@ public class AntiMoneyLaundering1 {
 	 * "Unique transaction reference number for sender and the receiver."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTransactionReference = new MMMessageAttribute() {
+	public static final MMMessageAttribute<AntiMoneyLaundering1, Optional<Max35Text>> mmTransactionReference = new MMMessageAttribute<AntiMoneyLaundering1, Optional<Max35Text>>() {
 		{
-			componentContext_lazy = () -> AntiMoneyLaundering1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AntiMoneyLaundering1.mmObject();
 			isDerived = false;
 			xmlTag = "TxRef";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -602,16 +727,29 @@ public class AntiMoneyLaundering1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max35Text> getValue(AntiMoneyLaundering1 obj) {
+			return obj.getTransactionReference();
+		}
+
+		@Override
+		public void setValue(AntiMoneyLaundering1 obj, Optional<Max35Text> value) {
+			obj.setTransactionReference(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AntiMoneyLaundering1.mmSenderName, AntiMoneyLaundering1.mmSenderAddress, AntiMoneyLaundering1.mmSenderNationalIdentifier, AntiMoneyLaundering1.mmNationalIdentifierCountry,
-						AntiMoneyLaundering1.mmSenderPassportNumber, AntiMoneyLaundering1.mmPassportIssuingCountry, AntiMoneyLaundering1.mmSenderTaxIdentifier, AntiMoneyLaundering1.mmTaxCountry,
-						AntiMoneyLaundering1.mmSenderCustomerIdentifier, AntiMoneyLaundering1.mmSenderDateAndPlaceOfBirth, AntiMoneyLaundering1.mmReceiverName, AntiMoneyLaundering1.mmTransactionReference);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AntiMoneyLaundering1.mmSenderName, com.tools20022.repository.msg.AntiMoneyLaundering1.mmSenderAddress,
+						com.tools20022.repository.msg.AntiMoneyLaundering1.mmSenderNationalIdentifier, com.tools20022.repository.msg.AntiMoneyLaundering1.mmNationalIdentifierCountry,
+						com.tools20022.repository.msg.AntiMoneyLaundering1.mmSenderPassportNumber, com.tools20022.repository.msg.AntiMoneyLaundering1.mmPassportIssuingCountry,
+						com.tools20022.repository.msg.AntiMoneyLaundering1.mmSenderTaxIdentifier, com.tools20022.repository.msg.AntiMoneyLaundering1.mmTaxCountry,
+						com.tools20022.repository.msg.AntiMoneyLaundering1.mmSenderCustomerIdentifier, com.tools20022.repository.msg.AntiMoneyLaundering1.mmSenderDateAndPlaceOfBirth,
+						com.tools20022.repository.msg.AntiMoneyLaundering1.mmReceiverName, com.tools20022.repository.msg.AntiMoneyLaundering1.mmTransactionReference);
 				trace_lazy = () -> CardholderRole.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AntiMoneyLaundering1";
 				definition = "Information requested against money laundering for a transfer transaction.";
@@ -620,111 +758,111 @@ public class AntiMoneyLaundering1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "SndrNm")
-	public Max70Text getSenderName() {
-		return senderName;
+	public Optional<Max70Text> getSenderName() {
+		return senderName == null ? Optional.empty() : Optional.of(senderName);
 	}
 
-	public void setSenderName(Max70Text senderName) {
+	public AntiMoneyLaundering1 setSenderName(Max70Text senderName) {
 		this.senderName = senderName;
+		return this;
 	}
 
-	@XmlElement(name = "SndrAdr")
-	public PostalAddress18 getSenderAddress() {
-		return senderAddress;
+	public Optional<PostalAddress18> getSenderAddress() {
+		return senderAddress == null ? Optional.empty() : Optional.of(senderAddress);
 	}
 
-	public void setSenderAddress(com.tools20022.repository.msg.PostalAddress18 senderAddress) {
+	public AntiMoneyLaundering1 setSenderAddress(PostalAddress18 senderAddress) {
 		this.senderAddress = senderAddress;
+		return this;
 	}
 
-	@XmlElement(name = "SndrNtlIdr")
-	public Max35Text getSenderNationalIdentifier() {
-		return senderNationalIdentifier;
+	public Optional<Max35Text> getSenderNationalIdentifier() {
+		return senderNationalIdentifier == null ? Optional.empty() : Optional.of(senderNationalIdentifier);
 	}
 
-	public void setSenderNationalIdentifier(Max35Text senderNationalIdentifier) {
+	public AntiMoneyLaundering1 setSenderNationalIdentifier(Max35Text senderNationalIdentifier) {
 		this.senderNationalIdentifier = senderNationalIdentifier;
+		return this;
 	}
 
-	@XmlElement(name = "NtlIdrCtry")
-	public Min2Max3AlphaText getNationalIdentifierCountry() {
-		return nationalIdentifierCountry;
+	public Optional<Min2Max3AlphaText> getNationalIdentifierCountry() {
+		return nationalIdentifierCountry == null ? Optional.empty() : Optional.of(nationalIdentifierCountry);
 	}
 
-	public void setNationalIdentifierCountry(Min2Max3AlphaText nationalIdentifierCountry) {
+	public AntiMoneyLaundering1 setNationalIdentifierCountry(Min2Max3AlphaText nationalIdentifierCountry) {
 		this.nationalIdentifierCountry = nationalIdentifierCountry;
+		return this;
 	}
 
-	@XmlElement(name = "SndrPsptNb")
-	public Max35Text getSenderPassportNumber() {
-		return senderPassportNumber;
+	public Optional<Max35Text> getSenderPassportNumber() {
+		return senderPassportNumber == null ? Optional.empty() : Optional.of(senderPassportNumber);
 	}
 
-	public void setSenderPassportNumber(Max35Text senderPassportNumber) {
+	public AntiMoneyLaundering1 setSenderPassportNumber(Max35Text senderPassportNumber) {
 		this.senderPassportNumber = senderPassportNumber;
+		return this;
 	}
 
-	@XmlElement(name = "PsptIssgCtry")
-	public Min2Max3AlphaText getPassportIssuingCountry() {
-		return passportIssuingCountry;
+	public Optional<Min2Max3AlphaText> getPassportIssuingCountry() {
+		return passportIssuingCountry == null ? Optional.empty() : Optional.of(passportIssuingCountry);
 	}
 
-	public void setPassportIssuingCountry(Min2Max3AlphaText passportIssuingCountry) {
+	public AntiMoneyLaundering1 setPassportIssuingCountry(Min2Max3AlphaText passportIssuingCountry) {
 		this.passportIssuingCountry = passportIssuingCountry;
+		return this;
 	}
 
-	@XmlElement(name = "SndrTaxIdr")
-	public Max35Text getSenderTaxIdentifier() {
-		return senderTaxIdentifier;
+	public Optional<Max35Text> getSenderTaxIdentifier() {
+		return senderTaxIdentifier == null ? Optional.empty() : Optional.of(senderTaxIdentifier);
 	}
 
-	public void setSenderTaxIdentifier(Max35Text senderTaxIdentifier) {
+	public AntiMoneyLaundering1 setSenderTaxIdentifier(Max35Text senderTaxIdentifier) {
 		this.senderTaxIdentifier = senderTaxIdentifier;
+		return this;
 	}
 
-	@XmlElement(name = "TaxCtry")
-	public Min2Max3AlphaText getTaxCountry() {
-		return taxCountry;
+	public Optional<Min2Max3AlphaText> getTaxCountry() {
+		return taxCountry == null ? Optional.empty() : Optional.of(taxCountry);
 	}
 
-	public void setTaxCountry(Min2Max3AlphaText taxCountry) {
+	public AntiMoneyLaundering1 setTaxCountry(Min2Max3AlphaText taxCountry) {
 		this.taxCountry = taxCountry;
+		return this;
 	}
 
-	@XmlElement(name = "SndrCstmrIdr")
-	public Max35Text getSenderCustomerIdentifier() {
-		return senderCustomerIdentifier;
+	public Optional<Max35Text> getSenderCustomerIdentifier() {
+		return senderCustomerIdentifier == null ? Optional.empty() : Optional.of(senderCustomerIdentifier);
 	}
 
-	public void setSenderCustomerIdentifier(Max35Text senderCustomerIdentifier) {
+	public AntiMoneyLaundering1 setSenderCustomerIdentifier(Max35Text senderCustomerIdentifier) {
 		this.senderCustomerIdentifier = senderCustomerIdentifier;
+		return this;
 	}
 
-	@XmlElement(name = "SndrDtAndPlcOfBirth")
-	public DateAndPlaceOfBirth getSenderDateAndPlaceOfBirth() {
-		return senderDateAndPlaceOfBirth;
+	public Optional<DateAndPlaceOfBirth> getSenderDateAndPlaceOfBirth() {
+		return senderDateAndPlaceOfBirth == null ? Optional.empty() : Optional.of(senderDateAndPlaceOfBirth);
 	}
 
-	public void setSenderDateAndPlaceOfBirth(com.tools20022.repository.msg.DateAndPlaceOfBirth senderDateAndPlaceOfBirth) {
+	public AntiMoneyLaundering1 setSenderDateAndPlaceOfBirth(DateAndPlaceOfBirth senderDateAndPlaceOfBirth) {
 		this.senderDateAndPlaceOfBirth = senderDateAndPlaceOfBirth;
+		return this;
 	}
 
-	@XmlElement(name = "RcvrNm")
-	public Max70Text getReceiverName() {
-		return receiverName;
+	public Optional<Max70Text> getReceiverName() {
+		return receiverName == null ? Optional.empty() : Optional.of(receiverName);
 	}
 
-	public void setReceiverName(Max70Text receiverName) {
+	public AntiMoneyLaundering1 setReceiverName(Max70Text receiverName) {
 		this.receiverName = receiverName;
+		return this;
 	}
 
-	@XmlElement(name = "TxRef")
-	public Max35Text getTransactionReference() {
-		return transactionReference;
+	public Optional<Max35Text> getTransactionReference() {
+		return transactionReference == null ? Optional.empty() : Optional.of(transactionReference);
 	}
 
-	public void setTransactionReference(Max35Text transactionReference) {
+	public AntiMoneyLaundering1 setTransactionReference(Max35Text transactionReference) {
 		this.transactionReference = transactionReference;
+		return this;
 	}
 }

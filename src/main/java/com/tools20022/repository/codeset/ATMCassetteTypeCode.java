@@ -37,20 +37,20 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMCassetteTypeCode#In
- * ATMCassetteTypeCode.mmIn}</li>
+ * ATMCassetteTypeCode.In}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMCassetteTypeCode#Out
- * ATMCassetteTypeCode.mmOut}</li>
+ * ATMCassetteTypeCode.Out}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCassetteTypeCode#Recycling
- * ATMCassetteTypeCode.mmRecycling}</li>
+ * ATMCassetteTypeCode.Recycling}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCassetteTypeCode#Replenishment
- * ATMCassetteTypeCode.mmReplenishment}</li>
+ * ATMCassetteTypeCode.Replenishment}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMCassetteTypeCode#Reject
- * ATMCassetteTypeCode.mmReject}</li>
+ * ATMCassetteTypeCode.Reject}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMCassetteTypeCode#Retract
- * ATMCassetteTypeCode.mmRetract}</li>
+ * ATMCassetteTypeCode.Retract}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -63,8 +63,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -267,7 +267,7 @@ public class ATMCassetteTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMCassetteTypeCode";
 				definition = "Type of cassette.";

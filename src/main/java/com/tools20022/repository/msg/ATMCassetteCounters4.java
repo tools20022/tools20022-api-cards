@@ -25,6 +25,8 @@ import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -70,8 +72,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -82,15 +84,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Counters of media inside an ATM cassette."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ATMCassetteCounters4", propOrder = {"type", "addedNumber", "removedNumber", "dispensedNumber", "depositedNumber", "recycledNumber", "retractedNumber", "rejectedNumber", "presentedNumber"})
 public class ATMCassetteCounters4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected ATMCounterType1Code type;
 	/**
-	 * Type of counters.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -116,9 +119,9 @@ public class ATMCassetteCounters4 {
 	 * definition} = "Type of counters."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMCassetteCounters4, ATMCounterType1Code> mmType = new MMMessageAttribute<ATMCassetteCounters4, ATMCounterType1Code>() {
 		{
-			componentContext_lazy = () -> ATMCassetteCounters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMCassetteCounters4.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -128,11 +131,22 @@ public class ATMCassetteCounters4 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ATMCounterType1Code.mmObject();
 		}
+
+		@Override
+		public ATMCounterType1Code getValue(ATMCassetteCounters4 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(ATMCassetteCounters4 obj, ATMCounterType1Code value) {
+			obj.setType(value);
+		}
 	};
+	@XmlElement(name = "AddedNb")
 	protected Number addedNumber;
 	/**
-	 * Number of added media during servicing operations.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,9 +171,9 @@ public class ATMCassetteCounters4 {
 	 * definition} = "Number of added media during servicing operations."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAddedNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMCassetteCounters4, Optional<Number>> mmAddedNumber = new MMMessageAttribute<ATMCassetteCounters4, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> ATMCassetteCounters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMCassetteCounters4.mmObject();
 			isDerived = false;
 			xmlTag = "AddedNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -169,11 +183,22 @@ public class ATMCassetteCounters4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(ATMCassetteCounters4 obj) {
+			return obj.getAddedNumber();
+		}
+
+		@Override
+		public void setValue(ATMCassetteCounters4 obj, Optional<Number> value) {
+			obj.setAddedNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RmvdNb")
 	protected Number removedNumber;
 	/**
-	 * Number of removed media during servicing operations.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -198,9 +223,9 @@ public class ATMCassetteCounters4 {
 	 * definition} = "Number of removed media during servicing operations."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRemovedNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMCassetteCounters4, Optional<Number>> mmRemovedNumber = new MMMessageAttribute<ATMCassetteCounters4, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> ATMCassetteCounters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMCassetteCounters4.mmObject();
 			isDerived = false;
 			xmlTag = "RmvdNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -210,11 +235,22 @@ public class ATMCassetteCounters4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(ATMCassetteCounters4 obj) {
+			return obj.getRemovedNumber();
+		}
+
+		@Override
+		public void setValue(ATMCassetteCounters4 obj, Optional<Number> value) {
+			obj.setRemovedNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DspnsdNb")
 	protected Number dispensedNumber;
 	/**
-	 * Total number of media out of the cassette.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -239,9 +275,9 @@ public class ATMCassetteCounters4 {
 	 * definition} = "Total number of media out of the cassette."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDispensedNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMCassetteCounters4, Optional<Number>> mmDispensedNumber = new MMMessageAttribute<ATMCassetteCounters4, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> ATMCassetteCounters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMCassetteCounters4.mmObject();
 			isDerived = false;
 			xmlTag = "DspnsdNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -251,11 +287,22 @@ public class ATMCassetteCounters4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(ATMCassetteCounters4 obj) {
+			return obj.getDispensedNumber();
+		}
+
+		@Override
+		public void setValue(ATMCassetteCounters4 obj, Optional<Number> value) {
+			obj.setDispensedNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "DpstdNb")
 	protected Number depositedNumber;
 	/**
-	 * Total number of media deposited in the cassette.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -280,9 +327,9 @@ public class ATMCassetteCounters4 {
 	 * definition} = "Total number of media deposited in the cassette."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmDepositedNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMCassetteCounters4, Optional<Number>> mmDepositedNumber = new MMMessageAttribute<ATMCassetteCounters4, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> ATMCassetteCounters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMCassetteCounters4.mmObject();
 			isDerived = false;
 			xmlTag = "DpstdNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -292,11 +339,22 @@ public class ATMCassetteCounters4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(ATMCassetteCounters4 obj) {
+			return obj.getDepositedNumber();
+		}
+
+		@Override
+		public void setValue(ATMCassetteCounters4 obj, Optional<Number> value) {
+			obj.setDepositedNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RcycldNb")
 	protected Number recycledNumber;
 	/**
-	 * Total number of recycled media from the cassette.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -321,9 +379,9 @@ public class ATMCassetteCounters4 {
 	 * definition} = "Total number of recycled media from the cassette."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRecycledNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMCassetteCounters4, Optional<Number>> mmRecycledNumber = new MMMessageAttribute<ATMCassetteCounters4, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> ATMCassetteCounters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMCassetteCounters4.mmObject();
 			isDerived = false;
 			xmlTag = "RcycldNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -333,11 +391,22 @@ public class ATMCassetteCounters4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(ATMCassetteCounters4 obj) {
+			return obj.getRecycledNumber();
+		}
+
+		@Override
+		public void setValue(ATMCassetteCounters4 obj, Optional<Number> value) {
+			obj.setRecycledNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RtrctdNb")
 	protected Number retractedNumber;
 	/**
-	 * Total number of retracted media originating from the cassette.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -363,9 +432,9 @@ public class ATMCassetteCounters4 {
 	 * "Total number of retracted media originating from the cassette."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRetractedNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMCassetteCounters4, Optional<Number>> mmRetractedNumber = new MMMessageAttribute<ATMCassetteCounters4, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> ATMCassetteCounters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMCassetteCounters4.mmObject();
 			isDerived = false;
 			xmlTag = "RtrctdNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -375,11 +444,22 @@ public class ATMCassetteCounters4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(ATMCassetteCounters4 obj) {
+			return obj.getRetractedNumber();
+		}
+
+		@Override
+		public void setValue(ATMCassetteCounters4 obj, Optional<Number> value) {
+			obj.setRetractedNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "RjctdNb")
 	protected Number rejectedNumber;
 	/**
-	 * Total number of media from this cassette which are on the reject bin.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -405,9 +485,9 @@ public class ATMCassetteCounters4 {
 	 * "Total number of media from this cassette which are on the reject bin."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRejectedNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMCassetteCounters4, Optional<Number>> mmRejectedNumber = new MMMessageAttribute<ATMCassetteCounters4, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> ATMCassetteCounters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMCassetteCounters4.mmObject();
 			isDerived = false;
 			xmlTag = "RjctdNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -417,11 +497,22 @@ public class ATMCassetteCounters4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(ATMCassetteCounters4 obj) {
+			return obj.getRejectedNumber();
+		}
+
+		@Override
+		public void setValue(ATMCassetteCounters4 obj, Optional<Number> value) {
+			obj.setRejectedNumber(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PresntdNb")
 	protected Number presentedNumber;
 	/**
-	 * Total number of media presented to the customer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -446,9 +537,9 @@ public class ATMCassetteCounters4 {
 	 * definition} = "Total number of media presented to the customer."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmPresentedNumber = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMCassetteCounters4, Optional<Number>> mmPresentedNumber = new MMMessageAttribute<ATMCassetteCounters4, Optional<Number>>() {
 		{
-			componentContext_lazy = () -> ATMCassetteCounters4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMCassetteCounters4.mmObject();
 			isDerived = false;
 			xmlTag = "PresntdNb";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -458,14 +549,26 @@ public class ATMCassetteCounters4 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
 		}
+
+		@Override
+		public Optional<Number> getValue(ATMCassetteCounters4 obj) {
+			return obj.getPresentedNumber();
+		}
+
+		@Override
+		public void setValue(ATMCassetteCounters4 obj, Optional<Number> value) {
+			obj.setPresentedNumber(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ATMCassetteCounters4.mmType, ATMCassetteCounters4.mmAddedNumber, ATMCassetteCounters4.mmRemovedNumber, ATMCassetteCounters4.mmDispensedNumber,
-						ATMCassetteCounters4.mmDepositedNumber, ATMCassetteCounters4.mmRecycledNumber, ATMCassetteCounters4.mmRetractedNumber, ATMCassetteCounters4.mmRejectedNumber, ATMCassetteCounters4.mmPresentedNumber);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ATMCassetteCounters4.mmType, com.tools20022.repository.msg.ATMCassetteCounters4.mmAddedNumber,
+						com.tools20022.repository.msg.ATMCassetteCounters4.mmRemovedNumber, com.tools20022.repository.msg.ATMCassetteCounters4.mmDispensedNumber, com.tools20022.repository.msg.ATMCassetteCounters4.mmDepositedNumber,
+						com.tools20022.repository.msg.ATMCassetteCounters4.mmRecycledNumber, com.tools20022.repository.msg.ATMCassetteCounters4.mmRetractedNumber, com.tools20022.repository.msg.ATMCassetteCounters4.mmRejectedNumber,
+						com.tools20022.repository.msg.ATMCassetteCounters4.mmPresentedNumber);
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMCassetteCounters4";
 				definition = "Counters of media inside an ATM cassette.";
@@ -474,84 +577,84 @@ public class ATMCassetteCounters4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public ATMCounterType1Code getType() {
 		return type;
 	}
 
-	public void setType(ATMCounterType1Code type) {
-		this.type = type;
+	public ATMCassetteCounters4 setType(ATMCounterType1Code type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "AddedNb")
-	public Number getAddedNumber() {
-		return addedNumber;
+	public Optional<Number> getAddedNumber() {
+		return addedNumber == null ? Optional.empty() : Optional.of(addedNumber);
 	}
 
-	public void setAddedNumber(Number addedNumber) {
+	public ATMCassetteCounters4 setAddedNumber(Number addedNumber) {
 		this.addedNumber = addedNumber;
+		return this;
 	}
 
-	@XmlElement(name = "RmvdNb")
-	public Number getRemovedNumber() {
-		return removedNumber;
+	public Optional<Number> getRemovedNumber() {
+		return removedNumber == null ? Optional.empty() : Optional.of(removedNumber);
 	}
 
-	public void setRemovedNumber(Number removedNumber) {
+	public ATMCassetteCounters4 setRemovedNumber(Number removedNumber) {
 		this.removedNumber = removedNumber;
+		return this;
 	}
 
-	@XmlElement(name = "DspnsdNb")
-	public Number getDispensedNumber() {
-		return dispensedNumber;
+	public Optional<Number> getDispensedNumber() {
+		return dispensedNumber == null ? Optional.empty() : Optional.of(dispensedNumber);
 	}
 
-	public void setDispensedNumber(Number dispensedNumber) {
+	public ATMCassetteCounters4 setDispensedNumber(Number dispensedNumber) {
 		this.dispensedNumber = dispensedNumber;
+		return this;
 	}
 
-	@XmlElement(name = "DpstdNb")
-	public Number getDepositedNumber() {
-		return depositedNumber;
+	public Optional<Number> getDepositedNumber() {
+		return depositedNumber == null ? Optional.empty() : Optional.of(depositedNumber);
 	}
 
-	public void setDepositedNumber(Number depositedNumber) {
+	public ATMCassetteCounters4 setDepositedNumber(Number depositedNumber) {
 		this.depositedNumber = depositedNumber;
+		return this;
 	}
 
-	@XmlElement(name = "RcycldNb")
-	public Number getRecycledNumber() {
-		return recycledNumber;
+	public Optional<Number> getRecycledNumber() {
+		return recycledNumber == null ? Optional.empty() : Optional.of(recycledNumber);
 	}
 
-	public void setRecycledNumber(Number recycledNumber) {
+	public ATMCassetteCounters4 setRecycledNumber(Number recycledNumber) {
 		this.recycledNumber = recycledNumber;
+		return this;
 	}
 
-	@XmlElement(name = "RtrctdNb")
-	public Number getRetractedNumber() {
-		return retractedNumber;
+	public Optional<Number> getRetractedNumber() {
+		return retractedNumber == null ? Optional.empty() : Optional.of(retractedNumber);
 	}
 
-	public void setRetractedNumber(Number retractedNumber) {
+	public ATMCassetteCounters4 setRetractedNumber(Number retractedNumber) {
 		this.retractedNumber = retractedNumber;
+		return this;
 	}
 
-	@XmlElement(name = "RjctdNb")
-	public Number getRejectedNumber() {
-		return rejectedNumber;
+	public Optional<Number> getRejectedNumber() {
+		return rejectedNumber == null ? Optional.empty() : Optional.of(rejectedNumber);
 	}
 
-	public void setRejectedNumber(Number rejectedNumber) {
+	public ATMCassetteCounters4 setRejectedNumber(Number rejectedNumber) {
 		this.rejectedNumber = rejectedNumber;
+		return this;
 	}
 
-	@XmlElement(name = "PresntdNb")
-	public Number getPresentedNumber() {
-		return presentedNumber;
+	public Optional<Number> getPresentedNumber() {
+		return presentedNumber == null ? Optional.empty() : Optional.of(presentedNumber);
 	}
 
-	public void setPresentedNumber(Number presentedNumber) {
+	public ATMCassetteCounters4 setPresentedNumber(Number presentedNumber) {
 		this.presentedNumber = presentedNumber;
+		return this;
 	}
 }

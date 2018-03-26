@@ -21,11 +21,15 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.CashAccount;
+import com.tools20022.repository.entity.InvoiceFinancingAgreement;
 import com.tools20022.repository.entity.InvoicePartyRole;
 import com.tools20022.repository.GeneratedRepository;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Role played by a party in the context of financing an invoice.
@@ -66,8 +70,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -84,8 +88,8 @@ public class InvoiceFinancingPartyRole extends InvoicePartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.CashAccount> cashAccount;
 	/**
-	 * Account used in the financing process.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -116,7 +120,7 @@ public class InvoiceFinancingPartyRole extends InvoicePartyRole {
 	 * definition} = "Account used in the financing process."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCashAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvoiceFinancingPartyRole, List<CashAccount>> mmCashAccount = new MMBusinessAssociationEnd<InvoiceFinancingPartyRole, List<CashAccount>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingPartyRole.mmObject();
@@ -128,12 +132,21 @@ public class InvoiceFinancingPartyRole extends InvoicePartyRole {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CashAccount.mmObject();
 		}
+
+		@Override
+		public List<CashAccount> getValue(InvoiceFinancingPartyRole obj) {
+			return obj.getCashAccount();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingPartyRole obj, List<CashAccount> value) {
+			obj.setCashAccount(value);
+		}
 	};
-	protected List<com.tools20022.repository.entity.InvoiceFinancingAgreement> invoiceFinancingTransaction;
+	protected List<InvoiceFinancingAgreement> invoiceFinancingTransaction;
 	/**
-	 * Identifies the invoice financing transaction for which a party plays a
-	 * role.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -167,7 +180,7 @@ public class InvoiceFinancingPartyRole extends InvoicePartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmInvoiceFinancingTransaction = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<InvoiceFinancingPartyRole, List<InvoiceFinancingAgreement>> mmInvoiceFinancingTransaction = new MMBusinessAssociationEnd<InvoiceFinancingPartyRole, List<InvoiceFinancingAgreement>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingPartyRole.mmObject();
@@ -175,20 +188,30 @@ public class InvoiceFinancingPartyRole extends InvoicePartyRole {
 			name = "InvoiceFinancingTransaction";
 			definition = "Identifies the invoice financing transaction for which a party plays a role.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmInvoiceFinancingPartyRole;
+			opposite_lazy = () -> InvoiceFinancingAgreement.mmInvoiceFinancingPartyRole;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvoiceFinancingAgreement.mmObject();
+			type_lazy = () -> InvoiceFinancingAgreement.mmObject();
+		}
+
+		@Override
+		public List<InvoiceFinancingAgreement> getValue(InvoiceFinancingPartyRole obj) {
+			return obj.getInvoiceFinancingTransaction();
+		}
+
+		@Override
+		public void setValue(InvoiceFinancingPartyRole obj, List<InvoiceFinancingAgreement> value) {
+			obj.setInvoiceFinancingTransaction(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "InvoiceFinancingPartyRole";
 				definition = "Role played by a party in the context of financing an invoice.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccount.mmRelatedInvoiceFinancingPartyRole, com.tools20022.repository.entity.InvoiceFinancingAgreement.mmInvoiceFinancingPartyRole);
+				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccount.mmRelatedInvoiceFinancingPartyRole, InvoiceFinancingAgreement.mmInvoiceFinancingPartyRole);
 				superType_lazy = () -> InvoicePartyRole.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvoiceFinancingPartyRole.mmCashAccount, com.tools20022.repository.entity.InvoiceFinancingPartyRole.mmInvoiceFinancingTransaction);
 			}
@@ -202,18 +225,20 @@ public class InvoiceFinancingPartyRole extends InvoicePartyRole {
 	}
 
 	public List<CashAccount> getCashAccount() {
-		return cashAccount;
+		return cashAccount == null ? cashAccount = new ArrayList<>() : cashAccount;
 	}
 
-	public void setCashAccount(List<com.tools20022.repository.entity.CashAccount> cashAccount) {
-		this.cashAccount = cashAccount;
+	public InvoiceFinancingPartyRole setCashAccount(List<com.tools20022.repository.entity.CashAccount> cashAccount) {
+		this.cashAccount = Objects.requireNonNull(cashAccount);
+		return this;
 	}
 
 	public List<InvoiceFinancingAgreement> getInvoiceFinancingTransaction() {
-		return invoiceFinancingTransaction;
+		return invoiceFinancingTransaction == null ? invoiceFinancingTransaction = new ArrayList<>() : invoiceFinancingTransaction;
 	}
 
-	public void setInvoiceFinancingTransaction(List<com.tools20022.repository.entity.InvoiceFinancingAgreement> invoiceFinancingTransaction) {
-		this.invoiceFinancingTransaction = invoiceFinancingTransaction;
+	public InvoiceFinancingPartyRole setInvoiceFinancingTransaction(List<InvoiceFinancingAgreement> invoiceFinancingTransaction) {
+		this.invoiceFinancingTransaction = Objects.requireNonNull(invoiceFinancingTransaction);
+		return this;
 	}
 }

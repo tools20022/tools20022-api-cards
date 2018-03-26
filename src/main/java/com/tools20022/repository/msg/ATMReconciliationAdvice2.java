@@ -22,9 +22,12 @@ import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.area.caam.ATMReconciliationAdviceV02;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import com.tools20022.repository.msg.ATMCommand8;
+import com.tools20022.repository.msg.ATMCommand9;
+import com.tools20022.repository.msg.ATMEnvironment10;
+import com.tools20022.repository.msg.ATMTransaction25;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -65,8 +68,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -77,15 +80,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Information related to the reconciliation of an ATM."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ATMReconciliationAdvice2", propOrder = {"environment", "commandResult", "commandContext", "transaction"})
 public class ATMReconciliationAdvice2 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Envt", required = true)
 	protected ATMEnvironment10 environment;
 	/**
-	 * Environment of the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -109,9 +113,9 @@ public class ATMReconciliationAdvice2 {
 	 * definition} = "Environment of the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEnvironment = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMReconciliationAdvice2, ATMEnvironment10> mmEnvironment = new MMMessageAssociationEnd<ATMReconciliationAdvice2, ATMEnvironment10>() {
 		{
-			componentContext_lazy = () -> ATMReconciliationAdvice2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMReconciliationAdvice2.mmObject();
 			isDerived = false;
 			xmlTag = "Envt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -120,13 +124,24 @@ public class ATMReconciliationAdvice2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMEnvironment10.mmObject();
+			type_lazy = () -> ATMEnvironment10.mmObject();
+		}
+
+		@Override
+		public ATMEnvironment10 getValue(ATMReconciliationAdvice2 obj) {
+			return obj.getEnvironment();
+		}
+
+		@Override
+		public void setValue(ATMReconciliationAdvice2 obj, ATMEnvironment10 value) {
+			obj.setEnvironment(value);
 		}
 	};
-	protected List<com.tools20022.repository.msg.ATMCommand8> commandResult;
+	@XmlElement(name = "CmdRslt")
+	protected List<ATMCommand8> commandResult;
 	/**
-	 * Command result for reinitialisation of the transaction counters.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -151,9 +166,9 @@ public class ATMReconciliationAdvice2 {
 	 * "Command result for reinitialisation of the transaction counters."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCommandResult = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMReconciliationAdvice2, List<ATMCommand8>> mmCommandResult = new MMMessageAssociationEnd<ATMReconciliationAdvice2, List<ATMCommand8>>() {
 		{
-			componentContext_lazy = () -> ATMReconciliationAdvice2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMReconciliationAdvice2.mmObject();
 			isDerived = false;
 			xmlTag = "CmdRslt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -161,13 +176,24 @@ public class ATMReconciliationAdvice2 {
 			definition = "Command result for reinitialisation of the transaction counters.";
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMCommand8.mmObject();
+			type_lazy = () -> ATMCommand8.mmObject();
+		}
+
+		@Override
+		public List<ATMCommand8> getValue(ATMReconciliationAdvice2 obj) {
+			return obj.getCommandResult();
+		}
+
+		@Override
+		public void setValue(ATMReconciliationAdvice2 obj, List<ATMCommand8> value) {
+			obj.setCommandResult(value);
 		}
 	};
+	@XmlElement(name = "CmdCntxt")
 	protected ATMCommand9 commandContext;
 	/**
-	 * Party which has requested the reconciliation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -191,9 +217,9 @@ public class ATMReconciliationAdvice2 {
 	 * definition} = "Party which has requested the reconciliation."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCommandContext = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMReconciliationAdvice2, Optional<ATMCommand9>> mmCommandContext = new MMMessageAssociationEnd<ATMReconciliationAdvice2, Optional<ATMCommand9>>() {
 		{
-			componentContext_lazy = () -> ATMReconciliationAdvice2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMReconciliationAdvice2.mmObject();
 			isDerived = false;
 			xmlTag = "CmdCntxt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -202,13 +228,24 @@ public class ATMReconciliationAdvice2 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMCommand9.mmObject();
+			type_lazy = () -> ATMCommand9.mmObject();
+		}
+
+		@Override
+		public Optional<ATMCommand9> getValue(ATMReconciliationAdvice2 obj) {
+			return obj.getCommandContext();
+		}
+
+		@Override
+		public void setValue(ATMReconciliationAdvice2 obj, Optional<ATMCommand9> value) {
+			obj.setCommandContext(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "Tx", required = true)
 	protected ATMTransaction25 transaction;
 	/**
-	 * Information about the reconciliation request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -232,9 +269,9 @@ public class ATMReconciliationAdvice2 {
 	 * definition} = "Information about the reconciliation request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransaction = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMReconciliationAdvice2, ATMTransaction25> mmTransaction = new MMMessageAssociationEnd<ATMReconciliationAdvice2, ATMTransaction25>() {
 		{
-			componentContext_lazy = () -> ATMReconciliationAdvice2.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMReconciliationAdvice2.mmObject();
 			isDerived = false;
 			xmlTag = "Tx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -243,16 +280,27 @@ public class ATMReconciliationAdvice2 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMTransaction25.mmObject();
+			type_lazy = () -> ATMTransaction25.mmObject();
+		}
+
+		@Override
+		public ATMTransaction25 getValue(ATMReconciliationAdvice2 obj) {
+			return obj.getTransaction();
+		}
+
+		@Override
+		public void setValue(ATMReconciliationAdvice2 obj, ATMTransaction25 value) {
+			obj.setTransaction(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ATMReconciliationAdvice2.mmEnvironment, ATMReconciliationAdvice2.mmCommandResult, ATMReconciliationAdvice2.mmCommandContext, ATMReconciliationAdvice2.mmTransaction);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ATMReconciliationAdvice2.mmEnvironment, com.tools20022.repository.msg.ATMReconciliationAdvice2.mmCommandResult,
+						com.tools20022.repository.msg.ATMReconciliationAdvice2.mmCommandContext, com.tools20022.repository.msg.ATMReconciliationAdvice2.mmTransaction);
 				messageBuildingBlock_lazy = () -> Arrays.asList(ATMReconciliationAdviceV02.mmATMReconciliationAdvice);
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMReconciliationAdvice2";
 				definition = "Information related to the reconciliation of an ATM.";
@@ -261,39 +309,39 @@ public class ATMReconciliationAdvice2 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Envt", required = true)
 	public ATMEnvironment10 getEnvironment() {
 		return environment;
 	}
 
-	public void setEnvironment(com.tools20022.repository.msg.ATMEnvironment10 environment) {
-		this.environment = environment;
+	public ATMReconciliationAdvice2 setEnvironment(ATMEnvironment10 environment) {
+		this.environment = Objects.requireNonNull(environment);
+		return this;
 	}
 
-	@XmlElement(name = "CmdRslt")
 	public List<ATMCommand8> getCommandResult() {
-		return commandResult;
+		return commandResult == null ? commandResult = new ArrayList<>() : commandResult;
 	}
 
-	public void setCommandResult(List<com.tools20022.repository.msg.ATMCommand8> commandResult) {
-		this.commandResult = commandResult;
+	public ATMReconciliationAdvice2 setCommandResult(List<ATMCommand8> commandResult) {
+		this.commandResult = Objects.requireNonNull(commandResult);
+		return this;
 	}
 
-	@XmlElement(name = "CmdCntxt")
-	public ATMCommand9 getCommandContext() {
-		return commandContext;
+	public Optional<ATMCommand9> getCommandContext() {
+		return commandContext == null ? Optional.empty() : Optional.of(commandContext);
 	}
 
-	public void setCommandContext(com.tools20022.repository.msg.ATMCommand9 commandContext) {
+	public ATMReconciliationAdvice2 setCommandContext(ATMCommand9 commandContext) {
 		this.commandContext = commandContext;
+		return this;
 	}
 
-	@XmlElement(name = "Tx", required = true)
 	public ATMTransaction25 getTransaction() {
 		return transaction;
 	}
 
-	public void setTransaction(com.tools20022.repository.msg.ATMTransaction25 transaction) {
-		this.transaction = transaction;
+	public ATMReconciliationAdvice2 setTransaction(ATMTransaction25 transaction) {
+		this.transaction = Objects.requireNonNull(transaction);
+		return this;
 	}
 }

@@ -26,6 +26,7 @@ import com.tools20022.repository.entity.Scheme;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -54,8 +55,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -68,16 +69,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "FinancialIdentificationSchemeName1Choice", propOrder = {"code", "proprietary"})
 public class FinancialIdentificationSchemeName1Choice {
 
 	final static private AtomicReference<MMChoiceComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Cd", required = true)
 	protected ExternalFinancialInstitutionIdentification1Code code;
 	/**
-	 * Name of the identification scheme, in a coded form as published in an
-	 * external list.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -110,10 +111,10 @@ public class FinancialIdentificationSchemeName1Choice {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialIdentificationSchemeName1Choice, ExternalFinancialInstitutionIdentification1Code> mmCode = new MMMessageAttribute<FinancialIdentificationSchemeName1Choice, ExternalFinancialInstitutionIdentification1Code>() {
 		{
 			businessElementTrace_lazy = () -> Scheme.mmCode;
-			componentContext_lazy = () -> FinancialIdentificationSchemeName1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.FinancialIdentificationSchemeName1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Cd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -123,11 +124,22 @@ public class FinancialIdentificationSchemeName1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> ExternalFinancialInstitutionIdentification1Code.mmObject();
 		}
+
+		@Override
+		public ExternalFinancialInstitutionIdentification1Code getValue(FinancialIdentificationSchemeName1Choice obj) {
+			return obj.getCode();
+		}
+
+		@Override
+		public void setValue(FinancialIdentificationSchemeName1Choice obj, ExternalFinancialInstitutionIdentification1Code value) {
+			obj.setCode(value);
+		}
 	};
+	@XmlElement(name = "Prtry", required = true)
 	protected Max35Text proprietary;
 	/**
-	 * Name of the identification scheme, in a free text form.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -157,10 +169,10 @@ public class FinancialIdentificationSchemeName1Choice {
 	 * definition} = "Name of the identification scheme, in a free text form."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProprietary = new MMMessageAttribute() {
+	public static final MMMessageAttribute<FinancialIdentificationSchemeName1Choice, Max35Text> mmProprietary = new MMMessageAttribute<FinancialIdentificationSchemeName1Choice, Max35Text>() {
 		{
 			businessElementTrace_lazy = () -> Scheme.mmCode;
-			componentContext_lazy = () -> FinancialIdentificationSchemeName1Choice.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.choice.FinancialIdentificationSchemeName1Choice.mmObject();
 			isDerived = false;
 			xmlTag = "Prtry";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -170,14 +182,24 @@ public class FinancialIdentificationSchemeName1Choice {
 			minOccurs = 1;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public Max35Text getValue(FinancialIdentificationSchemeName1Choice obj) {
+			return obj.getProprietary();
+		}
+
+		@Override
+		public void setValue(FinancialIdentificationSchemeName1Choice obj, Max35Text value) {
+			obj.setProprietary(value);
+		}
 	};
 
 	final static public MMChoiceComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMChoiceComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(FinancialIdentificationSchemeName1Choice.mmCode, FinancialIdentificationSchemeName1Choice.mmProprietary);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.choice.FinancialIdentificationSchemeName1Choice.mmCode, com.tools20022.repository.choice.FinancialIdentificationSchemeName1Choice.mmProprietary);
 				trace_lazy = () -> Scheme.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FinancialIdentificationSchemeName1Choice";
 				definition = "Sets of elements to identify a name of the organisation identification scheme.";
@@ -186,21 +208,21 @@ public class FinancialIdentificationSchemeName1Choice {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Cd", required = true)
 	public ExternalFinancialInstitutionIdentification1Code getCode() {
 		return code;
 	}
 
-	public void setCode(ExternalFinancialInstitutionIdentification1Code code) {
-		this.code = code;
+	public FinancialIdentificationSchemeName1Choice setCode(ExternalFinancialInstitutionIdentification1Code code) {
+		this.code = Objects.requireNonNull(code);
+		return this;
 	}
 
-	@XmlElement(name = "Prtry", required = true)
 	public Max35Text getProprietary() {
 		return proprietary;
 	}
 
-	public void setProprietary(Max35Text proprietary) {
-		this.proprietary = proprietary;
+	public FinancialIdentificationSchemeName1Choice setProprietary(Max35Text proprietary) {
+		this.proprietary = Objects.requireNonNull(proprietary);
+		return this;
 	}
 }

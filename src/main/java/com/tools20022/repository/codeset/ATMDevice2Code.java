@@ -38,62 +38,62 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMDevice2Code#AlarmSensors
- * ATMDevice2Code.mmAlarmSensors}</li>
+ * ATMDevice2Code.AlarmSensors}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMDevice2Code#BarCodeReader
- * ATMDevice2Code.mmBarCodeReader}</li>
+ * ATMDevice2Code.BarCodeReader}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMDevice2Code#Camera
- * ATMDevice2Code.mmCamera}</li>
+ * ATMDevice2Code.Camera}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMDevice2Code#CardDispenser
- * ATMDevice2Code.mmCardDispenser}</li>
+ * ATMDevice2Code.CardDispenser}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMDevice2Code#CardUnit
- * ATMDevice2Code.mmCardUnit}</li>
+ * ATMDevice2Code.CardUnit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMDevice2Code#CashDispenser
- * ATMDevice2Code.mmCashDispenser}</li>
+ * ATMDevice2Code.CashDispenser}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMDevice2Code#CashInModule
- * ATMDevice2Code.mmCashInModule}</li>
+ * ATMDevice2Code.CashInModule}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMDevice2Code#CashRecycler
- * ATMDevice2Code.mmCashRecycler}</li>
+ * ATMDevice2Code.CashRecycler}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMDevice2Code#CheckReader
- * ATMDevice2Code.mmCheckReader}</li>
+ * ATMDevice2Code.CheckReader}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMDevice2Code#CustomerConsole
- * ATMDevice2Code.mmCustomerConsole}</li>
+ * ATMDevice2Code.CustomerConsole}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMDevice2Code#Deposit
- * ATMDevice2Code.mmDeposit}</li>
+ * ATMDevice2Code.Deposit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMDevice2Code#DocumentPrinter
- * ATMDevice2Code.mmDocumentPrinter}</li>
+ * ATMDevice2Code.DocumentPrinter}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMDevice2Code#DoorSensors
- * ATMDevice2Code.mmDoorSensors}</li>
+ * ATMDevice2Code.DoorSensors}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMDevice2Code#InputProcessingModule
- * ATMDevice2Code.mmInputProcessingModule}</li>
+ * ATMDevice2Code.InputProcessingModule}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMDevice2Code#Journal
- * ATMDevice2Code.mmJournal}</li>
+ * ATMDevice2Code.Journal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMDevice2Code#JournalPrinter
- * ATMDevice2Code.mmJournalPrinter}</li>
+ * ATMDevice2Code.JournalPrinter}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMDevice2Code#OtherSensor
- * ATMDevice2Code.mmOtherSensor}</li>
+ * ATMDevice2Code.OtherSensor}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMDevice2Code#PassbookPrinter
- * ATMDevice2Code.mmPassbookPrinter}</li>
+ * ATMDevice2Code.PassbookPrinter}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMDevice2Code#PINKeypad
- * ATMDevice2Code.mmPINKeypad}</li>
+ * ATMDevice2Code.PINKeypad}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMDevice2Code#ReceiptPrinter
- * ATMDevice2Code.mmReceiptPrinter}</li>
+ * ATMDevice2Code.ReceiptPrinter}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMDevice2Code#ScannerPrinter
- * ATMDevice2Code.mmScannerPrinter}</li>
+ * ATMDevice2Code.ScannerPrinter}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMDevice2Code#WithdrawalReceipt
- * ATMDevice2Code.mmWithdrawalReceipt}</li>
+ * ATMDevice2Code.WithdrawalReceipt}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -101,8 +101,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -653,7 +653,7 @@ public class ATMDevice2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMDevice2Code";
 				definition = "List of ATM devices.";

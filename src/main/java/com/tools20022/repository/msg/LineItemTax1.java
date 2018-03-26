@@ -24,9 +24,8 @@ import com.tools20022.repository.choice.TaxTypeFormat1Choice;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.entity.Tax;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -62,8 +61,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -76,15 +75,16 @@ import javax.xml.bind.annotation.XmlType;
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "LineItemTax1", propOrder = {"calculatedAmount", "typeCode", "taxPointDate", "calculatedRate", "categoryCode", "categoryName"})
 public class LineItemTax1 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "ClctdAmt")
 	protected List<CurrencyAndAmount> calculatedAmount;
 	/**
-	 * Amount of money resulting from the calculation of the tax.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -114,10 +114,10 @@ public class LineItemTax1 {
 	 * "Amount of money resulting from the calculation of the tax."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCalculatedAmount = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LineItemTax1, List<CurrencyAndAmount>> mmCalculatedAmount = new MMMessageAttribute<LineItemTax1, List<CurrencyAndAmount>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmAmount;
-			componentContext_lazy = () -> LineItemTax1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LineItemTax1.mmObject();
 			isDerived = false;
 			xmlTag = "ClctdAmt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -126,11 +126,22 @@ public class LineItemTax1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> CurrencyAndAmount.mmObject();
 		}
+
+		@Override
+		public List<CurrencyAndAmount> getValue(LineItemTax1 obj) {
+			return obj.getCalculatedAmount();
+		}
+
+		@Override
+		public void setValue(LineItemTax1 obj, List<CurrencyAndAmount> value) {
+			obj.setCalculatedAmount(value);
+		}
 	};
+	@XmlElement(name = "TpCd")
 	protected TaxTypeFormat1Choice typeCode;
 	/**
-	 * Type of tax applied.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -159,10 +170,10 @@ public class LineItemTax1 {
 	 * definition} = "Type of tax applied."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTypeCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LineItemTax1, Optional<TaxTypeFormat1Choice>> mmTypeCode = new MMMessageAttribute<LineItemTax1, Optional<TaxTypeFormat1Choice>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmType;
-			componentContext_lazy = () -> LineItemTax1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LineItemTax1.mmObject();
 			isDerived = false;
 			xmlTag = "TpCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -172,12 +183,22 @@ public class LineItemTax1 {
 			minOccurs = 0;
 			complexType_lazy = () -> TaxTypeFormat1Choice.mmObject();
 		}
+
+		@Override
+		public Optional<TaxTypeFormat1Choice> getValue(LineItemTax1 obj) {
+			return obj.getTypeCode();
+		}
+
+		@Override
+		public void setValue(LineItemTax1 obj, Optional<TaxTypeFormat1Choice> value) {
+			obj.setTypeCode(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "TaxPtDt")
 	protected ISODate taxPointDate;
 	/**
-	 * Date of the tax point date when this tax, levy or duty becomes
-	 * applicable.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -204,28 +225,39 @@ public class LineItemTax1 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
-	 * "Date of the tax point  date when this tax, levy or duty becomes applicable."
+	 * "Date of the tax point date when this tax, levy or duty becomes applicable."
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmTaxPointDate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LineItemTax1, Optional<ISODate>> mmTaxPointDate = new MMMessageAttribute<LineItemTax1, Optional<ISODate>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmTaxDate;
-			componentContext_lazy = () -> LineItemTax1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LineItemTax1.mmObject();
 			isDerived = false;
 			xmlTag = "TaxPtDt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TaxPointDate";
-			definition = "Date of the tax point  date when this tax, levy or duty becomes applicable.";
+			definition = "Date of the tax point date when this tax, levy or duty becomes applicable.";
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODate.mmObject();
 		}
+
+		@Override
+		public Optional<ISODate> getValue(LineItemTax1 obj) {
+			return obj.getTaxPointDate();
+		}
+
+		@Override
+		public void setValue(LineItemTax1 obj, Optional<ISODate> value) {
+			obj.setTaxPointDate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "ClctdRate")
 	protected PercentageRate calculatedRate;
 	/**
-	 * Rate used to calculate the amount of this tax, levy or duty.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -255,10 +287,10 @@ public class LineItemTax1 {
 	 * "Rate used to calculate the amount of this tax, levy or duty."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCalculatedRate = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LineItemTax1, Optional<PercentageRate>> mmCalculatedRate = new MMMessageAttribute<LineItemTax1, Optional<PercentageRate>>() {
 		{
 			businessElementTrace_lazy = () -> Tax.mmRate;
-			componentContext_lazy = () -> LineItemTax1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LineItemTax1.mmObject();
 			isDerived = false;
 			xmlTag = "ClctdRate";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -268,13 +300,22 @@ public class LineItemTax1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
+
+		@Override
+		public Optional<PercentageRate> getValue(LineItemTax1 obj) {
+			return obj.getCalculatedRate();
+		}
+
+		@Override
+		public void setValue(LineItemTax1 obj, Optional<PercentageRate> value) {
+			obj.setCalculatedRate(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CtgyCd")
 	protected Max4Text categoryCode;
 	/**
-	 * Code specifying the category to which this tax, levy or duty applies,
-	 * such as codes for 'exempt from tax', 'standard rate', "free export item -
-	 * tax not charged'.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -300,9 +341,9 @@ public class LineItemTax1 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCategoryCode = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LineItemTax1, Optional<Max4Text>> mmCategoryCode = new MMMessageAttribute<LineItemTax1, Optional<Max4Text>>() {
 		{
-			componentContext_lazy = () -> LineItemTax1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LineItemTax1.mmObject();
 			isDerived = false;
 			xmlTag = "CtgyCd";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -312,11 +353,22 @@ public class LineItemTax1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max4Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max4Text> getValue(LineItemTax1 obj) {
+			return obj.getCategoryCode();
+		}
+
+		@Override
+		public void setValue(LineItemTax1 obj, Optional<Max4Text> value) {
+			obj.setCategoryCode(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "CtgyNm")
 	protected List<Max35Text> categoryName;
 	/**
-	 * Category name, expressed as text, of the tax, levy or duty.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -341,9 +393,9 @@ public class LineItemTax1 {
 	 * "Category name, expressed as text, of the tax, levy or duty."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmCategoryName = new MMMessageAttribute() {
+	public static final MMMessageAttribute<LineItemTax1, List<Max35Text>> mmCategoryName = new MMMessageAttribute<LineItemTax1, List<Max35Text>>() {
 		{
-			componentContext_lazy = () -> LineItemTax1.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.LineItemTax1.mmObject();
 			isDerived = false;
 			xmlTag = "CtgyNm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -352,14 +404,25 @@ public class LineItemTax1 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
+
+		@Override
+		public List<Max35Text> getValue(LineItemTax1 obj) {
+			return obj.getCategoryName();
+		}
+
+		@Override
+		public void setValue(LineItemTax1 obj, List<Max35Text> value) {
+			obj.setCategoryName(value);
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(LineItemTax1.mmCalculatedAmount, LineItemTax1.mmTypeCode, LineItemTax1.mmTaxPointDate, LineItemTax1.mmCalculatedRate, LineItemTax1.mmCategoryCode, LineItemTax1.mmCategoryName);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.LineItemTax1.mmCalculatedAmount, com.tools20022.repository.msg.LineItemTax1.mmTypeCode, com.tools20022.repository.msg.LineItemTax1.mmTaxPointDate,
+						com.tools20022.repository.msg.LineItemTax1.mmCalculatedRate, com.tools20022.repository.msg.LineItemTax1.mmCategoryCode, com.tools20022.repository.msg.LineItemTax1.mmCategoryName);
 				trace_lazy = () -> Tax.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LineItemTax1";
 				definition = "Amount of money due to the government or tax authority, according to various pre-defined parameters such as thresholds or income.";
@@ -368,57 +431,57 @@ public class LineItemTax1 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "ClctdAmt")
 	public List<CurrencyAndAmount> getCalculatedAmount() {
-		return calculatedAmount;
+		return calculatedAmount == null ? calculatedAmount = new ArrayList<>() : calculatedAmount;
 	}
 
-	public void setCalculatedAmount(List<CurrencyAndAmount> calculatedAmount) {
-		this.calculatedAmount = calculatedAmount;
+	public LineItemTax1 setCalculatedAmount(List<CurrencyAndAmount> calculatedAmount) {
+		this.calculatedAmount = Objects.requireNonNull(calculatedAmount);
+		return this;
 	}
 
-	@XmlElement(name = "TpCd")
-	public TaxTypeFormat1Choice getTypeCode() {
-		return typeCode;
+	public Optional<TaxTypeFormat1Choice> getTypeCode() {
+		return typeCode == null ? Optional.empty() : Optional.of(typeCode);
 	}
 
-	public void setTypeCode(TaxTypeFormat1Choice typeCode) {
+	public LineItemTax1 setTypeCode(TaxTypeFormat1Choice typeCode) {
 		this.typeCode = typeCode;
+		return this;
 	}
 
-	@XmlElement(name = "TaxPtDt")
-	public ISODate getTaxPointDate() {
-		return taxPointDate;
+	public Optional<ISODate> getTaxPointDate() {
+		return taxPointDate == null ? Optional.empty() : Optional.of(taxPointDate);
 	}
 
-	public void setTaxPointDate(ISODate taxPointDate) {
+	public LineItemTax1 setTaxPointDate(ISODate taxPointDate) {
 		this.taxPointDate = taxPointDate;
+		return this;
 	}
 
-	@XmlElement(name = "ClctdRate")
-	public PercentageRate getCalculatedRate() {
-		return calculatedRate;
+	public Optional<PercentageRate> getCalculatedRate() {
+		return calculatedRate == null ? Optional.empty() : Optional.of(calculatedRate);
 	}
 
-	public void setCalculatedRate(PercentageRate calculatedRate) {
+	public LineItemTax1 setCalculatedRate(PercentageRate calculatedRate) {
 		this.calculatedRate = calculatedRate;
+		return this;
 	}
 
-	@XmlElement(name = "CtgyCd")
-	public Max4Text getCategoryCode() {
-		return categoryCode;
+	public Optional<Max4Text> getCategoryCode() {
+		return categoryCode == null ? Optional.empty() : Optional.of(categoryCode);
 	}
 
-	public void setCategoryCode(Max4Text categoryCode) {
+	public LineItemTax1 setCategoryCode(Max4Text categoryCode) {
 		this.categoryCode = categoryCode;
+		return this;
 	}
 
-	@XmlElement(name = "CtgyNm")
 	public List<Max35Text> getCategoryName() {
-		return categoryName;
+		return categoryName == null ? categoryName = new ArrayList<>() : categoryName;
 	}
 
-	public void setCategoryName(List<Max35Text> categoryName) {
-		this.categoryName = categoryName;
+	public LineItemTax1 setCategoryName(List<Max35Text> categoryName) {
+		this.categoryName = Objects.requireNonNull(categoryName);
+		return this;
 	}
 }

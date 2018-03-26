@@ -37,12 +37,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMStatus3Code#InOperation
- * ATMStatus3Code.mmInOperation}</li>
+ * ATMStatus3Code.InOperation}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ATMStatus3Code#Stopped
- * ATMStatus3Code.mmStopped}</li>
+ * ATMStatus3Code.Stopped}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMStatus3Code#WaitingActivation
- * ATMStatus3Code.mmWaitingActivation}</li>
+ * ATMStatus3Code.WaitingActivation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -50,8 +50,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -146,7 +146,7 @@ public class ATMStatus3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMStatus3Code";
 				definition = "Current status of the key.";

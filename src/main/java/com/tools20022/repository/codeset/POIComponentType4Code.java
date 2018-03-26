@@ -38,55 +38,55 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType4Code#AcquirerProtocolParameters
- * POIComponentType4Code.mmAcquirerProtocolParameters}</li>
+ * POIComponentType4Code.AcquirerProtocolParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType4Code#ApplicationParameters
- * POIComponentType4Code.mmApplicationParameters}</li>
+ * POIComponentType4Code.ApplicationParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType4Code#TerminalParameters
- * POIComponentType4Code.mmTerminalParameters}</li>
+ * POIComponentType4Code.TerminalParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType4Code#SecurityParameters
- * POIComponentType4Code.mmSecurityParameters}</li>
+ * POIComponentType4Code.SecurityParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType4Code#Server
- * POIComponentType4Code.mmServer}</li>
+ * POIComponentType4Code.Server}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType4Code#Terminal
- * POIComponentType4Code.mmTerminal}</li>
+ * POIComponentType4Code.Terminal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType4Code#Device
- * POIComponentType4Code.mmDevice}</li>
+ * POIComponentType4Code.Device}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType4Code#SecureModule
- * POIComponentType4Code.mmSecureModule}</li>
+ * POIComponentType4Code.SecureModule}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType4Code#PaymentApplication
- * POIComponentType4Code.mmPaymentApplication}</li>
+ * POIComponentType4Code.PaymentApplication}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType4Code#EMVKernel
- * POIComponentType4Code.mmEMVKernel}</li>
+ * POIComponentType4Code.EMVKernel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType4Code#EMVLevel1
- * POIComponentType4Code.mmEMVLevel1}</li>
+ * POIComponentType4Code.EMVLevel1}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType4Code#Middleware
- * POIComponentType4Code.mmMiddleware}</li>
+ * POIComponentType4Code.Middleware}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType4Code#Driver
- * POIComponentType4Code.mmDriver}</li>
+ * POIComponentType4Code.Driver}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType4Code#OperatingSystem
- * POIComponentType4Code.mmOperatingSystem}</li>
+ * POIComponentType4Code.OperatingSystem}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType4Code#MerchantParameters
- * POIComponentType4Code.mmMerchantParameters}</li>
+ * POIComponentType4Code.MerchantParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType4Code#CertificateParameters
- * POIComponentType4Code.mmCertificateParameters}</li>
+ * POIComponentType4Code.CertificateParameters}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.POIComponentType4Code#TMSProtocolParameters
- * POIComponentType4Code.mmTMSProtocolParameters}</li>
+ * POIComponentType4Code.TMSProtocolParameters}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -95,8 +95,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -534,7 +534,7 @@ public class POIComponentType4Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("AQPP");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "POIComponentType4Code";

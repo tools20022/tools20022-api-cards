@@ -38,19 +38,19 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardServiceType2Code#DisableStoreForward
- * CardServiceType2Code.mmDisableStoreForward}</li>
+ * CardServiceType2Code.DisableStoreForward}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardServiceType2Code#EchoTest
- * CardServiceType2Code.mmEchoTest}</li>
+ * CardServiceType2Code.EchoTest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardServiceType2Code#EnableStoreForward
- * CardServiceType2Code.mmEnableStoreForward}</li>
+ * CardServiceType2Code.EnableStoreForward}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardServiceType2Code#SignOff
- * CardServiceType2Code.mmSignOff}</li>
+ * CardServiceType2Code.SignOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardServiceType2Code#SignOn
- * CardServiceType2Code.mmSignOn}</li>
+ * CardServiceType2Code.SignOn}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -59,8 +59,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -204,7 +204,7 @@ public class CardServiceType2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardServiceType2Code";
 				definition = "Type of network management service (correspond to the ISO 8583 field 24).";

@@ -17,13 +17,16 @@
 
 package com.tools20022.repository.entity;
 
+import com.tools20022.metamodel.ext.OtherSemanticMarkup;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.LimitStatusCode;
+import com.tools20022.repository.entity.Limit;
 import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Current status of the limit.
@@ -56,8 +59,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -73,8 +76,8 @@ public class LimitStatus extends Status {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected Limit limit;
 	/**
-	 * Limit for which a status is provided.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -103,7 +106,7 @@ public class LimitStatus extends Status {
 	 * definition} = "Limit for which a status is provided."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmLimit = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<LimitStatus, Optional<Limit>> mmLimit = new MMBusinessAssociationEnd<LimitStatus, Optional<Limit>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LimitStatus.mmObject();
@@ -116,11 +119,21 @@ public class LimitStatus extends Status {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Limit.mmObject();
 		}
+
+		@Override
+		public Optional<Limit> getValue(LimitStatus obj) {
+			return obj.getLimit();
+		}
+
+		@Override
+		public void setValue(LimitStatus obj, Optional<Limit> value) {
+			obj.setLimit(value.orElse(null));
+		}
 	};
 	protected LimitStatusCode status;
 	/**
-	 * Current status of the limit.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -133,6 +146,17 @@ public class LimitStatus extends Status {
 	 * elementContext} =
 	 * {@linkplain com.tools20022.repository.entity.LimitStatus LimitStatus}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getSemanticMarkup
+	 * semanticMarkup} = type=SampleData, SampleData=<?xml version="1.0"
+	 * encoding="UTF-8"?> <InstanceInfo> <key KeyValue="Sample1"/> <key
+	 * KeyValue="Sample2"/> <key KeyValue="Sample3"/> <key KeyValue="Sample4"/>
+	 * <key KeyValue="Sample5"/> <key KeyValue="Sample6"/> <key
+	 * KeyValue="Sample7"/> <key KeyValue="Sample8"/> <key KeyValue="Sample9"/>
+	 * <key KeyValue="Sample10"/> </InstanceInfo>
+	 * 
+	 * 
+	 * </li>
+	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
 	 * registrationStatus} =
 	 * com.tools20022.metamodel.MMRegistrationStatus.REGISTERED</li>
@@ -143,10 +167,17 @@ public class LimitStatus extends Status {
 	 * definition} = "Current status of the limit."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmStatus = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<LimitStatus, LimitStatusCode> mmStatus = new MMBusinessAttribute<LimitStatus, LimitStatusCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.LimitStatus.mmObject();
+			semanticMarkup_lazy = () -> Arrays
+					.asList(new OtherSemanticMarkup(
+							this,
+							"SampleData",
+							new String[]{
+									"SampleData",
+									"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<InstanceInfo>\n<key KeyValue=\"Sample1\"/>\n<key KeyValue=\"Sample2\"/>\n<key KeyValue=\"Sample3\"/>\n<key KeyValue=\"Sample4\"/>\n<key KeyValue=\"Sample5\"/>\n<key KeyValue=\"Sample6\"/>\n<key KeyValue=\"Sample7\"/>\n<key KeyValue=\"Sample8\"/>\n<key KeyValue=\"Sample9\"/>\n<key KeyValue=\"Sample10\"/>\n</InstanceInfo>\n\n\n"}));
 			registrationStatus = MMRegistrationStatus.REGISTERED;
 			name = "Status";
 			definition = "Current status of the limit.";
@@ -155,19 +186,21 @@ public class LimitStatus extends Status {
 			simpleType_lazy = () -> LimitStatusCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return LimitStatus.class.getMethod("getStatus", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public LimitStatusCode getValue(LimitStatus obj) {
+			return obj.getStatus();
+		}
+
+		@Override
+		public void setValue(LimitStatus obj, LimitStatusCode value) {
+			obj.setStatus(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "LimitStatus";
 				definition = "Current status of the limit.";
@@ -184,19 +217,21 @@ public class LimitStatus extends Status {
 		return mmObject_lazy.get();
 	}
 
-	public Limit getLimit() {
-		return limit;
+	public Optional<Limit> getLimit() {
+		return limit == null ? Optional.empty() : Optional.of(limit);
 	}
 
-	public void setLimit(com.tools20022.repository.entity.Limit limit) {
+	public LimitStatus setLimit(com.tools20022.repository.entity.Limit limit) {
 		this.limit = limit;
+		return this;
 	}
 
 	public LimitStatusCode getStatus() {
 		return status;
 	}
 
-	public void setStatus(LimitStatusCode status) {
-		this.status = status;
+	public LimitStatus setStatus(LimitStatusCode status) {
+		this.status = Objects.requireNonNull(status);
+		return this;
 	}
 }

@@ -21,13 +21,14 @@ import com.tools20022.metamodel.MMMessageBuildingBlock;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.AcceptortoAcquirerCardTransactionLatestVersion;
+import com.tools20022.repository.area.AcceptortoAcquirerCardTransactionPreviousVersion;
 import com.tools20022.repository.msg.AcceptorCompletionAdvice6;
 import com.tools20022.repository.msg.ContentInformationType15;
 import com.tools20022.repository.msg.Header24;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
@@ -62,8 +63,8 @@ import javax.xml.bind.annotation.*;
  * xmlTag} = "AccptrCmpltnAdvc"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageDefinition#getBusinessArea
  * businessArea} =
- * {@linkplain com.tools20022.repository.area.AcceptortoAcquirerCardTransactionLatestVersion
- * AcceptortoAcquirerCardTransactionLatestVersion}</li>
+ * {@linkplain com.tools20022.repository.area.AcceptortoAcquirerCardTransactionPreviousVersion
+ * AcceptortoAcquirerCardTransactionPreviousVersion}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code caaa.003.001.06}</li>
@@ -75,19 +76,20 @@ import javax.xml.bind.annotation.*;
  * "AcceptorCompletionAdviceV06"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "The AcceptorCompletionAdvice message is sent by an acceptor (or its agent) to notify the acquirer (or its agent) of the outcome of the payment at the acceptor, and to transfer the  financial data of the transaction to the acquirer (capture).\r\nA AcceptorCompletionAdvice message is also sent to reverse an approved authorisation and any associated financial transfer (capture), if the card payment transaction could not be completed successfully."
+ * "The AcceptorCompletionAdvice message is sent by an acceptor (or its agent) to notify the acquirer (or its agent) of the outcome of the payment at the acceptor, and to transfer the financial data of the transaction to the acquirer (capture).\r\nA AcceptorCompletionAdvice message is also sent to reverse an approved authorisation and any associated financial transfer (capture), if the card payment transaction could not be completed successfully."
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AcceptorCompletionAdviceV06", propOrder = {"header", "completionAdvice", "securityTrailer"})
 public class AcceptorCompletionAdviceV06 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header24 header;
 	/**
-	 * Completion advice message management information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -107,7 +109,7 @@ public class AcceptorCompletionAdviceV06 {
 	 * definition} = "Completion advice message management information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorCompletionAdviceV06, Header24> mmHeader = new MMMessageBuildingBlock<AcceptorCompletionAdviceV06, Header24>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -118,18 +120,21 @@ public class AcceptorCompletionAdviceV06 {
 			complexType_lazy = () -> Header24.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorCompletionAdviceV06.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header24 getValue(AcceptorCompletionAdviceV06 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(AcceptorCompletionAdviceV06 obj, Header24 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "CmpltnAdvc", required = true)
 	protected AcceptorCompletionAdvice6 completionAdvice;
 	/**
-	 * Information related to the completion advice.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -150,7 +155,7 @@ public class AcceptorCompletionAdviceV06 {
 	 * definition} = "Information related to the completion advice."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCompletionAdvice = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorCompletionAdviceV06, AcceptorCompletionAdvice6> mmCompletionAdvice = new MMMessageBuildingBlock<AcceptorCompletionAdviceV06, AcceptorCompletionAdvice6>() {
 		{
 			xmlTag = "CmpltnAdvc";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -161,18 +166,21 @@ public class AcceptorCompletionAdviceV06 {
 			complexType_lazy = () -> AcceptorCompletionAdvice6.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorCompletionAdviceV06.class.getMethod("getCompletionAdvice", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AcceptorCompletionAdvice6 getValue(AcceptorCompletionAdviceV06 obj) {
+			return obj.getCompletionAdvice();
+		}
+
+		@Override
+		public void setValue(AcceptorCompletionAdviceV06 obj, AcceptorCompletionAdvice6 value) {
+			obj.setCompletionAdvice(value);
 		}
 	};
+	@XmlElement(name = "SctyTrlr")
 	protected ContentInformationType15 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -193,7 +201,7 @@ public class AcceptorCompletionAdviceV06 {
 	 * definition} = "Trailer of the message containing a MAC."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorCompletionAdviceV06, Optional<ContentInformationType15>> mmSecurityTrailer = new MMMessageBuildingBlock<AcceptorCompletionAdviceV06, Optional<ContentInformationType15>>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -204,12 +212,14 @@ public class AcceptorCompletionAdviceV06 {
 			complexType_lazy = () -> ContentInformationType15.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorCompletionAdviceV06.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType15> getValue(AcceptorCompletionAdviceV06 obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(AcceptorCompletionAdviceV06 obj, Optional<ContentInformationType15> value) {
+			obj.setSecurityTrailer(value.orElse(null));
 		}
 	};
 
@@ -218,10 +228,10 @@ public class AcceptorCompletionAdviceV06 {
 			{
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AcceptorCompletionAdviceV06";
-				definition = "The AcceptorCompletionAdvice message is sent by an acceptor (or its agent) to notify the acquirer (or its agent) of the outcome of the payment at the acceptor, and to transfer the  financial data of the transaction to the acquirer (capture).\r\nA AcceptorCompletionAdvice message is also sent to reverse an approved authorisation and any associated financial transfer (capture), if the card payment transaction could not be completed successfully.";
+				definition = "The AcceptorCompletionAdvice message is sent by an acceptor (or its agent) to notify the acquirer (or its agent) of the outcome of the payment at the acceptor, and to transfer the financial data of the transaction to the acquirer (capture).\r\nA AcceptorCompletionAdvice message is also sent to reverse an approved authorisation and any associated financial transfer (capture), if the card payment transaction could not be completed successfully.";
 				rootElement = "Document";
 				xmlTag = "AccptrCmpltnAdvc";
-				businessArea_lazy = () -> AcceptortoAcquirerCardTransactionLatestVersion.mmObject();
+				businessArea_lazy = () -> AcceptortoAcquirerCardTransactionPreviousVersion.mmObject();
 				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.caaa.AcceptorCompletionAdviceV06.mmHeader, com.tools20022.repository.area.caaa.AcceptorCompletionAdviceV06.mmCompletionAdvice,
 						com.tools20022.repository.area.caaa.AcceptorCompletionAdviceV06.mmSecurityTrailer);
 				messageDefinitionIdentifier_lazy = () -> new MMMessageDefinitionIdentifier() {
@@ -242,34 +252,34 @@ public class AcceptorCompletionAdviceV06 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header24 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header24 header) {
-		this.header = header;
+	public AcceptorCompletionAdviceV06 setHeader(Header24 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "CmpltnAdvc", required = true)
 	public AcceptorCompletionAdvice6 getCompletionAdvice() {
 		return completionAdvice;
 	}
 
-	public void setCompletionAdvice(AcceptorCompletionAdvice6 completionAdvice) {
-		this.completionAdvice = completionAdvice;
+	public AcceptorCompletionAdviceV06 setCompletionAdvice(AcceptorCompletionAdvice6 completionAdvice) {
+		this.completionAdvice = Objects.requireNonNull(completionAdvice);
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr")
-	public ContentInformationType15 getSecurityTrailer() {
-		return securityTrailer;
+	public Optional<ContentInformationType15> getSecurityTrailer() {
+		return securityTrailer == null ? Optional.empty() : Optional.of(securityTrailer);
 	}
 
-	public void setSecurityTrailer(ContentInformationType15 securityTrailer) {
+	public AcceptorCompletionAdviceV06 setSecurityTrailer(ContentInformationType15 securityTrailer) {
 		this.securityTrailer = securityTrailer;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:caaa.003.06.06")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:caaa.003.001.06")
 	static public class Document {
 		@XmlElement(name = "AccptrCmpltnAdvc", required = true)
 		public AcceptorCompletionAdviceV06 messageBody;

@@ -37,30 +37,30 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.CardDataReading5Code#Tag
- * CardDataReading5Code.mmTag}</li>
+ * CardDataReading5Code.Tag}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardDataReading5Code#Physical
- * CardDataReading5Code.mmPhysical}</li>
+ * CardDataReading5Code.Physical}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardDataReading5Code#BarCode
- * CardDataReading5Code.mmBarCode}</li>
+ * CardDataReading5Code.BarCode}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardDataReading5Code#MagneticStripe
- * CardDataReading5Code.mmMagneticStripe}</li>
+ * CardDataReading5Code.MagneticStripe}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CardDataReading5Code#ICC
- * CardDataReading5Code.mmICC}</li>
+ * CardDataReading5Code.ICC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardDataReading5Code#AccountData
- * CardDataReading5Code.mmAccountData}</li>
+ * CardDataReading5Code.AccountData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardDataReading5Code#ProximityReader
- * CardDataReading5Code.mmProximityReader}</li>
+ * CardDataReading5Code.ProximityReader}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardDataReading5Code#EMVProximityReader
- * CardDataReading5Code.mmEMVProximityReader}</li>
+ * CardDataReading5Code.EMVProximityReader}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardDataReading5Code#CardOnFile
- * CardDataReading5Code.mmCardOnFile}</li>
+ * CardDataReading5Code.CardOnFile}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -69,8 +69,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -113,7 +113,7 @@ public class CardDataReading5Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardDataReading1Code#Tag
-	 * CardDataReading1Code.mmTag}</li>
+	 * CardDataReading1Code.Tag}</li>
 	 * </ul>
 	 */
 	public static final CardDataReading5Code Tag = new CardDataReading5Code() {
@@ -143,7 +143,7 @@ public class CardDataReading5Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardDataReading1Code#Physical
-	 * CardDataReading1Code.mmPhysical}</li>
+	 * CardDataReading1Code.Physical}</li>
 	 * </ul>
 	 */
 	public static final CardDataReading5Code Physical = new CardDataReading5Code() {
@@ -173,7 +173,7 @@ public class CardDataReading5Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardDataReading1Code#BarCode
-	 * CardDataReading1Code.mmBarCode}</li>
+	 * CardDataReading1Code.BarCode}</li>
 	 * </ul>
 	 */
 	public static final CardDataReading5Code BarCode = new CardDataReading5Code() {
@@ -203,7 +203,7 @@ public class CardDataReading5Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardDataReading1Code#MagneticStripe
-	 * CardDataReading1Code.mmMagneticStripe}</li>
+	 * CardDataReading1Code.MagneticStripe}</li>
 	 * </ul>
 	 */
 	public static final CardDataReading5Code MagneticStripe = new CardDataReading5Code() {
@@ -233,7 +233,7 @@ public class CardDataReading5Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardDataReading1Code#ICC
-	 * CardDataReading1Code.mmICC}</li>
+	 * CardDataReading1Code.ICC}</li>
 	 * </ul>
 	 */
 	public static final CardDataReading5Code ICC = new CardDataReading5Code() {
@@ -263,7 +263,7 @@ public class CardDataReading5Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardDataReading1Code#AccountData
-	 * CardDataReading1Code.mmAccountData}</li>
+	 * CardDataReading1Code.AccountData}</li>
 	 * </ul>
 	 */
 	public static final CardDataReading5Code AccountData = new CardDataReading5Code() {
@@ -293,7 +293,7 @@ public class CardDataReading5Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardDataReading1Code#ProximityReader
-	 * CardDataReading1Code.mmProximityReader}</li>
+	 * CardDataReading1Code.ProximityReader}</li>
 	 * </ul>
 	 */
 	public static final CardDataReading5Code ProximityReader = new CardDataReading5Code() {
@@ -323,7 +323,7 @@ public class CardDataReading5Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.CardDataReading1Code#EMVProximityReader
-	 * CardDataReading1Code.mmEMVProximityReader}</li>
+	 * CardDataReading1Code.EMVProximityReader}</li>
 	 * </ul>
 	 */
 	public static final CardDataReading5Code EMVProximityReader = new CardDataReading5Code() {
@@ -367,7 +367,7 @@ public class CardDataReading5Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("TAGC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardDataReading5Code";

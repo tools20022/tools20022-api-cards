@@ -21,20 +21,21 @@ import com.tools20022.metamodel.MMMessageBuildingBlock;
 import com.tools20022.metamodel.MMMessageDefinition;
 import com.tools20022.metamodel.MMMessageDefinitionIdentifier;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.AcceptortoAcquirerCardTransactionLatestVersion;
+import com.tools20022.repository.area.AcceptortoAcquirerCardTransactionPreviousVersion;
 import com.tools20022.repository.msg.AcceptorCancellationRequest6;
 import com.tools20022.repository.msg.ContentInformationType15;
 import com.tools20022.repository.msg.Header30;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.*;
 
 /**
  * The AcceptorCancellationRequest message is sent by an acceptor (or its agent)
- * to the acquirer (or its agent) , to request the cancellation of a
- * successfully completed transaction. Cancellation should only occur before the
- * transaction has been cleared.<br>
+ * to the acquirer (or its agent), to request the cancellation of a successfully
+ * completed transaction. Cancellation should only occur before the transaction
+ * has been cleared.<br>
  * <br>
  * <p>
  * <strong>Constant fields:</strong>
@@ -60,8 +61,8 @@ import javax.xml.bind.annotation.*;
  * xmlTag} = "AccptrCxlReq"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMMessageDefinition#getBusinessArea
  * businessArea} =
- * {@linkplain com.tools20022.repository.area.AcceptortoAcquirerCardTransactionLatestVersion
- * AcceptortoAcquirerCardTransactionLatestVersion}</li>
+ * {@linkplain com.tools20022.repository.area.AcceptortoAcquirerCardTransactionPreviousVersion
+ * AcceptortoAcquirerCardTransactionPreviousVersion}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMMessageDefinition#getMessageDefinitionIdentifier
  * messageDefinitionIdentifier} = {@code caaa.005.001.06}</li>
@@ -73,19 +74,20 @@ import javax.xml.bind.annotation.*;
  * "AcceptorCancellationRequestV06"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "The AcceptorCancellationRequest message is sent by an acceptor (or its agent) to the acquirer (or its agent) , to request the cancellation of a successfully completed transaction. Cancellation should only occur before the transaction has been cleared.\r\n\r\n"
+ * "The AcceptorCancellationRequest message is sent by an acceptor (or its agent) to the acquirer (or its agent), to request the cancellation of a successfully completed transaction. Cancellation should only occur before the transaction has been cleared.\r\n\r\n"
  * </li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AcceptorCancellationRequestV06", propOrder = {"header", "cancellationRequest", "securityTrailer"})
 public class AcceptorCancellationRequestV06 {
 
 	final static private AtomicReference<MMMessageDefinition> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Hdr", required = true)
 	protected Header30 header;
 	/**
-	 * Cancellation request message management information.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -105,7 +107,7 @@ public class AcceptorCancellationRequestV06 {
 	 * definition} = "Cancellation request message management information."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmHeader = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorCancellationRequestV06, Header30> mmHeader = new MMMessageBuildingBlock<AcceptorCancellationRequestV06, Header30>() {
 		{
 			xmlTag = "Hdr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -116,18 +118,21 @@ public class AcceptorCancellationRequestV06 {
 			complexType_lazy = () -> Header30.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorCancellationRequestV06.class.getMethod("getHeader", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Header30 getValue(AcceptorCancellationRequestV06 obj) {
+			return obj.getHeader();
+		}
+
+		@Override
+		public void setValue(AcceptorCancellationRequestV06 obj, Header30 value) {
+			obj.setHeader(value);
 		}
 	};
+	@XmlElement(name = "CxlReq", required = true)
 	protected AcceptorCancellationRequest6 cancellationRequest;
 	/**
-	 * Information related to the cancellation request.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -148,7 +153,7 @@ public class AcceptorCancellationRequestV06 {
 	 * definition} = "Information related to the cancellation request."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmCancellationRequest = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorCancellationRequestV06, AcceptorCancellationRequest6> mmCancellationRequest = new MMMessageBuildingBlock<AcceptorCancellationRequestV06, AcceptorCancellationRequest6>() {
 		{
 			xmlTag = "CxlReq";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -159,18 +164,21 @@ public class AcceptorCancellationRequestV06 {
 			complexType_lazy = () -> AcceptorCancellationRequest6.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorCancellationRequestV06.class.getMethod("getCancellationRequest", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public AcceptorCancellationRequest6 getValue(AcceptorCancellationRequestV06 obj) {
+			return obj.getCancellationRequest();
+		}
+
+		@Override
+		public void setValue(AcceptorCancellationRequestV06 obj, AcceptorCancellationRequest6 value) {
+			obj.setCancellationRequest(value);
 		}
 	};
+	@XmlElement(name = "SctyTrlr")
 	protected ContentInformationType15 securityTrailer;
 	/**
-	 * Trailer of the message containing a MAC.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -191,7 +199,7 @@ public class AcceptorCancellationRequestV06 {
 	 * definition} = "Trailer of the message containing a MAC."</li>
 	 * </ul>
 	 */
-	public static final MMMessageBuildingBlock mmSecurityTrailer = new MMMessageBuildingBlock() {
+	public static final MMMessageBuildingBlock<AcceptorCancellationRequestV06, Optional<ContentInformationType15>> mmSecurityTrailer = new MMMessageBuildingBlock<AcceptorCancellationRequestV06, Optional<ContentInformationType15>>() {
 		{
 			xmlTag = "SctyTrlr";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -202,12 +210,14 @@ public class AcceptorCancellationRequestV06 {
 			complexType_lazy = () -> ContentInformationType15.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return AcceptorCancellationRequestV06.class.getMethod("getSecurityTrailer", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public Optional<ContentInformationType15> getValue(AcceptorCancellationRequestV06 obj) {
+			return obj.getSecurityTrailer();
+		}
+
+		@Override
+		public void setValue(AcceptorCancellationRequestV06 obj, Optional<ContentInformationType15> value) {
+			obj.setSecurityTrailer(value.orElse(null));
 		}
 	};
 
@@ -216,10 +226,10 @@ public class AcceptorCancellationRequestV06 {
 			{
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AcceptorCancellationRequestV06";
-				definition = "The AcceptorCancellationRequest message is sent by an acceptor (or its agent) to the acquirer (or its agent) , to request the cancellation of a successfully completed transaction. Cancellation should only occur before the transaction has been cleared.\r\n\r\n";
+				definition = "The AcceptorCancellationRequest message is sent by an acceptor (or its agent) to the acquirer (or its agent), to request the cancellation of a successfully completed transaction. Cancellation should only occur before the transaction has been cleared.\r\n\r\n";
 				rootElement = "Document";
 				xmlTag = "AccptrCxlReq";
-				businessArea_lazy = () -> AcceptortoAcquirerCardTransactionLatestVersion.mmObject();
+				businessArea_lazy = () -> AcceptortoAcquirerCardTransactionPreviousVersion.mmObject();
 				messageBuildingBlock_lazy = () -> Arrays.asList(com.tools20022.repository.area.caaa.AcceptorCancellationRequestV06.mmHeader, com.tools20022.repository.area.caaa.AcceptorCancellationRequestV06.mmCancellationRequest,
 						com.tools20022.repository.area.caaa.AcceptorCancellationRequestV06.mmSecurityTrailer);
 				messageDefinitionIdentifier_lazy = () -> new MMMessageDefinitionIdentifier() {
@@ -240,34 +250,34 @@ public class AcceptorCancellationRequestV06 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Hdr", required = true)
 	public Header30 getHeader() {
 		return header;
 	}
 
-	public void setHeader(Header30 header) {
-		this.header = header;
+	public AcceptorCancellationRequestV06 setHeader(Header30 header) {
+		this.header = Objects.requireNonNull(header);
+		return this;
 	}
 
-	@XmlElement(name = "CxlReq", required = true)
 	public AcceptorCancellationRequest6 getCancellationRequest() {
 		return cancellationRequest;
 	}
 
-	public void setCancellationRequest(AcceptorCancellationRequest6 cancellationRequest) {
-		this.cancellationRequest = cancellationRequest;
+	public AcceptorCancellationRequestV06 setCancellationRequest(AcceptorCancellationRequest6 cancellationRequest) {
+		this.cancellationRequest = Objects.requireNonNull(cancellationRequest);
+		return this;
 	}
 
-	@XmlElement(name = "SctyTrlr")
-	public ContentInformationType15 getSecurityTrailer() {
-		return securityTrailer;
+	public Optional<ContentInformationType15> getSecurityTrailer() {
+		return securityTrailer == null ? Optional.empty() : Optional.of(securityTrailer);
 	}
 
-	public void setSecurityTrailer(ContentInformationType15 securityTrailer) {
+	public AcceptorCancellationRequestV06 setSecurityTrailer(ContentInformationType15 securityTrailer) {
 		this.securityTrailer = securityTrailer;
+		return this;
 	}
 
-	@XmlRootElement(namespace = "urn:iso:std:iso:20022:tech:xsd:caaa.005.06.06")
+	@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:caaa.005.001.06")
 	static public class Document {
 		@XmlElement(name = "AccptrCxlReq", required = true)
 		public AcceptorCancellationRequestV06 messageBody;

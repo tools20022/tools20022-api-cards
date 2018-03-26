@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UserInterface5Code#CardholderDisplay
- * UserInterface5Code.mmCardholderDisplay}</li>
+ * UserInterface5Code.CardholderDisplay}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UserInterface5Code#CardholderReceipt
- * UserInterface5Code.mmCardholderReceipt}</li>
+ * UserInterface5Code.CardholderReceipt}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.UserInterface5Code#OtherCardholderInterface
- * UserInterface5Code.mmOtherCardholderInterface}</li>
+ * UserInterface5Code.OtherCardholderInterface}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -53,8 +53,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -91,7 +91,7 @@ public class UserInterface5Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.UserInterface4Code#CardholderDisplay
-	 * UserInterface4Code.mmCardholderDisplay}</li>
+	 * UserInterface4Code.CardholderDisplay}</li>
 	 * </ul>
 	 */
 	public static final UserInterface5Code CardholderDisplay = new UserInterface5Code() {
@@ -121,7 +121,7 @@ public class UserInterface5Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.UserInterface4Code#CardholderReceipt
-	 * UserInterface4Code.mmCardholderReceipt}</li>
+	 * UserInterface4Code.CardholderReceipt}</li>
 	 * </ul>
 	 */
 	public static final UserInterface5Code CardholderReceipt = new UserInterface5Code() {
@@ -151,7 +151,7 @@ public class UserInterface5Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.UserInterface4Code#OtherCardholderInterface
-	 * UserInterface4Code.mmOtherCardholderInterface}</li>
+	 * UserInterface4Code.OtherCardholderInterface}</li>
 	 * </ul>
 	 */
 	public static final UserInterface5Code OtherCardholderInterface = new UserInterface5Code() {
@@ -171,7 +171,7 @@ public class UserInterface5Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UserInterface5Code";
 				definition = "Destination of the message.";

@@ -37,25 +37,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getCode code} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmount8Code#Actual
- * TypeOfAmount8Code.mmActual}</li>
+ * TypeOfAmount8Code.Actual}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount8Code#Estimated
- * TypeOfAmount8Code.mmEstimated}</li>
+ * TypeOfAmount8Code.Estimated}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmount8Code#Maximum
- * TypeOfAmount8Code.mmMaximum}</li>
+ * TypeOfAmount8Code.Maximum}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmount8Code#Default
- * TypeOfAmount8Code.mmDefault}</li>
+ * TypeOfAmount8Code.Default}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount8Code#Replacement
- * TypeOfAmount8Code.mmReplacement}</li>
+ * TypeOfAmount8Code.Replacement}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount8Code#Incremental
- * TypeOfAmount8Code.mmIncremental}</li>
+ * TypeOfAmount8Code.Incremental}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TypeOfAmount8Code#Decremental
- * TypeOfAmount8Code.mmDecremental}</li>
+ * TypeOfAmount8Code.Decremental}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.TypeOfAmount8Code#Reserved
- * TypeOfAmount8Code.mmReserved}</li>
+ * TypeOfAmount8Code.Reserved}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -64,8 +64,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -108,7 +108,7 @@ public class TypeOfAmount8Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.TypeOfAmount1Code#Actual
-	 * TypeOfAmount1Code.mmActual}</li>
+	 * TypeOfAmount1Code.Actual}</li>
 	 * </ul>
 	 */
 	public static final TypeOfAmount8Code Actual = new TypeOfAmount8Code() {
@@ -138,7 +138,7 @@ public class TypeOfAmount8Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.TypeOfAmount1Code#Estimated
-	 * TypeOfAmount1Code.mmEstimated}</li>
+	 * TypeOfAmount1Code.Estimated}</li>
 	 * </ul>
 	 */
 	public static final TypeOfAmount8Code Estimated = new TypeOfAmount8Code() {
@@ -168,7 +168,7 @@ public class TypeOfAmount8Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.TypeOfAmount1Code#Maximum
-	 * TypeOfAmount1Code.mmMaximum}</li>
+	 * TypeOfAmount1Code.Maximum}</li>
 	 * </ul>
 	 */
 	public static final TypeOfAmount8Code Maximum = new TypeOfAmount8Code() {
@@ -198,7 +198,7 @@ public class TypeOfAmount8Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.TypeOfAmount1Code#Default
-	 * TypeOfAmount1Code.mmDefault}</li>
+	 * TypeOfAmount1Code.Default}</li>
 	 * </ul>
 	 */
 	public static final TypeOfAmount8Code Default = new TypeOfAmount8Code() {
@@ -228,7 +228,7 @@ public class TypeOfAmount8Code extends MMCode {
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
 	 * {@linkplain com.tools20022.repository.codeset.TypeOfAmount1Code#Replacement
-	 * TypeOfAmount1Code.mmReplacement}</li>
+	 * TypeOfAmount1Code.Replacement}</li>
 	 * </ul>
 	 */
 	public static final TypeOfAmount8Code Replacement = new TypeOfAmount8Code() {
@@ -320,7 +320,7 @@ public class TypeOfAmount8Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ACTL");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TypeOfAmount8Code";

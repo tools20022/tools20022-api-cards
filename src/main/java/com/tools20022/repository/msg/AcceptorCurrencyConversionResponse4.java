@@ -24,8 +24,12 @@ import com.tools20022.repository.area.caaa.AcceptorCurrencyConversionResponseV04
 import com.tools20022.repository.entity.CardPayment;
 import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CardPaymentEnvironment65;
+import com.tools20022.repository.msg.CardPaymentTransaction77;
+import com.tools20022.repository.msg.CurrencyConversion11;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -66,8 +70,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -78,15 +82,16 @@ import javax.xml.bind.annotation.XmlType;
  * definition} = "Currency conversion outcome from the service provider."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "AcceptorCurrencyConversionResponse4", propOrder = {"environment", "transaction", "currencyConversionResult"})
 public class AcceptorCurrencyConversionResponse4 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Envt", required = true)
 	protected CardPaymentEnvironment65 environment;
 	/**
-	 * Environment of the transaction.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -115,10 +120,10 @@ public class AcceptorCurrencyConversionResponse4 {
 	 * definition} = "Environment of the transaction."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmEnvironment = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AcceptorCurrencyConversionResponse4, CardPaymentEnvironment65> mmEnvironment = new MMMessageAssociationEnd<AcceptorCurrencyConversionResponse4, CardPaymentEnvironment65>() {
 		{
 			businessComponentTrace_lazy = () -> CardPayment.mmObject();
-			componentContext_lazy = () -> AcceptorCurrencyConversionResponse4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcceptorCurrencyConversionResponse4.mmObject();
 			isDerived = false;
 			xmlTag = "Envt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -127,14 +132,24 @@ public class AcceptorCurrencyConversionResponse4 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CardPaymentEnvironment65.mmObject();
+			type_lazy = () -> CardPaymentEnvironment65.mmObject();
+		}
+
+		@Override
+		public CardPaymentEnvironment65 getValue(AcceptorCurrencyConversionResponse4 obj) {
+			return obj.getEnvironment();
+		}
+
+		@Override
+		public void setValue(AcceptorCurrencyConversionResponse4 obj, CardPaymentEnvironment65 value) {
+			obj.setEnvironment(value);
 		}
 	};
+	@XmlElement(name = "Tx", required = true)
 	protected CardPaymentTransaction77 transaction;
 	/**
-	 * Currency conversion of a card payment transaction between an acceptor and
-	 * an acquirer.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -165,10 +180,10 @@ public class AcceptorCurrencyConversionResponse4 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmTransaction = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AcceptorCurrencyConversionResponse4, CardPaymentTransaction77> mmTransaction = new MMMessageAssociationEnd<AcceptorCurrencyConversionResponse4, CardPaymentTransaction77>() {
 		{
 			businessComponentTrace_lazy = () -> CardPayment.mmObject();
-			componentContext_lazy = () -> AcceptorCurrencyConversionResponse4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcceptorCurrencyConversionResponse4.mmObject();
 			isDerived = false;
 			xmlTag = "Tx";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -177,13 +192,24 @@ public class AcceptorCurrencyConversionResponse4 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CardPaymentTransaction77.mmObject();
+			type_lazy = () -> CardPaymentTransaction77.mmObject();
+		}
+
+		@Override
+		public CardPaymentTransaction77 getValue(AcceptorCurrencyConversionResponse4 obj) {
+			return obj.getTransaction();
+		}
+
+		@Override
+		public void setValue(AcceptorCurrencyConversionResponse4 obj, CardPaymentTransaction77 value) {
+			obj.setTransaction(value);
 		}
 	};
+	@XmlElement(name = "CcyConvsRslt", required = true)
 	protected CurrencyConversion11 currencyConversionResult;
 	/**
-	 * Details of the currency conversion.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -212,10 +238,10 @@ public class AcceptorCurrencyConversionResponse4 {
 	 * definition} = "Details of the currency conversion."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCurrencyConversionResult = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<AcceptorCurrencyConversionResponse4, CurrencyConversion11> mmCurrencyConversionResult = new MMMessageAssociationEnd<AcceptorCurrencyConversionResponse4, CurrencyConversion11>() {
 		{
 			businessElementTrace_lazy = () -> Payment.mmCurrencyExchange;
-			componentContext_lazy = () -> AcceptorCurrencyConversionResponse4.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.AcceptorCurrencyConversionResponse4.mmObject();
 			isDerived = false;
 			xmlTag = "CcyConvsRslt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -224,17 +250,28 @@ public class AcceptorCurrencyConversionResponse4 {
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.CurrencyConversion11.mmObject();
+			type_lazy = () -> CurrencyConversion11.mmObject();
+		}
+
+		@Override
+		public CurrencyConversion11 getValue(AcceptorCurrencyConversionResponse4 obj) {
+			return obj.getCurrencyConversionResult();
+		}
+
+		@Override
+		public void setValue(AcceptorCurrencyConversionResponse4 obj, CurrencyConversion11 value) {
+			obj.setCurrencyConversionResult(value);
 		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(AcceptorCurrencyConversionResponse4.mmEnvironment, AcceptorCurrencyConversionResponse4.mmTransaction, AcceptorCurrencyConversionResponse4.mmCurrencyConversionResult);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.AcceptorCurrencyConversionResponse4.mmEnvironment, com.tools20022.repository.msg.AcceptorCurrencyConversionResponse4.mmTransaction,
+						com.tools20022.repository.msg.AcceptorCurrencyConversionResponse4.mmCurrencyConversionResult);
 				messageBuildingBlock_lazy = () -> Arrays.asList(AcceptorCurrencyConversionResponseV04.mmCurrencyConversionResponse);
 				trace_lazy = () -> CardPayment.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AcceptorCurrencyConversionResponse4";
 				definition = "Currency conversion outcome from the service provider.";
@@ -243,30 +280,30 @@ public class AcceptorCurrencyConversionResponse4 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Envt", required = true)
 	public CardPaymentEnvironment65 getEnvironment() {
 		return environment;
 	}
 
-	public void setEnvironment(com.tools20022.repository.msg.CardPaymentEnvironment65 environment) {
-		this.environment = environment;
+	public AcceptorCurrencyConversionResponse4 setEnvironment(CardPaymentEnvironment65 environment) {
+		this.environment = Objects.requireNonNull(environment);
+		return this;
 	}
 
-	@XmlElement(name = "Tx", required = true)
 	public CardPaymentTransaction77 getTransaction() {
 		return transaction;
 	}
 
-	public void setTransaction(com.tools20022.repository.msg.CardPaymentTransaction77 transaction) {
-		this.transaction = transaction;
+	public AcceptorCurrencyConversionResponse4 setTransaction(CardPaymentTransaction77 transaction) {
+		this.transaction = Objects.requireNonNull(transaction);
+		return this;
 	}
 
-	@XmlElement(name = "CcyConvsRslt", required = true)
 	public CurrencyConversion11 getCurrencyConversionResult() {
 		return currencyConversionResult;
 	}
 
-	public void setCurrencyConversionResult(com.tools20022.repository.msg.CurrencyConversion11 currencyConversionResult) {
-		this.currencyConversionResult = currencyConversionResult;
+	public AcceptorCurrencyConversionResponse4 setCurrencyConversionResult(CurrencyConversion11 currencyConversionResult) {
+		this.currencyConversionResult = Objects.requireNonNull(currencyConversionResult);
+		return this;
 	}
 }

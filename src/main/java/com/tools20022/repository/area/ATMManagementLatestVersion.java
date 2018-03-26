@@ -46,32 +46,23 @@ import java.util.concurrent.atomic.AtomicReference;
  * ATMExceptionAcknowledgementV01}</li>
  * <li>{@linkplain com.tools20022.repository.area.caam.ATMExceptionAdviceV01
  * ATMExceptionAdviceV01}</li>
- * <li>{@linkplain com.tools20022.repository.area.caam.ATMDeviceControlV02
- * ATMDeviceControlV02}</li>
  * <li>
  * {@linkplain com.tools20022.repository.area.caam.ATMReconciliationAdviceV02
  * ATMReconciliationAdviceV02}</li>
  * <li>
  * {@linkplain com.tools20022.repository.area.caam.ATMReconciliationAcknowledgementV02
  * ATMReconciliationAcknowledgementV02}</li>
- * <li>{@linkplain com.tools20022.repository.area.caam.ATMDeviceReportV02
- * ATMDeviceReportV02}</li>
  * <li>{@linkplain com.tools20022.repository.area.caam.ATMDiagnosticResponseV02
  * ATMDiagnosticResponseV02}</li>
  * <li>{@linkplain com.tools20022.repository.area.caam.ATMDiagnosticRequestV02
  * ATMDiagnosticRequestV02}</li>
- * <li>{@linkplain com.tools20022.repository.area.caam.ATMKeyDownloadRequestV02
- * ATMKeyDownloadRequestV02}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caam.ATMKeyDownloadResponseV02
- * ATMKeyDownloadResponseV02}</li>
  * </ul>
  * </li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelCatalogueEntry#getBusinessProcessCatalogue
  * businessProcessCatalogue} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmcatalogue
- * GeneratedRepository.mmcatalogue}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#catalogue
+ * GeneratedRepository.catalogue}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -91,14 +82,13 @@ public class ATMManagementLatestVersion {
 	final static public MMBusinessArea mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessArea() {
 			{
-				businessProcessCatalogue_lazy = () -> GeneratedRepository.mmcatalogue;
+				businessProcessCatalogue_lazy = () -> GeneratedRepository.catalogue;
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "ATM Management - Latest version - master";
 				definition = "Messages that support card related terminal management services between an Automated Teller Machine (ATM) and an\r\nAcquirer.";
-				code = "caam";
 				messageDefinition_lazy = () -> Arrays.asList(HostToATMAcknowledgementV01.mmObject(), HostToATMRequestV01.mmObject(), ATMExceptionAcknowledgementV01.mmObject(), ATMExceptionAdviceV01.mmObject(),
-						ATMDeviceControlV02.mmObject(), ATMReconciliationAdviceV02.mmObject(), ATMReconciliationAcknowledgementV02.mmObject(), ATMDeviceReportV02.mmObject(), ATMDiagnosticResponseV02.mmObject(),
-						ATMDiagnosticRequestV02.mmObject(), ATMKeyDownloadRequestV02.mmObject(), ATMKeyDownloadResponseV02.mmObject());
+						ATMReconciliationAdviceV02.mmObject(), ATMReconciliationAcknowledgementV02.mmObject(), ATMDiagnosticResponseV02.mmObject(), ATMDiagnosticRequestV02.mmObject());
+				code = "caam";
 			}
 		});
 		return mmObject_lazy.get();

@@ -38,52 +38,52 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType8Code#AccountStatements
- * ATMServiceType8Code.mmAccountStatements}</li>
+ * ATMServiceType8Code.AccountStatements}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType8Code#BalanceInquiry
- * ATMServiceType8Code.mmBalanceInquiry}</li>
+ * ATMServiceType8Code.BalanceInquiry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType8Code#PINChange
- * ATMServiceType8Code.mmPINChange}</li>
+ * ATMServiceType8Code.PINChange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType8Code#StandardWithdrawal
- * ATMServiceType8Code.mmStandardWithdrawal}</li>
+ * ATMServiceType8Code.StandardWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType8Code#ProfileWithdrawal
- * ATMServiceType8Code.mmProfileWithdrawal}</li>
+ * ATMServiceType8Code.ProfileWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType8Code#PreAuthorisedWithdrawal
- * ATMServiceType8Code.mmPreAuthorisedWithdrawal}</li>
+ * ATMServiceType8Code.PreAuthorisedWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType8Code#ChosenWithdrawal
- * ATMServiceType8Code.mmChosenWithdrawal}</li>
+ * ATMServiceType8Code.ChosenWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType8Code#CustomerTransfer
- * ATMServiceType8Code.mmCustomerTransfer}</li>
+ * ATMServiceType8Code.CustomerTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType8Code#InterCustomerTransfer
- * ATMServiceType8Code.mmInterCustomerTransfer}</li>
+ * ATMServiceType8Code.InterCustomerTransfer}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType8Code#MakingChange
- * ATMServiceType8Code.mmMakingChange}</li>
+ * ATMServiceType8Code.MakingChange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType8Code#NonVerifiedDeposit
- * ATMServiceType8Code.mmNonVerifiedDeposit}</li>
+ * ATMServiceType8Code.NonVerifiedDeposit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType8Code#PINRecovery
- * ATMServiceType8Code.mmPINRecovery}</li>
+ * ATMServiceType8Code.PINRecovery}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType8Code#PINUnblock
- * ATMServiceType8Code.mmPINUnblock}</li>
+ * ATMServiceType8Code.PINUnblock}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType8Code#SupervisedWithdrawal
- * ATMServiceType8Code.mmSupervisedWithdrawal}</li>
+ * ATMServiceType8Code.SupervisedWithdrawal}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType8Code#VerifiedDeposit
- * ATMServiceType8Code.mmVerifiedDeposit}</li>
+ * ATMServiceType8Code.VerifiedDeposit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ATMServiceType8Code#Payment
- * ATMServiceType8Code.mmPayment}</li>
+ * ATMServiceType8Code.Payment}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -92,8 +92,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -500,7 +500,7 @@ public class ATMServiceType8Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMServiceType8Code";
 				definition = "Type of service to be offered for a customer at an ATM.";

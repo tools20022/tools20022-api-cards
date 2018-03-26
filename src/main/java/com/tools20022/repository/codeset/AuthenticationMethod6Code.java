@@ -38,58 +38,58 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod6Code#OnLinePIN
- * AuthenticationMethod6Code.mmOnLinePIN}</li>
+ * AuthenticationMethod6Code.OnLinePIN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod6Code#PaperSignature
- * AuthenticationMethod6Code.mmPaperSignature}</li>
+ * AuthenticationMethod6Code.PaperSignature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod6Code#Password
- * AuthenticationMethod6Code.mmPassword}</li>
+ * AuthenticationMethod6Code.Password}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod6Code#SecureCertificate
- * AuthenticationMethod6Code.mmSecureCertificate}</li>
+ * AuthenticationMethod6Code.SecureCertificate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod6Code#SecuredChannel
- * AuthenticationMethod6Code.mmSecuredChannel}</li>
+ * AuthenticationMethod6Code.SecuredChannel}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod6Code#SecureNoCertificate
- * AuthenticationMethod6Code.mmSecureNoCertificate}</li>
+ * AuthenticationMethod6Code.SecureNoCertificate}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod6Code#SignatureCapture
- * AuthenticationMethod6Code.mmSignatureCapture}</li>
+ * AuthenticationMethod6Code.SignatureCapture}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod6Code#BillingAddressVerification
- * AuthenticationMethod6Code.mmBillingAddressVerification}</li>
+ * AuthenticationMethod6Code.BillingAddressVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod6Code#Biometry
- * AuthenticationMethod6Code.mmBiometry}</li>
+ * AuthenticationMethod6Code.Biometry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod6Code#CardholderIdentificationData
- * AuthenticationMethod6Code.mmCardholderIdentificationData}</li>
+ * AuthenticationMethod6Code.CardholderIdentificationData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod6Code#CryptogramVerification
- * AuthenticationMethod6Code.mmCryptogramVerification}</li>
+ * AuthenticationMethod6Code.CryptogramVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod6Code#CSCVerification
- * AuthenticationMethod6Code.mmCSCVerification}</li>
+ * AuthenticationMethod6Code.CSCVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod6Code#PassiveAuthentication
- * AuthenticationMethod6Code.mmPassiveAuthentication}</li>
+ * AuthenticationMethod6Code.PassiveAuthentication}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod6Code#SecureElectronicCommerce
- * AuthenticationMethod6Code.mmSecureElectronicCommerce}</li>
+ * AuthenticationMethod6Code.SecureElectronicCommerce}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod6Code#ShippingAddressVerification
- * AuthenticationMethod6Code.mmShippingAddressVerification}</li>
+ * AuthenticationMethod6Code.ShippingAddressVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod6Code#ManualVerification
- * AuthenticationMethod6Code.mmManualVerification}</li>
+ * AuthenticationMethod6Code.ManualVerification}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod6Code#OfflinePIN
- * AuthenticationMethod6Code.mmOfflinePIN}</li>
+ * AuthenticationMethod6Code.OfflinePIN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.AuthenticationMethod6Code#PaymentToken
- * AuthenticationMethod6Code.mmPaymentToken}</li>
+ * AuthenticationMethod6Code.PaymentToken}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -98,8 +98,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -560,7 +560,7 @@ public class AuthenticationMethod6Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ADDB");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AuthenticationMethod6Code";

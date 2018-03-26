@@ -38,28 +38,28 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability3Code#OnLinePIN
- * CardholderVerificationCapability3Code.mmOnLinePIN}</li>
+ * CardholderVerificationCapability3Code.OnLinePIN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability3Code#OfflinePINClear
- * CardholderVerificationCapability3Code.mmOfflinePINClear}</li>
+ * CardholderVerificationCapability3Code.OfflinePINClear}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability3Code#OfflinePINEncrypted
- * CardholderVerificationCapability3Code.mmOfflinePINEncrypted}</li>
+ * CardholderVerificationCapability3Code.OfflinePINEncrypted}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability3Code#OfflineDigitalSignature
- * CardholderVerificationCapability3Code.mmOfflineDigitalSignature}</li>
+ * CardholderVerificationCapability3Code.OfflineDigitalSignature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability3Code#OfflineBiometrics
- * CardholderVerificationCapability3Code.mmOfflineBiometrics}</li>
+ * CardholderVerificationCapability3Code.OfflineBiometrics}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability3Code#OfflineBiographics
- * CardholderVerificationCapability3Code.mmOfflineBiographics}</li>
+ * CardholderVerificationCapability3Code.OfflineBiographics}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability3Code#PKISignature
- * CardholderVerificationCapability3Code.mmPKISignature}</li>
+ * CardholderVerificationCapability3Code.PKISignature}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardholderVerificationCapability3Code#PersonalCode
- * CardholderVerificationCapability3Code.mmPersonalCode}</li>
+ * CardholderVerificationCapability3Code.PersonalCode}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -68,8 +68,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -284,7 +284,7 @@ public class CardholderVerificationCapability3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardholderVerificationCapability3Code";
 				definition = "Customer authentication capabilities available on an ATM.";

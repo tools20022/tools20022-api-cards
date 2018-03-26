@@ -38,26 +38,26 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExchangePolicy1Code#OnDemand
- * ExchangePolicy1Code.mmOnDemand}</li>
+ * ExchangePolicy1Code.OnDemand}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExchangePolicy1Code#Immediately
- * ExchangePolicy1Code.mmImmediately}</li>
+ * ExchangePolicy1Code.Immediately}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExchangePolicy1Code#AsSoonAsPossible
- * ExchangePolicy1Code.mmAsSoonAsPossible}</li>
+ * ExchangePolicy1Code.AsSoonAsPossible}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExchangePolicy1Code#AsGroup
- * ExchangePolicy1Code.mmAsGroup}</li>
+ * ExchangePolicy1Code.AsGroup}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExchangePolicy1Code#NumberLimit
- * ExchangePolicy1Code.mmNumberLimit}</li>
+ * ExchangePolicy1Code.NumberLimit}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.ExchangePolicy1Code#TotalLimit
- * ExchangePolicy1Code.mmTotalLimit}</li>
+ * ExchangePolicy1Code.TotalLimit}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ExchangePolicy1Code#Cyclic
- * ExchangePolicy1Code.mmCyclic}</li>
+ * ExchangePolicy1Code.Cyclic}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.ExchangePolicy1Code#None
- * ExchangePolicy1Code.mmNone}</li>
+ * ExchangePolicy1Code.None}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -66,8 +66,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -288,7 +288,7 @@ public class ExchangePolicy1Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ONDM");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ExchangePolicy1Code";

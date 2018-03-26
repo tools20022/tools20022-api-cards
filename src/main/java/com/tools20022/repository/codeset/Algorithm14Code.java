@@ -38,12 +38,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Algorithm14Code#SHA256WithRSA
- * Algorithm14Code.mmSHA256WithRSA}</li>
+ * Algorithm14Code.SHA256WithRSA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.Algorithm14Code#SHA1WithRSA
- * Algorithm14Code.mmSHA1WithRSA}</li>
+ * Algorithm14Code.SHA1WithRSA}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Algorithm14Code#RSASSAPSS
- * Algorithm14Code.mmRSASSAPSS}</li>
+ * Algorithm14Code.RSASSAPSS}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -51,8 +51,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -153,7 +153,7 @@ public class Algorithm14Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("ERS2");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Algorithm14Code";

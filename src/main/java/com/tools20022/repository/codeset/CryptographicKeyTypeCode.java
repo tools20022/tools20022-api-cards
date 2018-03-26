@@ -38,55 +38,55 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyTypeCode#DES
- * CryptographicKeyTypeCode.mmDES}</li>
+ * CryptographicKeyTypeCode.DES}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyTypeCode#AES
- * CryptographicKeyTypeCode.mmAES}</li>
+ * CryptographicKeyTypeCode.AES}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyTypeCode#RSA
- * CryptographicKeyTypeCode.mmRSA}</li>
+ * CryptographicKeyTypeCode.RSA}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyTypeCode#ECC
- * CryptographicKeyTypeCode.mmECC}</li>
+ * CryptographicKeyTypeCode.ECC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyTypeCode#AES128
- * CryptographicKeyTypeCode.mmAES128}</li>
+ * CryptographicKeyTypeCode.AES128}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyTypeCode#DES112
- * CryptographicKeyTypeCode.mmDES112}</li>
+ * CryptographicKeyTypeCode.DES112}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyTypeCode#DUKPT2009
- * CryptographicKeyTypeCode.mmDUKPT2009}</li>
+ * CryptographicKeyTypeCode.DUKPT2009}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyTypeCode#AES192
- * CryptographicKeyTypeCode.mmAES192}</li>
+ * CryptographicKeyTypeCode.AES192}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyTypeCode#AES256
- * CryptographicKeyTypeCode.mmAES256}</li>
+ * CryptographicKeyTypeCode.AES256}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyTypeCode#DES168
- * CryptographicKeyTypeCode.mmDES168}</li>
+ * CryptographicKeyTypeCode.DES168}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyTypeCode#Application
- * CryptographicKeyTypeCode.mmApplication}</li>
+ * CryptographicKeyTypeCode.Application}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyTypeCode#Dynamic
- * CryptographicKeyTypeCode.mmDynamic}</li>
+ * CryptographicKeyTypeCode.Dynamic}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyTypeCode#Data
- * CryptographicKeyTypeCode.mmData}</li>
+ * CryptographicKeyTypeCode.Data}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyTypeCode#KeyEncryption
- * CryptographicKeyTypeCode.mmKeyEncryption}</li>
+ * CryptographicKeyTypeCode.KeyEncryption}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyTypeCode#Working
- * CryptographicKeyTypeCode.mmWorking}</li>
+ * CryptographicKeyTypeCode.Working}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyTypeCode#PIN
- * CryptographicKeyTypeCode.mmPIN}</li>
+ * CryptographicKeyTypeCode.PIN}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CryptographicKeyTypeCode#MAC
- * CryptographicKeyTypeCode.mmMAC}</li>
+ * CryptographicKeyTypeCode.MAC}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -101,8 +101,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getExample
  * example} =
  * <ul>
@@ -658,7 +658,7 @@ public class CryptographicKeyTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				example = Arrays.asList("DESC");
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CryptographicKeyTypeCode";

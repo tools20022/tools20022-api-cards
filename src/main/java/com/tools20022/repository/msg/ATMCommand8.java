@@ -28,8 +28,11 @@ import com.tools20022.repository.datatype.Max140Text;
 import com.tools20022.repository.entity.TerminalManagementAction;
 import com.tools20022.repository.entity.TerminalManagementSystem;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.ATMCommandIdentification1;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
+import java.util.Optional;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
@@ -68,8 +71,8 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -81,15 +84,16 @@ import javax.xml.bind.annotation.XmlType;
  * "Command result for reinitialization of the transaction counters."</li>
  * </ul>
  */
-@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlAccessorType(XmlAccessType.NONE)
 @XmlType(name = "ATMCommand8", propOrder = {"type", "requiredDateTime", "processedDateTime", "commandIdentification", "result", "additionalErrorInformation"})
 public class ATMCommand8 {
 
 	final static private AtomicReference<MMMessageComponent> mmObject_lazy = new AtomicReference<>();
+	@XmlElement(name = "Tp", required = true)
 	protected ATMCommand5Code type;
 	/**
-	 * Type of command to be performed by the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -114,9 +118,9 @@ public class ATMCommand8 {
 	 * definition} = "Type of command to be performed by the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmType = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMCommand8, ATMCommand5Code> mmType = new MMMessageAttribute<ATMCommand8, ATMCommand5Code>() {
 		{
-			componentContext_lazy = () -> ATMCommand8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMCommand8.mmObject();
 			isDerived = false;
 			xmlTag = "Tp";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -126,11 +130,22 @@ public class ATMCommand8 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ATMCommand5Code.mmObject();
 		}
+
+		@Override
+		public ATMCommand5Code getValue(ATMCommand8 obj) {
+			return obj.getType();
+		}
+
+		@Override
+		public void setValue(ATMCommand8 obj, ATMCommand5Code value) {
+			obj.setType(value);
+		}
 	};
+	@XmlElement(name = "ReqrdDtTm")
 	protected ISODateTime requiredDateTime;
 	/**
-	 * Date time on which the command has been requested to be performed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -155,9 +170,9 @@ public class ATMCommand8 {
 	 * "Date time on which the command has been requested to be performed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmRequiredDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMCommand8, Optional<ISODateTime>> mmRequiredDateTime = new MMMessageAttribute<ATMCommand8, Optional<ISODateTime>>() {
 		{
-			componentContext_lazy = () -> ATMCommand8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMCommand8.mmObject();
 			isDerived = false;
 			xmlTag = "ReqrdDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -167,11 +182,22 @@ public class ATMCommand8 {
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public Optional<ISODateTime> getValue(ATMCommand8 obj) {
+			return obj.getRequiredDateTime();
+		}
+
+		@Override
+		public void setValue(ATMCommand8 obj, Optional<ISODateTime> value) {
+			obj.setRequiredDateTime(value.orElse(null));
+		}
 	};
+	@XmlElement(name = "PrcdDtTm", required = true)
 	protected ISODateTime processedDateTime;
 	/**
-	 * Date time on which the command has been performed.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -195,9 +221,9 @@ public class ATMCommand8 {
 	 * definition} = "Date time on which the command has been performed."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmProcessedDateTime = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMCommand8, ISODateTime> mmProcessedDateTime = new MMMessageAttribute<ATMCommand8, ISODateTime>() {
 		{
-			componentContext_lazy = () -> ATMCommand8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMCommand8.mmObject();
 			isDerived = false;
 			xmlTag = "PrcdDtTm";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -207,11 +233,22 @@ public class ATMCommand8 {
 			minOccurs = 1;
 			simpleType_lazy = () -> ISODateTime.mmObject();
 		}
+
+		@Override
+		public ISODateTime getValue(ATMCommand8 obj) {
+			return obj.getProcessedDateTime();
+		}
+
+		@Override
+		public void setValue(ATMCommand8 obj, ISODateTime value) {
+			obj.setProcessedDateTime(value);
+		}
 	};
+	@XmlElement(name = "CmdId")
 	protected ATMCommandIdentification1 commandIdentification;
 	/**
-	 * Identification of the entity issuing the command.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMMessageAssociationEnd#getType
@@ -235,9 +272,9 @@ public class ATMCommand8 {
 	 * definition} = "Identification of the entity issuing the command."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAssociationEnd mmCommandIdentification = new MMMessageAssociationEnd() {
+	public static final MMMessageAssociationEnd<ATMCommand8, Optional<ATMCommandIdentification1>> mmCommandIdentification = new MMMessageAssociationEnd<ATMCommand8, Optional<ATMCommandIdentification1>>() {
 		{
-			componentContext_lazy = () -> ATMCommand8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMCommand8.mmObject();
 			isDerived = false;
 			xmlTag = "CmdId";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -246,13 +283,24 @@ public class ATMCommand8 {
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
-			type_lazy = () -> com.tools20022.repository.msg.ATMCommandIdentification1.mmObject();
+			type_lazy = () -> ATMCommandIdentification1.mmObject();
+		}
+
+		@Override
+		public Optional<ATMCommandIdentification1> getValue(ATMCommand8 obj) {
+			return obj.getCommandIdentification();
+		}
+
+		@Override
+		public void setValue(ATMCommand8 obj, Optional<ATMCommandIdentification1> value) {
+			obj.setCommandIdentification(value.orElse(null));
 		}
 	};
+	@XmlElement(name = "Rslt", required = true)
 	protected TerminalManagementActionResult2Code result;
 	/**
-	 * Final result of the processed command at the ATM.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -282,10 +330,10 @@ public class ATMCommand8 {
 	 * definition} = "Final result of the processed command at the ATM."</li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmResult = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMCommand8, TerminalManagementActionResult2Code> mmResult = new MMMessageAttribute<ATMCommand8, TerminalManagementActionResult2Code>() {
 		{
 			businessElementTrace_lazy = () -> TerminalManagementAction.mmActionResult;
-			componentContext_lazy = () -> ATMCommand8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMCommand8.mmObject();
 			isDerived = false;
 			xmlTag = "Rslt";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -295,12 +343,22 @@ public class ATMCommand8 {
 			minOccurs = 1;
 			simpleType_lazy = () -> TerminalManagementActionResult2Code.mmObject();
 		}
+
+		@Override
+		public TerminalManagementActionResult2Code getValue(ATMCommand8 obj) {
+			return obj.getResult();
+		}
+
+		@Override
+		public void setValue(ATMCommand8 obj, TerminalManagementActionResult2Code value) {
+			obj.setResult(value);
+		}
 	};
+	@XmlElement(name = "AddtlErrInf")
 	protected Max140Text additionalErrorInformation;
 	/**
-	 * Additional information on the failure to be logged for further
-	 * examination.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -326,9 +384,9 @@ public class ATMCommand8 {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMMessageAttribute mmAdditionalErrorInformation = new MMMessageAttribute() {
+	public static final MMMessageAttribute<ATMCommand8, Optional<Max140Text>> mmAdditionalErrorInformation = new MMMessageAttribute<ATMCommand8, Optional<Max140Text>>() {
 		{
-			componentContext_lazy = () -> ATMCommand8.mmObject();
+			componentContext_lazy = () -> com.tools20022.repository.msg.ATMCommand8.mmObject();
 			isDerived = false;
 			xmlTag = "AddtlErrInf";
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
@@ -338,15 +396,25 @@ public class ATMCommand8 {
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Text.mmObject();
 		}
+
+		@Override
+		public Optional<Max140Text> getValue(ATMCommand8 obj) {
+			return obj.getAdditionalErrorInformation();
+		}
+
+		@Override
+		public void setValue(ATMCommand8 obj, Optional<Max140Text> value) {
+			obj.setAdditionalErrorInformation(value.orElse(null));
+		}
 	};
 
 	final static public MMMessageComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMMessageComponent() {
 			{
-				messageElement_lazy = () -> Arrays.asList(ATMCommand8.mmType, ATMCommand8.mmRequiredDateTime, ATMCommand8.mmProcessedDateTime, ATMCommand8.mmCommandIdentification, ATMCommand8.mmResult,
-						ATMCommand8.mmAdditionalErrorInformation);
+				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ATMCommand8.mmType, com.tools20022.repository.msg.ATMCommand8.mmRequiredDateTime, com.tools20022.repository.msg.ATMCommand8.mmProcessedDateTime,
+						com.tools20022.repository.msg.ATMCommand8.mmCommandIdentification, com.tools20022.repository.msg.ATMCommand8.mmResult, com.tools20022.repository.msg.ATMCommand8.mmAdditionalErrorInformation);
 				trace_lazy = () -> TerminalManagementSystem.mmObject();
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMCommand8";
 				definition = "Command result for reinitialization of the transaction counters.";
@@ -355,57 +423,57 @@ public class ATMCommand8 {
 		return mmObject_lazy.get();
 	}
 
-	@XmlElement(name = "Tp", required = true)
 	public ATMCommand5Code getType() {
 		return type;
 	}
 
-	public void setType(ATMCommand5Code type) {
-		this.type = type;
+	public ATMCommand8 setType(ATMCommand5Code type) {
+		this.type = Objects.requireNonNull(type);
+		return this;
 	}
 
-	@XmlElement(name = "ReqrdDtTm")
-	public ISODateTime getRequiredDateTime() {
-		return requiredDateTime;
+	public Optional<ISODateTime> getRequiredDateTime() {
+		return requiredDateTime == null ? Optional.empty() : Optional.of(requiredDateTime);
 	}
 
-	public void setRequiredDateTime(ISODateTime requiredDateTime) {
+	public ATMCommand8 setRequiredDateTime(ISODateTime requiredDateTime) {
 		this.requiredDateTime = requiredDateTime;
+		return this;
 	}
 
-	@XmlElement(name = "PrcdDtTm", required = true)
 	public ISODateTime getProcessedDateTime() {
 		return processedDateTime;
 	}
 
-	public void setProcessedDateTime(ISODateTime processedDateTime) {
-		this.processedDateTime = processedDateTime;
+	public ATMCommand8 setProcessedDateTime(ISODateTime processedDateTime) {
+		this.processedDateTime = Objects.requireNonNull(processedDateTime);
+		return this;
 	}
 
-	@XmlElement(name = "CmdId")
-	public ATMCommandIdentification1 getCommandIdentification() {
-		return commandIdentification;
+	public Optional<ATMCommandIdentification1> getCommandIdentification() {
+		return commandIdentification == null ? Optional.empty() : Optional.of(commandIdentification);
 	}
 
-	public void setCommandIdentification(com.tools20022.repository.msg.ATMCommandIdentification1 commandIdentification) {
+	public ATMCommand8 setCommandIdentification(ATMCommandIdentification1 commandIdentification) {
 		this.commandIdentification = commandIdentification;
+		return this;
 	}
 
-	@XmlElement(name = "Rslt", required = true)
 	public TerminalManagementActionResult2Code getResult() {
 		return result;
 	}
 
-	public void setResult(TerminalManagementActionResult2Code result) {
-		this.result = result;
+	public ATMCommand8 setResult(TerminalManagementActionResult2Code result) {
+		this.result = Objects.requireNonNull(result);
+		return this;
 	}
 
-	@XmlElement(name = "AddtlErrInf")
-	public Max140Text getAdditionalErrorInformation() {
-		return additionalErrorInformation;
+	public Optional<Max140Text> getAdditionalErrorInformation() {
+		return additionalErrorInformation == null ? Optional.empty() : Optional.of(additionalErrorInformation);
 	}
 
-	public void setAdditionalErrorInformation(Max140Text additionalErrorInformation) {
+	public ATMCommand8 setAdditionalErrorInformation(Max140Text additionalErrorInformation) {
 		this.additionalErrorInformation = additionalErrorInformation;
+		return this;
 	}
 }

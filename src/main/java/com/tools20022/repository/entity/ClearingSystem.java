@@ -21,11 +21,11 @@ import com.tools20022.metamodel.MMAggregation;
 import com.tools20022.metamodel.MMBusinessAssociationEnd;
 import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
+import com.tools20022.repository.entity.*;
 import com.tools20022.repository.entity.System;
 import com.tools20022.repository.GeneratedRepository;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.List;
 
 /**
  * Specifies the system which plays a role in the clearing process.
@@ -81,8 +81,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -99,8 +99,8 @@ public class ClearingSystem extends System {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected List<com.tools20022.repository.entity.Clearing> clearing;
 	/**
-	 * Specifies the clearing process for which a clearing system is used.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -131,7 +131,7 @@ public class ClearingSystem extends System {
 	 * "Specifies the clearing process for which a clearing system is used."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmClearing = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ClearingSystem, List<Clearing>> mmClearing = new MMBusinessAssociationEnd<ClearingSystem, List<Clearing>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingSystem.mmObject();
@@ -143,11 +143,21 @@ public class ClearingSystem extends System {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.Clearing.mmObject();
 		}
+
+		@Override
+		public List<Clearing> getValue(ClearingSystem obj) {
+			return obj.getClearing();
+		}
+
+		@Override
+		public void setValue(ClearingSystem obj, List<Clearing> value) {
+			obj.setClearing(value);
+		}
 	};
 	protected CentralClearingCounterpartyRole centralClearingCounterparty;
 	/**
-	 * Central counterparty which is related to a clearing system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -180,7 +190,7 @@ public class ClearingSystem extends System {
 	 * "Central counterparty which is related to a clearing system."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCentralClearingCounterparty = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ClearingSystem, Optional<CentralClearingCounterpartyRole>> mmCentralClearingCounterparty = new MMBusinessAssociationEnd<ClearingSystem, Optional<CentralClearingCounterpartyRole>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingSystem.mmObject();
@@ -189,17 +199,25 @@ public class ClearingSystem extends System {
 			definition = "Central counterparty which is related to a clearing system.";
 			maxOccurs = 1;
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.CentralClearingCounterpartyRole.mmSystem;
+			opposite_lazy = () -> CentralClearingCounterpartyRole.mmSystem;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.CentralClearingCounterpartyRole.mmObject();
+			type_lazy = () -> CentralClearingCounterpartyRole.mmObject();
+		}
+
+		@Override
+		public Optional<CentralClearingCounterpartyRole> getValue(ClearingSystem obj) {
+			return obj.getCentralClearingCounterparty();
+		}
+
+		@Override
+		public void setValue(ClearingSystem obj, Optional<CentralClearingCounterpartyRole> value) {
+			obj.setCentralClearingCounterparty(value.orElse(null));
 		}
 	};
 	protected List<com.tools20022.repository.entity.DefaultFund> defaultFund;
 	/**
-	 * Assets posted by participants in a clearing fund that can be used in the
-	 * event of a default by a participant to compensate non-defaulting
-	 * participants for losses they suffer due to this default.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -232,7 +250,7 @@ public class ClearingSystem extends System {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmDefaultFund = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ClearingSystem, List<DefaultFund>> mmDefaultFund = new MMBusinessAssociationEnd<ClearingSystem, List<DefaultFund>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingSystem.mmObject();
@@ -244,11 +262,21 @@ public class ClearingSystem extends System {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.DefaultFund.mmObject();
 		}
+
+		@Override
+		public List<DefaultFund> getValue(ClearingSystem obj) {
+			return obj.getDefaultFund();
+		}
+
+		@Override
+		public void setValue(ClearingSystem obj, List<DefaultFund> value) {
+			obj.setDefaultFund(value);
+		}
 	};
 	protected CollateralManagement collateralManagement;
 	/**
-	 * Collateral activities related to a clearing system.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -280,7 +308,7 @@ public class ClearingSystem extends System {
 	 * definition} = "Collateral activities related to a clearing system."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmCollateralManagement = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ClearingSystem, com.tools20022.repository.entity.CollateralManagement> mmCollateralManagement = new MMBusinessAssociationEnd<ClearingSystem, com.tools20022.repository.entity.CollateralManagement>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ClearingSystem.mmObject();
@@ -293,17 +321,27 @@ public class ClearingSystem extends System {
 			aggregation = MMAggregation.NONE;
 			type_lazy = () -> com.tools20022.repository.entity.CollateralManagement.mmObject();
 		}
+
+		@Override
+		public com.tools20022.repository.entity.CollateralManagement getValue(ClearingSystem obj) {
+			return obj.getCollateralManagement();
+		}
+
+		@Override
+		public void setValue(ClearingSystem obj, com.tools20022.repository.entity.CollateralManagement value) {
+			obj.setCollateralManagement(value);
+		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ClearingSystem";
 				definition = "Specifies the system which plays a role in the clearing process.";
 				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Clearing.mmClearingSystem, com.tools20022.repository.entity.CollateralManagement.mmClearingSystem,
-						com.tools20022.repository.entity.DefaultFund.mmClearingSystem, com.tools20022.repository.entity.CentralClearingCounterpartyRole.mmSystem);
+						com.tools20022.repository.entity.DefaultFund.mmClearingSystem, CentralClearingCounterpartyRole.mmSystem);
 				subType_lazy = () -> Arrays.asList(CashClearingSystem.mmObject());
 				superType_lazy = () -> System.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ClearingSystem.mmClearing, com.tools20022.repository.entity.ClearingSystem.mmCentralClearingCounterparty,
@@ -319,34 +357,38 @@ public class ClearingSystem extends System {
 	}
 
 	public List<Clearing> getClearing() {
-		return clearing;
+		return clearing == null ? clearing = new ArrayList<>() : clearing;
 	}
 
-	public void setClearing(List<com.tools20022.repository.entity.Clearing> clearing) {
-		this.clearing = clearing;
+	public ClearingSystem setClearing(List<com.tools20022.repository.entity.Clearing> clearing) {
+		this.clearing = Objects.requireNonNull(clearing);
+		return this;
 	}
 
-	public CentralClearingCounterpartyRole getCentralClearingCounterparty() {
-		return centralClearingCounterparty;
+	public Optional<CentralClearingCounterpartyRole> getCentralClearingCounterparty() {
+		return centralClearingCounterparty == null ? Optional.empty() : Optional.of(centralClearingCounterparty);
 	}
 
-	public void setCentralClearingCounterparty(com.tools20022.repository.entity.CentralClearingCounterpartyRole centralClearingCounterparty) {
+	public ClearingSystem setCentralClearingCounterparty(CentralClearingCounterpartyRole centralClearingCounterparty) {
 		this.centralClearingCounterparty = centralClearingCounterparty;
+		return this;
 	}
 
 	public List<DefaultFund> getDefaultFund() {
-		return defaultFund;
+		return defaultFund == null ? defaultFund = new ArrayList<>() : defaultFund;
 	}
 
-	public void setDefaultFund(List<com.tools20022.repository.entity.DefaultFund> defaultFund) {
-		this.defaultFund = defaultFund;
+	public ClearingSystem setDefaultFund(List<com.tools20022.repository.entity.DefaultFund> defaultFund) {
+		this.defaultFund = Objects.requireNonNull(defaultFund);
+		return this;
 	}
 
 	public CollateralManagement getCollateralManagement() {
 		return collateralManagement;
 	}
 
-	public void setCollateralManagement(com.tools20022.repository.entity.CollateralManagement collateralManagement) {
-		this.collateralManagement = collateralManagement;
+	public ClearingSystem setCollateralManagement(com.tools20022.repository.entity.CollateralManagement collateralManagement) {
+		this.collateralManagement = Objects.requireNonNull(collateralManagement);
+		return this;
 	}
 }

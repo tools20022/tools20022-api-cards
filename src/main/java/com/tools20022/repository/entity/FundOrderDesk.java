@@ -19,12 +19,14 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.YesNoIndicator;
+import com.tools20022.repository.entity.InvestmentAccount;
 import com.tools20022.repository.entity.InvestmentFundPartyRole;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Principal entity appointed by the fund to which orders should be submitted.
@@ -62,8 +64,8 @@ import java.util.List;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -81,9 +83,8 @@ public class FundOrderDesk extends InvestmentFundPartyRole {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected YesNoIndicator mainFundOrderDeskIndicator;
 	/**
-	 * Indicates whether the fund order desk is the principal entity appointed
-	 * by the fund to which orders should be submitted.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -109,7 +110,7 @@ public class FundOrderDesk extends InvestmentFundPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmMainFundOrderDeskIndicator = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<FundOrderDesk, YesNoIndicator> mmMainFundOrderDeskIndicator = new MMBusinessAttribute<FundOrderDesk, YesNoIndicator>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FundOrderDesk.mmObject();
@@ -121,19 +122,20 @@ public class FundOrderDesk extends InvestmentFundPartyRole {
 			simpleType_lazy = () -> YesNoIndicator.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return FundOrderDesk.class.getMethod("getMainFundOrderDeskIndicator", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public YesNoIndicator getValue(FundOrderDesk obj) {
+			return obj.getMainFundOrderDeskIndicator();
+		}
+
+		@Override
+		public void setValue(FundOrderDesk obj, YesNoIndicator value) {
+			obj.setMainFundOrderDeskIndicator(value);
 		}
 	};
-	protected List<com.tools20022.repository.entity.InvestmentAccount> mainFundOrderDeskAccount;
+	protected List<InvestmentAccount> mainFundOrderDeskAccount;
 	/**
-	 * Settlement details for the main fund order desk as defined in the
-	 * prospectus of the investment fund class.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -166,7 +168,7 @@ public class FundOrderDesk extends InvestmentFundPartyRole {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmMainFundOrderDeskAccount = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<FundOrderDesk, List<InvestmentAccount>> mmMainFundOrderDeskAccount = new MMBusinessAssociationEnd<FundOrderDesk, List<InvestmentAccount>>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.FundOrderDesk.mmObject();
@@ -174,20 +176,30 @@ public class FundOrderDesk extends InvestmentFundPartyRole {
 			name = "MainFundOrderDeskAccount";
 			definition = "Settlement details for the main fund order desk as defined in the prospectus of the investment fund class.";
 			minOccurs = 0;
-			opposite_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmAccountForInvestmentFundProcessing;
+			opposite_lazy = () -> InvestmentAccount.mmAccountForInvestmentFundProcessing;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.InvestmentAccount.mmObject();
+			type_lazy = () -> InvestmentAccount.mmObject();
+		}
+
+		@Override
+		public List<InvestmentAccount> getValue(FundOrderDesk obj) {
+			return obj.getMainFundOrderDeskAccount();
+		}
+
+		@Override
+		public void setValue(FundOrderDesk obj, List<InvestmentAccount> value) {
+			obj.setMainFundOrderDeskAccount(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "FundOrderDesk";
 				definition = "Principal entity appointed by the fund to which orders should be submitted.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentAccount.mmAccountForInvestmentFundProcessing);
+				associationDomain_lazy = () -> Arrays.asList(InvestmentAccount.mmAccountForInvestmentFundProcessing);
 				superType_lazy = () -> InvestmentFundPartyRole.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.FundOrderDesk.mmMainFundOrderDeskIndicator, com.tools20022.repository.entity.FundOrderDesk.mmMainFundOrderDeskAccount);
 			}
@@ -204,15 +216,17 @@ public class FundOrderDesk extends InvestmentFundPartyRole {
 		return mainFundOrderDeskIndicator;
 	}
 
-	public void setMainFundOrderDeskIndicator(YesNoIndicator mainFundOrderDeskIndicator) {
-		this.mainFundOrderDeskIndicator = mainFundOrderDeskIndicator;
+	public FundOrderDesk setMainFundOrderDeskIndicator(YesNoIndicator mainFundOrderDeskIndicator) {
+		this.mainFundOrderDeskIndicator = Objects.requireNonNull(mainFundOrderDeskIndicator);
+		return this;
 	}
 
 	public List<InvestmentAccount> getMainFundOrderDeskAccount() {
-		return mainFundOrderDeskAccount;
+		return mainFundOrderDeskAccount == null ? mainFundOrderDeskAccount = new ArrayList<>() : mainFundOrderDeskAccount;
 	}
 
-	public void setMainFundOrderDeskAccount(List<com.tools20022.repository.entity.InvestmentAccount> mainFundOrderDeskAccount) {
-		this.mainFundOrderDeskAccount = mainFundOrderDeskAccount;
+	public FundOrderDesk setMainFundOrderDeskAccount(List<InvestmentAccount> mainFundOrderDeskAccount) {
+		this.mainFundOrderDeskAccount = Objects.requireNonNull(mainFundOrderDeskAccount);
+		return this;
 	}
 }

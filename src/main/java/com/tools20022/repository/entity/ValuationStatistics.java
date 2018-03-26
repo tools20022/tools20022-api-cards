@@ -21,10 +21,13 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.codeset.CurrencyCode;
 import com.tools20022.repository.codeset.TypeOfPriceCode;
 import com.tools20022.repository.datatype.PercentageRate;
+import com.tools20022.repository.entity.DateTimePeriod;
+import com.tools20022.repository.entity.NetAssetValueCalculation;
+import com.tools20022.repository.entity.SecuritiesPricing;
 import com.tools20022.repository.GeneratedRepository;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.Objects;
 
 /**
  * Statistical data related to the price change of a security.
@@ -90,8 +93,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -107,8 +110,8 @@ public class ValuationStatistics {
 	final static private AtomicReference<MMBusinessComponent> mmObject_lazy = new AtomicReference<>();
 	protected CurrencyCode currency;
 	/**
-	 * Currency of the net asset value calculation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -131,7 +134,7 @@ public class ValuationStatistics {
 	 * definition} = "Currency of the net asset value calculation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmCurrency = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ValuationStatistics, CurrencyCode> mmCurrency = new MMBusinessAttribute<ValuationStatistics, CurrencyCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
@@ -143,19 +146,20 @@ public class ValuationStatistics {
 			simpleType_lazy = () -> CurrencyCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ValuationStatistics.class.getMethod("getCurrency", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public CurrencyCode getValue(ValuationStatistics obj) {
+			return obj.getCurrency();
+		}
+
+		@Override
+		public void setValue(ValuationStatistics obj, CurrencyCode value) {
+			obj.setCurrency(value);
 		}
 	};
 	protected TypeOfPriceCode priceTypeChangeBasis;
 	/**
-	 * Type of price from which the change is calculated, eg, bid, offer, or
-	 * single.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -181,7 +185,7 @@ public class ValuationStatistics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmPriceTypeChangeBasis = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ValuationStatistics, TypeOfPriceCode> mmPriceTypeChangeBasis = new MMBusinessAttribute<ValuationStatistics, TypeOfPriceCode>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
@@ -193,18 +197,20 @@ public class ValuationStatistics {
 			simpleType_lazy = () -> TypeOfPriceCode.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ValuationStatistics.class.getMethod("getPriceTypeChangeBasis", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public TypeOfPriceCode getValue(ValuationStatistics obj) {
+			return obj.getPriceTypeChangeBasis();
+		}
+
+		@Override
+		public void setValue(ValuationStatistics obj, TypeOfPriceCode value) {
+			obj.setPriceTypeChangeBasis(value);
 		}
 	};
 	protected SecuritiesPricing priceChange;
 	/**
-	 * Change in price since the last valuation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -235,7 +241,7 @@ public class ValuationStatistics {
 	 * definition} = "Change in price since the last valuation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPriceChange = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ValuationStatistics, SecuritiesPricing> mmPriceChange = new MMBusinessAssociationEnd<ValuationStatistics, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
@@ -244,17 +250,25 @@ public class ValuationStatistics {
 			definition = "Change in price since the last valuation.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmPriceChangeRelatedStatistics;
+			opposite_lazy = () -> SecuritiesPricing.mmPriceChangeRelatedStatistics;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(ValuationStatistics obj) {
+			return obj.getPriceChange();
+		}
+
+		@Override
+		public void setValue(ValuationStatistics obj, SecuritiesPricing value) {
+			obj.setPriceChange(value);
 		}
 	};
 	protected PercentageRate yield;
 	/**
-	 * Rate of income from the financial instrument, usually calculated as total
-	 * dividends or coupon interest available to investors in the last
-	 * year,divided by the current price.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -280,7 +294,7 @@ public class ValuationStatistics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmYield = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ValuationStatistics, PercentageRate> mmYield = new MMBusinessAttribute<ValuationStatistics, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
@@ -292,18 +306,20 @@ public class ValuationStatistics {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ValuationStatistics.class.getMethod("getYield", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(ValuationStatistics obj) {
+			return obj.getYield();
+		}
+
+		@Override
+		public void setValue(ValuationStatistics obj, PercentageRate value) {
+			obj.setYield(value);
 		}
 	};
 	protected SecuritiesPricing highestPriceValue;
 	/**
-	 * Highest price for the referenced period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -334,7 +350,7 @@ public class ValuationStatistics {
 	 * definition} = "Highest price for the referenced period."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmHighestPriceValue = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ValuationStatistics, SecuritiesPricing> mmHighestPriceValue = new MMBusinessAssociationEnd<ValuationStatistics, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
@@ -343,15 +359,25 @@ public class ValuationStatistics {
 			definition = "Highest price for the referenced period.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmHighestPriceValueRelatedStatistics;
+			opposite_lazy = () -> SecuritiesPricing.mmHighestPriceValueRelatedStatistics;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(ValuationStatistics obj) {
+			return obj.getHighestPriceValue();
+		}
+
+		@Override
+		public void setValue(ValuationStatistics obj, SecuritiesPricing value) {
+			obj.setHighestPriceValue(value);
 		}
 	};
 	protected SecuritiesPricing lowestPriceValue;
 	/**
-	 * Lowest price for the referenced period.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -382,7 +408,7 @@ public class ValuationStatistics {
 	 * definition} = "Lowest price for the referenced period."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmLowestPriceValue = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ValuationStatistics, SecuritiesPricing> mmLowestPriceValue = new MMBusinessAssociationEnd<ValuationStatistics, SecuritiesPricing>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
@@ -391,15 +417,25 @@ public class ValuationStatistics {
 			definition = "Lowest price for the referenced period.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmLowestPriceValueRelatedStatistics;
+			opposite_lazy = () -> SecuritiesPricing.mmLowestPriceValueRelatedStatistics;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.SecuritiesPricing.mmObject();
+			type_lazy = () -> SecuritiesPricing.mmObject();
+		}
+
+		@Override
+		public SecuritiesPricing getValue(ValuationStatistics obj) {
+			return obj.getLowestPriceValue();
+		}
+
+		@Override
+		public void setValue(ValuationStatistics obj, SecuritiesPricing value) {
+			obj.setLowestPriceValue(value);
 		}
 	};
 	protected DateTimePeriod period;
 	/**
-	 * Reference period for the valuation.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -430,7 +466,7 @@ public class ValuationStatistics {
 	 * definition} = "Reference period for the valuation."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmPeriod = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ValuationStatistics, DateTimePeriod> mmPeriod = new MMBusinessAssociationEnd<ValuationStatistics, DateTimePeriod>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
@@ -439,15 +475,25 @@ public class ValuationStatistics {
 			definition = "Reference period for the valuation.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmValuationStatistics;
+			opposite_lazy = () -> DateTimePeriod.mmValuationStatistics;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
+			type_lazy = () -> DateTimePeriod.mmObject();
+		}
+
+		@Override
+		public DateTimePeriod getValue(ValuationStatistics obj) {
+			return obj.getPeriod();
+		}
+
+		@Override
+		public void setValue(ValuationStatistics obj, DateTimePeriod value) {
+			obj.setPeriod(value);
 		}
 	};
 	protected NetAssetValueCalculation netAssetValueCalculation;
 	/**
-	 * Information related to the price valuation of an investment fund class.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -481,7 +527,7 @@ public class ValuationStatistics {
 	 * </li>
 	 * </ul>
 	 */
-	public static final MMBusinessAssociationEnd mmNetAssetValueCalculation = new MMBusinessAssociationEnd() {
+	public static final MMBusinessAssociationEnd<ValuationStatistics, NetAssetValueCalculation> mmNetAssetValueCalculation = new MMBusinessAssociationEnd<ValuationStatistics, NetAssetValueCalculation>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
@@ -490,15 +536,25 @@ public class ValuationStatistics {
 			definition = "Information related to the price valuation of an investment fund class.";
 			maxOccurs = 1;
 			minOccurs = 1;
-			opposite_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmValuationStatistics;
+			opposite_lazy = () -> NetAssetValueCalculation.mmValuationStatistics;
 			aggregation = MMAggregation.NONE;
-			type_lazy = () -> com.tools20022.repository.entity.NetAssetValueCalculation.mmObject();
+			type_lazy = () -> NetAssetValueCalculation.mmObject();
+		}
+
+		@Override
+		public NetAssetValueCalculation getValue(ValuationStatistics obj) {
+			return obj.getNetAssetValueCalculation();
+		}
+
+		@Override
+		public void setValue(ValuationStatistics obj, NetAssetValueCalculation value) {
+			obj.setNetAssetValueCalculation(value);
 		}
 	};
 	protected PercentageRate netAssetValueChangeRate;
 	/**
-	 * Rate of change of the net asset value.
-	 * <p>
+	 * 
+	 <p>
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>
@@ -522,7 +578,7 @@ public class ValuationStatistics {
 	 * definition} = "Rate of change of the net asset value."</li>
 	 * </ul>
 	 */
-	public static final MMBusinessAttribute mmNetAssetValueChangeRate = new MMBusinessAttribute() {
+	public static final MMBusinessAttribute<ValuationStatistics, PercentageRate> mmNetAssetValueChangeRate = new MMBusinessAttribute<ValuationStatistics, PercentageRate>() {
 		{
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ValuationStatistics.mmObject();
@@ -534,25 +590,26 @@ public class ValuationStatistics {
 			simpleType_lazy = () -> PercentageRate.mmObject();
 		}
 
-		public Method getGetterMethod() {
-			try {
-				return ValuationStatistics.class.getMethod("getNetAssetValueChangeRate", new Class[]{});
-			} catch (NoSuchMethodException e) {
-				throw new RuntimeException(e);
-			}
+		@Override
+		public PercentageRate getValue(ValuationStatistics obj) {
+			return obj.getNetAssetValueChangeRate();
+		}
+
+		@Override
+		public void setValue(ValuationStatistics obj, PercentageRate value) {
+			obj.setNetAssetValueChangeRate(value);
 		}
 	};
 
 	static public MMBusinessComponent mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMBusinessComponent() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ValuationStatistics";
 				definition = "Statistical data related to the price change of a security.";
-				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.NetAssetValueCalculation.mmValuationStatistics, com.tools20022.repository.entity.SecuritiesPricing.mmPriceChangeRelatedStatistics,
-						com.tools20022.repository.entity.SecuritiesPricing.mmHighestPriceValueRelatedStatistics, com.tools20022.repository.entity.SecuritiesPricing.mmLowestPriceValueRelatedStatistics,
-						com.tools20022.repository.entity.DateTimePeriod.mmValuationStatistics);
+				associationDomain_lazy = () -> Arrays.asList(NetAssetValueCalculation.mmValuationStatistics, SecuritiesPricing.mmPriceChangeRelatedStatistics, SecuritiesPricing.mmHighestPriceValueRelatedStatistics,
+						SecuritiesPricing.mmLowestPriceValueRelatedStatistics, DateTimePeriod.mmValuationStatistics);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ValuationStatistics.mmCurrency, com.tools20022.repository.entity.ValuationStatistics.mmPriceTypeChangeBasis,
 						com.tools20022.repository.entity.ValuationStatistics.mmPriceChange, com.tools20022.repository.entity.ValuationStatistics.mmYield, com.tools20022.repository.entity.ValuationStatistics.mmHighestPriceValue,
 						com.tools20022.repository.entity.ValuationStatistics.mmLowestPriceValue, com.tools20022.repository.entity.ValuationStatistics.mmPeriod,
@@ -571,71 +628,80 @@ public class ValuationStatistics {
 		return currency;
 	}
 
-	public void setCurrency(CurrencyCode currency) {
-		this.currency = currency;
+	public ValuationStatistics setCurrency(CurrencyCode currency) {
+		this.currency = Objects.requireNonNull(currency);
+		return this;
 	}
 
 	public TypeOfPriceCode getPriceTypeChangeBasis() {
 		return priceTypeChangeBasis;
 	}
 
-	public void setPriceTypeChangeBasis(TypeOfPriceCode priceTypeChangeBasis) {
-		this.priceTypeChangeBasis = priceTypeChangeBasis;
+	public ValuationStatistics setPriceTypeChangeBasis(TypeOfPriceCode priceTypeChangeBasis) {
+		this.priceTypeChangeBasis = Objects.requireNonNull(priceTypeChangeBasis);
+		return this;
 	}
 
 	public SecuritiesPricing getPriceChange() {
 		return priceChange;
 	}
 
-	public void setPriceChange(com.tools20022.repository.entity.SecuritiesPricing priceChange) {
-		this.priceChange = priceChange;
+	public ValuationStatistics setPriceChange(SecuritiesPricing priceChange) {
+		this.priceChange = Objects.requireNonNull(priceChange);
+		return this;
 	}
 
 	public PercentageRate getYield() {
 		return yield;
 	}
 
-	public void setYield(PercentageRate yield) {
-		this.yield = yield;
+	public ValuationStatistics setYield(PercentageRate yield) {
+		this.yield = Objects.requireNonNull(yield);
+		return this;
 	}
 
 	public SecuritiesPricing getHighestPriceValue() {
 		return highestPriceValue;
 	}
 
-	public void setHighestPriceValue(com.tools20022.repository.entity.SecuritiesPricing highestPriceValue) {
-		this.highestPriceValue = highestPriceValue;
+	public ValuationStatistics setHighestPriceValue(SecuritiesPricing highestPriceValue) {
+		this.highestPriceValue = Objects.requireNonNull(highestPriceValue);
+		return this;
 	}
 
 	public SecuritiesPricing getLowestPriceValue() {
 		return lowestPriceValue;
 	}
 
-	public void setLowestPriceValue(com.tools20022.repository.entity.SecuritiesPricing lowestPriceValue) {
-		this.lowestPriceValue = lowestPriceValue;
+	public ValuationStatistics setLowestPriceValue(SecuritiesPricing lowestPriceValue) {
+		this.lowestPriceValue = Objects.requireNonNull(lowestPriceValue);
+		return this;
 	}
 
 	public DateTimePeriod getPeriod() {
 		return period;
 	}
 
-	public void setPeriod(com.tools20022.repository.entity.DateTimePeriod period) {
-		this.period = period;
+	public ValuationStatistics setPeriod(DateTimePeriod period) {
+		this.period = Objects.requireNonNull(period);
+		return this;
 	}
 
 	public NetAssetValueCalculation getNetAssetValueCalculation() {
 		return netAssetValueCalculation;
 	}
 
-	public void setNetAssetValueCalculation(com.tools20022.repository.entity.NetAssetValueCalculation netAssetValueCalculation) {
-		this.netAssetValueCalculation = netAssetValueCalculation;
+	public ValuationStatistics setNetAssetValueCalculation(NetAssetValueCalculation netAssetValueCalculation) {
+		this.netAssetValueCalculation = Objects.requireNonNull(netAssetValueCalculation);
+		return this;
 	}
 
 	public PercentageRate getNetAssetValueChangeRate() {
 		return netAssetValueChangeRate;
 	}
 
-	public void setNetAssetValueChangeRate(PercentageRate netAssetValueChangeRate) {
-		this.netAssetValueChangeRate = netAssetValueChangeRate;
+	public ValuationStatistics setNetAssetValueChangeRate(PercentageRate netAssetValueChangeRate) {
+		this.netAssetValueChangeRate = Objects.requireNonNull(netAssetValueChangeRate);
+		return this;
 	}
 }

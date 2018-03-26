@@ -40,32 +40,32 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardDataReading2Code#AccountData
- * CardDataReading2Code.mmAccountData}</li>
+ * CardDataReading2Code.AccountData}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardDataReading2Code#BarCode
- * CardDataReading2Code.mmBarCode}</li>
+ * CardDataReading2Code.BarCode}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardDataReading2Code#CardOnFile
- * CardDataReading2Code.mmCardOnFile}</li>
+ * CardDataReading2Code.CardOnFile}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardDataReading2Code#EMVProximityReader
- * CardDataReading2Code.mmEMVProximityReader}</li>
+ * CardDataReading2Code.EMVProximityReader}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CardDataReading2Code#ICC
- * CardDataReading2Code.mmICC}</li>
+ * CardDataReading2Code.ICC}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardDataReading2Code#MagneticStripe
- * CardDataReading2Code.mmMagneticStripe}</li>
+ * CardDataReading2Code.MagneticStripe}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardDataReading2Code#Physical
- * CardDataReading2Code.mmPhysical}</li>
+ * CardDataReading2Code.Physical}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardDataReading2Code#ProximityReader
- * CardDataReading2Code.mmProximityReader}</li>
+ * CardDataReading2Code.ProximityReader}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CardDataReading2Code#Tag
- * CardDataReading2Code.mmTag}</li>
+ * CardDataReading2Code.Tag}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardDataReading2Code#Unknown
- * CardDataReading2Code.mmUnknown}</li>
+ * CardDataReading2Code.Unknown}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -74,8 +74,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -340,7 +340,7 @@ public class CardDataReading2Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardDataReading2Code";
 				definition = "Card reading capabilities of the terminal performing the transaction.\r\nIt correspond to the ISO 8583, field number 22-2 for the version 93, and 27-1 for the version 2003.";

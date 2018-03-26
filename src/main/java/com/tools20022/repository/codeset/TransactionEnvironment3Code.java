@@ -38,13 +38,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionEnvironment3Code#Branch
- * TransactionEnvironment3Code.mmBranch}</li>
+ * TransactionEnvironment3Code.Branch}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionEnvironment3Code#Merchant
- * TransactionEnvironment3Code.mmMerchant}</li>
+ * TransactionEnvironment3Code.Merchant}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.TransactionEnvironment3Code#Other
- * TransactionEnvironment3Code.mmOther}</li>
+ * TransactionEnvironment3Code.Other}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getTrace trace} =
@@ -53,8 +53,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -63,7 +63,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "TransactionEnvironment3Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
- * "Indicates the entity hosting the terminal performing the transaction. "</li>
+ * "Indicates the entity hosting the terminal performing the transaction."</li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -150,10 +150,10 @@ public class TransactionEnvironment3Code extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TransactionEnvironment3Code";
-				definition = "Indicates the entity hosting the terminal performing the transaction. ";
+				definition = "Indicates the entity hosting the terminal performing the transaction.";
 				trace_lazy = () -> TransactionEnvironmentCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TransactionEnvironment3Code.Branch, com.tools20022.repository.codeset.TransactionEnvironment3Code.Merchant,
 						com.tools20022.repository.codeset.TransactionEnvironment3Code.Other);

@@ -38,35 +38,35 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardServiceTypeCode#CheckPoint
- * CardServiceTypeCode.mmCheckPoint}</li>
+ * CardServiceTypeCode.CheckPoint}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CardServiceTypeCode#Final
- * CardServiceTypeCode.mmFinal}</li>
+ * CardServiceTypeCode.Final}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardServiceTypeCode#TotalInquiry
- * CardServiceTypeCode.mmTotalInquiry}</li>
+ * CardServiceTypeCode.TotalInquiry}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardServiceTypeCode#DisableStoreForward
- * CardServiceTypeCode.mmDisableStoreForward}</li>
+ * CardServiceTypeCode.DisableStoreForward}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardServiceTypeCode#EchoTest
- * CardServiceTypeCode.mmEchoTest}</li>
+ * CardServiceTypeCode.EchoTest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardServiceTypeCode#EnableStoreForward
- * CardServiceTypeCode.mmEnableStoreForward}</li>
+ * CardServiceTypeCode.EnableStoreForward}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.CardServiceTypeCode#SignOn
- * CardServiceTypeCode.mmSignOn}</li>
+ * CardServiceTypeCode.SignOn}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardServiceTypeCode#SignOff
- * CardServiceTypeCode.mmSignOff}</li>
+ * CardServiceTypeCode.SignOff}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardServiceTypeCode#KeyChange
- * CardServiceTypeCode.mmKeyChange}</li>
+ * CardServiceTypeCode.KeyChange}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardServiceTypeCode#DeliverKey
- * CardServiceTypeCode.mmDeliverKey}</li>
+ * CardServiceTypeCode.DeliverKey}</li>
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardServiceTypeCode#KeyVerification
- * CardServiceTypeCode.mmKeyVerification}</li>
+ * CardServiceTypeCode.KeyVerification}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
@@ -83,8 +83,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
- * {@linkplain com.tools20022.repository.GeneratedRepository#mmdataDict
- * GeneratedRepository.mmdataDict}</li>
+ * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
+ * GeneratedRepository.dataDict}</li>
  * <li>
  * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
  * registrationStatus} =
@@ -445,7 +445,7 @@ public class CardServiceTypeCode extends MMCode {
 	final static public MMCodeSet mmObject() {
 		mmObject_lazy.compareAndSet(null, new MMCodeSet() {
 			{
-				dataDictionary_lazy = () -> GeneratedRepository.mmdataDict;
+				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardServiceTypeCode";
 				definition = "Type of administrative service.";
