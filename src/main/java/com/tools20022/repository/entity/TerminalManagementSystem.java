@@ -96,25 +96,37 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.HostCommunicationParameter5#mmPhysicalInterface
+ * HostCommunicationParameter5.mmPhysicalInterface}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.msg.TMSTrigger1 TMSTrigger1}</li>
  * <li>{@linkplain com.tools20022.repository.msg.ATMCommandParameters1
  * ATMCommandParameters1}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ATMCommand4 ATMCommand4}</li>
  * <li>{@linkplain com.tools20022.repository.choice.ATMCommandParameters1Choice
  * ATMCommandParameters1Choice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.HostCommunicationParameter4
- * HostCommunicationParameter4}</li>
  * <li>{@linkplain com.tools20022.repository.msg.ATMCompletionAdvice2
  * ATMCompletionAdvice2}</li>
  * <li>{@linkplain com.tools20022.repository.msg.ATMCompletionAcknowledgement2
  * ATMCompletionAcknowledgement2}</li>
  * <li>{@linkplain com.tools20022.repository.msg.ATMCommand7 ATMCommand7}</li>
  * <li>{@linkplain com.tools20022.repository.msg.ATMCommand8 ATMCommand8}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AcquirerHostConfiguration4
- * AcquirerHostConfiguration4}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ATMCommand10 ATMCommand10}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ATMCommand13 ATMCommand13}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PhysicalInterfaceParameter1
+ * PhysicalInterfaceParameter1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AcquirerHostConfiguration5
+ * AcquirerHostConfiguration5}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.HostCommunicationParameter5
+ * HostCommunicationParameter5}</li>
  * </ul>
  * </li>
  * <li>
@@ -219,8 +231,8 @@ public class TerminalManagementSystem extends System {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.HostCommunicationParameter4#mmAddress
-	 * HostCommunicationParameter4.mmAddress}</li>
+	 * {@linkplain com.tools20022.repository.msg.HostCommunicationParameter5#mmAddress
+	 * HostCommunicationParameter5.mmAddress}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -241,7 +253,7 @@ public class TerminalManagementSystem extends System {
 	 */
 	public static final MMBusinessAssociationEnd<TerminalManagementSystem, List<NetworkAccess>> mmNetworkAccess = new MMBusinessAssociationEnd<TerminalManagementSystem, List<NetworkAccess>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(HostCommunicationParameter4.mmAddress);
+			derivation_lazy = () -> Arrays.asList(HostCommunicationParameter5.mmAddress);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -339,10 +351,12 @@ public class TerminalManagementSystem extends System {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.TMSTrigger1#mmTMSContactLevel
 	 * TMSTrigger1.mmTMSContactLevel}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.ATMCommand4#mmUrgency
-	 * ATMCommand4.mmUrgency}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.ATMCommand7#mmUrgency
 	 * ATMCommand7.mmUrgency}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.ATMCommand10#mmUrgency
+	 * ATMCommand10.mmUrgency}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.ATMCommand13#mmUrgency
+	 * ATMCommand13.mmUrgency}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -363,7 +377,7 @@ public class TerminalManagementSystem extends System {
 	 */
 	public static final MMBusinessAttribute<TerminalManagementSystem, TMSContactLevelCode> mmContactLevel = new MMBusinessAttribute<TerminalManagementSystem, TMSContactLevelCode>() {
 		{
-			derivation_lazy = () -> Arrays.asList(TMSTrigger1.mmTMSContactLevel, ATMCommand4.mmUrgency, ATMCommand7.mmUrgency);
+			derivation_lazy = () -> Arrays.asList(TMSTrigger1.mmTMSContactLevel, ATMCommand7.mmUrgency, ATMCommand10.mmUrgency, ATMCommand13.mmUrgency);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.TerminalManagementSystem.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -628,13 +642,14 @@ public class TerminalManagementSystem extends System {
 				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardPaymentAcquiring.mmTMSTrigger, PointOfInteraction.mmControllingTerminalManagementSystem,
 						com.tools20022.repository.entity.AcceptorConfiguration.mmTerminalManagementSystem, TerminalManagementAction.mmTerminalManagementSystem, com.tools20022.repository.entity.NetworkAccess.mmTerminalManagementSystem,
 						com.tools20022.repository.entity.TerminalManagerRole.mmTerminalManagementSystem);
+				derivationElement_lazy = () -> Arrays.asList(HostCommunicationParameter5.mmPhysicalInterface);
 				superType_lazy = () -> System.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.TerminalManagementSystem.mmAcceptorConfiguration, com.tools20022.repository.entity.TerminalManagementSystem.mmNetworkAccess,
 						com.tools20022.repository.entity.TerminalManagementSystem.mmCardPaymentAcquiring, com.tools20022.repository.entity.TerminalManagementSystem.mmContactLevel,
 						com.tools20022.repository.entity.TerminalManagementSystem.mmContactDateTime, com.tools20022.repository.entity.TerminalManagementSystem.mmTerminalManagerRole,
 						com.tools20022.repository.entity.TerminalManagementSystem.mmControlledPointOfInteraction, com.tools20022.repository.entity.TerminalManagementSystem.mmAction);
-				derivationComponent_lazy = () -> Arrays.asList(TMSTrigger1.mmObject(), ATMCommandParameters1.mmObject(), ATMCommand4.mmObject(), ATMCommandParameters1Choice.mmObject(), HostCommunicationParameter4.mmObject(),
-						ATMCompletionAdvice2.mmObject(), ATMCompletionAcknowledgement2.mmObject(), ATMCommand7.mmObject(), ATMCommand8.mmObject(), AcquirerHostConfiguration4.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(TMSTrigger1.mmObject(), ATMCommandParameters1.mmObject(), ATMCommandParameters1Choice.mmObject(), ATMCompletionAdvice2.mmObject(), ATMCompletionAcknowledgement2.mmObject(),
+						ATMCommand7.mmObject(), ATMCommand8.mmObject(), ATMCommand10.mmObject(), ATMCommand13.mmObject(), PhysicalInterfaceParameter1.mmObject(), AcquirerHostConfiguration5.mmObject(), HostCommunicationParameter5.mmObject());
 			}
 
 			@Override

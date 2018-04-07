@@ -71,9 +71,6 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.area.caam.ATMExceptionAdviceV01#mmProtectedATMExceptionAdvice
  * ATMExceptionAdviceV01.mmProtectedATMExceptionAdvice}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.caam.ATMDeviceControlV02#mmProtectedATMDeviceControl
- * ATMDeviceControlV02.mmProtectedATMDeviceControl}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.caam.ATMReconciliationAdviceV02#mmProtectedATMReconciliationAdvice
  * ATMReconciliationAdviceV02.mmProtectedATMReconciliationAdvice}</li>
  * <li>
@@ -97,9 +94,6 @@ import javax.xml.bind.annotation.XmlType;
  * ATMDepositCompletionAcknowledgementV01.
  * mmProtectedATMDepositCompletionAcknowledgement}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.caam.ATMDeviceReportV02#mmProtectedATMDeviceReport
- * ATMDeviceReportV02.mmProtectedATMDeviceReport}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.catp.ATMPINManagementRequestV02#mmProtectedATMPINManagementRequest
  * ATMPINManagementRequestV02.mmProtectedATMPINManagementRequest}</li>
  * <li>
@@ -111,9 +105,6 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.repository.area.caam.ATMDiagnosticRequestV02#mmProtectedATMDiagnosticRequest
  * ATMDiagnosticRequestV02.mmProtectedATMDiagnosticRequest}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caam.ATMKeyDownloadRequestV02#mmProtectedATMKeyDownloadRequest
- * ATMKeyDownloadRequestV02.mmProtectedATMKeyDownloadRequest}</li>
  * <li>
  * {@linkplain com.tools20022.repository.area.catp.ATMWithdrawalResponseV02#mmProtectedATMWithdrawalResponse
  * ATMWithdrawalResponseV02.mmProtectedATMWithdrawalResponse}</li>
@@ -140,8 +131,17 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.area.catp.ATMTransferResponseV01#mmProtectedATMTransferResponse
  * ATMTransferResponseV01.mmProtectedATMTransferResponse}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.caam.ATMKeyDownloadResponseV02#mmProtectedATMKeyDownloadResponse
- * ATMKeyDownloadResponseV02.mmProtectedATMKeyDownloadResponse}</li>
+ * {@linkplain com.tools20022.repository.area.caam.ATMDeviceControlV03#mmProtectedATMDeviceControl
+ * ATMDeviceControlV03.mmProtectedATMDeviceControl}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.caam.ATMDeviceReportV03#mmProtectedATMDeviceReport
+ * ATMDeviceReportV03.mmProtectedATMDeviceReport}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.caam.ATMKeyDownloadRequestV03#mmProtectedATMKeyDownloadRequest
+ * ATMKeyDownloadRequestV03.mmProtectedATMKeyDownloadRequest}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.caam.ATMKeyDownloadResponseV03#mmProtectedATMKeyDownloadResponse
+ * ATMKeyDownloadResponseV03.mmProtectedATMKeyDownloadResponse}</li>
  * </ul>
  * </li>
  * <li>
@@ -158,6 +158,13 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
  * "General cryptographic message syntax (CMS) containing encrypted data."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.ContentInformationType17
+ * ContentInformationType17}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -193,6 +200,14 @@ public class ContentInformationType10 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Type of data protection."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ContentInformationType17#mmContentType
+	 * ContentInformationType17.mmContentType}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<ContentInformationType10, ContentType2Code> mmContentType = new MMMessageAttribute<ContentInformationType10, ContentType2Code>() {
@@ -203,6 +218,7 @@ public class ContentInformationType10 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ContentType";
 			definition = "Type of data protection.";
+			nextVersions_lazy = () -> Arrays.asList(ContentInformationType17.mmContentType);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ContentType2Code.mmObject();
@@ -246,6 +262,14 @@ public class ContentInformationType10 {
 	 * definition} =
 	 * "Data protection by encryption or by a digital envelope, with an encryption key."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ContentInformationType17#mmEnvelopedData
+	 * ContentInformationType17.mmEnvelopedData}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<ContentInformationType10, EnvelopedData4> mmEnvelopedData = new MMMessageAssociationEnd<ContentInformationType10, EnvelopedData4>() {
@@ -256,6 +280,7 @@ public class ContentInformationType10 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EnvelopedData";
 			definition = "Data protection by encryption or by a digital envelope, with an encryption key.";
+			nextVersions_lazy = () -> Arrays.asList(ContentInformationType17.mmEnvelopedData);
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
@@ -279,18 +304,19 @@ public class ContentInformationType10 {
 				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ContentInformationType10.mmContentType, com.tools20022.repository.msg.ContentInformationType10.mmEnvelopedData);
 				messageBuildingBlock_lazy = () -> Arrays.asList(HostToATMAcknowledgementV01.mmProtectedHostToATMAcknowledgement, HostToATMRequestV01.mmProtectedHostToATMRequest,
 						ATMExceptionAcknowledgementV01.mmProtectedATMExceptionAcknowledgement, ATMWithdrawalRequestV02.mmProtectedATMWithdrawalRequest, ATMExceptionAdviceV01.mmProtectedATMExceptionAdvice,
-						ATMDeviceControlV02.mmProtectedATMDeviceControl, ATMReconciliationAdviceV02.mmProtectedATMReconciliationAdvice, ATMReconciliationAcknowledgementV02.mmProtectedATMReconciliationAcknowledgement,
-						ATMDepositResponseV01.mmProtectedATMDepositResponse, ATMDepositRequestV01.mmProtectedATMDepositRequest, ATMWithdrawalCompletionAdviceV02.mmProtectedATMWithdrawalCompletionAdvice,
-						ATMInquiryResponseV02.mmProtectedATMInquiryResponse, ATMDepositCompletionAcknowledgementV01.mmProtectedATMDepositCompletionAcknowledgement, ATMDeviceReportV02.mmProtectedATMDeviceReport,
-						ATMPINManagementRequestV02.mmProtectedATMPINManagementRequest, ATMTransferRequestV01.mmProtectedATMTransferRequest, ATMDiagnosticResponseV02.mmProtectedATMDiagnosticResponse,
-						ATMDiagnosticRequestV02.mmProtectedATMDiagnosticRequest, ATMKeyDownloadRequestV02.mmProtectedATMKeyDownloadRequest, ATMWithdrawalResponseV02.mmProtectedATMWithdrawalResponse,
+						ATMReconciliationAdviceV02.mmProtectedATMReconciliationAdvice, ATMReconciliationAcknowledgementV02.mmProtectedATMReconciliationAcknowledgement, ATMDepositResponseV01.mmProtectedATMDepositResponse,
+						ATMDepositRequestV01.mmProtectedATMDepositRequest, ATMWithdrawalCompletionAdviceV02.mmProtectedATMWithdrawalCompletionAdvice, ATMInquiryResponseV02.mmProtectedATMInquiryResponse,
+						ATMDepositCompletionAcknowledgementV01.mmProtectedATMDepositCompletionAcknowledgement, ATMPINManagementRequestV02.mmProtectedATMPINManagementRequest, ATMTransferRequestV01.mmProtectedATMTransferRequest,
+						ATMDiagnosticResponseV02.mmProtectedATMDiagnosticResponse, ATMDiagnosticRequestV02.mmProtectedATMDiagnosticRequest, ATMWithdrawalResponseV02.mmProtectedATMWithdrawalResponse,
 						ATMWithdrawalCompletionAcknowledgementV02.mmProtectedATMWithdrawalCompletionAcknowledgement, ATMPINManagementResponseV02.mmProtectedATMPINManagementResponse,
 						ATMDepositCompletionAdviceV01.mmProtectedATMDepositCompletionAdvice, ATMInquiryRequestV02.mmProtectedATMInquiryRequest, ATMCompletionAcknowledgementV02.mmProtectedATMCompletionAcknowledgement,
-						ATMCompletionAdviceV02.mmProtectedATMCompletionAdvice, ATMTransferResponseV01.mmProtectedATMTransferResponse, ATMKeyDownloadResponseV02.mmProtectedATMKeyDownloadResponse);
+						ATMCompletionAdviceV02.mmProtectedATMCompletionAdvice, ATMTransferResponseV01.mmProtectedATMTransferResponse, ATMDeviceControlV03.mmProtectedATMDeviceControl, ATMDeviceReportV03.mmProtectedATMDeviceReport,
+						ATMKeyDownloadRequestV03.mmProtectedATMKeyDownloadRequest, ATMKeyDownloadResponseV03.mmProtectedATMKeyDownloadResponse);
 				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ContentInformationType10";
 				definition = "General cryptographic message syntax (CMS) containing encrypted data.";
+				nextVersions_lazy = () -> Arrays.asList(ContentInformationType17.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

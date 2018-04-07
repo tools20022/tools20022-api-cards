@@ -66,6 +66,13 @@ import javax.xml.bind.annotation.XmlType;
  * definition} =
  * "Cryptographic algorithms and parameters for the protection of transported keys by an asymmetric key."
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.AlgorithmIdentification19
+ * AlgorithmIdentification19}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -101,6 +108,14 @@ public class AlgorithmIdentification11 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Asymmetric encryption algorithm of a transport key."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AlgorithmIdentification19#mmAlgorithm
+	 * AlgorithmIdentification19.mmAlgorithm}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<AlgorithmIdentification11, Algorithm7Code> mmAlgorithm = new MMMessageAttribute<AlgorithmIdentification11, Algorithm7Code>() {
@@ -111,6 +126,7 @@ public class AlgorithmIdentification11 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Algorithm";
 			definition = "Asymmetric encryption algorithm of a transport key.";
+			nextVersions_lazy = () -> Arrays.asList(AlgorithmIdentification19.mmAlgorithm);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Algorithm7Code.mmObject();
@@ -151,6 +167,14 @@ public class AlgorithmIdentification11 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Parameters of the encryption algorithm."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AlgorithmIdentification19#mmParameter
+	 * AlgorithmIdentification19.mmParameter}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<AlgorithmIdentification11, Optional<Parameter4>> mmParameter = new MMMessageAssociationEnd<AlgorithmIdentification11, Optional<Parameter4>>() {
@@ -161,6 +185,7 @@ public class AlgorithmIdentification11 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Parameter";
 			definition = "Parameters of the encryption algorithm.";
+			nextVersions_lazy = () -> Arrays.asList(AlgorithmIdentification19.mmParameter);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
@@ -186,6 +211,7 @@ public class AlgorithmIdentification11 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AlgorithmIdentification11";
 				definition = "Cryptographic algorithms and parameters for the protection of transported keys by an asymmetric key.";
+				nextVersions_lazy = () -> Arrays.asList(AlgorithmIdentification19.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

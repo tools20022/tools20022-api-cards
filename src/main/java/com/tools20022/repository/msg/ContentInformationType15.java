@@ -21,7 +21,6 @@ import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.caaa.*;
 import com.tools20022.repository.area.caam.*;
 import com.tools20022.repository.area.cain.*;
 import com.tools20022.repository.area.catp.*;
@@ -94,12 +93,6 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.area.cain.AcquirerFinancialInitiation#mmSecurityTrailer
  * AcquirerFinancialInitiation.mmSecurityTrailer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.caaa.AcceptorReconciliationResponseV05#mmSecurityTrailer
- * AcceptorReconciliationResponseV05.mmSecurityTrailer}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caaa.AcceptorDiagnosticResponseV05#mmSecurityTrailer
- * AcceptorDiagnosticResponseV05.mmSecurityTrailer}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.caam.ATMExceptionAcknowledgementV01#mmSecurityTrailer
  * ATMExceptionAcknowledgementV01.mmSecurityTrailer}</li>
  * <li>
@@ -165,48 +158,6 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.repository.area.catp.ATMTransferResponseV01#mmSecurityTrailer
  * ATMTransferResponseV01.mmSecurityTrailer}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caaa.AcceptorAuthorisationResponseV06#mmSecurityTrailer
- * AcceptorAuthorisationResponseV06.mmSecurityTrailer}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caaa.AcceptorAuthorisationRequestV06#mmSecurityTrailer
- * AcceptorAuthorisationRequestV06.mmSecurityTrailer}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caaa.AcceptorCancellationRequestV06#mmSecurityTrailer
- * AcceptorCancellationRequestV06.mmSecurityTrailer}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caaa.AcceptorCompletionAdviceResponseV06#mmSecurityTrailer
- * AcceptorCompletionAdviceResponseV06.mmSecurityTrailer}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caaa.AcceptorCancellationAdviceV06#mmSecurityTrailer
- * AcceptorCancellationAdviceV06.mmSecurityTrailer}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caaa.AcceptorCurrencyConversionResponseV04#mmSecurityTrailer
- * AcceptorCurrencyConversionResponseV04.mmSecurityTrailer}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caaa.AcceptorCompletionAdviceV06#mmSecurityTrailer
- * AcceptorCompletionAdviceV06.mmSecurityTrailer}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caaa.AcceptorCurrencyConversionRequestV04#mmSecurityTrailer
- * AcceptorCurrencyConversionRequestV04.mmSecurityTrailer}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caaa.AcceptorCancellationAdviceResponseV06#mmSecurityTrailer
- * AcceptorCancellationAdviceResponseV06.mmSecurityTrailer}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caaa.AcceptorCancellationResponseV06#mmSecurityTrailer
- * AcceptorCancellationResponseV06.mmSecurityTrailer}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caaa.AcceptorReconciliationRequestV06#mmSecurityTrailer
- * AcceptorReconciliationRequestV06.mmSecurityTrailer}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caaa.AcceptorDiagnosticRequestV06#mmSecurityTrailer
- * AcceptorDiagnosticRequestV06.mmSecurityTrailer}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caaa.AcceptorCurrencyConversionAdviceResponseV01#mmSecurityTrailer
- * AcceptorCurrencyConversionAdviceResponseV01.mmSecurityTrailer}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caaa.AcceptorCurrencyConversionAdviceV01#mmSecurityTrailer
- * AcceptorCurrencyConversionAdviceV01.mmSecurityTrailer}</li>
  * </ul>
  * </li>
  * <li>
@@ -223,6 +174,13 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
  * "General cryptographic message syntax (CMS) containing authenticated data."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.ContentInformationType16
+ * ContentInformationType16}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -258,6 +216,14 @@ public class ContentInformationType15 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Type of data protection."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ContentInformationType16#mmContentType
+	 * ContentInformationType16.mmContentType}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<ContentInformationType15, ContentType2Code> mmContentType = new MMMessageAttribute<ContentInformationType15, ContentType2Code>() {
@@ -268,6 +234,7 @@ public class ContentInformationType15 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ContentType";
 			definition = "Type of data protection.";
+			nextVersions_lazy = () -> Arrays.asList(ContentInformationType16.mmContentType);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ContentType2Code.mmObject();
@@ -309,6 +276,14 @@ public class ContentInformationType15 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Data protection by a message authentication code (MAC)."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ContentInformationType16#mmAuthenticatedData
+	 * ContentInformationType16.mmAuthenticatedData}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<ContentInformationType15, AuthenticatedData4> mmAuthenticatedData = new MMMessageAssociationEnd<ContentInformationType15, AuthenticatedData4>() {
@@ -319,6 +294,7 @@ public class ContentInformationType15 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AuthenticatedData";
 			definition = "Data protection by a message authentication code (MAC).";
+			nextVersions_lazy = () -> Arrays.asList(ContentInformationType16.mmAuthenticatedData);
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
@@ -343,20 +319,17 @@ public class ContentInformationType15 {
 				messageBuildingBlock_lazy = () -> Arrays.asList(HostToATMAcknowledgementV01.mmSecurityTrailer, HostToATMRequestV01.mmSecurityTrailer, NetworkManagementResponse.mmSecurityTrailer, AcquirerFinancialResponse.mmSecurityTrailer,
 						AcquirerReversalInitiation.mmSecurityTrailer, AcquirerAuthorisationInitiation.mmSecurityTrailer, ReconciliationInitiation.mmSecurityTrailer, AcquirerAuthorisationResponse.mmSecurityTrailer,
 						NetworkManagementInitiation.mmSecurityTrailer, AcquirerReversalResponse.mmSecurityTrailer, ReconciliationResponse.mmSecurityTrailer, AcquirerFinancialInitiation.mmSecurityTrailer,
-						AcceptorReconciliationResponseV05.mmSecurityTrailer, AcceptorDiagnosticResponseV05.mmSecurityTrailer, ATMExceptionAcknowledgementV01.mmSecurityTrailer, ATMWithdrawalRequestV02.mmSecurityTrailer,
-						ATMExceptionAdviceV01.mmSecurityTrailer, ATMReconciliationAdviceV02.mmSecurityTrailer, ATMReconciliationAcknowledgementV02.mmSecurityTrailer, ATMDepositResponseV01.mmSecurityTrailer,
-						ATMDepositRequestV01.mmSecurityTrailer, ATMWithdrawalCompletionAdviceV02.mmSecurityTrailer, ATMInquiryResponseV02.mmSecurityTrailer, ATMDepositCompletionAcknowledgementV01.mmSecurityTrailer,
-						ATMPINManagementRequestV02.mmSecurityTrailer, ATMTransferRequestV01.mmSecurityTrailer, ATMDiagnosticResponseV02.mmSecurityTrailer, ATMDiagnosticRequestV02.mmSecurityTrailer,
-						ATMWithdrawalResponseV02.mmSecurityTrailer, ATMWithdrawalCompletionAcknowledgementV02.mmSecurityTrailer, ATMPINManagementResponseV02.mmSecurityTrailer, ATMDepositCompletionAdviceV01.mmSecurityTrailer,
-						ATMInquiryRequestV02.mmSecurityTrailer, ATMCompletionAcknowledgementV02.mmSecurityTrailer, ATMCompletionAdviceV02.mmSecurityTrailer, ATMTransferResponseV01.mmSecurityTrailer,
-						AcceptorAuthorisationResponseV06.mmSecurityTrailer, AcceptorAuthorisationRequestV06.mmSecurityTrailer, AcceptorCancellationRequestV06.mmSecurityTrailer, AcceptorCompletionAdviceResponseV06.mmSecurityTrailer,
-						AcceptorCancellationAdviceV06.mmSecurityTrailer, AcceptorCurrencyConversionResponseV04.mmSecurityTrailer, AcceptorCompletionAdviceV06.mmSecurityTrailer, AcceptorCurrencyConversionRequestV04.mmSecurityTrailer,
-						AcceptorCancellationAdviceResponseV06.mmSecurityTrailer, AcceptorCancellationResponseV06.mmSecurityTrailer, AcceptorReconciliationRequestV06.mmSecurityTrailer, AcceptorDiagnosticRequestV06.mmSecurityTrailer,
-						AcceptorCurrencyConversionAdviceResponseV01.mmSecurityTrailer, AcceptorCurrencyConversionAdviceV01.mmSecurityTrailer);
+						ATMExceptionAcknowledgementV01.mmSecurityTrailer, ATMWithdrawalRequestV02.mmSecurityTrailer, ATMExceptionAdviceV01.mmSecurityTrailer, ATMReconciliationAdviceV02.mmSecurityTrailer,
+						ATMReconciliationAcknowledgementV02.mmSecurityTrailer, ATMDepositResponseV01.mmSecurityTrailer, ATMDepositRequestV01.mmSecurityTrailer, ATMWithdrawalCompletionAdviceV02.mmSecurityTrailer,
+						ATMInquiryResponseV02.mmSecurityTrailer, ATMDepositCompletionAcknowledgementV01.mmSecurityTrailer, ATMPINManagementRequestV02.mmSecurityTrailer, ATMTransferRequestV01.mmSecurityTrailer,
+						ATMDiagnosticResponseV02.mmSecurityTrailer, ATMDiagnosticRequestV02.mmSecurityTrailer, ATMWithdrawalResponseV02.mmSecurityTrailer, ATMWithdrawalCompletionAcknowledgementV02.mmSecurityTrailer,
+						ATMPINManagementResponseV02.mmSecurityTrailer, ATMDepositCompletionAdviceV01.mmSecurityTrailer, ATMInquiryRequestV02.mmSecurityTrailer, ATMCompletionAcknowledgementV02.mmSecurityTrailer,
+						ATMCompletionAdviceV02.mmSecurityTrailer, ATMTransferResponseV01.mmSecurityTrailer);
 				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ContentInformationType15";
 				definition = "General cryptographic message syntax (CMS) containing authenticated data.";
+				nextVersions_lazy = () -> Arrays.asList(ContentInformationType16.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

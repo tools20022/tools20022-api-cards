@@ -21,7 +21,7 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.TransportPartyRole;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.Consignment4;
+import com.tools20022.repository.msg.Consignment5;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -41,8 +41,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
  * derivationElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.Consignment4#mmConsignor
- * Consignment4.mmConsignor}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Consignment5#mmConsignor
+ * Consignment5.mmConsignor}</li>
  * </ul>
  * </li>
  * <li>
@@ -71,7 +71,7 @@ public class Consignor extends TransportPartyRole {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Consignor";
 				definition = "Party responsible for dispatching the goods.";
-				derivationElement_lazy = () -> Arrays.asList(Consignment4.mmConsignor);
+				derivationElement_lazy = () -> Arrays.asList(Consignment5.mmConsignor);
 				superType_lazy = () -> TransportPartyRole.mmObject();
 			}
 

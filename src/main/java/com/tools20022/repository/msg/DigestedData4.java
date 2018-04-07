@@ -69,6 +69,12 @@ import javax.xml.bind.annotation.XmlType;
  * "DigestedData4"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Digest computed on the identified data."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.DigestedData5 DigestedData5}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -102,6 +108,13 @@ public class DigestedData4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Version of the data structure."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.DigestedData5#mmVersion
+	 * DigestedData5.mmVersion}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<DigestedData4, Optional<Number>> mmVersion = new MMMessageAttribute<DigestedData4, Optional<Number>>() {
@@ -112,6 +125,7 @@ public class DigestedData4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Version";
 			definition = "Version of the data structure.";
+			nextVersions_lazy = () -> Arrays.asList(DigestedData5.mmVersion);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
@@ -153,6 +167,14 @@ public class DigestedData4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Identification of the digest algorithm."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DigestedData5#mmDigestAlgorithm
+	 * DigestedData5.mmDigestAlgorithm}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<DigestedData4, AlgorithmIdentification16> mmDigestAlgorithm = new MMMessageAssociationEnd<DigestedData4, AlgorithmIdentification16>() {
@@ -163,6 +185,7 @@ public class DigestedData4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DigestAlgorithm";
 			definition = "Identification of the digest algorithm.";
+			nextVersions_lazy = () -> Arrays.asList(DigestedData5.mmDigestAlgorithm);
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
@@ -204,6 +227,14 @@ public class DigestedData4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Data on which the digest is computed."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DigestedData5#mmEncapsulatedContent
+	 * DigestedData5.mmEncapsulatedContent}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<DigestedData4, EncapsulatedContent3> mmEncapsulatedContent = new MMMessageAssociationEnd<DigestedData4, EncapsulatedContent3>() {
@@ -214,6 +245,7 @@ public class DigestedData4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EncapsulatedContent";
 			definition = "Data on which the digest is computed.";
+			nextVersions_lazy = () -> Arrays.asList(DigestedData5.mmEncapsulatedContent);
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
@@ -257,6 +289,13 @@ public class DigestedData4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Result of data-digesting process."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.DigestedData5#mmDigest
+	 * DigestedData5.mmDigest}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<DigestedData4, Max140Binary> mmDigest = new MMMessageAttribute<DigestedData4, Max140Binary>() {
@@ -267,6 +306,7 @@ public class DigestedData4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Digest";
 			definition = "Result of data-digesting process.";
+			nextVersions_lazy = () -> Arrays.asList(DigestedData5.mmDigest);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max140Binary.mmObject();
@@ -292,6 +332,7 @@ public class DigestedData4 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DigestedData4";
 				definition = "Digest computed on the identified data.";
+				nextVersions_lazy = () -> Arrays.asList(DigestedData5.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

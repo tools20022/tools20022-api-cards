@@ -201,6 +201,14 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * Algorithm15Code}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.Algorithm13Code
  * Algorithm13Code}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.Algorithm16Code
+ * Algorithm16Code}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.Algorithm17Code
+ * Algorithm17Code}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.Algorithm18Code
+ * Algorithm18Code}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.Algorithm19Code
+ * Algorithm19Code}</li>
  * </ul>
  * </li>
  * <li>
@@ -2277,7 +2285,7 @@ public class AlgorithmCode extends MMCode {
 				name = "AlgorithmCode";
 				definition = "Identification of the MAC algorithm.";
 				derivation_lazy = () -> Arrays.asList(Algorithm7Code.mmObject(), Algorithm8Code.mmObject(), Algorithm11Code.mmObject(), Algorithm14Code.mmObject(), Algorithm12Code.mmObject(), Algorithm15Code.mmObject(),
-						Algorithm13Code.mmObject());
+						Algorithm13Code.mmObject(), Algorithm16Code.mmObject(), Algorithm17Code.mmObject(), Algorithm18Code.mmObject(), Algorithm19Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.AlgorithmCode.RetailCBCMAC, com.tools20022.repository.codeset.AlgorithmCode.RetailSHA256MAC, com.tools20022.repository.codeset.AlgorithmCode.UKPT,
 						com.tools20022.repository.codeset.AlgorithmCode.DUKPT, com.tools20022.repository.codeset.AlgorithmCode.DES112CBC, com.tools20022.repository.codeset.AlgorithmCode.SHA256,
 						com.tools20022.repository.codeset.AlgorithmCode.SHA256WithRSA, com.tools20022.repository.codeset.AlgorithmCode.RSAEncryption, com.tools20022.repository.codeset.AlgorithmCode.AES128CBC,

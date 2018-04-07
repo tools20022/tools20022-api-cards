@@ -87,6 +87,13 @@ import javax.xml.bind.annotation.XmlType;
  * definition} =
  * "Information that locates and identifies a specific address, as defined by postal services."
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.PostalAddress22
+ * PostalAddress22}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -126,6 +133,14 @@ public class PostalAddress6 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Identifies the nature of the postal address."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PostalAddress22#mmAddressType
+	 * PostalAddress22.mmAddressType}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PostalAddress6, Optional<AddressType2Code>> mmAddressType = new MMMessageAttribute<PostalAddress6, Optional<AddressType2Code>>() {
@@ -137,6 +152,7 @@ public class PostalAddress6 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AddressType";
 			definition = "Identifies the nature of the postal address.";
+			nextVersions_lazy = () -> Arrays.asList(PostalAddress22.mmAddressType);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> AddressType2Code.mmObject();
@@ -184,6 +200,14 @@ public class PostalAddress6 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Identification of a division of a large organisation or building."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PostalAddress22#mmDepartment
+	 * PostalAddress22.mmDepartment}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PostalAddress6, Optional<Max70Text>> mmDepartment = new MMMessageAttribute<PostalAddress6, Optional<Max70Text>>() {
@@ -195,6 +219,7 @@ public class PostalAddress6 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Department";
 			definition = "Identification of a division of a large organisation or building.";
+			nextVersions_lazy = () -> Arrays.asList(PostalAddress22.mmDepartment);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
@@ -242,6 +267,14 @@ public class PostalAddress6 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Identification of a sub-division of a large organisation or building."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PostalAddress22#mmSubDepartment
+	 * PostalAddress22.mmSubDepartment}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PostalAddress6, Optional<Max70Text>> mmSubDepartment = new MMMessageAttribute<PostalAddress6, Optional<Max70Text>>() {
@@ -253,6 +286,7 @@ public class PostalAddress6 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SubDepartment";
 			definition = "Identification of a sub-division of a large organisation or building.";
+			nextVersions_lazy = () -> Arrays.asList(PostalAddress22.mmSubDepartment);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
@@ -299,6 +333,14 @@ public class PostalAddress6 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Name of a street or thoroughfare."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PostalAddress22#mmStreetName
+	 * PostalAddress22.mmStreetName}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PostalAddress6, Optional<Max70Text>> mmStreetName = new MMMessageAttribute<PostalAddress6, Optional<Max70Text>>() {
@@ -310,6 +352,7 @@ public class PostalAddress6 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "StreetName";
 			definition = "Name of a street or thoroughfare.";
+			nextVersions_lazy = () -> Arrays.asList(PostalAddress22.mmStreetName);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
@@ -357,6 +400,14 @@ public class PostalAddress6 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Number that identifies the position of a building on a street."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PostalAddress22#mmBuildingNumber
+	 * PostalAddress22.mmBuildingNumber}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PostalAddress6, Optional<Max16Text>> mmBuildingNumber = new MMMessageAttribute<PostalAddress6, Optional<Max16Text>>() {
@@ -368,6 +419,7 @@ public class PostalAddress6 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "BuildingNumber";
 			definition = "Number that identifies the position of a building on a street.";
+			nextVersions_lazy = () -> Arrays.asList(PostalAddress22.mmBuildingNumber);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max16Text.mmObject();
@@ -416,6 +468,13 @@ public class PostalAddress6 {
 	 * definition} =
 	 * "Identifier consisting of a group of letters and/or numbers that is added to a postal address to assist the sorting of mail."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.PostalAddress22#mmPostCode
+	 * PostalAddress22.mmPostCode}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PostalAddress6, Optional<Max16Text>> mmPostCode = new MMMessageAttribute<PostalAddress6, Optional<Max16Text>>() {
@@ -427,6 +486,7 @@ public class PostalAddress6 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PostCode";
 			definition = "Identifier consisting of a group of letters and/or numbers that is added to a postal address to assist the sorting of mail.";
+			nextVersions_lazy = () -> Arrays.asList(PostalAddress22.mmPostCode);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max16Text.mmObject();
@@ -475,6 +535,13 @@ public class PostalAddress6 {
 	 * definition} =
 	 * "Name of a built-up area, with defined boundaries, and a local government."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.PostalAddress22#mmTownName
+	 * PostalAddress22.mmTownName}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PostalAddress6, Optional<Max35Text>> mmTownName = new MMMessageAttribute<PostalAddress6, Optional<Max35Text>>() {
@@ -486,6 +553,7 @@ public class PostalAddress6 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TownName";
 			definition = "Name of a built-up area, with defined boundaries, and a local government.";
+			nextVersions_lazy = () -> Arrays.asList(PostalAddress22.mmTownName);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
@@ -533,6 +601,14 @@ public class PostalAddress6 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Identifies a subdivision of a country such as state, region, county."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PostalAddress22#mmCountrySubDivision
+	 * PostalAddress22.mmCountrySubDivision}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PostalAddress6, Optional<Max35Text>> mmCountrySubDivision = new MMMessageAttribute<PostalAddress6, Optional<Max35Text>>() {
@@ -544,6 +620,7 @@ public class PostalAddress6 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CountrySubDivision";
 			definition = "Identifies a subdivision of a country such as state, region, county.";
+			nextVersions_lazy = () -> Arrays.asList(PostalAddress22.mmCountrySubDivision);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
@@ -590,6 +667,14 @@ public class PostalAddress6 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Nation with its own government."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PostalAddress22#mmCountryCode
+	 * PostalAddress22.mmCountryCode}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PostalAddress6, Optional<CountryCode>> mmCountry = new MMMessageAttribute<PostalAddress6, Optional<CountryCode>>() {
@@ -601,6 +686,7 @@ public class PostalAddress6 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Country";
 			definition = "Nation with its own government.";
+			nextVersions_lazy = () -> Arrays.asList(PostalAddress22.mmCountryCode);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> CountryCode.mmObject();
@@ -644,6 +730,14 @@ public class PostalAddress6 {
 	 * definition} =
 	 * "Information that locates and identifies a specific address, as defined by postal services, presented in free format text."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PostalAddress22#mmAddressLine
+	 * PostalAddress22.mmAddressLine}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PostalAddress6, List<Max70Text>> mmAddressLine = new MMMessageAttribute<PostalAddress6, List<Max70Text>>() {
@@ -654,6 +748,7 @@ public class PostalAddress6 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AddressLine";
 			definition = "Information that locates and identifies a specific address, as defined by postal services, presented in free format text.";
+			nextVersions_lazy = () -> Arrays.asList(PostalAddress22.mmAddressLine);
 			maxOccurs = 7;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max70Text.mmObject();
@@ -682,6 +777,7 @@ public class PostalAddress6 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PostalAddress6";
 				definition = "Information that locates and identifies a specific address, as defined by postal services.";
+				nextVersions_lazy = () -> Arrays.asList(PostalAddress22.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

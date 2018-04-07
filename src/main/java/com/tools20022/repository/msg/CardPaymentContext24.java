@@ -66,6 +66,13 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
  * "Context in which the transaction is performed (payment and sale)."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.CardPaymentContext26
+ * CardPaymentContext26}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -104,6 +111,14 @@ public class CardPaymentContext24 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Context of the card payment transaction."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentContext26#mmPaymentContext
+	 * CardPaymentContext26.mmPaymentContext}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<CardPaymentContext24, Optional<PaymentContext24>> mmPaymentContext = new MMMessageAssociationEnd<CardPaymentContext24, Optional<PaymentContext24>>() {
@@ -115,6 +130,7 @@ public class CardPaymentContext24 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PaymentContext";
 			definition = "Context of the card payment transaction.";
+			nextVersions_lazy = () -> Arrays.asList(CardPaymentContext26.mmPaymentContext);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
@@ -163,6 +179,14 @@ public class CardPaymentContext24 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Context of the sale involving the card payment transaction."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentContext26#mmSaleContext
+	 * CardPaymentContext26.mmSaleContext}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<CardPaymentContext24, Optional<SaleContext2>> mmSaleContext = new MMMessageAssociationEnd<CardPaymentContext24, Optional<SaleContext2>>() {
@@ -174,6 +198,7 @@ public class CardPaymentContext24 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SaleContext";
 			definition = "Context of the sale involving the card payment transaction.";
+			nextVersions_lazy = () -> Arrays.asList(CardPaymentContext26.mmSaleContext);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
@@ -200,6 +225,7 @@ public class CardPaymentContext24 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPaymentContext24";
 				definition = "Context in which the transaction is performed (payment and sale).";
+				nextVersions_lazy = () -> Arrays.asList(CardPaymentContext26.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

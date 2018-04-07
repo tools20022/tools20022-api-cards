@@ -24,7 +24,7 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.Product;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.ProductCharacteristics1;
-import com.tools20022.repository.msg.ProductCharacteristics3;
+import com.tools20022.repository.msg.ProductCharacteristics4;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -83,8 +83,8 @@ import java.util.Optional;
  * <li>
  * {@linkplain com.tools20022.repository.choice.ProductCharacteristics1Choice
  * ProductCharacteristics1Choice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ProductCharacteristics3
- * ProductCharacteristics3}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ProductCharacteristics4
+ * ProductCharacteristics4}</li>
  * </ul>
  * </li>
  * <li>
@@ -180,8 +180,8 @@ public class ProductCharacteristics {
 	 * {@linkplain com.tools20022.repository.msg.ProductCharacteristics1#mmCharacteristics
 	 * ProductCharacteristics1.mmCharacteristics}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ProductCharacteristics3#mmCharacteristic
-	 * ProductCharacteristics3.mmCharacteristic}</li>
+	 * {@linkplain com.tools20022.repository.msg.ProductCharacteristics4#mmCharacteristic
+	 * ProductCharacteristics4.mmCharacteristic}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -202,7 +202,7 @@ public class ProductCharacteristics {
 	 */
 	public static final MMBusinessAttribute<ProductCharacteristics, Max35Text> mmCharacteristics = new MMBusinessAttribute<ProductCharacteristics, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(ProductCharacteristics1.mmCharacteristics, ProductCharacteristics3.mmCharacteristic);
+			derivation_lazy = () -> Arrays.asList(ProductCharacteristics1.mmCharacteristics, ProductCharacteristics4.mmCharacteristic);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ProductCharacteristics.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -294,7 +294,7 @@ public class ProductCharacteristics {
 				derivationElement_lazy = () -> Arrays.asList(ProductCharacteristics1Choice.mmStructuredProductCharacteristics, ProductCharacteristics1Choice.mmOtherProductCharacteristics);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ProductCharacteristics.mmProduct, com.tools20022.repository.entity.ProductCharacteristics.mmCharacteristics,
 						com.tools20022.repository.entity.ProductCharacteristics.mmType);
-				derivationComponent_lazy = () -> Arrays.asList(ProductCharacteristics1.mmObject(), ProductCharacteristics1Choice.mmObject(), ProductCharacteristics3.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(ProductCharacteristics1.mmObject(), ProductCharacteristics1Choice.mmObject(), ProductCharacteristics4.mmObject());
 			}
 
 			@Override

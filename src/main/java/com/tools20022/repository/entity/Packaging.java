@@ -24,7 +24,7 @@ import com.tools20022.repository.entity.LineItem;
 import com.tools20022.repository.entity.ProductQuantity;
 import com.tools20022.repository.entity.Transport;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.LineItem16;
+import com.tools20022.repository.msg.LineItem17;
 import com.tools20022.repository.msg.Packaging1;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -146,8 +146,8 @@ public class Packaging {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.LineItem16#mmPackageQuantity
-	 * LineItem16.mmPackageQuantity}</li>
+	 * {@linkplain com.tools20022.repository.msg.LineItem17#mmPackageQuantity
+	 * LineItem17.mmPackageQuantity}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -167,7 +167,7 @@ public class Packaging {
 	 */
 	public static final MMBusinessAssociationEnd<Packaging, ProductQuantity> mmQuantity = new MMBusinessAssociationEnd<Packaging, ProductQuantity>() {
 		{
-			derivation_lazy = () -> Arrays.asList(LineItem16.mmPackageQuantity);
+			derivation_lazy = () -> Arrays.asList(LineItem17.mmPackageQuantity);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -212,8 +212,8 @@ public class Packaging {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.LineItem16#mmPerPackageUnitQuantity
-	 * LineItem16.mmPerPackageUnitQuantity}</li>
+	 * {@linkplain com.tools20022.repository.msg.LineItem17#mmPerPackageUnitQuantity
+	 * LineItem17.mmPerPackageUnitQuantity}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -234,7 +234,7 @@ public class Packaging {
 	 */
 	public static final MMBusinessAssociationEnd<Packaging, ProductQuantity> mmPerPackageUnitQuantity = new MMBusinessAssociationEnd<Packaging, ProductQuantity>() {
 		{
-			derivation_lazy = () -> Arrays.asList(LineItem16.mmPerPackageUnitQuantity);
+			derivation_lazy = () -> Arrays.asList(LineItem17.mmPerPackageUnitQuantity);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Packaging.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

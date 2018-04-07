@@ -248,6 +248,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>
  * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType10Code
  * CardPaymentServiceType10Code}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.codeset.CardPaymentServiceType12Code
+ * CardPaymentServiceType12Code}</li>
  * </ul>
  * </li>
  * <li>
@@ -2202,7 +2205,7 @@ public class CardPaymentServiceTypeCode extends MMCode {
 				name = "CardPaymentServiceTypeCode";
 				definition = "Service provided by a card payment transaction.";
 				derivation_lazy = () -> Arrays.asList(CardPaymentServiceType3Code.mmObject(), CardPaymentServiceType5Code.mmObject(), CardPaymentServiceType7Code.mmObject(), CardPaymentServiceType8Code.mmObject(),
-						CardPaymentServiceType9Code.mmObject(), CardPaymentServiceType10Code.mmObject());
+						CardPaymentServiceType9Code.mmObject(), CardPaymentServiceType10Code.mmObject(), CardPaymentServiceType12Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.CardPaymentServiceTypeCode.CardsFundTransfer, com.tools20022.repository.codeset.CardPaymentServiceTypeCode.OriginalCredit,
 						com.tools20022.repository.codeset.CardPaymentServiceTypeCode.CardPayment, com.tools20022.repository.codeset.CardPaymentServiceTypeCode.CashBack,
 						com.tools20022.repository.codeset.CardPaymentServiceTypeCode.CashAdvance, com.tools20022.repository.codeset.CardPaymentServiceTypeCode.CashDeposit,

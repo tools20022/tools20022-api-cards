@@ -152,14 +152,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * PartyIdentification42.mmPostalAddress}</li>
  * <li>{@linkplain com.tools20022.repository.msg.Organisation9#mmAddress
  * Organisation9.mmAddress}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.NameAndAddress6#mmAddress
+ * NameAndAddress6.mmAddress}</li>
  * <li>{@linkplain com.tools20022.repository.msg.Organisation18#mmLocation
  * Organisation18.mmLocation}</li>
  * <li>
  * {@linkplain com.tools20022.repository.msg.CommunicationAddress5#mmPostalAddress
  * CommunicationAddress5.mmPostalAddress}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.PartyIdentification112#mmPostalAddress
- * PartyIdentification112.mmPostalAddress}</li>
+ * {@linkplain com.tools20022.repository.msg.CommunicationAddress9#mmPostalAddress
+ * CommunicationAddress9.mmPostalAddress}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PartyIdentification129#mmPostalAddress
+ * PartyIdentification129.mmPostalAddress}</li>
  * </ul>
  * </li>
  * <li>
@@ -168,10 +173,13 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.repository.msg.PostalAddress1 PostalAddress1}</li>
  * <li>{@linkplain com.tools20022.repository.msg.PostalAddress6 PostalAddress6}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PostalAddress2 PostalAddress2}</li>
  * <li>{@linkplain com.tools20022.repository.msg.PostalAddress17
  * PostalAddress17}</li>
  * <li>{@linkplain com.tools20022.repository.msg.PostalAddress18
  * PostalAddress18}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PostalAddress22
+ * PostalAddress22}</li>
  * </ul>
  * </li>
  * <li>
@@ -212,6 +220,9 @@ public class PostalAddress extends ContactPoint {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PostalAddress6#mmAddressType
 	 * PostalAddress6.mmAddressType}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PostalAddress22#mmAddressType
+	 * PostalAddress22.mmAddressType}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -232,7 +243,7 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute<PostalAddress, AddressTypeCode> mmAddressType = new MMBusinessAttribute<PostalAddress, AddressTypeCode>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PostalAddress1.mmAddressType, PostalAddress6.mmAddressType);
+			derivation_lazy = () -> Arrays.asList(PostalAddress1.mmAddressType, PostalAddress6.mmAddressType, PostalAddress22.mmAddressType);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -273,11 +284,17 @@ public class PostalAddress extends ContactPoint {
 	 * {@linkplain com.tools20022.repository.msg.PostalAddress6#mmStreetName
 	 * PostalAddress6.mmStreetName}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PostalAddress2#mmStreetName
+	 * PostalAddress2.mmStreetName}</li>
+	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PostalAddress17#mmStreetName
 	 * PostalAddress17.mmStreetName}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PostalAddress18#mmStreetName
 	 * PostalAddress18.mmStreetName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PostalAddress22#mmStreetName
+	 * PostalAddress22.mmStreetName}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -301,7 +318,7 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmStreetName = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PostalAddress1.mmStreetName, PostalAddress6.mmStreetName, PostalAddress17.mmStreetName, PostalAddress18.mmStreetName);
+			derivation_lazy = () -> Arrays.asList(PostalAddress1.mmStreetName, PostalAddress6.mmStreetName, PostalAddress2.mmStreetName, PostalAddress17.mmStreetName, PostalAddress18.mmStreetName, PostalAddress22.mmStreetName);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			semanticMarkup_lazy = () -> Arrays.asList(new OtherSemanticMarkup(this, "Synonym", new String[]{"name", "road"}, new String[]{"context", "ebXML"}));
@@ -348,6 +365,9 @@ public class PostalAddress extends ContactPoint {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PostalAddress18#mmBuildingNumber
 	 * PostalAddress18.mmBuildingNumber}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PostalAddress22#mmBuildingNumber
+	 * PostalAddress22.mmBuildingNumber}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -369,7 +389,7 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmStreetBuildingIdentification = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PostalAddress1.mmBuildingNumber, PostalAddress6.mmBuildingNumber, PostalAddress17.mmBuildingNumber, PostalAddress18.mmBuildingNumber);
+			derivation_lazy = () -> Arrays.asList(PostalAddress1.mmBuildingNumber, PostalAddress6.mmBuildingNumber, PostalAddress17.mmBuildingNumber, PostalAddress18.mmBuildingNumber, PostalAddress22.mmBuildingNumber);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -407,10 +427,15 @@ public class PostalAddress extends ContactPoint {
 	 * PostalAddress1.mmPostCode}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.PostalAddress6#mmPostCode
 	 * PostalAddress6.mmPostCode}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PostalAddress2#mmPostCodeIdentification
+	 * PostalAddress2.mmPostCodeIdentification}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.PostalAddress17#mmPostCode
 	 * PostalAddress17.mmPostCode}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.PostalAddress18#mmPostCode
 	 * PostalAddress18.mmPostCode}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.PostalAddress22#mmPostCode
+	 * PostalAddress22.mmPostCode}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -433,7 +458,7 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute<PostalAddress, Max16Text> mmPostCodeIdentification = new MMBusinessAttribute<PostalAddress, Max16Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PostalAddress1.mmPostCode, PostalAddress6.mmPostCode, PostalAddress17.mmPostCode, PostalAddress18.mmPostCode);
+			derivation_lazy = () -> Arrays.asList(PostalAddress1.mmPostCode, PostalAddress6.mmPostCode, PostalAddress2.mmPostCodeIdentification, PostalAddress17.mmPostCode, PostalAddress18.mmPostCode, PostalAddress22.mmPostCode);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -474,10 +499,17 @@ public class PostalAddress extends ContactPoint {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.DateAndPlaceOfBirth#mmCityOfBirth
 	 * DateAndPlaceOfBirth.mmCityOfBirth}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.PostalAddress2#mmTownName
+	 * PostalAddress2.mmTownName}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.PostalAddress17#mmTownName
 	 * PostalAddress17.mmTownName}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.PostalAddress18#mmTownName
 	 * PostalAddress18.mmTownName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DateAndPlaceOfBirth1#mmCityOfBirth
+	 * DateAndPlaceOfBirth1.mmCityOfBirth}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.PostalAddress22#mmTownName
+	 * PostalAddress22.mmTownName}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -500,7 +532,8 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmTownName = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PostalAddress1.mmTownName, PostalAddress6.mmTownName, DateAndPlaceOfBirth.mmCityOfBirth, PostalAddress17.mmTownName, PostalAddress18.mmTownName);
+			derivation_lazy = () -> Arrays.asList(PostalAddress1.mmTownName, PostalAddress6.mmTownName, DateAndPlaceOfBirth.mmCityOfBirth, PostalAddress2.mmTownName, PostalAddress17.mmTownName, PostalAddress18.mmTownName,
+					DateAndPlaceOfBirth1.mmCityOfBirth, PostalAddress22.mmTownName);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -541,11 +574,17 @@ public class PostalAddress extends ContactPoint {
 	 * {@linkplain com.tools20022.repository.msg.PostalAddress6#mmCountrySubDivision
 	 * PostalAddress6.mmCountrySubDivision}</li>
 	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PostalAddress2#mmCountrySubDivision
+	 * PostalAddress2.mmCountrySubDivision}</li>
+	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PostalAddress17#mmCountrySubDivision
 	 * PostalAddress17.mmCountrySubDivision}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PostalAddress18#mmCountrySubDivision
 	 * PostalAddress18.mmCountrySubDivision}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PostalAddress22#mmCountrySubDivision
+	 * PostalAddress22.mmCountrySubDivision}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -567,7 +606,8 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmState = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PostalAddress1.mmCountrySubDivision, PostalAddress6.mmCountrySubDivision, PostalAddress17.mmCountrySubDivision, PostalAddress18.mmCountrySubDivision);
+			derivation_lazy = () -> Arrays.asList(PostalAddress1.mmCountrySubDivision, PostalAddress6.mmCountrySubDivision, PostalAddress2.mmCountrySubDivision, PostalAddress17.mmCountrySubDivision, PostalAddress18.mmCountrySubDivision,
+					PostalAddress22.mmCountrySubDivision);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -896,6 +936,9 @@ public class PostalAddress extends ContactPoint {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.DateAndPlaceOfBirth#mmProvinceOfBirth
 	 * DateAndPlaceOfBirth.mmProvinceOfBirth}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.DateAndPlaceOfBirth1#mmProvinceOfBirth
+	 * DateAndPlaceOfBirth1.mmProvinceOfBirth}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -918,7 +961,7 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute<PostalAddress, Max35Text> mmProvince = new MMBusinessAttribute<PostalAddress, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(DateAndPlaceOfBirth.mmProvinceOfBirth);
+			derivation_lazy = () -> Arrays.asList(DateAndPlaceOfBirth.mmProvinceOfBirth, DateAndPlaceOfBirth1.mmProvinceOfBirth);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -957,6 +1000,9 @@ public class PostalAddress extends ContactPoint {
 	 * PostalAddress6.mmDepartment}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.Contacts3#mmDepartment
 	 * Contacts3.mmDepartment}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PostalAddress22#mmDepartment
+	 * PostalAddress22.mmDepartment}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -978,7 +1024,7 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute<PostalAddress, Max70Text> mmDepartment = new MMBusinessAttribute<PostalAddress, Max70Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmDepartment, Contacts3.mmDepartment);
+			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmDepartment, Contacts3.mmDepartment, PostalAddress22.mmDepartment);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -1015,6 +1061,9 @@ public class PostalAddress extends ContactPoint {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.PostalAddress6#mmSubDepartment
 	 * PostalAddress6.mmSubDepartment}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PostalAddress22#mmSubDepartment
+	 * PostalAddress22.mmSubDepartment}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1036,7 +1085,7 @@ public class PostalAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute<PostalAddress, Max70Text> mmSubDepartment = new MMBusinessAttribute<PostalAddress, Max70Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmSubDepartment);
+			derivation_lazy = () -> Arrays.asList(PostalAddress6.mmSubDepartment, PostalAddress22.mmSubDepartment);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PostalAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -1713,7 +1762,7 @@ public class PostalAddress extends ContactPoint {
 				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Country.mmPostalAddressSpecification, com.tools20022.repository.entity.Location.mmAddress, DateTimePeriod.mmRelatedPostalAddress,
 						com.tools20022.repository.entity.MailingInstructions.mmRelatedPostalAddress, com.tools20022.repository.entity.ChequeIssue.mmDeliverTo, com.tools20022.repository.entity.PhysicalDelivery.mmAddress);
 				derivationElement_lazy = () -> Arrays.asList(FinancialInstitutionIdentification8.mmPostalAddress, BranchData2.mmPostalAddress, NameAndAddress3.mmAddress, PartyIdentification42.mmPostalAddress, Organisation9.mmAddress,
-						Organisation18.mmLocation, CommunicationAddress5.mmPostalAddress, PartyIdentification112.mmPostalAddress);
+						NameAndAddress6.mmAddress, Organisation18.mmLocation, CommunicationAddress5.mmPostalAddress, CommunicationAddress9.mmPostalAddress, PartyIdentification129.mmPostalAddress);
 				superType_lazy = () -> ContactPoint.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PostalAddress.mmAddressType, com.tools20022.repository.entity.PostalAddress.mmStreetName,
 						com.tools20022.repository.entity.PostalAddress.mmStreetBuildingIdentification, com.tools20022.repository.entity.PostalAddress.mmPostCodeIdentification, com.tools20022.repository.entity.PostalAddress.mmTownName,
@@ -1725,7 +1774,7 @@ public class PostalAddress extends ContactPoint {
 						com.tools20022.repository.entity.PostalAddress.mmBuildingIdentification, com.tools20022.repository.entity.PostalAddress.mmMailDeliverySubLocation, com.tools20022.repository.entity.PostalAddress.mmBlock,
 						com.tools20022.repository.entity.PostalAddress.mmLot, com.tools20022.repository.entity.PostalAddress.mmDistrictSubDivisionIdentification, com.tools20022.repository.entity.PostalAddress.mmMailingInstructions,
 						com.tools20022.repository.entity.PostalAddress.mmPhysicalDelivery);
-				derivationComponent_lazy = () -> Arrays.asList(PostalAddress1.mmObject(), PostalAddress6.mmObject(), PostalAddress17.mmObject(), PostalAddress18.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(PostalAddress1.mmObject(), PostalAddress6.mmObject(), PostalAddress2.mmObject(), PostalAddress17.mmObject(), PostalAddress18.mmObject(), PostalAddress22.mmObject());
 			}
 
 			@Override

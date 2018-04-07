@@ -187,12 +187,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * CurrencyConversion9}</li>
  * <li>{@linkplain com.tools20022.repository.msg.CurrencyConversion10
  * CurrencyConversion10}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CurrencyConversion13
- * CurrencyConversion13}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CurrencyConversion12
- * CurrencyConversion12}</li>
- * <li>{@linkplain com.tools20022.repository.msg.CurrencyConversion11
- * CurrencyConversion11}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CurrencyConversion14
+ * CurrencyConversion14}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CurrencyConversion15
+ * CurrencyConversion15}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CurrencyConversion16
+ * CurrencyConversion16}</li>
  * </ul>
  * </li>
  * <li>
@@ -232,8 +232,8 @@ public class CurrencyExchange {
 	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion9#mmOriginalAmount
 	 * CurrencyConversion9.mmOriginalAmount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion12#mmOriginalAmount
-	 * CurrencyConversion12.mmOriginalAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion14#mmOriginalAmount
+	 * CurrencyConversion14.mmOriginalAmount}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -256,7 +256,7 @@ public class CurrencyExchange {
 	 */
 	public static final MMBusinessAttribute<CurrencyExchange, CurrencyAndAmount> mmOriginalAmount = new MMBusinessAttribute<CurrencyExchange, CurrencyAndAmount>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CurrencyConversion9.mmOriginalAmount, CurrencyConversion12.mmOriginalAmount);
+			derivation_lazy = () -> Arrays.asList(CurrencyConversion9.mmOriginalAmount, CurrencyConversion14.mmOriginalAmount);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -461,11 +461,11 @@ public class CurrencyExchange {
 	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion9#mmInvertedExchangeRate
 	 * CurrencyConversion9.mmInvertedExchangeRate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion12#mmExchangeRate
-	 * CurrencyConversion12.mmExchangeRate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion14#mmExchangeRate
+	 * CurrencyConversion14.mmExchangeRate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion12#mmInvertedExchangeRate
-	 * CurrencyConversion12.mmInvertedExchangeRate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion14#mmInvertedExchangeRate
+	 * CurrencyConversion14.mmInvertedExchangeRate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -491,8 +491,8 @@ public class CurrencyExchange {
 	 */
 	public static final MMBusinessAttribute<CurrencyExchange, BaseOneRate> mmExchangeRate = new MMBusinessAttribute<CurrencyExchange, BaseOneRate>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CurrencyConversion5.mmRate, DetailedAmount8.mmExchangeRate, CurrencyConversion9.mmExchangeRate, CurrencyConversion9.mmInvertedExchangeRate, CurrencyConversion12.mmExchangeRate,
-					CurrencyConversion12.mmInvertedExchangeRate);
+			derivation_lazy = () -> Arrays.asList(CurrencyConversion5.mmRate, DetailedAmount8.mmExchangeRate, CurrencyConversion9.mmExchangeRate, CurrencyConversion9.mmInvertedExchangeRate, CurrencyConversion14.mmExchangeRate,
+					CurrencyConversion14.mmInvertedExchangeRate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
 			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":92A::EXCH"));
@@ -535,8 +535,8 @@ public class CurrencyExchange {
 	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion9#mmResultingAmount
 	 * CurrencyConversion9.mmResultingAmount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion12#mmResultingAmount
-	 * CurrencyConversion12.mmResultingAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion14#mmResultingAmount
+	 * CurrencyConversion14.mmResultingAmount}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -558,7 +558,7 @@ public class CurrencyExchange {
 	 */
 	public static final MMBusinessAttribute<CurrencyExchange, CurrencyAndAmount> mmResultingAmount = new MMBusinessAttribute<CurrencyExchange, CurrencyAndAmount>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CurrencyConversion5.mmCalculatedAmount, CurrencyConversion9.mmResultingAmount, CurrencyConversion12.mmResultingAmount);
+			derivation_lazy = () -> Arrays.asList(CurrencyConversion5.mmCalculatedAmount, CurrencyConversion9.mmResultingAmount, CurrencyConversion14.mmResultingAmount);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -719,8 +719,8 @@ public class CurrencyExchange {
 	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion9#mmQuotationDate
 	 * CurrencyConversion9.mmQuotationDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion12#mmQuotationDate
-	 * CurrencyConversion12.mmQuotationDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion14#mmQuotationDate
+	 * CurrencyConversion14.mmQuotationDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -741,7 +741,7 @@ public class CurrencyExchange {
 	 */
 	public static final MMBusinessAttribute<CurrencyExchange, ISODateTime> mmQuotationDate = new MMBusinessAttribute<CurrencyExchange, ISODateTime>() {
 		{
-			derivation_lazy = () -> Arrays.asList(DetailedAmount8.mmQuotationDate, CurrencyConversion9.mmQuotationDate, CurrencyConversion12.mmQuotationDate);
+			derivation_lazy = () -> Arrays.asList(DetailedAmount8.mmQuotationDate, CurrencyConversion9.mmQuotationDate, CurrencyConversion14.mmQuotationDate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -839,8 +839,8 @@ public class CurrencyExchange {
 	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion9#mmSourceCurrency
 	 * CurrencyConversion9.mmSourceCurrency}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion12#mmSourceCurrency
-	 * CurrencyConversion12.mmSourceCurrency}</li>
+	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion14#mmSourceCurrency
+	 * CurrencyConversion14.mmSourceCurrency}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -862,7 +862,7 @@ public class CurrencyExchange {
 	 */
 	public static final MMBusinessAttribute<CurrencyExchange, CurrencyCode> mmSourceCurrency = new MMBusinessAttribute<CurrencyExchange, CurrencyCode>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CurrencyConversion5.mmSourceCurrency, CurrencyConversion9.mmSourceCurrency, CurrencyConversion12.mmSourceCurrency);
+			derivation_lazy = () -> Arrays.asList(CurrencyConversion5.mmSourceCurrency, CurrencyConversion9.mmSourceCurrency, CurrencyConversion14.mmSourceCurrency);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -903,8 +903,8 @@ public class CurrencyExchange {
 	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion9#mmTargetCurrency
 	 * CurrencyConversion9.mmTargetCurrency}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion12#mmTargetCurrency
-	 * CurrencyConversion12.mmTargetCurrency}</li>
+	 * {@linkplain com.tools20022.repository.msg.CurrencyConversion14#mmTargetCurrency
+	 * CurrencyConversion14.mmTargetCurrency}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -927,7 +927,7 @@ public class CurrencyExchange {
 	 */
 	public static final MMBusinessAttribute<CurrencyExchange, CurrencyCode> mmTargetCurrency = new MMBusinessAttribute<CurrencyExchange, CurrencyCode>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CurrencyConversion5.mmTargetCurrency, CurrencyConversion9.mmTargetCurrency, CurrencyConversion12.mmTargetCurrency);
+			derivation_lazy = () -> Arrays.asList(CurrencyConversion5.mmTargetCurrency, CurrencyConversion9.mmTargetCurrency, CurrencyConversion14.mmTargetCurrency);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CurrencyExchange.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -1844,8 +1844,8 @@ public class CurrencyExchange {
 						com.tools20022.repository.entity.CurrencyExchange.mmPaymentExecution, com.tools20022.repository.entity.CurrencyExchange.mmCurrencyExchangeForSecuritiesQuote,
 						com.tools20022.repository.entity.CurrencyExchange.mmCurrencyExchangeForSecuritiesConversion, com.tools20022.repository.entity.CurrencyExchange.mmCurrencyExchangeForCashDistribution,
 						com.tools20022.repository.entity.CurrencyExchange.mmAdjustment);
-				derivationComponent_lazy = () -> Arrays.asList(CurrencyConversion5.mmObject(), CurrencyConversion9.mmObject(), CurrencyConversion10.mmObject(), CurrencyConversion13.mmObject(), CurrencyConversion12.mmObject(),
-						CurrencyConversion11.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(CurrencyConversion5.mmObject(), CurrencyConversion9.mmObject(), CurrencyConversion10.mmObject(), CurrencyConversion14.mmObject(), CurrencyConversion15.mmObject(),
+						CurrencyConversion16.mmObject());
 			}
 
 			@Override

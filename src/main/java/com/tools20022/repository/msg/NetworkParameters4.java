@@ -61,10 +61,6 @@ import javax.xml.bind.annotation.XmlType;
  * "NetworkParameters4"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Parameters to communicate with a host."</li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} =
- * {@linkplain com.tools20022.repository.msg.NetworkParameters3
- * NetworkParameters3}</li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -188,7 +184,6 @@ public class NetworkParameters4 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NetworkParameters4";
 				definition = "Parameters to communicate with a host.";
-				previousVersion_lazy = () -> NetworkParameters3.mmObject();
 			}
 		});
 		return mmObject_lazy.get();

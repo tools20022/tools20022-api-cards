@@ -146,18 +146,18 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
  * =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.DataSetCategory6Code
- * DataSetCategory6Code}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.DataSetCategory7Code
  * DataSetCategory7Code}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.DataSetCategory9Code
- * DataSetCategory9Code}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.DataSetCategory10Code
  * DataSetCategory10Code}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.DataSetCategory8Code
  * DataSetCategory8Code}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.DataSetCategory11Code
  * DataSetCategory11Code}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.DataSetCategory12Code
+ * DataSetCategory12Code}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.DataSetCategory13Code
+ * DataSetCategory13Code}</li>
  * </ul>
  * </li>
  * <li>
@@ -1283,8 +1283,8 @@ public class DataSetCategoryCode extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DataSetCategoryCode";
 				definition = "Category of data set to transfer.";
-				derivation_lazy = () -> Arrays.asList(DataSetCategory6Code.mmObject(), DataSetCategory7Code.mmObject(), DataSetCategory9Code.mmObject(), DataSetCategory10Code.mmObject(), DataSetCategory8Code.mmObject(),
-						DataSetCategory11Code.mmObject());
+				derivation_lazy = () -> Arrays.asList(DataSetCategory7Code.mmObject(), DataSetCategory10Code.mmObject(), DataSetCategory8Code.mmObject(), DataSetCategory11Code.mmObject(), DataSetCategory12Code.mmObject(),
+						DataSetCategory13Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DataSetCategoryCode.SoftwareModule, com.tools20022.repository.codeset.DataSetCategoryCode.VendorParameters,
 						com.tools20022.repository.codeset.DataSetCategoryCode.AcquirerParameters, com.tools20022.repository.codeset.DataSetCategoryCode.ApplicationParameters,
 						com.tools20022.repository.codeset.DataSetCategoryCode.MerchantParameters, com.tools20022.repository.codeset.DataSetCategoryCode.BatchCapture, com.tools20022.repository.codeset.DataSetCategoryCode.CaptureResponse,

@@ -23,7 +23,10 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.PartyName;
 import com.tools20022.repository.entity.PersonIdentification;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.*;
+import com.tools20022.repository.msg.Cardholder13;
+import com.tools20022.repository.msg.Cardholder9;
+import com.tools20022.repository.msg.ContactDetails2;
+import com.tools20022.repository.msg.Contacts3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -209,10 +212,8 @@ public class PersonName extends PartyName {
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.repository.msg.Cardholder9#mmName
 	 * Cardholder9.mmName}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Cardholder11#mmName
-	 * Cardholder11.mmName}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.Cardholder12#mmName
-	 * Cardholder12.mmName}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Cardholder13#mmName
+	 * Cardholder13.mmName}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -232,7 +233,7 @@ public class PersonName extends PartyName {
 	 */
 	public static final MMBusinessAttribute<PersonName, Max35Text> mmGivenName = new MMBusinessAttribute<PersonName, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(Cardholder9.mmName, Cardholder11.mmName, Cardholder12.mmName);
+			derivation_lazy = () -> Arrays.asList(Cardholder9.mmName, Cardholder13.mmName);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

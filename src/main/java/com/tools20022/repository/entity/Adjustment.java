@@ -145,8 +145,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.repository.msg.Adjustment6 Adjustment6}</li>
  * <li>{@linkplain com.tools20022.repository.choice.AdjustmentType1Choice
  * AdjustmentType1Choice}</li>
- * <li>{@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge2
- * LineItemAllowanceCharge2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge3
+ * LineItemAllowanceCharge3}</li>
  * </ul>
  * </li>
  * <li>
@@ -193,8 +193,8 @@ public class Adjustment {
 	 * <li>{@linkplain com.tools20022.repository.msg.Commission19#mmAmount
 	 * Commission19.mmAmount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge2#mmActualAmount
-	 * LineItemAllowanceCharge2.mmActualAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge3#mmActualAmount
+	 * LineItemAllowanceCharge3.mmActualAmount}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -216,7 +216,7 @@ public class Adjustment {
 	 */
 	public static final MMBusinessAttribute<Adjustment, CurrencyAndAmount> mmAmount = new MMBusinessAttribute<Adjustment, CurrencyAndAmount>() {
 		{
-			derivation_lazy = () -> Arrays.asList(LineItemMonetarySummation1.mmChargeTotalAmount, Adjustment6.mmAmount, ChargesDetails4.mmAmount, Commission19.mmAmount, LineItemAllowanceCharge2.mmActualAmount);
+			derivation_lazy = () -> Arrays.asList(LineItemMonetarySummation1.mmChargeTotalAmount, Adjustment6.mmAmount, ChargesDetails4.mmAmount, Commission19.mmAmount, LineItemAllowanceCharge3.mmActualAmount);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -252,8 +252,8 @@ public class Adjustment {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge2#mmCalculationPercent
-	 * LineItemAllowanceCharge2.mmCalculationPercent}</li>
+	 * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge3#mmCalculationPercent
+	 * LineItemAllowanceCharge3.mmCalculationPercent}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -275,7 +275,7 @@ public class Adjustment {
 	 */
 	public static final MMBusinessAttribute<Adjustment, PercentageRate> mmChargeRate = new MMBusinessAttribute<Adjustment, PercentageRate>() {
 		{
-			derivation_lazy = () -> Arrays.asList(LineItemAllowanceCharge2.mmCalculationPercent);
+			derivation_lazy = () -> Arrays.asList(LineItemAllowanceCharge3.mmCalculationPercent);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -480,8 +480,8 @@ public class Adjustment {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge2#mmReason
-	 * LineItemAllowanceCharge2.mmReason}</li>
+	 * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge3#mmReason
+	 * LineItemAllowanceCharge3.mmReason}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -501,7 +501,7 @@ public class Adjustment {
 	 */
 	public static final MMBusinessAttribute<Adjustment, Max4AlphaNumericText> mmReason = new MMBusinessAttribute<Adjustment, Max4AlphaNumericText>() {
 		{
-			derivation_lazy = () -> Arrays.asList(LineItemAllowanceCharge2.mmReason);
+			derivation_lazy = () -> Arrays.asList(LineItemAllowanceCharge3.mmReason);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -700,8 +700,8 @@ public class Adjustment {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge2#mmChargeIndicator
-	 * LineItemAllowanceCharge2.mmChargeIndicator}</li>
+	 * {@linkplain com.tools20022.repository.msg.LineItemAllowanceCharge3#mmChargeIndicator
+	 * LineItemAllowanceCharge3.mmChargeIndicator}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -722,7 +722,7 @@ public class Adjustment {
 	 */
 	public static final MMBusinessAttribute<Adjustment, Optional<YesNoIndicator>> mmChargeIndicator = new MMBusinessAttribute<Adjustment, Optional<YesNoIndicator>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(LineItemAllowanceCharge2.mmChargeIndicator);
+			derivation_lazy = () -> Arrays.asList(LineItemAllowanceCharge3.mmChargeIndicator);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Adjustment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -1226,7 +1226,7 @@ public class Adjustment {
 						com.tools20022.repository.entity.Adjustment.mmChargeIndicator, com.tools20022.repository.entity.Adjustment.mmType, com.tools20022.repository.entity.Adjustment.mmCollateralManagement,
 						com.tools20022.repository.entity.Adjustment.mmAdjustedBalance, com.tools20022.repository.entity.Adjustment.mmChargesPartyRole, com.tools20022.repository.entity.Adjustment.mmEffectivePeriod,
 						com.tools20022.repository.entity.Adjustment.mmCurrencyExchange, com.tools20022.repository.entity.Adjustment.mmSecuritiesOrder, com.tools20022.repository.entity.Adjustment.mmTax);
-				derivationComponent_lazy = () -> Arrays.asList(DiscountOrChargeType1Choice.mmObject(), Adjustment6.mmObject(), AdjustmentType1Choice.mmObject(), LineItemAllowanceCharge2.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(DiscountOrChargeType1Choice.mmObject(), Adjustment6.mmObject(), AdjustmentType1Choice.mmObject(), LineItemAllowanceCharge3.mmObject());
 			}
 
 			@Override

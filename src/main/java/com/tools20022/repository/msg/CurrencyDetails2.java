@@ -65,9 +65,6 @@ import javax.xml.bind.annotation.XmlType;
  * "CurrencyDetails2"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Details of a currency."</li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} =
- * {@linkplain com.tools20022.repository.msg.CurrencyDetails1 CurrencyDetails1}</li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -104,11 +101,6 @@ public class CurrencyDetails2 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Alpha currency code (ISO 4217, 3 alphanumeric characters)."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.CurrencyDetails1#mmAlphaCode
-	 * CurrencyDetails1.mmAlphaCode}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<CurrencyDetails2, Optional<ActiveCurrencyCode>> mmAlphaCode = new MMMessageAttribute<CurrencyDetails2, Optional<ActiveCurrencyCode>>() {
@@ -119,7 +111,6 @@ public class CurrencyDetails2 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AlphaCode";
 			definition = "Alpha currency code (ISO 4217, 3 alphanumeric characters).";
-			previousVersion_lazy = () -> CurrencyDetails1.mmAlphaCode;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ActiveCurrencyCode.mmObject();
@@ -163,11 +154,6 @@ public class CurrencyDetails2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Numeric currency code (ISO 4217, 3 numeric characters)."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.CurrencyDetails1#mmNumericCode
-	 * CurrencyDetails1.mmNumericCode}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<CurrencyDetails2, Optional<Exact3NumericText>> mmNumericCode = new MMMessageAttribute<CurrencyDetails2, Optional<Exact3NumericText>>() {
@@ -178,7 +164,6 @@ public class CurrencyDetails2 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "NumericCode";
 			definition = "Numeric currency code (ISO 4217, 3 numeric characters).";
-			previousVersion_lazy = () -> CurrencyDetails1.mmNumericCode;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Exact3NumericText.mmObject();
@@ -222,11 +207,6 @@ public class CurrencyDetails2 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Maximal number of digits after the decimal separator for the currency."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.CurrencyDetails1#mmDecimal
-	 * CurrencyDetails1.mmDecimal}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<CurrencyDetails2, Optional<Number>> mmDecimal = new MMMessageAttribute<CurrencyDetails2, Optional<Number>>() {
@@ -237,7 +217,6 @@ public class CurrencyDetails2 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Decimal";
 			definition = "Maximal number of digits after the decimal separator for the currency.";
-			previousVersion_lazy = () -> CurrencyDetails1.mmDecimal;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
@@ -280,11 +259,6 @@ public class CurrencyDetails2 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Full name of the currency."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.CurrencyDetails1#mmName
-	 * CurrencyDetails1.mmName}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<CurrencyDetails2, Optional<Max35Text>> mmName = new MMMessageAttribute<CurrencyDetails2, Optional<Max35Text>>() {
@@ -295,7 +269,6 @@ public class CurrencyDetails2 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Name";
 			definition = "Full name of the currency.";
-			previousVersion_lazy = () -> CurrencyDetails1.mmName;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
@@ -321,7 +294,6 @@ public class CurrencyDetails2 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CurrencyDetails2";
 				definition = "Details of a currency.";
-				previousVersion_lazy = () -> CurrencyDetails1.mmObject();
 			}
 		});
 		return mmObject_lazy.get();

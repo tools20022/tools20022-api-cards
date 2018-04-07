@@ -21,7 +21,7 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.DocumentPartyRole;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.InvoiceHeader2;
+import com.tools20022.repository.msg.InvoiceHeader3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -44,8 +44,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
  * derivationElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.InvoiceHeader2#mmIssuer
- * InvoiceHeader2.mmIssuer}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.InvoiceHeader3#mmIssuer
+ * InvoiceHeader3.mmIssuer}</li>
  * </ul>
  * </li>
  * <li>
@@ -76,7 +76,7 @@ public class DocumentIssuer extends DocumentPartyRole {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DocumentIssuer";
 				definition = "Party that issues a document such as a bank guarantee or letter of / documentary credit. For instance the inspection company for a trade certificate or the insurance company or its agent for an insurance certificate.";
-				derivationElement_lazy = () -> Arrays.asList(InvoiceHeader2.mmIssuer);
+				derivationElement_lazy = () -> Arrays.asList(InvoiceHeader3.mmIssuer);
 				superType_lazy = () -> DocumentPartyRole.mmObject();
 			}
 

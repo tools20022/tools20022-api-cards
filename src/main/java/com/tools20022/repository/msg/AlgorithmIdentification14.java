@@ -66,6 +66,13 @@ import javax.xml.bind.annotation.XmlType;
  * definition} =
  * "Cryptographic algorithm and parameters for encryptions with a symmetric cryptographic key."
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.AlgorithmIdentification24
+ * AlgorithmIdentification24}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -101,6 +108,14 @@ public class AlgorithmIdentification14 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Identification of the encryption algorithm."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AlgorithmIdentification24#mmAlgorithm
+	 * AlgorithmIdentification24.mmAlgorithm}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<AlgorithmIdentification14, Algorithm15Code> mmAlgorithm = new MMMessageAttribute<AlgorithmIdentification14, Algorithm15Code>() {
@@ -111,6 +126,7 @@ public class AlgorithmIdentification14 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Algorithm";
 			definition = "Identification of the encryption algorithm.";
+			nextVersions_lazy = () -> Arrays.asList(AlgorithmIdentification24.mmAlgorithm);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Algorithm15Code.mmObject();
@@ -153,6 +169,14 @@ public class AlgorithmIdentification14 {
 	 * definition} =
 	 * "Parameters associated with the CBC (Chain Block Chaining) encryption algorithm."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AlgorithmIdentification24#mmParameter
+	 * AlgorithmIdentification24.mmParameter}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<AlgorithmIdentification14, Optional<Parameter6>> mmParameter = new MMMessageAssociationEnd<AlgorithmIdentification14, Optional<Parameter6>>() {
@@ -163,6 +187,7 @@ public class AlgorithmIdentification14 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Parameter";
 			definition = "Parameters associated with the CBC (Chain Block Chaining) encryption algorithm.";
+			nextVersions_lazy = () -> Arrays.asList(AlgorithmIdentification24.mmParameter);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
@@ -188,6 +213,7 @@ public class AlgorithmIdentification14 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AlgorithmIdentification14";
 				definition = "Cryptographic algorithm and parameters for encryptions with a symmetric cryptographic key.";
+				nextVersions_lazy = () -> Arrays.asList(AlgorithmIdentification24.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

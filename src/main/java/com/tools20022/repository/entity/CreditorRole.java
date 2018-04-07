@@ -24,6 +24,8 @@ import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.PaymentPartyRole;
 import com.tools20022.repository.entity.Scheme;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CardDirectDebit1;
+import com.tools20022.repository.msg.Creditor3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -54,6 +56,22 @@ import java.util.Objects;
  * <ul>
  * <li>{@linkplain com.tools20022.repository.entity.Scheme#mmCreditorRole
  * Scheme.mmCreditorRole}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.CardDirectDebit1#mmCreditorIdentification
+ * CardDirectDebit1.mmCreditorIdentification}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.Creditor3 Creditor3}</li>
  * </ul>
  * </li>
  * <li>
@@ -91,6 +109,14 @@ public class CreditorRole extends PaymentPartyRole {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAssociationEnd#getType
 	 * type} = {@linkplain com.tools20022.repository.entity.Scheme Scheme}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
+	 * derivation} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Creditor3#mmRegistrationIdentification
+	 * Creditor3.mmRegistrationIdentification}</li>
+	 * </ul>
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} =
@@ -108,6 +134,7 @@ public class CreditorRole extends PaymentPartyRole {
 	 */
 	public static final MMBusinessAssociationEnd<CreditorRole, Scheme> mmSchemeIdentification = new MMBusinessAssociationEnd<CreditorRole, Scheme>() {
 		{
+			derivation_lazy = () -> Arrays.asList(Creditor3.mmRegistrationIdentification);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CreditorRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -139,8 +166,10 @@ public class CreditorRole extends PaymentPartyRole {
 				name = "CreditorRole";
 				definition = "Party to which an amount of money is due.";
 				associationDomain_lazy = () -> Arrays.asList(Scheme.mmCreditorRole);
+				derivationElement_lazy = () -> Arrays.asList(CardDirectDebit1.mmCreditorIdentification);
 				superType_lazy = () -> PaymentPartyRole.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CreditorRole.mmSchemeIdentification);
+				derivationComponent_lazy = () -> Arrays.asList(Creditor3.mmObject());
 			}
 
 			@Override

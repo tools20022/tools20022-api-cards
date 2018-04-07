@@ -87,10 +87,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "DataSetCategory11Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Maintenance service to delegate."</li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} =
- * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code
- * DataSetCategory6Code}</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.codeset.DataSetCategory13Code
+ * DataSetCategory13Code}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -111,18 +114,21 @@ public class DataSetCategory11Code extends MMCode {
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "AcquirerProtocolParameters"</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#AcquirerProtocolParameters
-	 * DataSetCategory6Code.AcquirerProtocolParameters}</li>
+	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory13Code#AcquirerProtocolParameters
+	 * DataSetCategory13Code.AcquirerProtocolParameters}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code AcquirerProtocolParameters = new DataSetCategory11Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AcquirerProtocolParameters";
-			previousVersion_lazy = () -> DataSetCategory6Code.AcquirerProtocolParameters;
+			nextVersions_lazy = () -> Arrays.asList(DataSetCategory13Code.AcquirerProtocolParameters);
 			owner_lazy = () -> com.tools20022.repository.codeset.DataSetCategory11Code.mmObject();
 			codeName = DataSetCategoryCode.AcquirerProtocolParameters.getCodeName().orElse(name);
 		}
@@ -141,18 +147,21 @@ public class DataSetCategory11Code extends MMCode {
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "ApplicationParameters"</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#ApplicationParameters
-	 * DataSetCategory6Code.ApplicationParameters}</li>
+	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory13Code#ApplicationParameters
+	 * DataSetCategory13Code.ApplicationParameters}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code ApplicationParameters = new DataSetCategory11Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ApplicationParameters";
-			previousVersion_lazy = () -> DataSetCategory6Code.ApplicationParameters;
+			nextVersions_lazy = () -> Arrays.asList(DataSetCategory13Code.ApplicationParameters);
 			owner_lazy = () -> com.tools20022.repository.codeset.DataSetCategory11Code.mmObject();
 			codeName = DataSetCategoryCode.ApplicationParameters.getCodeName().orElse(name);
 		}
@@ -171,18 +180,21 @@ public class DataSetCategory11Code extends MMCode {
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "ApplicationParametersSubsetCreation"</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#ApplicationParametersSubsetCreation
-	 * DataSetCategory6Code.ApplicationParametersSubsetCreation}</li>
+	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory13Code#ApplicationParametersSubsetCreation
+	 * DataSetCategory13Code.ApplicationParametersSubsetCreation}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code ApplicationParametersSubsetCreation = new DataSetCategory11Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ApplicationParametersSubsetCreation";
-			previousVersion_lazy = () -> DataSetCategory6Code.ApplicationParametersSubsetCreation;
+			nextVersions_lazy = () -> Arrays.asList(DataSetCategory13Code.ApplicationParametersSubsetCreation);
 			owner_lazy = () -> com.tools20022.repository.codeset.DataSetCategory11Code.mmObject();
 			codeName = DataSetCategoryCode.ApplicationParametersSubsetCreation.getCodeName().orElse(name);
 		}
@@ -201,18 +213,21 @@ public class DataSetCategory11Code extends MMCode {
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "KeyDownload"</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#KeyDownload
-	 * DataSetCategory6Code.KeyDownload}</li>
+	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory13Code#KeyDownload
+	 * DataSetCategory13Code.KeyDownload}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code KeyDownload = new DataSetCategory11Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "KeyDownload";
-			previousVersion_lazy = () -> DataSetCategory6Code.KeyDownload;
+			nextVersions_lazy = () -> Arrays.asList(DataSetCategory13Code.KeyDownload);
 			owner_lazy = () -> com.tools20022.repository.codeset.DataSetCategory11Code.mmObject();
 			codeName = DataSetCategoryCode.KeyDownload.getCodeName().orElse(name);
 		}
@@ -231,18 +246,21 @@ public class DataSetCategory11Code extends MMCode {
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "KeyManagement"</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#KeyManagement
-	 * DataSetCategory6Code.KeyManagement}</li>
+	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory13Code#KeyManagement
+	 * DataSetCategory13Code.KeyManagement}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code KeyManagement = new DataSetCategory11Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "KeyManagement";
-			previousVersion_lazy = () -> DataSetCategory6Code.KeyManagement;
+			nextVersions_lazy = () -> Arrays.asList(DataSetCategory13Code.KeyManagement);
 			owner_lazy = () -> com.tools20022.repository.codeset.DataSetCategory11Code.mmObject();
 			codeName = DataSetCategoryCode.KeyManagement.getCodeName().orElse(name);
 		}
@@ -261,18 +279,21 @@ public class DataSetCategory11Code extends MMCode {
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "Reporting"</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#Reporting
-	 * DataSetCategory6Code.Reporting}</li>
+	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory13Code#Reporting
+	 * DataSetCategory13Code.Reporting}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code Reporting = new DataSetCategory11Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Reporting";
-			previousVersion_lazy = () -> DataSetCategory6Code.Reporting;
+			nextVersions_lazy = () -> Arrays.asList(DataSetCategory13Code.Reporting);
 			owner_lazy = () -> com.tools20022.repository.codeset.DataSetCategory11Code.mmObject();
 			codeName = DataSetCategoryCode.Reporting.getCodeName().orElse(name);
 		}
@@ -291,18 +312,21 @@ public class DataSetCategory11Code extends MMCode {
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "SoftwareModule"</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#SoftwareModule
-	 * DataSetCategory6Code.SoftwareModule}</li>
+	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory13Code#SoftwareModule
+	 * DataSetCategory13Code.SoftwareModule}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code SoftwareModule = new DataSetCategory11Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SoftwareModule";
-			previousVersion_lazy = () -> DataSetCategory6Code.SoftwareModule;
+			nextVersions_lazy = () -> Arrays.asList(DataSetCategory13Code.SoftwareModule);
 			owner_lazy = () -> com.tools20022.repository.codeset.DataSetCategory11Code.mmObject();
 			codeName = DataSetCategoryCode.SoftwareModule.getCodeName().orElse(name);
 		}
@@ -321,18 +345,21 @@ public class DataSetCategory11Code extends MMCode {
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "TMSProtocolParameters"</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#TMSProtocolParameters
-	 * DataSetCategory6Code.TMSProtocolParameters}</li>
+	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory13Code#TMSProtocolParameters
+	 * DataSetCategory13Code.TMSProtocolParameters}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code TMSProtocolParameters = new DataSetCategory11Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TMSProtocolParameters";
-			previousVersion_lazy = () -> DataSetCategory6Code.TMSProtocolParameters;
+			nextVersions_lazy = () -> Arrays.asList(DataSetCategory13Code.TMSProtocolParameters);
 			owner_lazy = () -> com.tools20022.repository.codeset.DataSetCategory11Code.mmObject();
 			codeName = DataSetCategoryCode.TMSProtocolParameters.getCodeName().orElse(name);
 		}
@@ -351,18 +378,21 @@ public class DataSetCategory11Code extends MMCode {
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "MerchantParameters"</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#MerchantParameters
-	 * DataSetCategory6Code.MerchantParameters}</li>
+	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory13Code#MerchantParameters
+	 * DataSetCategory13Code.MerchantParameters}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code MerchantParameters = new DataSetCategory11Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MerchantParameters";
-			previousVersion_lazy = () -> DataSetCategory6Code.MerchantParameters;
+			nextVersions_lazy = () -> Arrays.asList(DataSetCategory13Code.MerchantParameters);
 			owner_lazy = () -> com.tools20022.repository.codeset.DataSetCategory11Code.mmObject();
 			codeName = DataSetCategoryCode.MerchantParameters.getCodeName().orElse(name);
 		}
@@ -381,18 +411,21 @@ public class DataSetCategory11Code extends MMCode {
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "TerminalParameters"</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory6Code#TerminalParameters
-	 * DataSetCategory6Code.TerminalParameters}</li>
+	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory13Code#TerminalParameters
+	 * DataSetCategory13Code.TerminalParameters}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code TerminalParameters = new DataSetCategory11Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TerminalParameters";
-			previousVersion_lazy = () -> DataSetCategory6Code.TerminalParameters;
+			nextVersions_lazy = () -> Arrays.asList(DataSetCategory13Code.TerminalParameters);
 			owner_lazy = () -> com.tools20022.repository.codeset.DataSetCategory11Code.mmObject();
 			codeName = DataSetCategoryCode.TerminalParameters.getCodeName().orElse(name);
 		}
@@ -411,12 +444,21 @@ public class DataSetCategory11Code extends MMCode {
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "CertificateParameters"</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.codeset.DataSetCategory13Code#CertificateParameters
+	 * DataSetCategory13Code.CertificateParameters}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final DataSetCategory11Code CertificateParameters = new DataSetCategory11Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CertificateParameters";
+			nextVersions_lazy = () -> Arrays.asList(DataSetCategory13Code.CertificateParameters);
 			owner_lazy = () -> com.tools20022.repository.codeset.DataSetCategory11Code.mmObject();
 			codeName = DataSetCategoryCode.CertificateParameters.getCodeName().orElse(name);
 		}
@@ -433,7 +475,7 @@ public class DataSetCategory11Code extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DataSetCategory11Code";
 				definition = "Maintenance service to delegate.";
-				previousVersion_lazy = () -> DataSetCategory6Code.mmObject();
+				nextVersions_lazy = () -> Arrays.asList(DataSetCategory13Code.mmObject());
 				trace_lazy = () -> DataSetCategoryCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.DataSetCategory11Code.AcquirerProtocolParameters, com.tools20022.repository.codeset.DataSetCategory11Code.ApplicationParameters,
 						com.tools20022.repository.codeset.DataSetCategory11Code.ApplicationParametersSubsetCreation, com.tools20022.repository.codeset.DataSetCategory11Code.KeyDownload,

@@ -24,7 +24,7 @@ import com.tools20022.repository.codeset.ExternalBillingCompensationTypeCode;
 import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.CardPaymentInvoice2;
+import com.tools20022.repository.msg.CardPaymentInvoice3;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -574,8 +574,8 @@ public class Invoice {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentInvoice2#mmLineItem
-	 * CardPaymentInvoice2.mmLineItem}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentInvoice3#mmLineItem
+	 * CardPaymentInvoice3.mmLineItem}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -597,7 +597,7 @@ public class Invoice {
 	 */
 	public static final MMBusinessAssociationEnd<Invoice, List<LineItem>> mmLineItem = new MMBusinessAssociationEnd<Invoice, List<LineItem>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CardPaymentInvoice2.mmLineItem);
+			derivation_lazy = () -> Arrays.asList(CardPaymentInvoice3.mmLineItem);
 			isDerived = false;
 			elementContext_lazy = () -> Invoice.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

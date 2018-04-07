@@ -77,6 +77,9 @@ import java.util.Objects;
  * {@linkplain com.tools20022.repository.msg.GenericPersonIdentification1#mmIssuer
  * GenericPersonIdentification1.mmIssuer}</li>
  * <li>
+ * {@linkplain com.tools20022.repository.msg.GenericIdentification36#mmIssuer
+ * GenericIdentification36.mmIssuer}</li>
+ * <li>
  * {@linkplain com.tools20022.repository.msg.GenericIdentification32#mmIssuer
  * GenericIdentification32.mmIssuer}</li>
  * <li>
@@ -293,9 +296,9 @@ public class IdentificationIssuerRole extends InformationPartyRole {
 				name = "IdentificationIssuerRole";
 				definition = "Entity that assigns the identification.";
 				derivationElement_lazy = () -> Arrays.asList(GenericIdentification1.mmIssuer, GenericIdentification13.mmIssuer, GenericFinancialIdentification1.mmIssuer, GenericOrganisationIdentification1.mmIssuer,
-						GenericPersonIdentification1.mmIssuer, GenericIdentification32.mmIssuer, GenericIdentification48.mmIssuer, GenericIdentification53.mmIssuer, GenericIdentification71.mmIssuer, GenericIdentification73.mmIssuer,
-						GenericIdentification74.mmIssuer, GenericIdentification72.mmIssuer, GenericIdentification75.mmIssuer, GenericIdentification76.mmIssuer, GenericIdentification77.mmIssuer, GenericIdentification94.mmIssuer,
-						GenericIdentification90.mmIssuer, GenericIdentification93.mmIssuer, GenericIdentification92.mmIssuer);
+						GenericPersonIdentification1.mmIssuer, GenericIdentification36.mmIssuer, GenericIdentification32.mmIssuer, GenericIdentification48.mmIssuer, GenericIdentification53.mmIssuer, GenericIdentification71.mmIssuer,
+						GenericIdentification73.mmIssuer, GenericIdentification74.mmIssuer, GenericIdentification72.mmIssuer, GenericIdentification75.mmIssuer, GenericIdentification76.mmIssuer, GenericIdentification77.mmIssuer,
+						GenericIdentification94.mmIssuer, GenericIdentification90.mmIssuer, GenericIdentification93.mmIssuer, GenericIdentification92.mmIssuer);
 				superType_lazy = () -> InformationPartyRole.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.IdentificationIssuerRole.mmCountry, com.tools20022.repository.entity.IdentificationIssuerRole.mmEntityName,
 						com.tools20022.repository.entity.IdentificationIssuerRole.mmOwnerCode);

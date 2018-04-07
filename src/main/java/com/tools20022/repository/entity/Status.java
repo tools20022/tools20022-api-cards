@@ -26,7 +26,7 @@ import com.tools20022.repository.entity.DateTimePeriod;
 import com.tools20022.repository.entity.InvestigationPartyRole;
 import com.tools20022.repository.entity.StatusReason;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.PointOfInteractionComponent7;
+import com.tools20022.repository.msg.PointOfInteractionComponent8;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -129,8 +129,8 @@ import java.util.Objects;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.PointOfInteractionComponent7
- * PointOfInteractionComponent7}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PointOfInteractionComponent8
+ * PointOfInteractionComponent8}</li>
  * </ul>
  * </li>
  * <li>
@@ -691,7 +691,7 @@ public class Status {
 						com.tools20022.repository.entity.Status.mmStatusDescription, com.tools20022.repository.entity.Status.mmInstructionProcessingStatus, com.tools20022.repository.entity.Status.mmPartyRole,
 						com.tools20022.repository.entity.Status.mmSettlementStatus, com.tools20022.repository.entity.Status.mmCancellationProcessingStatus, com.tools20022.repository.entity.Status.mmTransactionProcessingStatus,
 						com.tools20022.repository.entity.Status.mmModificationProcessingStatus);
-				derivationComponent_lazy = () -> Arrays.asList(PointOfInteractionComponent7.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(PointOfInteractionComponent8.mmObject());
 			}
 
 			@Override

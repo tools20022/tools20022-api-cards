@@ -19,7 +19,7 @@ package com.tools20022.repository.area;
 
 import com.tools20022.metamodel.MMBusinessArea;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.catm.TerminalManagementRejectionV04;
+import com.tools20022.repository.area.catm.*;
 import com.tools20022.repository.GeneratedRepository;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -38,6 +38,26 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.repository.area.catm.TerminalManagementRejectionV04
  * TerminalManagementRejectionV04}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.catm.ManagementPlanReplacementV07
+ * ManagementPlanReplacementV07}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.catm.MaintenanceDelegationRequestV04
+ * MaintenanceDelegationRequestV04}</li>
+ * <li>{@linkplain com.tools20022.repository.area.catm.StatusReportV07
+ * StatusReportV07}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.catm.CertificateManagementRequestV02
+ * CertificateManagementRequestV02}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.catm.CertificateManagementResponseV02
+ * CertificateManagementResponseV02}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.catm.AcceptorConfigurationUpdateV07
+ * AcceptorConfigurationUpdateV07}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.catm.MaintenanceDelegationResponseV03
+ * MaintenanceDelegationResponseV03}</li>
  * </ul>
  * </li>
  * <li>
@@ -68,8 +88,9 @@ public class TerminalManagementLatestVersion {
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "Terminal Management - Latest version - master";
 				definition = "Messages that support any card related terminal management services between a Terminal Management System (TMS) and a Point of Interaction (POI) system.";
-				messageDefinition_lazy = () -> Arrays.asList(TerminalManagementRejectionV04.mmObject());
 				code = "catm";
+				messageDefinition_lazy = () -> Arrays.asList(TerminalManagementRejectionV04.mmObject(), ManagementPlanReplacementV07.mmObject(), MaintenanceDelegationRequestV04.mmObject(), StatusReportV07.mmObject(),
+						CertificateManagementRequestV02.mmObject(), CertificateManagementResponseV02.mmObject(), AcceptorConfigurationUpdateV07.mmObject(), MaintenanceDelegationResponseV03.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

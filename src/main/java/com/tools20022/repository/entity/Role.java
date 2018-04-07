@@ -24,7 +24,7 @@ import com.tools20022.repository.entity.CounterpartyRisk;
 import com.tools20022.repository.entity.Entry;
 import com.tools20022.repository.entity.RolePlayer;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.TradeParty3;
+import com.tools20022.repository.msg.TradeParty4;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -141,7 +141,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TradeParty3 TradeParty3}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TradeParty4 TradeParty4}</li>
  * </ul>
  * </li>
  * <li>
@@ -456,7 +456,7 @@ public class Role {
 						GuaranteePartyRole.mmObject(), PaymentObligationPartyRole.mmObject(), RegulatoryReportingRole.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Role.mmPlayer, com.tools20022.repository.entity.Role.mmContactPersonRole, com.tools20022.repository.entity.Role.mmPartyRole,
 						com.tools20022.repository.entity.Role.mmCounterpartyRisk, com.tools20022.repository.entity.Role.mmEntry);
-				derivationComponent_lazy = () -> Arrays.asList(TradeParty3.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(TradeParty4.mmObject());
 			}
 
 			@Override

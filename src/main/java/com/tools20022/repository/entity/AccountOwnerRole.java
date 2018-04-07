@@ -53,6 +53,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * CardAccount8.mmAccountOwner}</li>
  * <li>{@linkplain com.tools20022.repository.msg.CardAccount7#mmAccountOwner
  * CardAccount7.mmAccountOwner}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CardAccount14#mmAccountOwner
+ * CardAccount14.mmAccountOwner}</li>
  * </ul>
  * </li>
  * <li>
@@ -81,7 +83,8 @@ public class AccountOwnerRole extends AccountPartyRole {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AccountOwnerRole";
 				definition = "Party that legally owns the account.";
-				derivationElement_lazy = () -> Arrays.asList(CardAccount1.mmAccountOwner, CardAccount2.mmAccountOwner, CardAccount10.mmAccountOwner, CardAccount9.mmAccountOwner, CardAccount8.mmAccountOwner, CardAccount7.mmAccountOwner);
+				derivationElement_lazy = () -> Arrays.asList(CardAccount1.mmAccountOwner, CardAccount2.mmAccountOwner, CardAccount10.mmAccountOwner, CardAccount9.mmAccountOwner, CardAccount8.mmAccountOwner, CardAccount7.mmAccountOwner,
+						CardAccount14.mmAccountOwner);
 				superType_lazy = () -> AccountPartyRole.mmObject();
 			}
 

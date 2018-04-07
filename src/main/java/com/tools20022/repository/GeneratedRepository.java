@@ -59,14 +59,8 @@ public class GeneratedRepository extends ReflectionBasedRepository {
 	 * {@linkplain com.tools20022.repository.area.AcceptortoAcquirerCardTransactionLatestVersion
 	 * AcceptortoAcquirerCardTransactionLatestVersion}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.area.TerminalManagementPreviousVersion
-	 * TerminalManagementPreviousVersion}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.area.BusinessApplicationHeaderLatestVersion
 	 * BusinessApplicationHeaderLatestVersion}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.area.AcceptortoAcquirerCardTransactionPreviousVersion
-	 * AcceptortoAcquirerCardTransactionPreviousVersion}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.area.TerminalManagementLatestVersion
 	 * TerminalManagementLatestVersion}</li>
@@ -79,9 +73,6 @@ public class GeneratedRepository extends ReflectionBasedRepository {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.area.AcquirertoIssuerCardTransactionLatestVersion
 	 * AcquirertoIssuerCardTransactionLatestVersion}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.area.ATMManagementPreviousVersion
-	 * ATMManagementPreviousVersion}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -92,9 +83,8 @@ public class GeneratedRepository extends ReflectionBasedRepository {
 	 */
 	public static final MMBusinessProcessCatalogue catalogue = new MMBusinessProcessCatalogue() {
 		{
-			topLevelCatalogueEntry_lazy = () -> Arrays.asList(AcceptortoAcquirerCardTransactionLatestVersion.mmObject(), TerminalManagementPreviousVersion.mmObject(), BusinessApplicationHeaderLatestVersion.mmObject(),
-					AcceptortoAcquirerCardTransactionPreviousVersion.mmObject(), TerminalManagementLatestVersion.mmObject(), ATMManagementLatestVersion.mmObject(), ATMCardTransactionLatestVersion.mmObject(),
-					AcquirertoIssuerCardTransactionLatestVersion.mmObject(), ATMManagementPreviousVersion.mmObject());
+			topLevelCatalogueEntry_lazy = () -> Arrays.asList(AcceptortoAcquirerCardTransactionLatestVersion.mmObject(), BusinessApplicationHeaderLatestVersion.mmObject(), TerminalManagementLatestVersion.mmObject(),
+					ATMManagementLatestVersion.mmObject(), ATMCardTransactionLatestVersion.mmObject(), AcquirertoIssuerCardTransactionLatestVersion.mmObject());
 			repository_lazy = () -> GeneratedRepository.mmObject();
 		}
 	};
@@ -108,7 +98,7 @@ public class GeneratedRepository extends ReflectionBasedRepository {
 	 * GeneratedRepository}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMDataDictionary#getTopLevelDictionaryEntry
-	 * topLevelDictionaryEntry} = List of 2007 elements</li>
+	 * topLevelDictionaryEntry} = List of 2034 elements</li>
 	 * </ul>
 	 */
 	public static final MMDataDictionary dataDict = new MMDataDictionary() {

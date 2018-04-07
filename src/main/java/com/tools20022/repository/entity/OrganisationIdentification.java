@@ -18,10 +18,7 @@
 package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.*;
-import com.tools20022.repository.choice.OrganisationIdentificationSchemeName1Choice;
-import com.tools20022.repository.choice.Party10Choice;
-import com.tools20022.repository.choice.Party9Choice;
-import com.tools20022.repository.choice.PartyIdentification72Choice;
+import com.tools20022.repository.choice.*;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.entity.CashClearingSystemMember;
 import com.tools20022.repository.entity.Organisation;
@@ -115,6 +112,9 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.repository.choice.Party9Choice#mmFinancialInstitutionIdentification
  * Party9Choice.mmFinancialInstitutionIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.Party36Choice#mmOrganisationIdentification
+ * Party36Choice.mmOrganisationIdentification}</li>
  * </ul>
  * </li>
  * <li>
@@ -236,6 +236,9 @@ public class OrganisationIdentification extends PartyIdentificationInformation {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.choice.PartyIdentification72Choice#mmAnyBIC
 	 * PartyIdentification72Choice.mmAnyBIC}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.PartyIdentification100Choice#mmAnyBIC
+	 * PartyIdentification100Choice.mmAnyBIC}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -258,7 +261,7 @@ public class OrganisationIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute<OrganisationIdentification, AnyBICIdentifier> mmAnyBIC = new MMBusinessAttribute<OrganisationIdentification, AnyBICIdentifier>() {
 		{
-			derivation_lazy = () -> Arrays.asList(OrganisationIdentification7.mmAnyBIC, PartyIdentification72Choice.mmAnyBIC);
+			derivation_lazy = () -> Arrays.asList(OrganisationIdentification7.mmAnyBIC, PartyIdentification72Choice.mmAnyBIC, PartyIdentification100Choice.mmAnyBIC);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.OrganisationIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -782,7 +785,7 @@ public class OrganisationIdentification extends PartyIdentificationInformation {
 				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Organisation.mmOrganisationIdentification, com.tools20022.repository.entity.OrganisationName.mmOrganisation,
 						CashClearingSystemMember.mmOrganisationIdentification);
 				derivationElement_lazy = () -> Arrays.asList(FinancialInstitutionIdentification8.mmOther, Party10Choice.mmOrganisationIdentification, Party9Choice.mmOrganisationIdentification,
-						Party9Choice.mmFinancialInstitutionIdentification);
+						Party9Choice.mmFinancialInstitutionIdentification, Party36Choice.mmOrganisationIdentification);
 				superType_lazy = () -> PartyIdentificationInformation.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.OrganisationIdentification.mmBICFI, com.tools20022.repository.entity.OrganisationIdentification.mmAnyBIC,
 						com.tools20022.repository.entity.OrganisationIdentification.mmOrganisationName, com.tools20022.repository.entity.OrganisationIdentification.mmOrganisation,

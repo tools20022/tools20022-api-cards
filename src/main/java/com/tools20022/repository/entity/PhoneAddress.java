@@ -24,6 +24,7 @@ import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.ContactPoint;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CommunicationAddress5;
+import com.tools20022.repository.msg.CommunicationAddress9;
 import com.tools20022.repository.msg.ContactDetails2;
 import com.tools20022.repository.msg.Contacts3;
 import java.util.Arrays;
@@ -95,6 +96,12 @@ public class PhoneAddress extends ContactPoint {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CommunicationAddress5#mmCustomerService
 	 * CommunicationAddress5.mmCustomerService}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CommunicationAddress9#mmPhone
+	 * CommunicationAddress9.mmPhone}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CommunicationAddress9#mmCustomerService
+	 * CommunicationAddress9.mmCustomerService}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -116,7 +123,8 @@ public class PhoneAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute<PhoneAddress, Max35Text> mmPhoneNumber = new MMBusinessAttribute<PhoneAddress, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(ContactDetails2.mmPhoneNumber, Contacts3.mmPhoneNumber, CommunicationAddress5.mmPhone, CommunicationAddress5.mmCustomerService);
+			derivation_lazy = () -> Arrays.asList(ContactDetails2.mmPhoneNumber, Contacts3.mmPhoneNumber, CommunicationAddress5.mmPhone, CommunicationAddress5.mmCustomerService, CommunicationAddress9.mmPhone,
+					CommunicationAddress9.mmCustomerService);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PhoneAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

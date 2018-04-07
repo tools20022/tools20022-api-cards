@@ -115,15 +115,17 @@ public class PartyName {
 	 * Organisation9.mmCommonName}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.LegalOrganisation1#mmName
 	 * LegalOrganisation1.mmName}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Organisation25#mmCommonName
-	 * Organisation25.mmCommonName}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.NameAndAddress6#mmName
+	 * NameAndAddress6.mmName}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.Organisation26#mmCommonName
 	 * Organisation26.mmCommonName}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PartyIdentification112#mmName
-	 * PartyIdentification112.mmName}</li>
+	 * {@linkplain com.tools20022.repository.msg.Organisation32#mmCommonName
+	 * Organisation32.mmCommonName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PartyIdentification129#mmName
+	 * PartyIdentification129.mmName}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -146,7 +148,7 @@ public class PartyName {
 	public static final MMBusinessAttribute<PartyName, Max140Text> mmName = new MMBusinessAttribute<PartyName, Max140Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(FinancialInstitutionIdentification8.mmName, BranchData2.mmName, ContactDetails2.mmName, NameAndAddress3.mmName, Contacts3.mmName, PartyIdentification42.mmName, Organisation9.mmCommonName,
-					LegalOrganisation1.mmName, Organisation25.mmCommonName, Organisation26.mmCommonName, PartyIdentification112.mmName);
+					LegalOrganisation1.mmName, NameAndAddress6.mmName, Organisation26.mmCommonName, Organisation32.mmCommonName, PartyIdentification129.mmName);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PartyName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

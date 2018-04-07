@@ -75,8 +75,8 @@ import java.util.Objects;
  * <li>{@linkplain com.tools20022.repository.msg.AcceptorRejection4
  * AcceptorRejection4}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.AcceptorReconciliationResponse4
- * AcceptorReconciliationResponse4}</li>
+ * {@linkplain com.tools20022.repository.msg.AcceptorReconciliationResponse5
+ * AcceptorReconciliationResponse5}</li>
  * </ul>
  * </li>
  * <li>
@@ -179,14 +179,11 @@ public class CardPaymentStatus extends Status {
 	 * {@linkplain com.tools20022.repository.msg.ATMTransaction20#mmIncident
 	 * ATMTransaction20.mmIncident}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction75#mmFailureReason
-	 * CardPaymentTransaction75.mmFailureReason}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction83#mmFailureReason
+	 * CardPaymentTransaction83.mmFailureReason}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction70#mmFailureReason
-	 * CardPaymentTransaction70.mmFailureReason}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction69#mmFailureReason
-	 * CardPaymentTransaction69.mmFailureReason}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction81#mmFailureReason
+	 * CardPaymentTransaction81.mmFailureReason}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -207,7 +204,7 @@ public class CardPaymentStatus extends Status {
 	 */
 	public static final MMBusinessAttribute<CardPaymentStatus, FailureReasonCode> mmFailureReason = new MMBusinessAttribute<CardPaymentStatus, FailureReasonCode>() {
 		{
-			derivation_lazy = () -> Arrays.asList(ATMTransaction20.mmIncident, CardPaymentTransaction75.mmFailureReason, CardPaymentTransaction70.mmFailureReason, CardPaymentTransaction69.mmFailureReason);
+			derivation_lazy = () -> Arrays.asList(ATMTransaction20.mmIncident, CardPaymentTransaction83.mmFailureReason, CardPaymentTransaction81.mmFailureReason);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -250,8 +247,8 @@ public class CardPaymentStatus extends Status {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AcceptorReconciliationResponse4#mmEnvironment
-	 * AcceptorReconciliationResponse4.mmEnvironment}</li>
+	 * {@linkplain com.tools20022.repository.msg.AcceptorReconciliationResponse5#mmEnvironment
+	 * AcceptorReconciliationResponse5.mmEnvironment}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -272,7 +269,7 @@ public class CardPaymentStatus extends Status {
 	 */
 	public static final MMBusinessAssociationEnd<CardPaymentStatus, List<CardPayment>> mmCardPayment = new MMBusinessAssociationEnd<CardPaymentStatus, List<CardPayment>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(AcceptorReconciliationResponse4.mmEnvironment);
+			derivation_lazy = () -> Arrays.asList(AcceptorReconciliationResponse5.mmEnvironment);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentStatus.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -306,7 +303,7 @@ public class CardPaymentStatus extends Status {
 				superType_lazy = () -> Status.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardPaymentStatus.mmRejectionReason, com.tools20022.repository.entity.CardPaymentStatus.mmFailureReason,
 						com.tools20022.repository.entity.CardPaymentStatus.mmCardPayment);
-				derivationComponent_lazy = () -> Arrays.asList(AcceptorRejection2.mmObject(), AcceptorRejection3.mmObject(), AcceptorRejection4.mmObject(), AcceptorReconciliationResponse4.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(AcceptorRejection2.mmObject(), AcceptorRejection3.mmObject(), AcceptorRejection4.mmObject(), AcceptorReconciliationResponse5.mmObject());
 			}
 
 			@Override

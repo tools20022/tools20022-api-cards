@@ -25,6 +25,23 @@ class ListBuilderForGeneratedRepository_03 {
 
 	@SuppressWarnings("unchecked")
 	static <T> List<T> addElems(List<T> list) {
+		list.add((T) ExternalCode.mmObject());
+		list.add((T) PaymentCategoryPurposeCode.mmObject());
+		list.add((T) ExchangeRateTypeCode.mmObject());
+		list.add((T) ChequeTypeCode.mmObject());
+		list.add((T) ChequeDeliveryCode.mmObject());
+		list.add((T) RegulatoryReportingTypeCode.mmObject());
+		list.add((T) SequenceTypeCode.mmObject());
+		list.add((T) Max1025Text.mmObject());
+		list.add((T) CancellationReasonCode.mmObject());
+		list.add((T) SettlementMethodCode.mmObject());
+		list.add((T) ExternalStatusReason1Code.mmObject());
+		list.add((T) Max2000Text.mmObject());
+		list.add((T) DemandStatusCode.mmObject());
+		list.add((T) ExternalUndertakingDocumentTypeCode.mmObject());
+		list.add((T) ExternalDocumentFormatCode.mmObject());
+		list.add((T) Max2MBBinary.mmObject());
+		list.add((T) ExternalMandateReason1Code.mmObject());
 		list.add((T) ISONormalisedDateTime.mmObject());
 		list.add((T) UndertakingStatusCode.mmObject());
 		list.add((T) TerminationReasonCode.mmObject());
@@ -206,7 +223,6 @@ class ListBuilderForGeneratedRepository_03 {
 		list.add((T) ProductIdentifier2Code.mmObject());
 		list.add((T) ProductCharacteristicsCode.mmObject());
 		list.add((T) ProductCharacteristics1Code.mmObject());
-		list.add((T) UnitOfMeasure4Code.mmObject());
 		list.add((T) ProductCategoryCode.mmObject());
 		list.add((T) ProductCategory1Code.mmObject());
 		list.add((T) AdjustmentTypeCode.mmObject());
@@ -353,7 +369,6 @@ class ListBuilderForGeneratedRepository_03 {
 		list.add((T) Min2Max3AlphaText.mmObject());
 		list.add((T) NetworkType1Code.mmObject());
 		list.add((T) OutputFormat1Code.mmObject());
-		list.add((T) DataSetCategory6Code.mmObject());
 		list.add((T) Response2Code.mmObject());
 		list.add((T) EncryptionFormat1Code.mmObject());
 		list.add((T) Algorithm15Code.mmObject());
@@ -382,7 +397,6 @@ class ListBuilderForGeneratedRepository_03 {
 		list.add((T) AccountChoiceMethod1Code.mmObject());
 		list.add((T) AuthenticationMethod7Code.mmObject());
 		list.add((T) TerminalManagementActionResult2Code.mmObject());
-		list.add((T) ATMCommand2Code.mmObject());
 		list.add((T) ATMServiceType1Code.mmObject());
 		list.add((T) ATMStatus1Code.mmObject());
 		list.add((T) TransactionEnvironment3Code.mmObject());
@@ -398,7 +412,6 @@ class ListBuilderForGeneratedRepository_03 {
 		list.add((T) FailureReason5Code.mmObject());
 		list.add((T) CryptographicKeyType4Code.mmObject());
 		list.add((T) AuthenticationMethod5Code.mmObject());
-		list.add((T) ATMSecurityScheme2Code.mmObject());
 		list.add((T) ATMMediaType1Code.mmObject());
 		list.add((T) ATMDevice1Code.mmObject());
 		list.add((T) OutputFormat2Code.mmObject());
@@ -415,7 +428,6 @@ class ListBuilderForGeneratedRepository_03 {
 		list.add((T) CardDataReading4Code.mmObject());
 		list.add((T) CardholderVerificationCapability3Code.mmObject());
 		list.add((T) TypeOfAmount5Code.mmObject());
-		list.add((T) ATMSecurityScheme1Code.mmObject());
 		list.add((T) AuthenticationMethod6Code.mmObject());
 		list.add((T) ATMCounterType1Code.mmObject());
 		list.add((T) ATMCustomerProfile1Code.mmObject());
@@ -452,6 +464,7 @@ class ListBuilderForGeneratedRepository_03 {
 		list.add((T) ATMOperationCode.mmObject());
 		list.add((T) ATMCounterType2Code.mmObject());
 		list.add((T) ATMOperation1Code.mmObject());
+		list.add((T) Max2KBinary.mmObject());
 		list.add((T) TradeConfirmationTypeCode.mmObject());
 		list.add((T) Response4Code.mmObject());
 		list.add((T) MessageFunction8Code.mmObject());
@@ -464,19 +477,15 @@ class ListBuilderForGeneratedRepository_03 {
 		list.add((T) CardPaymentServiceType9Code.mmObject());
 		list.add((T) CardDataReading5Code.mmObject());
 		list.add((T) CardholderVerificationCapability4Code.mmObject());
-		list.add((T) TerminalManagementAction2Code.mmObject());
 		list.add((T) TerminalManagementAction3Code.mmObject());
 		list.add((T) AttendanceContext2Code.mmObject());
 		list.add((T) DataSetCategory8Code.mmObject());
-		list.add((T) DataSetCategory9Code.mmObject());
-		list.add((T) MessageFunction10Code.mmObject());
 		list.add((T) Max104Text.mmObject());
 		list.add((T) Max37Text.mmObject());
 		list.add((T) Max76Text.mmObject());
 		list.add((T) NetworkType2Code.mmObject());
 		list.add((T) LocationCategory3Code.mmObject());
 		list.add((T) DataSetCategory10Code.mmObject());
-		list.add((T) POIComponentType4Code.mmObject());
 		list.add((T) ResultDetail3Code.mmObject());
 		list.add((T) PartyType15Code.mmObject());
 		list.add((T) DataSetCategory11Code.mmObject());
@@ -509,22 +518,13 @@ class ListBuilderForGeneratedRepository_03 {
 		list.add((T) MandateClassificationCode.mmObject());
 		list.add((T) NovationStatusCode.mmObject());
 		list.add((T) TransactionChannel5Code.mmObject());
-		list.add((T) TerminalManagementActionResult3Code.mmObject());
 		list.add((T) TypeOfAmount8Code.mmObject());
 		list.add((T) POICommunicationType2Code.mmObject());
-		list.add((T) MessageFunction12Code.mmObject());
 		list.add((T) ActionType7Code.mmObject());
 		list.add((T) CurrencyConversionResponse3Code.mmObject());
 		list.add((T) AuthenticationResultCode.mmObject());
 		list.add((T) AuthenticationResult1Code.mmObject());
-		list.add((T) MessageFunction13Code.mmObject());
-		list.add((T) ActiveOrHistoricCurrencyCode_BusinessCode.mmObject());
-		list.add((T) ExternalClearingSystemIdentificationCode.mmObject());
-		list.add((T) ExternalFinancialInstitutionIdentificationCode.mmObject());
-		list.add((T) ExternalOrganisationIdentificationCode.mmObject());
-		list.add((T) ExternalPersonIdentificationCode.mmObject());
-		list.add((T) NamePrefixCode.mmObject());
-		list.add((T) ActiveCurrencyCode_BusinessCode.mmObject());
+		list.add((T) ATMSecurityScheme3Code.mmObject());
 		ListBuilderForGeneratedRepository_04.addElems(list);
 		return list;
 	}

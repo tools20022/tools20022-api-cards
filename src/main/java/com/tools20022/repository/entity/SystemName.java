@@ -21,7 +21,7 @@ import com.tools20022.metamodel.*;
 import com.tools20022.repository.datatype.Max70Text;
 import com.tools20022.repository.entity.SystemIdentification;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.PointOfInteraction7;
+import com.tools20022.repository.msg.PointOfInteraction8;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -86,8 +86,8 @@ public class SystemName {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PointOfInteraction7#mmSystemName
-	 * PointOfInteraction7.mmSystemName}</li>
+	 * {@linkplain com.tools20022.repository.msg.PointOfInteraction8#mmSystemName
+	 * PointOfInteraction8.mmSystemName}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -109,7 +109,7 @@ public class SystemName {
 	 */
 	public static final MMBusinessAttribute<SystemName, Max70Text> mmName = new MMBusinessAttribute<SystemName, Max70Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PointOfInteraction7.mmSystemName);
+			derivation_lazy = () -> Arrays.asList(PointOfInteraction8.mmSystemName);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SystemName.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

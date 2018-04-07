@@ -73,9 +73,6 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.area.catp.ATMWithdrawalRequestV02#mmHeader
  * ATMWithdrawalRequestV02.mmHeader}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.caam.ATMDeviceControlV02#mmHeader
- * ATMDeviceControlV02.mmHeader}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.catp.ATMDepositResponseV01#mmHeader
  * ATMDepositResponseV01.mmHeader}</li>
  * <li>
@@ -84,9 +81,6 @@ import javax.xml.bind.annotation.XmlType;
  * <li>
  * {@linkplain com.tools20022.repository.area.catp.ATMInquiryResponseV02#mmHeader
  * ATMInquiryResponseV02.mmHeader}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caam.ATMDeviceReportV02#mmHeader
- * ATMDeviceReportV02.mmHeader}</li>
  * <li>
  * {@linkplain com.tools20022.repository.area.catp.ATMPINManagementRequestV02#mmHeader
  * ATMPINManagementRequestV02.mmHeader}</li>
@@ -100,9 +94,6 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.area.caam.ATMDiagnosticRequestV02#mmHeader
  * ATMDiagnosticRequestV02.mmHeader}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.caam.ATMKeyDownloadRequestV02#mmHeader
- * ATMKeyDownloadRequestV02.mmHeader}</li>
- * <li>
  * {@linkplain com.tools20022.repository.area.catp.ATMWithdrawalResponseV02#mmHeader
  * ATMWithdrawalResponseV02.mmHeader}</li>
  * <li>
@@ -115,8 +106,17 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.repository.area.catp.ATMTransferResponseV01#mmHeader
  * ATMTransferResponseV01.mmHeader}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.caam.ATMKeyDownloadResponseV02#mmHeader
- * ATMKeyDownloadResponseV02.mmHeader}</li>
+ * {@linkplain com.tools20022.repository.area.caam.ATMDeviceControlV03#mmHeader
+ * ATMDeviceControlV03.mmHeader}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.caam.ATMDeviceReportV03#mmHeader
+ * ATMDeviceReportV03.mmHeader}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.caam.ATMKeyDownloadRequestV03#mmHeader
+ * ATMKeyDownloadRequestV03.mmHeader}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.caam.ATMKeyDownloadResponseV03#mmHeader
+ * ATMKeyDownloadResponseV03.mmHeader}</li>
  * </ul>
  * </li>
  * <li>
@@ -563,9 +563,9 @@ public class Header31 {
 				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Header31.mmMessageFunction, com.tools20022.repository.msg.Header31.mmProtocolVersion, com.tools20022.repository.msg.Header31.mmExchangeIdentification,
 						com.tools20022.repository.msg.Header31.mmCreationDateTime, com.tools20022.repository.msg.Header31.mmInitiatingParty, com.tools20022.repository.msg.Header31.mmRecipientParty,
 						com.tools20022.repository.msg.Header31.mmProcessState, com.tools20022.repository.msg.Header31.mmTraceability);
-				messageBuildingBlock_lazy = () -> Arrays.asList(ATMWithdrawalRequestV02.mmHeader, ATMDeviceControlV02.mmHeader, ATMDepositResponseV01.mmHeader, ATMDepositRequestV01.mmHeader, ATMInquiryResponseV02.mmHeader,
-						ATMDeviceReportV02.mmHeader, ATMPINManagementRequestV02.mmHeader, ATMTransferRequestV01.mmHeader, ATMDiagnosticResponseV02.mmHeader, ATMDiagnosticRequestV02.mmHeader, ATMKeyDownloadRequestV02.mmHeader,
-						ATMWithdrawalResponseV02.mmHeader, ATMPINManagementResponseV02.mmHeader, ATMInquiryRequestV02.mmHeader, ATMTransferResponseV01.mmHeader, ATMKeyDownloadResponseV02.mmHeader);
+				messageBuildingBlock_lazy = () -> Arrays.asList(ATMWithdrawalRequestV02.mmHeader, ATMDepositResponseV01.mmHeader, ATMDepositRequestV01.mmHeader, ATMInquiryResponseV02.mmHeader, ATMPINManagementRequestV02.mmHeader,
+						ATMTransferRequestV01.mmHeader, ATMDiagnosticResponseV02.mmHeader, ATMDiagnosticRequestV02.mmHeader, ATMWithdrawalResponseV02.mmHeader, ATMPINManagementResponseV02.mmHeader, ATMInquiryRequestV02.mmHeader,
+						ATMTransferResponseV01.mmHeader, ATMDeviceControlV03.mmHeader, ATMDeviceReportV03.mmHeader, ATMKeyDownloadRequestV03.mmHeader, ATMKeyDownloadResponseV03.mmHeader);
 				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Header31";

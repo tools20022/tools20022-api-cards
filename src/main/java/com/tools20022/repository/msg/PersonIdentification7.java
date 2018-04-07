@@ -98,13 +98,6 @@ import javax.xml.bind.annotation.XmlType;
  * "PersonIdentification7"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Set of unique and unambiguous ways to identify a person."</li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
- * nextVersions} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.PersonIdentification11
- * PersonIdentification11}</li>
- * </ul>
- * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
  * previousVersion} =
  * {@linkplain com.tools20022.repository.msg.PersonIdentification5
@@ -150,14 +143,6 @@ public class PersonIdentification7 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Number assigned by a license authority to a driver's license."</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
-	 * nextVersions} =
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmDriverLicenseNumber
-	 * PersonIdentification11.mmDriverLicenseNumber}</li>
-	 * </ul>
-	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PersonIdentification7, Optional<Max35Text>> mmDriversLicenseNumber = new MMMessageAttribute<PersonIdentification7, Optional<Max35Text>>() {
@@ -169,7 +154,6 @@ public class PersonIdentification7 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DriversLicenseNumber";
 			definition = "Number assigned by a license authority to a driver's license.";
-			nextVersions_lazy = () -> Arrays.asList(PersonIdentification11.mmDriverLicenseNumber);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
@@ -212,14 +196,6 @@ public class PersonIdentification7 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Number assigned by an agent to identify its customer."</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
-	 * nextVersions} =
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmCustomerNumber
-	 * PersonIdentification11.mmCustomerNumber}</li>
-	 * </ul>
-	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PersonIdentification7, Optional<Max35Text>> mmCustomerNumber = new MMMessageAttribute<PersonIdentification7, Optional<Max35Text>>() {
@@ -230,7 +206,6 @@ public class PersonIdentification7 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CustomerNumber";
 			definition = "Number assigned by an agent to identify its customer.";
-			nextVersions_lazy = () -> Arrays.asList(PersonIdentification11.mmCustomerNumber);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
@@ -278,14 +253,6 @@ public class PersonIdentification7 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Number assigned by a social security agency."</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
-	 * nextVersions} =
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmSocialSecurityNumber
-	 * PersonIdentification11.mmSocialSecurityNumber}</li>
-	 * </ul>
-	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PersonIdentification7, Optional<Max35Text>> mmSocialSecurityNumber = new MMMessageAttribute<PersonIdentification7, Optional<Max35Text>>() {
@@ -297,7 +264,6 @@ public class PersonIdentification7 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SocialSecurityNumber";
 			definition = "Number assigned by a social security agency.";
-			nextVersions_lazy = () -> Arrays.asList(PersonIdentification11.mmSocialSecurityNumber);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
@@ -346,14 +312,6 @@ public class PersonIdentification7 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Number assigned by a government agency to identify foreign nationals."</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
-	 * nextVersions} =
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmAlienRegistrationNumber
-	 * PersonIdentification11.mmAlienRegistrationNumber}</li>
-	 * </ul>
-	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PersonIdentification7, Optional<Max35Text>> mmAlienRegistrationNumber = new MMMessageAttribute<PersonIdentification7, Optional<Max35Text>>() {
@@ -365,7 +323,6 @@ public class PersonIdentification7 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AlienRegistrationNumber";
 			definition = "Number assigned by a government agency to identify foreign nationals.";
-			nextVersions_lazy = () -> Arrays.asList(PersonIdentification11.mmAlienRegistrationNumber);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
@@ -413,14 +370,6 @@ public class PersonIdentification7 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Number assigned by a passport authority to a passport."</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
-	 * nextVersions} =
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmPassportNumber
-	 * PersonIdentification11.mmPassportNumber}</li>
-	 * </ul>
-	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PersonIdentification7, Optional<Max35Text>> mmPassportNumber = new MMMessageAttribute<PersonIdentification7, Optional<Max35Text>>() {
@@ -432,7 +381,6 @@ public class PersonIdentification7 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PassportNumber";
 			definition = "Number assigned by a passport authority to a passport.";
-			nextVersions_lazy = () -> Arrays.asList(PersonIdentification11.mmPassportNumber);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
@@ -480,14 +428,6 @@ public class PersonIdentification7 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Number assigned by a tax authority to an entity."</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
-	 * nextVersions} =
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmTaxIdentificationNumber
-	 * PersonIdentification11.mmTaxIdentificationNumber}</li>
-	 * </ul>
-	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PersonIdentification7, Optional<Max35Text>> mmTaxIdentificationNumber = new MMMessageAttribute<PersonIdentification7, Optional<Max35Text>>() {
@@ -499,7 +439,6 @@ public class PersonIdentification7 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TaxIdentificationNumber";
 			definition = "Number assigned by a tax authority to an entity.";
-			nextVersions_lazy = () -> Arrays.asList(PersonIdentification11.mmTaxIdentificationNumber);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
@@ -548,14 +487,6 @@ public class PersonIdentification7 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Number assigned by a national authority to an identity card."</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
-	 * nextVersions} =
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmIdentityCardNumber
-	 * PersonIdentification11.mmIdentityCardNumber}</li>
-	 * </ul>
-	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PersonIdentification7, Optional<Max35Text>> mmIdentityCardNumber = new MMMessageAttribute<PersonIdentification7, Optional<Max35Text>>() {
@@ -567,7 +498,6 @@ public class PersonIdentification7 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "IdentityCardNumber";
 			definition = "Number assigned by a national authority to an identity card.";
-			nextVersions_lazy = () -> Arrays.asList(PersonIdentification11.mmIdentityCardNumber);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
@@ -616,14 +546,6 @@ public class PersonIdentification7 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Number assigned to an employer by a registration authority."</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
-	 * nextVersions} =
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmEmployerIdentificationNumber
-	 * PersonIdentification11.mmEmployerIdentificationNumber}</li>
-	 * </ul>
-	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PersonIdentification7, Optional<Max35Text>> mmEmployerIdentificationNumber = new MMMessageAttribute<PersonIdentification7, Optional<Max35Text>>() {
@@ -635,7 +557,6 @@ public class PersonIdentification7 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EmployerIdentificationNumber";
 			definition = "Number assigned to an employer by a registration authority.";
-			nextVersions_lazy = () -> Arrays.asList(PersonIdentification11.mmEmployerIdentificationNumber);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
@@ -678,14 +599,6 @@ public class PersonIdentification7 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Number assigned to an employee by a employer."</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
-	 * nextVersions} =
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmEmployeeIdentificationNumber
-	 * PersonIdentification11.mmEmployeeIdentificationNumber}</li>
-	 * </ul>
-	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PersonIdentification7, Optional<Max35Text>> mmEmployeeIdentificationNumber = new MMMessageAttribute<PersonIdentification7, Optional<Max35Text>>() {
@@ -696,7 +609,6 @@ public class PersonIdentification7 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EmployeeIdentificationNumber";
 			definition = "Number assigned to an employee by a employer.";
-			nextVersions_lazy = () -> Arrays.asList(PersonIdentification11.mmEmployeeIdentificationNumber);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
@@ -744,14 +656,6 @@ public class PersonIdentification7 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Address for electronic mail (e-mail)."</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
-	 * nextVersions} =
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmEmailAddress
-	 * PersonIdentification11.mmEmailAddress}</li>
-	 * </ul>
-	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PersonIdentification7, Optional<Max256Text>> mmEmailAddress = new MMMessageAttribute<PersonIdentification7, Optional<Max256Text>>() {
@@ -763,7 +667,6 @@ public class PersonIdentification7 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EmailAddress";
 			definition = "Address for electronic mail (e-mail).";
-			nextVersions_lazy = () -> Arrays.asList(PersonIdentification11.mmEmailAddress);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max256Text.mmObject();
@@ -810,14 +713,6 @@ public class PersonIdentification7 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Date and place of birth of a person."</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
-	 * nextVersions} =
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmDateAndPlaceOfBirth
-	 * PersonIdentification11.mmDateAndPlaceOfBirth}</li>
-	 * </ul>
-	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
@@ -834,7 +729,6 @@ public class PersonIdentification7 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DateAndPlaceOfBirth";
 			definition = "Date and place of birth of a person.";
-			nextVersions_lazy = () -> Arrays.asList(PersonIdentification11.mmDateAndPlaceOfBirth);
 			previousVersion_lazy = () -> PersonIdentification5.mmDateAndPlaceOfBirth;
 			maxOccurs = 1;
 			minOccurs = 0;
@@ -885,14 +779,6 @@ public class PersonIdentification7 {
 	 * definition} =
 	 * "Unique identification of a person, as assigned by an institution, using an identification scheme."
 	 * </li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
-	 * nextVersions} =
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmOther
-	 * PersonIdentification11.mmOther}</li>
-	 * </ul>
-	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
@@ -909,7 +795,6 @@ public class PersonIdentification7 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Other";
 			definition = "Unique identification of a person, as assigned by an institution, using an identification scheme.";
-			nextVersions_lazy = () -> Arrays.asList(PersonIdentification11.mmOther);
 			previousVersion_lazy = () -> PersonIdentification5.mmOther;
 			minOccurs = 0;
 			isComposite = true;
@@ -941,7 +826,6 @@ public class PersonIdentification7 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PersonIdentification7";
 				definition = "Set of unique and unambiguous ways to identify a person.";
-				nextVersions_lazy = () -> Arrays.asList(PersonIdentification11.mmObject());
 				previousVersion_lazy = () -> PersonIdentification5.mmObject();
 			}
 		});

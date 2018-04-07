@@ -28,6 +28,8 @@ import com.tools20022.repository.entity.DirectDebit;
 import com.tools20022.repository.entity.Mandate;
 import com.tools20022.repository.entity.PaymentProcessing;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CardDirectDebit1;
+import com.tools20022.repository.msg.MandateRelatedInformation13;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.Objects;
@@ -93,6 +95,23 @@ import java.util.Optional;
  * <li>
  * {@linkplain com.tools20022.repository.entity.PaymentProcessing#mmRelatedMandate
  * PaymentProcessing.mmRelatedMandate}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.CardDirectDebit1#mmMandateRelatedInformation
+ * CardDirectDebit1.mmMandateRelatedInformation}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.MandateRelatedInformation13
+ * MandateRelatedInformation13}</li>
  * </ul>
  * </li>
  * <li>
@@ -694,6 +713,7 @@ public class DirectDebitMandate extends Mandate {
 				name = "DirectDebitMandate";
 				definition = "Authorisation in favour of the creditor given by the debtor to debit its own account.";
 				associationDomain_lazy = () -> Arrays.asList(DirectDebit.mmDirectDebitMandate, PaymentProcessing.mmRelatedMandate);
+				derivationElement_lazy = () -> Arrays.asList(CardDirectDebit1.mmMandateRelatedInformation);
 				superType_lazy = () -> Mandate.mmObject();
 				element_lazy = () -> Arrays
 						.asList(com.tools20022.repository.entity.DirectDebitMandate.mmRelatedDirectDebit, com.tools20022.repository.entity.DirectDebitMandate.mmFinalCollectionDate,
@@ -702,6 +722,7 @@ public class DirectDebitMandate extends Mandate {
 								com.tools20022.repository.entity.DirectDebitMandate.mmMaximumAmount, com.tools20022.repository.entity.DirectDebitMandate.mmPreNotification,
 								com.tools20022.repository.entity.DirectDebitMandate.mmPreNotificationThreshold, com.tools20022.repository.entity.DirectDebitMandate.mmClassification,
 								com.tools20022.repository.entity.DirectDebitMandate.mmPointInTime);
+				derivationComponent_lazy = () -> Arrays.asList(MandateRelatedInformation13.mmObject());
 			}
 
 			@Override

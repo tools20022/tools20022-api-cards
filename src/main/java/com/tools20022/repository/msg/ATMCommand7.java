@@ -77,6 +77,12 @@ import javax.xml.bind.annotation.XmlType;
  * "ATMCommand7"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Maintenance command to perform on an ATM."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.ATMCommand13 ATMCommand13}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -111,6 +117,13 @@ public class ATMCommand7 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Type of command to be performed by the ATM."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.ATMCommand13#mmType
+	 * ATMCommand13.mmType}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<ATMCommand7, ATMCommand4Code> mmType = new MMMessageAttribute<ATMCommand7, ATMCommand4Code>() {
@@ -121,6 +134,7 @@ public class ATMCommand7 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Type";
 			definition = "Type of command to be performed by the ATM.";
+			nextVersions_lazy = () -> Arrays.asList(ATMCommand13.mmType);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ATMCommand4Code.mmObject();
@@ -168,6 +182,13 @@ public class ATMCommand7 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Urgency of the command."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.ATMCommand13#mmUrgency
+	 * ATMCommand13.mmUrgency}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<ATMCommand7, TMSContactLevel2Code> mmUrgency = new MMMessageAttribute<ATMCommand7, TMSContactLevel2Code>() {
@@ -179,6 +200,7 @@ public class ATMCommand7 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Urgency";
 			definition = "Urgency of the command.";
+			nextVersions_lazy = () -> Arrays.asList(ATMCommand13.mmUrgency);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> TMSContactLevel2Code.mmObject();
@@ -220,6 +242,13 @@ public class ATMCommand7 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Date time on which the command must be performed."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.ATMCommand13#mmDateTime
+	 * ATMCommand13.mmDateTime}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<ATMCommand7, Optional<ISODateTime>> mmDateTime = new MMMessageAttribute<ATMCommand7, Optional<ISODateTime>>() {
@@ -230,6 +259,7 @@ public class ATMCommand7 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DateTime";
 			definition = "Date time on which the command must be performed.";
+			nextVersions_lazy = () -> Arrays.asList(ATMCommand13.mmDateTime);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> ISODateTime.mmObject();
@@ -271,6 +301,14 @@ public class ATMCommand7 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Identification of the entity issuing the command."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ATMCommand13#mmCommandIdentification
+	 * ATMCommand13.mmCommandIdentification}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<ATMCommand7, Optional<ATMCommandIdentification1>> mmCommandIdentification = new MMMessageAssociationEnd<ATMCommand7, Optional<ATMCommandIdentification1>>() {
@@ -281,6 +319,7 @@ public class ATMCommand7 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CommandIdentification";
 			definition = "Identification of the entity issuing the command.";
+			nextVersions_lazy = () -> Arrays.asList(ATMCommand13.mmCommandIdentification);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
@@ -323,6 +362,14 @@ public class ATMCommand7 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Specific parameters attached to the command."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ATMCommand13#mmCommandParameters
+	 * ATMCommand13.mmCommandParameters}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<ATMCommand7, Optional<ATMCommandParameters1Choice>> mmCommandParameters = new MMMessageAssociationEnd<ATMCommand7, Optional<ATMCommandParameters1Choice>>() {
@@ -333,6 +380,7 @@ public class ATMCommand7 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CommandParameters";
 			definition = "Specific parameters attached to the command.";
+			nextVersions_lazy = () -> Arrays.asList(ATMCommand13.mmCommandParameters);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
@@ -360,6 +408,7 @@ public class ATMCommand7 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMCommand7";
 				definition = "Maintenance command to perform on an ATM.";
+				nextVersions_lazy = () -> Arrays.asList(ATMCommand13.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

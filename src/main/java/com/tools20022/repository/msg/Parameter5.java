@@ -57,6 +57,12 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
  * "Parameters associated to a mask generator cryptographic function."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.Parameter9 Parameter9}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -91,6 +97,14 @@ public class Parameter5 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Digest algorithm used in the mask generator function."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Parameter9#mmDigestAlgorithm
+	 * Parameter9.mmDigestAlgorithm}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<Parameter5, Optional<Algorithm11Code>> mmDigestAlgorithm = new MMMessageAttribute<Parameter5, Optional<Algorithm11Code>>() {
@@ -101,6 +115,7 @@ public class Parameter5 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DigestAlgorithm";
 			definition = "Digest algorithm used in the mask generator function.";
+			nextVersions_lazy = () -> Arrays.asList(Parameter9.mmDigestAlgorithm);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Algorithm11Code.mmObject();
@@ -125,6 +140,7 @@ public class Parameter5 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Parameter5";
 				definition = "Parameters associated to a mask generator cryptographic function.";
+				nextVersions_lazy = () -> Arrays.asList(Parameter9.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

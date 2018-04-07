@@ -21,8 +21,8 @@ import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.caaa.AcceptorBatchTransferResponseV06;
-import com.tools20022.repository.area.caaa.AcceptorBatchTransferV06;
+import com.tools20022.repository.area.caaa.AcceptorBatchTransferResponseV07;
+import com.tools20022.repository.area.caaa.AcceptorBatchTransferV07;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max6Text;
 import com.tools20022.repository.datatype.Number;
@@ -68,11 +68,11 @@ import javax.xml.bind.annotation.XmlType;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.caaa.AcceptorBatchTransferResponseV06#mmHeader
- * AcceptorBatchTransferResponseV06.mmHeader}</li>
+ * {@linkplain com.tools20022.repository.area.caaa.AcceptorBatchTransferResponseV07#mmHeader
+ * AcceptorBatchTransferResponseV07.mmHeader}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.caaa.AcceptorBatchTransferV06#mmHeader
- * AcceptorBatchTransferV06.mmHeader}</li>
+ * {@linkplain com.tools20022.repository.area.caaa.AcceptorBatchTransferV07#mmHeader
+ * AcceptorBatchTransferV07.mmHeader}</li>
  * </ul>
  * </li>
  * <li>
@@ -415,7 +415,7 @@ public class Header25 {
 			{
 				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Header25.mmDownloadTransfer, com.tools20022.repository.msg.Header25.mmFormatVersion, com.tools20022.repository.msg.Header25.mmExchangeIdentification,
 						com.tools20022.repository.msg.Header25.mmCreationDateTime, com.tools20022.repository.msg.Header25.mmInitiatingParty, com.tools20022.repository.msg.Header25.mmRecipientParty);
-				messageBuildingBlock_lazy = () -> Arrays.asList(AcceptorBatchTransferResponseV06.mmHeader, AcceptorBatchTransferV06.mmHeader);
+				messageBuildingBlock_lazy = () -> Arrays.asList(AcceptorBatchTransferResponseV07.mmHeader, AcceptorBatchTransferV07.mmHeader);
 				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Header25";

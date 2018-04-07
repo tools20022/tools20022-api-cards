@@ -21,7 +21,7 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.Document;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.TradeDelivery2;
+import com.tools20022.repository.msg.TradeDelivery3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -40,8 +40,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
  * derivationElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TradeDelivery2#mmDeliveryNote
- * TradeDelivery2.mmDeliveryNote}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TradeDelivery3#mmDeliveryNote
+ * TradeDelivery3.mmDeliveryNote}</li>
  * </ul>
  * </li>
  * <li>
@@ -70,7 +70,7 @@ public class DeliveryNote extends Document {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "DeliveryNote";
 				definition = "Document which is a proof of delivery of the product.";
-				derivationElement_lazy = () -> Arrays.asList(TradeDelivery2.mmDeliveryNote);
+				derivationElement_lazy = () -> Arrays.asList(TradeDelivery3.mmDeliveryNote);
 				superType_lazy = () -> Document.mmObject();
 			}
 

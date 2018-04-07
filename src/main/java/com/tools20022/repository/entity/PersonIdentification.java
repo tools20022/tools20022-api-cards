@@ -20,6 +20,7 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.Party10Choice;
+import com.tools20022.repository.choice.Party36Choice;
 import com.tools20022.repository.choice.PersonIdentificationSchemeName1Choice;
 import com.tools20022.repository.datatype.Max35Text;
 import com.tools20022.repository.entity.PartyIdentificationInformation;
@@ -90,6 +91,12 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>
  * {@linkplain com.tools20022.repository.choice.Party10Choice#mmPrivateIdentification
  * Party10Choice.mmPrivateIdentification}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PhysicalInterfaceParameter1#mmUserName
+ * PhysicalInterfaceParameter1.mmUserName}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.Party36Choice#mmPrivateIdentification
+ * Party36Choice.mmPrivateIdentification}</li>
  * </ul>
  * </li>
  * <li>
@@ -107,8 +114,10 @@ import java.util.concurrent.atomic.AtomicReference;
  * ContactDetails2}</li>
  * <li>{@linkplain com.tools20022.repository.msg.PersonIdentification7
  * PersonIdentification7}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PersonIdentification11
- * PersonIdentification11}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PersonIdentification14
+ * PersonIdentification14}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PersonIdentification15
+ * PersonIdentification15}</li>
  * </ul>
  * </li>
  * <li>
@@ -146,8 +155,8 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * {@linkplain com.tools20022.repository.msg.PersonIdentification7#mmSocialSecurityNumber
 	 * PersonIdentification7.mmSocialSecurityNumber}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmSocialSecurityNumber
-	 * PersonIdentification11.mmSocialSecurityNumber}</li>
+	 * {@linkplain com.tools20022.repository.msg.PersonIdentification15#mmSocialSecurityNumber
+	 * PersonIdentification15.mmSocialSecurityNumber}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -171,7 +180,7 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute<PersonIdentification, Max35Text> mmSocialSecurityNumber = new MMBusinessAttribute<PersonIdentification, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PersonIdentification7.mmSocialSecurityNumber, PersonIdentification11.mmSocialSecurityNumber);
+			derivation_lazy = () -> Arrays.asList(PersonIdentification7.mmSocialSecurityNumber, PersonIdentification15.mmSocialSecurityNumber);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95S::ALTE//SSNX"));
@@ -220,8 +229,11 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * {@linkplain com.tools20022.repository.msg.PersonIdentification7#mmDateAndPlaceOfBirth
 	 * PersonIdentification7.mmDateAndPlaceOfBirth}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmDateAndPlaceOfBirth
-	 * PersonIdentification11.mmDateAndPlaceOfBirth}</li>
+	 * {@linkplain com.tools20022.repository.msg.PersonIdentification14#mmDateAndPlaceOfBirth
+	 * PersonIdentification14.mmDateAndPlaceOfBirth}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PersonIdentification15#mmDateAndPlaceOfBirth
+	 * PersonIdentification15.mmDateAndPlaceOfBirth}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -242,7 +254,7 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAssociationEnd<PersonIdentification, Optional<Person>> mmPerson = new MMBusinessAssociationEnd<PersonIdentification, Optional<Person>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PersonIdentification5.mmDateAndPlaceOfBirth, PersonIdentification7.mmDateAndPlaceOfBirth, PersonIdentification11.mmDateAndPlaceOfBirth);
+			derivation_lazy = () -> Arrays.asList(PersonIdentification5.mmDateAndPlaceOfBirth, PersonIdentification7.mmDateAndPlaceOfBirth, PersonIdentification14.mmDateAndPlaceOfBirth, PersonIdentification15.mmDateAndPlaceOfBirth);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -341,8 +353,8 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * {@linkplain com.tools20022.repository.msg.PersonIdentification7#mmDriversLicenseNumber
 	 * PersonIdentification7.mmDriversLicenseNumber}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmDriverLicenseNumber
-	 * PersonIdentification11.mmDriverLicenseNumber}</li>
+	 * {@linkplain com.tools20022.repository.msg.PersonIdentification15#mmDriverLicenseNumber
+	 * PersonIdentification15.mmDriverLicenseNumber}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -367,7 +379,7 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute<PersonIdentification, Max35Text> mmDriversLicenseNumber = new MMBusinessAttribute<PersonIdentification, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PersonIdentification7.mmDriversLicenseNumber, PersonIdentification11.mmDriverLicenseNumber);
+			derivation_lazy = () -> Arrays.asList(PersonIdentification7.mmDriversLicenseNumber, PersonIdentification15.mmDriverLicenseNumber);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95S::ALTE//DRLC"));
@@ -406,8 +418,8 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * {@linkplain com.tools20022.repository.msg.PersonIdentification7#mmAlienRegistrationNumber
 	 * PersonIdentification7.mmAlienRegistrationNumber}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmAlienRegistrationNumber
-	 * PersonIdentification11.mmAlienRegistrationNumber}</li>
+	 * {@linkplain com.tools20022.repository.msg.PersonIdentification15#mmAlienRegistrationNumber
+	 * PersonIdentification15.mmAlienRegistrationNumber}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -432,7 +444,7 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute<PersonIdentification, Max35Text> mmAlienRegistrationNumber = new MMBusinessAttribute<PersonIdentification, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PersonIdentification7.mmAlienRegistrationNumber, PersonIdentification11.mmAlienRegistrationNumber);
+			derivation_lazy = () -> Arrays.asList(PersonIdentification7.mmAlienRegistrationNumber, PersonIdentification15.mmAlienRegistrationNumber);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95S::ALTE//ARNU"));
@@ -471,8 +483,8 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * {@linkplain com.tools20022.repository.msg.PersonIdentification7#mmPassportNumber
 	 * PersonIdentification7.mmPassportNumber}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmPassportNumber
-	 * PersonIdentification11.mmPassportNumber}</li>
+	 * {@linkplain com.tools20022.repository.msg.PersonIdentification15#mmPassportNumber
+	 * PersonIdentification15.mmPassportNumber}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -496,7 +508,7 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute<PersonIdentification, Max35Text> mmPassportNumber = new MMBusinessAttribute<PersonIdentification, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PersonIdentification7.mmPassportNumber, PersonIdentification11.mmPassportNumber);
+			derivation_lazy = () -> Arrays.asList(PersonIdentification7.mmPassportNumber, PersonIdentification15.mmPassportNumber);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95S::ALTE//CCPT"));
@@ -535,8 +547,8 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * {@linkplain com.tools20022.repository.msg.PersonIdentification7#mmIdentityCardNumber
 	 * PersonIdentification7.mmIdentityCardNumber}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmIdentityCardNumber
-	 * PersonIdentification11.mmIdentityCardNumber}</li>
+	 * {@linkplain com.tools20022.repository.msg.PersonIdentification15#mmIdentityCardNumber
+	 * PersonIdentification15.mmIdentityCardNumber}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -558,7 +570,7 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute<PersonIdentification, Max35Text> mmIdentityCardNumber = new MMBusinessAttribute<PersonIdentification, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PersonIdentification7.mmIdentityCardNumber, PersonIdentification11.mmIdentityCardNumber);
+			derivation_lazy = () -> Arrays.asList(PersonIdentification7.mmIdentityCardNumber, PersonIdentification15.mmIdentityCardNumber);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -596,8 +608,8 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 * {@linkplain com.tools20022.repository.msg.PersonIdentification7#mmEmployerIdentificationNumber
 	 * PersonIdentification7.mmEmployerIdentificationNumber}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmEmployerIdentificationNumber
-	 * PersonIdentification11.mmEmployerIdentificationNumber}</li>
+	 * {@linkplain com.tools20022.repository.msg.PersonIdentification15#mmEmployerIdentificationNumber
+	 * PersonIdentification15.mmEmployerIdentificationNumber}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -622,7 +634,7 @@ public class PersonIdentification extends PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute<PersonIdentification, Max35Text> mmEmployerIdentificationNumber = new MMBusinessAttribute<PersonIdentification, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PersonIdentification7.mmEmployerIdentificationNumber, PersonIdentification11.mmEmployerIdentificationNumber);
+			derivation_lazy = () -> Arrays.asList(PersonIdentification7.mmEmployerIdentificationNumber, PersonIdentification15.mmEmployerIdentificationNumber);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PersonIdentification.mmObject();
 			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":95S::ALTE//EINX"));
@@ -653,14 +665,14 @@ public class PersonIdentification extends PartyIdentificationInformation {
 				name = "PersonIdentification";
 				definition = "Unique and unambiguous way to identify a person.";
 				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PersonName.mmIdentification, com.tools20022.repository.entity.Person.mmPersonIdentification);
-				derivationElement_lazy = () -> Arrays.asList(Party10Choice.mmPrivateIdentification);
+				derivationElement_lazy = () -> Arrays.asList(Party10Choice.mmPrivateIdentification, PhysicalInterfaceParameter1.mmUserName, Party36Choice.mmPrivateIdentification);
 				superType_lazy = () -> PartyIdentificationInformation.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PersonIdentification.mmSocialSecurityNumber, com.tools20022.repository.entity.PersonIdentification.mmPerson,
 						com.tools20022.repository.entity.PersonIdentification.mmPersonName, com.tools20022.repository.entity.PersonIdentification.mmDriversLicenseNumber,
 						com.tools20022.repository.entity.PersonIdentification.mmAlienRegistrationNumber, com.tools20022.repository.entity.PersonIdentification.mmPassportNumber,
 						com.tools20022.repository.entity.PersonIdentification.mmIdentityCardNumber, com.tools20022.repository.entity.PersonIdentification.mmEmployerIdentificationNumber);
 				derivationComponent_lazy = () -> Arrays.asList(PersonIdentificationSchemeName1Choice.mmObject(), GenericPersonIdentification1.mmObject(), PersonIdentification5.mmObject(), ContactDetails2.mmObject(),
-						PersonIdentification7.mmObject(), PersonIdentification11.mmObject());
+						PersonIdentification7.mmObject(), PersonIdentification14.mmObject(), PersonIdentification15.mmObject());
 			}
 
 			@Override

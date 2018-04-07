@@ -138,8 +138,8 @@ public class Party extends RolePlayer {
 	 * {@linkplain com.tools20022.repository.msg.PartyIdentification42#mmContactDetails
 	 * PartyIdentification42.mmContactDetails}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PartyIdentification112#mmContactDetails
-	 * PartyIdentification112.mmContactDetails}</li>
+	 * {@linkplain com.tools20022.repository.msg.PartyIdentification129#mmContactDetails
+	 * PartyIdentification129.mmContactDetails}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -160,7 +160,7 @@ public class Party extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd<Party, List<ContactPoint>> mmContactPoint = new MMBusinessAssociationEnd<Party, List<ContactPoint>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PartyIdentification42.mmContactDetails, PartyIdentification112.mmContactDetails);
+			derivation_lazy = () -> Arrays.asList(PartyIdentification42.mmContactDetails, PartyIdentification129.mmContactDetails);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -217,15 +217,16 @@ public class Party extends RolePlayer {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.Organisation19#mmIdentification
 	 * Organisation19.mmIdentification}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Creditor3#mmCreditor
+	 * Creditor3.mmCreditor}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Cardholder11#mmIdentification
-	 * Cardholder11.mmIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.TradeParty4#mmPartyIdentification
+	 * TradeParty4.mmPartyIdentification}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Debtor3#mmDebtor
+	 * Debtor3.mmDebtor}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TradeParty3#mmPartyIdentification
-	 * TradeParty3.mmPartyIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Cardholder12#mmIdentification
-	 * Cardholder12.mmIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.Cardholder13#mmIdentification
+	 * Cardholder13.mmIdentification}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -245,8 +246,8 @@ public class Party extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd<Party, List<PartyIdentificationInformation>> mmIdentification = new MMBusinessAssociationEnd<Party, List<PartyIdentificationInformation>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(Acquirer6.mmIdentification, Acquirer8.mmIdentification, Cardholder9.mmIdentification, Organisation18.mmIdentification, Organisation19.mmIdentification, Cardholder11.mmIdentification,
-					TradeParty3.mmPartyIdentification, Cardholder12.mmIdentification);
+			derivation_lazy = () -> Arrays.asList(Acquirer6.mmIdentification, Acquirer8.mmIdentification, Cardholder9.mmIdentification, Organisation18.mmIdentification, Organisation19.mmIdentification, Creditor3.mmCreditor,
+					TradeParty4.mmPartyIdentification, Debtor3.mmDebtor, Cardholder13.mmIdentification);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Party.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

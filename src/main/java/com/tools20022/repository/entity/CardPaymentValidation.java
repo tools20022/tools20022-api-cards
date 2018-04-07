@@ -161,14 +161,11 @@ public class CardPaymentValidation {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction75#mmTransactionSuccess
-	 * CardPaymentTransaction75.mmTransactionSuccess}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction83#mmTransactionSuccess
+	 * CardPaymentTransaction83.mmTransactionSuccess}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction70#mmTransactionSuccess
-	 * CardPaymentTransaction70.mmTransactionSuccess}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction69#mmTransactionSuccess
-	 * CardPaymentTransaction69.mmTransactionSuccess}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction81#mmTransactionSuccess
+	 * CardPaymentTransaction81.mmTransactionSuccess}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -189,7 +186,7 @@ public class CardPaymentValidation {
 	 */
 	public static final MMBusinessAttribute<CardPaymentValidation, TrueFalseIndicator> mmTransactionSuccess = new MMBusinessAttribute<CardPaymentValidation, TrueFalseIndicator>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CardPaymentTransaction75.mmTransactionSuccess, CardPaymentTransaction70.mmTransactionSuccess, CardPaymentTransaction69.mmTransactionSuccess);
+			derivation_lazy = () -> Arrays.asList(CardPaymentTransaction83.mmTransactionSuccess, CardPaymentTransaction81.mmTransactionSuccess);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -225,11 +222,8 @@ public class CardPaymentValidation {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction70#mmMerchantOverride
-	 * CardPaymentTransaction70.mmMerchantOverride}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction69#mmMerchantOverride
-	 * CardPaymentTransaction69.mmMerchantOverride}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction81#mmMerchantOverride
+	 * CardPaymentTransaction81.mmMerchantOverride}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -252,7 +246,7 @@ public class CardPaymentValidation {
 	 */
 	public static final MMBusinessAttribute<CardPaymentValidation, TrueFalseIndicator> mmMerchantOverride = new MMBusinessAttribute<CardPaymentValidation, TrueFalseIndicator>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CardPaymentTransaction70.mmMerchantOverride, CardPaymentTransaction69.mmMerchantOverride);
+			derivation_lazy = () -> Arrays.asList(CardPaymentTransaction81.mmMerchantOverride);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -296,17 +290,11 @@ public class CardPaymentValidation {
 	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails34#mmValidityDate
 	 * CardPaymentTransactionDetails34.mmValidityDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails39#mmValidityDate
-	 * CardPaymentTransactionDetails39.mmValidityDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails44#mmValidityDate
+	 * CardPaymentTransactionDetails44.mmValidityDate}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails38#mmValidityDate
-	 * CardPaymentTransactionDetails38.mmValidityDate}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails41#mmValidityDate
-	 * CardPaymentTransactionDetails41.mmValidityDate}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails37#mmValidityDate
-	 * CardPaymentTransactionDetails37.mmValidityDate}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails45#mmValidityDate
+	 * CardPaymentTransactionDetails45.mmValidityDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -329,7 +317,7 @@ public class CardPaymentValidation {
 	public static final MMBusinessAttribute<CardPaymentValidation, ISODate> mmValidityDate = new MMBusinessAttribute<CardPaymentValidation, ISODate>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardPaymentTransactionDetails32.mmValidityDate, CardPaymentTransactionDetails28.mmValidityDate, CardPaymentTransactionDetails34.mmValidityDate,
-					CardPaymentTransactionDetails39.mmValidityDate, CardPaymentTransactionDetails38.mmValidityDate, CardPaymentTransactionDetails41.mmValidityDate, CardPaymentTransactionDetails37.mmValidityDate);
+					CardPaymentTransactionDetails44.mmValidityDate, CardPaymentTransactionDetails45.mmValidityDate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -475,9 +463,6 @@ public class CardPaymentValidation {
 	 * {@linkplain com.tools20022.repository.msg.CardTransactionDetail4#mmTransactionVerificationResult
 	 * CardTransactionDetail4.mmTransactionVerificationResult}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AcceptorReconciliationResponse4#mmTransactionResponse
-	 * AcceptorReconciliationResponse4.mmTransactionResponse}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.AuthorisationResult12#mmResponseToAuthorisation
 	 * AuthorisationResult12.mmResponseToAuthorisation}</li>
 	 * <li>
@@ -493,11 +478,14 @@ public class CardPaymentValidation {
 	 * {@linkplain com.tools20022.repository.msg.ATMTransaction18#mmResponse
 	 * ATMTransaction18.mmResponse}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AcceptorCancellationAdviceResponse6#mmTransaction
-	 * AcceptorCancellationAdviceResponse6.mmTransaction}</li>
+	 * {@linkplain com.tools20022.repository.msg.AcceptorCancellationAdviceResponse7#mmTransaction
+	 * AcceptorCancellationAdviceResponse7.mmTransaction}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AcceptorCompletionAdviceResponse6#mmTransaction
-	 * AcceptorCompletionAdviceResponse6.mmTransaction}</li>
+	 * {@linkplain com.tools20022.repository.msg.AcceptorReconciliationResponse5#mmTransactionResponse
+	 * AcceptorReconciliationResponse5.mmTransactionResponse}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AcceptorCompletionAdviceResponse7#mmTransaction
+	 * AcceptorCompletionAdviceResponse7.mmTransaction}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -520,9 +508,9 @@ public class CardPaymentValidation {
 		{
 			derivation_lazy = () -> Arrays.asList(AuthorisationResult8.mmTransactionResponse, AuthorisationResult7.mmTransactionResponse, CardTransaction10.mmTransactionResponse, CardTransaction4.mmAuthorisationResult,
 					CardTransaction9.mmTransactionResponse, CardTransaction8.mmTransactionResponse, CardTransaction7.mmTransactionResponse, CardTransactionDetail2.mmTransactionVerificationResult, CardTransaction6.mmAuthorisationResult,
-					CardTransactionDetail4.mmTransactionVerificationResult, AcceptorReconciliationResponse4.mmTransactionResponse, AuthorisationResult12.mmResponseToAuthorisation, AuthorisationResult11.mmResponseToAuthorisation,
-					AuthorisationResult10.mmResponseToAuthorisation, AuthorisationResult13.mmAuthorisationResponse, ATMTransaction18.mmResponse, AcceptorCancellationAdviceResponse6.mmTransaction,
-					AcceptorCompletionAdviceResponse6.mmTransaction);
+					CardTransactionDetail4.mmTransactionVerificationResult, AuthorisationResult12.mmResponseToAuthorisation, AuthorisationResult11.mmResponseToAuthorisation, AuthorisationResult10.mmResponseToAuthorisation,
+					AuthorisationResult13.mmAuthorisationResponse, ATMTransaction18.mmResponse, AcceptorCancellationAdviceResponse7.mmTransaction, AcceptorReconciliationResponse5.mmTransactionResponse,
+					AcceptorCompletionAdviceResponse7.mmTransaction);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -636,11 +624,8 @@ public class CardPaymentValidation {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails39#mmOnLineReason
-	 * CardPaymentTransactionDetails39.mmOnLineReason}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails41#mmOnLineReason
-	 * CardPaymentTransactionDetails41.mmOnLineReason}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails45#mmOnLineReason
+	 * CardPaymentTransactionDetails45.mmOnLineReason}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -661,7 +646,7 @@ public class CardPaymentValidation {
 	 */
 	public static final MMBusinessAttribute<CardPaymentValidation, OnLineReasonCode> mmOnLineReason = new MMBusinessAttribute<CardPaymentValidation, OnLineReasonCode>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CardPaymentTransactionDetails39.mmOnLineReason, CardPaymentTransactionDetails41.mmOnLineReason);
+			derivation_lazy = () -> Arrays.asList(CardPaymentTransactionDetails45.mmOnLineReason);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CardPaymentValidation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

@@ -115,8 +115,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
  * =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.POIComponentType4Code
- * POIComponentType4Code}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.POIComponentType5Code
+ * POIComponentType5Code}</li>
  * </ul>
  * </li>
  * <li>
@@ -932,7 +932,7 @@ public class POIComponentTypeCode extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "POIComponentTypeCode";
 				definition = "Generic component type belonging to a POI (Point of Interaction) Terminal.";
-				derivation_lazy = () -> Arrays.asList(POIComponentType4Code.mmObject());
+				derivation_lazy = () -> Arrays.asList(POIComponentType5Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.POIComponentTypeCode.Soft, com.tools20022.repository.codeset.POIComponentTypeCode.EMVKernel,
 						com.tools20022.repository.codeset.POIComponentTypeCode.EMVLevel1, com.tools20022.repository.codeset.POIComponentTypeCode.MerchantInterface, com.tools20022.repository.codeset.POIComponentTypeCode.CardholderInterface,
 						com.tools20022.repository.codeset.POIComponentTypeCode.SecureModule, com.tools20022.repository.codeset.POIComponentTypeCode.PINEntryDevice, com.tools20022.repository.codeset.POIComponentTypeCode.AcquirerParameters,

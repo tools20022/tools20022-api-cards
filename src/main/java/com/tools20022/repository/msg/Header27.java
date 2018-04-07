@@ -21,9 +21,9 @@ import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.catm.AcceptorConfigurationUpdateV06;
-import com.tools20022.repository.area.catm.ManagementPlanReplacementV06;
-import com.tools20022.repository.area.catm.StatusReportV06;
+import com.tools20022.repository.area.catm.AcceptorConfigurationUpdateV07;
+import com.tools20022.repository.area.catm.ManagementPlanReplacementV07;
+import com.tools20022.repository.area.catm.StatusReportV07;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max6Text;
 import com.tools20022.repository.datatype.Number;
@@ -68,14 +68,14 @@ import javax.xml.bind.annotation.XmlType;
  * {@linkplain com.tools20022.metamodel.MMMessageComponentType#getMessageBuildingBlock
  * messageBuildingBlock} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.area.catm.StatusReportV06#mmHeader
- * StatusReportV06.mmHeader}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.catm.AcceptorConfigurationUpdateV06#mmHeader
- * AcceptorConfigurationUpdateV06.mmHeader}</li>
+ * {@linkplain com.tools20022.repository.area.catm.ManagementPlanReplacementV07#mmHeader
+ * ManagementPlanReplacementV07.mmHeader}</li>
+ * <li>{@linkplain com.tools20022.repository.area.catm.StatusReportV07#mmHeader
+ * StatusReportV07.mmHeader}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.catm.ManagementPlanReplacementV06#mmHeader
- * ManagementPlanReplacementV06.mmHeader}</li>
+ * {@linkplain com.tools20022.repository.area.catm.AcceptorConfigurationUpdateV07#mmHeader
+ * AcceptorConfigurationUpdateV07.mmHeader}</li>
  * </ul>
  * </li>
  * <li>
@@ -418,7 +418,7 @@ public class Header27 {
 			{
 				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Header27.mmDownloadTransfer, com.tools20022.repository.msg.Header27.mmFormatVersion, com.tools20022.repository.msg.Header27.mmExchangeIdentification,
 						com.tools20022.repository.msg.Header27.mmCreationDateTime, com.tools20022.repository.msg.Header27.mmInitiatingParty, com.tools20022.repository.msg.Header27.mmRecipientParty);
-				messageBuildingBlock_lazy = () -> Arrays.asList(StatusReportV06.mmHeader, AcceptorConfigurationUpdateV06.mmHeader, ManagementPlanReplacementV06.mmHeader);
+				messageBuildingBlock_lazy = () -> Arrays.asList(ManagementPlanReplacementV07.mmHeader, StatusReportV07.mmHeader, AcceptorConfigurationUpdateV07.mmHeader);
 				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Header27";

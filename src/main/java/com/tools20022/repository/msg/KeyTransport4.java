@@ -72,6 +72,12 @@ import javax.xml.bind.annotation.XmlType;
  * definition} =
  * "Key encryption key (KEK), encrypted with a previously distributed asymmetric public key."
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.KeyTransport5 KeyTransport5}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -105,6 +111,13 @@ public class KeyTransport4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Version of the data structure."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.KeyTransport5#mmVersion
+	 * KeyTransport5.mmVersion}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<KeyTransport4, Optional<Number>> mmVersion = new MMMessageAttribute<KeyTransport4, Optional<Number>>() {
@@ -115,6 +128,7 @@ public class KeyTransport4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Version";
 			definition = "Version of the data structure.";
+			nextVersions_lazy = () -> Arrays.asList(KeyTransport5.mmVersion);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
@@ -156,6 +170,14 @@ public class KeyTransport4 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Identification of a cryptographic asymmetric key for the recipient."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.KeyTransport5#mmRecipientIdentification
+	 * KeyTransport5.mmRecipientIdentification}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<KeyTransport4, Recipient5Choice> mmRecipientIdentification = new MMMessageAssociationEnd<KeyTransport4, Recipient5Choice>() {
@@ -166,6 +188,7 @@ public class KeyTransport4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RecipientIdentification";
 			definition = "Identification of a cryptographic asymmetric key for the recipient.";
+			nextVersions_lazy = () -> Arrays.asList(KeyTransport5.mmRecipientIdentification);
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
@@ -208,6 +231,14 @@ public class KeyTransport4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Algorithm to encrypt the key encryption key (KEK)."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.KeyTransport5#mmKeyEncryptionAlgorithm
+	 * KeyTransport5.mmKeyEncryptionAlgorithm}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<KeyTransport4, AlgorithmIdentification11> mmKeyEncryptionAlgorithm = new MMMessageAssociationEnd<KeyTransport4, AlgorithmIdentification11>() {
@@ -218,6 +249,7 @@ public class KeyTransport4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "KeyEncryptionAlgorithm";
 			definition = "Algorithm to encrypt the key encryption key (KEK).";
+			nextVersions_lazy = () -> Arrays.asList(KeyTransport5.mmKeyEncryptionAlgorithm);
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
@@ -261,6 +293,14 @@ public class KeyTransport4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Encrypted key encryption key (KEK)."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.KeyTransport5#mmEncryptedKey
+	 * KeyTransport5.mmEncryptedKey}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<KeyTransport4, Max5000Binary> mmEncryptedKey = new MMMessageAttribute<KeyTransport4, Max5000Binary>() {
@@ -271,6 +311,7 @@ public class KeyTransport4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EncryptedKey";
 			definition = "Encrypted key encryption key (KEK).";
+			nextVersions_lazy = () -> Arrays.asList(KeyTransport5.mmEncryptedKey);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max5000Binary.mmObject();
@@ -296,6 +337,7 @@ public class KeyTransport4 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "KeyTransport4";
 				definition = "Key encryption key (KEK), encrypted with a previously distributed asymmetric public key.";
+				nextVersions_lazy = () -> Arrays.asList(KeyTransport5.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

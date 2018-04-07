@@ -157,6 +157,7 @@ class ListBuilderForGeneratedRepository_00 {
 		list.add((T) StandingOrder.mmObject());
 		list.add((T) CashStandingOrder.mmObject());
 		list.add((T) PaymentStatus.mmObject());
+		list.add((T) DebtorRole.mmObject());
 		list.add((T) PaymentProcessing.mmObject());
 		list.add((T) AssetPartyRole.mmObject());
 		list.add((T) SecuritiesPartyRole.mmObject());
@@ -524,7 +525,6 @@ class ListBuilderForGeneratedRepository_00 {
 		list.add((T) PercentageAndPeriod.mmObject());
 		list.add((T) InterestManagement.mmObject());
 		list.add((T) SecuritiesOptionTrade.mmObject());
-		list.add((T) Position.mmObject());
 		ListBuilderForGeneratedRepository_01.addElems(list);
 		return list;
 	}

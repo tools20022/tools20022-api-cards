@@ -23,7 +23,7 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.CardPaymentInvoice2;
+import com.tools20022.repository.msg.CardPaymentInvoice3;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -292,8 +292,8 @@ public class CommercialTradeSettlement extends Settlement {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentInvoice2#mmTradeDelivery
-	 * CardPaymentInvoice2.mmTradeDelivery}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentInvoice3#mmTradeDelivery
+	 * CardPaymentInvoice3.mmTradeDelivery}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -314,7 +314,7 @@ public class CommercialTradeSettlement extends Settlement {
 	 */
 	public static final MMBusinessAssociationEnd<CommercialTradeSettlement, List<ProductDelivery>> mmProductDelivery = new MMBusinessAssociationEnd<CommercialTradeSettlement, List<ProductDelivery>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CardPaymentInvoice2.mmTradeDelivery);
+			derivation_lazy = () -> Arrays.asList(CardPaymentInvoice3.mmTradeDelivery);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CommercialTradeSettlement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

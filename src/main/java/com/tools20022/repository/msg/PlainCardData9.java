@@ -77,13 +77,6 @@ import javax.xml.bind.annotation.XmlType;
  * definition} =
  * "Sensitive data associated with the payment card performing the transaction."
  * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
- * nextVersions} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.PlainCardData16
- * PlainCardData16}</li>
- * </ul>
- * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -125,13 +118,6 @@ public class PlainCardData9 {
 	 * definition} =
 	 * "Primary Account Number (PAN) of the card, or surrogate of the PAN by a payment token."
 	 * </li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
-	 * nextVersions} =
-	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.PlainCardData16#mmPAN
-	 * PlainCardData16.mmPAN}</li>
-	 * </ul>
-	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PlainCardData9, Min8Max28NumericText> mmPAN = new MMMessageAttribute<PlainCardData9, Min8Max28NumericText>() {
@@ -143,7 +129,6 @@ public class PlainCardData9 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PAN";
 			definition = "Primary Account Number (PAN) of the card, or surrogate of the PAN by a payment token.";
-			nextVersions_lazy = () -> Arrays.asList(PlainCardData16.mmPAN);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Min8Max28NumericText.mmObject();
@@ -193,14 +178,6 @@ public class PlainCardData9 {
 	 * definition} =
 	 * "Identify a card or a payment token inside a set of cards with the same PAN or token."
 	 * </li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
-	 * nextVersions} =
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PlainCardData16#mmCardSequenceNumber
-	 * PlainCardData16.mmCardSequenceNumber}</li>
-	 * </ul>
-	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PlainCardData9, Optional<Min2Max3NumericText>> mmCardSequenceNumber = new MMMessageAttribute<PlainCardData9, Optional<Min2Max3NumericText>>() {
@@ -212,7 +189,6 @@ public class PlainCardData9 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CardSequenceNumber";
 			definition = "Identify a card or a payment token inside a set of cards with the same PAN or token.";
-			nextVersions_lazy = () -> Arrays.asList(PlainCardData16.mmCardSequenceNumber);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Min2Max3NumericText.mmObject();
@@ -260,14 +236,6 @@ public class PlainCardData9 {
 	 * definition} =
 	 * "Date from which the card can be used, expressed either in the YYYY-MM format, or in the YYYY-MM-DD format."
 	 * </li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
-	 * nextVersions} =
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PlainCardData16#mmEffectiveDate
-	 * PlainCardData16.mmEffectiveDate}</li>
-	 * </ul>
-	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PlainCardData9, Optional<Max10Text>> mmEffectiveDate = new MMMessageAttribute<PlainCardData9, Optional<Max10Text>>() {
@@ -279,7 +247,6 @@ public class PlainCardData9 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EffectiveDate";
 			definition = "Date from which the card can be used, expressed either in the YYYY-MM format, or in the YYYY-MM-DD format.";
-			nextVersions_lazy = () -> Arrays.asList(PlainCardData16.mmEffectiveDate);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max10Text.mmObject();
@@ -327,14 +294,6 @@ public class PlainCardData9 {
 	 * definition} =
 	 * "Expiry date of the card or the payment token expressed either in the YYYY-MM format, or in the YYYY-MM-DD format."
 	 * </li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
-	 * nextVersions} =
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PlainCardData16#mmExpiryDate
-	 * PlainCardData16.mmExpiryDate}</li>
-	 * </ul>
-	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PlainCardData9, Max10Text> mmExpiryDate = new MMMessageAttribute<PlainCardData9, Max10Text>() {
@@ -346,7 +305,6 @@ public class PlainCardData9 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ExpiryDate";
 			definition = "Expiry date of the card or the payment token expressed either in the YYYY-MM format, or in the YYYY-MM-DD format.";
-			nextVersions_lazy = () -> Arrays.asList(PlainCardData16.mmExpiryDate);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max10Text.mmObject();
@@ -394,14 +352,6 @@ public class PlainCardData9 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Services attached to the card, as defined in ISO 7813."</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
-	 * nextVersions} =
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PlainCardData16#mmServiceCode
-	 * PlainCardData16.mmServiceCode}</li>
-	 * </ul>
-	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PlainCardData9, Optional<Exact3NumericText>> mmServiceCode = new MMMessageAttribute<PlainCardData9, Optional<Exact3NumericText>>() {
@@ -413,7 +363,6 @@ public class PlainCardData9 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ServiceCode";
 			definition = "Services attached to the card, as defined in ISO 7813.";
-			nextVersions_lazy = () -> Arrays.asList(PlainCardData16.mmServiceCode);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Exact3NumericText.mmObject();
@@ -496,7 +445,6 @@ public class PlainCardData9 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PlainCardData9";
 				definition = "Sensitive data associated with the payment card performing the transaction.";
-				nextVersions_lazy = () -> Arrays.asList(PlainCardData16.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

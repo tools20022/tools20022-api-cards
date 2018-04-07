@@ -64,6 +64,13 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
  * "Mask generator function cryptographic algorithm and parameters."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.AlgorithmIdentification18
+ * AlgorithmIdentification18}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -99,6 +106,14 @@ public class AlgorithmIdentification12 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Mask generator function cryptographic algorithm."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AlgorithmIdentification18#mmAlgorithm
+	 * AlgorithmIdentification18.mmAlgorithm}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<AlgorithmIdentification12, Algorithm8Code> mmAlgorithm = new MMMessageAttribute<AlgorithmIdentification12, Algorithm8Code>() {
@@ -109,6 +124,7 @@ public class AlgorithmIdentification12 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Algorithm";
 			definition = "Mask generator function cryptographic algorithm.";
+			nextVersions_lazy = () -> Arrays.asList(AlgorithmIdentification18.mmAlgorithm);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Algorithm8Code.mmObject();
@@ -151,6 +167,14 @@ public class AlgorithmIdentification12 {
 	 * definition} =
 	 * "Parameters associated to the mask generator function cryptographic algorithm."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AlgorithmIdentification18#mmParameter
+	 * AlgorithmIdentification18.mmParameter}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<AlgorithmIdentification12, Optional<Parameter5>> mmParameter = new MMMessageAssociationEnd<AlgorithmIdentification12, Optional<Parameter5>>() {
@@ -161,6 +185,7 @@ public class AlgorithmIdentification12 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Parameter";
 			definition = "Parameters associated to the mask generator function cryptographic algorithm.";
+			nextVersions_lazy = () -> Arrays.asList(AlgorithmIdentification18.mmParameter);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
@@ -186,6 +211,7 @@ public class AlgorithmIdentification12 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AlgorithmIdentification12";
 				definition = "Mask generator function cryptographic algorithm and parameters.";
+				nextVersions_lazy = () -> Arrays.asList(AlgorithmIdentification18.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

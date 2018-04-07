@@ -25,6 +25,8 @@ import com.tools20022.repository.entity.CashAccount;
 import com.tools20022.repository.entity.Payment;
 import com.tools20022.repository.entity.Role;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.CardDirectDebit1;
+import com.tools20022.repository.msg.CardPaymentContext26;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -63,10 +65,28 @@ import java.util.Objects;
  * Payment.mmPartyRole}</li>
  * </ul>
  * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
+ * derivationElement} =
+ * <ul>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.CardPaymentContext26#mmDirectDebitContext
+ * CardPaymentContext26.mmDirectDebitContext}</li>
+ * </ul>
+ * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
  * subType} =
  * <ul>
+ * <li>{@linkplain com.tools20022.repository.entity.DebtorRole DebtorRole}</li>
  * <li>{@linkplain com.tools20022.repository.entity.CreditorRole CreditorRole}</li>
+ * </ul>
+ * </li>
+ * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.CardDirectDebit1
+ * CardDirectDebit1}</li>
  * </ul>
  * </li>
  * <li>
@@ -211,9 +231,11 @@ public class PaymentPartyRole extends Role {
 				name = "PaymentPartyRole";
 				definition = "Role played by a party in the context of a payment.";
 				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CashAccount.mmPaymentPartyRole, com.tools20022.repository.entity.Payment.mmPartyRole);
-				subType_lazy = () -> Arrays.asList(CreditorRole.mmObject());
+				derivationElement_lazy = () -> Arrays.asList(CardPaymentContext26.mmDirectDebitContext);
+				subType_lazy = () -> Arrays.asList(DebtorRole.mmObject(), CreditorRole.mmObject());
 				superType_lazy = () -> Role.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PaymentPartyRole.mmCashAccount, com.tools20022.repository.entity.PaymentPartyRole.mmPayment);
+				derivationComponent_lazy = () -> Arrays.asList(CardDirectDebit1.mmObject());
 			}
 
 			@Override

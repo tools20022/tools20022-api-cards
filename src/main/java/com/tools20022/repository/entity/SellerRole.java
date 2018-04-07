@@ -21,7 +21,7 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.TradePartyRole;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.TradeAgreement13;
+import com.tools20022.repository.msg.TradeAgreement16;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -41,8 +41,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationElement
  * derivationElement} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TradeAgreement13#mmSeller
- * TradeAgreement13.mmSeller}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TradeAgreement16#mmSeller
+ * TradeAgreement16.mmSeller}</li>
  * </ul>
  * </li>
  * <li>
@@ -71,7 +71,7 @@ public class SellerRole extends TradePartyRole {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "SellerRole";
 				definition = "Party that sells assets, goods or services.";
-				derivationElement_lazy = () -> Arrays.asList(TradeAgreement13.mmSeller);
+				derivationElement_lazy = () -> Arrays.asList(TradeAgreement16.mmSeller);
 				superType_lazy = () -> TradePartyRole.mmObject();
 			}
 

@@ -24,6 +24,7 @@ import com.tools20022.repository.datatype.PercentageRate;
 import com.tools20022.repository.datatype.TrueFalseIndicator;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
+import com.tools20022.repository.msg.MandateRelatedInformation13;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -188,6 +189,14 @@ public class Mandate extends Contract {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} = {@linkplain com.tools20022.repository.datatype.Max35Text
 	 * Max35Text}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
+	 * derivation} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.MandateRelatedInformation13#mmMandateIdentification
+	 * MandateRelatedInformation13.mmMandateIdentification}</li>
+	 * </ul>
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Mandate
@@ -205,6 +214,7 @@ public class Mandate extends Contract {
 	 */
 	public static final MMBusinessAttribute<Mandate, Max35Text> mmMandateIdentification = new MMBusinessAttribute<Mandate, Max35Text>() {
 		{
+			derivation_lazy = () -> Arrays.asList(MandateRelatedInformation13.mmMandateIdentification);
 			isDerived = false;
 			elementContext_lazy = () -> Mandate.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

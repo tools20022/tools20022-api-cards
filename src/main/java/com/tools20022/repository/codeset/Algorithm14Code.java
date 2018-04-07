@@ -67,6 +67,13 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * "Algorithm14Code"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Cryptographic algorithms for digital signatures."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.codeset.Algorithm19Code
+ * Algorithm19Code}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlJavaTypeAdapter(InternalXmlAdapter.class)
@@ -87,12 +94,21 @@ public class Algorithm14Code extends MMCode {
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "SHA256WithRSA"</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.codeset.Algorithm19Code#SHA256WithRSA
+	 * Algorithm19Code.SHA256WithRSA}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final Algorithm14Code SHA256WithRSA = new Algorithm14Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SHA256WithRSA";
+			nextVersions_lazy = () -> Arrays.asList(Algorithm19Code.SHA256WithRSA);
 			owner_lazy = () -> com.tools20022.repository.codeset.Algorithm14Code.mmObject();
 			codeName = AlgorithmCode.SHA256WithRSA.getCodeName().orElse(name);
 		}
@@ -111,12 +127,21 @@ public class Algorithm14Code extends MMCode {
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "SHA1WithRSA"</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.codeset.Algorithm19Code#SHA1WithRSA
+	 * Algorithm19Code.SHA1WithRSA}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final Algorithm14Code SHA1WithRSA = new Algorithm14Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SHA1WithRSA";
+			nextVersions_lazy = () -> Arrays.asList(Algorithm19Code.SHA1WithRSA);
 			owner_lazy = () -> com.tools20022.repository.codeset.Algorithm14Code.mmObject();
 			codeName = AlgorithmCode.SHA1WithRSA.getCodeName().orElse(name);
 		}
@@ -135,12 +160,21 @@ public class Algorithm14Code extends MMCode {
 	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
 	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
 	 * name} = "RSASSA-PSS"</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.codeset.Algorithm19Code#RSASSAPSS
+	 * Algorithm19Code.RSASSAPSS}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final Algorithm14Code RSASSAPSS = new Algorithm14Code() {
 		{
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "RSASSA-PSS";
+			nextVersions_lazy = () -> Arrays.asList(Algorithm19Code.RSASSAPSS);
 			owner_lazy = () -> com.tools20022.repository.codeset.Algorithm14Code.mmObject();
 			codeName = AlgorithmCode.RSASSAPSS.getCodeName().orElse(name);
 		}
@@ -158,6 +192,7 @@ public class Algorithm14Code extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Algorithm14Code";
 				definition = "Cryptographic algorithms for digital signatures.";
+				nextVersions_lazy = () -> Arrays.asList(Algorithm19Code.mmObject());
 				trace_lazy = () -> AlgorithmCode.mmObject();
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.Algorithm14Code.SHA256WithRSA, com.tools20022.repository.codeset.Algorithm14Code.SHA1WithRSA, com.tools20022.repository.codeset.Algorithm14Code.RSASSAPSS);
 			}

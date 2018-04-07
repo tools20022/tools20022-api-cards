@@ -269,6 +269,8 @@ public class Account {
 	 * CardAccount7.mmCurrency}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.CardAccount12#mmCurrency
 	 * CardAccount12.mmCurrency}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.CardAccount14#mmCurrency
+	 * CardAccount14.mmCurrency}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -289,7 +291,7 @@ public class Account {
 	public static final MMBusinessAttribute<Account, CurrencyCode> mmBaseCurrency = new MMBusinessAttribute<Account, CurrencyCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardAccount2.mmCurrency, CardAccount10.mmCurrency, CardAccount9.mmCurrency, CardAccount8.mmCurrency, CardAccount11.mmCurrency, CardAccount13.mmCurrency, CardAccount7.mmCurrency,
-					CardAccount12.mmCurrency);
+					CardAccount12.mmCurrency, CardAccount14.mmCurrency);
 			isDerived = false;
 			elementContext_lazy = () -> Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -365,6 +367,12 @@ public class Account {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CardAccount12#mmAccountIdentifier
 	 * CardAccount12.mmAccountIdentifier}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Debtor3#mmAccountIdentification
+	 * Debtor3.mmAccountIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CardAccount14#mmAccountIdentifier
+	 * CardAccount14.mmAccountIdentifier}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -387,7 +395,8 @@ public class Account {
 	public static final MMBusinessAssociationEnd<Account, AccountIdentification> mmIdentification = new MMBusinessAssociationEnd<Account, AccountIdentification>() {
 		{
 			derivation_lazy = () -> Arrays.asList(AccountingAccount1.mmIdentification, ATMAccountStatement1.mmAccountIdentifier, CardAccount1.mmAccountIdentifier, CardAccount2.mmAccountIdentifier, CardAccount10.mmAccountIdentifier,
-					CardAccount9.mmAccountIdentifier, CardAccount8.mmAccountIdentifier, CardAccount11.mmAccountIdentifier, CardAccount13.mmAccountIdentifier, CardAccount7.mmAccountIdentifier, CardAccount12.mmAccountIdentifier);
+					CardAccount9.mmAccountIdentifier, CardAccount8.mmAccountIdentifier, CardAccount11.mmAccountIdentifier, CardAccount13.mmAccountIdentifier, CardAccount7.mmAccountIdentifier, CardAccount12.mmAccountIdentifier,
+					Debtor3.mmAccountIdentification, CardAccount14.mmAccountIdentifier);
 			isDerived = false;
 			elementContext_lazy = () -> Account.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

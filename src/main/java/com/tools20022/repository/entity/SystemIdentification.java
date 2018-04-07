@@ -499,17 +499,17 @@ public class SystemIdentification {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction52#mmPOIIdentification
-	 * CardPaymentTransaction52.mmPOIIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.ManagementPlan7#mmPOIIdentification
+	 * ManagementPlan7.mmPOIIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ManagementPlan6#mmPOIIdentification
-	 * ManagementPlan6.mmPOIIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.ManagementPlan7#mmTerminalManagerIdentification
+	 * ManagementPlan7.mmTerminalManagerIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ManagementPlan6#mmTerminalManagerIdentification
-	 * ManagementPlan6.mmTerminalManagerIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction79#mmPOIIdentification
+	 * CardPaymentTransaction79.mmPOIIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction73#mmPOIIdentification
-	 * CardPaymentTransaction73.mmPOIIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction86#mmPOIIdentification
+	 * CardPaymentTransaction86.mmPOIIdentification}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -530,7 +530,7 @@ public class SystemIdentification {
 	 */
 	public static final MMBusinessAssociationEnd<SystemIdentification, List<GenericIdentification>> mmIdentification = new MMBusinessAssociationEnd<SystemIdentification, List<GenericIdentification>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CardPaymentTransaction52.mmPOIIdentification, ManagementPlan6.mmPOIIdentification, ManagementPlan6.mmTerminalManagerIdentification, CardPaymentTransaction73.mmPOIIdentification);
+			derivation_lazy = () -> Arrays.asList(ManagementPlan7.mmPOIIdentification, ManagementPlan7.mmTerminalManagerIdentification, CardPaymentTransaction79.mmPOIIdentification, CardPaymentTransaction86.mmPOIIdentification);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.SystemIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

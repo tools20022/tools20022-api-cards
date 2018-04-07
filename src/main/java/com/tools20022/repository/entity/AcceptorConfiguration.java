@@ -99,11 +99,11 @@ import java.util.Optional;
  * derivationElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.AcceptorConfigurationContent6#mmAcquirerProtocolParameters
- * AcceptorConfigurationContent6.mmAcquirerProtocolParameters}</li>
+ * {@linkplain com.tools20022.repository.msg.AcceptorConfigurationContent7#mmAcquirerProtocolParameters
+ * AcceptorConfigurationContent7.mmAcquirerProtocolParameters}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.AcquirerProtocolParameters10#mmOnLineTransaction
- * AcquirerProtocolParameters10.mmOnLineTransaction}</li>
+ * {@linkplain com.tools20022.repository.msg.AcquirerProtocolParameters11#mmOnLineTransaction
+ * AcquirerProtocolParameters11.mmOnLineTransaction}</li>
  * </ul>
  * </li>
  * <li>
@@ -116,16 +116,16 @@ import java.util.Optional;
  * AcquirerProtocolParameters8}</li>
  * <li>{@linkplain com.tools20022.repository.msg.ExchangeConfiguration7
  * ExchangeConfiguration7}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AcceptorConfiguration6
- * AcceptorConfiguration6}</li>
- * <li>{@linkplain com.tools20022.repository.msg.TerminalManagementDataSet20
- * TerminalManagementDataSet20}</li>
- * <li>{@linkplain com.tools20022.repository.msg.ApplicationParameters6
- * ApplicationParameters6}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AcceptorConfigurationContent6
- * AcceptorConfigurationContent6}</li>
- * <li>{@linkplain com.tools20022.repository.msg.AcquirerProtocolParameters10
- * AcquirerProtocolParameters10}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AcceptorConfiguration7
+ * AcceptorConfiguration7}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.ApplicationParameters7
+ * ApplicationParameters7}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TerminalManagementDataSet23
+ * TerminalManagementDataSet23}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AcceptorConfigurationContent7
+ * AcceptorConfigurationContent7}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.AcquirerProtocolParameters11
+ * AcquirerProtocolParameters11}</li>
  * </ul>
  * </li>
  * <li>
@@ -161,11 +161,11 @@ public class AcceptorConfiguration {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.ApplicationParameters6#mmApplicationIdentification
-	 * ApplicationParameters6.mmApplicationIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.ApplicationParameters7#mmApplicationIdentification
+	 * ApplicationParameters7.mmApplicationIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AcquirerProtocolParameters10#mmApplicationIdentification
-	 * AcquirerProtocolParameters10.mmApplicationIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.AcquirerProtocolParameters11#mmApplicationIdentification
+	 * AcquirerProtocolParameters11.mmApplicationIdentification}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -186,7 +186,7 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAttribute<AcceptorConfiguration, Max35Text> mmApplicationIdentification = new MMBusinessAttribute<AcceptorConfiguration, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(ApplicationParameters6.mmApplicationIdentification, AcquirerProtocolParameters10.mmApplicationIdentification);
+			derivation_lazy = () -> Arrays.asList(ApplicationParameters7.mmApplicationIdentification, AcquirerProtocolParameters11.mmApplicationIdentification);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -284,8 +284,8 @@ public class AcceptorConfiguration {
 	 * {@linkplain com.tools20022.repository.msg.AcquirerProtocolParameters8#mmBatchTransfer
 	 * AcquirerProtocolParameters8.mmBatchTransfer}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AcquirerProtocolParameters10#mmBatchTransferContent
-	 * AcquirerProtocolParameters10.mmBatchTransferContent}</li>
+	 * {@linkplain com.tools20022.repository.msg.AcquirerProtocolParameters11#mmBatchTransferContent
+	 * AcquirerProtocolParameters11.mmBatchTransferContent}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -306,7 +306,7 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAttribute<AcceptorConfiguration, BatchTransactionTypeCode> mmBatchTransferContent = new MMBusinessAttribute<AcceptorConfiguration, BatchTransactionTypeCode>() {
 		{
-			derivation_lazy = () -> Arrays.asList(AcquirerProtocolParameters8.mmBatchTransfer, AcquirerProtocolParameters10.mmBatchTransferContent);
+			derivation_lazy = () -> Arrays.asList(AcquirerProtocolParameters8.mmBatchTransfer, AcquirerProtocolParameters11.mmBatchTransferContent);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -525,8 +525,8 @@ public class AcceptorConfiguration {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AcquirerProtocolParameters10#mmReconciliationByAcquirer
-	 * AcquirerProtocolParameters10.mmReconciliationByAcquirer}</li>
+	 * {@linkplain com.tools20022.repository.msg.AcquirerProtocolParameters11#mmReconciliationByAcquirer
+	 * AcquirerProtocolParameters11.mmReconciliationByAcquirer}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -549,7 +549,7 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAttribute<AcceptorConfiguration, TrueFalseIndicator> mmReconciliationByAcquirer = new MMBusinessAttribute<AcceptorConfiguration, TrueFalseIndicator>() {
 		{
-			derivation_lazy = () -> Arrays.asList(AcquirerProtocolParameters10.mmReconciliationByAcquirer);
+			derivation_lazy = () -> Arrays.asList(AcquirerProtocolParameters11.mmReconciliationByAcquirer);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -585,8 +585,8 @@ public class AcceptorConfiguration {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AcquirerProtocolParameters10#mmTotalsPerCurrency
-	 * AcquirerProtocolParameters10.mmTotalsPerCurrency}</li>
+	 * {@linkplain com.tools20022.repository.msg.AcquirerProtocolParameters11#mmTotalsPerCurrency
+	 * AcquirerProtocolParameters11.mmTotalsPerCurrency}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -608,7 +608,7 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAttribute<AcceptorConfiguration, TrueFalseIndicator> mmTotalsPerCurrency = new MMBusinessAttribute<AcceptorConfiguration, TrueFalseIndicator>() {
 		{
-			derivation_lazy = () -> Arrays.asList(AcquirerProtocolParameters10.mmTotalsPerCurrency);
+			derivation_lazy = () -> Arrays.asList(AcquirerProtocolParameters11.mmTotalsPerCurrency);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -644,8 +644,8 @@ public class AcceptorConfiguration {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AcquirerProtocolParameters10#mmProtectCardData
-	 * AcquirerProtocolParameters10.mmProtectCardData}</li>
+	 * {@linkplain com.tools20022.repository.msg.AcquirerProtocolParameters11#mmProtectCardData
+	 * AcquirerProtocolParameters11.mmProtectCardData}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -667,7 +667,7 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAttribute<AcceptorConfiguration, TrueFalseIndicator> mmProtectCardData = new MMBusinessAttribute<AcceptorConfiguration, TrueFalseIndicator>() {
 		{
-			derivation_lazy = () -> Arrays.asList(AcquirerProtocolParameters10.mmProtectCardData);
+			derivation_lazy = () -> Arrays.asList(AcquirerProtocolParameters11.mmProtectCardData);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -752,8 +752,8 @@ public class AcceptorConfiguration {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AcceptorConfigurationContent6#mmApplicationParameters
-	 * AcceptorConfigurationContent6.mmApplicationParameters}</li>
+	 * {@linkplain com.tools20022.repository.msg.AcceptorConfigurationContent7#mmApplicationParameters
+	 * AcceptorConfigurationContent7.mmApplicationParameters}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -775,7 +775,7 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAttribute<AcceptorConfiguration, Max10000Binary> mmApplicationParameters = new MMBusinessAttribute<AcceptorConfiguration, Max10000Binary>() {
 		{
-			derivation_lazy = () -> Arrays.asList(AcceptorConfigurationContent6.mmApplicationParameters);
+			derivation_lazy = () -> Arrays.asList(AcceptorConfigurationContent7.mmApplicationParameters);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -819,11 +819,11 @@ public class AcceptorConfiguration {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AcceptorConfigurationContent6#mmHostCommunicationParameters
-	 * AcceptorConfigurationContent6.mmHostCommunicationParameters}</li>
+	 * {@linkplain com.tools20022.repository.msg.AcceptorConfigurationContent7#mmHostCommunicationParameters
+	 * AcceptorConfigurationContent7.mmHostCommunicationParameters}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AcquirerProtocolParameters10#mmHost
-	 * AcquirerProtocolParameters10.mmHost}</li>
+	 * {@linkplain com.tools20022.repository.msg.AcquirerProtocolParameters11#mmHost
+	 * AcquirerProtocolParameters11.mmHost}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -846,7 +846,7 @@ public class AcceptorConfiguration {
 	 */
 	public static final MMBusinessAssociationEnd<AcceptorConfiguration, Optional<TerminalManagementSystem>> mmTerminalManagementSystem = new MMBusinessAssociationEnd<AcceptorConfiguration, Optional<TerminalManagementSystem>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(AcceptorConfigurationContent6.mmHostCommunicationParameters, AcquirerProtocolParameters10.mmHost);
+			derivation_lazy = () -> Arrays.asList(AcceptorConfigurationContent7.mmHostCommunicationParameters, AcquirerProtocolParameters11.mmHost);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AcceptorConfiguration.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -926,7 +926,7 @@ public class AcceptorConfiguration {
 				name = "AcceptorConfiguration";
 				definition = "Acceptor parameters to be downloaded from the terminal management system.";
 				associationDomain_lazy = () -> Arrays.asList(TerminalManagementSystem.mmAcceptorConfiguration);
-				derivationElement_lazy = () -> Arrays.asList(AcceptorConfigurationContent6.mmAcquirerProtocolParameters, AcquirerProtocolParameters10.mmOnLineTransaction);
+				derivationElement_lazy = () -> Arrays.asList(AcceptorConfigurationContent7.mmAcquirerProtocolParameters, AcquirerProtocolParameters11.mmOnLineTransaction);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AcceptorConfiguration.mmApplicationIdentification, com.tools20022.repository.entity.AcceptorConfiguration.mmFinancialCapture,
 						com.tools20022.repository.entity.AcceptorConfiguration.mmBatchTransferContent, com.tools20022.repository.entity.AcceptorConfiguration.mmExchangePolicy,
 						com.tools20022.repository.entity.AcceptorConfiguration.mmMaximumNumber, com.tools20022.repository.entity.AcceptorConfiguration.mmMaximumAmount,
@@ -934,8 +934,8 @@ public class AcceptorConfiguration {
 						com.tools20022.repository.entity.AcceptorConfiguration.mmProtectCardData, com.tools20022.repository.entity.AcceptorConfiguration.mmRetailerParameters,
 						com.tools20022.repository.entity.AcceptorConfiguration.mmApplicationParameters, com.tools20022.repository.entity.AcceptorConfiguration.mmTerminalManagementSystem,
 						com.tools20022.repository.entity.AcceptorConfiguration.mmApplicationVersion);
-				derivationComponent_lazy = () -> Arrays.asList(ExchangeConfiguration6.mmObject(), AcquirerProtocolParameters8.mmObject(), ExchangeConfiguration7.mmObject(), AcceptorConfiguration6.mmObject(),
-						TerminalManagementDataSet20.mmObject(), ApplicationParameters6.mmObject(), AcceptorConfigurationContent6.mmObject(), AcquirerProtocolParameters10.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(ExchangeConfiguration6.mmObject(), AcquirerProtocolParameters8.mmObject(), ExchangeConfiguration7.mmObject(), AcceptorConfiguration7.mmObject(),
+						ApplicationParameters7.mmObject(), TerminalManagementDataSet23.mmObject(), AcceptorConfigurationContent7.mmObject(), AcquirerProtocolParameters11.mmObject());
 			}
 
 			@Override

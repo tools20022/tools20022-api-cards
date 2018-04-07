@@ -28,6 +28,7 @@ import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.GenericIdentification1;
 import com.tools20022.repository.msg.GenericIdentification13;
+import com.tools20022.repository.msg.GenericIdentification36;
 import com.tools20022.repository.msg.GenericIdentification4;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -154,6 +155,9 @@ public class Scheme {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.choice.PersonIdentificationSchemeName1Choice#mmProprietary
 	 * PersonIdentificationSchemeName1Choice.mmProprietary}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.GenericIdentification36#mmSchemeName
+	 * GenericIdentification36.mmSchemeName}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -173,7 +177,7 @@ public class Scheme {
 	 */
 	public static final MMBusinessAttribute<Scheme, Max35Text> mmNameShort = new MMBusinessAttribute<Scheme, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(GenericIdentification1.mmSchemeName, GenericIdentification13.mmSchemeName, PersonIdentificationSchemeName1Choice.mmProprietary);
+			derivation_lazy = () -> Arrays.asList(GenericIdentification1.mmSchemeName, GenericIdentification13.mmSchemeName, PersonIdentificationSchemeName1Choice.mmProprietary, GenericIdentification36.mmSchemeName);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Scheme.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

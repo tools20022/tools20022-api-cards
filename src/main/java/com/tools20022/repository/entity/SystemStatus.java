@@ -25,7 +25,7 @@ import com.tools20022.repository.entity.Status;
 import com.tools20022.repository.entity.System;
 import com.tools20022.repository.entity.SystemMemberRole;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.PointOfInteractionComponent7;
+import com.tools20022.repository.msg.PointOfInteractionComponent8;
 import com.tools20022.repository.msg.PointOfInteractionComponentStatus3;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -73,8 +73,8 @@ import java.util.Optional;
  * derivationElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.PointOfInteractionComponent7#mmStatus
- * PointOfInteractionComponent7.mmStatus}</li>
+ * {@linkplain com.tools20022.repository.msg.PointOfInteractionComponent8#mmStatus
+ * PointOfInteractionComponent8.mmStatus}</li>
  * </ul>
  * </li>
  * <li>
@@ -351,7 +351,7 @@ public class SystemStatus extends Status {
 				name = "SystemStatus";
 				definition = "Status of a system and the period of time during which the status is valid.";
 				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.System.mmStatus, com.tools20022.repository.entity.SystemMemberRole.mmMemberStatus);
-				derivationElement_lazy = () -> Arrays.asList(PointOfInteractionComponent7.mmStatus);
+				derivationElement_lazy = () -> Arrays.asList(PointOfInteractionComponent8.mmStatus);
 				superType_lazy = () -> com.tools20022.repository.entity.Status.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.SystemStatus.mmStatus, com.tools20022.repository.entity.SystemStatus.mmMemberStatus, com.tools20022.repository.entity.SystemStatus.mmSystem,
 						com.tools20022.repository.entity.SystemStatus.mmSystemMemberRole);

@@ -111,8 +111,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult2Code
  * TerminalManagementActionResult2Code}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult3Code
- * TerminalManagementActionResult3Code}</li>
+ * {@linkplain com.tools20022.repository.codeset.TerminalManagementActionResult4Code
+ * TerminalManagementActionResult4Code}</li>
  * </ul>
  * </li>
  * <li>
@@ -830,7 +830,7 @@ public class TerminalManagementActionResultCode extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TerminalManagementActionResultCode";
 				definition = "Final result of the processed terminal management action.";
-				derivation_lazy = () -> Arrays.asList(TerminalManagementActionResult2Code.mmObject(), TerminalManagementActionResult3Code.mmObject());
+				derivation_lazy = () -> Arrays.asList(TerminalManagementActionResult2Code.mmObject(), TerminalManagementActionResult4Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TerminalManagementActionResultCode.AccessDenied, com.tools20022.repository.codeset.TerminalManagementActionResultCode.ConnectionError,
 						com.tools20022.repository.codeset.TerminalManagementActionResultCode.FormatError, com.tools20022.repository.codeset.TerminalManagementActionResultCode.InvalidContent,
 						com.tools20022.repository.codeset.TerminalManagementActionResultCode.LengthError, com.tools20022.repository.codeset.TerminalManagementActionResultCode.MemoryOverflow,

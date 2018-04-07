@@ -56,6 +56,15 @@ import java.util.concurrent.atomic.AtomicReference;
  * ATMDiagnosticResponseV02}</li>
  * <li>{@linkplain com.tools20022.repository.area.caam.ATMDiagnosticRequestV02
  * ATMDiagnosticRequestV02}</li>
+ * <li>{@linkplain com.tools20022.repository.area.caam.ATMDeviceControlV03
+ * ATMDeviceControlV03}</li>
+ * <li>{@linkplain com.tools20022.repository.area.caam.ATMDeviceReportV03
+ * ATMDeviceReportV03}</li>
+ * <li>{@linkplain com.tools20022.repository.area.caam.ATMKeyDownloadRequestV03
+ * ATMKeyDownloadRequestV03}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.area.caam.ATMKeyDownloadResponseV03
+ * ATMKeyDownloadResponseV03}</li>
  * </ul>
  * </li>
  * <li>
@@ -86,9 +95,10 @@ public class ATMManagementLatestVersion {
 				registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 				name = "ATM Management - Latest version - master";
 				definition = "Messages that support card related terminal management services between an Automated Teller Machine (ATM) and an\r\nAcquirer.";
-				messageDefinition_lazy = () -> Arrays.asList(HostToATMAcknowledgementV01.mmObject(), HostToATMRequestV01.mmObject(), ATMExceptionAcknowledgementV01.mmObject(), ATMExceptionAdviceV01.mmObject(),
-						ATMReconciliationAdviceV02.mmObject(), ATMReconciliationAcknowledgementV02.mmObject(), ATMDiagnosticResponseV02.mmObject(), ATMDiagnosticRequestV02.mmObject());
 				code = "caam";
+				messageDefinition_lazy = () -> Arrays.asList(HostToATMAcknowledgementV01.mmObject(), HostToATMRequestV01.mmObject(), ATMExceptionAcknowledgementV01.mmObject(), ATMExceptionAdviceV01.mmObject(),
+						ATMReconciliationAdviceV02.mmObject(), ATMReconciliationAcknowledgementV02.mmObject(), ATMDiagnosticResponseV02.mmObject(), ATMDiagnosticRequestV02.mmObject(), ATMDeviceControlV03.mmObject(),
+						ATMDeviceReportV03.mmObject(), ATMKeyDownloadRequestV03.mmObject(), ATMKeyDownloadResponseV03.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

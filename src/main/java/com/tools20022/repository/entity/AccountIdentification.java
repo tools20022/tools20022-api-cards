@@ -21,6 +21,8 @@ import com.tools20022.metamodel.ext.OtherSemanticMarkup;
 import com.tools20022.metamodel.*;
 import com.tools20022.repository.choice.AccountIdentification30Choice;
 import com.tools20022.repository.choice.AccountIdentification31Choice;
+import com.tools20022.repository.choice.AccountIdentification39Choice;
+import com.tools20022.repository.choice.CashAccountIdentification7Choice;
 import com.tools20022.repository.datatype.*;
 import com.tools20022.repository.entity.Account;
 import com.tools20022.repository.entity.GenericIdentification;
@@ -100,6 +102,18 @@ import java.util.Optional;
  * <li>
  * {@linkplain com.tools20022.repository.choice.AccountIdentification30Choice#mmDomestic
  * AccountIdentification30Choice.mmDomestic}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.AccountIdentification39Choice#mmCard
+ * AccountIdentification39Choice.mmCard}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.AccountIdentification39Choice#mmMSISDN
+ * AccountIdentification39Choice.mmMSISDN}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.AccountIdentification39Choice#mmEMail
+ * AccountIdentification39Choice.mmEMail}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.AccountIdentification39Choice#mmDomestic
+ * AccountIdentification39Choice.mmDomestic}</li>
  * </ul>
  * </li>
  * <li>
@@ -112,6 +126,12 @@ import java.util.Optional;
  * <li>
  * {@linkplain com.tools20022.repository.choice.AccountIdentification31Choice
  * AccountIdentification31Choice}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.AccountIdentification39Choice
+ * AccountIdentification39Choice}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.CashAccountIdentification7Choice
+ * CashAccountIdentification7Choice}</li>
  * </ul>
  * </li>
  * <li>
@@ -210,6 +230,12 @@ public class AccountIdentification {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.choice.AccountIdentification31Choice#mmIBAN
 	 * AccountIdentification31Choice.mmIBAN}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.AccountIdentification39Choice#mmIBAN
+	 * AccountIdentification39Choice.mmIBAN}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.CashAccountIdentification7Choice#mmIBAN
+	 * CashAccountIdentification7Choice.mmIBAN}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -232,7 +258,7 @@ public class AccountIdentification {
 	 */
 	public static final MMBusinessAttribute<AccountIdentification, IBAN2007Identifier> mmIBAN = new MMBusinessAttribute<AccountIdentification, IBAN2007Identifier>() {
 		{
-			derivation_lazy = () -> Arrays.asList(AccountIdentification30Choice.mmIBAN, AccountIdentification31Choice.mmIBAN);
+			derivation_lazy = () -> Arrays.asList(AccountIdentification30Choice.mmIBAN, AccountIdentification31Choice.mmIBAN, AccountIdentification39Choice.mmIBAN, CashAccountIdentification7Choice.mmIBAN);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -273,6 +299,12 @@ public class AccountIdentification {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.choice.AccountIdentification31Choice#mmBBAN
 	 * AccountIdentification31Choice.mmBBAN}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.AccountIdentification39Choice#mmBBAN
+	 * AccountIdentification39Choice.mmBBAN}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.CashAccountIdentification7Choice#mmBBAN
+	 * CashAccountIdentification7Choice.mmBBAN}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -295,7 +327,7 @@ public class AccountIdentification {
 	 */
 	public static final MMBusinessAttribute<AccountIdentification, BBANIdentifier> mmBBAN = new MMBusinessAttribute<AccountIdentification, BBANIdentifier>() {
 		{
-			derivation_lazy = () -> Arrays.asList(AccountIdentification30Choice.mmBBAN, AccountIdentification31Choice.mmBBAN);
+			derivation_lazy = () -> Arrays.asList(AccountIdentification30Choice.mmBBAN, AccountIdentification31Choice.mmBBAN, AccountIdentification39Choice.mmBBAN, CashAccountIdentification7Choice.mmBBAN);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -336,6 +368,12 @@ public class AccountIdentification {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.choice.AccountIdentification31Choice#mmUPIC
 	 * AccountIdentification31Choice.mmUPIC}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.AccountIdentification39Choice#mmUPIC
+	 * AccountIdentification39Choice.mmUPIC}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.CashAccountIdentification7Choice#mmUPIC
+	 * CashAccountIdentification7Choice.mmUPIC}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -358,7 +396,7 @@ public class AccountIdentification {
 	 */
 	public static final MMBusinessAttribute<AccountIdentification, UPICIdentifier> mmUPIC = new MMBusinessAttribute<AccountIdentification, UPICIdentifier>() {
 		{
-			derivation_lazy = () -> Arrays.asList(AccountIdentification30Choice.mmUPIC, AccountIdentification31Choice.mmUPIC);
+			derivation_lazy = () -> Arrays.asList(AccountIdentification30Choice.mmUPIC, AccountIdentification31Choice.mmUPIC, AccountIdentification39Choice.mmUPIC, CashAccountIdentification7Choice.mmUPIC);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -407,6 +445,12 @@ public class AccountIdentification {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.choice.AccountIdentification31Choice#mmDomesticAccount
 	 * AccountIdentification31Choice.mmDomesticAccount}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.AccountIdentification39Choice#mmOther
+	 * AccountIdentification39Choice.mmOther}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.CashAccountIdentification7Choice#mmDomesticAccount
+	 * CashAccountIdentification7Choice.mmDomesticAccount}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -436,7 +480,7 @@ public class AccountIdentification {
 	 */
 	public static final MMBusinessAssociationEnd<AccountIdentification, GenericIdentification> mmProprietaryIdentification = new MMBusinessAssociationEnd<AccountIdentification, GenericIdentification>() {
 		{
-			derivation_lazy = () -> Arrays.asList(AccountIdentification30Choice.mmOther, AccountIdentification31Choice.mmDomesticAccount);
+			derivation_lazy = () -> Arrays.asList(AccountIdentification30Choice.mmOther, AccountIdentification31Choice.mmDomesticAccount, AccountIdentification39Choice.mmOther, CashAccountIdentification7Choice.mmDomesticAccount);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			semanticMarkup_lazy = () -> Arrays
@@ -504,6 +548,9 @@ public class AccountIdentification {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CardAccount12#mmAccountName
 	 * CardAccount12.mmAccountName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CardAccount14#mmAccountName
+	 * CardAccount14.mmAccountName}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -527,7 +574,7 @@ public class AccountIdentification {
 	public static final MMBusinessAttribute<AccountIdentification, Max70Text> mmName = new MMBusinessAttribute<AccountIdentification, Max70Text>() {
 		{
 			derivation_lazy = () -> Arrays.asList(ATMAccountStatement1.mmAccountName, CardAccount1.mmAccountName, CardAccount2.mmAccountName, CardAccount10.mmAccountName, CardAccount9.mmAccountName, CardAccount8.mmAccountName,
-					CardAccount11.mmAccountName, CardAccount13.mmAccountName, CardAccount7.mmAccountName, CardAccount12.mmAccountName);
+					CardAccount11.mmAccountName, CardAccount13.mmAccountName, CardAccount7.mmAccountName, CardAccount12.mmAccountName, CardAccount14.mmAccountName);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.AccountIdentification.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -676,11 +723,12 @@ public class AccountIdentification {
 				name = "AccountIdentification";
 				definition = "Unique identifier of an account, as assigned by the account servicer.";
 				associationDomain_lazy = () -> Arrays.asList(GenericIdentification.mmIdentificationForAccount, GenericIdentification.mmIdentificationForAccountCostReferencePattern, Account.mmIdentification);
-				derivationElement_lazy = () -> Arrays.asList(AccountIdentification30Choice.mmCard, AccountIdentification30Choice.mmMSISDN, AccountIdentification30Choice.mmEMail, AccountIdentification30Choice.mmDomestic);
+				derivationElement_lazy = () -> Arrays.asList(AccountIdentification30Choice.mmCard, AccountIdentification30Choice.mmMSISDN, AccountIdentification30Choice.mmEMail, AccountIdentification30Choice.mmDomestic,
+						AccountIdentification39Choice.mmCard, AccountIdentification39Choice.mmMSISDN, AccountIdentification39Choice.mmEMail, AccountIdentification39Choice.mmDomestic);
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.AccountIdentification.mmAccount, com.tools20022.repository.entity.AccountIdentification.mmIBAN,
 						com.tools20022.repository.entity.AccountIdentification.mmBBAN, com.tools20022.repository.entity.AccountIdentification.mmUPIC, com.tools20022.repository.entity.AccountIdentification.mmProprietaryIdentification,
 						com.tools20022.repository.entity.AccountIdentification.mmName, com.tools20022.repository.entity.AccountIdentification.mmCostReferencePattern, com.tools20022.repository.entity.AccountIdentification.mmNumber);
-				derivationComponent_lazy = () -> Arrays.asList(AccountIdentification30Choice.mmObject(), AccountIdentification31Choice.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(AccountIdentification30Choice.mmObject(), AccountIdentification31Choice.mmObject(), AccountIdentification39Choice.mmObject(), CashAccountIdentification7Choice.mmObject());
 			}
 
 			@Override

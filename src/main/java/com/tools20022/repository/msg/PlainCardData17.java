@@ -71,9 +71,6 @@ import javax.xml.bind.annotation.XmlType;
  * "PlainCardData17"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Sensitive data associated with a payment card."</li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} = {@linkplain com.tools20022.repository.msg.PlainCardData16
- * PlainCardData16}</li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -114,11 +111,6 @@ public class PlainCardData17 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Primary Account Number (PAN) of the card."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.PlainCardData16#mmPAN
-	 * PlainCardData16.mmPAN}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PlainCardData17, Optional<Min8Max28NumericText>> mmPAN = new MMMessageAttribute<PlainCardData17, Optional<Min8Max28NumericText>>() {
@@ -130,7 +122,6 @@ public class PlainCardData17 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PAN";
 			definition = "Primary Account Number (PAN) of the card.";
-			previousVersion_lazy = () -> PlainCardData16.mmPAN;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Min8Max28NumericText.mmObject();
@@ -175,11 +166,6 @@ public class PlainCardData17 {
 	 * definition} =
 	 * "ISO track 1 issued from the magnetic stripe card or from the ICC if the magnetic stripe was not read. The format is conform to ISO 7813, removing beginning and ending sentinels and longitudinal redundancy check characters."
 	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.PlainCardData16#mmTrack1
-	 * PlainCardData16.mmTrack1}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PlainCardData17, Optional<Max76Text>> mmTrack1 = new MMMessageAttribute<PlainCardData17, Optional<Max76Text>>() {
@@ -190,7 +176,6 @@ public class PlainCardData17 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Track1";
 			definition = "ISO track 1 issued from the magnetic stripe card or from the ICC if the magnetic stripe was not read. The format is conform to ISO 7813, removing beginning and ending sentinels and longitudinal redundancy check characters.";
-			previousVersion_lazy = () -> PlainCardData16.mmTrack1;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max76Text.mmObject();
@@ -235,11 +220,6 @@ public class PlainCardData17 {
 	 * definition} =
 	 * "ISO track 2 issued from the magnetic stripe card or from the ICC if the magnetic stripe was not read. The content is conform to ISO 7813, removing beginning and ending sentinels and longitudinal redundancy check characters."
 	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.PlainCardData16#mmTrack2
-	 * PlainCardData16.mmTrack2}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PlainCardData17, Optional<Max37Text>> mmTrack2 = new MMMessageAttribute<PlainCardData17, Optional<Max37Text>>() {
@@ -250,7 +230,6 @@ public class PlainCardData17 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Track2";
 			definition = "ISO track 2 issued from the magnetic stripe card or from the ICC if the magnetic stripe was not read. The content is conform to ISO 7813, removing beginning and ending sentinels and longitudinal redundancy check characters.";
-			previousVersion_lazy = () -> PlainCardData16.mmTrack2;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max37Text.mmObject();
@@ -295,11 +274,6 @@ public class PlainCardData17 {
 	 * definition} =
 	 * "ISO track 3 issued from the magnetic stripe card or from the ICC if the magnetic stripe was not read. The content is conform to ISO 4909, removing beginning and ending sentinels and longitudinal redundancy check characters."
 	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.PlainCardData16#mmTrack3
-	 * PlainCardData16.mmTrack3}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<PlainCardData17, Optional<Max104Text>> mmTrack3 = new MMMessageAttribute<PlainCardData17, Optional<Max104Text>>() {
@@ -310,7 +284,6 @@ public class PlainCardData17 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Track3";
 			definition = "ISO track 3 issued from the magnetic stripe card or from the ICC if the magnetic stripe was not read. The content is conform to ISO 4909, removing beginning and ending sentinels and longitudinal redundancy check characters.";
-			previousVersion_lazy = () -> PlainCardData16.mmTrack3;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max104Text.mmObject();
@@ -441,7 +414,6 @@ public class PlainCardData17 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "PlainCardData17";
 				definition = "Sensitive data associated with a payment card.";
-				previousVersion_lazy = () -> PlainCardData16.mmObject();
 			}
 		});
 		return mmObject_lazy.get();

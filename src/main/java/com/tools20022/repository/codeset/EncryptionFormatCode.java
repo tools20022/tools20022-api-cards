@@ -50,6 +50,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.EncryptionFormat1Code
  * EncryptionFormat1Code}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.EncryptionFormat2Code
+ * EncryptionFormat2Code}</li>
  * </ul>
  * </li>
  * <li>
@@ -185,7 +187,7 @@ public class EncryptionFormatCode extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EncryptionFormatCode";
 				definition = "Format of data before encryption, if the format is not plaintext or implicit.";
-				derivation_lazy = () -> Arrays.asList(EncryptionFormat1Code.mmObject());
+				derivation_lazy = () -> Arrays.asList(EncryptionFormat1Code.mmObject(), EncryptionFormat2Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.EncryptionFormatCode.TR31, com.tools20022.repository.codeset.EncryptionFormatCode.TR34,
 						com.tools20022.repository.codeset.EncryptionFormatCode.ISO20038KeyWrap);
 			}

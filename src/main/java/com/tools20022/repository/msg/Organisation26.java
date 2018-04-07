@@ -76,9 +76,6 @@ import javax.xml.bind.annotation.XmlType;
  * "Organisation26"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Merchant performing the transaction."</li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} = {@linkplain com.tools20022.repository.msg.Organisation25
- * Organisation25}</li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -117,11 +114,6 @@ public class Organisation26 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Name of the merchant."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.Organisation25#mmCommonName
-	 * Organisation25.mmCommonName}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<Organisation26, Max70Text> mmCommonName = new MMMessageAttribute<Organisation26, Max70Text>() {
@@ -133,7 +125,6 @@ public class Organisation26 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "CommonName";
 			definition = "Name of the merchant.";
-			previousVersion_lazy = () -> Organisation25.mmCommonName;
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max70Text.mmObject();
@@ -370,7 +361,6 @@ public class Organisation26 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Organisation26";
 				definition = "Merchant performing the transaction.";
-				previousVersion_lazy = () -> Organisation25.mmObject();
 			}
 		});
 		return mmObject_lazy.get();

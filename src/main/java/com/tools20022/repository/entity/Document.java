@@ -143,8 +143,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * derivationElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.TradeAgreement13#mmAdditionalReferenceDocument
- * TradeAgreement13.mmAdditionalReferenceDocument}</li>
+ * {@linkplain com.tools20022.repository.msg.TradeAgreement16#mmAdditionalReferenceDocument
+ * TradeAgreement16.mmAdditionalReferenceDocument}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
@@ -172,7 +172,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * DocumentGeneralInformation2}</li>
  * <li>{@linkplain com.tools20022.repository.msg.DocumentIdentification23
  * DocumentIdentification23}</li>
- * <li>{@linkplain com.tools20022.repository.msg.InvoiceHeader2 InvoiceHeader2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.InvoiceHeader3 InvoiceHeader3}</li>
  * </ul>
  * </li>
  * <li>
@@ -218,8 +218,8 @@ public class Document {
 	 * {@linkplain com.tools20022.repository.msg.DocumentIdentification23#mmDateOfIssue
 	 * DocumentIdentification23.mmDateOfIssue}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvoiceHeader2#mmIssueDateTime
-	 * InvoiceHeader2.mmIssueDateTime}</li>
+	 * {@linkplain com.tools20022.repository.msg.InvoiceHeader3#mmIssueDateTime
+	 * InvoiceHeader3.mmIssueDateTime}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -239,7 +239,7 @@ public class Document {
 	 */
 	public static final MMBusinessAttribute<Document, ISODateTime> mmIssueDate = new MMBusinessAttribute<Document, ISODateTime>() {
 		{
-			derivation_lazy = () -> Arrays.asList(DocumentIdentification22.mmDateOfIssue, DocumentGeneralInformation2.mmIssueDate, DocumentIdentification23.mmDateOfIssue, InvoiceHeader2.mmIssueDateTime);
+			derivation_lazy = () -> Arrays.asList(DocumentIdentification22.mmDateOfIssue, DocumentGeneralInformation2.mmIssueDate, DocumentIdentification23.mmDateOfIssue, InvoiceHeader3.mmIssueDateTime);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -440,8 +440,8 @@ public class Document {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.DocumentGeneralInformation2#mmDocumentType
 	 * DocumentGeneralInformation2.mmDocumentType}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.InvoiceHeader2#mmTypeCode
-	 * InvoiceHeader2.mmTypeCode}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.InvoiceHeader3#mmTypeCode
+	 * InvoiceHeader3.mmTypeCode}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -462,7 +462,7 @@ public class Document {
 	 */
 	public static final MMBusinessAttribute<Document, DocumentTypeCode> mmType = new MMBusinessAttribute<Document, DocumentTypeCode>() {
 		{
-			derivation_lazy = () -> Arrays.asList(DocumentGeneralInformation2.mmDocumentType, InvoiceHeader2.mmTypeCode);
+			derivation_lazy = () -> Arrays.asList(DocumentGeneralInformation2.mmDocumentType, InvoiceHeader3.mmTypeCode);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -1185,8 +1185,8 @@ public class Document {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvoiceHeader2#mmLanguageCode
-	 * InvoiceHeader2.mmLanguageCode}</li>
+	 * {@linkplain com.tools20022.repository.msg.InvoiceHeader3#mmLanguageCode
+	 * InvoiceHeader3.mmLanguageCode}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1206,7 +1206,7 @@ public class Document {
 	 */
 	public static final MMBusinessAttribute<Document, LanguageCode> mmLanguage = new MMBusinessAttribute<Document, LanguageCode>() {
 		{
-			derivation_lazy = () -> Arrays.asList(InvoiceHeader2.mmLanguageCode);
+			derivation_lazy = () -> Arrays.asList(InvoiceHeader3.mmLanguageCode);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -1241,8 +1241,8 @@ public class Document {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.InvoiceHeader2#mmDocumentPurpose
-	 * InvoiceHeader2.mmDocumentPurpose}</li>
+	 * {@linkplain com.tools20022.repository.msg.InvoiceHeader3#mmDocumentPurpose
+	 * InvoiceHeader3.mmDocumentPurpose}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1262,7 +1262,7 @@ public class Document {
 	 */
 	public static final MMBusinessAttribute<Document, Max35Text> mmPurpose = new MMBusinessAttribute<Document, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(InvoiceHeader2.mmDocumentPurpose);
+			derivation_lazy = () -> Arrays.asList(InvoiceHeader3.mmDocumentPurpose);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -1305,8 +1305,8 @@ public class Document {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.InvoiceHeader2#mmName
-	 * InvoiceHeader2.mmName}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.InvoiceHeader3#mmName
+	 * InvoiceHeader3.mmName}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1328,7 +1328,7 @@ public class Document {
 	 */
 	public static final MMBusinessAssociationEnd<Document, GenericIdentification> mmDocumentIdentification = new MMBusinessAssociationEnd<Document, GenericIdentification>() {
 		{
-			derivation_lazy = () -> Arrays.asList(InvoiceHeader2.mmName);
+			derivation_lazy = () -> Arrays.asList(InvoiceHeader3.mmName);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Document.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -1587,7 +1587,7 @@ public class Document {
 				associationDomain_lazy = () -> Arrays.asList(GenericIdentification.mmIdentifiedDocument, ContactPoint.mmStoredDocument, Location.mmIssuedDocument, Agreement.mmDocument, DocumentPartyRole.mmDocument,
 						PaymentObligation.mmAssociatedDocument, Presentation.mmPresentedDocument, CommercialTrade.mmDocuments, Transport.mmTransportDocuments, LetterOfCredit.mmDocument, Guarantee.mmDocument, Reconciliation.mmDocument,
 						Evidence.mmRelatedDocument, RegisteredContract.mmAttachment);
-				derivationElement_lazy = () -> Arrays.asList(TradeAgreement13.mmAdditionalReferenceDocument);
+				derivationElement_lazy = () -> Arrays.asList(TradeAgreement16.mmAdditionalReferenceDocument);
 				subType_lazy = () -> Arrays.asList(PrivateCertificate.mmObject(), InsuranceCertificate.mmObject(), SecurityCertificate.mmObject(), TradeCertificate.mmObject(), Assessment.mmObject(), DeliveryNote.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Document.mmIssueDate, com.tools20022.repository.entity.Document.mmCopyDuplicate, com.tools20022.repository.entity.Document.mmPlaceOfStorage,
 						com.tools20022.repository.entity.Document.mmPaymentObligation, com.tools20022.repository.entity.Document.mmType, com.tools20022.repository.entity.Document.mmAmount,
@@ -1598,7 +1598,7 @@ public class Document {
 						com.tools20022.repository.entity.Document.mmLanguage, com.tools20022.repository.entity.Document.mmPurpose, com.tools20022.repository.entity.Document.mmDocumentIdentification,
 						com.tools20022.repository.entity.Document.mmEvidence, com.tools20022.repository.entity.Document.mmCommercialTrade, com.tools20022.repository.entity.Document.mmPresentation,
 						com.tools20022.repository.entity.Document.mmRelatedContract);
-				derivationComponent_lazy = () -> Arrays.asList(DocumentIdentification22.mmObject(), DocumentGeneralInformation2.mmObject(), DocumentIdentification23.mmObject(), InvoiceHeader2.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(DocumentIdentification22.mmObject(), DocumentGeneralInformation2.mmObject(), DocumentIdentification23.mmObject(), InvoiceHeader3.mmObject());
 			}
 
 			@Override

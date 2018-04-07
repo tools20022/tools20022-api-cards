@@ -70,10 +70,10 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <li>{@linkplain com.tools20022.metamodel.MMCodeSet#getDerivation derivation}
  * =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.codeset.ATMSecurityScheme2Code
- * ATMSecurityScheme2Code}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.ATMSecurityScheme1Code
- * ATMSecurityScheme1Code}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ATMSecurityScheme3Code
+ * ATMSecurityScheme3Code}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.ATMSecurityScheme4Code
+ * ATMSecurityScheme4Code}</li>
  * </ul>
  * </li>
  * <li>
@@ -423,7 +423,7 @@ public class ATMSecuritySchemeCode extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ATMSecuritySchemeCode";
 				definition = "Key exchange security scheme on an ATM for the host manager.";
-				derivation_lazy = () -> Arrays.asList(ATMSecurityScheme2Code.mmObject(), ATMSecurityScheme1Code.mmObject());
+				derivation_lazy = () -> Arrays.asList(ATMSecurityScheme3Code.mmObject(), ATMSecurityScheme4Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.ATMSecuritySchemeCode.ApplicationRemoteKeyLoading, com.tools20022.repository.codeset.ATMSecuritySchemeCode.CertificateRemoteKeyLoading,
 						com.tools20022.repository.codeset.ATMSecuritySchemeCode.GermanRemoteKeyLoading, com.tools20022.repository.codeset.ATMSecuritySchemeCode.FrenchRemoteKeyLoading,
 						com.tools20022.repository.codeset.ATMSecuritySchemeCode.LuxemburgRemoteKeyLoading, com.tools20022.repository.codeset.ATMSecuritySchemeCode.ManualKeyEntry,

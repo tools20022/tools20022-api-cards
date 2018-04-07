@@ -26,7 +26,7 @@ import com.tools20022.repository.datatype.Max15NumericText;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.ATMCassetteCounters3;
-import com.tools20022.repository.msg.LineItem16;
+import com.tools20022.repository.msg.LineItem17;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -372,8 +372,8 @@ public class Price {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.LineItem16#mmNetPriceAllowanceCharge
-	 * LineItem16.mmNetPriceAllowanceCharge}</li>
+	 * {@linkplain com.tools20022.repository.msg.LineItem17#mmNetPriceAllowanceCharge
+	 * LineItem17.mmNetPriceAllowanceCharge}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -393,7 +393,7 @@ public class Price {
 	 */
 	public static final MMBusinessAssociationEnd<Price, List<Adjustment>> mmPriceAdjustment = new MMBusinessAssociationEnd<Price, List<Adjustment>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(LineItem16.mmNetPriceAllowanceCharge);
+			derivation_lazy = () -> Arrays.asList(LineItem17.mmNetPriceAllowanceCharge);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Price.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

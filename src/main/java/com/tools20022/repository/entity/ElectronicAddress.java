@@ -115,8 +115,11 @@ public class ElectronicAddress extends ContactPoint {
 	 * {@linkplain com.tools20022.repository.msg.CommunicationAddress5#mmEmail
 	 * CommunicationAddress5.mmEmail}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmEmailAddress
-	 * PersonIdentification11.mmEmailAddress}</li>
+	 * {@linkplain com.tools20022.repository.msg.CommunicationAddress9#mmEmail
+	 * CommunicationAddress9.mmEmail}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PersonIdentification15#mmEmailAddress
+	 * PersonIdentification15.mmEmailAddress}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -137,7 +140,8 @@ public class ElectronicAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute<ElectronicAddress, Max256Text> mmEmailAddress = new MMBusinessAttribute<ElectronicAddress, Max256Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(ContactDetails2.mmEmailAddress, Contacts3.mmEmailAddress, PersonIdentification7.mmEmailAddress, CommunicationAddress5.mmEmail, PersonIdentification11.mmEmailAddress);
+			derivation_lazy = () -> Arrays.asList(ContactDetails2.mmEmailAddress, Contacts3.mmEmailAddress, PersonIdentification7.mmEmailAddress, CommunicationAddress5.mmEmail, CommunicationAddress9.mmEmail,
+					PersonIdentification15.mmEmailAddress);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -177,6 +181,9 @@ public class ElectronicAddress extends ContactPoint {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.CommunicationAddress5#mmURLAddress
 	 * CommunicationAddress5.mmURLAddress}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CommunicationAddress9#mmURLAddress
+	 * CommunicationAddress9.mmURLAddress}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -199,7 +206,7 @@ public class ElectronicAddress extends ContactPoint {
 	 */
 	public static final MMBusinessAttribute<ElectronicAddress, Max256Text> mmURLAddress = new MMBusinessAttribute<ElectronicAddress, Max256Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(DocumentGeneralInformation2.mmURL, CommunicationAddress5.mmURLAddress);
+			derivation_lazy = () -> Arrays.asList(DocumentGeneralInformation2.mmURL, CommunicationAddress5.mmURLAddress, CommunicationAddress9.mmURLAddress);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ElectronicAddress.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

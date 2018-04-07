@@ -67,6 +67,7 @@ import javax.xml.bind.annotation.XmlType;
  * nextVersions} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.msg.Parameter8 Parameter8}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Parameter10 Parameter10}</li>
  * </ul>
  * </li>
  * </ul>
@@ -105,6 +106,14 @@ public class Parameter4 {
 	 * definition} =
 	 * "Format of data before encryption, if the format is not plaintext or implicit."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Parameter10#mmEncryptionFormat
+	 * Parameter10.mmEncryptionFormat}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<Parameter4, Optional<EncryptionFormat1Code>> mmEncryptionFormat = new MMMessageAttribute<Parameter4, Optional<EncryptionFormat1Code>>() {
@@ -115,6 +124,7 @@ public class Parameter4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EncryptionFormat";
 			definition = "Format of data before encryption, if the format is not plaintext or implicit.";
+			nextVersions_lazy = () -> Arrays.asList(Parameter10.mmEncryptionFormat);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> EncryptionFormat1Code.mmObject();
@@ -163,6 +173,9 @@ public class Parameter4 {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.Parameter8#mmDigestAlgorithm
 	 * Parameter8.mmDigestAlgorithm}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Parameter10#mmDigestAlgorithm
+	 * Parameter10.mmDigestAlgorithm}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -175,7 +188,7 @@ public class Parameter4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DigestAlgorithm";
 			definition = "Identification of the digest algorithm.";
-			nextVersions_lazy = () -> Arrays.asList(Parameter8.mmDigestAlgorithm);
+			nextVersions_lazy = () -> Arrays.asList(Parameter8.mmDigestAlgorithm, Parameter10.mmDigestAlgorithm);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Algorithm11Code.mmObject();
@@ -225,6 +238,9 @@ public class Parameter4 {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.Parameter8#mmMaskGeneratorAlgorithm
 	 * Parameter8.mmMaskGeneratorAlgorithm}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Parameter10#mmMaskGeneratorAlgorithm
+	 * Parameter10.mmMaskGeneratorAlgorithm}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -237,7 +253,7 @@ public class Parameter4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MaskGeneratorAlgorithm";
 			definition = "Mask generator function cryptographic algorithm and parameters.";
-			nextVersions_lazy = () -> Arrays.asList(Parameter8.mmMaskGeneratorAlgorithm);
+			nextVersions_lazy = () -> Arrays.asList(Parameter8.mmMaskGeneratorAlgorithm, Parameter10.mmMaskGeneratorAlgorithm);
 			maxOccurs = 1;
 			minOccurs = 0;
 			complexType_lazy = () -> AlgorithmIdentification12.mmObject();
@@ -263,7 +279,7 @@ public class Parameter4 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Parameter4";
 				definition = "Parameters of the asymmetric encryption algorithm.";
-				nextVersions_lazy = () -> Arrays.asList(Parameter8.mmObject());
+				nextVersions_lazy = () -> Arrays.asList(Parameter8.mmObject(), Parameter10.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

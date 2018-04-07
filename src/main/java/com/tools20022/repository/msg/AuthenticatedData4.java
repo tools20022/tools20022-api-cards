@@ -73,6 +73,13 @@ import javax.xml.bind.annotation.XmlType;
  * definition} =
  * "Message authentication code (MAC), computed on the data to protect with an encryption key."
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.AuthenticatedData5
+ * AuthenticatedData5}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -107,6 +114,14 @@ public class AuthenticatedData4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Version of the data structure."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AuthenticatedData5#mmVersion
+	 * AuthenticatedData5.mmVersion}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<AuthenticatedData4, Optional<Number>> mmVersion = new MMMessageAttribute<AuthenticatedData4, Optional<Number>>() {
@@ -117,6 +132,7 @@ public class AuthenticatedData4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Version";
 			definition = "Version of the data structure.";
+			nextVersions_lazy = () -> Arrays.asList(AuthenticatedData5.mmVersion);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
@@ -159,6 +175,14 @@ public class AuthenticatedData4 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Session key or protection key identification used by the recipient."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AuthenticatedData5#mmRecipient
+	 * AuthenticatedData5.mmRecipient}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<AuthenticatedData4, List<Recipient4Choice>> mmRecipient = new MMMessageAssociationEnd<AuthenticatedData4, List<Recipient4Choice>>() {
@@ -169,6 +193,7 @@ public class AuthenticatedData4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Recipient";
 			definition = "Session key or protection key identification used by the recipient.";
+			nextVersions_lazy = () -> Arrays.asList(AuthenticatedData5.mmRecipient);
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> Recipient4Choice.mmObject();
@@ -211,6 +236,14 @@ public class AuthenticatedData4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Algorithm to compute message authentication code (MAC)."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AuthenticatedData5#mmMACAlgorithm
+	 * AuthenticatedData5.mmMACAlgorithm}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<AuthenticatedData4, AlgorithmIdentification15> mmMACAlgorithm = new MMMessageAssociationEnd<AuthenticatedData4, AlgorithmIdentification15>() {
@@ -221,6 +254,7 @@ public class AuthenticatedData4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MACAlgorithm";
 			definition = "Algorithm to compute message authentication code (MAC).";
+			nextVersions_lazy = () -> Arrays.asList(AuthenticatedData5.mmMACAlgorithm);
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
@@ -263,6 +297,14 @@ public class AuthenticatedData4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Data to authenticate."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AuthenticatedData5#mmEncapsulatedContent
+	 * AuthenticatedData5.mmEncapsulatedContent}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<AuthenticatedData4, EncapsulatedContent3> mmEncapsulatedContent = new MMMessageAssociationEnd<AuthenticatedData4, EncapsulatedContent3>() {
@@ -273,6 +315,7 @@ public class AuthenticatedData4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EncapsulatedContent";
 			definition = "Data to authenticate.";
+			nextVersions_lazy = () -> Arrays.asList(AuthenticatedData5.mmEncapsulatedContent);
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
@@ -317,6 +360,13 @@ public class AuthenticatedData4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Message authentication code value."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.AuthenticatedData5#mmMAC
+	 * AuthenticatedData5.mmMAC}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<AuthenticatedData4, Max140Binary> mmMAC = new MMMessageAttribute<AuthenticatedData4, Max140Binary>() {
@@ -327,6 +377,7 @@ public class AuthenticatedData4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "MAC";
 			definition = "Message authentication code value.";
+			nextVersions_lazy = () -> Arrays.asList(AuthenticatedData5.mmMAC);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max140Binary.mmObject();
@@ -352,6 +403,7 @@ public class AuthenticatedData4 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AuthenticatedData4";
 				definition = "Message authentication code (MAC), computed on the data to protect with an encryption key.";
+				nextVersions_lazy = () -> Arrays.asList(AuthenticatedData5.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

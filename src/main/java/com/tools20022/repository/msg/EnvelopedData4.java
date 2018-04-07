@@ -63,6 +63,12 @@ import javax.xml.bind.annotation.XmlType;
  * "EnvelopedData4"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Encrypted data with encryption key."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.EnvelopedData5 EnvelopedData5}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -96,6 +102,13 @@ public class EnvelopedData4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Version of the data structure."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.EnvelopedData5#mmVersion
+	 * EnvelopedData5.mmVersion}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<EnvelopedData4, Optional<Number>> mmVersion = new MMMessageAttribute<EnvelopedData4, Optional<Number>>() {
@@ -106,6 +119,7 @@ public class EnvelopedData4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Version";
 			definition = "Version of the data structure.";
+			nextVersions_lazy = () -> Arrays.asList(EnvelopedData5.mmVersion);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
@@ -148,6 +162,13 @@ public class EnvelopedData4 {
 	 * definition} =
 	 * "Session key or identification of the protection key used by the recipient."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.EnvelopedData5#mmRecipient
+	 * EnvelopedData5.mmRecipient}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<EnvelopedData4, List<Recipient4Choice>> mmRecipient = new MMMessageAssociationEnd<EnvelopedData4, List<Recipient4Choice>>() {
@@ -158,6 +179,7 @@ public class EnvelopedData4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Recipient";
 			definition = "Session key or identification of the protection key used by the recipient.";
+			nextVersions_lazy = () -> Arrays.asList(EnvelopedData5.mmRecipient);
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> Recipient4Choice.mmObject();
@@ -200,6 +222,14 @@ public class EnvelopedData4 {
 	 * definition} =
 	 * "Data protection by encryption (digital envelope), with an encryption key."
 	 * </li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.EnvelopedData5#mmEncryptedContent
+	 * EnvelopedData5.mmEncryptedContent}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<EnvelopedData4, Optional<EncryptedContent3>> mmEncryptedContent = new MMMessageAssociationEnd<EnvelopedData4, Optional<EncryptedContent3>>() {
@@ -210,6 +240,7 @@ public class EnvelopedData4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EncryptedContent";
 			definition = "Data protection by encryption (digital envelope), with an encryption key.";
+			nextVersions_lazy = () -> Arrays.asList(EnvelopedData5.mmEncryptedContent);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
@@ -235,6 +266,7 @@ public class EnvelopedData4 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EnvelopedData4";
 				definition = "Encrypted data with encryption key.";
+				nextVersions_lazy = () -> Arrays.asList(EnvelopedData5.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

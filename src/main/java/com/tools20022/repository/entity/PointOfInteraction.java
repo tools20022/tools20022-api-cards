@@ -112,11 +112,11 @@ import java.util.Optional;
  * {@linkplain com.tools20022.repository.msg.ATMCommandIdentification1#mmOrigin
  * ATMCommandIdentification1.mmOrigin}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.PointOfInteraction7#mmCapabilities
- * PointOfInteraction7.mmCapabilities}</li>
+ * {@linkplain com.tools20022.repository.msg.StatusReportContent7#mmPOICapabilities
+ * StatusReportContent7.mmPOICapabilities}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.StatusReportContent6#mmPOICapabilities
- * StatusReportContent6.mmPOICapabilities}</li>
+ * {@linkplain com.tools20022.repository.msg.PointOfInteraction8#mmCapabilities
+ * PointOfInteraction8.mmCapabilities}</li>
  * </ul>
  * </li>
  * <li>
@@ -139,8 +139,8 @@ import java.util.Optional;
  * <li>
  * {@linkplain com.tools20022.repository.msg.PointOfInteractionCapabilities7
  * PointOfInteractionCapabilities7}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PointOfInteraction7
- * PointOfInteraction7}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.PointOfInteraction8
+ * PointOfInteraction8}</li>
  * </ul>
  * </li>
  * <li>
@@ -540,11 +540,11 @@ public class PointOfInteraction extends System {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PointOfInteraction7#mmComponent
-	 * PointOfInteraction7.mmComponent}</li>
+	 * {@linkplain com.tools20022.repository.msg.StatusReportContent7#mmPOIComponent
+	 * StatusReportContent7.mmPOIComponent}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.StatusReportContent6#mmPOIComponent
-	 * StatusReportContent6.mmPOIComponent}</li>
+	 * {@linkplain com.tools20022.repository.msg.PointOfInteraction8#mmComponent
+	 * PointOfInteraction8.mmComponent}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -565,7 +565,7 @@ public class PointOfInteraction extends System {
 	 */
 	public static final MMBusinessAttribute<PointOfInteraction, POIComponentTypeCode> mmComponent = new MMBusinessAttribute<PointOfInteraction, POIComponentTypeCode>() {
 		{
-			derivation_lazy = () -> Arrays.asList(PointOfInteraction7.mmComponent, StatusReportContent6.mmPOIComponent);
+			derivation_lazy = () -> Arrays.asList(StatusReportContent7.mmPOIComponent, PointOfInteraction8.mmComponent);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PointOfInteraction.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -961,7 +961,7 @@ public class PointOfInteraction extends System {
 				name = "PointOfInteraction";
 				definition = "Point of interaction (POI) is the entry point to a card payment system. It could be a physical or logical card payment terminal containing software and hardware components, it could be a payment system including a set of card payment terminals linked to a local or remote server, or it could be just an interface to make payments as telephone or Internet browser.";
 				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.CardPaymentAcquiring.mmPointOfInteraction, TerminalManagementSystem.mmControlledPointOfInteraction);
-				derivationElement_lazy = () -> Arrays.asList(ATMCommandIdentification1.mmOrigin, PointOfInteraction7.mmCapabilities, StatusReportContent6.mmPOICapabilities);
+				derivationElement_lazy = () -> Arrays.asList(ATMCommandIdentification1.mmOrigin, StatusReportContent7.mmPOICapabilities, PointOfInteraction8.mmCapabilities);
 				superType_lazy = () -> System.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PointOfInteraction.mmCardPaymentAcquiring, com.tools20022.repository.entity.PointOfInteraction.mmCardReadingCapabilities,
 						com.tools20022.repository.entity.PointOfInteraction.mmCardholderVerificationCapabilities, com.tools20022.repository.entity.PointOfInteraction.mmOnLineCapabilities,
@@ -970,7 +970,7 @@ public class PointOfInteraction extends System {
 						com.tools20022.repository.entity.PointOfInteraction.mmNumberOfLines, com.tools20022.repository.entity.PointOfInteraction.mmErrorLog, com.tools20022.repository.entity.PointOfInteraction.mmComponentVersionNumber,
 						com.tools20022.repository.entity.PointOfInteraction.mmControllingTerminalManagementSystem);
 				derivationComponent_lazy = () -> Arrays.asList(PointOfInteractionComponentIdentification1.mmObject(), PointOfInteractionCapabilities4.mmObject(), ATMCommandIdentification1.mmObject(), CardAcceptorTerminal1.mmObject(),
-						PointOfInteractionCapabilities6.mmObject(), PointOfInteractionCapabilities7.mmObject(), PointOfInteraction7.mmObject());
+						PointOfInteractionCapabilities6.mmObject(), PointOfInteractionCapabilities7.mmObject(), PointOfInteraction8.mmObject());
 			}
 
 			@Override

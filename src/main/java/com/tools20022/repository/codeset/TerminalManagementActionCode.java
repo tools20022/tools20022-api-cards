@@ -82,8 +82,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * {@linkplain com.tools20022.repository.codeset.TerminalManagementAction3Code
  * TerminalManagementAction3Code}</li>
  * <li>
- * {@linkplain com.tools20022.repository.codeset.TerminalManagementAction2Code
- * TerminalManagementAction2Code}</li>
+ * {@linkplain com.tools20022.repository.codeset.TerminalManagementAction4Code
+ * TerminalManagementAction4Code}</li>
  * </ul>
  * </li>
  * <li>
@@ -500,7 +500,7 @@ public class TerminalManagementActionCode extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "TerminalManagementActionCode";
 				definition = "Types of terminal management action to be performed by a point of interaction.";
-				derivation_lazy = () -> Arrays.asList(TerminalManagementAction3Code.mmObject(), TerminalManagementAction2Code.mmObject());
+				derivation_lazy = () -> Arrays.asList(TerminalManagementAction3Code.mmObject(), TerminalManagementAction4Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.TerminalManagementActionCode.Activate, com.tools20022.repository.codeset.TerminalManagementActionCode.Deactivate,
 						com.tools20022.repository.codeset.TerminalManagementActionCode.Delete, com.tools20022.repository.codeset.TerminalManagementActionCode.Download, com.tools20022.repository.codeset.TerminalManagementActionCode.Install,
 						com.tools20022.repository.codeset.TerminalManagementActionCode.Restart, com.tools20022.repository.codeset.TerminalManagementActionCode.Upload, com.tools20022.repository.codeset.TerminalManagementActionCode.Update,

@@ -134,8 +134,8 @@ public class ObligationFulfilment {
 	 * {@linkplain com.tools20022.repository.msg.DetailedAmount14#mmDateTime
 	 * DetailedAmount14.mmDateTime}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TradeDelivery2#mmDeliveryDateTime
-	 * TradeDelivery2.mmDeliveryDateTime}</li>
+	 * {@linkplain com.tools20022.repository.msg.TradeDelivery3#mmDeliveryDateTime
+	 * TradeDelivery3.mmDeliveryDateTime}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -157,7 +157,7 @@ public class ObligationFulfilment {
 	public static final MMBusinessAttribute<ObligationFulfilment, ISODate> mmDate = new MMBusinessAttribute<ObligationFulfilment, ISODate>() {
 		{
 			derivation_lazy = () -> Arrays.asList(ATMAccountStatement2.mmTransactionDate, CardTransaction10.mmInitiatorTransactionDateTime, CardTransaction9.mmInitiatorTransactionDateTime, CardTransactionDetail2.mmValidityDate,
-					CardTransactionDetail1.mmValidityDate, CardTransactionDetail4.mmValidityDate, CardTransactionDetail3.mmValidityDate, DetailedAmount14.mmDateTime, TradeDelivery2.mmDeliveryDateTime);
+					CardTransactionDetail1.mmValidityDate, CardTransactionDetail4.mmValidityDate, CardTransactionDetail3.mmValidityDate, DetailedAmount14.mmDateTime, TradeDelivery3.mmDeliveryDateTime);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ObligationFulfilment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

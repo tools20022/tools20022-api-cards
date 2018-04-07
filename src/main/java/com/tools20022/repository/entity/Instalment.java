@@ -94,17 +94,11 @@ import java.util.Optional;
  * {@linkplain com.tools20022.repository.msg.CardTransactionDetail3#mmInstalment
  * CardTransactionDetail3.mmInstalment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails39#mmInstalment
- * CardPaymentTransactionDetails39.mmInstalment}</li>
+ * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails44#mmInstalment
+ * CardPaymentTransactionDetails44.mmInstalment}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails38#mmInstalment
- * CardPaymentTransactionDetails38.mmInstalment}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails41#mmInstalment
- * CardPaymentTransactionDetails41.mmInstalment}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails37#mmInstalment
- * CardPaymentTransactionDetails37.mmInstalment}</li>
+ * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails45#mmInstalment
+ * CardPaymentTransactionDetails45.mmInstalment}</li>
  * </ul>
  * </li>
  * <li>
@@ -655,8 +649,7 @@ public class Instalment extends PaymentObligation {
 				name = "Instalment";
 				definition = "Specifies the details of each successive payment in settlement of a debt or in an investment plan.";
 				associationDomain_lazy = () -> Arrays.asList(com.tools20022.repository.entity.InvestmentPlan.mmInstalment);
-				derivationElement_lazy = () -> Arrays.asList(CardTransactionDetail1.mmInstalment, CardTransactionDetail3.mmInstalment, CardPaymentTransactionDetails39.mmInstalment, CardPaymentTransactionDetails38.mmInstalment,
-						CardPaymentTransactionDetails41.mmInstalment, CardPaymentTransactionDetails37.mmInstalment);
+				derivationElement_lazy = () -> Arrays.asList(CardTransactionDetail1.mmInstalment, CardTransactionDetail3.mmInstalment, CardPaymentTransactionDetails44.mmInstalment, CardPaymentTransactionDetails45.mmInstalment);
 				superType_lazy = () -> PaymentObligation.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Instalment.mmInitialNumberOfInstalment, com.tools20022.repository.entity.Instalment.mmTotalNumberOfInstalment,
 						com.tools20022.repository.entity.Instalment.mmPeriodUnit, com.tools20022.repository.entity.Instalment.mmNumberOfUnits, com.tools20022.repository.entity.Instalment.mmSequenceIdentification,

@@ -23,6 +23,7 @@ import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.CommunicationAddress5;
+import com.tools20022.repository.msg.CommunicationAddress9;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -150,6 +151,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * <ul>
  * <li>{@linkplain com.tools20022.repository.msg.CommunicationAddress5
  * CommunicationAddress5}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CommunicationAddress9
+ * CommunicationAddress9}</li>
  * </ul>
  * </li>
  * <li>
@@ -1147,7 +1150,7 @@ public class ContactPoint {
 						ContactPoint.mmRelatedReportingService, ContactPoint.mmStoredDocument, ContactPoint.mmRemittanceRelatedPayment, ContactPoint.mmRelatedProxyAppointment, ContactPoint.mmContactPointForMeeting,
 						ContactPoint.mmContactPointForVote, ContactPoint.mmMainContact, ContactPoint.mmReturnAddress, ContactPoint.mmRelatedPayment, ContactPoint.mmTemporaryIndicator, ContactPoint.mmDeliveredAttendanceCard,
 						ContactPoint.mmInvestmentFundClassProcessing);
-				derivationComponent_lazy = () -> Arrays.asList(CommunicationAddress5.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(CommunicationAddress5.mmObject(), CommunicationAddress9.mmObject());
 			}
 
 			@Override

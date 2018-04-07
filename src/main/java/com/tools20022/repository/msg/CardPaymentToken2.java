@@ -60,17 +60,6 @@ import javax.xml.bind.annotation.XmlType;
  * "CardPaymentToken2"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Payment token information."</li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
- * nextVersions} =
- * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.CardPaymentToken3
- * CardPaymentToken3}</li>
- * </ul>
- * </li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} =
- * {@linkplain com.tools20022.repository.msg.CardPaymentToken1
- * CardPaymentToken1}</li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -158,14 +147,6 @@ public class CardPaymentToken2 {
 	 * definition} =
 	 * "Level of confidence resulting of the identification and authentication of the cardholder performed and the entity that performed it."
 	 * </li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
-	 * nextVersions} =
-	 * <ul>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentToken3#mmTokenAssuranceLevel
-	 * CardPaymentToken3.mmTokenAssuranceLevel}</li>
-	 * </ul>
-	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<CardPaymentToken2, Optional<Number>> mmTokenAssuranceLevel = new MMMessageAttribute<CardPaymentToken2, Optional<Number>>() {
@@ -176,7 +157,6 @@ public class CardPaymentToken2 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TokenAssuranceLevel";
 			definition = "Level of confidence resulting of the identification and authentication of the cardholder performed and the entity that performed it.";
-			nextVersions_lazy = () -> Arrays.asList(CardPaymentToken3.mmTokenAssuranceLevel);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
@@ -201,8 +181,6 @@ public class CardPaymentToken2 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPaymentToken2";
 				definition = "Payment token information.";
-				nextVersions_lazy = () -> Arrays.asList(CardPaymentToken3.mmObject());
-				previousVersion_lazy = () -> CardPaymentToken1.mmObject();
 			}
 		});
 		return mmObject_lazy.get();

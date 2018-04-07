@@ -30,7 +30,7 @@ import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.Commission18;
 import com.tools20022.repository.msg.Commission19;
-import com.tools20022.repository.msg.CurrencyConversion12;
+import com.tools20022.repository.msg.CurrencyConversion14;
 import com.tools20022.repository.msg.CurrencyConversion9;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
@@ -123,11 +123,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.repository.msg.CurrencyConversion9#mmMarkUpDetails
  * CurrencyConversion9.mmMarkUpDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CurrencyConversion12#mmCommissionDetails
- * CurrencyConversion12.mmCommissionDetails}</li>
+ * {@linkplain com.tools20022.repository.msg.CurrencyConversion14#mmCommissionDetails
+ * CurrencyConversion14.mmCommissionDetails}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CurrencyConversion12#mmMarkUpDetails
- * CurrencyConversion12.mmMarkUpDetails}</li>
+ * {@linkplain com.tools20022.repository.msg.CurrencyConversion14#mmMarkUpDetails
+ * CurrencyConversion14.mmMarkUpDetails}</li>
  * </ul>
  * </li>
  * <li>
@@ -962,7 +962,7 @@ public class Commission extends Adjustment {
 				associationDomain_lazy = () -> Arrays.asList(CashAccount.mmCommission, com.tools20022.repository.entity.Trade.mmTradeCommission, CommissionWaiver.mmCommission,
 						com.tools20022.repository.entity.CorporateActionFeesAndCharges.mmCommission, com.tools20022.repository.entity.Broker.mmCommission, com.tools20022.repository.entity.CommissionPartyRole.mmCommission,
 						SecuritiesQuoteVariable.mmCommission);
-				derivationElement_lazy = () -> Arrays.asList(CurrencyConversion9.mmCommissionDetails, CurrencyConversion9.mmMarkUpDetails, CurrencyConversion12.mmCommissionDetails, CurrencyConversion12.mmMarkUpDetails);
+				derivationElement_lazy = () -> Arrays.asList(CurrencyConversion9.mmCommissionDetails, CurrencyConversion9.mmMarkUpDetails, CurrencyConversion14.mmCommissionDetails, CurrencyConversion14.mmMarkUpDetails);
 				superType_lazy = () -> Adjustment.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Commission.mmCommissionWaiving, com.tools20022.repository.entity.Commission.mmTrade, com.tools20022.repository.entity.Commission.mmCommissionType,
 						com.tools20022.repository.entity.Commission.mmBasis, com.tools20022.repository.entity.Commission.mmCommercialAgreementReference, com.tools20022.repository.entity.Commission.mmCalculationDate,

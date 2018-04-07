@@ -73,6 +73,7 @@ import javax.xml.bind.annotation.XmlType;
  * nextVersions} =
  * <ul>
  * <li>{@linkplain com.tools20022.repository.msg.OnLinePIN5 OnLinePIN5}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.OnLinePIN6 OnLinePIN6}</li>
  * </ul>
  * </li>
  * </ul>
@@ -114,6 +115,9 @@ public class OnLinePIN4 {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.OnLinePIN5#mmEncryptedPINBlock
 	 * OnLinePIN5.mmEncryptedPINBlock}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OnLinePIN6#mmEncryptedPINBlock
+	 * OnLinePIN6.mmEncryptedPINBlock}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -126,7 +130,7 @@ public class OnLinePIN4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EncryptedPINBlock";
 			definition = "Encrypted PIN (Personal Identification Number).";
-			nextVersions_lazy = () -> Arrays.asList(OnLinePIN5.mmEncryptedPINBlock);
+			nextVersions_lazy = () -> Arrays.asList(OnLinePIN5.mmEncryptedPINBlock, OnLinePIN6.mmEncryptedPINBlock);
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
@@ -181,6 +185,8 @@ public class OnLinePIN4 {
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.repository.msg.OnLinePIN5#mmPINFormat
 	 * OnLinePIN5.mmPINFormat}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.OnLinePIN6#mmPINFormat
+	 * OnLinePIN6.mmPINFormat}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -194,7 +200,7 @@ public class OnLinePIN4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "PINFormat";
 			definition = "PIN (Personal Identification Number) format before encryption.";
-			nextVersions_lazy = () -> Arrays.asList(OnLinePIN5.mmPINFormat);
+			nextVersions_lazy = () -> Arrays.asList(OnLinePIN5.mmPINFormat, OnLinePIN6.mmPINFormat);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> PINFormat3Code.mmObject();
@@ -244,6 +250,9 @@ public class OnLinePIN4 {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.OnLinePIN5#mmAdditionalInput
 	 * OnLinePIN5.mmAdditionalInput}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.OnLinePIN6#mmAdditionalInput
+	 * OnLinePIN6.mmAdditionalInput}</li>
 	 * </ul>
 	 * </li>
 	 * </ul>
@@ -256,7 +265,7 @@ public class OnLinePIN4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AdditionalInput";
 			definition = "Additional information required to verify the PIN (Personal Identification Number).";
-			nextVersions_lazy = () -> Arrays.asList(OnLinePIN5.mmAdditionalInput);
+			nextVersions_lazy = () -> Arrays.asList(OnLinePIN5.mmAdditionalInput, OnLinePIN6.mmAdditionalInput);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
@@ -282,7 +291,7 @@ public class OnLinePIN4 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "OnLinePIN4";
 				definition = "Encrypted personal identification number (PIN) and related information.";
-				nextVersions_lazy = () -> Arrays.asList(OnLinePIN5.mmObject());
+				nextVersions_lazy = () -> Arrays.asList(OnLinePIN5.mmObject(), OnLinePIN6.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

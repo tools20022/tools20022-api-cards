@@ -19,9 +19,7 @@ package com.tools20022.repository.entity;
 
 import com.tools20022.metamodel.ext.OtherSemanticMarkup;
 import com.tools20022.metamodel.*;
-import com.tools20022.repository.choice.Party10Choice;
-import com.tools20022.repository.choice.Party9Choice;
-import com.tools20022.repository.choice.PartyIdentification72Choice;
+import com.tools20022.repository.choice.*;
 import com.tools20022.repository.codeset.PartyTypeCode;
 import com.tools20022.repository.codeset.TypeOfIdentificationCode;
 import com.tools20022.repository.datatype.LEIIdentifier;
@@ -117,8 +115,11 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.repository.msg.CardTransactionEnvironment5#mmSettlementInstitution
  * CardTransactionEnvironment5.mmSettlementInstitution}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.PartyIdentification112#mmIdentification
- * PartyIdentification112.mmIdentification}</li>
+ * {@linkplain com.tools20022.repository.choice.PartyIdentification100Choice#mmNameAndAddress
+ * PartyIdentification100Choice.mmNameAndAddress}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.msg.PartyIdentification129#mmIdentification
+ * PartyIdentification129.mmIdentification}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
@@ -141,12 +142,19 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.repository.msg.PartyIdentification42
  * PartyIdentification42}</li>
  * <li>{@linkplain com.tools20022.repository.choice.Party9Choice Party9Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.NameAndAddress6
+ * NameAndAddress6}</li>
  * <li>{@linkplain com.tools20022.repository.choice.PartyIdentification72Choice
  * PartyIdentification72Choice}</li>
  * <li>{@linkplain com.tools20022.repository.msg.CardTransactionEnvironment5
  * CardTransactionEnvironment5}</li>
- * <li>{@linkplain com.tools20022.repository.msg.PartyIdentification112
- * PartyIdentification112}</li>
+ * <li>
+ * {@linkplain com.tools20022.repository.choice.PartyIdentification100Choice
+ * PartyIdentification100Choice}</li>
+ * <li>{@linkplain com.tools20022.repository.choice.Party36Choice Party36Choice}
+ * </li>
+ * <li>{@linkplain com.tools20022.repository.msg.PartyIdentification129
+ * PartyIdentification129}</li>
  * </ul>
  * </li>
  * <li>
@@ -215,17 +223,14 @@ public class PartyIdentificationInformation {
 	 * <li>{@linkplain com.tools20022.repository.msg.Acquirer5#mmIdentification
 	 * Acquirer5.mmIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentEnvironment43#mmMerchantIdentification
-	 * CardPaymentEnvironment43.mmMerchantIdentification}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentEnvironment38#mmMerchantIdentification
-	 * CardPaymentEnvironment38.mmMerchantIdentification}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.AuthorisationResult8#mmAuthorisationEntity
 	 * AuthorisationResult8.mmAuthorisationEntity}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.AuthorisationResult7#mmAuthorisationEntity
 	 * AuthorisationResult7.mmAuthorisationEntity}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.PartyIdentification100Choice#mmProprietaryIdentification
+	 * PartyIdentification100Choice.mmProprietaryIdentification}</li>
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.AuthorisationResult12#mmAuthorisationEntity
 	 * AuthorisationResult12.mmAuthorisationEntity}</li>
@@ -236,29 +241,26 @@ public class PartyIdentificationInformation {
 	 * {@linkplain com.tools20022.repository.msg.AuthorisationResult10#mmAuthorisationEntity
 	 * AuthorisationResult10.mmAuthorisationEntity}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmOther
-	 * PersonIdentification11.mmOther}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.Organisation25#mmIdentification
-	 * Organisation25.mmIdentification}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.AuthorisationResult13#mmAuthorisationEntity
 	 * AuthorisationResult13.mmAuthorisationEntity}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentEnvironment64#mmMerchantIdentification
-	 * CardPaymentEnvironment64.mmMerchantIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentEnvironment71#mmMerchantIdentification
+	 * CardPaymentEnvironment71.mmMerchantIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentEnvironment65#mmMerchantIdentification
-	 * CardPaymentEnvironment65.mmMerchantIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentEnvironment69#mmMerchantIdentification
+	 * CardPaymentEnvironment69.mmMerchantIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentEnvironment67#mmMerchantIdentification
-	 * CardPaymentEnvironment67.mmMerchantIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PersonIdentification14#mmOther
+	 * PersonIdentification14.mmOther}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentEnvironment63#mmMerchantIdentification
-	 * CardPaymentEnvironment63.mmMerchantIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.Organisation32#mmIdentification
+	 * Organisation32.mmIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AcquirerProtocolParameters10#mmAcquirerIdentification
-	 * AcquirerProtocolParameters10.mmAcquirerIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.AcquirerProtocolParameters11#mmAcquirerIdentification
+	 * AcquirerProtocolParameters11.mmAcquirerIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PersonIdentification15#mmOther
+	 * PersonIdentification15.mmOther}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -282,10 +284,10 @@ public class PartyIdentificationInformation {
 	public static final MMBusinessAssociationEnd<PartyIdentificationInformation, GenericIdentification> mmOtherIdentification = new MMBusinessAssociationEnd<PartyIdentificationInformation, GenericIdentification>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PersonIdentification5.mmOther, ContactDetails2.mmOther, OrganisationIdentification7.mmOther, Organisation9.mmIdentification, PartyIdentification72Choice.mmProprietaryIdentification,
-					PersonIdentification7.mmOther, Acquirer4.mmIdentification, Acquirer5.mmIdentification, CardPaymentEnvironment43.mmMerchantIdentification, CardPaymentEnvironment38.mmMerchantIdentification,
-					AuthorisationResult8.mmAuthorisationEntity, AuthorisationResult7.mmAuthorisationEntity, AuthorisationResult12.mmAuthorisationEntity, AuthorisationResult11.mmAuthorisationEntity,
-					AuthorisationResult10.mmAuthorisationEntity, PersonIdentification11.mmOther, Organisation25.mmIdentification, AuthorisationResult13.mmAuthorisationEntity, CardPaymentEnvironment64.mmMerchantIdentification,
-					CardPaymentEnvironment65.mmMerchantIdentification, CardPaymentEnvironment67.mmMerchantIdentification, CardPaymentEnvironment63.mmMerchantIdentification, AcquirerProtocolParameters10.mmAcquirerIdentification);
+					PersonIdentification7.mmOther, Acquirer4.mmIdentification, Acquirer5.mmIdentification, AuthorisationResult8.mmAuthorisationEntity, AuthorisationResult7.mmAuthorisationEntity,
+					PartyIdentification100Choice.mmProprietaryIdentification, AuthorisationResult12.mmAuthorisationEntity, AuthorisationResult11.mmAuthorisationEntity, AuthorisationResult10.mmAuthorisationEntity,
+					AuthorisationResult13.mmAuthorisationEntity, CardPaymentEnvironment71.mmMerchantIdentification, CardPaymentEnvironment69.mmMerchantIdentification, PersonIdentification14.mmOther, Organisation32.mmIdentification,
+					AcquirerProtocolParameters11.mmAcquirerIdentification, PersonIdentification15.mmOther);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -388,8 +390,8 @@ public class PartyIdentificationInformation {
 	 * {@linkplain com.tools20022.repository.msg.PersonIdentification7#mmTaxIdentificationNumber
 	 * PersonIdentification7.mmTaxIdentificationNumber}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PersonIdentification11#mmTaxIdentificationNumber
-	 * PersonIdentification11.mmTaxIdentificationNumber}</li>
+	 * {@linkplain com.tools20022.repository.msg.PersonIdentification15#mmTaxIdentificationNumber
+	 * PersonIdentification15.mmTaxIdentificationNumber}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -410,7 +412,7 @@ public class PartyIdentificationInformation {
 	 */
 	public static final MMBusinessAttribute<PartyIdentificationInformation, Max35Text> mmTaxIdentificationNumber = new MMBusinessAttribute<PartyIdentificationInformation, Max35Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(TaxParty3.mmTaxIdentification, TaxParty3.mmRegistrationIdentification, PersonIdentification7.mmTaxIdentificationNumber, PersonIdentification11.mmTaxIdentificationNumber);
+			derivation_lazy = () -> Arrays.asList(TaxParty3.mmTaxIdentification, TaxParty3.mmRegistrationIdentification, PersonIdentification7.mmTaxIdentificationNumber, PersonIdentification15.mmTaxIdentificationNumber);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.PartyIdentificationInformation.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -867,7 +869,7 @@ public class PartyIdentificationInformation {
 				definition = "Unique and unambiguous way to identify a party";
 				associationDomain_lazy = () -> Arrays.asList(GenericIdentification.mmRelatedPartyIdentification, Party.mmIdentification, PartyName.mmPartyIdentification, DateTimePeriod.mmRelatedIdentification, Market.mmIdentification);
 				derivationElement_lazy = () -> Arrays.asList(PartyIdentification42.mmIdentification, CardTransactionEnvironment5.mmSendingInstitution, CardTransactionEnvironment5.mmReceivingInstitution,
-						CardTransactionEnvironment5.mmSettlementInstitution, PartyIdentification112.mmIdentification);
+						CardTransactionEnvironment5.mmSettlementInstitution, PartyIdentification100Choice.mmNameAndAddress, PartyIdentification129.mmIdentification);
 				subType_lazy = () -> Arrays.asList(OrganisationIdentification.mmObject(), PersonIdentification.mmObject());
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.PartyIdentificationInformation.mmOtherIdentification, com.tools20022.repository.entity.PartyIdentificationInformation.mmIdentifiedParty,
 						com.tools20022.repository.entity.PartyIdentificationInformation.mmTaxIdentificationNumber, com.tools20022.repository.entity.PartyIdentificationInformation.mmNationalRegistrationNumber,
@@ -875,8 +877,8 @@ public class PartyIdentificationInformation {
 						com.tools20022.repository.entity.PartyIdentificationInformation.mmPartyType, com.tools20022.repository.entity.PartyIdentificationInformation.mmPartyName,
 						com.tools20022.repository.entity.PartyIdentificationInformation.mmValidityPeriod, com.tools20022.repository.entity.PartyIdentificationInformation.mmIdentifiedMarket,
 						com.tools20022.repository.entity.PartyIdentificationInformation.mmLEI);
-				derivationComponent_lazy = () -> Arrays.asList(NameAndAddress3.mmObject(), Party10Choice.mmObject(), PartyIdentification42.mmObject(), Party9Choice.mmObject(), PartyIdentification72Choice.mmObject(),
-						CardTransactionEnvironment5.mmObject(), PartyIdentification112.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(NameAndAddress3.mmObject(), Party10Choice.mmObject(), PartyIdentification42.mmObject(), Party9Choice.mmObject(), NameAndAddress6.mmObject(),
+						PartyIdentification72Choice.mmObject(), CardTransactionEnvironment5.mmObject(), PartyIdentification100Choice.mmObject(), Party36Choice.mmObject(), PartyIdentification129.mmObject());
 			}
 
 			@Override

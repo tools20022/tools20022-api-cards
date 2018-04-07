@@ -21,10 +21,10 @@ import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.catm.CertificateManagementRequestV01;
-import com.tools20022.repository.area.catm.CertificateManagementResponseV01;
-import com.tools20022.repository.area.catm.MaintenanceDelegationRequestV03;
-import com.tools20022.repository.area.catm.MaintenanceDelegationResponseV02;
+import com.tools20022.repository.area.catm.CertificateManagementRequestV02;
+import com.tools20022.repository.area.catm.CertificateManagementResponseV02;
+import com.tools20022.repository.area.catm.MaintenanceDelegationRequestV04;
+import com.tools20022.repository.area.catm.MaintenanceDelegationResponseV03;
 import com.tools20022.repository.datatype.ISODateTime;
 import com.tools20022.repository.datatype.Max6Text;
 import com.tools20022.repository.datatype.Number;
@@ -67,17 +67,17 @@ import javax.xml.bind.annotation.XmlType;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.catm.MaintenanceDelegationResponseV02#mmHeader
- * MaintenanceDelegationResponseV02.mmHeader}</li>
+ * {@linkplain com.tools20022.repository.area.catm.MaintenanceDelegationRequestV04#mmHeader
+ * MaintenanceDelegationRequestV04.mmHeader}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.catm.CertificateManagementResponseV01#mmHeader
- * CertificateManagementResponseV01.mmHeader}</li>
+ * {@linkplain com.tools20022.repository.area.catm.CertificateManagementRequestV02#mmHeader
+ * CertificateManagementRequestV02.mmHeader}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.catm.CertificateManagementRequestV01#mmHeader
- * CertificateManagementRequestV01.mmHeader}</li>
+ * {@linkplain com.tools20022.repository.area.catm.CertificateManagementResponseV02#mmHeader
+ * CertificateManagementResponseV02.mmHeader}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.catm.MaintenanceDelegationRequestV03#mmHeader
- * MaintenanceDelegationRequestV03.mmHeader}</li>
+ * {@linkplain com.tools20022.repository.area.catm.MaintenanceDelegationResponseV03#mmHeader
+ * MaintenanceDelegationResponseV03.mmHeader}</li>
  * </ul>
  * </li>
  * <li>
@@ -368,7 +368,7 @@ public class Header29 {
 			{
 				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.Header29.mmProtocolVersion, com.tools20022.repository.msg.Header29.mmExchangeIdentification, com.tools20022.repository.msg.Header29.mmCreationDateTime,
 						com.tools20022.repository.msg.Header29.mmInitiatingParty, com.tools20022.repository.msg.Header29.mmRecipientParty);
-				messageBuildingBlock_lazy = () -> Arrays.asList(MaintenanceDelegationResponseV02.mmHeader, CertificateManagementResponseV01.mmHeader, CertificateManagementRequestV01.mmHeader, MaintenanceDelegationRequestV03.mmHeader);
+				messageBuildingBlock_lazy = () -> Arrays.asList(MaintenanceDelegationRequestV04.mmHeader, CertificateManagementRequestV02.mmHeader, CertificateManagementResponseV02.mmHeader, MaintenanceDelegationResponseV03.mmHeader);
 				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Header29";

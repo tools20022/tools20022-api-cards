@@ -20,6 +20,7 @@ package com.tools20022.repository.entity;
 import com.tools20022.metamodel.ext.FIXSynonym;
 import com.tools20022.metamodel.ext.ISO15022Synonym;
 import com.tools20022.metamodel.*;
+import com.tools20022.repository.choice.DateAndDateTime1Choice;
 import com.tools20022.repository.codeset.NettingEligibleCode;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.datatype.ISODateTime;
@@ -28,7 +29,7 @@ import com.tools20022.repository.datatype.YesNoIndicator;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.entity.System;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.CardPaymentInvoice2;
+import com.tools20022.repository.msg.CardPaymentInvoice3;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -146,6 +147,14 @@ import java.util.concurrent.atomic.AtomicReference;
  * </ul>
  * </li>
  * <li>
+ * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
+ * derivationComponent} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.choice.DateAndDateTime1Choice
+ * DateAndDateTime1Choice}</li>
+ * </ul>
+ * </li>
+ * <li>
  * {@linkplain com.tools20022.metamodel.MMTopLevelDictionaryEntry#getDataDictionary
  * dataDictionary} =
  * {@linkplain com.tools20022.repository.GeneratedRepository#dataDict
@@ -175,6 +184,17 @@ public class Trade {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} = {@linkplain com.tools20022.repository.datatype.ISODateTime
 	 * ISODateTime}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
+	 * derivation} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.DateAndDateTime1Choice#mmDate
+	 * DateAndDateTime1Choice.mmDate}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.choice.DateAndDateTime1Choice#mmDateTime
+	 * DateAndDateTime1Choice.mmDateTime}</li>
+	 * </ul>
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Trade
@@ -195,6 +215,7 @@ public class Trade {
 	 */
 	public static final MMBusinessAttribute<Trade, ISODateTime> mmTradeDateTime = new MMBusinessAttribute<Trade, ISODateTime>() {
 		{
+			derivation_lazy = () -> Arrays.asList(DateAndDateTime1Choice.mmDate, DateAndDateTime1Choice.mmDateTime);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			semanticMarkup_lazy = () -> Arrays.asList(new ISO15022Synonym(this, ":98a::TRAD"), new FIXSynonym(this, "75"));
@@ -812,8 +833,8 @@ public class Trade {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentInvoice2#mmTradeAgreement
-	 * CardPaymentInvoice2.mmTradeAgreement}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentInvoice3#mmTradeAgreement
+	 * CardPaymentInvoice3.mmTradeAgreement}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -833,7 +854,7 @@ public class Trade {
 	 */
 	public static final MMBusinessAssociationEnd<Trade, Optional<MasterAgreement>> mmGoverningDocument = new MMBusinessAssociationEnd<Trade, Optional<MasterAgreement>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CardPaymentInvoice2.mmTradeAgreement);
+			derivation_lazy = () -> Arrays.asList(CardPaymentInvoice3.mmTradeAgreement);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Trade.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -1430,6 +1451,7 @@ public class Trade {
 						com.tools20022.repository.entity.Trade.mmGoverningDocument, com.tools20022.repository.entity.Trade.mmStartDate, com.tools20022.repository.entity.Trade.mmSystem, com.tools20022.repository.entity.Trade.mmAsset,
 						com.tools20022.repository.entity.Trade.mmMarket, com.tools20022.repository.entity.Trade.mmGuarantee, com.tools20022.repository.entity.Trade.mmSettlement, com.tools20022.repository.entity.Trade.mmOrder,
 						com.tools20022.repository.entity.Trade.mmLeg, com.tools20022.repository.entity.Trade.mmFinancialTransaction, com.tools20022.repository.entity.Trade.mmReconciliation);
+				derivationComponent_lazy = () -> Arrays.asList(DateAndDateTime1Choice.mmObject());
 			}
 
 			@Override

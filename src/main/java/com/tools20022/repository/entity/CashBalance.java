@@ -24,7 +24,7 @@ import com.tools20022.repository.datatype.CurrencyAndAmount;
 import com.tools20022.repository.datatype.ISODate;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.CardPaymentTransaction67;
+import com.tools20022.repository.msg.CardPaymentTransaction84;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -292,8 +292,8 @@ public class CashBalance extends Balance {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction67#mmBalance
-	 * CardPaymentTransaction67.mmBalance}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction84#mmBalance
+	 * CardPaymentTransaction84.mmBalance}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -313,7 +313,7 @@ public class CashBalance extends Balance {
 	 */
 	public static final MMBusinessAttribute<CashBalance, CurrencyAndAmount> mmAmount = new MMBusinessAttribute<CashBalance, CurrencyAndAmount>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CardPaymentTransaction67.mmBalance);
+			derivation_lazy = () -> Arrays.asList(CardPaymentTransaction84.mmBalance);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.CashBalance.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

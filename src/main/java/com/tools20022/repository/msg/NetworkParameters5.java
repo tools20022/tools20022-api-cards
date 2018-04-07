@@ -81,10 +81,6 @@ import javax.xml.bind.annotation.XmlType;
  * "NetworkParameters5"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Parameters to communicate with a host."</li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} =
- * {@linkplain com.tools20022.repository.msg.NetworkParameters3
- * NetworkParameters3}</li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -118,11 +114,6 @@ public class NetworkParameters5 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Network addresses of the host."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.NetworkParameters3#mmAddress
-	 * NetworkParameters3.mmAddress}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<NetworkParameters5, List<NetworkParameters4>> mmAddress = new MMMessageAssociationEnd<NetworkParameters5, List<NetworkParameters4>>() {
@@ -133,7 +124,6 @@ public class NetworkParameters5 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Address";
 			definition = "Network addresses of the host.";
-			previousVersion_lazy = () -> NetworkParameters3.mmAddress;
 			minOccurs = 1;
 			isComposite = true;
 			type_lazy = () -> NetworkParameters4.mmObject();
@@ -181,11 +171,6 @@ public class NetworkParameters5 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "User name identifying the client."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.NetworkParameters3#mmUserName
-	 * NetworkParameters3.mmUserName}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<NetworkParameters5, Optional<Max35Text>> mmUserName = new MMMessageAttribute<NetworkParameters5, Optional<Max35Text>>() {
@@ -197,7 +182,6 @@ public class NetworkParameters5 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "UserName";
 			definition = "User name identifying the client.";
-			previousVersion_lazy = () -> NetworkParameters3.mmUserName;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
@@ -245,11 +229,6 @@ public class NetworkParameters5 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Password authenticating the client."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.NetworkParameters3#mmAccessCode
-	 * NetworkParameters3.mmAccessCode}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<NetworkParameters5, Optional<Max35Binary>> mmAccessCode = new MMMessageAttribute<NetworkParameters5, Optional<Max35Binary>>() {
@@ -261,7 +240,6 @@ public class NetworkParameters5 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AccessCode";
 			definition = "Password authenticating the client.";
-			previousVersion_lazy = () -> NetworkParameters3.mmAccessCode;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Binary.mmObject();
@@ -305,11 +283,6 @@ public class NetworkParameters5 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "X.509 Certificate required to authenticate the server."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.NetworkParameters3#mmServerCertificate
-	 * NetworkParameters3.mmServerCertificate}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<NetworkParameters5, List<Max10KBinary>> mmServerCertificate = new MMMessageAttribute<NetworkParameters5, List<Max10KBinary>>() {
@@ -320,7 +293,6 @@ public class NetworkParameters5 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ServerCertificate";
 			definition = "X.509 Certificate required to authenticate the server.";
-			previousVersion_lazy = () -> NetworkParameters3.mmServerCertificate;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max10KBinary.mmObject();
 		}
@@ -365,11 +337,6 @@ public class NetworkParameters5 {
 	 * definition} =
 	 * "Identification of the X.509 Certificates required to authenticate the server, for instance a digest of the certificate."
 	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.NetworkParameters3#mmServerCertificateIdentifier
-	 * NetworkParameters3.mmServerCertificateIdentifier}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<NetworkParameters5, List<Max140Binary>> mmServerCertificateIdentifier = new MMMessageAttribute<NetworkParameters5, List<Max140Binary>>() {
@@ -380,7 +347,6 @@ public class NetworkParameters5 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ServerCertificateIdentifier";
 			definition = "Identification of the X.509 Certificates required to authenticate the server, for instance a digest of the certificate.";
-			previousVersion_lazy = () -> NetworkParameters3.mmServerCertificateIdentifier;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max140Binary.mmObject();
 		}
@@ -512,7 +478,6 @@ public class NetworkParameters5 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NetworkParameters5";
 				definition = "Parameters to communicate with a host.";
-				previousVersion_lazy = () -> NetworkParameters3.mmObject();
 			}
 		});
 		return mmObject_lazy.get();

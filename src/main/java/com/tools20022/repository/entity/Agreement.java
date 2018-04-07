@@ -26,7 +26,8 @@ import com.tools20022.repository.entity.DateTimePeriod;
 import com.tools20022.repository.entity.Document;
 import com.tools20022.repository.entity.Jurisdiction;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.TradeAgreement13;
+import com.tools20022.repository.msg.MandateRelatedInformation13;
+import com.tools20022.repository.msg.TradeAgreement16;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -93,8 +94,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TradeAgreement13
- * TradeAgreement13}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TradeAgreement16
+ * TradeAgreement16}</li>
  * </ul>
  * </li>
  * <li>
@@ -125,6 +126,14 @@ public class Agreement {
 	 * {@linkplain com.tools20022.metamodel.MMBusinessAttribute#getSimpleType
 	 * simpleType} = {@linkplain com.tools20022.repository.datatype.ISODate
 	 * ISODate}</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
+	 * derivation} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.MandateRelatedInformation13#mmDateOfSignature
+	 * MandateRelatedInformation13.mmDateOfSignature}</li>
+	 * </ul>
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMBusinessElement#getElementContext
 	 * elementContext} = {@linkplain com.tools20022.repository.entity.Agreement
@@ -142,6 +151,7 @@ public class Agreement {
 	 */
 	public static final MMBusinessAttribute<Agreement, ISODate> mmDateSigned = new MMBusinessAttribute<Agreement, ISODate>() {
 		{
+			derivation_lazy = () -> Arrays.asList(MandateRelatedInformation13.mmDateOfSignature);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Agreement.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -499,7 +509,7 @@ public class Agreement {
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.Agreement.mmDateSigned, com.tools20022.repository.entity.Agreement.mmDescription, com.tools20022.repository.entity.Agreement.mmVersion,
 						com.tools20022.repository.entity.Agreement.mmValidityPeriod, com.tools20022.repository.entity.Agreement.mmDocument, com.tools20022.repository.entity.Agreement.mmTrade,
 						com.tools20022.repository.entity.Agreement.mmJurisdiction);
-				derivationComponent_lazy = () -> Arrays.asList(TradeAgreement13.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(TradeAgreement16.mmObject());
 			}
 
 			@Override

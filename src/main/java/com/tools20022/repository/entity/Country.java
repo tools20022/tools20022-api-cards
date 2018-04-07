@@ -225,13 +225,21 @@ public class Country {
 	 * Organisation9.mmCountryCode}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.CountryCodeAndName1#mmCode
 	 * CountryCodeAndName1.mmCode}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.PostalAddress2#mmCountry
+	 * PostalAddress2.mmCountry}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.PostalAddress17#mmCountry
 	 * PostalAddress17.mmCountry}</li>
 	 * <li>{@linkplain com.tools20022.repository.msg.PostalAddress18#mmCountry
 	 * PostalAddress18.mmCountry}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.PartyIdentification112#mmCountryOfResidence
-	 * PartyIdentification112.mmCountryOfResidence}</li>
+	 * {@linkplain com.tools20022.repository.msg.DateAndPlaceOfBirth1#mmCountryOfBirth
+	 * DateAndPlaceOfBirth1.mmCountryOfBirth}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PostalAddress22#mmCountryCode
+	 * PostalAddress22.mmCountryCode}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.PartyIdentification129#mmCountryOfResidence
+	 * PartyIdentification129.mmCountryOfResidence}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -252,7 +260,8 @@ public class Country {
 	public static final MMBusinessAttribute<Country, CountryCode> mmCode = new MMBusinessAttribute<Country, CountryCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(PostalAddress1.mmCountry, PostalAddress6.mmCountry, DateAndPlaceOfBirth.mmCountryOfBirth, PartyIdentification42.mmCountryOfResidence, Organisation9.mmCountryCode,
-					CountryCodeAndName1.mmCode, PostalAddress17.mmCountry, PostalAddress18.mmCountry, PartyIdentification112.mmCountryOfResidence);
+					CountryCodeAndName1.mmCode, PostalAddress2.mmCountry, PostalAddress17.mmCountry, PostalAddress18.mmCountry, DateAndPlaceOfBirth1.mmCountryOfBirth, PostalAddress22.mmCountryCode,
+					PartyIdentification129.mmCountryOfResidence);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.Country.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

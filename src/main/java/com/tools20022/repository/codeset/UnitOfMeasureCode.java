@@ -278,6 +278,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * <ul>
  * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure6Code
  * UnitOfMeasure6Code}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.UnitOfMeasure9Code
+ * UnitOfMeasure9Code}</li>
  * </ul>
  * </li>
  * <li>
@@ -3163,7 +3165,7 @@ public class UnitOfMeasureCode extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "UnitOfMeasureCode";
 				definition = "Identifies the unit of measure by means of a code.";
-				derivation_lazy = () -> Arrays.asList(UnitOfMeasure6Code.mmObject());
+				derivation_lazy = () -> Arrays.asList(UnitOfMeasure6Code.mmObject(), UnitOfMeasure9Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.UnitOfMeasureCode.Kilogram, com.tools20022.repository.codeset.UnitOfMeasureCode.Piece, com.tools20022.repository.codeset.UnitOfMeasureCode.Ton,
 						com.tools20022.repository.codeset.UnitOfMeasureCode.Metre, com.tools20022.repository.codeset.UnitOfMeasureCode.Inch, com.tools20022.repository.codeset.UnitOfMeasureCode.Yard,
 						com.tools20022.repository.codeset.UnitOfMeasureCode.GBGallon, com.tools20022.repository.codeset.UnitOfMeasureCode.Gram, com.tools20022.repository.codeset.UnitOfMeasureCode.Centimetre,

@@ -70,6 +70,12 @@ import javax.xml.bind.annotation.XmlType;
  * "Signer3"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Entity who has signed the data and its digital signature."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.Signer4 Signer4}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -104,6 +110,13 @@ public class Signer3 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Version of the Cryptographic Message Syntax (CMS) data structure."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.Signer4#mmVersion
+	 * Signer4.mmVersion}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<Signer3, Optional<Number>> mmVersion = new MMMessageAttribute<Signer3, Optional<Number>>() {
@@ -114,6 +127,7 @@ public class Signer3 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Version";
 			definition = "Version of the Cryptographic Message Syntax (CMS) data structure.";
+			nextVersions_lazy = () -> Arrays.asList(Signer4.mmVersion);
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
@@ -154,6 +168,14 @@ public class Signer3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Identification of the entity who has signed the data."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Signer4#mmSignerIdentification
+	 * Signer4.mmSignerIdentification}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<Signer3, Optional<Recipient5Choice>> mmSignerIdentification = new MMMessageAssociationEnd<Signer3, Optional<Recipient5Choice>>() {
@@ -164,6 +186,7 @@ public class Signer3 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SignerIdentification";
 			definition = "Identification of the entity who has signed the data.";
+			nextVersions_lazy = () -> Arrays.asList(Signer4.mmSignerIdentification);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
@@ -207,6 +230,13 @@ public class Signer3 {
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} =
 	 * "Identification of a digest algorithm to apply before signature."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.Signer4#mmDigestAlgorithm
+	 * Signer4.mmDigestAlgorithm}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<Signer3, AlgorithmIdentification16> mmDigestAlgorithm = new MMMessageAssociationEnd<Signer3, AlgorithmIdentification16>() {
@@ -217,6 +247,7 @@ public class Signer3 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "DigestAlgorithm";
 			definition = "Identification of a digest algorithm to apply before signature.";
+			nextVersions_lazy = () -> Arrays.asList(Signer4.mmDigestAlgorithm);
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
@@ -259,6 +290,14 @@ public class Signer3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Cryptographic digital signature algorithm."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.Signer4#mmSignatureAlgorithm
+	 * Signer4.mmSignatureAlgorithm}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<Signer3, AlgorithmIdentification17> mmSignatureAlgorithm = new MMMessageAssociationEnd<Signer3, AlgorithmIdentification17>() {
@@ -269,6 +308,7 @@ public class Signer3 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SignatureAlgorithm";
 			definition = "Cryptographic digital signature algorithm.";
+			nextVersions_lazy = () -> Arrays.asList(Signer4.mmSignatureAlgorithm);
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
@@ -312,6 +352,13 @@ public class Signer3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Digital signature."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.repository.msg.Signer4#mmSignature
+	 * Signer4.mmSignature}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<Signer3, Max3000Binary> mmSignature = new MMMessageAttribute<Signer3, Max3000Binary>() {
@@ -322,6 +369,7 @@ public class Signer3 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Signature";
 			definition = "Digital signature.";
+			nextVersions_lazy = () -> Arrays.asList(Signer4.mmSignature);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max3000Binary.mmObject();
@@ -347,6 +395,7 @@ public class Signer3 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "Signer3";
 				definition = "Entity who has signed the data and its digital signature.";
+				nextVersions_lazy = () -> Arrays.asList(Signer4.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

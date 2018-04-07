@@ -66,6 +66,13 @@ import javax.xml.bind.annotation.XmlType;
  * definition} =
  * "Cryptographic algorithm and parameters for the protection of the transported key."
  * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.AlgorithmIdentification23
+ * AlgorithmIdentification23}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -101,6 +108,14 @@ public class AlgorithmIdentification13 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Identification of the algorithm."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AlgorithmIdentification23#mmAlgorithm
+	 * AlgorithmIdentification23.mmAlgorithm}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<AlgorithmIdentification13, Algorithm13Code> mmAlgorithm = new MMMessageAttribute<AlgorithmIdentification13, Algorithm13Code>() {
@@ -111,6 +126,7 @@ public class AlgorithmIdentification13 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Algorithm";
 			definition = "Identification of the algorithm.";
+			nextVersions_lazy = () -> Arrays.asList(AlgorithmIdentification23.mmAlgorithm);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Algorithm13Code.mmObject();
@@ -151,6 +167,14 @@ public class AlgorithmIdentification13 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Parameters associated to the encryption algorithm."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AlgorithmIdentification23#mmParameter
+	 * AlgorithmIdentification23.mmParameter}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<AlgorithmIdentification13, Optional<Parameter6>> mmParameter = new MMMessageAssociationEnd<AlgorithmIdentification13, Optional<Parameter6>>() {
@@ -161,6 +185,7 @@ public class AlgorithmIdentification13 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Parameter";
 			definition = "Parameters associated to the encryption algorithm.";
+			nextVersions_lazy = () -> Arrays.asList(AlgorithmIdentification23.mmParameter);
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
@@ -186,6 +211,7 @@ public class AlgorithmIdentification13 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "AlgorithmIdentification13";
 				definition = "Cryptographic algorithm and parameters for the protection of the transported key.";
+				nextVersions_lazy = () -> Arrays.asList(AlgorithmIdentification23.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

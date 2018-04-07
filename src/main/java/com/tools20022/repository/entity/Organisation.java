@@ -132,8 +132,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * derivationElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.TradeParty3#mmLegalOrganisation
- * TradeParty3.mmLegalOrganisation}</li>
+ * {@linkplain com.tools20022.repository.msg.TradeParty4#mmLegalOrganisation
+ * TradeParty4.mmLegalOrganisation}</li>
  * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMBusinessComponent#getSubType
@@ -155,8 +155,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * LegalOrganisation1}</li>
  * <li>{@linkplain com.tools20022.repository.msg.Organisation18 Organisation18}</li>
  * <li>{@linkplain com.tools20022.repository.msg.Organisation19 Organisation19}</li>
- * <li>{@linkplain com.tools20022.repository.msg.Organisation25 Organisation25}</li>
  * <li>{@linkplain com.tools20022.repository.msg.Organisation26 Organisation26}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Organisation32 Organisation32}</li>
  * </ul>
  * </li>
  * <li>
@@ -1133,14 +1133,14 @@ public class Organisation extends Party {
 						com.tools20022.repository.entity.Location.mmOperatingOrganisation, com.tools20022.repository.entity.Location.mmRegisteredOrganisation,
 						com.tools20022.repository.entity.SecuritiesModification.mmNewOrganisationInformation, com.tools20022.repository.entity.Sector.mmOrganisation, com.tools20022.repository.entity.RepresentativeOfficer.mmOrganisation,
 						BuyOrSellIndicationOfInterest.mmOrganisations, OrganisationStrategy.mmOrganisation, com.tools20022.repository.entity.OrganisationHierarchy.mmOrganisation);
-				derivationElement_lazy = () -> Arrays.asList(TradeParty3.mmLegalOrganisation);
+				derivationElement_lazy = () -> Arrays.asList(TradeParty4.mmLegalOrganisation);
 				subType_lazy = () -> Arrays.asList(FinancialInstitution.mmObject());
 				superType_lazy = () -> Party.mmObject();
 				element_lazy = () -> Arrays.asList(Organisation.mmPurpose, Organisation.mmRegistrationDate, Organisation.mmOrganisationIdentification, Organisation.mmParentOrganisation, Organisation.mmBranch,
 						Organisation.mmSecuritiesModification, Organisation.mmPlaceOfOperation, Organisation.mmPlaceOfRegistration, Organisation.mmDescription, Organisation.mmLegalStructure, Organisation.mmSector,
 						Organisation.mmRelatedIndicationOfInterest, Organisation.mmStrategy, Organisation.mmOrganisationHierarchy, Organisation.mmRepresentativeOfficer, Organisation.mmEstablishmentDate);
 				derivationComponent_lazy = () -> Arrays.asList(BranchAndFinancialInstitutionIdentification5.mmObject(), Organisation9.mmObject(), LegalOrganisation1.mmObject(), Organisation18.mmObject(), Organisation19.mmObject(),
-						Organisation25.mmObject(), Organisation26.mmObject());
+						Organisation26.mmObject(), Organisation32.mmObject());
 			}
 
 			@Override

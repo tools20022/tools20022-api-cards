@@ -23,7 +23,7 @@ import com.tools20022.repository.datatype.Number;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.entity.System;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.Period1;
+import com.tools20022.repository.msg.Period14;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -440,7 +440,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.Period1 Period1}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.Period14 Period14}</li>
  * </ul>
  * </li>
  * <li>
@@ -475,8 +475,8 @@ public class DateTimePeriod {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.Period1#mmStartDate
-	 * Period1.mmStartDate}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Period14#mmStartDate
+	 * Period14.mmStartDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -497,7 +497,7 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAttribute<DateTimePeriod, ISODateTime> mmFromDateTime = new MMBusinessAttribute<DateTimePeriod, ISODateTime>() {
 		{
-			derivation_lazy = () -> Arrays.asList(Period1.mmStartDate);
+			derivation_lazy = () -> Arrays.asList(Period14.mmStartDate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -531,8 +531,8 @@ public class DateTimePeriod {
 	 * <li>{@linkplain com.tools20022.metamodel.MMBusinessElement#getDerivation
 	 * derivation} =
 	 * <ul>
-	 * <li>{@linkplain com.tools20022.repository.msg.Period1#mmEndDate
-	 * Period1.mmEndDate}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.Period14#mmEndDate
+	 * Period14.mmEndDate}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -553,7 +553,7 @@ public class DateTimePeriod {
 	 */
 	public static final MMBusinessAttribute<DateTimePeriod, ISODateTime> mmToDateTime = new MMBusinessAttribute<DateTimePeriod, ISODateTime>() {
 		{
-			derivation_lazy = () -> Arrays.asList(Period1.mmEndDate);
+			derivation_lazy = () -> Arrays.asList(Period14.mmEndDate);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.DateTimePeriod.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -4618,7 +4618,7 @@ public class DateTimePeriod {
 						com.tools20022.repository.entity.DateTimePeriod.mmRelatedSecuritiesRegistration, com.tools20022.repository.entity.DateTimePeriod.mmAmount, com.tools20022.repository.entity.DateTimePeriod.mmRelatedInvestmentPlan,
 						com.tools20022.repository.entity.DateTimePeriod.mmIssuance, com.tools20022.repository.entity.DateTimePeriod.mmRelatedPaymentTerms, com.tools20022.repository.entity.DateTimePeriod.mmPercentage,
 						com.tools20022.repository.entity.DateTimePeriod.mmRelatedRolePlayer, com.tools20022.repository.entity.DateTimePeriod.mmRelatedSystemAvailability);
-				derivationComponent_lazy = () -> Arrays.asList(Period1.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(Period14.mmObject());
 			}
 
 			@Override

@@ -379,14 +379,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  * MessageFunction8Code}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MessageFunction9Code
  * MessageFunction9Code}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.MessageFunction10Code
- * MessageFunction10Code}</li>
  * <li>{@linkplain com.tools20022.repository.codeset.MessageFunction11Code
  * MessageFunction11Code}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.MessageFunction12Code
- * MessageFunction12Code}</li>
- * <li>{@linkplain com.tools20022.repository.codeset.MessageFunction13Code
- * MessageFunction13Code}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.MessageFunction14Code
+ * MessageFunction14Code}</li>
+ * <li>{@linkplain com.tools20022.repository.codeset.MessageFunction15Code
+ * MessageFunction15Code}</li>
  * </ul>
  * </li>
  * <li>
@@ -3779,8 +3777,8 @@ public class MessageFunctionCode extends MMCode {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MessageFunctionCode";
 				definition = "Type of process related to a specific message.";
-				derivation_lazy = () -> Arrays.asList(MessageFunction6Code.mmObject(), MessageFunction7Code.mmObject(), MessageFunction8Code.mmObject(), MessageFunction9Code.mmObject(), MessageFunction10Code.mmObject(),
-						MessageFunction11Code.mmObject(), MessageFunction12Code.mmObject(), MessageFunction13Code.mmObject());
+				derivation_lazy = () -> Arrays.asList(MessageFunction6Code.mmObject(), MessageFunction7Code.mmObject(), MessageFunction8Code.mmObject(), MessageFunction9Code.mmObject(), MessageFunction11Code.mmObject(),
+						MessageFunction14Code.mmObject(), MessageFunction15Code.mmObject());
 				code_lazy = () -> Arrays.asList(com.tools20022.repository.codeset.MessageFunctionCode.AuthorisationRequest, com.tools20022.repository.codeset.MessageFunctionCode.AuthorisationResponse,
 						com.tools20022.repository.codeset.MessageFunctionCode.FinancialAuthorisationRequest, com.tools20022.repository.codeset.MessageFunctionCode.FinancialAuthorisationResponse,
 						com.tools20022.repository.codeset.MessageFunctionCode.CompletionAdvice, com.tools20022.repository.codeset.MessageFunctionCode.CompletionAdviceResponse,

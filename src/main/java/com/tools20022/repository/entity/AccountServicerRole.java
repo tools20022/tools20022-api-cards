@@ -61,6 +61,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * CardAccount7.mmServicer}</li>
  * <li>{@linkplain com.tools20022.repository.msg.CardAccount12#mmServicer
  * CardAccount12.mmServicer}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CardAccount14#mmServicer
+ * CardAccount14.mmServicer}</li>
  * </ul>
  * </li>
  * <li>
@@ -92,7 +94,7 @@ public class AccountServicerRole extends AccountPartyRole {
 				name = "AccountServicerRole";
 				definition = "Party that manages the account on behalf of the account owner, that is manages the registration and booking of entries on the account, calculates balances on the account and provides information about the account.";
 				derivationElement_lazy = () -> Arrays.asList(CardAccount1.mmServicer, CardAccount2.mmServicer, CardAccount10.mmServicer, CardAccount9.mmServicer, CardAccount8.mmServicer, CardAccount11.mmServicer, CardAccount13.mmServicer,
-						CardAccount7.mmServicer, CardAccount12.mmServicer);
+						CardAccount7.mmServicer, CardAccount12.mmServicer, CardAccount14.mmServicer);
 				superType_lazy = () -> AccountPartyRole.mmObject();
 			}
 

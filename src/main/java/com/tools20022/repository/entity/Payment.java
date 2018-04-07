@@ -287,23 +287,20 @@ public class Payment extends ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.AutomatedTellerMachine10#mmBaseCurrency
 	 * AutomatedTellerMachine10.mmBaseCurrency}</li>
+	 * <li>{@linkplain com.tools20022.repository.msg.CommonData7#mmCurrency
+	 * CommonData7.mmCurrency}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails39#mmCurrency
-	 * CardPaymentTransactionDetails39.mmCurrency}</li>
+	 * {@linkplain com.tools20022.repository.msg.AmountAndDirection93#mmCurrency
+	 * AmountAndDirection93.mmCurrency}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails38#mmCurrency
-	 * CardPaymentTransactionDetails38.mmCurrency}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails44#mmCurrency
+	 * CardPaymentTransactionDetails44.mmCurrency}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails41#mmCurrency
-	 * CardPaymentTransactionDetails41.mmCurrency}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails45#mmCurrency
+	 * CardPaymentTransactionDetails45.mmCurrency}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails37#mmCurrency
-	 * CardPaymentTransactionDetails37.mmCurrency}</li>
-	 * <li>{@linkplain com.tools20022.repository.msg.CommonData6#mmCurrency
-	 * CommonData6.mmCurrency}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails40#mmCurrency
-	 * CardPaymentTransactionDetails40.mmCurrency}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails46#mmCurrency
+	 * CardPaymentTransactionDetails46.mmCurrency}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -326,8 +323,8 @@ public class Payment extends ObligationFulfilment {
 	public static final MMBusinessAttribute<Payment, CurrencyCode> mmCurrencyOfTransfer = new MMBusinessAttribute<Payment, CurrencyCode>() {
 		{
 			derivation_lazy = () -> Arrays.asList(CardPaymentTransactionDetails32.mmCurrency, CardPaymentTransactionDetails28.mmCurrency, CardPaymentTransactionDetails35.mmCurrency, CardPaymentTransactionDetails34.mmCurrency,
-					AutomatedTellerMachine10.mmBaseCurrency, CardPaymentTransactionDetails39.mmCurrency, CardPaymentTransactionDetails38.mmCurrency, CardPaymentTransactionDetails41.mmCurrency, CardPaymentTransactionDetails37.mmCurrency,
-					CommonData6.mmCurrency, CardPaymentTransactionDetails40.mmCurrency);
+					AutomatedTellerMachine10.mmBaseCurrency, CommonData7.mmCurrency, AmountAndDirection93.mmCurrency, CardPaymentTransactionDetails44.mmCurrency, CardPaymentTransactionDetails45.mmCurrency,
+					CardPaymentTransactionDetails46.mmCurrency);
 			isDerived = false;
 			elementContext_lazy = () -> Payment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -491,20 +488,14 @@ public class Payment extends ObligationFulfilment {
 	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails34#mmTotalAmount
 	 * CardPaymentTransactionDetails34.mmTotalAmount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails39#mmTotalAmount
-	 * CardPaymentTransactionDetails39.mmTotalAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails44#mmTotalAmount
+	 * CardPaymentTransactionDetails44.mmTotalAmount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails38#mmTotalAmount
-	 * CardPaymentTransactionDetails38.mmTotalAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails45#mmTotalAmount
+	 * CardPaymentTransactionDetails45.mmTotalAmount}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails41#mmTotalAmount
-	 * CardPaymentTransactionDetails41.mmTotalAmount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails37#mmTotalAmount
-	 * CardPaymentTransactionDetails37.mmTotalAmount}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails40#mmTotalAmount
-	 * CardPaymentTransactionDetails40.mmTotalAmount}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails46#mmTotalAmount
+	 * CardPaymentTransactionDetails46.mmTotalAmount}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -528,8 +519,7 @@ public class Payment extends ObligationFulfilment {
 		{
 			derivation_lazy = () -> Arrays.asList(CardTransactionDetail5.mmTransactionAmounts, CardTransactionDetail1.mmTransactionAmounts, CardTransactionDetail6.mmTransactionAmounts, CardTransactionDetail3.mmTransactionAmounts,
 					CardPaymentTransactionDetails32.mmTotalAmount, CardPaymentTransactionDetails28.mmTotalAmount, CardPaymentTransactionDetails35.mmTotalAmount, CardPaymentTransactionDetails34.mmTotalAmount,
-					CardPaymentTransactionDetails39.mmTotalAmount, CardPaymentTransactionDetails38.mmTotalAmount, CardPaymentTransactionDetails41.mmTotalAmount, CardPaymentTransactionDetails37.mmTotalAmount,
-					CardPaymentTransactionDetails40.mmTotalAmount);
+					CardPaymentTransactionDetails44.mmTotalAmount, CardPaymentTransactionDetails45.mmTotalAmount, CardPaymentTransactionDetails46.mmTotalAmount);
 			isDerived = false;
 			elementContext_lazy = () -> Payment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -1045,26 +1035,20 @@ public class Payment extends ObligationFulfilment {
 	 * {@linkplain com.tools20022.repository.msg.DetailedAmount17#mmCurrency
 	 * DetailedAmount17.mmCurrency}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AcceptorCurrencyConversionResponse4#mmCurrencyConversionResult
-	 * AcceptorCurrencyConversionResponse4.mmCurrencyConversionResult}</li>
+	 * {@linkplain com.tools20022.repository.msg.AcceptorCurrencyConversionResponse5#mmCurrencyConversionResult
+	 * AcceptorCurrencyConversionResponse5.mmCurrencyConversionResult}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails38#mmCurrencyConversionResult
-	 * CardPaymentTransactionDetails38.mmCurrencyConversionResult}</li>
+	 * {@linkplain com.tools20022.repository.msg.AcceptorCurrencyConversionAdvice2#mmCurrencyConversionResult
+	 * AcceptorCurrencyConversionAdvice2.mmCurrencyConversionResult}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails41#mmCurrencyConversionResult
-	 * CardPaymentTransactionDetails41.mmCurrencyConversionResult}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction84#mmCurrencyConversionEligibility
+	 * CardPaymentTransaction84.mmCurrencyConversionEligibility}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction67#mmCurrencyConversionEligibility
-	 * CardPaymentTransaction67.mmCurrencyConversionEligibility}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails44#mmCurrencyConversionResult
+	 * CardPaymentTransactionDetails44.mmCurrencyConversionResult}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction73#mmCurrencyConversion
-	 * CardPaymentTransaction73.mmCurrencyConversion}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransactionDetails37#mmCurrencyConversionResult
-	 * CardPaymentTransactionDetails37.mmCurrencyConversionResult}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AcceptorCurrencyConversionAdvice1#mmCurrencyConversionResult
-	 * AcceptorCurrencyConversionAdvice1.mmCurrencyConversionResult}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction86#mmCurrencyConversion
+	 * CardPaymentTransaction86.mmCurrencyConversion}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -1087,9 +1071,9 @@ public class Payment extends ObligationFulfilment {
 		{
 			derivation_lazy = () -> Arrays.asList(ATMAccountStatement2.mmCurrency, AmountAndCurrency1.mmCurrency, DetailedAmount12.mmCurrency, ATMTransaction8.mmCurrency, DetailedAmount13.mmCurrency,
 					ATMTransaction14.mmCurrencyConversionEligibility, ATMTransaction17.mmCurrencyConversionResult, DetailedAmount18.mmCurrency, ATMTransaction13.mmCurrencyConversionResult, DetailedAmount16.mmCurrency,
-					ATMTransaction21.mmCurrencyConversion, ATMTransaction21.mmCurrencyExchange, DetailedAmount17.mmCurrency, AcceptorCurrencyConversionResponse4.mmCurrencyConversionResult,
-					CardPaymentTransactionDetails38.mmCurrencyConversionResult, CardPaymentTransactionDetails41.mmCurrencyConversionResult, CardPaymentTransaction67.mmCurrencyConversionEligibility,
-					CardPaymentTransaction73.mmCurrencyConversion, CardPaymentTransactionDetails37.mmCurrencyConversionResult, AcceptorCurrencyConversionAdvice1.mmCurrencyConversionResult);
+					ATMTransaction21.mmCurrencyConversion, ATMTransaction21.mmCurrencyExchange, DetailedAmount17.mmCurrency, AcceptorCurrencyConversionResponse5.mmCurrencyConversionResult,
+					AcceptorCurrencyConversionAdvice2.mmCurrencyConversionResult, CardPaymentTransaction84.mmCurrencyConversionEligibility, CardPaymentTransactionDetails44.mmCurrencyConversionResult,
+					CardPaymentTransaction86.mmCurrencyConversion);
 			isDerived = false;
 			elementContext_lazy = () -> Payment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -2121,6 +2105,18 @@ public class Payment extends ObligationFulfilment {
 	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.ATMTransaction29#mmAccountData
 	 * ATMTransaction29.mmAccountData}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction81#mmAccountFrom
+	 * CardPaymentTransaction81.mmAccountFrom}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction81#mmAccountTo
+	 * CardPaymentTransaction81.mmAccountTo}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction80#mmAccountFrom
+	 * CardPaymentTransaction80.mmAccountFrom}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction80#mmAccountTo
+	 * CardPaymentTransaction80.mmAccountTo}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -2142,7 +2138,8 @@ public class Payment extends ObligationFulfilment {
 		{
 			derivation_lazy = () -> Arrays.asList(CardTransactionDetail1.mmAccountFrom, CardTransactionDetail1.mmAccountTo, CardTransactionDetail3.mmAccountFrom, CardTransactionDetail3.mmAccountTo, ATMTransaction14.mmAccountData,
 					ATMTransaction17.mmAccountData, ATMTransaction13.mmAccountData, ATMTransaction16.mmAccountData, ATMTransaction19.mmAccountData, ATMTransaction15.mmAccountData, ATMTransaction21.mmAccountInformation,
-					ATMTransaction24.mmAccountFrom, ATMTransaction23.mmAccountFrom, ATMTransaction29.mmAccountData);
+					ATMTransaction24.mmAccountFrom, ATMTransaction23.mmAccountFrom, ATMTransaction29.mmAccountData, CardPaymentTransaction81.mmAccountFrom, CardPaymentTransaction81.mmAccountTo, CardPaymentTransaction80.mmAccountFrom,
+					CardPaymentTransaction80.mmAccountTo);
 			isDerived = false;
 			elementContext_lazy = () -> Payment.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

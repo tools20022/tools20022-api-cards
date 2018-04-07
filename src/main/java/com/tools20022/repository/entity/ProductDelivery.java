@@ -23,7 +23,7 @@ import com.tools20022.metamodel.MMBusinessComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
 import com.tools20022.repository.entity.*;
 import com.tools20022.repository.GeneratedRepository;
-import com.tools20022.repository.msg.TradeDelivery2;
+import com.tools20022.repository.msg.TradeDelivery3;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -93,7 +93,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * {@linkplain com.tools20022.metamodel.MMBusinessComponent#getDerivationComponent
  * derivationComponent} =
  * <ul>
- * <li>{@linkplain com.tools20022.repository.msg.TradeDelivery2 TradeDelivery2}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.TradeDelivery3 TradeDelivery3}</li>
  * </ul>
  * </li>
  * <li>
@@ -137,8 +137,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TradeDelivery2#mmDeliveryPeriod
-	 * TradeDelivery2.mmDeliveryPeriod}</li>
+	 * {@linkplain com.tools20022.repository.msg.TradeDelivery3#mmDeliveryPeriod
+	 * TradeDelivery3.mmDeliveryPeriod}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -159,7 +159,7 @@ public class ProductDelivery extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd<ProductDelivery, DateTimePeriod> mmDeliveryPeriod = new MMBusinessAssociationEnd<ProductDelivery, DateTimePeriod>() {
 		{
-			derivation_lazy = () -> Arrays.asList(TradeDelivery2.mmDeliveryPeriod);
+			derivation_lazy = () -> Arrays.asList(TradeDelivery3.mmDeliveryPeriod);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -204,8 +204,8 @@ public class ProductDelivery extends ObligationFulfilment {
 	 * derivation} =
 	 * <ul>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.TradeDelivery2#mmConsignment
-	 * TradeDelivery2.mmConsignment}</li>
+	 * {@linkplain com.tools20022.repository.msg.TradeDelivery3#mmConsignment
+	 * TradeDelivery3.mmConsignment}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -226,7 +226,7 @@ public class ProductDelivery extends ObligationFulfilment {
 	 */
 	public static final MMBusinessAssociationEnd<ProductDelivery, List<Transport>> mmRouting = new MMBusinessAssociationEnd<ProductDelivery, List<Transport>>() {
 		{
-			derivation_lazy = () -> Arrays.asList(TradeDelivery2.mmConsignment);
+			derivation_lazy = () -> Arrays.asList(TradeDelivery3.mmConsignment);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.ProductDelivery.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -560,7 +560,7 @@ public class ProductDelivery extends ObligationFulfilment {
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.ProductDelivery.mmDeliveryPeriod, com.tools20022.repository.entity.ProductDelivery.mmRouting,
 						com.tools20022.repository.entity.ProductDelivery.mmTradeSettlement, com.tools20022.repository.entity.ProductDelivery.mmObligation, com.tools20022.repository.entity.ProductDelivery.mmTradeCertificate,
 						com.tools20022.repository.entity.ProductDelivery.mmInsuranceCertificate, com.tools20022.repository.entity.ProductDelivery.mmProduct);
-				derivationComponent_lazy = () -> Arrays.asList(TradeDelivery2.mmObject());
+				derivationComponent_lazy = () -> Arrays.asList(TradeDelivery3.mmObject());
 			}
 
 			@Override

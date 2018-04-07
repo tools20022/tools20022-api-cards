@@ -21,12 +21,10 @@ import com.tools20022.metamodel.MMMessageAssociationEnd;
 import com.tools20022.metamodel.MMMessageAttribute;
 import com.tools20022.metamodel.MMMessageComponent;
 import com.tools20022.metamodel.MMRegistrationStatus;
-import com.tools20022.repository.area.caam.ATMDeviceControlV02;
-import com.tools20022.repository.area.caam.ATMDeviceReportV02;
-import com.tools20022.repository.area.caam.ATMKeyDownloadRequestV02;
-import com.tools20022.repository.area.caam.ATMKeyDownloadResponseV02;
-import com.tools20022.repository.area.catm.CertificateManagementRequestV01;
-import com.tools20022.repository.area.catm.CertificateManagementResponseV01;
+import com.tools20022.repository.area.caam.ATMDeviceControlV03;
+import com.tools20022.repository.area.caam.ATMDeviceReportV03;
+import com.tools20022.repository.area.caam.ATMKeyDownloadRequestV03;
+import com.tools20022.repository.area.caam.ATMKeyDownloadResponseV03;
 import com.tools20022.repository.codeset.ContentType2Code;
 import com.tools20022.repository.GeneratedRepository;
 import com.tools20022.repository.msg.AuthenticatedData4;
@@ -66,23 +64,17 @@ import javax.xml.bind.annotation.XmlType;
  * messageBuildingBlock} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.area.catm.CertificateManagementResponseV01#mmSecurityTrailer
- * CertificateManagementResponseV01.mmSecurityTrailer}</li>
+ * {@linkplain com.tools20022.repository.area.caam.ATMDeviceControlV03#mmSecurityTrailer
+ * ATMDeviceControlV03.mmSecurityTrailer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.catm.CertificateManagementRequestV01#mmSecurityTrailer
- * CertificateManagementRequestV01.mmSecurityTrailer}</li>
+ * {@linkplain com.tools20022.repository.area.caam.ATMDeviceReportV03#mmSecurityTrailer
+ * ATMDeviceReportV03.mmSecurityTrailer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.caam.ATMDeviceControlV02#mmSecurityTrailer
- * ATMDeviceControlV02.mmSecurityTrailer}</li>
+ * {@linkplain com.tools20022.repository.area.caam.ATMKeyDownloadRequestV03#mmSecurityTrailer
+ * ATMKeyDownloadRequestV03.mmSecurityTrailer}</li>
  * <li>
- * {@linkplain com.tools20022.repository.area.caam.ATMDeviceReportV02#mmSecurityTrailer
- * ATMDeviceReportV02.mmSecurityTrailer}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caam.ATMKeyDownloadRequestV02#mmSecurityTrailer
- * ATMKeyDownloadRequestV02.mmSecurityTrailer}</li>
- * <li>
- * {@linkplain com.tools20022.repository.area.caam.ATMKeyDownloadResponseV02#mmSecurityTrailer
- * ATMKeyDownloadResponseV02.mmSecurityTrailer}</li>
+ * {@linkplain com.tools20022.repository.area.caam.ATMKeyDownloadResponseV03#mmSecurityTrailer
+ * ATMKeyDownloadResponseV03.mmSecurityTrailer}</li>
  * </ul>
  * </li>
  * <li>
@@ -99,6 +91,13 @@ import javax.xml.bind.annotation.XmlType;
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} =
  * "General cryptographic message syntax (CMS) containing data. protected by a MAC or a digital signature."
+ * </li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.ContentInformationType18
+ * ContentInformationType18}</li>
+ * </ul>
  * </li>
  * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
  * previousVersion} =
@@ -139,6 +138,14 @@ public class ContentInformationType13 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Type of data protection."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ContentInformationType18#mmContentType
+	 * ContentInformationType18.mmContentType}</li>
+	 * </ul>
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
@@ -154,6 +161,7 @@ public class ContentInformationType13 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ContentType";
 			definition = "Type of data protection.";
+			nextVersions_lazy = () -> Arrays.asList(ContentInformationType18.mmContentType);
 			previousVersion_lazy = () -> ContentInformationType12.mmContentType;
 			maxOccurs = 1;
 			minOccurs = 1;
@@ -196,6 +204,14 @@ public class ContentInformationType13 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Data protection by a message authentication code (MAC)."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ContentInformationType18#mmAuthenticatedData
+	 * ContentInformationType18.mmAuthenticatedData}</li>
+	 * </ul>
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
@@ -211,6 +227,7 @@ public class ContentInformationType13 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "AuthenticatedData";
 			definition = "Data protection by a message authentication code (MAC).";
+			nextVersions_lazy = () -> Arrays.asList(ContentInformationType18.mmAuthenticatedData);
 			previousVersion_lazy = () -> ContentInformationType12.mmAuthenticatedData;
 			maxOccurs = 1;
 			minOccurs = 0;
@@ -254,6 +271,14 @@ public class ContentInformationType13 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Data protected by a digital signatures."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.ContentInformationType18#mmSignedData
+	 * ContentInformationType18.mmSignedData}</li>
+	 * </ul>
+	 * </li>
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
 	 * previousVersion} =
@@ -269,6 +294,7 @@ public class ContentInformationType13 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "SignedData";
 			definition = "Data protected by a digital signatures.";
+			nextVersions_lazy = () -> Arrays.asList(ContentInformationType18.mmSignedData);
 			previousVersion_lazy = () -> ContentInformationType12.mmSignedData;
 			maxOccurs = 1;
 			minOccurs = 0;
@@ -292,12 +318,12 @@ public class ContentInformationType13 {
 			{
 				messageElement_lazy = () -> Arrays.asList(com.tools20022.repository.msg.ContentInformationType13.mmContentType, com.tools20022.repository.msg.ContentInformationType13.mmAuthenticatedData,
 						com.tools20022.repository.msg.ContentInformationType13.mmSignedData);
-				messageBuildingBlock_lazy = () -> Arrays.asList(CertificateManagementResponseV01.mmSecurityTrailer, CertificateManagementRequestV01.mmSecurityTrailer, ATMDeviceControlV02.mmSecurityTrailer,
-						ATMDeviceReportV02.mmSecurityTrailer, ATMKeyDownloadRequestV02.mmSecurityTrailer, ATMKeyDownloadResponseV02.mmSecurityTrailer);
+				messageBuildingBlock_lazy = () -> Arrays.asList(ATMDeviceControlV03.mmSecurityTrailer, ATMDeviceReportV03.mmSecurityTrailer, ATMKeyDownloadRequestV03.mmSecurityTrailer, ATMKeyDownloadResponseV03.mmSecurityTrailer);
 				dataDictionary_lazy = () -> GeneratedRepository.dataDict;
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "ContentInformationType13";
 				definition = "General cryptographic message syntax (CMS) containing data. protected by a MAC or a digital signature.";
+				nextVersions_lazy = () -> Arrays.asList(ContentInformationType18.mmObject());
 				previousVersion_lazy = () -> ContentInformationType12.mmObject();
 			}
 		});

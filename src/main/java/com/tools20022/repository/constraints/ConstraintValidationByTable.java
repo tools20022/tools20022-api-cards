@@ -26,44 +26,10 @@ import com.tools20022.repository.codeset.LanguageCode;
 import com.tools20022.repository.codeset.UnicodeChartsCode;
 
 /**
- * Must be a valid currency code which is registered with the ISO 4217
- * Maintenance Agency, and consist of three contiguous letters.
+ * Must be a valid terrestrial language.
  */
 public class ConstraintValidationByTable {
 
-	/**
-	 * 
-	 <p>
-	 * <strong>Constant fields:</strong>
-	 * <ul>
-	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
-	 * {@linkplain com.tools20022.repository.codeset.CurrencyCode CurrencyCode}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
-	 * registrationStatus} =
-	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
-	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
-	 * name} = "ValidationByTable"</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
-	 * definition} =
-	 * "Must be a valid currency code which is registered with the ISO 4217 Maintenance Agency, and consist of three contiguous letters."
-	 * </li>
-	 * </ul>
-	 */
-	public static final MMConstraint<CurrencyCode> forCurrencyCode = new MMConstraint<CurrencyCode>() {
-		{
-			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
-			name = "ValidationByTable";
-			definition = "Must be a valid currency code which is registered with the ISO 4217 Maintenance Agency, and consist of three contiguous letters.";
-			owner_lazy = () -> CurrencyCode.mmObject();
-		}
-
-		@Override
-		public void executeValidator(CurrencyCode obj) throws Exception {
-			checkCurrencyCode(obj);
-		}
-	};
 	/**
 	 * 
 	 <p>
@@ -129,6 +95,39 @@ public class ConstraintValidationByTable {
 	 * <strong>Constant fields:</strong>
 	 * <ul>
 	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
+	 * {@linkplain com.tools20022.repository.codeset.CurrencyCode CurrencyCode}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getRegistrationStatus
+	 * registrationStatus} =
+	 * com.tools20022.metamodel.MMRegistrationStatus.PROVISIONALLY_REGISTERED</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getName
+	 * name} = "ValidationByTable"</li>
+	 * <li>
+	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
+	 * definition} =
+	 * "Must be a valid currency code which is registered with the ISO 4217 Maintenance Agency, and consist of three contiguous letters."
+	 * </li>
+	 * </ul>
+	 */
+	public static final MMConstraint<CurrencyCode> forCurrencyCode = new MMConstraint<CurrencyCode>() {
+		{
+			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
+			name = "ValidationByTable";
+			definition = "Must be a valid currency code which is registered with the ISO 4217 Maintenance Agency, and consist of three contiguous letters.";
+			owner_lazy = () -> CurrencyCode.mmObject();
+		}
+
+		@Override
+		public void executeValidator(CurrencyCode obj) throws Exception {
+			checkCurrencyCode(obj);
+		}
+	};
+	/**
+	 * 
+	 <p>
+	 * <strong>Constant fields:</strong>
+	 * <ul>
+	 * <li>{@linkplain com.tools20022.metamodel.MMConstraint#getOwner owner} =
 	 * {@linkplain com.tools20022.repository.codeset.BusinessMessagePriorityCode
 	 * BusinessMessagePriorityCode}</li>
 	 * <li>
@@ -153,14 +152,6 @@ public class ConstraintValidationByTable {
 	};
 
 	/**
-	 * Must be a valid currency code which is registered with the ISO 4217
-	 * Maintenance Agency, and consist of three contiguous letters.
-	 */
-	public static void checkCurrencyCode(CurrencyCode obj) throws Exception {
-		throw new NotImplementedConstraintException();
-	}
-
-	/**
 	 * Must be a valid terrestrial language.
 	 */
 	public static void checkLanguageCode(LanguageCode obj) throws Exception {
@@ -171,6 +162,14 @@ public class ConstraintValidationByTable {
 	 * - no definition -
 	 */
 	public static void checkUnicodeChartsCode(UnicodeChartsCode obj) throws Exception {
+		throw new NotImplementedConstraintException();
+	}
+
+	/**
+	 * Must be a valid currency code which is registered with the ISO 4217
+	 * Maintenance Agency, and consist of three contiguous letters.
+	 */
+	public static void checkCurrencyCode(CurrencyCode obj) throws Exception {
 		throw new NotImplementedConstraintException();
 	}
 

@@ -66,6 +66,13 @@ import javax.xml.bind.annotation.XmlType;
  * "EncryptedContent3"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Encrypted data with an encryption key."</li>
+ * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+ * nextVersions} =
+ * <ul>
+ * <li>{@linkplain com.tools20022.repository.msg.EncryptedContent4
+ * EncryptedContent4}</li>
+ * </ul>
+ * </li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -101,6 +108,14 @@ public class EncryptedContent3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Type of data which have been encrypted."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.EncryptedContent4#mmContentType
+	 * EncryptedContent4.mmContentType}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<EncryptedContent3, ContentType2Code> mmContentType = new MMMessageAttribute<EncryptedContent3, ContentType2Code>() {
@@ -111,6 +126,7 @@ public class EncryptedContent3 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ContentType";
 			definition = "Type of data which have been encrypted.";
+			nextVersions_lazy = () -> Arrays.asList(EncryptedContent4.mmContentType);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> ContentType2Code.mmObject();
@@ -153,6 +169,14 @@ public class EncryptedContent3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Algorithm used to encrypt the data."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.EncryptedContent4#mmContentEncryptionAlgorithm
+	 * EncryptedContent4.mmContentEncryptionAlgorithm}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<EncryptedContent3, AlgorithmIdentification14> mmContentEncryptionAlgorithm = new MMMessageAssociationEnd<EncryptedContent3, AlgorithmIdentification14>() {
@@ -163,6 +187,7 @@ public class EncryptedContent3 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "ContentEncryptionAlgorithm";
 			definition = "Algorithm used to encrypt the data.";
+			nextVersions_lazy = () -> Arrays.asList(EncryptedContent4.mmContentEncryptionAlgorithm);
 			maxOccurs = 1;
 			minOccurs = 1;
 			isComposite = true;
@@ -207,6 +232,14 @@ public class EncryptedContent3 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Encrypted data, result of the content encryption."</li>
+	 * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getNextVersions
+	 * nextVersions} =
+	 * <ul>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.EncryptedContent4#mmEncryptedData
+	 * EncryptedContent4.mmEncryptedData}</li>
+	 * </ul>
+	 * </li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<EncryptedContent3, Max100KBinary> mmEncryptedData = new MMMessageAttribute<EncryptedContent3, Max100KBinary>() {
@@ -217,6 +250,7 @@ public class EncryptedContent3 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "EncryptedData";
 			definition = "Encrypted data, result of the content encryption.";
+			nextVersions_lazy = () -> Arrays.asList(EncryptedContent4.mmEncryptedData);
 			maxOccurs = 1;
 			minOccurs = 1;
 			simpleType_lazy = () -> Max100KBinary.mmObject();
@@ -242,6 +276,7 @@ public class EncryptedContent3 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "EncryptedContent3";
 				definition = "Encrypted data with an encryption key.";
+				nextVersions_lazy = () -> Arrays.asList(EncryptedContent4.mmObject());
 			}
 		});
 		return mmObject_lazy.get();

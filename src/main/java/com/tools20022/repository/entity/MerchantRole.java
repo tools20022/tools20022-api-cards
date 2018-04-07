@@ -58,26 +58,11 @@ import java.util.Objects;
  * derivationElement} =
  * <ul>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CardPaymentEnvironment61#mmMerchant
- * CardPaymentEnvironment61.mmMerchant}</li>
+ * {@linkplain com.tools20022.repository.msg.CardPaymentEnvironment70#mmMerchant
+ * CardPaymentEnvironment70.mmMerchant}</li>
  * <li>
- * {@linkplain com.tools20022.repository.msg.CardPaymentEnvironment60#mmMerchant
- * CardPaymentEnvironment60.mmMerchant}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.CardPaymentEnvironment66#mmMerchantIdentification
- * CardPaymentEnvironment66.mmMerchantIdentification}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.CardPaymentEnvironment62#mmMerchant
- * CardPaymentEnvironment62.mmMerchant}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.CardPaymentEnvironment58#mmMerchant
- * CardPaymentEnvironment58.mmMerchant}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.CardPaymentEnvironment59#mmMerchant
- * CardPaymentEnvironment59.mmMerchant}</li>
- * <li>
- * {@linkplain com.tools20022.repository.msg.CardPaymentEnvironment57#mmMerchant
- * CardPaymentEnvironment57.mmMerchant}</li>
+ * {@linkplain com.tools20022.repository.msg.CardPaymentEnvironment68#mmMerchant
+ * CardPaymentEnvironment68.mmMerchant}</li>
  * </ul>
  * </li>
  * <li>
@@ -119,29 +104,20 @@ public class MerchantRole extends CardPaymentPartyRole {
 	 * {@linkplain com.tools20022.repository.msg.CardTransaction15#mmMerchantCategoryCode
 	 * CardTransaction15.mmMerchantCategoryCode}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction71#mmMerchantCategoryCode
-	 * CardPaymentTransaction71.mmMerchantCategoryCode}</li>
+	 * {@linkplain com.tools20022.repository.msg.CommonData7#mmMerchantCategoryCode
+	 * CommonData7.mmMerchantCategoryCode}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction75#mmMerchantCategoryCode
-	 * CardPaymentTransaction75.mmMerchantCategoryCode}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction83#mmMerchantCategoryCode
+	 * CardPaymentTransaction83.mmMerchantCategoryCode}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction74#mmMerchantCategoryCode
-	 * CardPaymentTransaction74.mmMerchantCategoryCode}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction81#mmMerchantCategoryCode
+	 * CardPaymentTransaction81.mmMerchantCategoryCode}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction70#mmMerchantCategoryCode
-	 * CardPaymentTransaction70.mmMerchantCategoryCode}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction80#mmMerchantCategoryCode
+	 * CardPaymentTransaction80.mmMerchantCategoryCode}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction72#mmMerchantCategoryCode
-	 * CardPaymentTransaction72.mmMerchantCategoryCode}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction76#mmMerchantCategoryCode
-	 * CardPaymentTransaction76.mmMerchantCategoryCode}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CommonData6#mmMerchantCategoryCode
-	 * CommonData6.mmMerchantCategoryCode}</li>
-	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction69#mmMerchantCategoryCode
-	 * CardPaymentTransaction69.mmMerchantCategoryCode}</li>
+	 * {@linkplain com.tools20022.repository.msg.CardPaymentTransaction85#mmMerchantCategoryCode
+	 * CardPaymentTransaction85.mmMerchantCategoryCode}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -163,9 +139,8 @@ public class MerchantRole extends CardPaymentPartyRole {
 	 */
 	public static final MMBusinessAttribute<MerchantRole, Min3Max4Text> mmMerchantCategoryCode = new MMBusinessAttribute<MerchantRole, Min3Max4Text>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CardTransaction5.mmMerchantCategoryCode, CardTransaction15.mmMerchantCategoryCode, CardPaymentTransaction71.mmMerchantCategoryCode, CardPaymentTransaction75.mmMerchantCategoryCode,
-					CardPaymentTransaction74.mmMerchantCategoryCode, CardPaymentTransaction70.mmMerchantCategoryCode, CardPaymentTransaction72.mmMerchantCategoryCode, CardPaymentTransaction76.mmMerchantCategoryCode,
-					CommonData6.mmMerchantCategoryCode, CardPaymentTransaction69.mmMerchantCategoryCode);
+			derivation_lazy = () -> Arrays.asList(CardTransaction5.mmMerchantCategoryCode, CardTransaction15.mmMerchantCategoryCode, CommonData7.mmMerchantCategoryCode, CardPaymentTransaction83.mmMerchantCategoryCode,
+					CardPaymentTransaction81.mmMerchantCategoryCode, CardPaymentTransaction80.mmMerchantCategoryCode, CardPaymentTransaction85.mmMerchantCategoryCode);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.MerchantRole.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;
@@ -241,8 +216,7 @@ public class MerchantRole extends CardPaymentPartyRole {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "MerchantRole";
 				definition = "Party performing the card payment transaction.";
-				derivationElement_lazy = () -> Arrays.asList(CardPaymentEnvironment61.mmMerchant, CardPaymentEnvironment60.mmMerchant, CardPaymentEnvironment66.mmMerchantIdentification, CardPaymentEnvironment62.mmMerchant,
-						CardPaymentEnvironment58.mmMerchant, CardPaymentEnvironment59.mmMerchant, CardPaymentEnvironment57.mmMerchant);
+				derivationElement_lazy = () -> Arrays.asList(CardPaymentEnvironment70.mmMerchant, CardPaymentEnvironment68.mmMerchant);
 				superType_lazy = () -> CardPaymentPartyRole.mmObject();
 				element_lazy = () -> Arrays.asList(com.tools20022.repository.entity.MerchantRole.mmMerchantCategoryCode, com.tools20022.repository.entity.MerchantRole.mmMerchantIdentification);
 			}

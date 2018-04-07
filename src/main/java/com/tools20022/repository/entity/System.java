@@ -178,17 +178,23 @@ public class System extends RolePlayer {
 	 * {@linkplain com.tools20022.repository.msg.CardAcceptorTerminal1#mmIdentification
 	 * CardAcceptorTerminal1.mmIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.HostCommunicationParameter4#mmHostIdentification
-	 * HostCommunicationParameter4.mmHostIdentification}</li>
-	 * <li>
 	 * {@linkplain com.tools20022.repository.msg.ATMCompletionAcknowledgement2#mmATM
 	 * ATMCompletionAcknowledgement2.mmATM}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AcceptorConfiguration6#mmTerminalManagerIdentification
-	 * AcceptorConfiguration6.mmTerminalManagerIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.AcceptorConfiguration7#mmTerminalManagerIdentification
+	 * AcceptorConfiguration7.mmTerminalManagerIdentification}</li>
 	 * <li>
-	 * {@linkplain com.tools20022.repository.msg.AcquirerHostConfiguration4#mmHostIdentification
-	 * AcquirerHostConfiguration4.mmHostIdentification}</li>
+	 * {@linkplain com.tools20022.repository.msg.PhysicalInterfaceParameter1#mmInterfaceName
+	 * PhysicalInterfaceParameter1.mmInterfaceName}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.AcquirerHostConfiguration5#mmHostIdentification
+	 * AcquirerHostConfiguration5.mmHostIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.HostCommunicationParameter5#mmHostIdentification
+	 * HostCommunicationParameter5.mmHostIdentification}</li>
+	 * <li>
+	 * {@linkplain com.tools20022.repository.msg.TMSEvent6#mmTerminalManagerIdentification
+	 * TMSEvent6.mmTerminalManagerIdentification}</li>
 	 * </ul>
 	 * </li>
 	 * <li>
@@ -208,8 +214,8 @@ public class System extends RolePlayer {
 	 */
 	public static final MMBusinessAssociationEnd<System, com.tools20022.repository.entity.SystemIdentification> mmSystemIdentification = new MMBusinessAssociationEnd<System, com.tools20022.repository.entity.SystemIdentification>() {
 		{
-			derivation_lazy = () -> Arrays.asList(CardAcceptorTerminal1.mmIdentification, HostCommunicationParameter4.mmHostIdentification, ATMCompletionAcknowledgement2.mmATM, AcceptorConfiguration6.mmTerminalManagerIdentification,
-					AcquirerHostConfiguration4.mmHostIdentification);
+			derivation_lazy = () -> Arrays.asList(CardAcceptorTerminal1.mmIdentification, ATMCompletionAcknowledgement2.mmATM, AcceptorConfiguration7.mmTerminalManagerIdentification, PhysicalInterfaceParameter1.mmInterfaceName,
+					AcquirerHostConfiguration5.mmHostIdentification, HostCommunicationParameter5.mmHostIdentification, TMSEvent6.mmTerminalManagerIdentification);
 			isDerived = false;
 			elementContext_lazy = () -> com.tools20022.repository.entity.System.mmObject();
 			registrationStatus = MMRegistrationStatus.REGISTERED;

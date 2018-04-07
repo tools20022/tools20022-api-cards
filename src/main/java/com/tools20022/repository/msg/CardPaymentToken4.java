@@ -76,10 +76,6 @@ import javax.xml.bind.annotation.XmlType;
  * "CardPaymentToken4"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Payment token information."</li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} =
- * {@linkplain com.tools20022.repository.msg.CardPaymentToken3
- * CardPaymentToken3}</li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -275,11 +271,6 @@ public class CardPaymentToken4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Additional payment token information."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentToken3#mmTokenCharacteristic
-	 * CardPaymentToken3.mmTokenCharacteristic}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<CardPaymentToken4, List<Max35Text>> mmTokenCharacteristic = new MMMessageAttribute<CardPaymentToken4, List<Max35Text>>() {
@@ -290,7 +281,6 @@ public class CardPaymentToken4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TokenCharacteristic";
 			definition = "Additional payment token information.";
-			previousVersion_lazy = () -> CardPaymentToken3.mmTokenCharacteristic;
 			minOccurs = 0;
 			simpleType_lazy = () -> Max35Text.mmObject();
 		}
@@ -332,11 +322,6 @@ public class CardPaymentToken4 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Identifier of a token provider requestor."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentToken3#mmTokenRequestor
-	 * CardPaymentToken3.mmTokenRequestor}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAssociationEnd<CardPaymentToken4, Optional<PaymentTokenIdentifiers1>> mmTokenRequestor = new MMMessageAssociationEnd<CardPaymentToken4, Optional<PaymentTokenIdentifiers1>>() {
@@ -347,7 +332,6 @@ public class CardPaymentToken4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TokenRequestor";
 			definition = "Identifier of a token provider requestor.";
-			previousVersion_lazy = () -> CardPaymentToken3.mmTokenRequestor;
 			maxOccurs = 1;
 			minOccurs = 0;
 			isComposite = true;
@@ -393,11 +377,6 @@ public class CardPaymentToken4 {
 	 * definition} =
 	 * "Level of confidence resulting of the identification and authentication of the cardholder performed and the entity that performed it."
 	 * </li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.CardPaymentToken3#mmTokenAssuranceLevel
-	 * CardPaymentToken3.mmTokenAssuranceLevel}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<CardPaymentToken4, Optional<Number>> mmTokenAssuranceLevel = new MMMessageAttribute<CardPaymentToken4, Optional<Number>>() {
@@ -408,7 +387,6 @@ public class CardPaymentToken4 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "TokenAssuranceLevel";
 			definition = "Level of confidence resulting of the identification and authentication of the cardholder performed and the entity that performed it.";
-			previousVersion_lazy = () -> CardPaymentToken3.mmTokenAssuranceLevel;
 			maxOccurs = 1;
 			minOccurs = 0;
 			simpleType_lazy = () -> Number.mmObject();
@@ -490,7 +468,6 @@ public class CardPaymentToken4 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "CardPaymentToken4";
 				definition = "Payment token information.";
-				previousVersion_lazy = () -> CardPaymentToken3.mmObject();
 			}
 		});
 		return mmObject_lazy.get();

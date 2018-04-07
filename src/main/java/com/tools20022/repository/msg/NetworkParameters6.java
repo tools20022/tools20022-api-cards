@@ -63,10 +63,6 @@ import javax.xml.bind.annotation.XmlType;
  * "NetworkParameters6"</li>
  * <li>{@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
  * definition} = "Parameters to communicate with a host."</li>
- * <li>{@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
- * previousVersion} =
- * {@linkplain com.tools20022.repository.msg.NetworkParameters3
- * NetworkParameters3}</li>
  * </ul>
  */
 @XmlAccessorType(XmlAccessType.NONE)
@@ -160,11 +156,6 @@ public class NetworkParameters6 {
 	 * <li>
 	 * {@linkplain com.tools20022.metamodel.MMRepositoryConcept#getDefinition
 	 * definition} = "Access information to the proxy."</li>
-	 * <li>
-	 * {@linkplain com.tools20022.metamodel.MMModelEntity#getPreviousVersion
-	 * previousVersion} =
-	 * {@linkplain com.tools20022.repository.msg.NetworkParameters3#mmAccessCode
-	 * NetworkParameters3.mmAccessCode}</li>
 	 * </ul>
 	 */
 	public static final MMMessageAttribute<NetworkParameters6, NetworkParameters5> mmAccess = new MMMessageAttribute<NetworkParameters6, NetworkParameters5>() {
@@ -176,7 +167,6 @@ public class NetworkParameters6 {
 			registrationStatus = MMRegistrationStatus.PROVISIONALLY_REGISTERED;
 			name = "Access";
 			definition = "Access information to the proxy.";
-			previousVersion_lazy = () -> NetworkParameters3.mmAccessCode;
 			maxOccurs = 1;
 			minOccurs = 1;
 			complexType_lazy = () -> NetworkParameters5.mmObject();
@@ -202,7 +192,6 @@ public class NetworkParameters6 {
 				registrationStatus = MMRegistrationStatus.REGISTERED;
 				name = "NetworkParameters6";
 				definition = "Parameters to communicate with a host.";
-				previousVersion_lazy = () -> NetworkParameters3.mmObject();
 			}
 		});
 		return mmObject_lazy.get();

@@ -206,6 +206,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * <li>{@linkplain com.tools20022.repository.msg.CardAccount13 CardAccount13}</li>
  * <li>{@linkplain com.tools20022.repository.msg.CardAccount7 CardAccount7}</li>
  * <li>{@linkplain com.tools20022.repository.msg.CardAccount12 CardAccount12}</li>
+ * <li>{@linkplain com.tools20022.repository.msg.CardAccount14 CardAccount14}</li>
  * </ul>
  * </li>
  * <li>
@@ -1854,7 +1855,7 @@ public class CashAccount extends Account {
 						com.tools20022.repository.entity.CashAccount.mmAccountLink, com.tools20022.repository.entity.CashAccount.mmCashStandingOrder, com.tools20022.repository.entity.CashAccount.mmCheque,
 						com.tools20022.repository.entity.CashAccount.mmCashAccountService, com.tools20022.repository.entity.CashAccount.mmPayment, com.tools20022.repository.entity.CashAccount.mmCommission);
 				derivationComponent_lazy = () -> Arrays.asList(CardAccount1.mmObject(), CardAccount2.mmObject(), CardAccount10.mmObject(), CardAccount9.mmObject(), CardAccount8.mmObject(), CardAccount11.mmObject(),
-						CardAccount13.mmObject(), CardAccount7.mmObject(), CardAccount12.mmObject());
+						CardAccount13.mmObject(), CardAccount7.mmObject(), CardAccount12.mmObject(), CardAccount14.mmObject());
 			}
 
 			@Override
